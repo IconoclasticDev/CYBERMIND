@@ -1,0 +1,27 @@
+{
+  "synthetic_only": true,
+  "checks": {
+    "normalize": {
+      "exit_code": 0,
+      "seconds": 17.382212399999844,
+      "log": "C:\\Users\\as030\\Downloads\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\multisource_audit\\recheck_logs\\normalize.log"
+    },
+    "strict_validation": {
+      "exit_code": 0,
+      "seconds": 32.74214060000304,
+      "log": "C:\\Users\\as030\\Downloads\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\multisource_audit\\recheck_logs\\strict_validation.log"
+    },
+    "prepare_csv": {
+      "exit_code": 0,
+      "seconds": 2.136479100001452,
+      "log": "C:\\Users\\as030\\Downloads\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\multisource_audit\\recheck_logs\\prepare_csv.log"
+    }
+  },
+  "archive_sha256": "6d4c04306fac74f91209a2520abfd18bb4de3cdfe38d9e6fff79da884f8dc472",
+  "extracted_files_differing_from_archive": [],
+  "hardware": {
+    "ram_gib": 15.379344940185547,
+    "available_ram_gib": 4.7178192138671875,
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+  }
+}

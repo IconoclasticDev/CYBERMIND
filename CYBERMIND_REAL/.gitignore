@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.phase01-venv/
+.uv-cache/
+.pytest_cache/
+.env
+# Submission checkpoints (*.pt) and results JSON/PNG are intentionally trackable.
+# Explicitly stage the final artifacts documented in README.md.
+*.pkl
+*.joblib
+data/raw/CIC-IDS-2018/*.csv
+data/raw/CIC-IDS-2018/*.pcap
+data/intermediate/*

@@ -1,0 +1,36 @@
+﻿# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments & package manager caches
+.venv/
+**/.venv/
+.phase01-venv/
+**/.phase01-venv/
+.uv-cache/
+**/.uv-cache/
+.pytest_cache/
+**/.pytest_cache/
+
+# Environment files
+.env
+.env.*
+
+# Model checkpoints exceeding GitHub's 100MB limit
+multisource_audit/CYBERMIND_REAL/checkpoints/recheck_synthetic.pt
+**/*.pt.large
+*.pkl
+*.joblib
+
+# Large raw datasets
+**/data/raw/CIC-IDS-2018/*.csv
+**/data/raw/CIC-IDS-2018/*.pcap
+**/data/intermediate/*
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

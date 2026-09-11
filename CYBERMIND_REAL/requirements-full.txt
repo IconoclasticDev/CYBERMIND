@@ -1,0 +1,7 @@
+-r requirements.txt
+onnx>=1.16
+onnxruntime>=1.18
+streamlit>=1.35
+jupyter>=1.0
+pyarrow>=15
+stix2>=3.0

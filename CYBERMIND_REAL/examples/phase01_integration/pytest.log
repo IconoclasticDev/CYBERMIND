@@ -1,0 +1,21 @@
+..................................                                       [100%]
+============================== warnings summary ===============================
+.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491
+  C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+tests/test_phase01_training.py::test_joint_backward_all_heads_and_regularizer
+tests/test_phase01_training.py::test_full_gb10_architecture_bf16_cpu_backward
+tests/test_stochastic_forecast.py::test_temporal_causality_and_attention
+tests/test_stochastic_forecast.py::test_automatic_explanation_under_inference_context[no_grad]
+tests/test_stochastic_forecast.py::test_automatic_explanation_under_inference_context[inference_mode]
+tests/test_stochastic_forecast.py::test_reproducible_rollouts_and_training_contract
+  C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+    self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+
+tests/test_phase01_training.py::test_full_gb10_architecture_bf16_cpu_backward
+  C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\backends\mkldnn\__init__.py:96: UserWarning: TF32 acceleration on top of oneDNN is available for Intel GPUs. The current Torch version does not have Intel GPU Support. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\Context.cpp:265.)
+    torch._C._set_onednn_allow_tf32(_allow_tf32)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+34 passed, 8 warnings in 7.63s

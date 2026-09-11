@@ -1,0 +1,37 @@
+{
+  "split": "test",
+  "metrics": {
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "ap": 0.3333333333333333,
+    "mean_lead_time_seconds": 0.0
+  },
+  "per_sample": [
+    {
+      "scenario": "S21",
+      "target": 1.0,
+      "predicted_future_risk": 0.007399500347673893,
+      "lead_time_seconds": 0.0,
+      "warning_index": null,
+      "critical_index": 4
+    },
+    {
+      "scenario": "S22",
+      "target": 0.0,
+      "predicted_future_risk": 0.007869183085858822,
+      "lead_time_seconds": null,
+      "warning_index": null,
+      "critical_index": null
+    },
+    {
+      "scenario": "S23",
+      "target": 0.0,
+      "predicted_future_risk": 0.00794999673962593,
+      "lead_time_seconds": null,
+      "warning_index": null,
+      "critical_index": null
+    }
+  ]
+}

@@ -1,0 +1,2045 @@
+# GB10 verification checklist: evidence report
+
+## Resolution update — items 3.1 and 3.2 fixed
+
+The FAIL findings below are the original audit snapshot. Both have now been
+corrected in the current workspace:
+
+- **3.1 PASS:** README training commands and defaults in `run_training_from_zero.sh`,
+  `launch_training.py`, and `one_click_train.py` use `configs/gb10_full.yaml`.
+  Data preparation, baselines and student export use `data/processed_gb10`;
+  the launcher reads processed paths from its config. Full preflight follows
+  preparation and blocks training on failure. Run manifests record the selected config.
+- **3.2 PASS:** Removed the blanket checkpoint/result ignore rules before the
+  first commit. Final artifacts can be staged normally; no force-add is needed.
+  README now specifies the submission files. Project Git initialization/commit/push
+  remain unperformed; ignore behavior was verified in a separate temporary repository.
+
+Verification output:
+
+```text
+3 passed in 0.05s
+checkpoints/best_gb10.pt TRACKABLE
+results/eval_test.json TRACKABLE
+results/benchmark.png TRACKABLE
+.phase01-venv/test IGNORED
+```
+
+The three tests in `tests/test_launcher_gb10.py` mock execution to verify routing,
+preflight failure blocking and manifest configuration; no training/download occurs.
+Python compilation passed. A search of README and the three launchers found no
+`gpu_128gb`, `best_128gb`, `configs/smoke.yaml` or `configs/final.yaml` references.
+GB10 runtime/data UNKNOWN findings below remain unchanged.
+
+Scope: current local Windows project, not the real GB10 host. No GB10 connection or real corpus was provided. This is a reporting pass; no dependencies were installed and no training was launched. Item suffixes number the bullets in each section of the supplied checklist. PASS for source items means present in the inspected local source, not deployed/verified on GB10. UNKNOWN means the required host/data/runtime evidence is absent.
+
+## 0.1 — UNKNOWN
+
+GB10 OS/architecture not checked: no target-host shell. The following is local evidence only; Linux commands were not represented as GB10 results.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "import platform; print(platform.system()); print(platform.machine()); print(platform.platform())"
+```
+
+```text
+Windows
+AMD64
+Windows-11-10.0.26200-SP0
+```
+
+Exit code: `0`
+
+## 0.2 — UNKNOWN
+
+GB10 visibility/driver version: target-host nvidia-smi was not run. No GB10 output is available.
+
+## 0.3 — UNKNOWN
+
+GB10 toolkit/driver CUDA version: no target-host nvcc or nvidia-smi output. A driver-advertised CUDA version alone would not establish the installed toolkit version.
+
+## 0.4 — UNKNOWN
+
+cu130 aarch64 PyTorch on GB10: unverified. Local environment is CPU-only; nothing was installed in this reporting pass.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "import torch; print(torch.__version__); print(torch.version.cuda)"
+```
+
+```text
+2.14.0+cpu
+None
+```
+
+Exit code: `0`
+
+## 0.5 — UNKNOWN
+
+GB10 device/capability: no target-host output. Requested expression run locally below fails on the CPU build; it does not establish anything about the GB10.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "import torch; print(torch.__version__); print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0)); print(torch.cuda.get_device_capability(0))"
+```
+
+```text
+2.14.0+cpu
+False
+```
+
+stderr:
+
+```text
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\cuda\__init__.py", line 766, in get_device_name
+    return get_device_properties(device).name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\cuda\__init__.py", line 799, in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+    ^^^^^^^^^^^^
+  File "C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\cuda\__init__.py", line 584, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+```
+
+Exit code: `1`
+
+## 0.6 — UNKNOWN
+
+PyG on GB10 is unknown. Local import result follows. Additional inconsistency: current gpu_preflight.py treats missing PyG as a failure, whereas this checklist says it should not block fallback training. That policy mismatch remains unfixed in this report-only pass.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "import torch_geometric; print('PyG OK', torch_geometric.__version__)"
+```
+
+```text
+PyG OK 2.8.0.post1
+```
+
+stderr:
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+```
+
+Exit code: `0`
+
+## 0.7 — UNKNOWN
+
+GB10 encoder branch cannot be inspected without that runtime. Local PyG import succeeds; local encoder selection is printed below. Source confirms fallback only when the import fails.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "import sys; sys.path.insert(0,'src'); from cybermind.models.graph_encoder import HAS_PYG, GATv2GraphEncoder; m=GATv2GraphEncoder(3,8,8,2); print('HAS_PYG =', HAS_PYG); print('conv1 =', type(m.conv1).__name__)"
+```
+
+```text
+HAS_PYG = True
+conv1 = GATv2Conv
+```
+
+stderr:
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+```
+
+Exit code: `0`
+
+Source: `src/cybermind/models/graph_encoder.py`
+
+```python
+from __future__ import annotations
+import torch
+from torch import nn
+
+try:
+    from torch_geometric.nn import GATv2Conv
+    HAS_PYG = True
+except Exception:
+    GATv2Conv = None
+    HAS_PYG = False
+
+class DenseGraphAttention(nn.Module):
+    """Pure-Torch fallback with the same role as GATv2 for environments without PyG."""
+    def __init__(self, in_dim, out_dim, heads=4, dropout=0.1):
+        super().__init__(); self.heads=heads; self.out_dim=out_dim
+        self.lin=nn.Linear(in_dim,heads*out_dim,bias=False)
+        self.q=nn.Linear(out_dim,1,bias=False); self.k=nn.Linear(out_dim,1,bias=False)
+        self.dropout=nn.Dropout(dropout); self.act=nn.ELU()
+    def forward(self,x,edge_index):
+        n=x.size(0); h=self.lin(x).view(n,self.heads,self.out_dim)
+        out=torch.zeros_like(h)
+        if edge_index.numel()==0: return out.mean(1)
+        src,dst=edge_index
+        for d in range(n):
+            idx=(dst==d).nonzero(as_tuple=False).flatten()
+            if idx.numel()==0: continue
+            s=src[idx]
+            scores=(self.q(h[s])+self.k(h[d])).squeeze(-1)
+            alpha=torch.softmax(scores,dim=0).unsqueeze(-1)
+            out[d]=torch.sum(alpha*h[s],dim=0)
+        return self.act(self.dropout(out)).mean(1)
+
+class GATv2GraphEncoder(nn.Module):
+    def __init__(self,node_dim,hidden_dim=128,out_dim=128,heads=4,dropout=0.1):
+        super().__init__(); self.has_pyg=HAS_PYG
+        if HAS_PYG:
+            self.conv1=GATv2Conv(node_dim,hidden_dim,heads=heads,concat=False,dropout=dropout,edge_dim=None)
+            self.conv2=GATv2Conv(hidden_dim,out_dim,heads=heads,concat=False,dropout=dropout,edge_dim=None)
+        else:
+            self.conv1=DenseGraphAttention(node_dim,hidden_dim,heads,dropout)
+            self.conv2=DenseGraphAttention(hidden_dim,out_dim,heads,dropout)
+        self.norm1=nn.LayerNorm(hidden_dim); self.norm2=nn.LayerNorm(out_dim)
+        self.act=nn.GELU(); self.dropout=nn.Dropout(dropout)
+    def forward(self,x,edge_index):
+        h=self.act(self.conv1(x,edge_index)); h=self.norm1(h); h=self.dropout(h)
+        h=self.act(self.conv2(h,edge_index)); h=self.norm2(h)
+        # State pooling: mean + max gives a stable graph-level representation.
+        return torch.cat([h.mean(dim=0),h.max(dim=0).values],dim=-1)
+```
+
+## 0.8 — UNKNOWN
+
+bf16 on GB10 remains unverified. This result belongs to the local CPU runtime.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "import torch; print(torch.cuda.is_bf16_supported())"
+```
+
+```text
+False
+```
+
+Exit code: `0`
+
+## 1.1 — PASS
+
+Required local directories exist and are nonempty. Windows-compatible listing used instead of Unix find/ls.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "from pathlib import Path; roots=['src/cybermind','scripts','configs','tests']; [(print(p, 'exists=',Path(p).is_dir(),'nonempty=',any(Path(p).iterdir())), [print(x) for x in sorted(Path(p).iterdir())]) for p in roots]"
+```
+
+```text
+src/cybermind exists= True nonempty= True
+src\cybermind\__init__.py
+src\cybermind\__pycache__
+src\cybermind\baselines
+src\cybermind\counterfactual
+src\cybermind\data
+src\cybermind\evaluation
+src\cybermind\explainability
+src\cybermind\losses.py
+src\cybermind\models
+src\cybermind\utils
+scripts exists= True nonempty= True
+scripts\__pycache__
+scripts\app.py
+scripts\build_corpus.py
+scripts\collect_knowledge.sh
+scripts\collect_public_corpus.py
+scripts\counterfactual.py
+scripts\distill_student.py
+scripts\download_public_sources.py
+scripts\eval.py
+scripts\export_teacher_onnx.py
+scripts\gpu_preflight.py
+scripts\inspect_env.py
+scripts\laptop_infer.py
+scripts\launch_training.py
+scripts\make_synthetic.py
+scripts\one_click_train.py
+scripts\pcap_to_corpus.py
+scripts\phase01_smoke.py
+scripts\prepare_cic2018_public.sh
+scripts\prepare_data.py
+scripts\prepare_for_training.sh
+scripts\readiness_check.py
+scripts\run_all_pretraining.sh
+scripts\run_baseline.py
+scripts\run_training_from_zero.sh
+scripts\smoke_all.sh
+scripts\train.py
+scripts\train_gpu_auto.sh
+scripts\train_smoke_auto.sh
+scripts\validate_dataset.py
+scripts\visualize_rollout.py
+configs exists= True nonempty= True
+configs\final.yaml
+configs\gb10_full.yaml
+configs\gpu_128gb.yaml
+configs\laptop.yaml
+configs\phase01_smoke.yaml
+configs\smoke.yaml
+configs\sources.yaml
+tests exists= True nonempty= True
+tests\__pycache__
+tests\test_imports.py
+tests\test_onnx_cpu.py
+tests\test_packet_taxonomy.py
+tests\test_phase01_data.py
+tests\test_phase01_training.py
+tests\test_stochastic_forecast.py
+```
+
+Exit code: `0`
+
+## 1.2 — PASS
+
+GB10 configuration exists. Full contents:
+
+Source: `configs/gb10_full.yaml`
+
+```text
+# Phase 1 decision: full CIC-IDS2018 only. CTU-13 and UNSW-NB15 stay held out.
+seed: 42
+data:
+  raw_dir: data/raw/CIC-IDS-2018
+  processed_dir: data/processed_gb10
+  primary_source: CIC-IDS2018
+  window_seconds: 60
+  stride_seconds: 30
+  history: 16
+  require_normalization: true
+  require_packet_features: true
+model:
+  graph_hidden: 512
+  graph_out: 512
+  temporal_dim: 512
+  graph_heads: 8
+  nhead: 8
+  temporal_layers: 6
+  num_stages: 7
+  dropout: 0.10
+loss:
+  transition: 1.0
+  infiltration: 1.0
+  stage: 0.5
+  calibration: 0.2
+  graph_consistency: 0.1
+train:
+  precision: bf16
+  require_cuda: true
+  epochs: 50
+  lr: 0.0003
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  checkpoint: best_gb10.pt
+  # Conservative full-size model microbatch; confirm with real graph sizes on GB10.
+  # Unified RAM also holds the corpus, OS, optimizer, and loader; 128 GB is not all activations.
+  batch_size: 8
+  grad_accumulation: 8
+  num_workers: 0
+  selection_metric: val_f1
+  selection_threshold: 0.5
+  early_stopping_patience: 8
+  min_delta: 0.0001
+  history_path: results/gb10_train_history.json
+eval:
+  rollout_steps: 12
+  n_rollouts: 16
+```
+
+## 1.3 — PASS
+
+configs/final.yaml exists; this is not a missing-file reference. It is a separate older configuration and does not have the GB10 normalization/bf16 requirements.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "from pathlib import Path; print('configs/final.yaml exists:',Path('configs/final.yaml').is_file())"
+```
+
+```text
+configs/final.yaml exists: True
+```
+
+Exit code: `0`
+
+Source: `configs/final.yaml`
+
+```text
+seed: 42
+data:
+  raw_dir: data/raw/CIC-IDS-2018
+  processed_dir: data/processed
+  window_seconds: 60
+  stride_seconds: 30
+  history: 16
+model:
+  graph_hidden: 128
+  graph_out: 128
+  temporal_dim: 256
+  nhead: 8
+  temporal_layers: 4
+  num_stages: 7
+  dropout: 0.10
+loss:
+  transition: 1.0
+  infiltration: 1.0
+  stage: 0.5
+  calibration: 0.2
+train:
+  epochs: 50
+  lr: 0.0003
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  checkpoint: best.pt
+eval:
+  rollout_steps: 8
+```
+
+## 1.4 — PASS
+
+The referenced report exists. Its full contents are reproduced in Appendix A, as requested. It is prior reporting, not independent proof of GB10 readiness.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "from pathlib import Path; print('docs/PHASE01_FINAL_REPORT.md exists:',Path('docs/PHASE01_FINAL_REPORT.md').is_file())"
+```
+
+```text
+docs/PHASE01_FINAL_REPORT.md exists: True
+```
+
+Exit code: `0`
+
+## 1.5 — PASS
+
+Both scripts and normalization module exist. The package-relative data/normalization.py is src/cybermind/data/normalization.py, not a top-level data script. Full contents appear in Appendix B.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "from pathlib import Path; [print(p,Path(p).is_file()) for p in ['scripts/phase01_smoke.py','scripts/gpu_preflight.py','src/cybermind/data/normalization.py']]"
+```
+
+```text
+scripts/phase01_smoke.py True
+scripts/gpu_preflight.py True
+src/cybermind/data/normalization.py True
+```
+
+Exit code: `0`
+
+## 2.1 — PASS
+
+fp32 normalization is implemented, persisted, fitted on training only and applied across splits. Graph construction also accepts a normalizer or loads its path; feature_extract.py need not call it independently.
+
+Source: `src/cybermind/data/normalization.py`
+
+Lines 14–17:
+
+```python
+    def __init__(self, width):
+        self.count = 0
+        self.mean = torch.zeros(width, dtype=torch.float32)
+        self.m2 = torch.zeros(width, dtype=torch.float32)
+```
+
+Lines 19–34:
+
+```python
+    def update(self, values):
+        x = torch.as_tensor(values, dtype=torch.float32).detach().cpu()
+        if x.ndim != 2 or x.shape[1] != self.mean.numel():
+            raise ValueError('Feature width does not match normalization schema')
+        if not torch.isfinite(x).all():
+            raise ValueError('Cannot fit normalization to non-finite features')
+        if not len(x):
+            return
+        n = len(x)
+        mean = x.mean(0)
+        m2 = ((x - mean) ** 2).sum(0)
+        delta = mean - self.mean
+        total = self.count + n
+        self.m2 += m2 + delta.square() * (self.count * n / total)
+        self.mean += delta * (n / total)
+        self.count = total
+```
+
+Lines 45–56:
+
+```python
+    def __init__(self, constants):
+        from .graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
+        if constants.get('fit_split') != 'train' or constants.get('dtype') != 'float32':
+            raise ValueError('Normalization must be fitted on training data in fp32')
+        self.constants = constants
+        for key, names in [('node', NODE_FEATURE_NAMES), ('edge', EDGE_FEATURE_NAMES)]:
+            if constants[key]['features'] != list(names):
+                raise ValueError(f'{key} normalization feature schema mismatch')
+            mean = torch.tensor(constants[key]['mean'], dtype=torch.float32)
+            std = torch.tensor(constants[key]['std'], dtype=torch.float32)
+            if len(mean) != len(names) or len(std) != len(names) or not torch.isfinite(mean).all() or not torch.isfinite(std).all() or (std <= 0).any():
+                raise ValueError(f'Invalid {key} normalization constants')
+```
+
+Lines 63–83:
+
+```python
+    def fit(cls, states):
+        from .graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
+        node, edge = RunningMoments(len(NODE_FEATURE_NAMES)), RunningMoments(len(EDGE_FEATURE_NAMES))
+        seen = set()
+        for state in states:
+            if state.metadata.get('split') != 'train':
+                raise ValueError('Only training states may fit normalization')
+            if state.metadata.get('normalization_fingerprint'):
+                raise ValueError('Normalization must fit raw features')
+            identity = (state.scenario_id, state.metadata.get('window_start', state.timestamp))
+            if identity in seen:
+                continue
+            seen.add(identity)
+            node.update(state.x)
+            edge.update(state.edge_attr)
+        if not node.count:
+            raise ValueError('No training nodes available for normalization')
+        return cls({'version': 1, 'fit_split': 'train', 'dtype': 'float32',
+                    'method': 'population_mean_std', 'training_windows': len(seen),
+                    'node': {'features': list(NODE_FEATURE_NAMES), **node.constants()},
+                    'edge': {'features': list(EDGE_FEATURE_NAMES), **edge.constants()}})
+```
+
+Lines 85–93:
+
+```python
+    def transform(self, values, kind):
+        x = values.to(dtype=torch.float32)
+        c = self.constants[kind]
+        mean = torch.tensor(c['mean'], dtype=torch.float32, device=x.device)
+        std = torch.tensor(c['std'], dtype=torch.float32, device=x.device)
+        result = (x - mean) / std
+        if not torch.isfinite(result).all():
+            raise ValueError('Non-finite normalized features')
+        return result
+```
+
+Lines 95–96:
+
+```python
+    def save(self, path):
+        Path(path).write_text(json.dumps(self.constants, indent=2), encoding='utf-8')
+```
+
+Source: `scripts/prepare_data.py`
+
+Lines 85–121:
+
+```python
+def prepare_frames(frames, cfg, purpose='primary', normalizer=None):
+    environments = chain_environments(frames, purpose)
+    splits = {k: [] for k in (['train', 'val', 'test'] if purpose == 'primary' else ['test'])}
+    reports = []
+    if purpose == 'heldout' and normalizer is None:
+        raise ValueError('Held-out evaluation requires primary training normalization constants')
+    for scenario, frame in environments.items():
+        partitions = chronological_partitions(frame, cfg['data']['window_seconds'], cfg['data']['stride_seconds']) if purpose == 'primary' else {'test': frame}
+        for split, part in partitions.items():
+            if part.empty:
+                raise ValueError(f'{scenario}/{split}: no events after boundary purge; use more data')
+            meta = {'source': str(frame.source.iloc[0]), 'environment_id': str(frame.environment_id.iloc[0]),
+                    'source_files': list(dict.fromkeys(part.source_file)), 'split': split,
+                    'endpoint_method': 'columns', 'stage_method': 'five_phase_with_unknown',
+                    'packet_feature_coverage': float(part.packet_features_available.mean())}
+            seqs = make_sequences(part, scenario, window_seconds=cfg['data']['window_seconds'],
+                                  history=cfg['data']['history'], stride_seconds=cfg['data']['stride_seconds'],
+                                  metadata=meta, normalizer=normalizer)
+            splits[split].extend(seqs)
+            reports.append({**meta, 'rows': len(part), 'samples': len(seqs), 'labels': sorted(part.label.unique()),
+                            'start': str(part.timestamp.min()), 'end': str(part.timestamp.max())})
+    if any(not samples for samples in splits.values()):
+        raise ValueError('Every requested split must contain sequences; reduce smoke history or supply more data')
+    if purpose == 'primary':
+        normalizer = FeatureNormalizer.fit(state for sample in splits['train'] for state in sample.states)
+        # Overlapping histories share graph objects; transform each only once.
+        seen = set()
+        for samples in splits.values():
+            for sample in samples:
+                sample.metadata['normalization_fingerprint'] = normalizer.fingerprint
+                for state in sample.states:
+                    if id(state) not in seen:
+                        state.x = normalizer.transform(state.x, 'node')
+                        state.edge_attr = normalizer.transform(state.edge_attr, 'edge')
+                        state.metadata['normalization_fingerprint'] = normalizer.fingerprint
+                        seen.add(id(state))
+    return splits, normalizer, reports
+```
+
+Source: `src/cybermind/data/graph_builder.py`
+
+Lines 82–110:
+
+```python
+def build_graph_state(window: pd.DataFrame, scenario_id: str, metadata: dict, normalizer=None) -> GraphState:
+    nodes = sorted(set(window.src.astype(str)) | set(window.dst.astype(str)))
+    nodes = [n for n in nodes if n and n.lower() != 'nan']
+    if len(nodes) == 0:
+        raise ValueError('No endpoint identities available for graph construction.')
+    node_to_idx = {n:i for i,n in enumerate(nodes)}
+    x = torch.tensor(_aggregate_node_features(window, nodes),dtype=torch.float32)
+    edge_index, edge_attr = _aggregate_edges(window, node_to_idx)
+    metadata = dict(metadata)
+    if normalizer is None and metadata.get('normalization_path'):
+        from .normalization import FeatureNormalizer
+        normalizer = FeatureNormalizer.load(metadata['normalization_path'])
+    if normalizer is not None:
+        x = normalizer.transform(x, 'node')
+        edge_attr = normalizer.transform(edge_attr, 'edge')
+        metadata['normalization_fingerprint'] = normalizer.fingerprint
+    label_counts = window.label.value_counts()
+    attack_label = str(label_counts.index[0]) if len(label_counts) else 'BENIGN'
+    # The head predicts whether infiltration is present in a window, not the
+    # fraction of attack flows. Mixed windows must remain valid binary targets.
+    infil = float((window.infiltration > 0).any()) if len(window) else 0.0
+    # Class IDs are categorical: averaging them invents a stage never observed.
+    stages = window.loc[window.infiltration > 0, 'stage'].value_counts()
+    stage = (int(stages.index[0]) if len(stages) == 1 or (len(stages) > 1 and stages.iloc[0] > stages.iloc[1])
+             else UNKNOWN_STAGE) if len(stages) else 0
+    ts = float(pd.Timestamp(window.timestamp.iloc[0]).timestamp()) if len(window) else 0.0
+    return GraphState(x=x,edge_index=edge_index,edge_attr=edge_attr,node_ids=nodes,timestamp=ts,
+                      y_infiltration=infil,y_stage=stage,scenario_id=scenario_id,attack_label=attack_label,
+                      metadata=dict(metadata))
+```
+
+## 2.2 — PASS
+
+Requested IPv4 packet features are computed by the following functions. Scan signatures are heuristics; capture-local state and absence of IPv6 support remain limitations.
+
+Source: `src/cybermind/data/pcap_extract.py`
+
+Lines 21–27:
+
+```python
+def _scan_features(ports, minimum_ports=4):
+    """Irregular order is a randomized-scan signature, not proof of randomness."""
+    unique = list(dict.fromkeys(ports))
+    if len(unique) < minimum_ports:
+        return float(len(unique)), 0.0, 0.0
+    sequential = float(np.mean(np.abs(np.diff(unique)) == 1))
+    return float(len(unique)), sequential, 1.0 - sequential
+```
+
+Lines 36–57:
+
+```python
+def _add_sequence(flow, sequence, length):
+    """Count overlapping sequence-space segments, including SYN/FIN retries.
+
+    Pure ACKs are excluded. Interval merging handles resegmentation and wrap.
+    """
+    if length <= 0:
+        return
+    modulus = 1 << 32
+    end = sequence + length
+    spans = [(sequence, min(end, modulus))]
+    if end > modulus:
+        spans.append((0, end - modulus))
+    old = flow['sequence_ranges']
+    if any(a < d and c < b for a, b in spans for c, d in old):
+        flow['retransmissions'] += 1
+    merged = []
+    for start, stop in sorted(old + spans):
+        if merged and start <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(stop, merged[-1][1]))
+        else:
+            merged.append((start, stop))
+    flow['sequence_ranges'] = merged
+```
+
+Lines 60–90:
+
+```python
+def _row(key, f, label):
+    src, dst, proto, sport, dport = key
+    duration = max(0.0, f['last'] - f['first'])
+    payload = np.asarray(f['payloads'], dtype=np.float64)
+    windows = np.asarray(f['windows'], dtype=np.float64)
+    count = f['packets']
+    stage = classify_stage(label)
+    # Aggregate values are available only after the last included packet.
+    # Dating them at session start leaks later telemetry into earlier windows.
+    return dict(timestamp=pd.to_datetime(f['last'], unit='s'),
+                session_start=pd.to_datetime(f['first'], unit='s'), src=src, dst=dst,
+                protocol=float(proto), src_port=float(sport), dst_port=float(dport),
+                duration=duration, bytes_fwd=float(f['bytes']), bytes_bwd=0.0,
+                packets_fwd=float(count), packets_bwd=0.0,
+                mean_fwd_iat=float(np.mean(f['iats'])) if f['iats'] else 0.0,
+                mean_bwd_iat=0.0, flow_bytes_s=f['bytes']/max(duration, 1e-6),
+                flow_packets_s=count/max(duration, 1e-6), label=label,
+                infiltration=float(stage != 0), stage=stage, attack_stage=stage,
+                ttl_mean=float(np.mean(f['ttls'])), ttl_variance=float(np.var(f['ttls'])),
+                tcp_window_mean=float(windows.mean()) if windows.size else 0.0,
+                tcp_window_variance=float(windows.var()) if windows.size else 0.0,
+                ip_df_ratio=f['df']/count, ip_mf_ratio=f['mf']/count,
+                ip_fragment_ratio=f['fragments']/count,
+                payload_size_mean=float(payload.mean()), payload_size_variance=float(payload.var()),
+                payload_size_min=float(payload.min()), payload_size_max=float(payload.max()),
+                payload_size_p25=float(np.quantile(payload, .25)),
+                payload_size_p50=float(np.quantile(payload, .5)),
+                payload_size_p75=float(np.quantile(payload, .75)),
+                scan_unique_ports=f['scan'][0], scan_sequential_score=f['scan'][1],
+                scan_randomized_score=f['scan'][2], retransmission_count=float(f['retransmissions']),
+                retransmission_ratio=f['retransmissions']/count, packet_features_available=1.0)
+```
+
+Lines 93–151:
+
+```python
+def pcap_to_dataframe(path: str | Path, label='PCAP_EVENT', session_timeout=300.0):
+    """Aggregate IPv4 packets; split flow/host-pair state after inactivity.
+
+    Captures must be chronologically ordered. Missing IPv6 support is explicit:
+    non-IPv4 frames are skipped, rather than inventing TTL/fragment statistics.
+    """
+    if session_timeout <= 0:
+        raise ValueError('session_timeout must be positive')
+    try:
+        from scapy.all import IP, TCP, UDP, PcapReader
+    except ImportError as error:
+        raise RuntimeError('scapy is required for PCAP extraction') from error
+    flows, scans, rows = {}, {}, []
+    previous_time = None
+    with PcapReader(str(path)) as reader:
+        for packet in reader:
+            if not packet.haslayer(IP):
+                continue
+            ip = packet[IP]
+            src, dst, proto = str(ip.src), str(ip.dst), int(ip.proto)
+            t = float(packet.time)
+            if previous_time is not None and t < previous_time:
+                raise ValueError('PCAP packets must be in chronological order')
+            previous_time = t
+            transport = packet[TCP] if packet.haslayer(TCP) else packet[UDP] if packet.haslayer(UDP) else None
+            sport, dport = (int(transport.sport), int(transport.dport)) if transport is not None else (0, 0)
+            key = (src, dst, proto, sport, dport)
+            if key in flows and t - flows[key]['last'] > session_timeout:
+                rows.append(_row(key, flows.pop(key), label))
+            flow = flows.setdefault(key, _new_flow(t))
+            if flow['packets']:
+                flow['iats'].append(t - flow['last'])
+            flow['last'] = t
+            flow['packets'] += 1
+            flow['bytes'] += len(packet)
+            flow['ttls'].append(int(ip.ttl))
+            flow['df'] += bool(int(ip.flags) & 2)
+            flow['mf'] += bool(int(ip.flags) & 1)
+            flow['fragments'] += bool(int(ip.flags) & 1 or int(ip.frag) > 0)
+            payload_length = len(bytes(transport.payload if transport is not None else ip.payload))
+            flow['payloads'].append(payload_length)
+            if packet.haslayer(TCP):
+                tcp = packet[TCP]
+                flow['windows'].append(int(tcp.window))
+                length = payload_length + bool(int(tcp.flags) & 2) + bool(int(tcp.flags) & 1)
+                _add_sequence(flow, int(tcp.seq), length)
+            pair = (src, dst, proto)
+            if pair not in scans or t - scans[pair]['last'] > session_timeout:
+                scans[pair] = dict(last=t, ports=[])
+            scan = scans[pair]
+            scan['last'] = t
+            if transport is not None and dport not in scan['ports']:
+                scan['ports'].append(dport)
+            # Snapshot only prior/current observations, never future ports.
+            flow['scan'] = _scan_features(scan['ports'])
+    rows.extend(_row(key, flow, label) for key, flow in flows.items())
+    if not rows:
+        return pd.DataFrame(columns=('timestamp', 'src', 'dst', 'label', 'stage', 'attack_stage') + PACKET_FEATURES)
+    return pd.DataFrame(rows).sort_values('timestamp', kind='stable').reset_index(drop=True)
+```
+
+## 2.3 — PASS
+
+Seven labels include distinct C2. Important precision: the adapter calls the Python classifier, not a YAML loader. The equivalent taxonomy is implemented in stages.py; editing YAML alone does not change runtime classification. The existing taxonomy test checks the YAML entries against that classifier.
+
+Source: `knowledge/stage_mapping.yaml`
+
+```text
+# Research heuristics, not official ATT&CK ground-truth annotation.
+# Benign remains independent of the five named phases and unknown targets.
+num_stages: 7
+stage_names:
+  0: Benign
+  1: Reconnaissance
+  2: Initial Access
+  3: Lateral Movement
+  4: Command & Control
+  5: Exfiltration
+  6: Unknown/Ambiguous
+unknown_stage: 6
+label_to_stage:
+  BENIGN: 0
+  NORMAL: 0
+  BACKGROUND: 0
+  BRUTE FORCE: 2
+  BRUTE FORCE -WEB: 2
+  BRUTE FORCE -XSS: 2
+  FTP-PATATOR: 2
+  SSH-PATATOR: 2
+  SSH-BRUTEFORCE: 2
+  FTP-BRUTEFORCE: 2
+  WEB ATTACK - BRUTE FORCE: 2
+  WEB ATTACK - XSS: 2
+  WEB ATTACK - SQL INJECTION: 2
+  SQL INJECTION: 2
+  INITIAL ACCESS: 2
+  PHISHING: 2
+  PORTSCAN: 1
+  PORT SCAN: 1
+  RECONNAISSANCE: 1
+  LATERAL MOVEMENT: 3
+  PASS THE HASH: 3
+  COMMAND & CONTROL: 4
+  COMMAND AND CONTROL: 4
+  C2: 4
+  BOT: 4
+  BOTNET: 4
+  EXFILTRATION: 5
+  DATA EXFILTRATION: 5
+  INFILTRATION: 6
+  HEARTBLEED: 6
+  DOS ATTACK-HULK: 6
+  DOS ATTACK-GOLDENEYE: 6
+  DOS ATTACK-SLOWHTTPTEST: 6
+  DOS ATTACK-SLOWLORIS: 6
+  DDOS ATTACK-HOIC: 6
+  DDOS ATTACK-LOIC-HTTP: 6
+  DDOS ATTACK-LOIC-UDP: 6
+  DDoS: 6
+  DoS: 6
+  Mirai: 6
+  IMPACT: 6
+  UNKNOWN: 6
+```
+
+Source: `src/cybermind/data/adapters/unified.py`
+
+Lines 91–92:
+
+```python
+    def _stage(label):
+        return classify_stage(label)
+```
+
+Source: `src/cybermind/data/stages.py`
+
+```python
+"""Conservative label heuristics; not official ATT&CK ground truth."""
+import re
+STAGE_NAMES = ('Benign', 'Reconnaissance', 'Initial Access', 'Lateral Movement', 'Command & Control', 'Exfiltration', 'Unknown/Ambiguous')
+NUM_STAGES = len(STAGE_NAMES)
+UNKNOWN_STAGE = 6
+
+
+def classify_stage(label: object) -> int:
+    text = re.sub(r'[^A-Z0-9]+', ' ', str(label).upper()).strip()
+    if text in {'BENIGN', 'NORMAL', 'BACKGROUND', 'LEGITIMATE', '0'}:
+        return 0
+    matches = set()
+    if 'SCAN' in text.split() or any(word in text for word in ('RECON', 'PORTSCAN', 'PORT SCAN', 'PROBE', 'SCANNING')):
+        matches.add(1)
+    if any(word in text for word in ('INITIAL ACCESS', 'BRUTE', 'PATATOR', 'SQL INJECTION', 'XSS', 'PHISHING')):
+        matches.add(2)
+    if any(word in text for word in ('LATERAL', 'PASS THE HASH', 'PASS THE TICKET', 'REMOTE SERVICES')):
+        matches.add(3)
+    if any(word in text for word in ('COMMAND CONTROL', 'COMMAND AND CONTROL', 'BOTNET', 'BEACON')) or text in {'BOT', 'C2', 'C C'}:
+        matches.add(4)
+    if 'EXFIL' in text:
+        matches.add(5)
+    return matches.pop() if len(matches) == 1 else UNKNOWN_STAGE
+```
+
+Source: `tests/test_packet_taxonomy.py`
+
+Lines 90–100:
+
+```python
+def test_named_taxonomy_and_unknowns():
+    assert len(STAGE_NAMES) == 7
+    cases = {'BENIGN':0, 'PORTSCAN':1, 'SSH-Bruteforce':2, 'Lateral Movement':3, 'BOT':4,
+             'Command & Control':4, 'Exfiltration':5, 'DoS':6, 'Infiltration':6,
+             'never-seen-attack':6, 'Reconnaissance and Exfiltration':6}
+    for label, expected in cases.items():
+        assert classify_stage(label) == expected
+        assert UnifiedAdapter._stage(label) == expected
+    mapping = yaml.safe_load((Path(__file__).resolve().parents[1]/'knowledge/stage_mapping.yaml').read_text(encoding='utf-8-sig'))
+    for label, expected in mapping['label_to_stage'].items():
+        assert classify_stage(label) == expected, label
+```
+
+## 2.4 — PASS
+
+Environment grouping and chronological sorting occur before sequence construction. The adapter explicitly preserves environment_id.
+
+Source: `scripts/prepare_data.py`
+
+Lines 58–67:
+
+```python
+def chain_environments(frames, purpose='primary'):
+    data = pd.concat(frames, ignore_index=True)
+    sources = set(data.source.astype(str))
+    if purpose == 'primary' and sources != {PRIMARY_SOURCE}:
+        raise ValueError(f'Primary training accepts only {PRIMARY_SOURCE}; found {sorted(sources)}. CTU-13/UNSW-NB15 remain held out.')
+    result = {}
+    for (source, environment), group in data.groupby(['source', 'environment_id'], sort=True):
+        key = f'{source}::{environment}'
+        result[key] = group.sort_values(['timestamp', 'source_file'], kind='stable').reset_index(drop=True)
+    return result
+```
+
+Command (project root):
+
+```text
+rg -n -A 2 -B 1 environment_id src/cybermind/data/adapters/unified.py
+```
+
+```text
+83-        o['source']=self.source
+84:        if 'environment_id' in df:
+85:            o['environment_id'] = df['environment_id']
+86-        o['source_file']=str(getattr(df,'name',''))
+87-        o=o[(o.src.notna())&(o.dst.notna())&(o.src.astype(str).str.lower()!='nan')&(o.dst.astype(str).str.lower()!='nan')]
+```
+
+Exit code: `0`
+
+## 2.5 — PASS
+
+Automatic explanations are invoked inside forecast(); app/eval call it and emit its explanation. The checklist keyword search in app/eval alone has no matches because implementation is delegated to model/attribution modules. Literal search output and actual call chain follow.
+
+Command (project root):
+
+```text
+rg -n attribution|need_weights|occlusion scripts/app.py scripts/eval.py
+```
+
+```text
+(no stdout)
+```
+
+Exit code: `1`
+
+Command (project root):
+
+```text
+rg -n forecast|explanation scripts/app.py scripts/eval.py
+```
+
+```text
+scripts/eval.py:23:            out=m.forecast(states[:-1],1,
+scripts/eval.py:32:                    'explanation':out['explanation'],
+scripts/eval.py:35:    result={'split':args.split,'forecast_horizon_windows':1,'metrics':metrics,'per_sample':per}
+scripts/app.py:2:"""Offline Streamlit war-room UI. Requires a trained checkpoint for live forecasts."""
+scripts/app.py:27:    out=m.forecast(sample.states[:-1],cfg['eval']['rollout_steps'],
+scripts/app.py:43:st.subheader('Prediction explanation')
+scripts/app.py:44:st.json(out['explanation'])
+```
+
+Exit code: `0`
+
+Source: `src/cybermind/models/world_model.py`
+
+Lines 63–83:
+
+```python
+    def forecast(self, states, k=4, n_rollouts=16, seed=0, explain=True, topk=10):
+        """Forecast with reproducible Gaussian rollouts and automatic explanations.
+
+        Step zero is the observed latent; subsequent steps are stochastic futures.
+        Variance is predictive dispersion, not a calibrated confidence decision.
+        Internal perturbation probes use explain=False to avoid recursive work.
+        """
+        if not states or k < 0 or n_rollouts < 2:
+            raise ValueError('forecast requires states, k >= 0 and n_rollouts >= 2')
+        modes = [(module, module.training) for module in self.modules()]
+        self.eval()
+        try:
+            result, attention = self._forecast_core(states, k, n_rollouts, seed, return_attention=explain)
+            if explain:
+                from cybermind.explainability.attribution import explain_forecast
+                result['explanation'] = explain_forecast(
+                    self, states, result, attention, k=k, n_rollouts=n_rollouts, seed=seed, topk=topk)
+            return result
+        finally:
+            for module, training in modes:
+                module.training = training
+```
+
+Source: `src/cybermind/models/temporal_encoder.py`
+
+Lines 10–10:
+
+```python
+    def forward(self,x): return x + self.pe[:,:x.size(1)]
+```
+
+Lines 17–34:
+
+```python
+    def forward(self, x, return_attention=False):
+        x = self.pos(self.proj(x))
+        mask = torch.ones(x.size(1), x.size(1), dtype=torch.bool, device=x.device).triu(1)
+        attention = []
+        # Explicit pre-norm layers avoid fused eval paths bypassing attention extraction.
+        # Causality prevents next-window training targets leaking into current states.
+        for layer in self.encoder.layers:
+            q = layer.norm1(x)
+            attended, weights = layer.self_attn(q, q, q, attn_mask=mask,
+                                                need_weights=return_attention,
+                                                average_attn_weights=False)
+            x = x + layer.dropout1(attended)
+            q = layer.norm2(x)
+            x = x + layer.dropout2(layer.linear2(layer.dropout(layer.activation(layer.linear1(q)))))
+            if return_attention:
+                attention.append(weights.detach())
+        x = self.encoder.norm(x)
+        return (x, torch.stack(attention)) if return_attention else x
+```
+
+Source: `src/cybermind/explainability/attribution.py`
+
+Lines 13–29:
+
+```python
+def gradient_feature_attribution(model, state, k=4, topk=10, n_rollouts=16, seed=0):
+    states = list(state) if isinstance(state, (list, tuple)) else [state]
+    # Also works when the caller wraps inference in no_grad/inference_mode.
+    # autograd.grad leaves parameter gradients untouched.
+    with torch.inference_mode(False), torch.enable_grad():
+        xs = [s.x.detach().clone().requires_grad_(True) for s in states]
+        probes = [replace(s, x=x, edge_index=s.edge_index.clone(), edge_attr=s.edge_attr.clone())
+                  for s, x in zip(states, xs)]
+        result = model.forecast(probes, k, n_rollouts=n_rollouts, seed=seed, explain=False)
+        score = result['infiltration_probability'][-1]
+        gradients = torch.autograd.grad(score, xs, allow_unused=True)
+        products = [torch.zeros_like(x) if g is None else g * x for x, g in zip(xs, gradients)]
+        attribution = torch.cat(products).abs().mean(dim=0).detach().float().cpu()
+        signed = torch.cat(products).mean(dim=0).detach().float().cpu()
+    values = [{'feature': name, 'attribution': float(attribution[i]), 'signed_attribution': float(signed[i])}
+              for i, name in enumerate(_feature_names(len(attribution)))]
+    return sorted(values, key=lambda item: item['attribution'], reverse=True)[:topk]
+```
+
+Lines 32–63:
+
+```python
+def explain_forecast(model, states, forecast, attention, k=4, n_rollouts=16, seed=0, topk=10):
+    features = gradient_feature_attribution(model, states, k, topk, n_rollouts, seed)
+    # [layers,batch,heads,query,key]: final query averaged across layers/heads.
+    weights = attention[:, 0, :, -1, :].mean(dim=(0, 1)).float().cpu()
+    temporal = sorted(
+        [{'window_index': i, 'timestamp': float(s.timestamp), 'attention': float(weights[i])}
+         for i, s in enumerate(states)], key=lambda item: item['attention'], reverse=True)
+    baseline = float(forecast['infiltration_probability'][-1].detach().cpu())
+    occlusion = []
+    with torch.no_grad():
+        for i, name in enumerate(_feature_names(states[0].x.size(-1))):
+            probes = []
+            for state in states:
+                x = state.x.detach().clone()
+                x[:, i] = 0.0
+                probes.append(replace(state, x=x))
+            # Common random draws isolate input changes from Monte Carlo noise.
+            result = model.forecast(probes, k, n_rollouts=n_rollouts, seed=seed, explain=False)
+            risk = float(result['infiltration_probability'][-1].cpu())
+            occlusion.append({'feature': name, 'baseline_risk': baseline,
+                              'counterfactual_risk': risk, 'risk_reduction': baseline - risk})
+    occlusion.sort(key=lambda item: item['risk_reduction'], reverse=True)
+    return {
+        'target': 'ensemble_mean_infiltration_probability_at_final_step',
+        'gradient_x_input': features,
+        'temporal_attention': temporal,
+        'feature_occlusion': occlusion[:topk],
+        'what_would_reduce_risk': [item for item in occlusion if item['risk_reduction'] > 0][:topk],
+        'baseline_risk': baseline, 'n_rollouts': n_rollouts, 'seed': seed,
+        'occlusion_baseline': 'zero in model feature space (training mean for normalized continuous features)',
+        'interpretation': 'Model sensitivity and attention; not proof of causality or calibrated confidence.',
+    }
+```
+
+## 2.6 — PASS
+
+Training-derived negative/positive weight is passed into BCE. Counts are target occurrences in overlapping sequences, not deduplicated windows. No upper cap is implemented; real-data suitability is UNKNOWN under 4.3.
+
+Source: `src/cybermind/losses.py`
+
+Lines 12–14:
+
+```python
+def infiltration_loss(logits, target, pos_weight=None):
+    weight = None if pos_weight is None else torch.as_tensor(pos_weight, device=logits.device, dtype=torch.float32)
+    return F.binary_cross_entropy_with_logits(logits.float(), target.float(), pos_weight=weight)
+```
+
+Source: `scripts/train.py`
+
+Lines 22–30:
+
+```python
+def training_class_weight(dataset):
+    # Count exactly the target-window occurrences consumed by the training loss.
+    labels = [float(s.y_infiltration) for sample in dataset for s in sample.states[1:]]
+    if not labels or any(y not in (0., 1.) for y in labels):
+        raise ValueError('Training infiltration labels must be binary and nonempty.')
+    positive = int(sum(labels)); negative = len(labels) - positive
+    if not positive or not negative:
+        raise ValueError('Training split must contain benign and infiltration target windows.')
+    return negative / positive, {'positive': positive, 'negative': negative}
+```
+
+Command (project root):
+
+```text
+rg -n "pos_weight|weight, counts" scripts/train.py
+```
+
+```text
+81:    l_infil = infiltration_loss(logits, labels, cfg['loss'].get('pos_weight'))
+156:    weight, counts = training_class_weight(train); cfg['loss']['pos_weight'] = weight
+186:    print({'device': str(device), 'precision': precision, 'class_counts': counts, 'pos_weight': weight, 'selection': 'val_f1'})
+215:                   'class_counts': counts, 'pos_weight': weight, 'normalization': normalization,
+```
+
+Exit code: `0`
+
+## 2.7 — PASS
+
+Consistency is computed and included in weighted summed total. Full batch_loss code:
+
+Source: `scripts/train.py`
+
+Lines 64–96:
+
+```python
+def batch_loss(model, batch, cfg, device, *, return_predictions=False):
+    states = []
+    for sample in batch:
+        if len(sample.states) < 2:
+            raise ValueError('Each training sequence needs at least two windows.')
+        states.append([replace(s, x=s.x.to(device, non_blocking=True),
+                               edge_index=s.edge_index.to(device, non_blocking=True),
+                               edge_attr=s.edge_attr.to(device, non_blocking=True))
+                       for s in sample.states])
+    z = model.forward_batch(states)['temporal_latents']
+    distribution = model.dynamics(z[:, :-1])
+    mean, logvar = distribution['mean'], distribution['logvar']
+    target = z[:, 1:].detach()
+    l_trans = gaussian_transition_loss(mean, target, logvar)
+    pred = model.dynamics.sample(mean, logvar) if model.training else mean
+    logits = model.infiltration_head(pred).reshape(-1)
+    labels = torch.tensor([s.y_infiltration for ss in states for s in ss[1:]], dtype=torch.float32, device=device)
+    l_infil = infiltration_loss(logits, labels, cfg['loss'].get('pos_weight'))
+    l_brier = binary_brier(logits, labels)
+    stage_logits = model.stage_head(pred).reshape(-1, cfg['model']['num_stages'])
+    stage_labels = torch.tensor([s.y_stage for ss in states for s in ss[1:]], dtype=torch.long, device=device)
+    if torch.any((stage_labels < 0) | (stage_labels >= cfg['model']['num_stages'])):
+        raise ValueError('Invalid stage ID; rebuild data with the current taxonomy.')
+    l_stage = stage_loss(stage_logits.float(), stage_labels)
+    l_consistency = graph_consistency_loss(z)
+    components = {'transition': l_trans, 'infiltration': l_infil, 'stage': l_stage,
+                  'calibration': l_brier, 'graph_consistency': l_consistency}
+    total = sum(cfg['loss'].get(name, .1 if name == 'graph_consistency' else 0.) * value
+                for name, value in components.items())
+    parts = {k: float(v.detach()) for k, v in components.items()}
+    if return_predictions:
+        return total, parts, torch.sigmoid(logits.float()).detach(), labels.detach()
+    return total, parts
+```
+
+## 2.8 — PASS
+
+Dynamics returns mean/log-variance and reparameterizes; forecast expands the initial latent to N trajectories before rollout.
+
+Source: `src/cybermind/models/dynamics.py`
+
+```python
+"""Diagonal Gaussian latent transitions with differentiable sampled rollouts."""
+from __future__ import annotations
+import torch
+from torch import nn
+
+
+class DynamicsModel(nn.Module):
+    def __init__(self, latent_dim, hidden_dim=256):
+        super().__init__()
+        self.net = nn.Sequential(nn.Linear(latent_dim, hidden_dim), nn.GELU(),
+                                 nn.LayerNorm(hidden_dim), nn.Linear(hidden_dim, latent_dim))
+        self.gate = nn.Sequential(nn.Linear(latent_dim, latent_dim), nn.Sigmoid())
+        self.logvar_net = nn.Sequential(nn.Linear(latent_dim, hidden_dim), nn.GELU(),
+                                       nn.Linear(hidden_dim, latent_dim))
+        nn.init.constant_(self.logvar_net[-1].bias, -4.0)
+
+    def forward(self, z):
+        return {'mean': z + self.gate(z) * self.net(z),
+                'logvar': self.logvar_net(z).clamp(-10.0, 5.0)}
+
+    @staticmethod
+    def sample(mean, logvar, generator=None):
+        noise = torch.randn(mean.shape, dtype=mean.dtype, device=mean.device, generator=generator)
+        return mean + torch.exp(0.5 * logvar) * noise
+
+    def rollout(self, z0, steps, generator=None, stochastic=True):
+        if steps < 0:
+            raise ValueError('steps must be nonnegative')
+        zs = [z0]
+        z = z0
+        for _ in range(steps):
+            params = self(z)
+            z = self.sample(**params, generator=generator) if stochastic else params['mean']
+            zs.append(z)
+        return torch.stack(zs, dim=0)
+```
+
+Source: `src/cybermind/models/world_model.py`
+
+Lines 41–61:
+
+```python
+    def _forecast_core(self, states, k, n_rollouts, seed, return_attention=False):
+        out = self.forward(states, return_attention=return_attention)
+        z0 = out['temporal_latents'][-1]
+        generator = torch.Generator(device=z0.device).manual_seed(seed)
+        # Vectorize independent trajectories: [steps+1, rollouts, latent_dim].
+        latent_samples = self.dynamics.rollout(z0.expand(n_rollouts, -1), k, generator=generator)
+        risk_samples = self.infiltration_head(latent_samples).float().sigmoid()
+        probabilities = risk_samples.mean(dim=1)
+        stage_probabilities = self.stage_head(latent_samples).float().softmax(dim=-1).mean(dim=1)
+        result = {
+            'latent': latent_samples.mean(dim=1),
+            'latent_samples': latent_samples.permute(1, 0, 2),
+            'infiltration_logits': torch.logit(probabilities.clamp(1e-7, 1 - 1e-7)),
+            'infiltration_probability': probabilities,
+            'infiltration_variance': risk_samples.var(dim=1, unbiased=False),
+            'rollout_probabilities': risk_samples.transpose(0, 1),
+            'stage_logits': stage_probabilities.clamp_min(1e-7).log(),
+            'future_state': self.state_head(latent_samples).mean(dim=1),
+            'n_rollouts': n_rollouts, 'seed': seed,
+        }
+        return result, out['temporal_attention']
+```
+
+## 2.9 — PASS
+
+Best checkpoint uses validation F1 rather than training loss.
+
+Command (project root):
+
+```text
+rg -n -A 18 "metrics = validate" scripts/train.py
+```
+
+```text
+206:        metrics = validate(model, val_loader, cfg, device, precision)
+207-        rec = {'epoch': ep + 1, 'train': {k: v / count for k, v in sums.items()}, 'val': metrics}
+208-        history.append(rec); print(rec)
+209-        improved = metrics['f1'] > best + cfg['train'].get('min_delta', 0.)
+210-        stale = 0 if improved else stale + 1
+211-        if improved: best = metrics['f1']
+212-        payload = {'model_state': model.state_dict(), 'optimizer_state': optimizer.state_dict(),
+213-                   'scaler_state': scaler.state_dict() if scaler else None, 'config': cfg, 'node_dim': node_dim,
+214-                   'epoch': ep + 1, 'best_metric': best, 'selection_metric': 'val_f1', 'validation': metrics,
+215-                   'class_counts': counts, 'pos_weight': weight, 'normalization': normalization,
+216-                   'normalization_path': str(normalization_path) if normalization else None,
+217-                   'epochs_without_improvement': stale, 'history': history}
+218-        if improved: torch.save(payload, checkpoint)
+219-        torch.save(payload, checkpoint.with_name(checkpoint.stem + '_last.pt'))
+220-        history_path.write_text(json.dumps(history, indent=2))
+221-        if stale >= int(cfg['train'].get('early_stopping_patience', 10)):
+222-            print('Early stopping on validation F1.'); break
+223-    print('Best validation checkpoint:', checkpoint)
+224-
+```
+
+Exit code: `0`
+
+## 3.1 — FAIL
+
+Legacy command blocks remain despite the top banner. Quickstart uses smoke.yaml and gpu_128gb.yaml; One-command training resumes best_128gb.pt and its launcher defaults to gpu_128gb.yaml; Final pre-training automation explicitly uses gpu_128gb.yaml; One-command lab training invokes a helper hardcoded to gpu_128gb.yaml. No edits were made in this reporting pass.
+
+Command (project root):
+
+```text
+rg -n gpu_128gb|best_128gb|smoke.yaml|final.yaml|^## README.md
+```
+
+```text
+5:## Current Phase 0–1 handoff (2026-09-11)
+9:the verified checklist and Phase 2 commands. Older `gpu_128gb.yaml`/one-click
+21:## What is implemented
+43:## Scientific honesty
+49:## Quickstart
+55:python scripts/prepare_data.py --config configs/smoke.yaml --input data/intermediate --strict
+56:python scripts/train.py --config configs/smoke.yaml
+57:python scripts/eval.py --config configs/smoke.yaml --checkpoint checkpoints/smoke.pt
+58:python scripts/visualize_rollout.py --config configs/smoke.yaml --checkpoint checkpoints/smoke.pt
+60:python scripts/gpu_preflight.py --config configs/gpu_128gb.yaml
+61:python scripts/train.py --config configs/gpu_128gb.yaml
+64:For real training, edit `configs/final.yaml` to match the actual data volume and GPU.
+66:## Real-data path
+81:## Folder layout
+104:## Public-source registry
+108:## Offline demo
+114:## One-command training
+132:CYBERMIND_RESUME=checkpoints/best_128gb.pt ./scripts/run_training_from_zero.sh
+141:## Final pre-training automation
+146:./scripts/launch_training.py --config configs/gpu_128gb.yaml --train-only
+152:python scripts/launch_training.py --config configs/gpu_128gb.yaml --download-cic2018
+158:python scripts/launch_training.py --config configs/gpu_128gb.yaml --epochs 1
+161:## Laptop export
+171:## Safety boundary
+176:## ONNX safety guardrails
+181:## One-command lab training
+194:python scripts/launch_training.py --config configs/gpu_128gb.yaml --no-download-cic2018
+```
+
+Exit code: `0`
+
+Command (project root):
+
+```text
+rg -n gpu_128gb|best_128gb|launch_training scripts/one_click_train.py scripts/run_training_from_zero.sh scripts/launch_training.py
+```
+
+```text
+scripts/run_training_from_zero.sh:6:ARGS=(--config "${CYBERMIND_CONFIG:-configs/gpu_128gb.yaml}")
+scripts/run_training_from_zero.sh:10:python scripts/launch_training.py "${ARGS[@]}"
+scripts/launch_training.py:84:        "config": "configs/gpu_128gb.yaml",
+scripts/launch_training.py:93:    ap.add_argument("--config", default="configs/gpu_128gb.yaml")
+scripts/one_click_train.py:26:    cmd = [PYTHON, str(ROOT / "scripts/launch_training.py"),
+scripts/one_click_train.py:27:           "--config", "configs/gpu_128gb.yaml", "--download-cic2018"]
+```
+
+Exit code: `0`
+
+## 3.2 — FAIL
+
+The file is .gitignore. *.pt, results/*.json and results/*.png are excluded: ordinary git add/push will omit matching untracked checkpoints/results unless explicitly included. Already-tracked files are not affected by ignore rules. This workspace is not currently a Git repository, so tracked/force-added status cannot be checked. Submission-artifact inclusion remains unresolved.
+
+Source: `.gitignore`
+
+```text
+__pycache__/
+*.pyc
+.venv/
+.env
+*.pt
+*.pkl
+*.joblib
+results/*.json
+results/*.png
+data/raw/CIC-IDS-2018/*.csv
+data/raw/CIC-IDS-2018/*.pcap
+data/intermediate/*
+```
+
+Command (project root):
+
+```text
+git rev-parse --is-inside-work-tree
+```
+
+```text
+(no stdout)
+```
+
+stderr:
+
+```text
+fatal: not a git repository (or any of the parent directories): .git
+```
+
+Exit code: `128`
+
+## 4.1 — UNKNOWN
+
+No real single-day CIC subset was prepared or profiled. Prior runs were synthetic. Local data directory listing and integration evidence follow; these do not describe any remote GB10 storage.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe -c "from pathlib import Path; [print(p) for p in sorted(Path('data').rglob('*')) if p.is_file()]"
+```
+
+```text
+data\manifests\.gitkeep
+data\manifests\dataset_registry.csv
+data\manifests\DOWNLOAD_MATRIX.md
+data\manifests\schema.json
+data\manifests\SOURCE_PROVENANCE.md
+```
+
+Exit code: `0`
+
+Source: `examples/phase01_integration/verification.json`
+
+```text
+{
+  "synthetic_only": true,
+  "real_training_performed": false,
+  "steps_passed": 4,
+  "evaluated_samples": 25,
+  "automatic_explanations": true,
+  "warning": "CIC-IDS2018 is a fixture routing value. These generated rows are NOT real CIC data or accuracy evidence."
+}
+```
+
+## 4.2 — UNKNOWN
+
+No measured memory/file-count series exists. Linear or worse-than-linear scaling cannot be concluded. No extrapolation fabricated.
+
+## 4.3 — UNKNOWN
+
+Real positive/negative ratio and stability of pos_weight have not been measured. Source under 2.6 shows uncapped negative/positive weighting. Existing synthetic training log is quoted solely as fixture evidence:
+
+Command (project root):
+
+```text
+rg -n class_counts|pos_weight examples/phase01_integration/step_3.log
+```
+
+```text
+5:{'device': 'cpu', 'precision': 'fp32', 'class_counts': {'positive': 60, 'negative': 184}, 'pos_weight': 3.066666666666667, 'selection': 'val_f1'}
+```
+
+Exit code: `0`
+
+## 4.4 — UNKNOWN
+
+Real any-attack versus majority-vote positive-window fractions have not been calculated. The actual rule is quoted below; a passing synthetic regression does not supply those real-data percentages.
+
+Command (project root):
+
+```text
+rg -n -B 2 -A 1 "infil =" src/cybermind/data/graph_builder.py
+```
+
+```text
+100-    # The head predicts whether infiltration is present in a window, not the
+101-    # fraction of attack flows. Mixed windows must remain valid binary targets.
+102:    infil = float((window.infiltration > 0).any()) if len(window) else 0.0
+103-    # Class IDs are categorical: averaging them invents a stage never observed.
+```
+
+Exit code: `0`
+
+## 4.5 — UNKNOWN
+
+Real PCAP availability and packet-to-label alignment are unverified. Legacy PCAP helper uses filename-derived labels, which are not genuine packet-level ground truth.
+
+Source: `scripts/pcap_to_corpus.py`
+
+Lines 9–14:
+
+```python
+def infer_label(path: Path):
+    x=path.stem.upper()
+    if any(k in x for k in ['BENIGN','NORMAL']): return 'BENIGN'
+    for k in ['DDOS','DOS','BOTNET','MIRAI','BRUTE','SCAN','RECON','INFILTRATION','HEARTBLEED','SQL','XSS','BACKDOOR','WORM']:
+        if k in x: return k
+    return 'PCAP_EVENT'
+```
+
+Command (project root):
+
+```text
+rg -n infer_label|pcap_to_dataframe scripts/pcap_to_corpus.py
+```
+
+```text
+7:from cybermind.data.pcap_extract import pcap_to_dataframe
+9:def infer_label(path: Path):
+21:        label=infer_label(f); df=pcap_to_dataframe(f,label=label); df['source']='PCAP'; df['source_file']=str(f)
+```
+
+Exit code: `0`
+
+## 5.1 — UNKNOWN
+
+GB10 access duration was not supplied and cannot be inferred from code.
+
+## 5.2 — UNKNOWN
+
+Target-host preflight was not run. Local preflight FAILS; full current stdout/stderr and exit code follow. This is not a GB10 result.
+
+Command (project root):
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Scripts\python.exe scripts/gpu_preflight.py --config configs/gb10_full.yaml
+```
+
+```text
+Python 3.12.14 PyTorch 2.14.0+cpu
+PyG 2.8.0.post1
+STOP: CUDA is unavailable on this runtime.
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\train.pt
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\val.pt
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\test.pt
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\normalization.json
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\metadata.json
+```
+
+stderr:
+
+```text
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+```
+
+Exit code: `1`
+
+## 5.3 — UNKNOWN
+
+No one-epoch GB10 run or GPU-memory profile exists. Earlier two-epoch CPU smoke training is not a substitute. No training was started during this reporting pass.
+
+## 5.4 — UNKNOWN
+
+Early stopping is configured and the source contains an active break condition (code PASS), but a run actually reaching that condition has not been demonstrated; GB10 firing behavior remains UNKNOWN.
+
+Command (project root):
+
+```text
+rg -n early_stopping|min_delta|selection_metric configs/gb10_full.yaml
+```
+
+```text
+40:  selection_metric: val_f1
+42:  early_stopping_patience: 8
+43:  min_delta: 0.0001
+```
+
+Exit code: `0`
+
+Command (project root):
+
+```text
+rg -n -A 4 -B 2 "stale >=" scripts/train.py
+```
+
+```text
+219-        torch.save(payload, checkpoint.with_name(checkpoint.stem + '_last.pt'))
+220-        history_path.write_text(json.dumps(history, indent=2))
+221:        if stale >= int(cfg['train'].get('early_stopping_patience', 10)):
+222-            print('Early stopping on validation F1.'); break
+223-    print('Best validation checkpoint:', checkpoint)
+224-
+225-
+```
+
+Exit code: `0`
+
+## 6.1 — PASS
+
+Deferred boundary preserved in inspected forecast/app/eval paths: variance is returned as dispersion; no operational variance-confidence gate is applied. Real validation of uncertainty is still not done.
+
+Command (project root):
+
+```text
+rg -n variance|confidence|threshold src/cybermind/models/world_model.py scripts/app.py scripts/eval.py
+```
+
+```text
+scripts/eval.py:13:    p=argparse.ArgumentParser(); p.add_argument('--config',required=True); p.add_argument('--checkpoint',required=True); p.add_argument('--split',default='test'); p.add_argument('--threshold',type=float,default=.5); p.add_argument('--output',help='Report path; defaults to results/eval_SPLIT.json'); args=p.parse_args(); cfg=load_config(args.config)
+scripts/eval.py:31:                    'predictive_variance':float(out['infiltration_variance'][-1].item()),
+scripts/eval.py:33:                    **early_warning_lead_time(ts,yy,np.pad(np.array(hist), (0,max(0,len(ts)-len(hist))))[:len(ts)],args.threshold)})
+scripts/eval.py:34:    metrics=binary_metrics(all_y,all_p,args.threshold); metrics['mean_lead_time_seconds']=float(np.mean([x['lead_time_seconds'] for x in per if x['lead_time_seconds'] is not None])) if any(x['lead_time_seconds'] is not None for x in per) else None
+src/cybermind/models/world_model.py:55:            'infiltration_variance': risk_samples.var(dim=1, unbiased=False),
+src/cybermind/models/world_model.py:67:        Variance is predictive dispersion, not a calibrated confidence decision.
+```
+
+Exit code: `0`
+
+## 6.2 — PASS
+
+Primary source is restricted to CIC-IDS2018; held-out sources are rejected on primary paths. This verifies code separation, not the contents of an absent real training dataset.
+
+Source: `scripts/build_corpus.py`
+
+Lines 13–15:
+
+```python
+def validate_source(source, purpose):
+    if purpose == 'primary' and source != 'CIC-IDS2018':
+        raise ValueError('Primary training is CIC-IDS2018 only. Use --purpose heldout and a separate directory for other datasets.')
+```
+
+Source: `scripts/prepare_data.py`
+
+Lines 58–67:
+
+```python
+def chain_environments(frames, purpose='primary'):
+    data = pd.concat(frames, ignore_index=True)
+    sources = set(data.source.astype(str))
+    if purpose == 'primary' and sources != {PRIMARY_SOURCE}:
+        raise ValueError(f'Primary training accepts only {PRIMARY_SOURCE}; found {sorted(sources)}. CTU-13/UNSW-NB15 remain held out.')
+    result = {}
+    for (source, environment), group in data.groupby(['source', 'environment_id'], sort=True):
+        key = f'{source}::{environment}'
+        result[key] = group.sort_values(['timestamp', 'source_file'], kind='stable').reset_index(drop=True)
+    return result
+```
+
+## 6.3 — PASS
+
+The inspected world-model forecast runs forward on the supplied states without a flow-threshold prefilter. The forecast and _forecast_core methods quoted in 2.5 and 2.8 show the unconditional path; evaluation thresholds act after predictions.
+
+Command (project root):
+
+```text
+rg -n "forecast|threshold|for sample" scripts/eval.py
+```
+
+```text
+13:    p=argparse.ArgumentParser(); p.add_argument('--config',required=True); p.add_argument('--checkpoint',required=True); p.add_argument('--split',default='test'); p.add_argument('--threshold',type=float,default=.5); p.add_argument('--output',help='Report path; defaults to results/eval_SPLIT.json'); args=p.parse_args(); cfg=load_config(args.config)
+17:    for sample in ds:
+23:            out=m.forecast(states[:-1],1,
+33:                    **early_warning_lead_time(ts,yy,np.pad(np.array(hist), (0,max(0,len(ts)-len(hist))))[:len(ts)],args.threshold)})
+34:    metrics=binary_metrics(all_y,all_p,args.threshold); metrics['mean_lead_time_seconds']=float(np.mean([x['lead_time_seconds'] for x in per if x['lead_time_seconds'] is not None])) if any(x['lead_time_seconds'] is not None for x in per) else None
+35:    result={'split':args.split,'forecast_horizon_windows':1,'metrics':metrics,'per_sample':per}
+```
+
+Exit code: `0`
+
+## Previous test evidence (not rerun in this reporting pass)
+
+Source: `examples/phase01_integration/pytest.log`
+
+```text
+.............................                                            [100%]
+============================== warnings summary ===============================
+.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491
+  C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+tests/test_phase01_training.py::test_joint_backward_all_heads_and_regularizer
+tests/test_stochastic_forecast.py::test_temporal_causality_and_attention
+tests/test_stochastic_forecast.py::test_automatic_explanation_under_inference_context[no_grad]
+tests/test_stochastic_forecast.py::test_automatic_explanation_under_inference_context[inference_mode]
+tests/test_stochastic_forecast.py::test_reproducible_rollouts_and_training_contract
+  C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+    self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+29 passed, 6 warnings in 6.70s
+```
+
+## Appendix A — full prior Phase 0–1 report
+
+Source: `docs/PHASE01_FINAL_REPORT.md`
+
+````text
+# CYBERMIND: Phase 0–1 final report
+
+Date: 2026-09-11
+
+**Outcome: Phase 0–1 code and local correctness checks completed. Phase 2 was not started.**
+You can proceed to Phase 2 preparation on the GB10 host. Start real training only
+after the real corpus and target runtime pass the preflight below. This is not an
+unconditional certification that a full-corpus training run will fit or succeed.
+
+## Scope recovered from the shared chat
+
+Source: [Execute implementation plan phase 1](https://chatgpt.com/s/cx_6aa38eee2fa081918d99307e55d359e7).
+The shared page exposed the prior user request and expanded progress messages.
+It requested completion through Phase 1, a recheck, and a stop before Phase 2.
+No completed final report was visible in that shared view. This audit also read
+`C:\Users\as030\Downloads\CYBERMIND_Implementation_Plan.md` and checked the actual
+workspace rather than treating prior progress statements as proof of completion.
+
+The earlier run had implemented most changes and reported packet/taxonomy and
+training tests plus a synthetic training run. Its last visible unfinished items
+were normalization/chaining verification, explanation integration, and the final
+checklist/GB10 handoff. Those were the continuation point.
+
+## Completed checklist
+
+| Plan item | Verified implementation | Result |
+| --- | --- | --- |
+| 0.1 Normalization | `data/normalization.py`: fp32 population mean/std over unique training graph windows, stored constants and schema fingerprint; validation/test transform only; inference contract checks | Complete locally |
+| 0.2 Packet features | TTL/window mean and variance; fragmentation flags; payload distribution; sequential/irregular port-access signatures; overlapping TCP sequence retransmissions | Complete; synthetic PCAP tests |
+| 0.3 Stage taxonomy | Benign plus Reconnaissance, Initial Access, Lateral Movement, Command & Control, Exfiltration, Unknown/Ambiguous; shared adapter/YAML taxonomy | Complete: seven output labels |
+| 0.4 Chronological chaining | Source/environment grouping across files; timestamp ordering; stable endpoint names; chronological event splits with a window purge | Complete; cross-file and leakage checks |
+| 0.5 Automatic explanations | `forecast()` emits gradient×input, temporal attention, feature occlusion and risk-reduction suggestions; evaluation and app surface explanations | Complete; tested under no-grad and inference-mode |
+| 0.6 Class imbalance | Positive weight derived from training target occurrences; weighted infiltration BCE; rejects single-class training | Complete |
+| 0.7 Consistency loss | Consecutive latent consistency included in training loss and separate logs | Complete |
+| 0.8 Stochastic dynamics | Mean/log-variance, Gaussian transition loss, reparameterized samples, reproducible multiple-rollout mean and variance | Complete; shape and gradient checks |
+| 1.1 Primary corpus decision | Primary path accepts CIC-IDS2018 only; CTU-13/UNSW-NB15 use separate held-out mode and primary normalization constants | Complete; real corpus not acquired |
+| 1.2 GB10 config | `configs/gb10_full.yaml`: 512-wide graph/temporal model, six temporal layers, bf16, full joint training, batch 8 × accumulation 8 | Complete; batch size remains to be profiled on GB10 |
+| 1.3 Checkpoint selection | Validation infiltration F1, early stopping, best/last checkpoints, separate loss logs; bf16 does not instantiate GradScaler | Complete |
+
+Optional encoder pretraining was not added; the configured default is joint training.
+Attention/occlusion work overlaps Phase 4 but was already part of the Phase 0
+explanation implementation. No remaining Phase 3–7 work was undertaken as a new phase.
+
+## Changes made during this continuation
+
+1. Fixed mixed benign/attack graph windows. Their target now means “at least one
+   attack event is present” (binary), rather than a fractional attack-flow ratio
+   rejected by class-weight calculation. This also keeps metric targets binary.
+2. Preserved explicit `environment_id` through the unified adapter so different
+   deployments are not merged before chronological chaining.
+3. Corrected PCAP aggregate timestamps to the last included packet, retaining
+   `session_start` separately. Completed session statistics no longer appear at
+   the first packet before their inputs were available.
+4. Aligned benign aliases in canonical preparation with the stage taxonomy.
+5. Added regression coverage for mixed targets, environment preservation, benign
+   aliases and aggregate timing.
+6. Added `scripts/phase01_smoke.py`, a repeatable synthetic integration check using
+   the current feature schema, normalized data, separate splits and explanations.
+7. Reworked `scripts/gpu_preflight.py`: it now honors the selected config and its
+   processed-data directory, checks the requested precision, validates splits,
+   classes and normalization/packet provenance, and exits nonzero on failure.
+   The older check ignored the config and printed failures without failing.
+8. Pointed the app's default checkpoint at `best_gb10.pt`; the
+   `CYBERMIND_CHECKPOINT` environment variable can select another compatible file.
+9. Updated README/status pointers to the current handoff and marked older
+   one-click/config instructions as legacy.
+
+## Executed verification and evidence
+
+Runtime used: project `.phase01-venv`, Python 3.12.14, PyTorch 2.14.0+cpu,
+PyG 2.8.0.post1. These versions describe the tested local environment, not a
+certified GB10 software stack.
+
+- **29 pytest checks passed**, with six non-failing PyTorch warnings.
+  Evidence: `examples/phase01_integration/pytest.log`.
+- **Four integration stages passed**: `build_corpus.py` → `prepare_data.py` →
+  two-epoch CPU `train.py` → `eval.py`.
+- Fixture: 360 generated flow rows in two deliberately misordered filenames;
+  122 training, 25 validation and 25 test sequences after split purging.
+- All 25 evaluated test sequences emitted automatic feature-occlusion explanations.
+- Source/scripts compile check passed (`python -m compileall -q src scripts`).
+- Production preflight correctly returned exit code 1 locally: CUDA unavailable
+  and five required production data/metadata artifacts missing.
+
+Artifacts:
+
+- `examples/phase01_integration/verification.json`: machine-readable integration result.
+- `examples/phase01_integration/step_1.log` through `step_4.log`: command output.
+- `examples/phase01_integration/processed/normalization.json` and `metadata.json`:
+  fixture normalization/split evidence.
+- `examples/phase01_integration/train_history.json`: separate training/validation losses.
+- `examples/phase01_integration/eval_test.json`: synthetic forecasts and explanations.
+- `checkpoints/phase01_integration.pt` and `phase01_integration_last.pt`: synthetic checkpoints.
+
+**None of these are real CIC-IDS2018 results.** The fixture uses the source name
+only to exercise primary-corpus routing and labels its environment
+`SYNTHETIC_FIXTURE_ONLY`. It is not input for production training. Synthetic
+precision/F1 values are deliberately not presented as detection-performance evidence.
+No trained ONNX artifact or live Streamlit UI was verified in this continuation.
+
+## GB10 handoff: Phase 2, for the next execution
+
+From the `CYBERMIND_REAL` project root, use a GB10-compatible CUDA/PyTorch/PyG
+environment. Recreate the environment on that host; do not copy the Windows CPU venv.
+Supply the complete primary corpus with real endpoint identities, timestamps,
+labels, environment IDs and packet features derived from actual captures.
+Plain flow CSVs missing packet telemetry must be enriched before feature-complete
+training. The legacy PCAP helper's filename-derived labels are not ground truth;
+an actual packet-to-label alignment is still required for real data preparation.
+
+Commands to run in Phase 2, **not executed here against real data**:
+
+```bash
+python scripts/build_corpus.py --source CIC-IDS2018 --input data/raw/CIC-IDS-2018 --output data/intermediate/CIC-IDS2018
+python scripts/prepare_data.py --config configs/gb10_full.yaml --input data/intermediate/CIC-IDS2018 --strict
+python scripts/gpu_preflight.py --config configs/gb10_full.yaml
+# Continue only after preflight succeeds:
+python scripts/train.py --config configs/gb10_full.yaml --device cuda --epochs 1
+# Inspect logs and actual memory use before extending the same run:
+python scripts/train.py --config configs/gb10_full.yaml --device cuda --resume checkpoints/best_gb10_last.pt
+```
+
+The full configured run totals 50 epochs including a resumed first epoch.
+Check the supplied files cover all intended days/attack types; a source-name check
+cannot establish completeness. Full-corpus preparation currently materializes
+data/graphs in memory and has not been profiled at that scale. The 128 GB is shared
+with data, runtime and optimizer state, so batch 8 is a starting value, not a fit guarantee.
+
+Additional limits: packet extraction handles IPv4; scan/session state is local to
+a capture; dataset-derived stage labels remain proxies; rollout variance is not
+calibrated confidence; counterfactual reductions are model sensitivity, not causal
+effects. Existing checkpoints with the old schema need retraining.
+
+## Stop boundary and readiness signal
+
+**GO for Phase 2 preparation and target-host preflight. Conditional GO for training
+only when that preflight passes and a small real-data run fits the GB10.**
+
+No real corpus download, full-corpus preprocessing, real GPU training, target-FPR
+calibration, cross-dataset evaluation, signed reports, installer or submission
+video was performed. These remain Phase 2 or later work, consistent with the stop
+boundary in the shared chat.
+````
+
+## Appendix B — full requested implementation files
+
+Source: `scripts/phase01_smoke.py`
+
+```python
+#!/usr/bin/env python3
+"""Synthetic integration check ONLY; never downloads data or launches GB10 training."""
+from pathlib import Path
+import json
+import subprocess
+import sys
+import pandas as pd
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'src'))
+from cybermind.data.pcap_extract import PACKET_FEATURES
+
+
+def main():
+    output = ROOT / 'examples/phase01_integration'
+    raw = output / 'raw'
+    raw.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for second in range(180):
+        for flow in range(2):
+            row = dict(timestamp=str(pd.Timestamp('2018-02-14') + pd.Timedelta(seconds=second)),
+                       src='10.0.0.1', dst='10.0.0.2', protocol=6, src_port=1000,
+                       dst_port=80, bytes_fwd=100 + second, packets_fwd=1,
+                       environment_id='SYNTHETIC_FIXTURE_ONLY',
+                       label='PORTSCAN' if second % 4 == 0 and flow == 1 else 'BENIGN')
+            row.update({name: 0.0 for name in PACKET_FEATURES})
+            row.update(ttl_mean=64., tcp_window_mean=1024., packet_features_available=1.)
+            rows.append(row)
+    # Deliberately reverse filename order relative to chronology.
+    pd.DataFrame(rows[:180]).to_csv(raw / 'z_earlier.csv', index=False)
+    pd.DataFrame(rows[180:]).to_csv(raw / 'a_later.csv', index=False)
+    config = yaml.safe_load((ROOT / 'configs/phase01_smoke.yaml').read_text())
+    config['data'].update(processed_dir='examples/phase01_integration/processed',
+                          window_seconds=1, stride_seconds=1, history=3,
+                          require_normalization=True, require_packet_features=True)
+    config['train'].update(checkpoint='phase01_integration.pt',
+                           history_path='examples/phase01_integration/train_history.json',
+                           batch_size=16)
+    config_path = output / 'config.yaml'
+    config_path.write_text(yaml.safe_dump(config), encoding='utf-8')
+    commands = [
+        ['scripts/build_corpus.py', '--source', 'CIC-IDS2018', '--input', str(raw),
+         '--output', str(output / 'canonical')],
+        ['scripts/prepare_data.py', '--config', str(config_path), '--input', str(output / 'canonical'), '--strict'],
+        ['scripts/train.py', '--config', str(config_path), '--device', 'cpu'],
+        ['scripts/eval.py', '--config', str(config_path), '--checkpoint', 'checkpoints/phase01_integration.pt',
+         '--output', str(output / 'eval_test.json')],
+    ]
+    for index, command in enumerate(commands):
+        with (output / f'step_{index + 1}.log').open('w', encoding='utf-8') as log:
+            subprocess.run([sys.executable, *command], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
+        print('PASS', command[0], flush=True)
+    report = json.loads((output / 'eval_test.json').read_text())
+    assert report['per_sample'] and all(row['explanation']['feature_occlusion'] for row in report['per_sample'])
+    (output / 'verification.json').write_text(json.dumps({
+        'synthetic_only': True, 'real_training_performed': False,
+        'steps_passed': len(commands), 'evaluated_samples': len(report['per_sample']),
+        'automatic_explanations': True,
+        'warning': 'CIC-IDS2018 is a fixture routing value. These generated rows are NOT real CIC data or accuracy evidence.'
+    }, indent=2), encoding='utf-8')
+    print('Synthetic integration passed; Phase 2 was not started.')
+
+
+if __name__ == '__main__':
+    main()
+```
+
+Source: `scripts/gpu_preflight.py`
+
+```python
+#!/usr/bin/env python3
+from pathlib import Path
+import argparse
+import json
+import sys
+import torch
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'src'))
+from cybermind.utils.config import load_config
+from cybermind.data.dataset import GraphSequenceDataset
+from train import assert_split_disjoint, training_class_weight, validate_training_provenance
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', default='configs/gb10_full.yaml')
+    args = parser.parse_args()
+    cfg = load_config(ROOT / args.config)
+    failures = []
+    print('Python', sys.version.split()[0], 'PyTorch', torch.__version__)
+    if not torch.cuda.is_available():
+        failures.append('CUDA is unavailable on this runtime.')
+    else:
+        prop = torch.cuda.get_device_properties(0)
+        print(f'GPU: {prop.name}; memory: {prop.total_memory / 1024**3:.1f} GiB')
+        precision = cfg['train'].get('precision', 'fp32')
+        if precision == 'bf16' and not torch.cuda.is_bf16_supported():
+            failures.append('Configured bf16 is unsupported by this CUDA runtime.')
+        else:
+            try:
+                dtype = {'bf16': torch.bfloat16, 'fp16': torch.float16, 'fp32': torch.float32}[precision]
+                x = torch.randn(256, 256, device='cuda', dtype=dtype)
+                assert torch.isfinite(x @ x).all()
+                torch.cuda.synchronize()
+                print(precision, 'CUDA matmul: PASS')
+            except Exception as error:
+                failures.append(f'CUDA kernel check failed: {error}')
+    try:
+        import torch_geometric
+        print('PyG', torch_geometric.__version__)
+    except ImportError:
+        failures.append('Install the target-host PyG runtime before production training.')
+    processed = ROOT / cfg['data']['processed_dir']
+    required = ['train.pt', 'val.pt', 'test.pt']
+    if cfg['data'].get('require_normalization'):
+        required += ['normalization.json', 'metadata.json']
+    missing = [str(processed / name) for name in required if not (processed / name).is_file()]
+    failures.extend(f'Missing: {path}' for path in missing)
+    if not missing:
+        try:
+            datasets = [GraphSequenceDataset(processed / f'{split}.pt') for split in ('train', 'val', 'test')]
+            if any(not len(ds) for ds in datasets):
+                raise ValueError('Every split must be nonempty.')
+            for left, right in ((0, 1), (0, 2), (1, 2)):
+                assert_split_disjoint(datasets[left], datasets[right])
+            for dataset in datasets[:2]:
+                training_class_weight(dataset)
+            constants = json.loads((processed / 'normalization.json').read_text()) if cfg['data'].get('require_normalization') else None
+            validate_training_provenance(processed, cfg, datasets, constants)
+            print('Dataset split, class and normalization checks: PASS')
+        except Exception as error:
+            failures.append(f'Dataset validation failed: {error}')
+    if failures:
+        for failure in failures:
+            print('STOP:', failure)
+        return 1
+    print('Preflight passed. Profile real graph memory on GB10 before the full run.')
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+```
+
+Source: `src/cybermind/data/normalization.py`
+
+```python
+"""Persisted training-only fp32 graph feature normalization.
+
+Fit once on unique training windows. Validation, test, and inference only transform.
+Feature names are checked so legacy checkpoints cannot silently consume a new schema.
+"""
+from __future__ import annotations
+import hashlib
+import json
+from pathlib import Path
+import torch
+
+
+class RunningMoments:
+    def __init__(self, width):
+        self.count = 0
+        self.mean = torch.zeros(width, dtype=torch.float32)
+        self.m2 = torch.zeros(width, dtype=torch.float32)
+
+    def update(self, values):
+        x = torch.as_tensor(values, dtype=torch.float32).detach().cpu()
+        if x.ndim != 2 or x.shape[1] != self.mean.numel():
+            raise ValueError('Feature width does not match normalization schema')
+        if not torch.isfinite(x).all():
+            raise ValueError('Cannot fit normalization to non-finite features')
+        if not len(x):
+            return
+        n = len(x)
+        mean = x.mean(0)
+        m2 = ((x - mean) ** 2).sum(0)
+        delta = mean - self.mean
+        total = self.count + n
+        self.m2 += m2 + delta.square() * (self.count * n / total)
+        self.mean += delta * (n / total)
+        self.count = total
+
+    def constants(self):
+        std = (self.m2 / max(self.count, 1)).clamp_min(0).sqrt()
+        std = torch.where(std > 1e-6, std, torch.ones_like(std))
+        if not torch.isfinite(self.mean).all() or not torch.isfinite(std).all():
+            raise ValueError('fp32 normalization overflow: inspect extreme input features')
+        return {'count': self.count, 'mean': self.mean.tolist(), 'std': std.tolist()}
+
+
+class FeatureNormalizer:
+    def __init__(self, constants):
+        from .graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
+        if constants.get('fit_split') != 'train' or constants.get('dtype') != 'float32':
+            raise ValueError('Normalization must be fitted on training data in fp32')
+        self.constants = constants
+        for key, names in [('node', NODE_FEATURE_NAMES), ('edge', EDGE_FEATURE_NAMES)]:
+            if constants[key]['features'] != list(names):
+                raise ValueError(f'{key} normalization feature schema mismatch')
+            mean = torch.tensor(constants[key]['mean'], dtype=torch.float32)
+            std = torch.tensor(constants[key]['std'], dtype=torch.float32)
+            if len(mean) != len(names) or len(std) != len(names) or not torch.isfinite(mean).all() or not torch.isfinite(std).all() or (std <= 0).any():
+                raise ValueError(f'Invalid {key} normalization constants')
+
+    @property
+    def fingerprint(self):
+        return hashlib.sha256(json.dumps(self.constants, sort_keys=True).encode()).hexdigest()
+
+    @classmethod
+    def fit(cls, states):
+        from .graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
+        node, edge = RunningMoments(len(NODE_FEATURE_NAMES)), RunningMoments(len(EDGE_FEATURE_NAMES))
+        seen = set()
+        for state in states:
+            if state.metadata.get('split') != 'train':
+                raise ValueError('Only training states may fit normalization')
+            if state.metadata.get('normalization_fingerprint'):
+                raise ValueError('Normalization must fit raw features')
+            identity = (state.scenario_id, state.metadata.get('window_start', state.timestamp))
+            if identity in seen:
+                continue
+            seen.add(identity)
+            node.update(state.x)
+            edge.update(state.edge_attr)
+        if not node.count:
+            raise ValueError('No training nodes available for normalization')
+        return cls({'version': 1, 'fit_split': 'train', 'dtype': 'float32',
+                    'method': 'population_mean_std', 'training_windows': len(seen),
+                    'node': {'features': list(NODE_FEATURE_NAMES), **node.constants()},
+                    'edge': {'features': list(EDGE_FEATURE_NAMES), **edge.constants()}})
+
+    def transform(self, values, kind):
+        x = values.to(dtype=torch.float32)
+        c = self.constants[kind]
+        mean = torch.tensor(c['mean'], dtype=torch.float32, device=x.device)
+        std = torch.tensor(c['std'], dtype=torch.float32, device=x.device)
+        result = (x - mean) / std
+        if not torch.isfinite(result).all():
+            raise ValueError('Non-finite normalized features')
+        return result
+
+    def save(self, path):
+        Path(path).write_text(json.dumps(self.constants, indent=2), encoding='utf-8')
+
+    @classmethod
+    def load(cls, path):
+        return cls(json.loads(Path(path).read_text(encoding='utf-8')))
+```

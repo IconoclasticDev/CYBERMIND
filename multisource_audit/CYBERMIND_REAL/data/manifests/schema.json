@@ -1,0 +1,30 @@
+{
+  "name": "CYBERMIND Unified Event Schema",
+  "version": "1.0",
+  "required": ["timestamp","src","dst","label","source"],
+  "fields": {
+    "timestamp": "ISO-8601 timestamp or epoch seconds",
+    "src": "source endpoint/entity identifier",
+    "dst": "destination endpoint/entity identifier",
+    "src_port": "integer, nullable",
+    "dst_port": "integer, nullable",
+    "protocol": "numeric or normalized protocol token",
+    "bytes_fwd": "float",
+    "bytes_bwd": "float",
+    "packets_fwd": "float",
+    "packets_bwd": "float",
+    "duration": "float seconds or dataset-native duration",
+    "mean_fwd_iat": "float",
+    "mean_bwd_iat": "float",
+    "flow_bytes_s": "float",
+    "flow_packets_s": "float",
+    "label": "dataset-native or normalized attack label",
+    "attack_stage": "optional coarse stage 0..3",
+    "technique_id": "optional MITRE technique ID",
+    "vulnerability_context": "optional CVE/CWE/CAPEC reference",
+    "source": "source dataset identifier",
+    "source_file": "original file basename",
+    "scenario_id": "scenario/day/capture identifier",
+    "provenance": "free-form provenance metadata"
+  }
+}

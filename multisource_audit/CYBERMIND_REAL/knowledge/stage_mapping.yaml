@@ -1,0 +1,36 @@
+# Dataset-label -> coarse forecasting stage.
+# This is a research mapping, not an official ATT&CK ground-truth annotation.
+# 0=benign, 1=initial_access_or_recon, 2=execution/credential_or_lateral_progression, 3=impact/exfiltration/critical_compromise
+label_to_stage:
+  BENIGN: 0
+  BRUTE FORCE: 1
+  BRUTE FORCE -WEB: 1
+  BRUTE FORCE -XSS: 1
+  FTP-PATATOR: 1
+  SSH-PATATOR: 1
+  SSH-BRUTEFORCE: 1
+  FTP-BRUTEFORCE: 1
+  WEB ATTACK - BRUTE FORCE: 1
+  WEB ATTACK - XSS: 1
+  WEB ATTACK - SQL INJECTION: 1
+  SQL INJECTION: 1
+  PORTSCAN: 1
+  PORT SCAN: 1
+  RECONNAISSANCE: 1
+  INFILTRATION: 2
+  BOT: 2
+  BOTNET: 2
+  HEARTBLEED: 2
+  DOS ATTACK-HULK: 2
+  DOS ATTACK-GOLDENEYE: 2
+  DOS ATTACK-SLOWHTTPTEST: 2
+  DOS ATTACK-SLOWLORIS: 2
+  DDOS ATTACK-HOIC: 2
+  DDOS ATTACK-LOIC-HTTP: 2
+  DDOS ATTACK-LOIC-UDP: 2
+  DDoS: 2
+  DoS: 2
+  Mirai: 2
+  EXFILTRATION: 3
+  IMPACT: 3
+  DATA EXFILTRATION: 3

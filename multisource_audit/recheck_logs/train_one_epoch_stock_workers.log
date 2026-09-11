@@ -1,0 +1,20 @@
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\multisource_audit\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+device cuda
+
+epoch 1:   0%|          | 0/2 [00:00<?, ?it/s]C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+
+epoch 1:  50%|█████     | 1/2 [00:12<00:12, 12.81s/it]
+epoch 1: 100%|██████████| 2/2 [00:13<00:00,  5.68s/it]
+epoch 1: 100%|██████████| 2/2 [00:14<00:00,  7.20s/it]
+{'epoch': 1, 'loss': 1.3970627784729004, 'transition': 0.05254302732646465, 'infiltration': 0.6803819239139557, 'stage': 1.2308267951011658, 'brier': 0.24362239241600037}
+saved C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\multisource_audit\CYBERMIND_REAL\checkpoints\recheck_synthetic.pt

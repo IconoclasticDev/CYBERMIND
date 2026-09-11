@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "error": null,
+  "synthetic_only": true,
+  "python": "3.14.7",
+  "torch": "2.14.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "pyg_backend": true,
+  "ram_gib": 15.379344940185547,
+  "available_ram_gib": 1.7838478088378906,
+  "gpu_vram_gib": 7.93304443359375,
+  "nodes_per_graph": 128,
+  "edges_per_graph": 512,
+  "history": 16,
+  "batch_size": 8,
+  "gradient_accumulation": 2,
+  "parameters": 21184645,
+  "peak_allocated_gib": 1.3184046745300293,
+  "peak_reserved_gib": 1.328125,
+  "elapsed_seconds": 1.7091046999994433,
+  "losses": [
+    1.3949908018112183,
+    1.397201657295227
+  ]
+}

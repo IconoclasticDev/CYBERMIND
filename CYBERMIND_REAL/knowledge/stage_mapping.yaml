@@ -1,0 +1,55 @@
+# Research heuristics, not official ATT&CK ground-truth annotation.
+# Benign remains independent of the five named phases and unknown targets.
+num_stages: 7
+stage_names:
+  0: Benign
+  1: Reconnaissance
+  2: Initial Access
+  3: Lateral Movement
+  4: Command & Control
+  5: Exfiltration
+  6: Unknown/Ambiguous
+unknown_stage: 6
+label_to_stage:
+  BENIGN: 0
+  NORMAL: 0
+  BACKGROUND: 0
+  BRUTE FORCE: 2
+  BRUTE FORCE -WEB: 2
+  BRUTE FORCE -XSS: 2
+  FTP-PATATOR: 2
+  SSH-PATATOR: 2
+  SSH-BRUTEFORCE: 2
+  FTP-BRUTEFORCE: 2
+  WEB ATTACK - BRUTE FORCE: 2
+  WEB ATTACK - XSS: 2
+  WEB ATTACK - SQL INJECTION: 2
+  SQL INJECTION: 2
+  INITIAL ACCESS: 2
+  PHISHING: 2
+  PORTSCAN: 1
+  PORT SCAN: 1
+  RECONNAISSANCE: 1
+  LATERAL MOVEMENT: 3
+  PASS THE HASH: 3
+  COMMAND & CONTROL: 4
+  COMMAND AND CONTROL: 4
+  C2: 4
+  BOT: 4
+  BOTNET: 4
+  EXFILTRATION: 5
+  DATA EXFILTRATION: 5
+  INFILTRATION: 6
+  HEARTBLEED: 6
+  DOS ATTACK-HULK: 6
+  DOS ATTACK-GOLDENEYE: 6
+  DOS ATTACK-SLOWHTTPTEST: 6
+  DOS ATTACK-SLOWLORIS: 6
+  DDOS ATTACK-HOIC: 6
+  DDOS ATTACK-LOIC-HTTP: 6
+  DDOS ATTACK-LOIC-UDP: 6
+  DDoS: 6
+  DoS: 6
+  Mirai: 6
+  IMPACT: 6
+  UNKNOWN: 6

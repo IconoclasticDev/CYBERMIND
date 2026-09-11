@@ -1,0 +1,13 @@
+source,role,granularity,endpoint_identity,temporal_labels,raw_endpoint_graph,download_notes
+CIC-IDS2018,primary_training,flow+pcap,yes when PCAP/endpoint CSV available,attack scenario schedules,yes,s3 no-sign-request
+CIC-IDS2017,cross_validation,flow+pcap,yes,documented attack windows,yes,UNB download form
+UNSW-NB15,cross_validation,flow+pcap,yes in source files,attack categories/events,yes,UNSW research page
+CTU-13,cross_validation,flow+pcap,yes,scenario labels,yes,Stratosphere download
+CICIoT2023,IoT_validation,flow+pcap,yes,33 attacks/7 categories,yes,UNB/cicresearch download
+LANL Authentication,auxiliary,auth events,user+computer,temporal auth events,n/a,keep as auxiliary event family
+DARPA1998,historical_validation,pcap+audit,yes,attack schedules/truth,yes,historical benchmark
+DARPA1999,historical_validation,pcap+audit,yes,attack schedules/truth,yes,historical benchmark
+MITRE ATT&CK,knowledge,ontology,n/a,versioned knowledge,n/a,STIX 2.1 snapshot
+CAPEC,knowledge,ontology,n/a,versioned knowledge,n/a,XML/ZIP snapshot
+NVD,knowledge,vulnerability records,n/a,versioned API snapshot,n/a,API snapshot
+NCIIPC,context,public reports/contact,n/a,n/a,n/a,manual review only

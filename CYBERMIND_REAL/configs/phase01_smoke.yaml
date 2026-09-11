@@ -1,0 +1,39 @@
+# Synthetic CPU correctness checks ONLY. Never a production training config.
+seed: 42
+data:
+  processed_dir: examples/phase01_smoke/processed
+  window_seconds: 60
+  stride_seconds: 60
+  history: 8
+model:
+  graph_hidden: 16
+  graph_out: 16
+  temporal_dim: 32
+  graph_heads: 4
+  nhead: 4
+  temporal_layers: 1
+  num_stages: 7
+  dropout: 0.0
+loss:
+  transition: 1.0
+  infiltration: 1.0
+  stage: 0.5
+  calibration: 0.2
+  graph_consistency: 0.1
+train:
+  precision: fp32
+  epochs: 2
+  lr: 0.001
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  batch_size: 3
+  grad_accumulation: 2
+  num_workers: 0
+  checkpoint: phase01_smoke.pt
+  selection_metric: val_f1
+  selection_threshold: 0.5
+  early_stopping_patience: 2
+  history_path: examples/phase01_smoke/train_history.json
+eval:
+  rollout_steps: 4
+  n_rollouts: 4
