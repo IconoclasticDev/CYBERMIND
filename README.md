@@ -1,6 +1,6 @@
 ﻿<div align="center">
 
-### SIH26 — CYBERMIND
+### CYBERMIND
 
 </div>
 
