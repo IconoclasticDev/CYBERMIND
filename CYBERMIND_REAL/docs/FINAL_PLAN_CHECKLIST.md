@@ -53,16 +53,18 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] 2.6 Verify finite loss/gradients, adversarial legal decoding, and flag-off path on CPU/GPU: 94 tests passed, zero skips; all six CPU/GPU exit checks passed. One-epoch CRF checkpoint trained and reloaded; all 49 frozen baseline files unchanged.
 - [x] Audit exit criteria in `FINAL_PLAN_PHASE2_AUDIT.md`; present Phase 3 approval request. User approved Phase 3 with "continue" on 2026-09-12.
 
-## Phase 3 — INCOMPLETE (prediction-diversity gate unresolved)
+## Phase 3 — COMPLETE (under the user-approved diversity-gate revision)
 
 - [x] 3.1 Run tests and integration for all four feature-flag combinations: 96 passed with zero skips per run, 384 test executions total; four two-epoch CPU pipeline runs passed.
 - [x] 3.2 Fresh both-off evaluation/history and frozen checkpoint evaluation match the Phase 0 evidence within 1e-6; all 49 baseline hashes remain intact.
 - [x] 3.3 Run both-true two-epoch GPU pipeline and configs/smoke.yaml checks: finite losses, peak reserved memory 88 MiB and 72 MiB respectively, below confirmed VRAM.
-- [ ] 3.3 Verify nondegenerate stage predictions: both synthetic fixtures currently decode one stage; raw emissions already have the same collapse, including final-epoch checkpoints.
+- [x] 3.3 Revised diversity gate passed on a separate balanced fixture: all six non-Unknown future stages predicted on CPU and CUDA, eight test predictions per stage, zero illegal transitions over 48 pairs per device. Earlier single-stage failures remain recorded unchanged.
 - [x] Add explicit clock-derived reset metadata to the generated CRF integration fixture and report stage histograms/Unknown usage. No existing labels, features or frozen tensors changed.
-- [ ] Resolve PDF inconsistency: hard-constrained decoding must permit zero illegal transitions. Proposed replacement gate: zero illegal transitions plus at least two non-Unknown predicted stages on a dedicated balanced synthetic fixture, keeping existing regression evidence unchanged. Requires the user's plan-adjustment decision.
+- [x] User approved the revised gate on 2026-09-12: zero illegal transitions plus at least two non-Unknown predicted stages on a separate balanced synthetic fixture. Preserve original regression fixtures and failed diversity evidence.
+- [x] Generate 192/48/48 balanced train/validation/test samples with fixed independent seeds, artificial feature prototypes, boundary metadata and verified split disjointness.
+- [x] Train the combined model for two epochs with finite losses and 70 MiB peak reserved GPU memory; the validation-selected checkpoint passes the revised gate on CPU and CUDA. No test-based tuning.
 - [x] Write the incomplete-phase audit in `FINAL_PLAN_PHASE3_AUDIT.md`, including failed diversity evidence and proposed corrective scope.
-- [ ] Pass remaining exit criteria, then request Phase 4 approval. Phase 4 has not started.
+- [x] Complete `FINAL_PLAN_PHASE3_REVISED_AUDIT.md` and present the Phase 4 approval request. All 49 baseline files, 112 original Phase 3 evidence files and 27 original local tensor/checkpoint files remain unchanged. Phase 4 awaits separate approval.
 
 ## Phase 4 — NOT AUTHORIZED
 
