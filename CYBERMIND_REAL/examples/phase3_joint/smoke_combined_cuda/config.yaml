@@ -1,0 +1,33 @@
+data:
+  history: 8
+  processed_dir: examples/smoke/baseline_before/processed
+  raw_dir: data/raw/CIC-IDS-2018
+  stride_seconds: 60
+  window_seconds: 60
+eval:
+  rollout_steps: 4
+loss:
+  calibration: 0.2
+  crf_stage: 0.5
+  infiltration: 1.0
+  stage: 0.5
+  transition: 1.0
+  use_crf_stage: true
+model:
+  dropout: 0.1
+  graph_hidden: 32
+  graph_out: 32
+  nhead: 4
+  num_stages: 7
+  temporal_dim: 64
+  temporal_layers: 2
+  use_edge_features: true
+seed: 42
+train:
+  checkpoint: D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\examples\phase3_joint\smoke_combined_cuda\checkpoints\combined.pt
+  epochs: 2
+  grad_clip: 1.0
+  history_path: D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\examples\phase3_joint\smoke_combined_cuda\train_history.json
+  lr: 0.001
+  num_workers: 0
+  weight_decay: 0.0001

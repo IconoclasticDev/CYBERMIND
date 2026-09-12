@@ -10,7 +10,7 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - Phase 0 downloads only MITRE ATT&CK, CAPEC, and an NVD snapshot.
 - Verify CTU-13 access now; no heavy corpus download on the laptop.
 - Audit each completed phase and request approval before starting the next.
-- Phases 1 and 2 authorized on 2026-09-12. Phases 3–4 require separate approvals. Phases 5–8 are outside this implementation request.
+- Phases 1–3 authorized on 2026-09-12. Phase 4 requires separate approval. Phases 5–8 are outside this implementation request.
 - Subagents are authorized for independent work.
 
 ## Phase 0 — COMPLETE (commit `1d91b27`)
@@ -43,7 +43,7 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] 1.6 All eight CPU/GPU × PyG/fallback × on/off cases passed; both enabled projection gradients nonzero. Full suite: 69 passed, no skipped tests. Legacy checkpoint evaluation matches within 1e-6; all frozen Phase 0 hashes remain unchanged.
 - [x] Audit exit criteria in `FINAL_PLAN_PHASE1_AUDIT.md` and present Phase 2 approval request. Await the user's decision.
 
-## Phase 2 — COMPLETE (awaiting Phase 3 approval)
+## Phase 2 — COMPLETE (commit `555c219`)
 
 - [x] 2.1 Define forward/stay transitions, destination-declared resets to 0/1, and unrestricted Unknown/Ambiguous transitions in the YAML policy.
 - [x] 2.2 Implement fp32 masked linear-chain CRF and Viterbi decoder, with persisted policy buffers and strict supervision validation.
@@ -51,16 +51,18 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] 2.4 Integrate decoded stages in evaluation, app, forecasts and rollouts; checkpoint loaders preserve the CRF flag.
 - [x] 2.5 Add illegal-transition counts/rate and pool within-sequence pairs without crossing scenario boundaries.
 - [x] 2.6 Verify finite loss/gradients, adversarial legal decoding, and flag-off path on CPU/GPU: 94 tests passed, zero skips; all six CPU/GPU exit checks passed. One-epoch CRF checkpoint trained and reloaded; all 49 frozen baseline files unchanged.
-- [x] Audit exit criteria in `FINAL_PLAN_PHASE2_AUDIT.md`; present Phase 3 approval request. Phase 3 remains unauthorized until the user approves.
+- [x] Audit exit criteria in `FINAL_PLAN_PHASE2_AUDIT.md`; present Phase 3 approval request. User approved Phase 3 with "continue" on 2026-09-12.
 
-## Phase 3 — NOT AUTHORIZED
+## Phase 3 — INCOMPLETE (prediction-diversity gate unresolved)
 
-- [ ] 3.1 Run tests and integration for all four feature-flag combinations.
-- [ ] 3.2 Compare both-off results with the preserved Phase 0 baseline.
-- [ ] 3.3 Run combined two-epoch smoke, verify finite loss, VRAM ceiling, and nondegenerate predictions.
-- [ ] Check explicit reset metadata in integration fixtures and report Unknown-stage usage alongside prediction diversity.
-- [ ] Resolve document inconsistency: constrained decoder should have zero illegal transitions; measure prediction diversity separately rather than requiring illegal transitions.
-- [ ] Audit exit criteria; request Phase 4 approval.
+- [x] 3.1 Run tests and integration for all four feature-flag combinations: 96 passed with zero skips per run, 384 test executions total; four two-epoch CPU pipeline runs passed.
+- [x] 3.2 Fresh both-off evaluation/history and frozen checkpoint evaluation match the Phase 0 evidence within 1e-6; all 49 baseline hashes remain intact.
+- [x] 3.3 Run both-true two-epoch GPU pipeline and configs/smoke.yaml checks: finite losses, peak reserved memory 88 MiB and 72 MiB respectively, below confirmed VRAM.
+- [ ] 3.3 Verify nondegenerate stage predictions: both synthetic fixtures currently decode one stage; raw emissions already have the same collapse, including final-epoch checkpoints.
+- [x] Add explicit clock-derived reset metadata to the generated CRF integration fixture and report stage histograms/Unknown usage. No existing labels, features or frozen tensors changed.
+- [ ] Resolve PDF inconsistency: hard-constrained decoding must permit zero illegal transitions. Proposed replacement gate: zero illegal transitions plus at least two non-Unknown predicted stages on a dedicated balanced synthetic fixture, keeping existing regression evidence unchanged. Requires the user's plan-adjustment decision.
+- [x] Write the incomplete-phase audit in `FINAL_PLAN_PHASE3_AUDIT.md`, including failed diversity evidence and proposed corrective scope.
+- [ ] Pass remaining exit criteria, then request Phase 4 approval. Phase 4 has not started.
 
 ## Phase 4 — NOT AUTHORIZED
 

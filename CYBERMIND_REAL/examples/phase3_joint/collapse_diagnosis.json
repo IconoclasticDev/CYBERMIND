@@ -1,0 +1,178 @@
+{
+  "synthetic_only": true,
+  "device": "cpu",
+  "checkpoints_modified": false,
+  "results": [
+    {
+      "variant": "baseline",
+      "checkpoint": "examples/phase3_joint/baseline/checkpoints/baseline.pt",
+      "selected_epoch": 2,
+      "test_target_stage_histogram": {
+        "0": 19,
+        "1": 6
+      },
+      "training_supervision_histogram": {
+        "0": 184,
+        "1": 60
+      },
+      "raw_emission_argmax_histogram": {
+        "0": 50
+      },
+      "decoded_histogram": {
+        "0": 50
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    },
+    {
+      "variant": "baseline",
+      "checkpoint": "examples/phase3_joint/baseline/checkpoints/baseline_last.pt",
+      "selected_epoch": 2,
+      "test_target_stage_histogram": {
+        "0": 19,
+        "1": 6
+      },
+      "training_supervision_histogram": {
+        "0": 184,
+        "1": 60
+      },
+      "raw_emission_argmax_histogram": {
+        "0": 50
+      },
+      "decoded_histogram": {
+        "0": 50
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    },
+    {
+      "variant": "combined",
+      "checkpoint": "examples/phase3_joint/combined/checkpoints/combined.pt",
+      "selected_epoch": 1,
+      "test_target_stage_histogram": {
+        "0": 19,
+        "1": 6
+      },
+      "training_supervision_histogram": {
+        "0": 184,
+        "1": 60
+      },
+      "raw_emission_argmax_histogram": {
+        "1": 50
+      },
+      "decoded_histogram": {
+        "1": 50
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    },
+    {
+      "variant": "combined",
+      "checkpoint": "examples/phase3_joint/combined/checkpoints/combined_last.pt",
+      "selected_epoch": 2,
+      "test_target_stage_histogram": {
+        "0": 19,
+        "1": 6
+      },
+      "training_supervision_histogram": {
+        "0": 184,
+        "1": 60
+      },
+      "raw_emission_argmax_histogram": {
+        "1": 50
+      },
+      "decoded_histogram": {
+        "1": 50
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    },
+    {
+      "variant": "combined_cuda",
+      "checkpoint": "examples/phase3_joint/combined_cuda/checkpoints/combined_cuda.pt",
+      "selected_epoch": 1,
+      "test_target_stage_histogram": {
+        "0": 19,
+        "1": 6
+      },
+      "training_supervision_histogram": {
+        "0": 184,
+        "1": 60
+      },
+      "raw_emission_argmax_histogram": {
+        "1": 50
+      },
+      "decoded_histogram": {
+        "1": 50
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    },
+    {
+      "variant": "combined_cuda",
+      "checkpoint": "examples/phase3_joint/combined_cuda/checkpoints/combined_cuda_last.pt",
+      "selected_epoch": 2,
+      "test_target_stage_histogram": {
+        "0": 19,
+        "1": 6
+      },
+      "training_supervision_histogram": {
+        "0": 184,
+        "1": 60
+      },
+      "raw_emission_argmax_histogram": {
+        "1": 50
+      },
+      "decoded_histogram": {
+        "1": 50
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    },
+    {
+      "variant": "smoke_combined_cuda",
+      "checkpoint": "examples/phase3_joint/smoke_combined_cuda/checkpoints/combined.pt",
+      "selected_epoch": 1,
+      "test_target_stage_histogram": {
+        "5": 1,
+        "0": 2
+      },
+      "training_supervision_histogram": {
+        "0": 102,
+        "2": 12,
+        "5": 12
+      },
+      "raw_emission_argmax_histogram": {
+        "0": 6
+      },
+      "decoded_histogram": {
+        "0": 6
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    },
+    {
+      "variant": "smoke_combined_cuda",
+      "checkpoint": "examples/phase3_joint/smoke_combined_cuda/checkpoints/combined_last.pt",
+      "selected_epoch": 2,
+      "test_target_stage_histogram": {
+        "5": 1,
+        "0": 2
+      },
+      "training_supervision_histogram": {
+        "0": 102,
+        "2": 12,
+        "5": 12
+      },
+      "raw_emission_argmax_histogram": {
+        "0": 6
+      },
+      "decoded_histogram": {
+        "0": 6
+      },
+      "raw_emissions_single_stage": true,
+      "decoded_single_stage": true
+    }
+  ],
+  "interpretation": "Single-stage raw emissions already lack diversity before Viterbi. This does not prove useful stage learning; the Phase 3 diversity gate remains unmet."
+}

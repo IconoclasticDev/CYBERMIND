@@ -7,6 +7,10 @@ __pycache__/
 .phase0-tmp/
 .phase1-tmp/
 .phase2-tmp/
+.phase3-tmp/
+checkpoints/phase3_*.pt
+examples/phase3_joint/*/processed/*.pt
+examples/phase3_joint/*/checkpoints/*.pt
 examples/smoke/baseline_before/historical_artifacts/
 # Downloaded knowledge stays local; reproducible provenance is tracked.
 knowledge/raw/

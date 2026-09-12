@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "device": "cuda",
+  "measurement_scope": "PyTorch CUDA allocator in the actual training process; excludes driver and other processes",
+  "peak_allocated_bytes": 74547200,
+  "peak_reserved_bytes": 75497472,
+  "ceiling_bytes": 8518041600,
+  "below_device_vram": true
+}

@@ -1,0 +1,277 @@
+{
+  "phase": 3,
+  "status": "checks_completed_pending_audit",
+  "synthetic_only": true,
+  "commands": [
+    {
+      "name": "pytest_baseline",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-o",
+        "junit_family=legacy",
+        "--junitxml=examples/phase3_joint/pytest_baseline.xml"
+      ],
+      "cpu_only": false,
+      "environment": {
+        "CYBERMIND_TEST_EDGE_FEATURES": "0",
+        "CYBERMIND_TEST_CRF_STAGE": "0"
+      },
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 12.368
+    },
+    {
+      "name": "integration_baseline",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/phase01_smoke.py",
+        "--no-use-edge-features",
+        "--no-use-crf-stage",
+        "--device",
+        "cpu",
+        "--output",
+        "examples/phase3_joint/baseline"
+      ],
+      "cpu_only": true,
+      "environment": {},
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 19.846
+    },
+    {
+      "name": "pytest_edge_only",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-o",
+        "junit_family=legacy",
+        "--junitxml=examples/phase3_joint/pytest_edge_only.xml"
+      ],
+      "cpu_only": false,
+      "environment": {
+        "CYBERMIND_TEST_EDGE_FEATURES": "1",
+        "CYBERMIND_TEST_CRF_STAGE": "0"
+      },
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 12.272
+    },
+    {
+      "name": "integration_edge_only",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/phase01_smoke.py",
+        "--use-edge-features",
+        "--no-use-crf-stage",
+        "--device",
+        "cpu",
+        "--output",
+        "examples/phase3_joint/edge_only"
+      ],
+      "cpu_only": true,
+      "environment": {},
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 20.506
+    },
+    {
+      "name": "pytest_crf_only",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-o",
+        "junit_family=legacy",
+        "--junitxml=examples/phase3_joint/pytest_crf_only.xml"
+      ],
+      "cpu_only": false,
+      "environment": {
+        "CYBERMIND_TEST_EDGE_FEATURES": "0",
+        "CYBERMIND_TEST_CRF_STAGE": "1"
+      },
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 12.322
+    },
+    {
+      "name": "integration_crf_only",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/phase01_smoke.py",
+        "--no-use-edge-features",
+        "--use-crf-stage",
+        "--device",
+        "cpu",
+        "--output",
+        "examples/phase3_joint/crf_only"
+      ],
+      "cpu_only": true,
+      "environment": {},
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 22.398
+    },
+    {
+      "name": "pytest_combined",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-o",
+        "junit_family=legacy",
+        "--junitxml=examples/phase3_joint/pytest_combined.xml"
+      ],
+      "cpu_only": false,
+      "environment": {
+        "CYBERMIND_TEST_EDGE_FEATURES": "1",
+        "CYBERMIND_TEST_CRF_STAGE": "1"
+      },
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 12.238
+    },
+    {
+      "name": "integration_combined",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/phase01_smoke.py",
+        "--use-edge-features",
+        "--use-crf-stage",
+        "--device",
+        "cpu",
+        "--output",
+        "examples/phase3_joint/combined"
+      ],
+      "cpu_only": true,
+      "environment": {},
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 23.171
+    },
+    {
+      "name": "legacy_checkpoint_eval",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/eval.py",
+        "--config",
+        "examples/smoke/baseline_before/config.yaml",
+        "--checkpoint",
+        "examples/smoke/baseline_before/baseline.pt",
+        "--output",
+        "examples/phase3_joint/legacy_eval.json"
+      ],
+      "cpu_only": true,
+      "environment": {},
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 5.79
+    },
+    {
+      "name": "integration_combined_cuda",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/phase01_smoke.py",
+        "--use-edge-features",
+        "--use-crf-stage",
+        "--device",
+        "cuda",
+        "--output",
+        "examples/phase3_joint/combined_cuda"
+      ],
+      "cpu_only": false,
+      "environment": {},
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 26.054
+    }
+  ],
+  "started_at_utc": "2026-09-12T13:33:31.196074+00:00",
+  "runtime": {
+    "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.14.0+cu130",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "vram_bytes": 8518041600
+  },
+  "baseline_before": {
+    "verified_files": 49,
+    "manifest": {
+      "bytes": 15091,
+      "sha256": "46be0cc83ad87bf462b9c661e6b55935b90427d3e80311287ffff91c7572e90b"
+    }
+  },
+  "fresh_both_off_integration_matches_within_1e_6": true,
+  "frozen_checkpoint_matches_within_1e_6": true,
+  "combined_cuda": {
+    "synthetic_only": true,
+    "real_training_performed": false,
+    "steps_passed": 4,
+    "evaluated_samples": 25,
+    "automatic_explanations": true,
+    "device": "cuda",
+    "use_edge_features": true,
+    "use_crf_stage": true,
+    "checkpoint": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_joint\\combined_cuda\\checkpoints\\combined_cuda.pt",
+    "campaign_reset_annotation": {
+      "rule": "Each scan at second % 4 == 0 is an independent synthetic campaign; destination second % 4 == 1 resets it.",
+      "source": "fixture clock; no stage labels or predictions used",
+      "tensors_features_and_labels_changed": false,
+      "splits": {
+        "train": {
+          "unique_states": 124,
+          "declared_reset_states": 31
+        },
+        "val": {
+          "unique_states": 27,
+          "declared_reset_states": 7
+        },
+        "test": {
+          "unique_states": 27,
+          "declared_reset_states": 7
+        }
+      }
+    },
+    "stage_diversity": {
+      "decoded_histogram": {
+        "1": 50
+      },
+      "unique_stages": 1,
+      "unknown_fraction": 0.0,
+      "single_stage_collapse": true
+    },
+    "risk_diversity": {
+      "minimum": 0.46832966804504395,
+      "maximum": 0.4693181812763214,
+      "spread": 0.0009885132312774658
+    },
+    "train_memory": {
+      "status": "passed",
+      "device": "cuda",
+      "measurement_scope": "PyTorch CUDA allocator in the actual training process; excludes driver and other processes",
+      "peak_allocated_bytes": 70297600,
+      "peak_reserved_bytes": 92274688,
+      "ceiling_bytes": 8518041600,
+      "below_device_vram": true
+    },
+    "warning": "CIC-IDS2018 is a fixture routing value. These generated rows are NOT real CIC data or accuracy evidence."
+  },
+  "baseline_after": {
+    "verified_files": 49,
+    "manifest": {
+      "bytes": 15091,
+      "sha256": "46be0cc83ad87bf462b9c661e6b55935b90427d3e80311287ffff91c7572e90b"
+    }
+  },
+  "frozen_baseline_unchanged": true,
+  "finished_at_utc": "2026-09-12T13:36:18.206818+00:00"
+}

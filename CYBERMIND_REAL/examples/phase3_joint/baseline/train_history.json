@@ -1,0 +1,52 @@
+[
+  {
+    "epoch": 1,
+    "train": {
+      "loss": 1.7814850699706155,
+      "transition": -0.2752626372165367,
+      "infiltration": 1.0538210282560254,
+      "stage": 1.904964683485813,
+      "calibration": 0.24216120726749546,
+      "graph_consistency": 0.02012093865969142
+    },
+    "val": {
+      "loss": 0.39230560660362246,
+      "transition": -1.6037059974670411,
+      "infiltration": 1.036804928779602,
+      "stage": 1.8180584573745728,
+      "calibration": 0.2457441818714142,
+      "graph_consistency": 0.01028622880578041,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 2,
+    "train": {
+      "loss": 0.32502919001901737,
+      "transition": -1.6728840343287734,
+      "infiltration": 1.0463783174264627,
+      "stage": 1.8042152103830555,
+      "calibration": 0.23970525284282496,
+      "graph_consistency": 0.014862453458128406
+    },
+    "val": {
+      "loss": 0.11898801296949386,
+      "transition": -1.823663501739502,
+      "infiltration": 1.0369890022277832,
+      "stage": 1.7094734477996827,
+      "calibration": 0.24995432376861573,
+      "graph_consistency": 0.009349232502281667,
+      "precision": 0.24,
+      "recall": 0.5,
+      "f1": 0.32432432432432434,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  }
+]
