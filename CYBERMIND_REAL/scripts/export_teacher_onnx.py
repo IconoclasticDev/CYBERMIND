@@ -21,7 +21,7 @@ def load_yaml(path: Path):
 
 def build_model(cfg, node_dim, state):
     from cybermind.models.world_model import WorldModel
-    from cybermind.utils.config import edge_model_kwargs
+    from cybermind.utils.config import edge_model_kwargs, stage_model_kwargs
     m = WorldModel(
         node_dim,
         graph_hidden=cfg['model']['graph_hidden'],
@@ -33,6 +33,7 @@ def build_model(cfg, node_dim, state):
         dropout=cfg['model']['dropout'],
         graph_heads=cfg['model'].get('graph_heads', 8),
         **edge_model_kwargs(cfg['model']),
+        **stage_model_kwargs(cfg),
     )
     m.load_state_dict(state)
     return m.eval()
@@ -77,8 +78,9 @@ def main():
     args = ap.parse_args()
     cfg = load_yaml(ROOT / args.config)
     ckpt = torch.load(ROOT / args.checkpoint, map_location='cpu', weights_only=False)
-    from cybermind.utils.config import edge_model_kwargs
+    from cybermind.utils.config import edge_model_kwargs, stage_model_kwargs
     cfg['model'].update(edge_model_kwargs(cfg['model'], ckpt['config']['model']))
+    cfg.setdefault('loss',{}).update(stage_model_kwargs(cfg, ckpt['config']))
     model = build_model(cfg, ckpt['node_dim'], ckpt['model_state'])
     out = ROOT / args.output
     ensure_dirs(out.parent, ROOT / 'checkpoints', ROOT / 'models', ROOT / 'export')

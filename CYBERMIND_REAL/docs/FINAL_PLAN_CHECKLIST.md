@@ -10,7 +10,7 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - Phase 0 downloads only MITRE ATT&CK, CAPEC, and an NVD snapshot.
 - Verify CTU-13 access now; no heavy corpus download on the laptop.
 - Audit each completed phase and request approval before starting the next.
-- Phase 1 authorized on 2026-09-12. Phases 2–4 require separate approvals. Phases 5–8 are outside this implementation request.
+- Phases 1 and 2 authorized on 2026-09-12. Phases 3–4 require separate approvals. Phases 5–8 are outside this implementation request.
 - Subagents are authorized for independent work.
 
 ## Phase 0 — COMPLETE (commit `1d91b27`)
@@ -33,7 +33,7 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] Write Phase 0 audit with explicit exit-criterion evidence and limitations (`FINAL_PLAN_PHASE0_AUDIT.md`).
 - [x] Present Phase 1 approval gate with the Phase 0 audit. Await the user's decision; no Phase 1 work may start beforehand.
 
-## Phase 1 — COMPLETE; awaiting Phase 2 approval
+## Phase 1 — COMPLETE (commit `4772f70`)
 
 - [x] 1.1 Inspect edge feature shape and dtype: graph builder emits `[E, 27]` float32; legacy synthetic fixture has seven columns.
 - [x] 1.2 Pass edge dimensions/attributes into both GATv2 layers.
@@ -43,21 +43,22 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] 1.6 All eight CPU/GPU × PyG/fallback × on/off cases passed; both enabled projection gradients nonzero. Full suite: 69 passed, no skipped tests. Legacy checkpoint evaluation matches within 1e-6; all frozen Phase 0 hashes remain unchanged.
 - [x] Audit exit criteria in `FINAL_PLAN_PHASE1_AUDIT.md` and present Phase 2 approval request. Await the user's decision.
 
-## Phase 2 — NOT AUTHORIZED
+## Phase 2 — COMPLETE (awaiting Phase 3 approval)
 
-- [ ] 2.1 Define allowed transitions, explicit resets, and unknown-stage exemption.
-- [ ] 2.2 Implement masked linear-chain CRF and Viterbi decoder.
-- [ ] 2.3 Wire optional CRF loss into training.
-- [ ] 2.4 Integrate constrained inference in evaluation, app, and forecast.
-- [ ] 2.5 Implement illegal-transition-rate metric.
-- [ ] 2.6 Verify finite loss/gradients, adversarial legal decoding, and flag-off path on CPU/GPU.
-- [ ] Audit exit criteria; request Phase 3 approval.
+- [x] 2.1 Define forward/stay transitions, destination-declared resets to 0/1, and unrestricted Unknown/Ambiguous transitions in the YAML policy.
+- [x] 2.2 Implement fp32 masked linear-chain CRF and Viterbi decoder, with persisted policy buffers and strict supervision validation.
+- [x] 2.3 Add optional, separately logged CRF loss alongside existing cross-entropy; use explicit `campaign_reset` metadata.
+- [x] 2.4 Integrate decoded stages in evaluation, app, forecasts and rollouts; checkpoint loaders preserve the CRF flag.
+- [x] 2.5 Add illegal-transition counts/rate and pool within-sequence pairs without crossing scenario boundaries.
+- [x] 2.6 Verify finite loss/gradients, adversarial legal decoding, and flag-off path on CPU/GPU: 94 tests passed, zero skips; all six CPU/GPU exit checks passed. One-epoch CRF checkpoint trained and reloaded; all 49 frozen baseline files unchanged.
+- [x] Audit exit criteria in `FINAL_PLAN_PHASE2_AUDIT.md`; present Phase 3 approval request. Phase 3 remains unauthorized until the user approves.
 
 ## Phase 3 — NOT AUTHORIZED
 
 - [ ] 3.1 Run tests and integration for all four feature-flag combinations.
 - [ ] 3.2 Compare both-off results with the preserved Phase 0 baseline.
 - [ ] 3.3 Run combined two-epoch smoke, verify finite loss, VRAM ceiling, and nondegenerate predictions.
+- [ ] Check explicit reset metadata in integration fixtures and report Unknown-stage usage alongside prediction diversity.
 - [ ] Resolve document inconsistency: constrained decoder should have zero illegal transitions; measure prediction diversity separately rather than requiring illegal transitions.
 - [ ] Audit exit criteria; request Phase 4 approval.
 

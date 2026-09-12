@@ -27,3 +27,14 @@ def edge_model_kwargs(model_config, checkpoint_config=None, observed_edge_dim=No
         if expected is not None and width != expected:
             raise ValueError('Configured edge_attr_dim does not match graph/checkpoint edge width.')
     return {'use_edge_features': True, 'edge_attr_dim': width}
+
+
+def stage_model_kwargs(config, checkpoint_config=None):
+    """One loss flag controls both the trained CRF and checkpoint decoding."""
+    checkpoint_loss = (checkpoint_config or {}).get('loss', {})
+    enabled = config.get('loss', {}).get('use_crf_stage', checkpoint_loss.get('use_crf_stage', False))
+    if not isinstance(enabled, bool):
+        raise ValueError('loss.use_crf_stage must be a YAML boolean.')
+    if checkpoint_config is not None and enabled != checkpoint_loss.get('use_crf_stage', False):
+        raise ValueError('CRF stage flag does not match the checkpoint architecture.')
+    return {'use_crf_stage': enabled}

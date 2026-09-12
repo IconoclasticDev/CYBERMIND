@@ -16,6 +16,8 @@ model:
   num_stages: 7
   dropout: 0.10
 loss:
+  use_crf_stage: false
+  crf_stage: 0.5
   transition: 1.0
   infiltration: 1.0
   stage: 0.5

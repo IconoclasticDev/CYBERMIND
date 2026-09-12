@@ -1,0 +1,71 @@
+{
+  "all_six_passed_without_skips": true,
+  "cases": [
+    {
+      "test": "test_finite_loss_gradients_and_zero_illegal_decode[cpu]",
+      "status": "passed",
+      "properties": {
+        "emissions_gradient_norm": "1.3878147602081299",
+        "transitions_gradient_norm": "1.313083291053772",
+        "device": "cpu",
+        "loss": "11.89085865020752",
+        "decoded_illegal_transition_rate": "0.0"
+      }
+    },
+    {
+      "test": "test_finite_loss_gradients_and_zero_illegal_decode[cuda]",
+      "status": "passed",
+      "properties": {
+        "emissions_gradient_norm": "1.1349823474884033",
+        "transitions_gradient_norm": "1.1643208265304565",
+        "device": "cuda",
+        "loss": "7.183155059814453",
+        "decoded_illegal_transition_rate": "0.0"
+      }
+    },
+    {
+      "test": "test_adversarial_independent_argmax_is_illegal_but_viterbi_is_legal[cpu]",
+      "status": "passed",
+      "properties": {
+        "device": "cpu",
+        "independent_argmax_rate": "0.6666666666666666",
+        "viterbi_rate": "0.0",
+        "decoded_stages": "[4, 6, 0, 1]"
+      }
+    },
+    {
+      "test": "test_adversarial_independent_argmax_is_illegal_but_viterbi_is_legal[cuda]",
+      "status": "passed",
+      "properties": {
+        "device": "cuda",
+        "independent_argmax_rate": "0.6666666666666666",
+        "viterbi_rate": "0.0",
+        "decoded_stages": "[4, 6, 0, 1]"
+      }
+    },
+    {
+      "test": "test_crf_training_gradient_and_forecast_integration[cpu]",
+      "status": "passed",
+      "properties": {
+        "device": "cpu",
+        "joint_loss": "13.906042098999023",
+        "crf_loss": "4.9406538009643555",
+        "transition_gradient_norm": "0.5931636095046997",
+        "forecast_illegal_transition_rate": "0.0"
+      }
+    },
+    {
+      "test": "test_crf_training_gradient_and_forecast_integration[cuda]",
+      "status": "passed",
+      "properties": {
+        "device": "cuda",
+        "joint_loss": "13.905874252319336",
+        "crf_loss": "4.950143814086914",
+        "transition_gradient_norm": "0.5930348634719849",
+        "forecast_illegal_transition_rate": "0.0"
+      }
+    }
+  ],
+  "full_suite_test_cases": 94,
+  "full_suite_skips": 0
+}

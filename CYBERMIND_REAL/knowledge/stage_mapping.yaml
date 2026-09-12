@@ -10,6 +10,28 @@ stage_names:
   5: Exfiltration
   6: Unknown/Ambiguous
 unknown_stage: 6
+# CRF policy, indexed [source, destination]. Named stages stay or move forward.
+# Unknown/Ambiguous is unrestricted in either direction; it does not assert a
+# known stage. Benign is index 0, followed by the five attack-stage indices.
+transition_matrix:
+  - [1, 1, 1, 1, 1, 1, 1]
+  - [0, 1, 1, 1, 1, 1, 1]
+  - [0, 0, 1, 1, 1, 1, 1]
+  - [0, 0, 0, 1, 1, 1, 1]
+  - [0, 0, 0, 0, 1, 1, 1]
+  - [0, 0, 0, 0, 0, 1, 1]
+  - [1, 1, 1, 1, 1, 1, 1]
+# Additional edges available ONLY where reset_mask marks the destination time.
+# A declared new episode can reset to Benign or Reconnaissance. Predictions and
+# labels never implicitly trigger a reset. At t=0 no transition is evaluated.
+reset_transition_matrix:
+  - [0, 0, 0, 0, 0, 0, 0]
+  - [1, 0, 0, 0, 0, 0, 0]
+  - [1, 1, 0, 0, 0, 0, 0]
+  - [1, 1, 0, 0, 0, 0, 0]
+  - [1, 1, 0, 0, 0, 0, 0]
+  - [1, 1, 0, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 0, 0, 0]
 label_to_stage:
   BENIGN: 0
   NORMAL: 0

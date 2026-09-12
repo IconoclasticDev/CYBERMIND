@@ -14,8 +14,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from cybermind.data.dataset import GraphSequenceDataset, collate_identity
 from cybermind.models.world_model import WorldModel
 from cybermind.losses import (gaussian_transition_loss, infiltration_loss, stage_loss,
-                              binary_brier, graph_consistency_loss)
-from cybermind.utils.config import load_config, edge_model_kwargs
+                              binary_brier, graph_consistency_loss, crf_stage_loss)
+from cybermind.utils.config import load_config, edge_model_kwargs, stage_model_kwargs
 from cybermind.utils.repro import seed_everything
 
 
@@ -88,7 +88,18 @@ def batch_loss(model, batch, cfg, device, *, return_predictions=False):
     l_consistency = graph_consistency_loss(z)
     components = {'transition': l_trans, 'infiltration': l_infil, 'stage': l_stage,
                   'calibration': l_brier, 'graph_consistency': l_consistency}
-    total = sum(cfg['loss'].get(name, .1 if name == 'graph_consistency' else 0.) * value
+    if cfg['loss'].get('use_crf_stage', False):
+        if not model.use_crf_stage:
+            raise ValueError('CRF loss requires a model constructed with use_crf_stage=True.')
+        resets = [[s.metadata.get('campaign_reset', False) for s in sequence[1:]] for sequence in states]
+        if any(not isinstance(value, bool) for row in resets for value in row):
+            raise ValueError('Graph metadata campaign_reset must be an explicit boolean.')
+        reset_mask = torch.tensor(resets,dtype=torch.bool,device=device)
+        components['crf_stage'] = crf_stage_loss(model.stage_decoder,
+            stage_logits.reshape(z.size(0),z.size(1)-1,-1),
+            stage_labels.reshape(z.size(0),z.size(1)-1),reset_mask=reset_mask)
+    total = sum(cfg['loss'].get(name, .1 if name == 'graph_consistency' else
+                              cfg['loss'].get('stage', .5) if name == 'crf_stage' else 0.) * value
                 for name, value in components.items())
     parts = {k: float(v.detach()) for k, v in components.items()}
     if return_predictions:
@@ -164,6 +175,7 @@ def main():
     model_cfg['graph_heads'] = cfg['model'].get('graph_heads', 8)
     edge_options = edge_model_kwargs(cfg['model'], observed_edge_dim=train[0].states[0].edge_attr.size(1))
     model_cfg.update(edge_options)
+    model_cfg.update(stage_model_kwargs(cfg))
     if edge_options['use_edge_features']:
         # Checkpoints must reconstruct the same edge projection at inference.
         cfg['model'].update(edge_options)
