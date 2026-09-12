@@ -10,10 +10,10 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - Phase 0 downloads only MITRE ATT&CK, CAPEC, and an NVD snapshot.
 - Verify CTU-13 access now; no heavy corpus download on the laptop.
 - Audit each completed phase and request approval before starting the next.
-- Phases 1–4 are pending separate approvals. Phases 5–8 are outside this implementation request.
+- Phase 1 authorized on 2026-09-12. Phases 2–4 require separate approvals. Phases 5–8 are outside this implementation request.
 - Subagents are authorized for independent work.
 
-## Phase 0 — COMPLETE; awaiting Phase 1 approval
+## Phase 0 — COMPLETE (commit `1d91b27`)
 
 - [x] Read the final plan and distinguish it from older master-plan phases.
 - [x] Locate active project and inspect existing acquisition tooling.
@@ -33,15 +33,15 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] Write Phase 0 audit with explicit exit-criterion evidence and limitations (`FINAL_PLAN_PHASE0_AUDIT.md`).
 - [x] Present Phase 1 approval gate with the Phase 0 audit. Await the user's decision; no Phase 1 work may start beforehand.
 
-## Phase 1 — NOT AUTHORIZED
+## Phase 1 — COMPLETE; awaiting Phase 2 approval
 
-- [ ] 1.1 Inspect edge feature shape and dtype.
-- [ ] 1.2 Pass edge dimensions/attributes into both GATv2 layers.
-- [ ] 1.3 Add edge conditioning to dense fallback attention.
-- [ ] 1.4 Thread edge attributes through world model entry points.
-- [ ] 1.5 Preserve flag-controlled baseline behavior.
-- [ ] 1.6 Verify forward/backward, finite loss, and relevant gradients for on/off × PyG/fallback on CPU and GPU.
-- [ ] Audit exit criteria; request Phase 2 approval.
+- [x] 1.1 Inspect edge feature shape and dtype: graph builder emits `[E, 27]` float32; legacy synthetic fixture has seven columns.
+- [x] 1.2 Pass edge dimensions/attributes into both GATv2 layers.
+- [x] 1.3 Add independent learned edge projections to both dense fallback attention layers.
+- [x] 1.4 Thread edge attributes through all world model entry points via `encode_state`.
+- [x] 1.5 Add explicit default-off flag; infer/persist enabled width in checkpoints and reconstruct it in inference entry points. Legacy parameter initialization matches exactly; output matches within 1e-6.
+- [x] 1.6 All eight CPU/GPU × PyG/fallback × on/off cases passed; both enabled projection gradients nonzero. Full suite: 69 passed, no skipped tests. Legacy checkpoint evaluation matches within 1e-6; all frozen Phase 0 hashes remain unchanged.
+- [x] Audit exit criteria in `FINAL_PLAN_PHASE1_AUDIT.md` and present Phase 2 approval request. Await the user's decision.
 
 ## Phase 2 — NOT AUTHORIZED
 

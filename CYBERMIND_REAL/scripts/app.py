@@ -7,6 +7,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from cybermind.data.dataset import GraphSequenceDataset
 from cybermind.models.world_model import WorldModel
+from cybermind.utils.config import edge_model_kwargs
 from cybermind.utils.inference import verify_inference_states
 
 st.set_page_config(page_title='CYBERMIND War Room',layout='wide')
@@ -16,7 +17,7 @@ if not ckpt_path.exists():
     st.warning('No trained checkpoint found yet. Complete GPU training first.')
     st.stop()
 ck=torch.load(ckpt_path,map_location='cpu',weights_only=False); cfg=ck['config']; node_dim=ck['node_dim']
-m=WorldModel(node_dim,graph_hidden=cfg['model']['graph_hidden'],graph_out=cfg['model']['graph_out'],temporal_dim=cfg['model']['temporal_dim'],nhead=cfg['model']['nhead'],temporal_layers=cfg['model']['temporal_layers'],num_stages=cfg['model']['num_stages'],dropout=cfg['model']['dropout'],graph_heads=cfg['model'].get('graph_heads',8)); m.load_state_dict(ck['model_state']); m.eval()
+m=WorldModel(node_dim,graph_hidden=cfg['model']['graph_hidden'],graph_out=cfg['model']['graph_out'],temporal_dim=cfg['model']['temporal_dim'],nhead=cfg['model']['nhead'],temporal_layers=cfg['model']['temporal_layers'],num_stages=cfg['model']['num_stages'],dropout=cfg['model']['dropout'],graph_heads=cfg['model'].get('graph_heads',8),**edge_model_kwargs(cfg['model'])); m.load_state_dict(ck['model_state']); m.eval()
 
 ds=GraphSequenceDataset(ROOT/cfg['data']['processed_dir']/ 'test.pt')
 idx=st.sidebar.number_input('Test sequence',0,max(0,len(ds)-1),0) if len(ds) else 0

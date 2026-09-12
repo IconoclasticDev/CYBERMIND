@@ -7,8 +7,9 @@ from .dynamics import DynamicsModel
 from .heads import FutureStateHead,InfiltrationHead,StageHead
 
 class WorldModel(nn.Module):
-    def __init__(self,node_dim,graph_hidden=128,graph_out=128,temporal_dim=256,nhead=8,temporal_layers=4,num_stages=7,dropout=.1,graph_heads=8):
-        super().__init__(); self.graph=GATv2GraphEncoder(node_dim,graph_hidden,graph_out,heads=graph_heads,dropout=dropout)
+    def __init__(self,node_dim,graph_hidden=128,graph_out=128,temporal_dim=256,nhead=8,temporal_layers=4,num_stages=7,dropout=.1,graph_heads=8,edge_attr_dim=None,use_edge_features=False):
+        super().__init__(); self.graph=GATv2GraphEncoder(node_dim,graph_hidden,graph_out,heads=graph_heads,dropout=dropout,
+                                                       edge_attr_dim=edge_attr_dim,use_edge_features=use_edge_features)
         graph_repr=graph_out*2
         self.temporal=TemporalTransformerEncoder(graph_repr,temporal_dim,nhead,temporal_layers,dropout)
         self.to_latent=nn.Linear(temporal_dim,temporal_dim)
@@ -16,7 +17,7 @@ class WorldModel(nn.Module):
         self.state_head=FutureStateHead(temporal_dim)
         self.infiltration_head=InfiltrationHead(temporal_dim)
         self.stage_head=StageHead(temporal_dim,num_stages)
-    def encode_state(self,state): return self.graph(state.x,state.edge_index)
+    def encode_state(self,state): return self.graph(state.x,state.edge_index,state.edge_attr)
     def encode_sequence(self,states): return torch.stack([self.encode_state(s) for s in states],dim=0)
     def encode_batch_sequences(self,batch_states): return torch.stack([self.encode_sequence(states) for states in batch_states],dim=0)
     def forward(self,states,return_attention=False):

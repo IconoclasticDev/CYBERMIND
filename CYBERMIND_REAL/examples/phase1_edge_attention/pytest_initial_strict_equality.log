@@ -1,0 +1,73 @@
+.F...................................................................    [100%]
+================================== FAILURES ===================================
+__________ test_edge_attention_execution_matrix[edges-off-pyg-cuda] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000020A1A97A520>
+device = 'cuda', backend = 'pyg', enabled = False
+record_property = <function record_property.<locals>.append_property at 0x0000020A1AA3D0C0>
+
+    @pytest.mark.parametrize("device", ["cpu", "cuda"])
+    @pytest.mark.parametrize("backend", ["pyg", "fallback"])
+    @pytest.mark.parametrize("enabled", [False, True], ids=["edges-off", "edges-on"])
+    def test_edge_attention_execution_matrix(monkeypatch, device, backend, enabled, record_property):
+        torch.set_num_threads(1)
+        model = build_model(monkeypatch, backend, enabled, device)
+        record_property("device", device)
+        record_property("backend", backend)
+        record_property("use_edge_features", enabled)
+        record_property("edge_attr_dim", 27)
+        batch = graph_sequences(device)
+        embedded = model.encode_state(batch[0][0])
+        assert embedded.shape == (16,)
+        assert_finite_backward(model, [embedded], enabled, record_property, "encode_state")
+        single = model(batch[0])
+        assert single["graph_embeddings"].shape == (2, 16)
+        assert single["next_latents"].shape == (1, 16)
+        assert_finite_backward(model, [v for v in single.values() if isinstance(v, torch.Tensor)],
+                               enabled, record_property, "forward")
+        batched = model.forward_batch(batch)
+        assert batched["graph_embeddings"].shape == (2, 2, 16)
+        assert batched["next_latents"].shape == (2, 1, 16)
+        assert_finite_backward(model, list(batched.values()), enabled, record_property, "forward_batch")
+    
+        model.eval()
+        state = batch[0][0]
+        changed = replace(state, edge_attr=state.edge_attr.flip(0) * 4)
+        with torch.no_grad():
+            original = model.encode_state(state)
+            perturbed = model.encode_state(changed)
+        record_property("edge_perturbation_max_abs_change", (original - perturbed).abs().max().item())
+        if enabled:
+            assert (original - perturbed).abs().max().item() > 1e-6
+        else:
+>           assert torch.equal(original, perturbed)
+E           AssertionError: assert False
+E            +  where False = <built-in method equal of type object at 0x00007FFCD1F01C40>(tensor([-0.6163, -0.8629, -0.4483,  2.4443,  0.1325,  0.3366, -0.5244, -0.4616,\n        -0.5809, -0.7778, -0.3503,  2.4854,  0.1594,  0.4874, -0.4215, -0.1892],\n       device='cuda:0'), tensor([-0.6163, -0.8629, -0.4483,  2.4443,  0.1325,  0.3366, -0.5244, -0.4616,\n        -0.5809, -0.7778, -0.3503,  2.4854,  0.1594,  0.4874, -0.4215, -0.1892],\n       device='cuda:0'))
+E            +    where <built-in method equal of type object at 0x00007FFCD1F01C40> = torch.equal
+
+tests\test_edge_attention.py:110: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\torch\jit\_script.py:1485
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+tests/test_edge_attention.py: 516 warnings
+tests/test_phase01_training.py: 64 warnings
+tests/test_stochastic_forecast.py: 96 warnings
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch_geometric\inspector.py:433: DeprecationWarning: Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.
+    return typing._eval_type(value, _globals, None)  # type: ignore
+
+tests/test_edge_attention.py: 22 warnings
+tests/test_phase01_training.py: 2 warnings
+tests/test_stochastic_forecast.py: 4 warnings
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+    self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+
+tests/test_phase01_training.py::test_full_gb10_architecture_bf16_cpu_backward
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\backends\mkldnn\__init__.py:96: UserWarning: TF32 acceleration on top of oneDNN is available for Intel GPUs. The current Torch version does not have Intel GPU Support. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\Context.cpp:265.)
+    torch._C._set_onednn_allow_tf32(_allow_tf32)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_edge_attention.py::test_edge_attention_execution_matrix[edges-off-pyg-cuda]
+1 failed, 68 passed, 706 warnings in 9.90s

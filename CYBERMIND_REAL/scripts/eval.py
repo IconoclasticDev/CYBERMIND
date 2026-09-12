@@ -6,13 +6,13 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from cybermind.data.dataset import GraphSequenceDataset
 from cybermind.models.world_model import WorldModel
 from cybermind.evaluation.metrics import binary_metrics,early_warning_lead_time
-from cybermind.utils.config import load_config
+from cybermind.utils.config import load_config, edge_model_kwargs
 from cybermind.utils.inference import verify_inference_states
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument('--config',required=True); p.add_argument('--checkpoint',required=True); p.add_argument('--split',default='test'); p.add_argument('--threshold',type=float,default=.5); p.add_argument('--output',help='Report path; defaults to results/eval_SPLIT.json'); args=p.parse_args(); cfg=load_config(args.config)
     root=Path(__file__).resolve().parents[1]; ds=GraphSequenceDataset(root/cfg['data']['processed_dir']/f'{args.split}.pt'); ck=torch.load(root/args.checkpoint,map_location='cpu',weights_only=False)
-    device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'); node_dim=ck['node_dim']; m=WorldModel(node_dim,graph_hidden=cfg['model']['graph_hidden'],graph_out=cfg['model']['graph_out'],temporal_dim=cfg['model']['temporal_dim'],nhead=cfg['model']['nhead'],temporal_layers=cfg['model']['temporal_layers'],num_stages=cfg['model']['num_stages'],dropout=cfg['model']['dropout'],graph_heads=cfg['model'].get('graph_heads',8)).to(device); m.load_state_dict(ck['model_state']); m.eval()
+    device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'); node_dim=ck['node_dim']; m=WorldModel(node_dim,graph_hidden=cfg['model']['graph_hidden'],graph_out=cfg['model']['graph_out'],temporal_dim=cfg['model']['temporal_dim'],nhead=cfg['model']['nhead'],temporal_layers=cfg['model']['temporal_layers'],num_stages=cfg['model']['num_stages'],dropout=cfg['model']['dropout'],graph_heads=cfg['model'].get('graph_heads',8),**edge_model_kwargs(cfg['model'],ck['config']['model'])).to(device); m.load_state_dict(ck['model_state']); m.eval()
     all_y=[]; all_p=[]; per=[]
     for sample in ds:
         states=sample.states

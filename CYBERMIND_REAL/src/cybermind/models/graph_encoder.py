@@ -9,40 +9,96 @@ except Exception:
     GATv2Conv = None
     HAS_PYG = False
 
+
+def _validate_edge_configuration(edge_attr_dim, use_edge_features):
+    if use_edge_features and (
+        isinstance(edge_attr_dim, bool)
+        or not isinstance(edge_attr_dim, int)
+        or edge_attr_dim <= 0
+    ):
+        raise ValueError("edge_attr_dim must be a positive integer when use_edge_features=True")
+
+
+def _validate_edge_attr(x, edge_index, edge_attr, edge_attr_dim):
+    if edge_attr is None:
+        return
+    if not isinstance(edge_attr, torch.Tensor):
+        raise TypeError("edge_attr must be a torch.Tensor or None")
+    expected_shape = (edge_index.size(1), edge_attr_dim)
+    if edge_attr.ndim != 2 or tuple(edge_attr.shape) != expected_shape:
+        raise ValueError(f"edge_attr must have shape {expected_shape}, got {tuple(edge_attr.shape)}")
+    if not edge_attr.is_floating_point():
+        raise TypeError("edge_attr must be a floating-point tensor")
+    if edge_attr.device != x.device:
+        raise ValueError("edge_attr must be on the same device as x")
+
+
 class DenseGraphAttention(nn.Module):
-    """Pure-Torch fallback with the same role as GATv2 for environments without PyG."""
-    def __init__(self, in_dim, out_dim, heads=4, dropout=0.1):
+    """Pure-Torch attention, optionally conditioned on per-edge features.
+
+    With edge features enabled, ``None`` uses node-only attention for that call.
+    With the flag disabled, attributes are ignored and legacy math is unchanged.
+    """
+    def __init__(self, in_dim, out_dim, heads=4, dropout=0.1,
+                 edge_attr_dim=None, use_edge_features=False):
         super().__init__(); self.heads=heads; self.out_dim=out_dim
+        _validate_edge_configuration(edge_attr_dim, use_edge_features)
+        self.edge_attr_dim=edge_attr_dim; self.use_edge_features=use_edge_features
         self.lin=nn.Linear(in_dim,heads*out_dim,bias=False)
         self.q=nn.Linear(out_dim,1,bias=False); self.k=nn.Linear(out_dim,1,bias=False)
         self.dropout=nn.Dropout(dropout); self.act=nn.ELU()
-    def forward(self,x,edge_index):
+        if use_edge_features:
+            self.edge_proj=nn.Linear(edge_attr_dim,heads,bias=False)
+    def forward(self,x,edge_index,edge_attr=None):
+        if self.use_edge_features:
+            _validate_edge_attr(x,edge_index,edge_attr,self.edge_attr_dim)
         n=x.size(0); h=self.lin(x).view(n,self.heads,self.out_dim)
         out=torch.zeros_like(h)
         if edge_index.numel()==0: return out.mean(1)
         src,dst=edge_index
+        edge_scores = (
+            self.edge_proj(edge_attr)
+            if self.use_edge_features and edge_attr is not None else None
+        )
         for d in range(n):
             idx=(dst==d).nonzero(as_tuple=False).flatten()
             if idx.numel()==0: continue
             s=src[idx]
             scores=(self.q(h[s])+self.k(h[d])).squeeze(-1)
+            if edge_scores is not None:
+                scores=scores+edge_scores[idx]
             alpha=torch.softmax(scores,dim=0).unsqueeze(-1)
             out[d]=torch.sum(alpha*h[s],dim=0)
         return self.act(self.dropout(out)).mean(1)
 
 class GATv2GraphEncoder(nn.Module):
-    def __init__(self,node_dim,hidden_dim=128,out_dim=128,heads=4,dropout=0.1):
+    """Two attention layers with opt-in edge conditioning in both backends.
+
+    ``edge_attr`` may be omitted even when conditioning is enabled, in which case
+    both layers use node-only attention. The disabled configuration retains the
+    legacy parameters, initialization order, and forward operations.
+    """
+    def __init__(self,node_dim,hidden_dim=128,out_dim=128,heads=4,dropout=0.1,
+                 edge_attr_dim=None,use_edge_features=False):
         super().__init__(); self.has_pyg=HAS_PYG
+        _validate_edge_configuration(edge_attr_dim,use_edge_features)
+        self.edge_attr_dim=edge_attr_dim; self.use_edge_features=use_edge_features
         if HAS_PYG:
-            self.conv1=GATv2Conv(node_dim,hidden_dim,heads=heads,concat=False,dropout=dropout,edge_dim=None)
-            self.conv2=GATv2Conv(hidden_dim,out_dim,heads=heads,concat=False,dropout=dropout,edge_dim=None)
+            edge_dim=edge_attr_dim if use_edge_features else None
+            self.conv1=GATv2Conv(node_dim,hidden_dim,heads=heads,concat=False,dropout=dropout,edge_dim=edge_dim)
+            self.conv2=GATv2Conv(hidden_dim,out_dim,heads=heads,concat=False,dropout=dropout,edge_dim=edge_dim)
         else:
-            self.conv1=DenseGraphAttention(node_dim,hidden_dim,heads,dropout)
-            self.conv2=DenseGraphAttention(hidden_dim,out_dim,heads,dropout)
+            self.conv1=DenseGraphAttention(node_dim,hidden_dim,heads,dropout,edge_attr_dim,use_edge_features)
+            self.conv2=DenseGraphAttention(hidden_dim,out_dim,heads,dropout,edge_attr_dim,use_edge_features)
         self.norm1=nn.LayerNorm(hidden_dim); self.norm2=nn.LayerNorm(out_dim)
         self.act=nn.GELU(); self.dropout=nn.Dropout(dropout)
-    def forward(self,x,edge_index):
-        h=self.act(self.conv1(x,edge_index)); h=self.norm1(h); h=self.dropout(h)
-        h=self.act(self.conv2(h,edge_index)); h=self.norm2(h)
+    def forward(self,x,edge_index,edge_attr=None):
+        if self.use_edge_features:
+            _validate_edge_attr(x,edge_index,edge_attr,self.edge_attr_dim)
+            h=self.act(self.conv1(x,edge_index,edge_attr=edge_attr)); h=self.norm1(h); h=self.dropout(h)
+            h=self.act(self.conv2(h,edge_index,edge_attr=edge_attr)); h=self.norm2(h)
+        else:
+            h=self.act(self.conv1(x,edge_index)); h=self.norm1(h); h=self.dropout(h)
+            h=self.act(self.conv2(h,edge_index)); h=self.norm2(h)
         # State pooling: mean + max gives a stable graph-level representation.
         return torch.cat([h.mean(dim=0),h.max(dim=0).values],dim=-1)

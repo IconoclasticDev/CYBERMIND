@@ -6,13 +6,13 @@ import torch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from cybermind.data.dataset import GraphSequenceDataset
 from cybermind.models.world_model import WorldModel
-from cybermind.utils.config import load_config
+from cybermind.utils.config import load_config, edge_model_kwargs
 from cybermind.utils.inference import verify_inference_states
 
 def main():
  p=argparse.ArgumentParser(); p.add_argument('--config',required=True); p.add_argument('--checkpoint',required=True); p.add_argument('--split',default='test'); p.add_argument('--index',type=int,default=0); args=p.parse_args(); cfg=load_config(args.config); root=Path(__file__).resolve().parents[1]
  ds=GraphSequenceDataset(root/cfg['data']['processed_dir']/f'{args.split}.pt'); ck=torch.load(root/args.checkpoint,map_location='cpu',weights_only=False); node_dim=ck['node_dim']
- m=WorldModel(node_dim,graph_hidden=cfg['model']['graph_hidden'],graph_out=cfg['model']['graph_out'],temporal_dim=cfg['model']['temporal_dim'],nhead=cfg['model']['nhead'],temporal_layers=cfg['model']['temporal_layers'],num_stages=cfg['model']['num_stages'],dropout=cfg['model']['dropout'],graph_heads=cfg['model'].get('graph_heads',8)); m.load_state_dict(ck['model_state']); m.eval()
+ m=WorldModel(node_dim,graph_hidden=cfg['model']['graph_hidden'],graph_out=cfg['model']['graph_out'],temporal_dim=cfg['model']['temporal_dim'],nhead=cfg['model']['nhead'],temporal_layers=cfg['model']['temporal_layers'],num_stages=cfg['model']['num_stages'],dropout=cfg['model']['dropout'],graph_heads=cfg['model'].get('graph_heads',8),**edge_model_kwargs(cfg['model'],ck['config']['model'])); m.load_state_dict(ck['model_state']); m.eval()
  sample=ds[args.index];
  verify_inference_states(ck,sample.states)
  with torch.no_grad():

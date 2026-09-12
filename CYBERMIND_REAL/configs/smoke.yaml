@@ -7,6 +7,7 @@ data:
   stride_seconds: 60
   history: 8
 model:
+  use_edge_features: false
   graph_hidden: 32
   graph_out: 32
   temporal_dim: 64

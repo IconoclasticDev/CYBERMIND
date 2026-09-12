@@ -1,0 +1,38 @@
+{
+  "source": "examples\\smoke\\baseline_before\\integration\\canonical\\z_earlier.parquet",
+  "graph_builder_modified": false,
+  "edge_shape": [
+    1,
+    27
+  ],
+  "edge_dtype": "torch.float32",
+  "feature_names": [
+    "bytes",
+    "packets",
+    "protocol",
+    "port",
+    "direction",
+    "duration",
+    "inter_arrival",
+    "ttl_mean",
+    "ttl_variance",
+    "tcp_window_mean",
+    "tcp_window_variance",
+    "ip_df_ratio",
+    "ip_mf_ratio",
+    "ip_fragment_ratio",
+    "payload_size_mean",
+    "payload_size_variance",
+    "payload_size_min",
+    "payload_size_max",
+    "payload_size_p25",
+    "payload_size_p50",
+    "payload_size_p75",
+    "scan_unique_ports",
+    "scan_sequential_score",
+    "scan_randomized_score",
+    "retransmission_count",
+    "retransmission_ratio",
+    "packet_features_available"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source_commit": "1d91b27",
+  "cases": [
+    {
+      "device": "cpu",
+      "backend": "pyg",
+      "state_keys_identical": true,
+      "initial_weights_identical": true,
+      "outputs_bitwise_equal": true,
+      "output_max_abs_difference": 0.0,
+      "atol": 1e-06,
+      "rtol": 1e-06
+    },
+    {
+      "device": "cpu",
+      "backend": "fallback",
+      "state_keys_identical": true,
+      "initial_weights_identical": true,
+      "outputs_bitwise_equal": true,
+      "output_max_abs_difference": 0.0,
+      "atol": 1e-06,
+      "rtol": 1e-06
+    },
+    {
+      "device": "cuda",
+      "backend": "pyg",
+      "state_keys_identical": true,
+      "initial_weights_identical": true,
+      "outputs_bitwise_equal": false,
+      "output_max_abs_difference": 2.384185791015625e-07,
+      "atol": 1e-06,
+      "rtol": 1e-06
+    },
+    {
+      "device": "cuda",
+      "backend": "fallback",
+      "state_keys_identical": true,
+      "initial_weights_identical": true,
+      "outputs_bitwise_equal": true,
+      "output_max_abs_difference": 0.0,
+      "atol": 1e-06,
+      "rtol": 1e-06
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "phase": 1,
+  "synthetic_only": true,
+  "started_at_utc": "2026-09-12T08:25:30.403242+00:00",
+  "runtime": {
+    "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+    "torch": "2.14.0+cu130",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+  },
+  "commands": [
+    {
+      "name": "pytest",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-o",
+        "junit_family=legacy",
+        "--junitxml=examples/phase1_edge_attention/pytest.xml"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 10.969
+    },
+    {
+      "name": "legacy_checkpoint_eval",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/eval.py",
+        "--config",
+        "examples/smoke/baseline_before/config.yaml",
+        "--checkpoint",
+        "examples/smoke/baseline_before/baseline.pt",
+        "--output",
+        "examples/phase1_edge_attention/legacy_eval.json"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 7.245
+    },
+    {
+      "name": "enabled_train",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/train.py",
+        "--config",
+        "examples/phase1_edge_attention/enabled_smoke.yaml",
+        "--device",
+        "cpu",
+        "--epochs",
+        "1"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 4.189
+    },
+    {
+      "name": "enabled_eval",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/eval.py",
+        "--config",
+        "examples/phase1_edge_attention/enabled_smoke.yaml",
+        "--checkpoint",
+        "checkpoints/phase1_edges.pt",
+        "--output",
+        "examples/phase1_edge_attention/enabled_eval.json"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 6.547
+    }
+  ],
+  "status": "passed",
+  "all_eight_cases_passed": true,
+  "edge_schema_width": 27,
+  "legacy_encoder_matches_within_tolerance": true,
+  "legacy_checkpoint_eval_matches": true,
+  "enabled_checkpoint_inferred_width": 7,
+  "enabled_training_finite": true,
+  "finished_at_utc": "2026-09-12T08:26:00.038818+00:00"
+}

@@ -15,7 +15,7 @@ from cybermind.data.dataset import GraphSequenceDataset, collate_identity
 from cybermind.models.world_model import WorldModel
 from cybermind.losses import (gaussian_transition_loss, infiltration_loss, stage_loss,
                               binary_brier, graph_consistency_loss)
-from cybermind.utils.config import load_config
+from cybermind.utils.config import load_config, edge_model_kwargs
 from cybermind.utils.repro import seed_everything
 
 
@@ -162,6 +162,11 @@ def main():
     node_dim = train[0].states[0].x.size(1)
     model_cfg = {k: cfg['model'][k] for k in ('graph_hidden', 'graph_out', 'temporal_dim', 'nhead', 'temporal_layers', 'num_stages', 'dropout')}
     model_cfg['graph_heads'] = cfg['model'].get('graph_heads', 8)
+    edge_options = edge_model_kwargs(cfg['model'], observed_edge_dim=train[0].states[0].edge_attr.size(1))
+    model_cfg.update(edge_options)
+    if edge_options['use_edge_features']:
+        # Checkpoints must reconstruct the same edge projection at inference.
+        cfg['model'].update(edge_options)
     model = WorldModel(node_dim, **model_cfg).to(device)
     optimizer = AdamW(model.parameters(), lr=cfg['train']['lr'], weight_decay=cfg['train']['weight_decay'])
     # bf16 uses its native exponent range and does not instantiate GradScaler.
