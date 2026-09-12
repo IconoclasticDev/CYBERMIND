@@ -1,0 +1,17 @@
+{
+  "python": "3.14.7",
+  "torch": "2.14.0+cu130",
+  "cuda_runtime": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "compute_capability": [
+    12,
+    0
+  ],
+  "vram_bytes": 8518041600,
+  "ram_bytes": 16513445888,
+  "available_ram_bytes": 895041536,
+  "logical_cpus": 24,
+  "bf16_supported": true,
+  "bf16_loss": 125.97352600097656,
+  "bf16_gradient_norm": 8.920414924621582
+}

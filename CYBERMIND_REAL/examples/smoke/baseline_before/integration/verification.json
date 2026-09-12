@@ -1,0 +1,8 @@
+{
+  "synthetic_only": true,
+  "real_training_performed": false,
+  "steps_passed": 4,
+  "evaluated_samples": 25,
+  "automatic_explanations": true,
+  "warning": "CIC-IDS2018 is a fixture routing value. These generated rows are NOT real CIC data or accuracy evidence."
+}

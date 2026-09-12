@@ -1,0 +1,74 @@
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+{'device': 'cpu', 'precision': 'fp32', 'class_counts': {'positive': 24, 'negative': 102}, 'pos_weight': 4.25, 'selection': 'val_f1'}
+epoch 1:   0%|          | 0/18 [00:00<?, ?it/s]D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+epoch 1:   6%|▌         | 1/18 [00:04<01:09,  4.07s/it]epoch 1:  28%|██▊       | 5/18 [00:04<00:08,  1.58it/s]epoch 1:  50%|█████     | 9/18 [00:04<00:02,  3.32it/s]epoch 1:  83%|████████▎ | 15/18 [00:04<00:00,  6.71it/s]epoch 1: 100%|██████████| 18/18 [00:05<00:00,  3.12it/s]
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+{'epoch': 1, 'train': {'loss': 0.7740734923217032, 'transition': -1.1339691794580884, 'infiltration': 1.1728974249627855, 'stage': 1.375959285431438, 'calibration': 0.22580055312977898, 'graph_consistency': 0.020054971023152273}, 'val': {'loss': -0.23311456044514975, 'transition': -1.8107686440149944, 'infiltration': 1.1247315208117168, 'stage': 0.8207060694694519, 'calibration': 0.21195151408513388, 'graph_consistency': 0.0017916179882983367, 'precision': 0.0, 'recall': 0.0, 'f1': 0.0, 'threshold': 0.5, 'positive': 4, 'negative': 17}}
+epoch 2:   0%|          | 0/18 [00:00<?, ?it/s]D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+epoch 2:   6%|▌         | 1/18 [00:04<01:10,  4.17s/it]epoch 2:  22%|██▏       | 4/18 [00:04<00:11,  1.20it/s]epoch 2:  39%|███▉      | 7/18 [00:04<00:04,  2.44it/s]epoch 2:  67%|██████▋   | 12/18 [00:04<00:01,  5.22it/s]epoch 2: 100%|██████████| 18/18 [00:04<00:00,  9.32it/s]epoch 2: 100%|██████████| 18/18 [00:06<00:00,  2.90it/s]
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+{'epoch': 2, 'train': {'loss': -0.06799015071656969, 'transition': -1.7254433830579121, 'infiltration': 1.2192278835508559, 'stage': 0.7967258095741272, 'calibration': 0.19422789621684286, 'graph_consistency': 0.010168505547982123}, 'val': {'loss': -0.5417641798655192, 'transition': -2.128546158472697, 'infiltration': 1.189226637283961, 'stage': 0.7253907695412636, 'calibration': 0.17355247338612875, 'graph_consistency': 0.0014949407583723466, 'precision': 0.0, 'recall': 0.0, 'f1': 0.0, 'threshold': 0.5, 'positive': 4, 'negative': 17}}
+Best validation checkpoint: D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\checkpoints\phase0_baseline.pt

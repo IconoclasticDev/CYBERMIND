@@ -1,0 +1,7 @@
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+python 3.14.7
+platform Windows-11-10.0.26200-SP0
+torch 2.14.0+cu130 cuda True devices 1
+pyg 2.8.0.post1
+pandas 3.0.5

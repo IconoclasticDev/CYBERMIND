@@ -4,6 +4,14 @@ __pycache__/
 .phase01-venv/
 .uv-cache/
 .pytest_cache/
+.phase0-tmp/
+examples/smoke/baseline_before/historical_artifacts/
+# Downloaded knowledge stays local; reproducible provenance is tracked.
+knowledge/raw/
+# Frozen copies of these live outputs are tracked under baseline_before/.
+checkpoints/phase0_baseline.pt
+checkpoints/phase0_baseline_last.pt
+examples/smoke/current/
 .env
 # Submission checkpoints (*.pt) and results JSON/PNG are intentionally trackable.
 # Explicitly stage the final artifacts documented in README.md.

@@ -1,0 +1,8 @@
+Python 3.12.14 PyTorch 2.14.0+cpu
+PyG 2.8.0.post1
+STOP: CUDA is unavailable on this runtime.
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\train.pt
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\val.pt
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\test.pt
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\normalization.json
+STOP: Missing: C:\Users\as030\Downloads\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\processed_gb10\metadata.json

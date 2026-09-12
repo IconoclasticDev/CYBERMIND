@@ -1,0 +1,84 @@
+{
+  "generated_at_utc": "2026-09-12T07:51:16.246177+00:00",
+  "scope": "Phase 0 lightweight knowledge only; heavy datasets deferred to Phase 5",
+  "items": [
+    {
+      "source": "ATT&CK",
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json",
+      "path": "knowledge/raw/enterprise-attack.json",
+      "download_started_at_utc": "2026-09-12T07:51:02.547572+00:00",
+      "resolved_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json",
+      "http_last_modified": null,
+      "http_etag": "\"1762489b825d8f0464063fd45213b3463e01bf71311ac4cf0665218cdb11e1b1\"",
+      "download_completed_at_utc": "2026-09-12T07:51:08.586625+00:00",
+      "acquisition_action": "downloaded_and_atomically_committed",
+      "status": "verified",
+      "verified_at_utc": "2026-09-12T07:51:08.586625+00:00",
+      "bytes": 53835637,
+      "sha256": "dc1639caa5501d720e280cf1cbd8fbe009884a0c9b3e6e9ed9d0c25166c3d8f4",
+      "validation": {
+        "json_parse": "passed",
+        "stix_bundle": "passed",
+        "object_count": 26086,
+        "attack_pattern_count": 858,
+        "collection_versions": [
+          "19.2"
+        ]
+      },
+      "checksum_note": "Locally computed SHA256; no independently published checksum compared."
+    },
+    {
+      "source": "CAPEC",
+      "url": "https://capec.mitre.org/data/archive/capec_latest.zip",
+      "path": "knowledge/raw/capec_latest.zip",
+      "download_started_at_utc": "2026-09-12T07:51:10.045598+00:00",
+      "resolved_url": "https://capec.mitre.org/data/archive/capec_latest.zip",
+      "http_last_modified": "Tue, 24 Jan 2023 18:33:18 GMT",
+      "http_etag": null,
+      "download_completed_at_utc": "2026-09-12T07:51:13.058077+00:00",
+      "acquisition_action": "downloaded_and_atomically_committed",
+      "status": "verified",
+      "verified_at_utc": "2026-09-12T07:51:13.058077+00:00",
+      "bytes": 587404,
+      "sha256": "c56527f3d64b7164fcdae73c1a7545ee6e83b1150546c07a93339b1543a3041d",
+      "validation": {
+        "zip_crc": "passed",
+        "xml_parse": "passed",
+        "catalogs": [
+          {
+            "member": "capec_v3.9.xml",
+            "root": "{http://capec.mitre.org/capec-3}Attack_Pattern_Catalog",
+            "version": "3.9",
+            "attack_pattern_count": 615
+          }
+        ]
+      },
+      "checksum_note": "Locally computed SHA256; no independently published checksum compared."
+    },
+    {
+      "source": "NVD",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?startIndex=0&resultsPerPage=2000",
+      "path": "knowledge/raw/nvd_cves_page_0.json",
+      "download_started_at_utc": "2026-09-12T07:51:14.314922+00:00",
+      "resolved_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?startIndex=0&resultsPerPage=2000",
+      "http_last_modified": null,
+      "http_etag": null,
+      "download_completed_at_utc": "2026-09-12T07:51:16.242435+00:00",
+      "acquisition_action": "downloaded_and_atomically_committed",
+      "status": "verified",
+      "verified_at_utc": "2026-09-12T07:51:16.242435+00:00",
+      "bytes": 4258928,
+      "sha256": "a92d20d38f7a645302e60ecb940d140663303f7529e359a096118946b42837dc",
+      "validation": {
+        "json_parse": "passed",
+        "record_count": 2000,
+        "version": "2.0",
+        "start_index": 0,
+        "total_results_on_server": 390614,
+        "server_timestamp": "2026-09-12T07:51:13.524",
+        "scope": "LIMITED SNAPSHOT: first page, at most 2000 CVEs; NOT the complete NVD database"
+      },
+      "checksum_note": "Locally computed SHA256; no independently published checksum compared."
+    }
+  ]
+}

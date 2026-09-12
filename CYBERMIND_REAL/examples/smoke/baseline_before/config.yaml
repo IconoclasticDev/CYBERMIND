@@ -26,9 +26,8 @@ train:
   lr: 0.001
   weight_decay: 0.0001
   grad_clip: 1.0
-  checkpoint: smoke.pt
-  # Later runs must not overwrite the frozen Phase 0 reference.
-  history_path: examples/smoke/current/train_history.json
+  checkpoint: phase0_baseline.pt
+  history_path: examples/smoke/baseline_before/train_history.json
 eval:
   rollout_steps: 4
 

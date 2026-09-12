@@ -1,0 +1,642 @@
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+{
+  "split": "test",
+  "forecast_horizon_windows": 1,
+  "metrics": {
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "ap": 0.3333333333333333,
+    "mean_lead_time_seconds": 0.0
+  },
+  "per_sample": [
+    {
+      "scenario": "S21",
+      "target": 1.0,
+      "predicted_future_risk": 0.44188207387924194,
+      "predictive_variance": 4.1269617213401943e-05,
+      "explanation": {
+        "target": "ensemble_mean_infiltration_probability_at_final_step",
+        "gradient_x_input": [
+          {
+            "feature": "unique_peer_count",
+            "attribution": 1.2411468560458161e-05,
+            "signed_attribution": -7.341019681916805e-06
+          },
+          {
+            "feature": "flow_count",
+            "attribution": 9.137083907262422e-06,
+            "signed_attribution": 7.294358397302858e-07
+          },
+          {
+            "feature": "udp_ratio",
+            "attribution": 8.517828064213973e-06,
+            "signed_attribution": -6.95176549925236e-06
+          },
+          {
+            "feature": "tcp_ratio",
+            "attribution": 7.772572644171305e-06,
+            "signed_attribution": 2.793136388845596e-07
+          },
+          {
+            "feature": "packet_count",
+            "attribution": 6.8901549639122095e-06,
+            "signed_attribution": 5.8984378483728506e-06
+          },
+          {
+            "feature": "mean_duration",
+            "attribution": 6.337207196338568e-06,
+            "signed_attribution": -6.31984357823967e-06
+          },
+          {
+            "feature": "activity_rate",
+            "attribution": 5.877039711776888e-06,
+            "signed_attribution": 2.8156230200693244e-06
+          },
+          {
+            "feature": "bytes_per_flow",
+            "attribution": 4.634885044652037e-06,
+            "signed_attribution": 2.1588214167422848e-06
+          },
+          {
+            "feature": "packets_per_flow",
+            "attribution": 4.417672698764363e-06,
+            "signed_attribution": -3.6882245240121847e-06
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "attribution": 3.916883997590048e-06,
+            "signed_attribution": 2.0852992577147234e-07
+          }
+        ],
+        "temporal_attention": [
+          {
+            "window_index": 6,
+            "timestamp": 6.0,
+            "attention": 0.15758457779884338
+          },
+          {
+            "window_index": 5,
+            "timestamp": 5.0,
+            "attention": 0.14970019459724426
+          },
+          {
+            "window_index": 2,
+            "timestamp": 2.0,
+            "attention": 0.14036983251571655
+          },
+          {
+            "window_index": 4,
+            "timestamp": 4.0,
+            "attention": 0.13966044783592224
+          },
+          {
+            "window_index": 1,
+            "timestamp": 1.0,
+            "attention": 0.13856011629104614
+          },
+          {
+            "window_index": 3,
+            "timestamp": 3.0,
+            "attention": 0.13773471117019653
+          },
+          {
+            "window_index": 0,
+            "timestamp": 0.0,
+            "attention": 0.13639011979103088
+          }
+        ],
+        "feature_occlusion": [
+          {
+            "feature": "packet_count",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4415329694747925,
+            "risk_reduction": 0.0003491044044494629
+          },
+          {
+            "feature": "bytes_total",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.441663920879364,
+            "risk_reduction": 0.0002181529998779297
+          },
+          {
+            "feature": "activity_rate",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4417053461074829,
+            "risk_reduction": 0.0001767277717590332
+          },
+          {
+            "feature": "anomaly_proxy",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4417214095592499,
+            "risk_reduction": 0.00016066431999206543
+          },
+          {
+            "feature": "bytes_per_flow",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4417465031147003,
+            "risk_reduction": 0.00013557076454162598
+          },
+          {
+            "feature": "flow_count",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4418136179447174,
+            "risk_reduction": 6.845593452453613e-05
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.44188520312309265,
+            "risk_reduction": -3.129243850708008e-06
+          },
+          {
+            "feature": "tcp_ratio",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4418870210647583,
+            "risk_reduction": -4.947185516357422e-06
+          },
+          {
+            "feature": "mean_iat",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.44198983907699585,
+            "risk_reduction": -0.00010776519775390625
+          },
+          {
+            "feature": "packets_total",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4420905113220215,
+            "risk_reduction": -0.00020843744277954102
+          }
+        ],
+        "what_would_reduce_risk": [
+          {
+            "feature": "packet_count",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4415329694747925,
+            "risk_reduction": 0.0003491044044494629
+          },
+          {
+            "feature": "bytes_total",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.441663920879364,
+            "risk_reduction": 0.0002181529998779297
+          },
+          {
+            "feature": "activity_rate",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4417053461074829,
+            "risk_reduction": 0.0001767277717590332
+          },
+          {
+            "feature": "anomaly_proxy",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4417214095592499,
+            "risk_reduction": 0.00016066431999206543
+          },
+          {
+            "feature": "bytes_per_flow",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4417465031147003,
+            "risk_reduction": 0.00013557076454162598
+          },
+          {
+            "feature": "flow_count",
+            "baseline_risk": 0.44188207387924194,
+            "counterfactual_risk": 0.4418136179447174,
+            "risk_reduction": 6.845593452453613e-05
+          }
+        ],
+        "baseline_risk": 0.44188207387924194,
+        "n_rollouts": 16,
+        "seed": 0,
+        "occlusion_baseline": "zero in model feature space (training mean for normalized continuous features)",
+        "interpretation": "Model sensitivity and attention; not proof of causality or calibrated confidence."
+      },
+      "lead_time_seconds": 0.0,
+      "warning_index": null,
+      "critical_index": 4
+    },
+    {
+      "scenario": "S22",
+      "target": 0.0,
+      "predicted_future_risk": 0.4419604539871216,
+      "predictive_variance": 4.129644003114663e-05,
+      "explanation": {
+        "target": "ensemble_mean_infiltration_probability_at_final_step",
+        "gradient_x_input": [
+          {
+            "feature": "packets_total",
+            "attribution": 9.52014761423925e-06,
+            "signed_attribution": -8.762344805290923e-06
+          },
+          {
+            "feature": "packets_per_flow",
+            "attribution": 7.17653210813296e-06,
+            "signed_attribution": -6.3344768932438456e-06
+          },
+          {
+            "feature": "tcp_ratio",
+            "attribution": 7.067266778904013e-06,
+            "signed_attribution": -2.04414504878514e-06
+          },
+          {
+            "feature": "bytes_total",
+            "attribution": 6.738079719070811e-06,
+            "signed_attribution": 6.390881026163697e-06
+          },
+          {
+            "feature": "bytes_per_flow",
+            "attribution": 6.347365797410021e-06,
+            "signed_attribution": 4.654089025279973e-06
+          },
+          {
+            "feature": "flow_count",
+            "attribution": 6.06539515501936e-06,
+            "signed_attribution": -8.209486281884892e-07
+          },
+          {
+            "feature": "packet_count",
+            "attribution": 5.970843631075695e-06,
+            "signed_attribution": 5.253442850516876e-06
+          },
+          {
+            "feature": "unique_peer_count",
+            "attribution": 5.101248461869545e-06,
+            "signed_attribution": -6.97810719429981e-07
+          },
+          {
+            "feature": "udp_ratio",
+            "attribution": 4.564773917081766e-06,
+            "signed_attribution": -2.893906639656052e-06
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "attribution": 4.12926283388515e-06,
+            "signed_attribution": 7.670687978134083e-07
+          }
+        ],
+        "temporal_attention": [
+          {
+            "window_index": 6,
+            "timestamp": 6.0,
+            "attention": 0.1593359261751175
+          },
+          {
+            "window_index": 5,
+            "timestamp": 5.0,
+            "attention": 0.14883819222450256
+          },
+          {
+            "window_index": 4,
+            "timestamp": 4.0,
+            "attention": 0.14038236439228058
+          },
+          {
+            "window_index": 1,
+            "timestamp": 1.0,
+            "attention": 0.14035332202911377
+          },
+          {
+            "window_index": 2,
+            "timestamp": 2.0,
+            "attention": 0.13808836042881012
+          },
+          {
+            "window_index": 0,
+            "timestamp": 0.0,
+            "attention": 0.136557936668396
+          },
+          {
+            "window_index": 3,
+            "timestamp": 3.0,
+            "attention": 0.1364438533782959
+          }
+        ],
+        "feature_occlusion": [
+          {
+            "feature": "bytes_total",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4414712190628052,
+            "risk_reduction": 0.0004892349243164062
+          },
+          {
+            "feature": "bytes_per_flow",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4415901303291321,
+            "risk_reduction": 0.00037032365798950195
+          },
+          {
+            "feature": "packet_count",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4416019022464752,
+            "risk_reduction": 0.0003585517406463623
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4419189691543579,
+            "risk_reduction": 4.1484832763671875e-05
+          },
+          {
+            "feature": "activity_rate",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.441935271024704,
+            "risk_reduction": 2.518296241760254e-05
+          },
+          {
+            "feature": "flow_count",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4420127868652344,
+            "risk_reduction": -5.233287811279297e-05
+          },
+          {
+            "feature": "anomaly_proxy",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4420311450958252,
+            "risk_reduction": -7.069110870361328e-05
+          },
+          {
+            "feature": "unique_peer_count",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.44203174114227295,
+            "risk_reduction": -7.128715515136719e-05
+          },
+          {
+            "feature": "mean_iat",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.44204771518707275,
+            "risk_reduction": -8.726119995117188e-05
+          },
+          {
+            "feature": "tcp_ratio",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4421370029449463,
+            "risk_reduction": -0.00017654895782470703
+          }
+        ],
+        "what_would_reduce_risk": [
+          {
+            "feature": "bytes_total",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4414712190628052,
+            "risk_reduction": 0.0004892349243164062
+          },
+          {
+            "feature": "bytes_per_flow",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4415901303291321,
+            "risk_reduction": 0.00037032365798950195
+          },
+          {
+            "feature": "packet_count",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4416019022464752,
+            "risk_reduction": 0.0003585517406463623
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.4419189691543579,
+            "risk_reduction": 4.1484832763671875e-05
+          },
+          {
+            "feature": "activity_rate",
+            "baseline_risk": 0.4419604539871216,
+            "counterfactual_risk": 0.441935271024704,
+            "risk_reduction": 2.518296241760254e-05
+          }
+        ],
+        "baseline_risk": 0.4419604539871216,
+        "n_rollouts": 16,
+        "seed": 0,
+        "occlusion_baseline": "zero in model feature space (training mean for normalized continuous features)",
+        "interpretation": "Model sensitivity and attention; not proof of causality or calibrated confidence."
+      },
+      "lead_time_seconds": null,
+      "warning_index": null,
+      "critical_index": null
+    },
+    {
+      "scenario": "S23",
+      "target": 0.0,
+      "predicted_future_risk": 0.44236084818840027,
+      "predictive_variance": 4.067316331202164e-05,
+      "explanation": {
+        "target": "ensemble_mean_infiltration_probability_at_final_step",
+        "gradient_x_input": [
+          {
+            "feature": "unique_peer_count",
+            "attribution": 1.1271569746895693e-05,
+            "signed_attribution": -7.156523224693956e-06
+          },
+          {
+            "feature": "packet_count",
+            "attribution": 8.658548722451087e-06,
+            "signed_attribution": 7.365833880612627e-06
+          },
+          {
+            "feature": "flow_count",
+            "attribution": 7.166238447098294e-06,
+            "signed_attribution": 1.5498284255954786e-06
+          },
+          {
+            "feature": "mean_duration",
+            "attribution": 5.689490535587538e-06,
+            "signed_attribution": -5.654056167259114e-06
+          },
+          {
+            "feature": "bytes_total",
+            "attribution": 5.399354904511711e-06,
+            "signed_attribution": 4.9795021368481684e-06
+          },
+          {
+            "feature": "packets_per_flow",
+            "attribution": 5.351076197257498e-06,
+            "signed_attribution": -4.755114787258208e-06
+          },
+          {
+            "feature": "packets_total",
+            "attribution": 4.788822025147965e-06,
+            "signed_attribution": -4.058773356518941e-06
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "attribution": 4.292460744181881e-06,
+            "signed_attribution": 1.0835784678420168e-06
+          },
+          {
+            "feature": "tcp_ratio",
+            "attribution": 4.278603682905668e-06,
+            "signed_attribution": 1.0363397677792818e-06
+          },
+          {
+            "feature": "udp_ratio",
+            "attribution": 4.1191437958332244e-06,
+            "signed_attribution": -3.1645015496906126e-06
+          }
+        ],
+        "temporal_attention": [
+          {
+            "window_index": 6,
+            "timestamp": 6.0,
+            "attention": 0.15798649191856384
+          },
+          {
+            "window_index": 5,
+            "timestamp": 5.0,
+            "attention": 0.14952877163887024
+          },
+          {
+            "window_index": 1,
+            "timestamp": 1.0,
+            "attention": 0.14057457447052002
+          },
+          {
+            "window_index": 2,
+            "timestamp": 2.0,
+            "attention": 0.1396561712026596
+          },
+          {
+            "window_index": 0,
+            "timestamp": 0.0,
+            "attention": 0.13831062614917755
+          },
+          {
+            "window_index": 3,
+            "timestamp": 3.0,
+            "attention": 0.13780158758163452
+          },
+          {
+            "window_index": 4,
+            "timestamp": 4.0,
+            "attention": 0.1361417919397354
+          }
+        ],
+        "feature_occlusion": [
+          {
+            "feature": "packet_count",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44180557131767273,
+            "risk_reduction": 0.0005552768707275391
+          },
+          {
+            "feature": "bytes_total",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4419396221637726,
+            "risk_reduction": 0.00042122602462768555
+          },
+          {
+            "feature": "bytes_per_flow",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44215017557144165,
+            "risk_reduction": 0.00021067261695861816
+          },
+          {
+            "feature": "flow_count",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4422105550765991,
+            "risk_reduction": 0.00015029311180114746
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44227731227874756,
+            "risk_reduction": 8.353590965270996e-05
+          },
+          {
+            "feature": "tcp_ratio",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4422902464866638,
+            "risk_reduction": 7.06017017364502e-05
+          },
+          {
+            "feature": "activity_rate",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4423002600669861,
+            "risk_reduction": 6.058812141418457e-05
+          },
+          {
+            "feature": "anomaly_proxy",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44231975078582764,
+            "risk_reduction": 4.1097402572631836e-05
+          },
+          {
+            "feature": "mean_iat",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4424785375595093,
+            "risk_reduction": -0.00011768937110900879
+          },
+          {
+            "feature": "udp_ratio",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4426117539405823,
+            "risk_reduction": -0.00025090575218200684
+          }
+        ],
+        "what_would_reduce_risk": [
+          {
+            "feature": "packet_count",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44180557131767273,
+            "risk_reduction": 0.0005552768707275391
+          },
+          {
+            "feature": "bytes_total",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4419396221637726,
+            "risk_reduction": 0.00042122602462768555
+          },
+          {
+            "feature": "bytes_per_flow",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44215017557144165,
+            "risk_reduction": 0.00021067261695861816
+          },
+          {
+            "feature": "flow_count",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4422105550765991,
+            "risk_reduction": 0.00015029311180114746
+          },
+          {
+            "feature": "unique_dst_port_count",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44227731227874756,
+            "risk_reduction": 8.353590965270996e-05
+          },
+          {
+            "feature": "tcp_ratio",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4422902464866638,
+            "risk_reduction": 7.06017017364502e-05
+          },
+          {
+            "feature": "activity_rate",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.4423002600669861,
+            "risk_reduction": 6.058812141418457e-05
+          },
+          {
+            "feature": "anomaly_proxy",
+            "baseline_risk": 0.44236084818840027,
+            "counterfactual_risk": 0.44231975078582764,
+            "risk_reduction": 4.1097402572631836e-05
+          }
+        ],
+        "baseline_risk": 0.44236084818840027,
+        "n_rollouts": 16,
+        "seed": 0,
+        "occlusion_baseline": "zero in model feature space (training mean for normalized continuous features)",
+        "interpretation": "Model sensitivity and attention; not proof of causality or calibrated confidence."
+      },
+      "lead_time_seconds": null,
+      "warning_index": null,
+      "critical_index": null
+    }
+  ]
+}
