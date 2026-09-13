@@ -53,9 +53,20 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] 2.6 Verify finite loss/gradients, adversarial legal decoding, and flag-off path on CPU/GPU: 94 tests passed, zero skips; all six CPU/GPU exit checks passed. One-epoch CRF checkpoint trained and reloaded; all 49 frozen baseline files unchanged.
 - [x] Audit exit criteria in `FINAL_PLAN_PHASE2_AUDIT.md`; present Phase 3 approval request. User approved Phase 3 with "continue" on 2026-09-12.
 
-## Phase 3 — EXIT CRITERIA NOT MET (original-fixture four-step audit)
+## Phase 3 — COMPLETE under the recorded reviewer decisions
 
-Latest result: the reviewed second escalation removes diversity only from the frozen-fixture gate. Periodic-input diagnostic #6 passes all four integration steps at epoch 100, but the unchanged validation-F1 selector retains epoch 94, which fails steps 1–3. The selected-checkpoint exit gate remains unmet. See `../PHASE3_SECOND_ESCALATION_AUDIT.md`.
+Final result: the reviewer-approved 0.05 F1 tolerance and validation stage-CE tie-breaker select **epoch 185**, which passes the unchanged integration diversity/legality gate at all four steps. The approved frozen mechanical gate also passes. See `../PHASE3_FINAL_AUDIT.md`. Phase 4 remains unstarted and requires separate approval.
+
+### Third round — complete
+
+- [x] Record exact reviewer selection pseudocode, fixed tolerance 0.05 and stage CE; predeclare extension to epoch 200.
+- [x] Implement the approved opt-in policy in the actual training loop, preserving legacy F1-only defaults.
+- [x] Apply the rule to all 100 historical validation records: selects epoch 98, correcting the document's epoch-94 prediction. Reproduce missing weights; all histories match within 1e-6 and epoch-100 model tensors match bit for bit.
+- [x] Evaluate recovered epoch 98: step 1 fails, steps 2–4 pass. Preserve the failure.
+- [x] Resume model/optimizer/RNG through epoch 200. Exact validation-selected epoch 185 passes all four original integration steps; last epoch 200 fails step 1 and is not substituted.
+- [x] Verify interrupted/uninterrupted history parity and bitwise selected/last model parity.
+- [x] Complete all four flag suites: 145 passed and zero skips each (580 executions), CPU pipelines, combined CUDA pipeline, frozen/both-off 1e-6 comparisons and historical hash preservation.
+- [x] Deliver full Phase 3 audit, updated checklist and evidence manifest. Request separate Phase 4 approval only after delivery.
 
 ### Second escalation — authorized engineering Option 2
 
@@ -64,11 +75,11 @@ Latest result: the reviewed second escalation removes diversity only from the fr
 - [x] Task B: add default-off sine/cosine channels from original per-node coordinate, keeping all raw tensors unchanged. Train-only calibration and checkpoint-safe inference implemented.
 - [x] Run CPU diagnostic #6 for 100 epochs, same seed, optimizer, losses, selection and original integration gate. Epoch 94 selected: FAIL steps 1–3, PASS step 4. Epoch 100 last: PASS all steps; not substituted for selected checkpoint.
 - [x] Complete current-code CPU/CUDA regression matrix: 131 passed with zero skips per flag context (524 executions); CPU pipelines, combined CUDA pipeline and baseline comparisons pass. Prior evidence hashes preserved; published `PHASE3_SECOND_ESCALATION_AUDIT.md`.
-- [ ] Demonstrate that the checkpoint selected by the authorized training protocol passes all four integration steps. Phase 4 remains closed.
+- [x] Resolved in the third round: the authorized validation-selected epoch 185 passes all four integration steps. Phase 4 remains closed.
 
-Current status supersedes the earlier balanced-fixture completion claim. See `../PHASE3_ROOT_CAUSE_AUDIT.md`: the original fixture remains collapsed at every future step 1–4; no successful model fix was established. The previously completed items below are historical evidence, not permission to enter Phase 4. No exit criterion has been changed by this audit.
+Historical audit context: `../PHASE3_ROOT_CAUSE_AUDIT.md` superseded the earlier balanced-fixture completion claim and documented collapse on the original data. The records below preserve those earlier failures; they do not override the final reviewed result or grant Phase 4 permission.
 
-### Remediation diagnostics — COMPLETE; Phase 3 exit criteria NOT met
+### Earlier remediation diagnostics — completed with failed exit criteria
 
 Authorized 2026-09-13. Full results: `../PHASE3_REMEDIATION_REAUDIT.md`. Completing the diagnostic checklist does not complete Phase 3.
 
@@ -80,7 +91,7 @@ Authorized 2026-09-13. Full results: `../PHASE3_REMEDIATION_REAUDIT.md`. Complet
 - [x] Step 4 outcome: 100-epoch class-weighting diagnostic completed; selected and last checkpoints fail all four steps.
 - [x] Step 5: predeclared CPU learning-rate sweep (0.0001, 0.001, 0.003, 0.01), 100 epochs each, completed; every selected and last checkpoint fails all four steps.
 - [x] Re-audit current code: 118 tests passed with zero skips in each of four flag contexts (472 executions); four CPU pipelines, combined CUDA pipeline and both-off/frozen 1e-6 regressions pass. Published all per-step results and preservation evidence.
-- [ ] Unresolved Phase 3 exit gate: demonstrate a successful model fix on the original data with non-degenerate diversity and zero illegal transitions independently at steps 1–4. No fix from these diagnostics passes; Phase 4 remains closed.
+- [x] This failure was subsequently resolved by the approved periodic input and third-round selection/extension: epoch 185 passes steps 1–4. None of these earlier failed diagnostics is relabeled a pass.
 
 ### Earlier execution record
 

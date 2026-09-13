@@ -41,3 +41,8 @@ examples/phase3_remediation/regression/*/checkpoints/*.pt
 examples/phase3_second_escalation/*/checkpoints/*.pt
 examples/phase3_second_escalation/regression/*/processed/*.pt
 examples/phase3_second_escalation/regression/*/checkpoints/*.pt
+examples/phase3_third_round/*/checkpoints/*.pt
+examples/phase3_third_round/*/reproduced100/*.pt
+examples/phase3_third_round/resume_validation/*/checkpoints/*.pt
+examples/phase3_third_round/regression/*/processed/*.pt
+examples/phase3_third_round/regression/*/checkpoints/*.pt

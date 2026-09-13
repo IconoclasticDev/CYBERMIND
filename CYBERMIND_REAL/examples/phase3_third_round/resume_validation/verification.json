@@ -1,0 +1,15 @@
+{
+  "all_history_fields_match_within_1e_6": true,
+  "checkpoints": {
+    "model.pt": {
+      "epoch": 1,
+      "all_model_tensors_bitwise_equal": true,
+      "selection_state_equal": true
+    },
+    "model_last.pt": {
+      "epoch": 4,
+      "all_model_tensors_bitwise_equal": true,
+      "selection_state_equal": true
+    }
+  }
+}

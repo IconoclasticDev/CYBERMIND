@@ -19,6 +19,7 @@ from cybermind.losses import (gaussian_transition_loss, infiltration_loss, stage
                               binary_brier, graph_consistency_loss, crf_stage_loss)
 from cybermind.utils.config import load_config, edge_model_kwargs, stage_model_kwargs
 from cybermind.utils.repro import seed_everything
+from cybermind.utils.checkpoint_selection import CheckpointSelection
 
 
 def training_class_weight(dataset):
@@ -209,8 +210,7 @@ def main():
         raise RuntimeError('This CUDA runtime does not support bf16.')
     if device.type == 'cpu' and precision == 'fp16':
         raise ValueError('CPU fp16 training is unsupported; use fp32 or bf16.')
-    if cfg['train'].get('selection_metric', 'val_f1') != 'val_f1':
-        raise ValueError('Supported checkpoint selection metric is val_f1.')
+    selection = CheckpointSelection(cfg['train'])
     processed = root / cfg['data']['processed_dir']
     train = GraphSequenceDataset(processed / 'train.pt'); val = GraphSequenceDataset(processed / 'val.pt')
     if not len(train) or not len(val):
@@ -244,16 +244,45 @@ def main():
     start_epoch = 0; best = -1.; stale = 0; history = []
     if args.resume:
         ck = torch.load(args.resume, map_location='cpu', weights_only=False)
-        if ck.get('selection_metric') != 'val_f1':
-            raise ValueError('Resume requires a checkpoint selected by validation F1 under the new pipeline.')
+        if ck.get('selection_metric') != selection.metric:
+            raise ValueError('Resume requires the same validation selection policy.')
+        if selection.metric == 'val_f1_stage_band':
+            for key in ('selection_f1_tolerance', 'selection_stage_metric'):
+                if ck['config']['train'].get(key) != cfg['train'].get(key):
+                    raise ValueError('Resume cannot change the reviewed selection parameters.')
         model.load_state_dict(ck['model_state']); optimizer.load_state_dict(ck['optimizer_state'])
         if scaler is not None and ck.get('scaler_state'): scaler.load_state_dict(ck['scaler_state'])
         start_epoch = ck['epoch']; best = ck['best_metric']; stale = ck.get('epochs_without_improvement', 0)
         history = ck.get('history', [])
+        for record in history:
+            selection.update(record['epoch'], record['val'])
+        if not history:
+            raise ValueError('Resume requires validation history to reconstruct selection.')
+        if selection.best_f1 != best:
+            raise ValueError('Checkpoint selection state does not match its validation history.')
+        if 'rng_state' in ck:
+            import random, numpy as np
+            random.setstate(ck['rng_state']['python'])
+            np.random.set_state(ck['rng_state']['numpy'])
+            torch.set_rng_state(ck['rng_state']['torch'])
+            if device.type == 'cuda' and ck['rng_state']['cuda'] is not None:
+                torch.cuda.set_rng_state_all(ck['rng_state']['cuda'])
     checkpoint = root / 'checkpoints' / cfg['train']['checkpoint']; checkpoint.parent.mkdir(parents=True, exist_ok=True)
+    if args.resume:
+        # A last-epoch resume may retain an older selected model. Never silently
+        # lose that model just because the continuation uses a new output path.
+        previous_best = checkpoint if checkpoint.exists() else root / 'checkpoints' / ck['config']['train']['checkpoint']
+        if not previous_best.exists():
+            raise ValueError('Resume requires the previously selected checkpoint as well as the last checkpoint.')
+        selected_payload = torch.load(previous_best, map_location='cpu', weights_only=False)
+        if selected_payload['epoch'] != selection.selected_epoch or selected_payload.get('selection_metric') != selection.metric:
+            raise ValueError('Previously selected checkpoint does not match the reconstructed selection state.')
+        if not checkpoint.exists():
+            torch.save(selected_payload, checkpoint)
+        del selected_payload
     history_path = root / cfg['train'].get('history_path', 'results/train_history.json'); history_path.parent.mkdir(parents=True, exist_ok=True)
     epochs = args.epochs if args.epochs > 0 else int(cfg['train']['epochs'])
-    print({'device': str(device), 'precision': precision, 'class_counts': counts, 'pos_weight': weight, 'selection': 'val_f1'})
+    print({'device': str(device), 'precision': precision, 'class_counts': counts, 'pos_weight': weight, 'selection': selection.metric})
     for ep in range(start_epoch, epochs):
         model.train(); sums = {}; count = 0; optimizer.zero_grad(set_to_none=True)
         for step, batch in enumerate(tqdm(loader, desc=f'epoch {ep+1}')):
@@ -276,12 +305,17 @@ def main():
         metrics = validate(model, val_loader, cfg, device, precision)
         rec = {'epoch': ep + 1, 'train': {k: v / count for k, v in sums.items()}, 'val': metrics}
         history.append(rec); print(rec)
-        improved = metrics['f1'] > best + cfg['train'].get('min_delta', 0.)
+        improved = selection.update(ep + 1, metrics)
         stale = 0 if improved else stale + 1
-        if improved: best = metrics['f1']
+        best = selection.best_f1
+        import random, numpy as np
         payload = {'model_state': model.state_dict(), 'optimizer_state': optimizer.state_dict(),
                    'scaler_state': scaler.state_dict() if scaler else None, 'config': cfg, 'node_dim': node_dim,
-                   'epoch': ep + 1, 'best_metric': best, 'selection_metric': 'val_f1', 'validation': metrics,
+                   'epoch': ep + 1, 'best_metric': best, 'selection_metric': selection.metric, 'validation': metrics,
+                   'selection_state': selection.state_dict(),
+                   'rng_state': {'python': random.getstate(), 'numpy': np.random.get_state(),
+                                 'torch': torch.get_rng_state(),
+                                 'cuda': torch.cuda.get_rng_state_all() if device.type == 'cuda' else None},
                    'class_counts': counts, 'pos_weight': weight, 'normalization': normalization,
                    'normalization_path': str(normalization_path) if normalization else None,
                    'epochs_without_improvement': stale, 'history': history}
@@ -289,7 +323,7 @@ def main():
         torch.save(payload, checkpoint.with_name(checkpoint.stem + '_last.pt'))
         history_path.write_text(json.dumps(history, indent=2))
         if stale >= int(cfg['train'].get('early_stopping_patience', 10)):
-            print('Early stopping on validation F1.'); break
+            print('Early stopping on validation checkpoint selection.'); break
     print('Best validation checkpoint:', checkpoint)
 
 
