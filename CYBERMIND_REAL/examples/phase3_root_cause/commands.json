@@ -1,0 +1,226 @@
+[
+  {
+    "name": "original_pipeline",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "scripts/phase01_smoke.py",
+      "--use-edge-features",
+      "--use-crf-stage",
+      "--device",
+      "cpu",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline"
+    ],
+    "cpu_only": true,
+    "exit_code": 0,
+    "seconds": 42.7634160000016
+  },
+  {
+    "name": "original_cuda_train",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/instrument_train.py",
+      "--config",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_cuda\\config.yaml",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_cuda\\training_diagnostics.jsonl"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 10.45186579998699
+  },
+  {
+    "name": "original_cuda_rollout",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_cuda\\checkpoints\\combined.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_cuda\\rollout.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 5.071978399995714
+  },
+  {
+    "name": "original_cuda_rollout_last",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_cuda\\checkpoints\\combined_last.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_cuda\\rollout_last.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 5.288081000006059
+  },
+  {
+    "name": "crf_weight_zero_train",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/instrument_train.py",
+      "--config",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_weight_zero\\config.yaml",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_weight_zero\\training_diagnostics.jsonl"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 9.162661300011678
+  },
+  {
+    "name": "crf_weight_zero_rollout",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_weight_zero\\checkpoints\\combined.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_weight_zero\\rollout.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 5.5682810000143945
+  },
+  {
+    "name": "crf_weight_zero_rollout_last",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_weight_zero\\checkpoints\\combined_last.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_weight_zero\\rollout_last.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 5.8987739000003785
+  },
+  {
+    "name": "crf_per_token_train",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/instrument_train.py",
+      "--config",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_per_token\\config.yaml",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_per_token\\training_diagnostics.jsonl"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 9.340444600005867
+  },
+  {
+    "name": "crf_per_token_rollout",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_per_token\\checkpoints\\combined.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_per_token\\rollout.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 5.498897299985401
+  },
+  {
+    "name": "crf_per_token_rollout_last",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_per_token\\checkpoints\\combined_last.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\crf_per_token\\rollout_last.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 5.378362300019944
+  },
+  {
+    "name": "original_frozen_cuda_train",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/instrument_train.py",
+      "--config",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_frozen_cuda\\config.yaml",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_frozen_cuda\\training_diagnostics.jsonl"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 7.888006900000619
+  },
+  {
+    "name": "original_frozen_cuda_rollout",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_frozen_cuda\\checkpoints\\combined.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_frozen_cuda\\rollout.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 4.795902399986517
+  },
+  {
+    "name": "original_frozen_cuda_rollout_last",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_frozen_cuda\\checkpoints\\combined_last.pt",
+      "--device",
+      "cuda",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_frozen_cuda\\rollout_last.json"
+    ],
+    "cpu_only": false,
+    "exit_code": 0,
+    "seconds": 4.686227500002133
+  },
+  {
+    "name": "original_cpu_rollout",
+    "command": [
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+      "examples/phase3_root_cause/inspect_rollouts.py",
+      "--checkpoint",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\checkpoints\\original_pipeline.pt",
+      "--device",
+      "cpu",
+      "--output",
+      "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\rollout.json"
+    ],
+    "cpu_only": true,
+    "exit_code": 0,
+    "seconds": 4.158004900004016
+  }
+]

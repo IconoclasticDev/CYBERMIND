@@ -1,0 +1,71 @@
+{
+  "purpose": "primary",
+  "primary_source": "CIC-IDS2018",
+  "reports": [
+    {
+      "source": "CIC-IDS2018",
+      "environment_id": "SYNTHETIC_FIXTURE_ONLY",
+      "source_files": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\canonical\\z_earlier.parquet",
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\canonical\\a_later.parquet"
+      ],
+      "split": "train",
+      "endpoint_method": "columns",
+      "stage_method": "five_phase_with_unknown",
+      "packet_feature_coverage": 1.0,
+      "rows": 248,
+      "samples": 122,
+      "labels": [
+        "BENIGN",
+        "PORTSCAN"
+      ],
+      "start": "2018-02-14 00:00:00+00:00",
+      "end": "2018-02-14 00:02:03+00:00"
+    },
+    {
+      "source": "CIC-IDS2018",
+      "environment_id": "SYNTHETIC_FIXTURE_ONLY",
+      "source_files": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\canonical\\a_later.parquet"
+      ],
+      "split": "val",
+      "endpoint_method": "columns",
+      "stage_method": "five_phase_with_unknown",
+      "packet_feature_coverage": 1.0,
+      "rows": 54,
+      "samples": 25,
+      "labels": [
+        "BENIGN",
+        "PORTSCAN"
+      ],
+      "start": "2018-02-14 00:02:05+00:00",
+      "end": "2018-02-14 00:02:31+00:00"
+    },
+    {
+      "source": "CIC-IDS2018",
+      "environment_id": "SYNTHETIC_FIXTURE_ONLY",
+      "source_files": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\canonical\\a_later.parquet"
+      ],
+      "split": "test",
+      "endpoint_method": "columns",
+      "stage_method": "five_phase_with_unknown",
+      "packet_feature_coverage": 1.0,
+      "rows": 54,
+      "samples": 25,
+      "labels": [
+        "BENIGN",
+        "PORTSCAN"
+      ],
+      "start": "2018-02-14 00:02:33+00:00",
+      "end": "2018-02-14 00:02:59+00:00"
+    }
+  ],
+  "normalization_fingerprint": "a0bd2ad4e2b6693768deb051042da30801a754d476ed1c44283d92db29dd2d08",
+  "split_method": "chronological_events_with_window_purge",
+  "source_files": [
+    "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\canonical\\a_later.parquet",
+    "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_root_cause\\original_pipeline\\canonical\\z_earlier.parquet"
+  ],
+  "num_sequences": 172
+}

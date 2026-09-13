@@ -53,7 +53,9 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - [x] 2.6 Verify finite loss/gradients, adversarial legal decoding, and flag-off path on CPU/GPU: 94 tests passed, zero skips; all six CPU/GPU exit checks passed. One-epoch CRF checkpoint trained and reloaded; all 49 frozen baseline files unchanged.
 - [x] Audit exit criteria in `FINAL_PLAN_PHASE2_AUDIT.md`; present Phase 3 approval request. User approved Phase 3 with "continue" on 2026-09-12.
 
-## Phase 3 — COMPLETE (under the user-approved diversity-gate revision)
+## Phase 3 — EXIT CRITERIA NOT MET (original-fixture four-step audit)
+
+Current status supersedes the earlier balanced-fixture completion claim. See `../PHASE3_ROOT_CAUSE_AUDIT.md`: the original fixture remains collapsed at every future step 1–4; no successful model fix was established. The previously completed items below are historical evidence, not permission to enter Phase 4. No exit criterion has been changed by this audit.
 
 - [x] 3.1 Run tests and integration for all four feature-flag combinations: 96 passed with zero skips per run, 384 test executions total; four two-epoch CPU pipeline runs passed.
 - [x] 3.2 Fresh both-off evaluation/history and frozen checkpoint evaluation match the Phase 0 evidence within 1e-6; all 49 baseline hashes remain intact.

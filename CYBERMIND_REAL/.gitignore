@@ -13,6 +13,8 @@ examples/phase3_joint/*/processed/*.pt
 examples/phase3_joint/*/checkpoints/*.pt
 examples/phase3_balanced_stage/processed/*.pt
 examples/phase3_balanced_stage/checkpoints/*.pt
+examples/phase3_root_cause/*/processed/*.pt
+examples/phase3_root_cause/*/checkpoints/*.pt
 examples/smoke/baseline_before/historical_artifacts/
 # Downloaded knowledge stays local; reproducible provenance is tracked.
 knowledge/raw/

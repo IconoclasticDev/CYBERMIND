@@ -1,0 +1,289 @@
+{
+  "source": "examples\\phase3_joint\\combined",
+  "synthetic_only": true,
+  "read_only_original_fixture": true,
+  "prototype_features_added": false,
+  "interpretation": "Numerical signal audit, not a proof of unlearnability. Byte volume monotonically encodes time, so periodic labels are theoretically recoverable from time-correlated volume. No prototype fixture is used.",
+  "splits": {
+    "train": {
+      "sequence_count": 122,
+      "unique_windows": 124,
+      "window_stage_counts": {
+        "1": 31,
+        "0": 93
+      },
+      "supervision_stage_counts": {
+        "0": 184,
+        "1": 60
+      },
+      "time_range": [
+        1518566400.0,
+        1518566523.0
+      ],
+      "node": {
+        "shape": [
+          124,
+          2,
+          34
+        ],
+        "varying_feature_count": 2,
+        "constant_feature_count": 32,
+        "varying_features": [
+          {
+            "name": "bytes_total",
+            "column": 2,
+            "per_entity_std": [
+              1.000000021171284,
+              1.000000021171284
+            ],
+            "first_entity_class_means": {
+              "0": 0.01396860622911043,
+              "1": -0.041905818687331294
+            },
+            "correlation_with_time": 1.0,
+            "class_1_minus_0_mean_over_overall_std": -0.05587442373350841
+          },
+          {
+            "name": "bytes_per_flow",
+            "column": 10,
+            "per_entity_std": [
+              1.000000021171284,
+              1.000000021171284
+            ],
+            "first_entity_class_means": {
+              "0": 0.01396860622911043,
+              "1": -0.041905818687331294
+            },
+            "correlation_with_time": 1.0,
+            "class_1_minus_0_mean_over_overall_std": -0.05587442373350841
+          }
+        ],
+        "adjacent_different_label_pairs": 61,
+        "adjacent_different_label_l2_min": 0.05587434768676758,
+        "adjacent_different_label_l2_max": 0.05587458610534668
+      },
+      "edge": {
+        "shape": [
+          124,
+          1,
+          27
+        ],
+        "varying_feature_count": 1,
+        "constant_feature_count": 26,
+        "varying_features": [
+          {
+            "name": "bytes",
+            "column": 0,
+            "per_entity_std": [
+              1.000000021171284
+            ],
+            "first_entity_class_means": {
+              "0": 0.01396860622911043,
+              "1": -0.041905818687331294
+            },
+            "correlation_with_time": 1.0,
+            "class_1_minus_0_mean_over_overall_std": -0.05587442373350841
+          }
+        ],
+        "adjacent_different_label_pairs": 61,
+        "adjacent_different_label_l2_min": 0.02793717384338379,
+        "adjacent_different_label_l2_max": 0.02793729305267334
+      },
+      "all_topologies_identical": true
+    },
+    "val": {
+      "sequence_count": 25,
+      "unique_windows": 27,
+      "window_stage_counts": {
+        "0": 21,
+        "1": 6
+      },
+      "supervision_stage_counts": {
+        "0": 38,
+        "1": 12
+      },
+      "time_range": [
+        1518566525.0,
+        1518566551.0
+      ],
+      "node": {
+        "shape": [
+          27,
+          2,
+          34
+        ],
+        "varying_feature_count": 2,
+        "constant_feature_count": 32,
+        "varying_features": [
+          {
+            "name": "bytes_total",
+            "column": 2,
+            "per_entity_std": [
+              0.21759962592891427,
+              0.21759962592891427
+            ],
+            "first_entity_class_means": {
+              "0": 2.1371967565445673,
+              "1": 2.1371967991193137
+            },
+            "correlation_with_time": 0.9999999999999629,
+            "class_1_minus_0_mean_over_overall_std": 1.9565634000183055e-07
+          },
+          {
+            "name": "bytes_per_flow",
+            "column": 10,
+            "per_entity_std": [
+              0.21759962592891427,
+              0.21759962592891427
+            ],
+            "first_entity_class_means": {
+              "0": 2.1371967565445673,
+              "1": 2.1371967991193137
+            },
+            "correlation_with_time": 0.9999999999999629,
+            "class_1_minus_0_mean_over_overall_std": 1.9565634000183055e-07
+          }
+        ],
+        "adjacent_different_label_pairs": 12,
+        "adjacent_different_label_l2_min": 0.05587434768676758,
+        "adjacent_different_label_l2_max": 0.05587482452392578
+      },
+      "edge": {
+        "shape": [
+          27,
+          1,
+          27
+        ],
+        "varying_feature_count": 1,
+        "constant_feature_count": 26,
+        "varying_features": [
+          {
+            "name": "bytes",
+            "column": 0,
+            "per_entity_std": [
+              0.21759962592891427
+            ],
+            "first_entity_class_means": {
+              "0": 2.1371967565445673,
+              "1": 2.1371967991193137
+            },
+            "correlation_with_time": 0.9999999999999629,
+            "class_1_minus_0_mean_over_overall_std": 1.9565634000183055e-07
+          }
+        ],
+        "adjacent_different_label_pairs": 12,
+        "adjacent_different_label_l2_min": 0.02793717384338379,
+        "adjacent_different_label_l2_max": 0.02793741226196289
+      },
+      "all_topologies_identical": true
+    },
+    "test": {
+      "sequence_count": 25,
+      "unique_windows": 27,
+      "window_stage_counts": {
+        "0": 21,
+        "1": 6
+      },
+      "supervision_stage_counts": {
+        "0": 38,
+        "1": 12
+      },
+      "time_range": [
+        1518566553.0,
+        1518566579.0
+      ],
+      "node": {
+        "shape": [
+          27,
+          2,
+          34
+        ],
+        "varying_feature_count": 2,
+        "constant_feature_count": 32,
+        "varying_features": [
+          {
+            "name": "bytes_total",
+            "column": 2,
+            "per_entity_std": [
+              0.21759963329802054,
+              0.21759963329802054
+            ],
+            "first_entity_class_means": {
+              "0": 2.9194387027195523,
+              "1": 2.919438680013021
+            },
+            "correlation_with_time": 0.999999999999948,
+            "class_1_minus_0_mean_over_overall_std": -1.0435004405894558e-07
+          },
+          {
+            "name": "bytes_per_flow",
+            "column": 10,
+            "per_entity_std": [
+              0.21759963329802054,
+              0.21759963329802054
+            ],
+            "first_entity_class_means": {
+              "0": 2.9194387027195523,
+              "1": 2.919438680013021
+            },
+            "correlation_with_time": 0.999999999999948,
+            "class_1_minus_0_mean_over_overall_std": -1.0435004405894558e-07
+          }
+        ],
+        "adjacent_different_label_pairs": 12,
+        "adjacent_different_label_l2_min": 0.05587434768676758,
+        "adjacent_different_label_l2_max": 0.05587482452392578
+      },
+      "edge": {
+        "shape": [
+          27,
+          1,
+          27
+        ],
+        "varying_feature_count": 1,
+        "constant_feature_count": 26,
+        "varying_features": [
+          {
+            "name": "bytes",
+            "column": 0,
+            "per_entity_std": [
+              0.21759963329802054
+            ],
+            "first_entity_class_means": {
+              "0": 2.9194387027195523,
+              "1": 2.919438680013021
+            },
+            "correlation_with_time": 0.999999999999948,
+            "class_1_minus_0_mean_over_overall_std": -1.0435004405894558e-07
+          }
+        ],
+        "adjacent_different_label_pairs": 12,
+        "adjacent_different_label_l2_min": 0.02793717384338379,
+        "adjacent_different_label_l2_max": 0.02793741226196289
+      },
+      "all_topologies_identical": true
+    }
+  },
+  "source_sha256": {
+    "examples\\phase3_joint\\combined\\raw\\a_later.csv": "7acfda732dd7e00d5efc334b7024173cac7ec3ca1a6885b59717aa3144b062fb",
+    "examples\\phase3_joint\\combined\\raw\\z_earlier.csv": "8a74458aa97c26844f674491fbeb4bfe52a1ef2001e6dfa85fe3c961161102c4",
+    "examples\\phase3_joint\\combined\\processed\\test.pt": "09e80c4ef334f07bddc4d1941eabbfa4b2bc6c06332381f216df2ee3a1909f6e",
+    "examples\\phase3_joint\\combined\\processed\\train.pt": "2b308a29ee1762a72a502f54415b3c2aae9f7348f3f37616e4cba3faf2278383",
+    "examples\\phase3_joint\\combined\\processed\\val.pt": "4ffa16133fbf05e2e63fea627bf4c0b5bbc0e0d6e8ce9bf482c084696cd7e7cb"
+  },
+  "raw": {
+    "rows": 360,
+    "unique_seconds": 180,
+    "label_counts": {
+      "BENIGN": 315,
+      "PORTSCAN": 45
+    },
+    "within_second_mixed_label_groups": 45,
+    "mixed_label_groups_with_identical_all_nonlabel_columns": 45,
+    "varying_nonlabel_columns": [
+      "timestamp",
+      "bytes_fwd"
+    ],
+    "label_rule": "PORTSCAN exactly when second % 4 == 0 and flow == 1; all other flow labels BENIGN"
+  }
+}
