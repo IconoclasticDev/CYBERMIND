@@ -1,0 +1,35 @@
+{
+  "synthetic_only": true,
+  "real_training_performed": false,
+  "steps_passed": 4,
+  "evaluated_samples": 25,
+  "automatic_explanations": true,
+  "device": "cpu",
+  "use_edge_features": true,
+  "use_crf_stage": false,
+  "checkpoint": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_second_escalation\\regression\\edge_only\\checkpoints\\edge_only.pt",
+  "campaign_reset_annotation": null,
+  "stage_diversity": {
+    "decoded_histogram": {
+      "1": 50
+    },
+    "unique_stages": 1,
+    "unknown_fraction": 0.0,
+    "single_stage_collapse": true
+  },
+  "risk_diversity": {
+    "minimum": 0.47357040643692017,
+    "maximum": 0.47431859374046326,
+    "spread": 0.0007481873035430908
+  },
+  "train_memory": {
+    "status": "passed",
+    "device": "cpu",
+    "measurement_scope": "PyTorch CUDA allocator in the actual training process; excludes driver and other processes",
+    "peak_allocated_bytes": null,
+    "peak_reserved_bytes": null,
+    "ceiling_bytes": null,
+    "below_device_vram": null
+  },
+  "warning": "CIC-IDS2018 is a fixture routing value. These generated rows are NOT real CIC data or accuracy evidence."
+}

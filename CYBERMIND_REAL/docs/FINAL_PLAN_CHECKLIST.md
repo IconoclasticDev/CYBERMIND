@@ -55,6 +55,17 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 
 ## Phase 3 — EXIT CRITERIA NOT MET (original-fixture four-step audit)
 
+Latest result: the reviewed second escalation removes diversity only from the frozen-fixture gate. Periodic-input diagnostic #6 passes all four integration steps at epoch 100, but the unchanged validation-F1 selector retains epoch 94, which fails steps 1–3. The selected-checkpoint exit gate remains unmet. See `../PHASE3_SECOND_ESCALATION_AUDIT.md`.
+
+### Second escalation — authorized engineering Option 2
+
+- [x] Record the user's “execute this plan immidiately” instruction with `CYBERMIND_Frozen_Fixture_Gate_Decision.pdf` as authorization for Tasks A/B; retain exact scope in `examples/phase3_second_escalation/REVIEW_DECISION.md`.
+- [x] Task A: scope frozen gate to legal transitions and finite/non-degenerate supervised loss with gradient evidence. Original selected/last checkpoints pass; original diversity failures remain recorded. No regeneration or further frozen training.
+- [x] Task B: add default-off sine/cosine channels from original per-node coordinate, keeping all raw tensors unchanged. Train-only calibration and checkpoint-safe inference implemented.
+- [x] Run CPU diagnostic #6 for 100 epochs, same seed, optimizer, losses, selection and original integration gate. Epoch 94 selected: FAIL steps 1–3, PASS step 4. Epoch 100 last: PASS all steps; not substituted for selected checkpoint.
+- [x] Complete current-code CPU/CUDA regression matrix: 131 passed with zero skips per flag context (524 executions); CPU pipelines, combined CUDA pipeline and baseline comparisons pass. Prior evidence hashes preserved; published `PHASE3_SECOND_ESCALATION_AUDIT.md`.
+- [ ] Demonstrate that the checkpoint selected by the authorized training protocol passes all four integration steps. Phase 4 remains closed.
+
 Current status supersedes the earlier balanced-fixture completion claim. See `../PHASE3_ROOT_CAUSE_AUDIT.md`: the original fixture remains collapsed at every future step 1–4; no successful model fix was established. The previously completed items below are historical evidence, not permission to enter Phase 4. No exit criterion has been changed by this audit.
 
 ### Remediation diagnostics — COMPLETE; Phase 3 exit criteria NOT met

@@ -38,3 +38,6 @@ data/raw/CIC-IDS-2018/*.pcap
 data/intermediate/*
 examples/phase3_remediation/regression/*/processed/*.pt
 examples/phase3_remediation/regression/*/checkpoints/*.pt
+examples/phase3_second_escalation/*/checkpoints/*.pt
+examples/phase3_second_escalation/regression/*/processed/*.pt
+examples/phase3_second_escalation/regression/*/checkpoints/*.pt

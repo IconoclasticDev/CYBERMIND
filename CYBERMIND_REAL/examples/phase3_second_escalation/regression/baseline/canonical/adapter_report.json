@@ -1,0 +1,38 @@
+{
+  "source": "CIC-IDS2018",
+  "purpose": "primary",
+  "environment_id": "CIC-IDS2018",
+  "files": [
+    "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_second_escalation\\regression\\baseline\\canonical\\a_later.parquet",
+    "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_second_escalation\\regression\\baseline\\canonical\\z_earlier.parquet"
+  ],
+  "reports": [
+    {
+      "source": "CIC-IDS2018",
+      "file": "a_later.csv",
+      "rows_in": 180,
+      "rows_out": 180,
+      "dropped": 0,
+      "endpoint_method": "endpoint_columns",
+      "timestamp_method": "parsed_timestamp",
+      "label_column": null,
+      "warnings": []
+    },
+    {
+      "source": "CIC-IDS2018",
+      "file": "z_earlier.csv",
+      "rows_in": 180,
+      "rows_out": 180,
+      "dropped": 0,
+      "endpoint_method": "endpoint_columns",
+      "timestamp_method": "parsed_timestamp",
+      "label_column": null,
+      "warnings": []
+    }
+  ],
+  "input_files": [
+    "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_second_escalation\\regression\\baseline\\raw\\a_later.csv",
+    "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_second_escalation\\regression\\baseline\\raw\\z_earlier.csv"
+  ],
+  "selection": "all supplied files and attack labels; no row sampling"
+}
