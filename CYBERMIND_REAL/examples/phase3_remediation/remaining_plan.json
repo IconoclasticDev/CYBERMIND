@@ -1,0 +1,50 @@
+{
+  "cases": [
+    [
+      "normalization_off100",
+      [
+        "--identity-normalization"
+      ]
+    ],
+    [
+      "class_weighted100",
+      [
+        "--class-balance"
+      ]
+    ],
+    [
+      "lr_0001_cpu",
+      [
+        "--lr",
+        ".0001"
+      ]
+    ],
+    [
+      "lr_001_cpu",
+      [
+        "--lr",
+        ".001"
+      ]
+    ],
+    [
+      "lr_003_cpu",
+      [
+        "--lr",
+        ".003"
+      ]
+    ],
+    [
+      "lr_01_cpu",
+      [
+        "--lr",
+        ".01"
+      ]
+    ]
+  ],
+  "epochs_each": 100,
+  "device": "cpu",
+  "fixture": "original integration",
+  "gate": "unchanged independent steps 1-4",
+  "selection": "existing validation infiltration F1",
+  "note": "Settings fixed before these experiments, no test-driven retries."
+}

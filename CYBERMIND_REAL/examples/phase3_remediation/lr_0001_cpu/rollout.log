@@ -1,0 +1,139 @@
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+{
+  "checkpoint": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\lr_0001_cpu\\checkpoints\\combined.pt",
+  "selected_epoch": 1,
+  "selection_metric": "val_f1",
+  "device": "cpu",
+  "rollout_steps": 4,
+  "hard_masks_unchanged": true,
+  "declared_forecast_resets": false,
+  "transition_summary": {
+    "stay_min": -0.00040084990905597806,
+    "stay_max": 0.00039973799721337855,
+    "forward_min": -0.0004007228999398649,
+    "forward_max": 0.00038644354208372533,
+    "max_absolute": 0.00040084990905597806
+  },
+  "per_step": [
+    {
+      "step": 1,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "4": 25
+      },
+      "raw_argmax_histogram": {
+        "4": 25
+      },
+      "zero_transition_histogram": {
+        "4": 25
+      },
+      "mean_logits": [
+        -0.007174682803452015,
+        0.13140398263931274,
+        -0.07776854932308197,
+        -0.09689333289861679,
+        0.1456148475408554,
+        -0.07415678352117538,
+        -0.030469249933958054
+      ],
+      "max_across_sample_logit_std": 0.002733412431553006,
+      "mean_margin": 0.014210875034332276,
+      "mean_normalized_entropy": 0.9976972389221191,
+      "passed": false
+    },
+    {
+      "step": 2,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "4": 25
+      },
+      "raw_argmax_histogram": {
+        "4": 25
+      },
+      "zero_transition_histogram": {
+        "4": 25
+      },
+      "mean_logits": [
+        0.007972866296768188,
+        0.042081139981746674,
+        -0.002783973701298237,
+        -0.07298936694860458,
+        0.18094612658023834,
+        -0.048179011791944504,
+        -0.06549586355686188
+      ],
+      "max_across_sample_logit_std": 0.0036235968582332134,
+      "mean_margin": 0.13886498689651489,
+      "mean_normalized_entropy": 0.9981925821304322,
+      "passed": false
+    },
+    {
+      "step": 3,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "4": 25
+      },
+      "raw_argmax_histogram": {
+        "4": 25
+      },
+      "zero_transition_histogram": {
+        "4": 25
+      },
+      "mean_logits": [
+        0.04054085910320282,
+        -0.03792882338166237,
+        0.08151663839817047,
+        -0.01830527000129223,
+        0.235161691904068,
+        -0.02395508997142315,
+        -0.1316203624010086
+      ],
+      "max_across_sample_logit_std": 0.003535003401339054,
+      "mean_margin": 0.1536450457572937,
+      "mean_normalized_entropy": 0.9969035172462464,
+      "passed": false
+    },
+    {
+      "step": 4,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "4": 25
+      },
+      "raw_argmax_histogram": {
+        "4": 25
+      },
+      "zero_transition_histogram": {
+        "4": 25
+      },
+      "mean_logits": [
+        0.09689489006996155,
+        -0.13499648869037628,
+        0.18150635063648224,
+        0.017572300508618355,
+        0.2600878179073334,
+        0.003893659682944417,
+        -0.19818516075611115
+      ],
+      "max_across_sample_logit_std": 0.0035154311917722225,
+      "mean_margin": 0.07858145892620087,
+      "mean_normalized_entropy": 0.9941852402687072,
+      "passed": false
+    }
+  ],
+  "all_steps_pass": false
+}

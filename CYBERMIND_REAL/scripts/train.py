@@ -3,10 +3,12 @@
 from pathlib import Path
 import argparse
 import json
+import math
 import sys
 from contextlib import nullcontext
 from dataclasses import replace
 import torch
+import torch.nn.functional as F
 from torch.optim import AdamW
 from torch.utils.data import DataLoader
 from tqdm import tqdm
@@ -28,6 +30,56 @@ def training_class_weight(dataset):
     if not positive or not negative:
         raise ValueError('Training split must contain benign and infiltration target windows.')
     return negative / positive, {'positive': positive, 'negative': negative}
+
+
+def stage_class_balance_enabled(loss_config):
+    enabled = loss_config.get('stage_class_balance', False)
+    if not isinstance(enabled, bool):
+        raise ValueError('loss.stage_class_balance must be a boolean.')
+    return enabled
+
+
+def training_stage_class_weights(dataset, num_stages):
+    """Inverse-frequency weights from training target occurrences only.
+
+    Repeated windows are counted as consumed by batch_loss. Absent classes get
+    neutral weight 1; present classes each have equal total weighted mass.
+    """
+    if not isinstance(num_stages, int) or isinstance(num_stages, bool) or num_stages < 1:
+        raise ValueError('num_stages must be a positive integer.')
+    counts = [0] * num_stages
+    for sample in dataset:
+        for state in sample.states[1:]:
+            label = state.y_stage
+            if not isinstance(label, int) or isinstance(label, bool) or not 0 <= label < num_stages:
+                raise ValueError('Training stage labels must be integer IDs in the taxonomy.')
+            counts[label] += 1
+    total = sum(counts)
+    present = sum(count > 0 for count in counts)
+    if not total:
+        raise ValueError('Training stage supervision must be nonempty.')
+    weights = [total / (present * count) if count else 1. for count in counts]
+    return weights, counts
+
+
+def configure_stage_class_weights(cfg, training_dataset):
+    """Resolve once from train; the saved config is reused for validation."""
+    if stage_class_balance_enabled(cfg['loss']):
+        weights, counts = training_stage_class_weights(training_dataset, cfg['model']['num_stages'])
+        cfg['loss']['stage_class_weights'] = weights
+        cfg['loss']['stage_class_counts'] = counts
+
+
+def stage_cross_entropy(logits, labels, loss_config):
+    if not stage_class_balance_enabled(loss_config):
+        return stage_loss(logits.float(), labels)
+    weights = loss_config.get('stage_class_weights')
+    if (not isinstance(weights, (list, tuple)) or len(weights) != logits.size(-1)
+            or any(isinstance(value, bool) or not isinstance(value, (int, float))
+                   or not math.isfinite(value) or value <= 0 for value in weights)):
+        raise ValueError('loss.stage_class_weights must contain one finite positive weight per stage.')
+    weight = torch.tensor(weights, dtype=torch.float32, device=logits.device)
+    return F.cross_entropy(logits.float(), labels, weight=weight)
 
 
 def assert_split_disjoint(train, val):
@@ -84,7 +136,7 @@ def batch_loss(model, batch, cfg, device, *, return_predictions=False):
     stage_labels = torch.tensor([s.y_stage for ss in states for s in ss[1:]], dtype=torch.long, device=device)
     if torch.any((stage_labels < 0) | (stage_labels >= cfg['model']['num_stages'])):
         raise ValueError('Invalid stage ID; rebuild data with the current taxonomy.')
-    l_stage = stage_loss(stage_logits.float(), stage_labels)
+    l_stage = stage_cross_entropy(stage_logits, stage_labels, cfg['loss'])
     l_consistency = graph_consistency_loss(z)
     components = {'transition': l_trans, 'infiltration': l_infil, 'stage': l_stage,
                   'calibration': l_brier, 'graph_consistency': l_consistency}
@@ -165,6 +217,7 @@ def main():
         raise ValueError('Training and held-out validation must both be nonempty.')
     assert_split_disjoint(train, val)
     weight, counts = training_class_weight(train); cfg['loss']['pos_weight'] = weight
+    configure_stage_class_weights(cfg, train)
     normalization_path = processed / 'normalization.json'
     normalization = json.loads(normalization_path.read_text()) if normalization_path.exists() else None
     if cfg['data'].get('require_normalization', False) and normalization is None:

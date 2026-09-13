@@ -1,0 +1,139 @@
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+{
+  "checkpoint": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\frozen_exposure100\\checkpoints\\combined_last.pt",
+  "selected_epoch": 100,
+  "selection_metric": "val_f1",
+  "device": "cpu",
+  "rollout_steps": 4,
+  "hard_masks_unchanged": true,
+  "declared_forecast_resets": false,
+  "transition_summary": {
+    "stay_min": -0.1428789645433426,
+    "stay_max": 0.5181707143783569,
+    "forward_min": -1.3415628671646118,
+    "forward_max": 0.597207248210907,
+    "max_absolute": 1.3415628671646118
+  },
+  "per_step": [
+    {
+      "step": 1,
+      "samples": 3,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 3
+      },
+      "raw_argmax_histogram": {
+        "0": 3
+      },
+      "zero_transition_histogram": {
+        "0": 3
+      },
+      "mean_logits": [
+        2.2796695232391357,
+        -6.717813968658447,
+        0.05143554508686066,
+        -6.983959674835205,
+        -7.149362564086914,
+        0.5273340940475464,
+        -7.655050277709961
+      ],
+      "max_across_sample_logit_std": 0.0002654152631293982,
+      "mean_margin": 1.7523354291915894,
+      "mean_normalized_entropy": 0.3468230366706848,
+      "passed": false
+    },
+    {
+      "step": 2,
+      "samples": 3,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 3
+      },
+      "raw_argmax_histogram": {
+        "0": 3
+      },
+      "zero_transition_histogram": {
+        "0": 3
+      },
+      "mean_logits": [
+        2.27467942237854,
+        -6.706395626068115,
+        0.047318171709775925,
+        -6.972434997558594,
+        -7.136045455932617,
+        0.5254930853843689,
+        -7.641260623931885
+      ],
+      "max_across_sample_logit_std": 0.00026703590992838144,
+      "mean_margin": 1.7491864760716755,
+      "mean_normalized_entropy": 0.347202589114507,
+      "passed": false
+    },
+    {
+      "step": 3,
+      "samples": 3,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 3
+      },
+      "raw_argmax_histogram": {
+        "0": 3
+      },
+      "zero_transition_histogram": {
+        "0": 3
+      },
+      "mean_logits": [
+        2.270700454711914,
+        -6.694644927978516,
+        0.04376056417822838,
+        -6.9608612060546875,
+        -7.123357772827148,
+        0.5242485404014587,
+        -7.627872467041016
+      ],
+      "max_across_sample_logit_std": 0.0002681216865312308,
+      "mean_margin": 1.74645201365153,
+      "mean_normalized_entropy": 0.347507784763972,
+      "passed": false
+    },
+    {
+      "step": 4,
+      "samples": 3,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 3
+      },
+      "raw_argmax_histogram": {
+        "0": 3
+      },
+      "zero_transition_histogram": {
+        "0": 3
+      },
+      "mean_logits": [
+        2.2660105228424072,
+        -6.683687686920166,
+        0.03984007239341736,
+        -6.949558734893799,
+        -7.110588073730469,
+        0.5229132771492004,
+        -7.61530876159668
+      ],
+      "max_across_sample_logit_std": 0.0002692665148060769,
+      "mean_margin": 1.7430973450342815,
+      "mean_normalized_entropy": 0.3478978673617045,
+      "passed": false
+    }
+  ],
+  "all_steps_pass": false
+}

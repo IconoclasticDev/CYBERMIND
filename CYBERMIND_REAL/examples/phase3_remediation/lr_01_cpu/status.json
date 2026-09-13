@@ -1,0 +1,296 @@
+{
+  "name": "lr_01_cpu",
+  "device": "cpu",
+  "epochs_requested": 100,
+  "gate_unchanged": true,
+  "fixture": "original_cuda",
+  "source_train_sha256": "033e25e109ef6f5a070cea84433d292d95ec791b2597703d6644760845ee3e6f",
+  "commands": [
+    {
+      "label": "train",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.phase01-venv\\Scripts\\python.exe",
+        "scripts/phase3_train_measure.py",
+        "--config",
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\lr_01_cpu\\config.yaml",
+        "--device",
+        "cpu",
+        "--measurement",
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\lr_01_cpu\\memory.json"
+      ],
+      "exit_code": 0,
+      "seconds": 66.90599999998813
+    },
+    {
+      "label": "rollout",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.phase01-venv\\Scripts\\python.exe",
+        "examples/phase3_root_cause/inspect_rollouts.py",
+        "--checkpoint",
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\lr_01_cpu\\checkpoints\\combined.pt",
+        "--device",
+        "cpu",
+        "--output",
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\lr_01_cpu\\rollout.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.9219999999913853
+    },
+    {
+      "label": "rollout_last",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.phase01-venv\\Scripts\\python.exe",
+        "examples/phase3_root_cause/inspect_rollouts.py",
+        "--checkpoint",
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\lr_01_cpu\\checkpoints\\combined_last.pt",
+        "--device",
+        "cpu",
+        "--output",
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\examples\\phase3_remediation\\lr_01_cpu\\rollout_last.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.797000000020489
+    }
+  ],
+  "epochs_completed": 100,
+  "execution": "complete",
+  "selected_epoch": 1,
+  "selected_all_steps_pass": false,
+  "last_all_steps_pass": false,
+  "selected_steps": [
+    {
+      "step": 1,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        2.5537636280059814,
+        1.2691237926483154,
+        -0.8773844838142395,
+        -1.272449016571045,
+        -0.9060421586036682,
+        -1.4680901765823364,
+        -2.0571188926696777
+      ],
+      "max_across_sample_logit_std": 0.0011246592039242387,
+      "mean_margin": 1.284639639854431,
+      "mean_normalized_entropy": 0.45637031555175783,
+      "passed": false
+    },
+    {
+      "step": 2,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        3.036911725997925,
+        1.496509075164795,
+        -1.0310090780258179,
+        -1.5445153713226318,
+        -1.0268867015838623,
+        -1.7376707792282104,
+        -2.433072090148926
+      ],
+      "max_across_sample_logit_std": 0.000807801668997854,
+      "mean_margin": 1.5404030752182007,
+      "mean_normalized_entropy": 0.3577700173854828,
+      "passed": false
+    },
+    {
+      "step": 3,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        3.4343926906585693,
+        1.747786283493042,
+        -1.3646184206008911,
+        -1.8401188850402832,
+        -1.2001700401306152,
+        -1.9732540845870972,
+        -2.877650737762451
+      ],
+      "max_across_sample_logit_std": 0.0007083332166075706,
+      "mean_margin": 1.6866064023971559,
+      "mean_normalized_entropy": 0.2943031394481659,
+      "passed": false
+    },
+    {
+      "step": 4,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        3.874626874923706,
+        1.7933974266052246,
+        -1.520841121673584,
+        -2.013310194015503,
+        -1.3777254819869995,
+        -2.1789963245391846,
+        -3.225726366043091
+      ],
+      "max_across_sample_logit_std": 0.000795868516433984,
+      "mean_margin": 2.081229610443115,
+      "mean_normalized_entropy": 0.2243960803747177,
+      "passed": false
+    }
+  ],
+  "last_steps": [
+    {
+      "step": 1,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        1.5155047178268433,
+        0.3447343707084656,
+        -8.680159568786621,
+        -8.39689826965332,
+        -8.268548965454102,
+        -8.664046287536621,
+        -9.017302513122559
+      ],
+      "max_across_sample_logit_std": 1.5690606232965365e-05,
+      "mean_margin": 1.1707702589035034,
+      "mean_normalized_entropy": 0.2821169805526733,
+      "passed": false
+    },
+    {
+      "step": 2,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        1.5139994621276855,
+        0.3441638648509979,
+        -8.672082901000977,
+        -8.388664245605469,
+        -8.260551452636719,
+        -8.655391693115234,
+        -9.00859546661377
+      ],
+      "max_across_sample_logit_std": 1.5714238543296233e-05,
+      "mean_margin": 1.169835615158081,
+      "mean_normalized_entropy": 0.2822261929512024,
+      "passed": false
+    },
+    {
+      "step": 3,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        1.5138418674468994,
+        0.3439689576625824,
+        -8.670295715332031,
+        -8.387290954589844,
+        -8.259117126464844,
+        -8.654021263122559,
+        -9.006980895996094
+      ],
+      "max_across_sample_logit_std": 1.6149466318893246e-05,
+      "mean_margin": 1.1698730278015137,
+      "mean_normalized_entropy": 0.2822234606742859,
+      "passed": false
+    },
+    {
+      "step": 4,
+      "samples": 25,
+      "distinct_non_unknown": 1,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "decoded_histogram": {
+        "0": 25
+      },
+      "raw_argmax_histogram": {
+        "0": 25
+      },
+      "zero_transition_histogram": {
+        "0": 25
+      },
+      "mean_logits": [
+        1.5126142501831055,
+        0.34323784708976746,
+        -8.661009788513184,
+        -8.378900527954102,
+        -8.25083065032959,
+        -8.645535469055176,
+        -8.997367858886719
+      ],
+      "max_across_sample_logit_std": 1.609576247574296e-05,
+      "mean_margin": 1.169376335144043,
+      "mean_normalized_entropy": 0.2822853517532349,
+      "passed": false
+    }
+  ]
+}

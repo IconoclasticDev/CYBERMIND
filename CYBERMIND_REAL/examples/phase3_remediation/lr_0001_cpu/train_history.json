@@ -1,0 +1,2702 @@
+[
+  {
+    "epoch": 1,
+    "train": {
+      "loss": 5.451661281898374,
+      "transition": 1.4414206762782862,
+      "infiltration": 1.0444888365073282,
+      "stage": 2.046816505369593,
+      "calibration": 0.24734406686220012,
+      "graph_consistency": 0.025667220903713196,
+      "crf_stage": 3.7806157362265664
+    },
+    "val": {
+      "loss": 5.306720237731934,
+      "transition": 1.4597293090820314,
+      "infiltration": 1.0367402124404907,
+      "stage": 1.9443222045898438,
+      "calibration": 0.24607786357402803,
+      "graph_consistency": 0.030224320739507676,
+      "crf_stage": 3.5717033195495604,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 2,
+    "train": {
+      "loss": 4.57029932835063,
+      "transition": 0.6370363477312151,
+      "infiltration": 1.044478506338401,
+      "stage": 1.996085952539913,
+      "calibration": 0.2459584218068201,
+      "graph_consistency": 0.025030791362533805,
+      "crf_stage": 3.678093167602039
+    },
+    "val": {
+      "loss": 4.5523873138427735,
+      "transition": 0.7631897401809692,
+      "infiltration": 1.0367480278015138,
+      "stage": 1.9064243125915528,
+      "calibration": 0.24471203982830048,
+      "graph_consistency": 0.0297367462515831,
+      "crf_stage": 3.494642038345337,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 3,
+    "train": {
+      "loss": 3.858059914385686,
+      "transition": -0.002023327790322851,
+      "infiltration": 1.0470169763096044,
+      "stage": 1.9458565946485176,
+      "calibration": 0.24560938286976736,
+      "graph_consistency": 0.02428493370897457,
+      "crf_stage": 3.577175210733883
+    },
+    "val": {
+      "loss": 3.9134665012359617,
+      "transition": 0.17988927960395812,
+      "infiltration": 1.0368606281280517,
+      "stage": 1.87003915309906,
+      "calibration": 0.24257476091384889,
+      "graph_consistency": 0.029117903560400008,
+      "crf_stage": 3.4205405044555666,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 4,
+    "train": {
+      "loss": 3.293928216715328,
+      "transition": -0.4975222153741805,
+      "infiltration": 1.0462658757069072,
+      "stage": 1.9016841806349207,
+      "calibration": 0.242642770292329,
+      "graph_consistency": 0.023458035357418607,
+      "crf_stage": 3.4869362213572517
+    },
+    "val": {
+      "loss": 3.3761354064941407,
+      "transition": -0.30456236362457273,
+      "infiltration": 1.0371318912506104,
+      "stage": 1.8354553079605103,
+      "calibration": 0.2401591098308563,
+      "graph_consistency": 0.0283901783823967,
+      "crf_stage": 3.3499347305297853,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 5,
+    "train": {
+      "loss": 2.8483366419057377,
+      "transition": -0.8850334912049965,
+      "infiltration": 1.0510934141815687,
+      "stage": 1.8609570792463959,
+      "calibration": 0.2407111247054866,
+      "graph_consistency": 0.022610841746457288,
+      "crf_stage": 3.402789686546951
+    },
+    "val": {
+      "loss": 2.9442121410369873,
+      "transition": -0.687134964466095,
+      "infiltration": 1.0375402879714966,
+      "stage": 1.8031511545181274,
+      "calibration": 0.23785116136074066,
+      "graph_consistency": 0.027691108882427217,
+      "crf_stage": 3.2837839317321778,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 6,
+    "train": {
+      "loss": 2.4972308776417718,
+      "transition": -1.1720800732002883,
+      "infiltration": 1.0478618144989014,
+      "stage": 1.820701053885163,
+      "calibration": 0.23770307737295746,
+      "graph_consistency": 0.0218175684453034,
+      "crf_stage": 3.3227523193984734
+    },
+    "val": {
+      "loss": 2.58076096534729,
+      "transition": -1.003333044052124,
+      "infiltration": 1.0379053449630737,
+      "stage": 1.7722074604034423,
+      "calibration": 0.236287859082222,
+      "graph_consistency": 0.026963182762265205,
+      "crf_stage": 3.220262155532837,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 7,
+    "train": {
+      "loss": 2.2294151059916762,
+      "transition": -1.3853664945383541,
+      "infiltration": 1.0465474138494397,
+      "stage": 1.7863348194810211,
+      "calibration": 0.23615224879296098,
+      "graph_consistency": 0.021071606056123484,
+      "crf_stage": 3.2514583048273304
+    },
+    "val": {
+      "loss": 2.275395164489746,
+      "transition": -1.261993613243103,
+      "infiltration": 1.0382394456863404,
+      "stage": 1.7416048574447631,
+      "calibration": 0.23507418513298034,
+      "graph_consistency": 0.026223430186510088,
+      "crf_stage": 3.1574192428588868,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 8,
+    "train": {
+      "loss": 2.009803052808418,
+      "transition": -1.5515550589952312,
+      "infiltration": 1.0512061763982303,
+      "stage": 1.7483257524302749,
+      "calibration": 0.23611877565501166,
+      "graph_consistency": 0.02036985272511107,
+      "crf_stage": 3.1734566532197546
+    },
+    "val": {
+      "loss": 2.0265196800231933,
+      "transition": -1.4627593994140624,
+      "infiltration": 1.038577947616577,
+      "stage": 1.7099891424179077,
+      "calibration": 0.23398473620414734,
+      "graph_consistency": 0.025514497756958007,
+      "crf_stage": 3.0927163219451903,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 9,
+    "train": {
+      "loss": 1.8226660568206037,
+      "transition": -1.6715110090912366,
+      "infiltration": 1.0438429019490227,
+      "stage": 1.7086975085930747,
+      "calibration": 0.23429129993329284,
+      "graph_consistency": 0.019759027562180502,
+      "crf_stage": 3.0943025135603106
+    },
+    "val": {
+      "loss": 1.822225775718689,
+      "transition": -1.6167431497573852,
+      "infiltration": 1.0386211013793945,
+      "stage": 1.6769777488708497,
+      "calibration": 0.23384916305541992,
+      "graph_consistency": 0.024810816943645477,
+      "crf_stage": 3.0252160453796386,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 10,
+    "train": {
+      "loss": 1.682636133960036,
+      "transition": -1.7594331717882,
+      "infiltration": 1.048194091828143,
+      "stage": 1.671174397234057,
+      "calibration": 0.23577975860384645,
+      "graph_consistency": 0.019199490547180176,
+      "crf_stage": 3.0184242295437174
+    },
+    "val": {
+      "loss": 1.6561260890960694,
+      "transition": -1.729571318626404,
+      "infiltration": 1.0382436943054199,
+      "stage": 1.6422125053405763,
+      "calibration": 0.23504134118556977,
+      "graph_consistency": 0.024102374091744424,
+      "crf_stage": 2.9538579177856445,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 11,
+    "train": {
+      "loss": 1.5578506813674677,
+      "transition": -1.8285954096278205,
+      "infiltration": 1.048880295675309,
+      "stage": 1.6340166271710006,
+      "calibration": 0.2377575247502718,
+      "graph_consistency": 0.018652158407647102,
+      "crf_stage": 2.9422814963293855
+    },
+    "val": {
+      "loss": 1.5223005247116088,
+      "transition": -1.8065904045104981,
+      "infiltration": 1.0378042602539062,
+      "stage": 1.6051697397232056,
+      "calibration": 0.23666150987148285,
+      "graph_consistency": 0.02339187040925026,
+      "crf_stage": 2.877660617828369,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 12,
+    "train": {
+      "loss": 1.4338265227489784,
+      "transition": -1.8798119474629886,
+      "infiltration": 1.0415137781471502,
+      "stage": 1.5911529298688545,
+      "calibration": 0.23815640514014197,
+      "graph_consistency": 0.018105118123234294,
+      "crf_stage": 2.854212905539841
+    },
+    "val": {
+      "loss": 1.416055030822754,
+      "transition": -1.8533296060562134,
+      "infiltration": 1.0375988721847533,
+      "stage": 1.566302399635315,
+      "calibration": 0.2375447064638138,
+      "graph_consistency": 0.02267445459961891,
+      "crf_stage": 2.7977163887023924,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 13,
+    "train": {
+      "loss": 1.3454399069801706,
+      "transition": -1.9145388368700371,
+      "infiltration": 1.0508640310803399,
+      "stage": 1.5496250547346522,
+      "calibration": 0.24153653080346155,
+      "graph_consistency": 0.017564616792026113,
+      "crf_stage": 2.768476900507192
+    },
+    "val": {
+      "loss": 1.319030156135559,
+      "transition": -1.8931008195877075,
+      "infiltration": 1.0375826787948608,
+      "stage": 1.5287759256362916,
+      "calibration": 0.23763188421726228,
+      "graph_consistency": 0.022061600983142853,
+      "crf_stage": 2.7208555603027342,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 14,
+    "train": {
+      "loss": 1.253973687281374,
+      "transition": -1.9433623435067349,
+      "infiltration": 1.0482901276135055,
+      "stage": 1.5094279988867338,
+      "calibration": 0.24106814064940468,
+      "graph_consistency": 0.017070039893027213,
+      "crf_stage": 2.688822558668793
+    },
+    "val": {
+      "loss": 1.2272226619720459,
+      "transition": -1.9333401536941528,
+      "infiltration": 1.0375904273986816,
+      "stage": 1.4949117851257325,
+      "calibration": 0.23762017190456391,
+      "graph_consistency": 0.02160748206079006,
+      "crf_stage": 2.651663398742676,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 15,
+    "train": {
+      "loss": 1.1694987035188518,
+      "transition": -1.9719480334735306,
+      "infiltration": 1.0455263892158133,
+      "stage": 1.47458743267372,
+      "calibration": 0.2408813663193437,
+      "graph_consistency": 0.01666910060849346,
+      "crf_stage": 2.6175669412143896
+    },
+    "val": {
+      "loss": 1.140483160018921,
+      "transition": -1.9721565389633178,
+      "infiltration": 1.0374912166595458,
+      "stage": 1.4633800077438355,
+      "calibration": 0.23812645852565764,
+      "graph_consistency": 0.021348951458930968,
+      "crf_stage": 2.5873966312408445,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 16,
+    "train": {
+      "loss": 1.0953008854975466,
+      "transition": -1.9996988265240778,
+      "infiltration": 1.046885832411344,
+      "stage": 1.4433938010794218,
+      "calibration": 0.24230213780872156,
+      "graph_consistency": 0.016378047708116593,
+      "crf_stage": 2.552637510612363
+    },
+    "val": {
+      "loss": 1.060177993774414,
+      "transition": -2.0072045803070067,
+      "infiltration": 1.037463846206665,
+      "stage": 1.4335387706756593,
+      "calibration": 0.23830162942409516,
+      "graph_consistency": 0.021241343915462493,
+      "crf_stage": 2.526729784011841,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 17,
+    "train": {
+      "loss": 1.019112256706738,
+      "transition": -2.0284446575602546,
+      "infiltration": 1.0453665295585257,
+      "stage": 1.4128973757634398,
+      "calibration": 0.24119674206757155,
+      "graph_consistency": 0.01616683063387382,
+      "crf_stage": 2.4917713384159277
+    },
+    "val": {
+      "loss": 0.9838483762741089,
+      "transition": -2.038981637954712,
+      "infiltration": 1.03731098651886,
+      "stage": 1.4041198539733886,
+      "calibration": 0.23916031897068024,
+      "graph_consistency": 0.021187047511339187,
+      "crf_stage": 2.467016592025757,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 18,
+    "train": {
+      "loss": 0.9506620608392309,
+      "transition": -2.0554172680026195,
+      "infiltration": 1.0494739647771492,
+      "stage": 1.3825817205866828,
+      "calibration": 0.2433877797400365,
+      "graph_consistency": 0.016000736107836006,
+      "crf_stage": 2.4300737146471367
+    },
+    "val": {
+      "loss": 0.9068334436416626,
+      "transition": -2.064957437515259,
+      "infiltration": 1.0372632503509522,
+      "stage": 1.370239543914795,
+      "calibration": 0.23947471380233765,
+      "graph_consistency": 0.021138084903359413,
+      "crf_stage": 2.398798303604126,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 19,
+    "train": {
+      "loss": 0.8779868933021046,
+      "transition": -2.0822186743626827,
+      "infiltration": 1.0492898323496833,
+      "stage": 1.35225176029518,
+      "calibration": 0.24318112506241094,
+      "graph_consistency": 0.01587939665454333,
+      "crf_stage": 2.3691313774859317
+    },
+    "val": {
+      "loss": 0.8291493844985962,
+      "transition": -2.0924440670013427,
+      "infiltration": 1.0372023963928223,
+      "stage": 1.3368260860443115,
+      "calibration": 0.2398935705423355,
+      "graph_consistency": 0.021127826422452926,
+      "crf_stage": 2.3317730712890623,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 20,
+    "train": {
+      "loss": 0.7936145868457731,
+      "transition": -2.1112378073520346,
+      "infiltration": 1.0467413233928993,
+      "stage": 1.316993920529475,
+      "calibration": 0.24283474415052134,
+      "graph_consistency": 0.015817577721642665,
+      "crf_stage": 2.2989307856950605
+    },
+    "val": {
+      "loss": 0.7522513341903686,
+      "transition": -2.1185406398773194,
+      "infiltration": 1.0371259832382203,
+      "stage": 1.3029286432266236,
+      "calibration": 0.24043854594230651,
+      "graph_consistency": 0.021213940531015395,
+      "crf_stage": 2.2639850997924804,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 21,
+    "train": {
+      "loss": 0.7195059403044278,
+      "transition": -2.1400097041833597,
+      "infiltration": 1.045460834854939,
+      "stage": 1.287913369350746,
+      "calibration": 0.24335025373052377,
+      "graph_consistency": 0.015851610492853843,
+      "crf_stage": 2.2396858324770066
+    },
+    "val": {
+      "loss": 0.6782829284667968,
+      "transition": -2.142557144165039,
+      "infiltration": 1.037037854194641,
+      "stage": 1.2695560598373412,
+      "calibration": 0.24114501953125,
+      "graph_consistency": 0.02142418473958969,
+      "crf_stage": 2.1973055362701417,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 22,
+    "train": {
+      "loss": 0.6435611443441422,
+      "transition": -2.1686482155909306,
+      "infiltration": 1.0486764819895635,
+      "stage": 1.2536532253515524,
+      "calibration": 0.24397116777349692,
+      "graph_consistency": 0.015974223247317017,
+      "crf_stage": 2.1726291765932175
+    },
+    "val": {
+      "loss": 0.6069733667373657,
+      "transition": -2.1676334857940676,
+      "infiltration": 1.036981267929077,
+      "stage": 1.2385658979415894,
+      "calibration": 0.24169233083724975,
+      "graph_consistency": 0.021757964193820954,
+      "crf_stage": 2.135656700134277,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 23,
+    "train": {
+      "loss": 0.5680623054504395,
+      "transition": -2.198326392251937,
+      "infiltration": 1.0482380956899924,
+      "stage": 1.2236707132370745,
+      "calibration": 0.2434634204770698,
+      "graph_consistency": 0.01619893654448087,
+      "crf_stage": 2.112005356882439
+    },
+    "val": {
+      "loss": 0.5361396622657776,
+      "transition": -2.197978792190552,
+      "infiltration": 1.0369995164871215,
+      "stage": 1.2114441013336181,
+      "calibration": 0.24155811071395875,
+      "graph_consistency": 0.022310448586940767,
+      "crf_stage": 2.081708450317383,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 24,
+    "train": {
+      "loss": 0.49633548982807846,
+      "transition": -2.2323623876102636,
+      "infiltration": 1.0537123797369785,
+      "stage": 1.194574586680678,
+      "calibration": 0.24446307684554427,
+      "graph_consistency": 0.016535545195468137,
+      "crf_stage": 2.0543040838397917
+    },
+    "val": {
+      "loss": 0.46365129709243774,
+      "transition": -2.229760618209839,
+      "infiltration": 1.0370250844955444,
+      "stage": 1.1841285228729248,
+      "calibration": 0.2413650143146515,
+      "graph_consistency": 0.023062950894236565,
+      "crf_stage": 2.027486553192139,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 25,
+    "train": {
+      "loss": 0.40757624438551604,
+      "transition": -2.2665367048294818,
+      "infiltration": 1.0457145259028575,
+      "stage": 1.1634425237530568,
+      "calibration": 0.24298326890976701,
+      "graph_consistency": 0.01692671347104135,
+      "crf_stage": 1.9927756532293852
+    },
+    "val": {
+      "loss": 0.3866967988014221,
+      "transition": -2.2627738094329835,
+      "infiltration": 1.0369926404953003,
+      "stage": 1.1544264364242554,
+      "calibration": 0.24169571876525878,
+      "graph_consistency": 0.02380118243396282,
+      "crf_stage": 1.9690909385681152,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 26,
+    "train": {
+      "loss": 0.32658968206311834,
+      "transition": -2.3031870576201894,
+      "infiltration": 1.049019577073269,
+      "stage": 1.130099832034502,
+      "calibration": 0.2442900152480016,
+      "graph_consistency": 0.017328017620278188,
+      "crf_stage": 1.9302328727284417
+    },
+    "val": {
+      "loss": 0.3040442895889282,
+      "transition": -2.3000410556793214,
+      "infiltration": 1.036996555328369,
+      "stage": 1.1235658359527587,
+      "calibration": 0.24169547975063324,
+      "graph_consistency": 0.024533871710300446,
+      "crf_stage": 1.9090267896652222,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 27,
+    "train": {
+      "loss": 0.24239197715384062,
+      "transition": -2.341843800466569,
+      "infiltration": 1.0443154436643007,
+      "stage": 1.102210732757068,
+      "calibration": 0.24216024821898977,
+      "graph_consistency": 0.017760421286840907,
+      "crf_stage": 1.8772138103109892
+    },
+    "val": {
+      "loss": 0.21762267351150513,
+      "transition": -2.3358846950531005,
+      "infiltration": 1.0370201063156128,
+      "stage": 1.08890775680542,
+      "calibration": 0.24150565147399902,
+      "graph_consistency": 0.025077686309814454,
+      "crf_stage": 1.8424489498138428,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 28,
+    "train": {
+      "loss": 0.1628314911342058,
+      "transition": -2.38430733368045,
+      "infiltration": 1.0512106653119697,
+      "stage": 1.0730171066815737,
+      "calibration": 0.24358554966137058,
+      "graph_consistency": 0.01811538963410698,
+      "crf_stage": 1.817781903704659
+    },
+    "val": {
+      "loss": 0.12824348449707032,
+      "transition": -2.3795090198516844,
+      "infiltration": 1.036996569633484,
+      "stage": 1.05732497215271,
+      "calibration": 0.2417481154203415,
+      "graph_consistency": 0.02563098393380642,
+      "crf_stage": 1.7823614120483398,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 29,
+    "train": {
+      "loss": 0.06616421898857491,
+      "transition": -2.4294176648874752,
+      "infiltration": 1.0454703139477088,
+      "stage": 1.0408016697305147,
+      "calibration": 0.24329834150486304,
+      "graph_consistency": 0.018506453265665006,
+      "crf_stage": 1.7584008564714526
+    },
+    "val": {
+      "loss": 0.03679623126983642,
+      "transition": -2.423312883377075,
+      "infiltration": 1.036981568336487,
+      "stage": 1.0242060279846192,
+      "calibration": 0.24191819071769716,
+      "graph_consistency": 0.026130846589803695,
+      "crf_stage": 1.7200556182861328,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 30,
+    "train": {
+      "loss": -0.031715738968771015,
+      "transition": -2.478413671743674,
+      "infiltration": 1.043956383329923,
+      "stage": 1.0077851854386877,
+      "calibration": 0.2429803692903675,
+      "graph_consistency": 0.0188654649269874,
+      "crf_stage": 1.6967327125736924
+    },
+    "val": {
+      "loss": -0.06285141706466675,
+      "transition": -2.475120601654053,
+      "infiltration": 1.0369868326187133,
+      "stage": 0.9906708240509033,
+      "calibration": 0.2418964397907257,
+      "graph_consistency": 0.026627866104245185,
+      "crf_stage": 1.657809748649597,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 31,
+    "train": {
+      "loss": -0.12361361452790558,
+      "transition": -2.5295166969299316,
+      "infiltration": 1.0451461379645302,
+      "stage": 0.9779862878752537,
+      "calibration": 0.24349830043120463,
+      "graph_consistency": 0.019188884065532295,
+      "crf_stage": 1.64229055115434
+    },
+    "val": {
+      "loss": -0.15400513172149657,
+      "transition": -2.5255874252319335,
+      "infiltration": 1.036969051361084,
+      "stage": 0.9619488978385925,
+      "calibration": 0.24212691366672515,
+      "graph_consistency": 0.027065673768520357,
+      "crf_stage": 1.6050137329101561,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 32,
+    "train": {
+      "loss": -0.22205174946394124,
+      "transition": -2.5848235849474297,
+      "infiltration": 1.045691183355988,
+      "stage": 0.94731406110232,
+      "calibration": 0.24361918646781172,
+      "graph_consistency": 0.019527278626795676,
+      "crf_stage": 1.5854941626064112
+    },
+    "val": {
+      "loss": -0.25468580961227416,
+      "transition": -2.5808856964111326,
+      "infiltration": 1.0369943475723267,
+      "stage": 0.9296238660812378,
+      "calibration": 0.24189097464084625,
+      "graph_consistency": 0.02738586813211441,
+      "crf_stage": 1.5465535879135133,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 33,
+    "train": {
+      "loss": -0.31639757996699847,
+      "transition": -2.64251434607584,
+      "infiltration": 1.046748191606803,
+      "stage": 0.9204436442891105,
+      "calibration": 0.24396128537224943,
+      "graph_consistency": 0.019810034664439372,
+      "crf_stage": 1.53674699243952
+    },
+    "val": {
+      "loss": -0.3477300119400024,
+      "transition": -2.6359693813323974,
+      "infiltration": 1.0370048141479493,
+      "stage": 0.902315788269043,
+      "calibration": 0.2418101143836975,
+      "graph_consistency": 0.02775301590561867,
+      "crf_stage": 1.4978785228729248,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 34,
+    "train": {
+      "loss": -0.4135991413085187,
+      "transition": -2.7032379635044785,
+      "infiltration": 1.0476109766569295,
+      "stage": 0.8934724584954684,
+      "calibration": 0.24346956439682696,
+      "graph_consistency": 0.02007397105459307,
+      "crf_stage": 1.489180654775901
+    },
+    "val": {
+      "loss": -0.45544243812561036,
+      "transition": -2.705082588195801,
+      "infiltration": 1.0370352125167848,
+      "stage": 0.8743118023872376,
+      "calibration": 0.24152322053909303,
+      "graph_consistency": 0.02798380047082901,
+      "crf_stage": 1.4486921691894532,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 35,
+    "train": {
+      "loss": -0.5049847989785866,
+      "transition": -2.7659199472333564,
+      "infiltration": 1.0526040987890275,
+      "stage": 0.8689158285250429,
+      "calibration": 0.24442074362371788,
+      "graph_consistency": 0.02034955624429906,
+      "crf_stage": 1.445908034434084
+    },
+    "val": {
+      "loss": -0.5462356281280517,
+      "transition": -2.7631936836242676,
+      "infiltration": 1.0370556211471558,
+      "stage": 0.8503319668769836,
+      "calibration": 0.24137086749076844,
+      "graph_consistency": 0.028357589468359947,
+      "crf_stage": 1.4072531127929688,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 36,
+    "train": {
+      "loss": -0.6089169783670394,
+      "transition": -2.8335479947387197,
+      "infiltration": 1.0484382119335112,
+      "stage": 0.8449343872852013,
+      "calibration": 0.24419397628698192,
+      "graph_consistency": 0.020688206904002877,
+      "crf_stage": 1.4056359900802862
+    },
+    "val": {
+      "loss": -0.6559306883811951,
+      "transition": -2.838037805557251,
+      "infiltration": 1.037071509361267,
+      "stage": 0.8244354748725891,
+      "calibration": 0.2412311154603958,
+      "graph_consistency": 0.028619690015912056,
+      "crf_stage": 1.3634194135665894,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 37,
+    "train": {
+      "loss": -0.7079605567650716,
+      "transition": -2.9019463179541414,
+      "infiltration": 1.0479172497499185,
+      "stage": 0.8229198074731671,
+      "calibration": 0.24324479674706695,
+      "graph_consistency": 0.020984197707205523,
+      "crf_stage": 1.3677225699190234
+    },
+    "val": {
+      "loss": -0.7421923732757568,
+      "transition": -2.8978024101257325,
+      "infiltration": 1.0370928716659547,
+      "stage": 0.8044864797592163,
+      "calibration": 0.24108415544033052,
+      "graph_consistency": 0.02895222544670105,
+      "crf_stage": 1.330323657989502,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 38,
+    "train": {
+      "loss": -0.8127504723971007,
+      "transition": -2.973110800883809,
+      "infiltration": 1.0417797858597801,
+      "stage": 0.802569899402681,
+      "calibration": 0.24199848438872665,
+      "graph_consistency": 0.021338722256363414,
+      "crf_stage": 1.3335240610310288
+    },
+    "val": {
+      "loss": -0.831973512172699,
+      "transition": -2.9602937793731687,
+      "infiltration": 1.0371223163604737,
+      "stage": 0.7837669730186463,
+      "calibration": 0.24085693418979645,
+      "graph_consistency": 0.029150667414069176,
+      "crf_stage": 1.296455874443054,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 39,
+    "train": {
+      "loss": -0.8973543292186299,
+      "transition": -3.040919061566963,
+      "infiltration": 1.0462550716321977,
+      "stage": 0.7857911020028786,
+      "calibration": 0.24314373682756893,
+      "graph_consistency": 0.02160643425876977,
+      "crf_stage": 1.307249493286258
+    },
+    "val": {
+      "loss": -0.929627058506012,
+      "transition": -3.038908882141113,
+      "infiltration": 1.03716157913208,
+      "stage": 0.7690865421295165,
+      "calibration": 0.2405865114927292,
+      "graph_consistency": 0.0293536689132452,
+      "crf_stage": 1.2730485773086548,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 40,
+    "train": {
+      "loss": -0.9859560591275575,
+      "transition": -3.110475473716611,
+      "infiltration": 1.0493230624277083,
+      "stage": 0.7692548271085395,
+      "calibration": 0.24302953164108465,
+      "graph_consistency": 0.021831205145257417,
+      "crf_stage": 1.2795596826271933
+    },
+    "val": {
+      "loss": -1.0002700662612916,
+      "transition": -3.0878562355041503,
+      "infiltration": 1.0372624969482422,
+      "stage": 0.7521586418151855,
+      "calibration": 0.23990282118320466,
+      "graph_consistency": 0.0293130112439394,
+      "crf_stage": 1.2466652488708496,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 41,
+    "train": {
+      "loss": -1.0691758179273763,
+      "transition": -3.1775765419006348,
+      "infiltration": 1.049339749773995,
+      "stage": 0.7566110716491449,
+      "calibration": 0.242038043063195,
+      "graph_consistency": 0.0220251416207337,
+      "crf_stage": 1.2602906989269569
+    },
+    "val": {
+      "loss": -1.0836918354034424,
+      "transition": -3.156787300109863,
+      "infiltration": 1.0372775220870971,
+      "stage": 0.7409099912643433,
+      "calibration": 0.23981867074966431,
+      "graph_consistency": 0.029393070787191392,
+      "crf_stage": 1.2289196014404298,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 42,
+    "train": {
+      "loss": -1.1503417882762972,
+      "transition": -3.243604980531286,
+      "infiltration": 1.0503929677556774,
+      "stage": 0.7436369481633921,
+      "calibration": 0.24286769648067286,
+      "graph_consistency": 0.02219695262000209,
+      "crf_stage": 1.240516947918251
+    },
+    "val": {
+      "loss": -1.1498155498504639,
+      "transition": -3.208865900039673,
+      "infiltration": 1.037357153892517,
+      "stage": 0.7298047757148742,
+      "calibration": 0.2393466943502426,
+      "graph_consistency": 0.02941307671368122,
+      "crf_stage": 1.2119604349136353,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 43,
+    "train": {
+      "loss": -1.2293379912610913,
+      "transition": -3.306529619654671,
+      "infiltration": 1.0448563773123944,
+      "stage": 0.7355503000196864,
+      "calibration": 0.24134204255752875,
+      "graph_consistency": 0.022378687548344253,
+      "crf_stage": 1.2281076204581338
+    },
+    "val": {
+      "loss": -1.2510398483276368,
+      "transition": -3.297387113571167,
+      "infiltration": 1.0373477745056152,
+      "stage": 0.7198512721061706,
+      "calibration": 0.23939139425754546,
+      "graph_consistency": 0.0294119992852211,
+      "crf_stage": 1.196508722305298,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 44,
+    "train": {
+      "loss": -1.2966143987217889,
+      "transition": -3.3627821500184107,
+      "infiltration": 1.0477520823478699,
+      "stage": 0.7247452393907016,
+      "calibration": 0.24128076824985567,
+      "graph_consistency": 0.022522210341985108,
+      "crf_stage": 1.2110694392782744
+    },
+    "val": {
+      "loss": -1.2894232654571534,
+      "transition": -3.3265358066558837,
+      "infiltration": 1.0373961782455445,
+      "stage": 0.7125262212753296,
+      "calibration": 0.23911611557006837,
+      "graph_consistency": 0.029412579387426377,
+      "crf_stage": 1.185377688407898,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 45,
+    "train": {
+      "loss": -1.3589191554022617,
+      "transition": -3.417314842099049,
+      "infiltration": 1.0487959072238109,
+      "stage": 0.7181035280227661,
+      "calibration": 0.24190690966903186,
+      "graph_consistency": 0.02269958399358343,
+      "crf_stage": 1.1997933446383866
+    },
+    "val": {
+      "loss": -1.3639613914489745,
+      "transition": -3.3930885696411135,
+      "infiltration": 1.0374017333984376,
+      "stage": 0.7062834453582764,
+      "calibration": 0.2390812587738037,
+      "graph_consistency": 0.029466266855597497,
+      "crf_stage": 1.1756417655944824,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 46,
+    "train": {
+      "loss": -1.416320842797639,
+      "transition": -3.464712615872993,
+      "infiltration": 1.046908091326229,
+      "stage": 0.7117311993583304,
+      "calibration": 0.24149928889313682,
+      "graph_consistency": 0.02286988524262045,
+      "crf_stage": 1.1900623489598758
+    },
+    "val": {
+      "loss": -1.3894911479949952,
+      "transition": -3.411662836074829,
+      "infiltration": 1.037445216178894,
+      "stage": 0.700727858543396,
+      "calibration": 0.2388380640745163,
+      "graph_consistency": 0.02955186612904072,
+      "crf_stage": 1.1672795820236206,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 47,
+    "train": {
+      "loss": -1.4667302389613917,
+      "transition": -3.5102084972819343,
+      "infiltration": 1.047438160317843,
+      "stage": 0.7073175780108718,
+      "calibration": 0.24114120226414476,
+      "graph_consistency": 0.023044442605288304,
+      "crf_stage": 1.183697395637387
+    },
+    "val": {
+      "loss": -1.440761137008667,
+      "transition": -3.456396141052246,
+      "infiltration": 1.037423243522644,
+      "stage": 0.6954969835281372,
+      "calibration": 0.23894496142864227,
+      "graph_consistency": 0.029483944252133368,
+      "crf_stage": 1.1594517517089844,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 48,
+    "train": {
+      "loss": -1.515248146213469,
+      "transition": -3.5510139191736942,
+      "infiltration": 1.0461221640227272,
+      "stage": 0.7023797973257596,
+      "calibration": 0.24070605660071137,
+      "graph_consistency": 0.02314291189073539,
+      "crf_stage": 1.1759963602316184
+    },
+    "val": {
+      "loss": -1.4669980335235595,
+      "transition": -3.477985420227051,
+      "infiltration": 1.037479829788208,
+      "stage": 0.6917411613464356,
+      "calibration": 0.23864661395549774,
+      "graph_consistency": 0.029520409107208254,
+      "crf_stage": 1.1539108991622924,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 49,
+    "train": {
+      "loss": -1.558331018588582,
+      "transition": -3.5913156994053574,
+      "infiltration": 1.0482393464104074,
+      "stage": 0.6983485505229137,
+      "calibration": 0.24136626183009538,
+      "graph_consistency": 0.023282073590843402,
+      "crf_stage": 1.1699390606802018
+    },
+    "val": {
+      "loss": -1.5288680171966553,
+      "transition": -3.5350818824768067,
+      "infiltration": 1.0374258661270142,
+      "stage": 0.6880333375930786,
+      "calibration": 0.23893240928649903,
+      "graph_consistency": 0.02953030340373516,
+      "crf_stage": 1.148063793182373,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 50,
+    "train": {
+      "loss": -1.6024830263169085,
+      "transition": -3.6304725936201754,
+      "infiltration": 1.0469530332283896,
+      "stage": 0.6953897857275165,
+      "calibration": 0.24042338132858276,
+      "graph_consistency": 0.02343431035759019,
+      "crf_stage": 1.1658270241784268
+    },
+    "val": {
+      "loss": -1.563168592453003,
+      "transition": -3.5660205268859864,
+      "infiltration": 1.0374376440048219,
+      "stage": 0.6853580594062805,
+      "calibration": 0.2388714522123337,
+      "graph_consistency": 0.029575264453887938,
+      "crf_stage": 1.1440069389343261,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 51,
+    "train": {
+      "loss": -1.6483592322615326,
+      "transition": -3.667280795144253,
+      "infiltration": 1.0438684283709916,
+      "stage": 0.6911044023076042,
+      "calibration": 0.23940167710429333,
+      "graph_consistency": 0.023603981238652448,
+      "crf_stage": 1.1585203409194946
+    },
+    "val": {
+      "loss": -1.5813608598709106,
+      "transition": -3.5789547634124754,
+      "infiltration": 1.0374367666244506,
+      "stage": 0.6811250185966492,
+      "calibration": 0.23886410653591156,
+      "graph_consistency": 0.029576938375830652,
+      "crf_stage": 1.137728319168091,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 52,
+    "train": {
+      "loss": -1.688144236314492,
+      "transition": -3.703302942338537,
+      "infiltration": 1.0428033891271373,
+      "stage": 0.6885628680713841,
+      "calibration": 0.24037616980857537,
+      "graph_consistency": 0.023780319290082962,
+      "crf_stage": 1.1552413057108395
+    },
+    "val": {
+      "loss": -1.6473276615142822,
+      "transition": -3.6417275714874267,
+      "infiltration": 1.037380895614624,
+      "stage": 0.6786336994171143,
+      "calibration": 0.23916914880275728,
+      "graph_consistency": 0.029614942073822023,
+      "crf_stage": 1.1338141059875488,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 53,
+    "train": {
+      "loss": -1.7231564463162032,
+      "transition": -3.739194709746564,
+      "infiltration": 1.0477904042259591,
+      "stage": 0.6853057273098679,
+      "calibration": 0.24132977939042888,
+      "graph_consistency": 0.023915000962185077,
+      "crf_stage": 1.1498750819534551
+    },
+    "val": {
+      "loss": -1.6688115978240967,
+      "transition": -3.6594124126434324,
+      "infiltration": 1.0373899555206298,
+      "stage": 0.6754952955245972,
+      "calibration": 0.23911283731460573,
+      "graph_consistency": 0.029602702930569647,
+      "crf_stage": 1.129360737800598,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 54,
+    "train": {
+      "loss": -1.7537064200542012,
+      "transition": -3.77049265142347,
+      "infiltration": 1.0525597939725782,
+      "stage": 0.6821141966053696,
+      "calibration": 0.24130982282708902,
+      "graph_consistency": 0.024056965912707517,
+      "crf_stage": 1.145003269930355
+    },
+    "val": {
+      "loss": -1.6960385942459106,
+      "transition": -3.6846133041381837,
+      "infiltration": 1.0373464298248292,
+      "stage": 0.6739827227592469,
+      "calibration": 0.23936198949813842,
+      "graph_consistency": 0.029652049243450166,
+      "crf_stage": 1.1267988872528076,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 55,
+    "train": {
+      "loss": -1.7840548538770833,
+      "transition": -3.8007008247688168,
+      "infiltration": 1.0541221860979424,
+      "stage": 0.6806949640883774,
+      "calibration": 0.24286341032043832,
+      "graph_consistency": 0.024190125254089714,
+      "crf_stage": 1.1423692214684409
+    },
+    "val": {
+      "loss": -1.703181562423706,
+      "transition": -3.688929100036621,
+      "infiltration": 1.037370991706848,
+      "stage": 0.671799852848053,
+      "calibration": 0.23921627163887024,
+      "graph_consistency": 0.029639782831072808,
+      "crf_stage": 1.1233390617370604,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 56,
+    "train": {
+      "loss": -1.8118363403883138,
+      "transition": -3.8244563477938294,
+      "infiltration": 1.0526797673741326,
+      "stage": 0.6785176103232337,
+      "calibration": 0.24203824386244915,
+      "graph_consistency": 0.02434461285955593,
+      "crf_stage": 1.1396787616073107
+    },
+    "val": {
+      "loss": -1.7492005634307861,
+      "transition": -3.733334503173828,
+      "infiltration": 1.0373232078552246,
+      "stage": 0.6705055975914002,
+      "calibration": 0.2394893342256546,
+      "graph_consistency": 0.02960677981376648,
+      "crf_stage": 1.1213985252380372,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 57,
+    "train": {
+      "loss": -1.8365414220778669,
+      "transition": -3.846087854416644,
+      "infiltration": 1.051347789217214,
+      "stage": 0.6770545674152062,
+      "calibration": 0.24235119585131035,
+      "graph_consistency": 0.02447728513449919,
+      "crf_stage": 1.1375066979986723
+    },
+    "val": {
+      "loss": -1.7607121801376342,
+      "transition": -3.7425872611999513,
+      "infiltration": 1.0373269033432007,
+      "stage": 0.6686644840240479,
+      "calibration": 0.2394566547870636,
+      "graph_consistency": 0.02953468792140484,
+      "crf_stage": 1.1187423610687255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 58,
+    "train": {
+      "loss": -1.8560670399274983,
+      "transition": -3.8611750290042064,
+      "infiltration": 1.0500355157695833,
+      "stage": 0.6750082324762814,
+      "calibration": 0.24134689813754598,
+      "graph_consistency": 0.02462411607753058,
+      "crf_stage": 1.1336731812993035
+    },
+    "val": {
+      "loss": -1.7705669498443604,
+      "transition": -3.75094801902771,
+      "infiltration": 1.0372973823547362,
+      "stage": 0.6675147485733032,
+      "calibration": 0.23963063061237336,
+      "graph_consistency": 0.029575783014297485,
+      "crf_stage": 1.116885085105896,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 59,
+    "train": {
+      "loss": -1.8743683471054327,
+      "transition": -3.880275976462442,
+      "infiltration": 1.0513710350286765,
+      "stage": 0.6742611556756691,
+      "calibration": 0.24280126930260268,
+      "graph_consistency": 0.024753512356613504,
+      "crf_stage": 1.1327407575044475
+    },
+    "val": {
+      "loss": -1.781067180633545,
+      "transition": -3.75917818069458,
+      "infiltration": 1.0373320960998536,
+      "stage": 0.6655030560493469,
+      "calibration": 0.23941100060939788,
+      "graph_consistency": 0.02957806468009949,
+      "crf_stage": 1.1143747568130493,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 60,
+    "train": {
+      "loss": -1.9069597134824658,
+      "transition": -3.9036734299581557,
+      "infiltration": 1.0445080546082044,
+      "stage": 0.672759859288325,
+      "calibration": 0.24062769383680624,
+      "graph_consistency": 0.024853687489130458,
+      "crf_stage": 1.1304297525374616
+    },
+    "val": {
+      "loss": -1.793757381439209,
+      "transition": -3.7715235710144044,
+      "infiltration": 1.0373381519317626,
+      "stage": 0.6652981257438659,
+      "calibration": 0.23937499284744262,
+      "graph_consistency": 0.029554027542471887,
+      "crf_stage": 1.113897261619568,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 61,
+    "train": {
+      "loss": -1.932577043283181,
+      "transition": -3.9234286370824596,
+      "infiltration": 1.0405322909355164,
+      "stage": 0.6714140714192,
+      "calibration": 0.23995434651609326,
+      "graph_consistency": 0.024942602321016985,
+      "crf_stage": 1.1282543989478564
+    },
+    "val": {
+      "loss": -1.84599609375,
+      "transition": -3.822510852813721,
+      "infiltration": 1.0373097515106202,
+      "stage": 0.6643625187873841,
+      "calibration": 0.23954609870910645,
+      "graph_consistency": 0.029522663578391076,
+      "crf_stage": 1.1123243141174317,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 62,
+    "train": {
+      "loss": -1.9436996569398974,
+      "transition": -3.93838879319488,
+      "infiltration": 1.046227027158268,
+      "stage": 0.6696374347952546,
+      "calibration": 0.24174963401966407,
+      "graph_consistency": 0.025060871035837737,
+      "crf_stage": 1.1255747587954412
+    },
+    "val": {
+      "loss": -1.8308053493499756,
+      "transition": -3.8063697719573977,
+      "infiltration": 1.0372992610931397,
+      "stage": 0.6636358118057251,
+      "calibration": 0.23960016012191773,
+      "graph_consistency": 0.029390994235873224,
+      "crf_stage": 1.1111762762069701,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 63,
+    "train": {
+      "loss": -1.963856349225904,
+      "transition": -3.956968029991525,
+      "infiltration": 1.0450169522254193,
+      "stage": 0.6693645618000968,
+      "calibration": 0.24187390677264478,
+      "graph_consistency": 0.025199559807288843,
+      "crf_stage": 1.12503538561649
+    },
+    "val": {
+      "loss": -1.816149854660034,
+      "transition": -3.789673957824707,
+      "infiltration": 1.0372844552993774,
+      "stage": 0.6619937896728516,
+      "calibration": 0.23967489421367646,
+      "graph_consistency": 0.02924071818590164,
+      "crf_stage": 1.1087676239013673,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 64,
+    "train": {
+      "loss": -1.9729491882636898,
+      "transition": -3.965963547347022,
+      "infiltration": 1.046627963175539,
+      "stage": 0.6681623937653713,
+      "calibration": 0.24122306582380515,
+      "graph_consistency": 0.025348541006201604,
+      "crf_stage": 1.1230514225412587
+    },
+    "val": {
+      "loss": -1.851409387588501,
+      "transition": -3.824399995803833,
+      "infiltration": 1.0372894620895385,
+      "stage": 0.6615432095527649,
+      "calibration": 0.23963710725307463,
+      "graph_consistency": 0.029201968014240264,
+      "crf_stage": 1.1081636762619018,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 65,
+    "train": {
+      "loss": -1.9775433286291655,
+      "transition": -3.9750322396637965,
+      "infiltration": 1.0515762430722597,
+      "stage": 0.6673990624849914,
+      "calibration": 0.24309166679616834,
+      "graph_consistency": 0.025486480322529058,
+      "crf_stage": 1.122092282185789
+    },
+    "val": {
+      "loss": -1.931067295074463,
+      "transition": -3.9036634826660155,
+      "infiltration": 1.0372825527191163,
+      "stage": 0.6610550713539124,
+      "calibration": 0.23966487169265746,
+      "graph_consistency": 0.029195241704583166,
+      "crf_stage": 1.1078672742843627,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 66,
+    "train": {
+      "loss": -2.007625603284992,
+      "transition": -3.998741947236608,
+      "infiltration": 1.0466523874001425,
+      "stage": 0.6666626060595278,
+      "calibration": 0.24102371442513387,
+      "graph_consistency": 0.025602526901686778,
+      "crf_stage": 1.1207351723655326
+    },
+    "val": {
+      "loss": -1.895484962463379,
+      "transition": -3.866938343048096,
+      "infiltration": 1.0372921848297119,
+      "stage": 0.6602077174186707,
+      "calibration": 0.23960359811782836,
+      "graph_consistency": 0.02913411758840084,
+      "crf_stage": 1.1064462852478028,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 67,
+    "train": {
+      "loss": -2.0276199012506204,
+      "transition": -4.010044512201528,
+      "infiltration": 1.0395082430761369,
+      "stage": 0.6655422253686873,
+      "calibration": 0.24005935231193168,
+      "graph_consistency": 0.025669389541764728,
+      "crf_stage": 1.119132794317652
+    },
+    "val": {
+      "loss": -1.8157895469665528,
+      "transition": -3.7870396614074706,
+      "infiltration": 1.037286548614502,
+      "stage": 0.6601923727989196,
+      "calibration": 0.23963434040546416,
+      "graph_consistency": 0.028943965137004854,
+      "crf_stage": 1.1060919380187988,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 68,
+    "train": {
+      "loss": -2.0181237830490364,
+      "transition": -4.010633996275605,
+      "infiltration": 1.050821566190876,
+      "stage": 0.6644196725282513,
+      "calibration": 0.24166534987629437,
+      "graph_consistency": 0.025796007884086154,
+      "crf_stage": 1.117132267013925
+    },
+    "val": {
+      "loss": -1.9045101833343505,
+      "transition": -3.874002513885498,
+      "infiltration": 1.0372660112380983,
+      "stage": 0.6587419509887695,
+      "calibration": 0.23974453151226044,
+      "graph_consistency": 0.028692806884646416,
+      "crf_stage": 1.1040742540359496,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 69,
+    "train": {
+      "loss": -2.0361643658309685,
+      "transition": -4.025353525505691,
+      "infiltration": 1.0476350168712805,
+      "stage": 0.6640235381048234,
+      "calibration": 0.24272967606294352,
+      "graph_consistency": 0.025938508909989576,
+      "crf_stage": 1.1168049837722154
+    },
+    "val": {
+      "loss": -1.9247313594818116,
+      "transition": -3.894275197982788,
+      "infiltration": 1.0372360467910766,
+      "stage": 0.6588123941421509,
+      "calibration": 0.2399234652519226,
+      "graph_consistency": 0.028505717739462852,
+      "crf_stage": 1.1041324949264526,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 70,
+    "train": {
+      "loss": -2.0374145820492604,
+      "transition": -4.0264166534924115,
+      "infiltration": 1.0479533086057569,
+      "stage": 0.6637284657994255,
+      "calibration": 0.24259806412165283,
+      "graph_consistency": 0.026152764889793317,
+      "crf_stage": 1.116099338062474
+    },
+    "val": {
+      "loss": -1.8829791164398193,
+      "transition": -3.8524946308135988,
+      "infiltration": 1.0372554206848144,
+      "stage": 0.6586276888847351,
+      "calibration": 0.23978155970573425,
+      "graph_consistency": 0.028395568057894706,
+      "crf_stage": 1.1043008184432983,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 71,
+    "train": {
+      "loss": -2.0403058919750277,
+      "transition": -4.029082884554003,
+      "infiltration": 1.047523702754349,
+      "stage": 0.6639208735012617,
+      "calibration": 0.24184273452055258,
+      "graph_consistency": 0.026303654078577387,
+      "crf_stage": 1.1165879065873192
+    },
+    "val": {
+      "loss": -1.927167911529541,
+      "transition": -3.8983374309539793,
+      "infiltration": 1.0372762823104857,
+      "stage": 0.659964632987976,
+      "calibration": 0.23964447855949403,
+      "graph_consistency": 0.02836682930588722,
+      "crf_stage": 1.106290545463562,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 72,
+    "train": {
+      "loss": -2.0513846170706826,
+      "transition": -4.042010885770203,
+      "infiltration": 1.0498415202390952,
+      "stage": 0.6634197547787526,
+      "calibration": 0.24297637577916756,
+      "graph_consistency": 0.026378852147303643,
+      "crf_stage": 1.1156834442107404
+    },
+    "val": {
+      "loss": -1.88650803565979,
+      "transition": -3.856713981628418,
+      "infiltration": 1.0373067665100097,
+      "stage": 0.6592337441444397,
+      "calibration": 0.23945837259292602,
+      "graph_consistency": 0.028209817484021186,
+      "crf_stage": 1.1051391792297363,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 73,
+    "train": {
+      "loss": -2.0480566024780273,
+      "transition": -4.034511613064125,
+      "infiltration": 1.0474636974881908,
+      "stage": 0.6621148058625518,
+      "calibration": 0.24214998180748987,
+      "graph_consistency": 0.026463919700902016,
+      "crf_stage": 1.1137149861601532
+    },
+    "val": {
+      "loss": -1.9151627540588378,
+      "transition": -3.8853852462768557,
+      "infiltration": 1.0372765159606934,
+      "stage": 0.6594632625579834,
+      "calibration": 0.23963293075561523,
+      "graph_consistency": 0.02799396403133869,
+      "crf_stage": 1.104976692199707,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 74,
+    "train": {
+      "loss": -2.0516524002200267,
+      "transition": -4.03632851506843,
+      "infiltration": 1.0455454763818959,
+      "stage": 0.6623601356490714,
+      "calibration": 0.24093349693251437,
+      "graph_consistency": 0.026645221854331064,
+      "crf_stage": 1.1141987237773958
+    },
+    "val": {
+      "loss": -1.8731301784515382,
+      "transition": -3.840388765335083,
+      "infiltration": 1.037296977043152,
+      "stage": 0.6571464085578919,
+      "calibration": 0.23950034201145173,
+      "graph_consistency": 0.027749763056635856,
+      "crf_stage": 1.101426634788513,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 75,
+    "train": {
+      "loss": -2.0556705271611446,
+      "transition": -4.045690071387369,
+      "infiltration": 1.0516156798503438,
+      "stage": 0.6615779917748248,
+      "calibration": 0.24272046665676306,
+      "graph_consistency": 0.026885110335271866,
+      "crf_stage": 1.1127644855468
+    },
+    "val": {
+      "loss": -1.9811882972717285,
+      "transition": -3.948789234161377,
+      "infiltration": 1.0372299671173095,
+      "stage": 0.6573183536529541,
+      "calibration": 0.23990496575832368,
+      "graph_consistency": 0.027492482364177704,
+      "crf_stage": 1.1019629096984864,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 76,
+    "train": {
+      "loss": -2.0489325484291454,
+      "transition": -4.0379757451229406,
+      "infiltration": 1.0484352952144185,
+      "stage": 0.6633384247295192,
+      "calibration": 0.2430543112950247,
+      "graph_consistency": 0.02715910021521029,
+      "crf_stage": 1.1152238240007495
+    },
+    "val": {
+      "loss": -1.9686269760131836,
+      "transition": -3.936400337219238,
+      "infiltration": 1.03726167678833,
+      "stage": 0.6573662304878235,
+      "calibration": 0.23969280004501342,
+      "graph_consistency": 0.02745768055319786,
+      "crf_stage": 1.1022882652282715,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 77,
+    "train": {
+      "loss": -2.0532057246223827,
+      "transition": -4.041248751468346,
+      "infiltration": 1.0486891709390234,
+      "stage": 0.6623675354191514,
+      "calibration": 0.24165583414132477,
+      "graph_consistency": 0.027249592707538215,
+      "crf_stage": 1.11422782256955
+    },
+    "val": {
+      "loss": -2.049029426574707,
+      "transition": -4.018968839645385,
+      "infiltration": 1.037275800704956,
+      "stage": 0.6589988732337951,
+      "calibration": 0.23959874272346496,
+      "graph_consistency": 0.02743638478219509,
+      "crf_stage": 1.1050015163421631,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 78,
+    "train": {
+      "loss": -2.06970901958278,
+      "transition": -4.061699023012255,
+      "infiltration": 1.0526867714084562,
+      "stage": 0.6621670547078867,
+      "calibration": 0.24303930289432651,
+      "graph_consistency": 0.027226366255371295,
+      "crf_stage": 1.1137782862929047
+    },
+    "val": {
+      "loss": -2.03277681350708,
+      "transition": -4.00150951385498,
+      "infiltration": 1.037342472076416,
+      "stage": 0.6582814240455628,
+      "calibration": 0.239207946062088,
+      "graph_consistency": 0.027447617202997206,
+      "crf_stage": 1.1033259677886962,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 79,
+    "train": {
+      "loss": -2.080136674349425,
+      "transition": -4.065229689488645,
+      "infiltration": 1.0484472239603762,
+      "stage": 0.6602999069651619,
+      "calibration": 0.24127762630337574,
+      "graph_consistency": 0.027179004746626635,
+      "crf_stage": 1.111045002937317
+    },
+    "val": {
+      "loss": -1.911060266494751,
+      "transition": -3.876731863021851,
+      "infiltration": 1.0373407554626466,
+      "stage": 0.6560249304771424,
+      "calibration": 0.23922213792800903,
+      "graph_consistency": 0.027424572482705117,
+      "crf_stage": 1.0994629907608031,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 80,
+    "train": {
+      "loss": -2.087829021156811,
+      "transition": -4.06695348708356,
+      "infiltration": 1.0428848207974044,
+      "stage": 0.6599560809917138,
+      "calibration": 0.2406463041657307,
+      "graph_consistency": 0.027366106077784398,
+      "crf_stage": 1.110791530765471
+    },
+    "val": {
+      "loss": -1.9413876008987427,
+      "transition": -3.9031753540039062,
+      "infiltration": 1.037310037612915,
+      "stage": 0.6529623389244079,
+      "calibration": 0.23939619183540345,
+      "graph_consistency": 0.027329269647598266,
+      "crf_stage": 1.094769124984741,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 81,
+    "train": {
+      "loss": -2.0563784740010247,
+      "transition": -4.036103850505391,
+      "infiltration": 1.04279134117189,
+      "stage": 0.6604872003930514,
+      "calibration": 0.24136320098501737,
+      "graph_consistency": 0.027712158278607932,
+      "crf_stage": 1.111292917220319
+    },
+    "val": {
+      "loss": -1.904746446609497,
+      "transition": -3.865349235534668,
+      "infiltration": 1.037257571220398,
+      "stage": 0.6518581819534301,
+      "calibration": 0.2397071188688278,
+      "graph_consistency": 0.027270314544439317,
+      "crf_stage": 1.0934952688217163,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 82,
+    "train": {
+      "loss": -1.990811641099023,
+      "transition": -3.9741773449006628,
+      "infiltration": 1.044788010784837,
+      "stage": 0.6620235618997793,
+      "calibration": 0.24116835779831058,
+      "graph_consistency": 0.02804943207712447,
+      "crf_stage": 1.1130545491077861
+    },
+    "val": {
+      "loss": -1.905970525741577,
+      "transition": -3.867827739715576,
+      "infiltration": 1.0372407817840577,
+      "stage": 0.6526388478279114,
+      "calibration": 0.239795458316803,
+      "graph_consistency": 0.027335052341222764,
+      "crf_stage": 1.0952085828781128,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 83,
+    "train": {
+      "loss": -1.9920325181523308,
+      "transition": -3.973606523920278,
+      "infiltration": 1.0436953794760782,
+      "stage": 0.6613058105843966,
+      "calibration": 0.2415518372273836,
+      "graph_consistency": 0.028071097693726666,
+      "crf_stage": 1.1122165468872571
+    },
+    "val": {
+      "loss": -2.0803456497192383,
+      "transition": -4.046101608276367,
+      "infiltration": 1.0372590827941894,
+      "stage": 0.6557941150665283,
+      "calibration": 0.23968040585517883,
+      "graph_consistency": 0.0274571580439806,
+      "crf_stage": 1.0998365116119384,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 84,
+    "train": {
+      "loss": -2.0139696402627916,
+      "transition": -3.992252564821087,
+      "infiltration": 1.0417068942648466,
+      "stage": 0.6604590503895869,
+      "calibration": 0.24028176606678572,
+      "graph_consistency": 0.027838422443534506,
+      "crf_stage": 1.1110125447882981
+    },
+    "val": {
+      "loss": -1.9515373802185059,
+      "transition": -3.9185611152648927,
+      "infiltration": 1.037340326309204,
+      "stage": 0.6568721890449524,
+      "calibration": 0.23919398486614227,
+      "graph_consistency": 0.02761950597167015,
+      "crf_stage": 1.101293454170227,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 85,
+    "train": {
+      "loss": -1.988256483781533,
+      "transition": -3.9753227155716693,
+      "infiltration": 1.0519021319561317,
+      "stage": 0.6590311390454652,
+      "calibration": 0.24200347017069332,
+      "graph_consistency": 0.027448405526944848,
+      "crf_stage": 1.1090060804711013
+    },
+    "val": {
+      "loss": -1.920030074119568,
+      "transition": -3.883800802230835,
+      "infiltration": 1.0373790788650512,
+      "stage": 0.6544921565055847,
+      "calibration": 0.2389851588010788,
+      "graph_consistency": 0.027744317948818206,
+      "crf_stage": 1.0971482944488526,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 86,
+    "train": {
+      "loss": -1.994446189677129,
+      "transition": -3.9708139622797733,
+      "infiltration": 1.04470266084202,
+      "stage": 0.6563820878013236,
+      "calibration": 0.24088306944878374,
+      "graph_consistency": 0.02711574003466817,
+      "crf_stage": 1.105171582737907
+    },
+    "val": {
+      "loss": -1.9230583858489991,
+      "transition": -3.882736167907715,
+      "infiltration": 1.0373748254776,
+      "stage": 0.6514382290840149,
+      "calibration": 0.23901909053325654,
+      "graph_consistency": 0.02780496746301651,
+      "crf_stage": 1.0919991493225099,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 87,
+    "train": {
+      "loss": -2.0134424889673954,
+      "transition": -3.995163249187782,
+      "infiltration": 1.0510425567626953,
+      "stage": 0.6554945257843517,
+      "calibration": 0.24074029189641358,
+      "graph_consistency": 0.027020232813035856,
+      "crf_stage": 1.1041616543394621
+    },
+    "val": {
+      "loss": -1.8208512210845946,
+      "transition": -3.776318244934082,
+      "infiltration": 1.0373446464538574,
+      "stage": 0.6480502700805664,
+      "calibration": 0.23919554471969603,
+      "graph_consistency": 0.02782701499760151,
+      "crf_stage": 1.0869509315490722,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 88,
+    "train": {
+      "loss": -2.010916690357396,
+      "transition": -3.984697560795018,
+      "infiltration": 1.043393024655639,
+      "stage": 0.6554405699010755,
+      "calibration": 0.2404678764401889,
+      "graph_consistency": 0.0272377573686545,
+      "crf_stage": 1.103700261624133
+    },
+    "val": {
+      "loss": -1.9078219795227052,
+      "transition": -3.8613285923004153,
+      "infiltration": 1.0372784519195557,
+      "stage": 0.646319169998169,
+      "calibration": 0.23958444714546204,
+      "graph_consistency": 0.027871149554848672,
+      "crf_stage": 1.0847293901443482,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 89,
+    "train": {
+      "loss": -1.9745372201575608,
+      "transition": -3.9506309032440186,
+      "infiltration": 1.0443003705290497,
+      "stage": 0.6565694349711059,
+      "calibration": 0.24075983538002263,
+      "graph_consistency": 0.027595707597058327,
+      "crf_stage": 1.1051939491365776
+    },
+    "val": {
+      "loss": -1.766684694290161,
+      "transition": -3.720048999786377,
+      "infiltration": 1.0372220087051391,
+      "stage": 0.6460234928131103,
+      "calibration": 0.2399332731962204,
+      "graph_consistency": 0.02792237974703312,
+      "crf_stage": 1.0847035217285157,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 90,
+    "train": {
+      "loss": -1.9097803088485217,
+      "transition": -3.8880256629381025,
+      "infiltration": 1.0460272343432317,
+      "stage": 0.656874493497317,
+      "calibration": 0.24145780577034245,
+      "graph_consistency": 0.02791621884117361,
+      "crf_stage": 1.105395492960195
+    },
+    "val": {
+      "loss": -1.9077787160873414,
+      "transition": -3.8645032119750975,
+      "infiltration": 1.037199158668518,
+      "stage": 0.6485732102394104,
+      "calibration": 0.24007305085659028,
+      "graph_consistency": 0.027988600730895995,
+      "crf_stage": 1.088850679397583,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 91,
+    "train": {
+      "loss": -1.8868212504465072,
+      "transition": -3.865161798039421,
+      "infiltration": 1.0462788607253404,
+      "stage": 0.6568511040484319,
+      "calibration": 0.24148107161287402,
+      "graph_consistency": 0.02798177112565666,
+      "crf_stage": 1.105083514432438
+    },
+    "val": {
+      "loss": -1.9877879810333252,
+      "transition": -3.947686443328857,
+      "infiltration": 1.037210569381714,
+      "stage": 0.651047990322113,
+      "calibration": 0.23998641848564148,
+      "graph_consistency": 0.028027813360095025,
+      "crf_stage": 1.0927276468276979,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 92,
+    "train": {
+      "loss": -1.8872284263860983,
+      "transition": -3.8745744072022985,
+      "infiltration": 1.0560549292408052,
+      "stage": 0.6557542202902622,
+      "calibration": 0.24396241468484284,
+      "graph_consistency": 0.027649604394787648,
+      "crf_stage": 1.103712950573593
+    },
+    "val": {
+      "loss": -2.0113726329803465,
+      "transition": -3.9727539157867433,
+      "infiltration": 1.0372479915618897,
+      "stage": 0.6523141145706177,
+      "calibration": 0.23974382340908051,
+      "graph_consistency": 0.027993935495615005,
+      "crf_stage": 1.0944560766220093,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 93,
+    "train": {
+      "loss": -1.9527047540320726,
+      "transition": -3.9254161099918554,
+      "infiltration": 1.0442596224487806,
+      "stage": 0.6539017792607917,
+      "calibration": 0.24143584854290134,
+      "graph_consistency": 0.027049922063702443,
+      "crf_stage": 1.1010171995788325
+    },
+    "val": {
+      "loss": -1.9796112823486327,
+      "transition": -3.940476713180542,
+      "infiltration": 1.037329716682434,
+      "stage": 0.6521134376525879,
+      "calibration": 0.23925373315811158,
+      "graph_consistency": 0.027955015823245048,
+      "crf_stage": 1.093665452003479,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 94,
+    "train": {
+      "loss": -2.0140257546159086,
+      "transition": -3.9871419335975022,
+      "infiltration": 1.0470385942302767,
+      "stage": 0.6520647132982973,
+      "calibration": 0.24187705213906335,
+      "graph_consistency": 0.026359203347905737,
+      "crf_stage": 1.0980677116112632
+    },
+    "val": {
+      "loss": -2.012414712905884,
+      "transition": -3.9690433979034423,
+      "infiltration": 1.0373512840270995,
+      "stage": 0.6489577960968017,
+      "calibration": 0.23913550436496733,
+      "graph_consistency": 0.02790136083960533,
+      "crf_stage": 1.088362421989441,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 95,
+    "train": {
+      "loss": -2.0716880618548785,
+      "transition": -4.041765791470887,
+      "infiltration": 1.0464026556640376,
+      "stage": 0.6502704903727672,
+      "calibration": 0.24079922183615263,
+      "graph_consistency": 0.02581388533848231,
+      "crf_stage": 1.0955970394806784
+    },
+    "val": {
+      "loss": -2.033502016067505,
+      "transition": -3.9854336833953856,
+      "infiltration": 1.0373843574523927,
+      "stage": 0.6454500198364258,
+      "calibration": 0.23896399319171904,
+      "graph_consistency": 0.027924773767590522,
+      "crf_stage": 1.0824742078781129,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 96,
+    "train": {
+      "loss": -2.1117706298828125,
+      "transition": -4.072752288130463,
+      "infiltration": 1.0403384712875867,
+      "stage": 0.64812876748257,
+      "calibration": 0.24020798650921368,
+      "graph_consistency": 0.02552604968430566,
+      "crf_stage": 1.091969181279667
+    },
+    "val": {
+      "loss": -2.1083602333068847,
+      "transition": -4.056706771850586,
+      "infiltration": 1.037335376739502,
+      "stage": 0.6425891160964966,
+      "calibration": 0.23925150990486144,
+      "graph_consistency": 0.027958887591958047,
+      "crf_stage": 1.0781409358978271,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 97,
+    "train": {
+      "loss": -2.1297467223933486,
+      "transition": -4.097389260276419,
+      "infiltration": 1.0471073349968332,
+      "stage": 0.6475042940163221,
+      "calibration": 0.24364338399933988,
+      "graph_consistency": 0.025522823277555527,
+      "crf_stage": 1.0910040091295712
+    },
+    "val": {
+      "loss": -2.076538200378418,
+      "transition": -4.022254619598389,
+      "infiltration": 1.0372964143753052,
+      "stage": 0.640458345413208,
+      "calibration": 0.23948769569396972,
+      "graph_consistency": 0.02807924598455429,
+      "crf_stage": 1.0749709272384644,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 98,
+    "train": {
+      "loss": -2.1642723865196354,
+      "transition": -4.126450022713083,
+      "infiltration": 1.042298457661613,
+      "stage": 0.6472956704311683,
+      "calibration": 0.24176992573699013,
+      "graph_consistency": 0.025798169315838424,
+      "crf_stage": 1.0905950870670256
+    },
+    "val": {
+      "loss": -2.1671267318725587,
+      "transition": -4.111803569793701,
+      "infiltration": 1.0372641849517823,
+      "stage": 0.6395312070846557,
+      "calibration": 0.2396908462047577,
+      "graph_consistency": 0.028236147090792654,
+      "crf_stage": 1.0737706851959228,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 99,
+    "train": {
+      "loss": -2.175049930322366,
+      "transition": -4.141431527059586,
+      "infiltration": 1.0470216538085313,
+      "stage": 0.6471735453996502,
+      "calibration": 0.24043524314145573,
+      "graph_consistency": 0.02619202041112986,
+      "crf_stage": 1.090133668946438
+    },
+    "val": {
+      "loss": -2.0307418632507326,
+      "transition": -3.97448956489563,
+      "infiltration": 1.0372117805480956,
+      "stage": 0.6386699914932251,
+      "calibration": 0.2400295329093933,
+      "graph_consistency": 0.028334687873721124,
+      "crf_stage": 1.0727230405807495,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  },
+  {
+    "epoch": 100,
+    "train": {
+      "loss": -2.1667404409314766,
+      "transition": -4.132729006595299,
+      "infiltration": 1.0464337614716077,
+      "stage": 0.647267936683092,
+      "calibration": 0.24119996096267074,
+      "graph_consistency": 0.026551229512838066,
+      "crf_stage": 1.0900513734973845
+    },
+    "val": {
+      "loss": -2.0157318782806395,
+      "transition": -3.9602541732788086,
+      "infiltration": 1.037188506126404,
+      "stage": 0.639179437160492,
+      "calibration": 0.24018203854560852,
+      "graph_consistency": 0.028366194963455202,
+      "crf_stage": 1.0737414312362672,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 12,
+      "negative": 38
+    }
+  }
+]

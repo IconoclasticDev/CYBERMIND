@@ -15,6 +15,8 @@ examples/phase3_balanced_stage/processed/*.pt
 examples/phase3_balanced_stage/checkpoints/*.pt
 examples/phase3_root_cause/*/processed/*.pt
 examples/phase3_root_cause/*/checkpoints/*.pt
+examples/phase3_remediation/*/checkpoints/*.pt
+examples/phase3_remediation/identity_processed/*.pt
 examples/smoke/baseline_before/historical_artifacts/
 # Downloaded knowledge stays local; reproducible provenance is tracked.
 knowledge/raw/
@@ -34,3 +36,5 @@ examples/smoke/current/
 data/raw/CIC-IDS-2018/*.csv
 data/raw/CIC-IDS-2018/*.pcap
 data/intermediate/*
+examples/phase3_remediation/regression/*/processed/*.pt
+examples/phase3_remediation/regression/*/checkpoints/*.pt

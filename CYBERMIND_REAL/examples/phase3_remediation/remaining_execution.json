@@ -1,0 +1,26 @@
+[
+  {
+    "name": "normalization_off100",
+    "exit_code": 0
+  },
+  {
+    "name": "class_weighted100",
+    "exit_code": 0
+  },
+  {
+    "name": "lr_0001_cpu",
+    "exit_code": 0
+  },
+  {
+    "name": "lr_001_cpu",
+    "exit_code": 0
+  },
+  {
+    "name": "lr_003_cpu",
+    "exit_code": 0
+  },
+  {
+    "name": "lr_01_cpu",
+    "exit_code": 0
+  }
+]

@@ -57,6 +57,19 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 
 Current status supersedes the earlier balanced-fixture completion claim. See `../PHASE3_ROOT_CAUSE_AUDIT.md`: the original fixture remains collapsed at every future step 1–4; no successful model fix was established. The previously completed items below are historical evidence, not permission to enter Phase 4. No exit criterion has been changed by this audit.
 
+### Remediation plan — ACTIVE, authorized 2026-09-13
+
+- [x] Read `CYBERMIND_Phase3_Failure_Remediation.pdf`; preserve the original data and independent four-step gate.
+- [x] Step 1: run 100 epochs on the unchanged fixture (400 optimizer updates); selected and last checkpoints both fail diversity at all four steps.
+- [x] Step 2: rebuild identical graphs without centering/scaling; labels/topology unchanged and normalized reprojection error zero. The 100-epoch normalization-off diagnostic completed; outcome is retained for the re-audit.
+- [x] Step 3: verify structural recoverability from existing model-visible coordinates. Actual history is 3/observed 2; training-only analytical period discovery succeeds. This diagnostic is excluded from the learned-model gate.
+- [x] Step 4 implementation: optional training-only class-balanced StageHead CE; default-off compatibility and validation-weight handling tested (21 CPU tests passed).
+- [ ] Step 4 outcome: complete the 100-epoch class-weighting diagnostic on the original fixture.
+- [ ] Step 5: complete the predeclared CPU learning-rate sweep (0.0001, 0.001, 0.003, 0.01), 100 epochs each.
+- [ ] Run current-code regression/tests and publish the full Phase 3 remediation re-audit with every per-step result. Do not claim completion unless the unchanged gate passes.
+
+### Earlier execution record
+
 - [x] 3.1 Run tests and integration for all four feature-flag combinations: 96 passed with zero skips per run, 384 test executions total; four two-epoch CPU pipeline runs passed.
 - [x] 3.2 Fresh both-off evaluation/history and frozen checkpoint evaluation match the Phase 0 evidence within 1e-6; all 49 baseline hashes remain intact.
 - [x] 3.3 Run both-true two-epoch GPU pipeline and configs/smoke.yaml checks: finite losses, peak reserved memory 88 MiB and 72 MiB respectively, below confirmed VRAM.
