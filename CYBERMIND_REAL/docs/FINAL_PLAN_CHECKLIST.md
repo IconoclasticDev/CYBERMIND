@@ -57,16 +57,19 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 
 Current status supersedes the earlier balanced-fixture completion claim. See `../PHASE3_ROOT_CAUSE_AUDIT.md`: the original fixture remains collapsed at every future step 1–4; no successful model fix was established. The previously completed items below are historical evidence, not permission to enter Phase 4. No exit criterion has been changed by this audit.
 
-### Remediation plan — ACTIVE, authorized 2026-09-13
+### Remediation diagnostics — COMPLETE; Phase 3 exit criteria NOT met
+
+Authorized 2026-09-13. Full results: `../PHASE3_REMEDIATION_REAUDIT.md`. Completing the diagnostic checklist does not complete Phase 3.
 
 - [x] Read `CYBERMIND_Phase3_Failure_Remediation.pdf`; preserve the original data and independent four-step gate.
-- [x] Step 1: run 100 epochs on the unchanged fixture (400 optimizer updates); selected and last checkpoints both fail diversity at all four steps.
+- [x] Step 1: run 100 epochs on both original fixtures (400 integration / 1,800 frozen-smoke optimizer updates); selected and last checkpoints fail diversity at all four steps on both.
 - [x] Step 2: rebuild identical graphs without centering/scaling; labels/topology unchanged and normalized reprojection error zero. The 100-epoch normalization-off diagnostic completed; outcome is retained for the re-audit.
 - [x] Step 3: verify structural recoverability from existing model-visible coordinates. Actual history is 3/observed 2; training-only analytical period discovery succeeds. This diagnostic is excluded from the learned-model gate.
-- [x] Step 4 implementation: optional training-only class-balanced StageHead CE; default-off compatibility and validation-weight handling tested (21 CPU tests passed).
-- [ ] Step 4 outcome: complete the 100-epoch class-weighting diagnostic on the original fixture.
-- [ ] Step 5: complete the predeclared CPU learning-rate sweep (0.0001, 0.001, 0.003, 0.01), 100 epochs each.
-- [ ] Run current-code regression/tests and publish the full Phase 3 remediation re-audit with every per-step result. Do not claim completion unless the unchanged gate passes.
+- [x] Step 4 implementation: optional training-only class-balanced StageHead CE; default-off compatibility, validation-weight handling and CPU/CUDA joint gradients verified.
+- [x] Step 4 outcome: 100-epoch class-weighting diagnostic completed; selected and last checkpoints fail all four steps.
+- [x] Step 5: predeclared CPU learning-rate sweep (0.0001, 0.001, 0.003, 0.01), 100 epochs each, completed; every selected and last checkpoint fails all four steps.
+- [x] Re-audit current code: 118 tests passed with zero skips in each of four flag contexts (472 executions); four CPU pipelines, combined CUDA pipeline and both-off/frozen 1e-6 regressions pass. Published all per-step results and preservation evidence.
+- [ ] Unresolved Phase 3 exit gate: demonstrate a successful model fix on the original data with non-degenerate diversity and zero illegal transitions independently at steps 1–4. No fix from these diagnostics passes; Phase 4 remains closed.
 
 ### Earlier execution record
 

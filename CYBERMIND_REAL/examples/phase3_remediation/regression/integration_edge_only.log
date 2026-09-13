@@ -1,0 +1,5 @@
+PASS scripts/build_corpus.py
+PASS scripts/prepare_data.py
+PASS scripts/phase3_train_measure.py
+PASS scripts/eval.py
+Synthetic integration executed; inspect verification.json for diversity and memory gates.

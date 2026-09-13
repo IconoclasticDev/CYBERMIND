@@ -1,0 +1,31 @@
+........................................................................ [ 61%]
+..............................................                           [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\torch\jit\_script.py:1485
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+tests/test_edge_attention.py: 516 warnings
+tests/test_joint_features.py: 128 warnings
+tests/test_phase01_training.py: 64 warnings
+tests/test_stage_class_weights.py: 64 warnings
+tests/test_stage_integration.py: 192 warnings
+tests/test_stochastic_forecast.py: 96 warnings
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch_geometric\inspector.py:433: DeprecationWarning: Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.
+    return typing._eval_type(value, _globals, None)  # type: ignore
+
+tests/test_edge_attention.py: 22 warnings
+tests/test_joint_features.py: 2 warnings
+tests/test_phase01_training.py: 2 warnings
+tests/test_stage_class_weights.py: 2 warnings
+tests/test_stage_integration.py: 5 warnings
+tests/test_stochastic_forecast.py: 4 warnings
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+    self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+
+tests/test_phase01_training.py::test_full_gb10_architecture_bf16_cpu_backward
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\backends\mkldnn\__init__.py:96: UserWarning: TF32 acceleration on top of oneDNN is available for Intel GPUs. The current Torch version does not have Intel GPU Support. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\Context.cpp:265.)
+    torch._C._set_onednn_allow_tf32(_allow_tf32)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+118 passed, 1099 warnings in 13.13s
