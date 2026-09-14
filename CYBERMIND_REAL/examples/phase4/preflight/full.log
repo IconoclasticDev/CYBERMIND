@@ -1,0 +1,67 @@
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+Python 3.14.7 PyTorch 2.14.0+cu130
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU; memory: 7.9 GiB
+bf16 CUDA matmul: PASS
+PyG 2.8.0.post1
+{
+  "mode": "synthetic",
+  "config": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\configs\\gb10_full.yaml",
+  "device": "cuda",
+  "precision": "bf16",
+  "full_model_config": {
+    "use_edge_features": true,
+    "edge_attr_dim": 27,
+    "graph_hidden": 512,
+    "graph_out": 512,
+    "temporal_dim": 512,
+    "graph_heads": 8,
+    "nhead": 8,
+    "temporal_layers": 6,
+    "num_stages": 7,
+    "dropout": 0.1
+  },
+  "parameter_count": 25871161,
+  "batch_size": 1,
+  "history": 16,
+  "nodes_per_window": 3,
+  "edges_per_window": 4,
+  "node_dim": 34,
+  "edge_dim": 27,
+  "loss": 15.155412673950195,
+  "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "device_total_memory_bytes": 8518041600,
+  "selection_policy": {
+    "selection_metric": "val_f1_stage_band",
+    "selection_f1_tolerance": 0.05,
+    "selection_stage_metric": "stage",
+    "min_delta": 0.0
+  },
+  "components": {
+    "transition": 2.1332030296325684,
+    "infiltration": 0.6814098954200745,
+    "stage": 1.9270073175430298,
+    "calibration": 0.24415895342826843,
+    "graph_consistency": 0.06889930367469788,
+    "crf_stage": 22.643150329589844
+  },
+  "active_gradient_groups": {
+    "graph": true,
+    "temporal": true,
+    "dynamics": true,
+    "latent": true,
+    "infiltration": true,
+    "stage": true,
+    "crf": true,
+    "conv1_edge_projection": true,
+    "conv2_edge_projection": true,
+    "memory_within_device_capacity": true
+  },
+  "peak_allocated_bytes": 293083648,
+  "peak_reserved_bytes": 318767104,
+  "passed": true,
+  "scope": "Architecture forward/backward only; does not verify real corpus, production batch memory or GB10 readiness.",
+  "failures": []
+}

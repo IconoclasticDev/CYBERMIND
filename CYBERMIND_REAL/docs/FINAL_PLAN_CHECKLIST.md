@@ -10,7 +10,7 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 - Phase 0 downloads only MITRE ATT&CK, CAPEC, and an NVD snapshot.
 - Verify CTU-13 access now; no heavy corpus download on the laptop.
 - Audit each completed phase and request approval before starting the next.
-- Phases 1–3 authorized on 2026-09-12. Phase 4 requires separate approval. Phases 5–8 are outside this implementation request.
+- Phases 1–3 authorized on 2026-09-12. Phase 4 and parallel Tracks A/B are now explicitly authorized. Phases 5–8 are outside this implementation request.
 - Subagents are authorized for independent work.
 
 ## Phase 0 — COMPLETE (commit `1d91b27`)
@@ -55,7 +55,7 @@ This tracks the NEW final plan's phase numbering, independently of older reposit
 
 ## Phase 3 — COMPLETE under the recorded reviewer decisions
 
-Final result: the reviewer-approved 0.05 F1 tolerance and validation stage-CE tie-breaker select **epoch 185**, which passes the unchanged integration diversity/legality gate at all four steps. The approved frozen mechanical gate also passes. See `../PHASE3_FINAL_AUDIT.md`. Phase 4 remains unstarted and requires separate approval.
+Final result: the reviewer-approved 0.05 F1 tolerance and validation stage-CE tie-breaker select **epoch 185**, which passes the unchanged integration diversity/legality gate at all four steps. The approved frozen mechanical gate also passes. See `../PHASE3_FINAL_AUDIT.md`. Subsequent user approval opened Phase 4. The result passes under the reviewed protocol on synthetic verification data; epochs 98 and 200 fail step 1, so no stable plateau or real-data generalization is established.
 
 ### Third round — complete
 
@@ -106,11 +106,17 @@ Authorized 2026-09-13. Full results: `../PHASE3_REMEDIATION_REAUDIT.md`. Complet
 - [x] Write the incomplete-phase audit in `FINAL_PLAN_PHASE3_AUDIT.md`, including failed diversity evidence and proposed corrective scope.
 - [x] Complete `FINAL_PLAN_PHASE3_REVISED_AUDIT.md` and present the Phase 4 approval request. All 49 baseline files, 112 original Phase 3 evidence files and 27 original local tensor/checkpoint files remain unchanged. Phase 4 awaits separate approval.
 
-## Phase 4 — NOT AUTHORIZED
+## Phase 4 — COMPLETE (user authorized; PCAP check performed first)
 
-- [ ] 4.1 Prepare baseline, edge-only, CRF-only, and combined GB10 configs.
-- [ ] 4.2 Run tiny-batch GPU preflight for all four configs on laptop.
-- [ ] 4.3 Report transition and suspicious-edge attention diagnostics end to end.
-- [ ] 4.4 Establish definite PCAP/packet-feature availability for strict primary-corpus preparation.
-- [ ] 4.5 Document CTU-13 access status and any evaluation risk.
-- [ ] Audit all exit criteria and stop at the end of Phase 4.
+- [x] 4.1 Prepare four GB10 configs differing only in the two flags; carry reviewed 0.05 selection policy and zero min_delta.
+- [x] 4.2 All four full configured architectures pass tiny-batch bf16 forward/backward on RTX 5060; production data check remains blocked.
+- [x] 4.3 Actual selected checkpoint: 0/25 illegal pairs; explicit synthetic threshold yields mean attention 0.5 over 45 edge occurrences. Default no-match result retained.
+- [x] 4.4 Public archives confirmed: 477,321,665,202 compressed bytes across all ten CSV dates. Capture acquisition, label alignment and packet enrichment remain Phase 5 prerequisites.
+- [x] 4.5 Public CTU-13 access verified; full normal/background PCAPs unavailable, so full-population packet parity remains unresolved.
+- [x] Audit all exit criteria in `FINAL_PLAN_PHASE4_AUDIT.md`; stop at Phase 4. Phase 5 not started.
+
+### Parallel scoring work
+
+- [x] Track A: corrected history-only baseline protocol, FPR and feature coverage parity table. Exact periodic-feature baseline ties the selected model on synthetic data.
+- [x] Track B: analyst console, four-step forecasts, model-space interventions, explanations and provenance exports; AppTest and browser verified.
+- [x] Complete joint regression: 189 passed, zero skips; 813 historical entries preserved; final audits delivered.

@@ -1,0 +1,12 @@
+{
+  "mode": "production",
+  "config": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\configs\\gb10_full.yaml",
+  "passed": false,
+  "failures": [
+    "Missing: D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\processed_gb10\\train.pt",
+    "Missing: D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\processed_gb10\\val.pt",
+    "Missing: D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\processed_gb10\\test.pt",
+    "Missing: D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\processed_gb10\\normalization.json",
+    "Missing: D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\processed_gb10\\metadata.json"
+  ]
+}

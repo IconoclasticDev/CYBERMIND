@@ -4,6 +4,7 @@ from pathlib import Path
 import argparse
 import json
 import math
+import re
 import sys
 from contextlib import nullcontext
 from dataclasses import replace
@@ -193,12 +194,25 @@ def validate(model, loader, cfg, device, precision):
             **validation_metrics(torch.cat(probabilities), ys, cfg['train'].get('selection_threshold', .5))}
 
 
+def apply_run_name(cfg, run_name):
+    """Isolate ablation outputs while keeping the four input YAMLs comparable."""
+    if run_name is None:
+        return
+    if not re.fullmatch(r'[A-Za-z0-9_-]+', run_name):
+        raise ValueError('run-name must contain only letters, digits, underscores or hyphens')
+    for key, default in [('checkpoint', 'best.pt'), ('history_path', 'results/train_history.json')]:
+        path = Path(cfg['train'].get(key, default))
+        cfg['train'][key] = str(path.with_name(f'{path.stem}_{run_name}{path.suffix}'))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', required=True); parser.add_argument('--resume')
     parser.add_argument('--epochs', type=int, default=0)
+    parser.add_argument('--run-name', help='Suffix checkpoint/history filenames to isolate ablation runs')
     parser.add_argument('--device', choices=['auto', 'cpu', 'cuda'], default='auto')
     args = parser.parse_args(); cfg = load_config(args.config); seed_everything(cfg.get('seed', 42))
+    apply_run_name(cfg, args.run_name)
     root = Path(__file__).resolve().parents[1]
     device = torch.device(('cuda' if torch.cuda.is_available() else 'cpu') if args.device == 'auto' else args.device)
     precision = cfg['train'].get('precision', 'fp32')

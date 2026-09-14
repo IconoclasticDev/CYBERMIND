@@ -1,0 +1,519 @@
+{
+  "mode": "synthetic",
+  "config": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\configs\\gb10_crf_only.yaml",
+  "device": "cuda",
+  "precision": "bf16",
+  "full_model_config": {
+    "use_edge_features": false,
+    "edge_attr_dim": 27,
+    "graph_hidden": 512,
+    "graph_out": 512,
+    "temporal_dim": 512,
+    "graph_heads": 8,
+    "nhead": 8,
+    "temporal_layers": 6,
+    "num_stages": 7,
+    "dropout": 0.1
+  },
+  "parameter_count": 25649977,
+  "batch_size": 1,
+  "history": 16,
+  "nodes_per_window": 3,
+  "edges_per_window": 4,
+  "node_dim": 34,
+  "edge_dim": 27,
+  "loss": 14.525349617004395,
+  "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "device_total_memory_bytes": 8518041600,
+  "selection_policy": {
+    "selection_metric": "val_f1_stage_band",
+    "selection_f1_tolerance": 0.05,
+    "selection_stage_metric": "stage",
+    "min_delta": 0.0
+  },
+  "components": {
+    "transition": 2.067784547805786,
+    "infiltration": 0.6828542351722717,
+    "stage": 1.8343614339828491,
+    "calibration": 0.24490605294704437,
+    "graph_consistency": 0.06040777266025543,
+    "crf_stage": 21.605016708374023
+  },
+  "active_gradient_groups": {
+    "graph": true,
+    "temporal": true,
+    "dynamics": true,
+    "latent": true,
+    "infiltration": true,
+    "stage": true,
+    "crf": true,
+    "memory_within_device_capacity": true
+  },
+  "gradients": {
+    "graph.conv1.att": {
+      "finite": true,
+      "norm": 0.2692859172821045
+    },
+    "graph.conv1.bias": {
+      "finite": true,
+      "norm": 16.322813034057617
+    },
+    "graph.conv1.lin_l.weight": {
+      "finite": true,
+      "norm": 8.6643648147583
+    },
+    "graph.conv1.lin_l.bias": {
+      "finite": true,
+      "norm": 5.780001640319824
+    },
+    "graph.conv1.lin_r.weight": {
+      "finite": true,
+      "norm": 0.2315700501203537
+    },
+    "graph.conv1.lin_r.bias": {
+      "finite": true,
+      "norm": 0.047493670135736465
+    },
+    "graph.conv2.att": {
+      "finite": true,
+      "norm": 0.3553062677383423
+    },
+    "graph.conv2.bias": {
+      "finite": true,
+      "norm": 4.6017327308654785
+    },
+    "graph.conv2.lin_l.weight": {
+      "finite": true,
+      "norm": 28.00813865661621
+    },
+    "graph.conv2.lin_l.bias": {
+      "finite": true,
+      "norm": 1.627949595451355
+    },
+    "graph.conv2.lin_r.weight": {
+      "finite": true,
+      "norm": 0.6600044965744019
+    },
+    "graph.conv2.lin_r.bias": {
+      "finite": true,
+      "norm": 0.028223462402820587
+    },
+    "graph.norm1.weight": {
+      "finite": true,
+      "norm": 0.5808910131454468
+    },
+    "graph.norm1.bias": {
+      "finite": true,
+      "norm": 0.7699095010757446
+    },
+    "graph.norm2.weight": {
+      "finite": true,
+      "norm": 0.5673989653587341
+    },
+    "graph.norm2.bias": {
+      "finite": true,
+      "norm": 0.734770655632019
+    },
+    "temporal.proj.weight": {
+      "finite": true,
+      "norm": 31.30013656616211
+    },
+    "temporal.proj.bias": {
+      "finite": true,
+      "norm": 1.2241533994674683
+    },
+    "temporal.encoder.layers.0.self_attn.in_proj_weight": {
+      "finite": true,
+      "norm": 10.206975936889648
+    },
+    "temporal.encoder.layers.0.self_attn.in_proj_bias": {
+      "finite": true,
+      "norm": 0.5352966785430908
+    },
+    "temporal.encoder.layers.0.self_attn.out_proj.weight": {
+      "finite": true,
+      "norm": 12.182987213134766
+    },
+    "temporal.encoder.layers.0.self_attn.out_proj.bias": {
+      "finite": true,
+      "norm": 0.8603255748748779
+    },
+    "temporal.encoder.layers.0.linear1.weight": {
+      "finite": true,
+      "norm": 5.067030906677246
+    },
+    "temporal.encoder.layers.0.linear1.bias": {
+      "finite": true,
+      "norm": 0.2641288936138153
+    },
+    "temporal.encoder.layers.0.linear2.weight": {
+      "finite": true,
+      "norm": 10.317352294921875
+    },
+    "temporal.encoder.layers.0.linear2.bias": {
+      "finite": true,
+      "norm": 0.7946596741676331
+    },
+    "temporal.encoder.layers.0.norm1.weight": {
+      "finite": true,
+      "norm": 0.30724889039993286
+    },
+    "temporal.encoder.layers.0.norm1.bias": {
+      "finite": true,
+      "norm": 0.3765123784542084
+    },
+    "temporal.encoder.layers.0.norm2.weight": {
+      "finite": true,
+      "norm": 0.13449858129024506
+    },
+    "temporal.encoder.layers.0.norm2.bias": {
+      "finite": true,
+      "norm": 0.1556091010570526
+    },
+    "temporal.encoder.layers.1.self_attn.in_proj_weight": {
+      "finite": true,
+      "norm": 6.846484184265137
+    },
+    "temporal.encoder.layers.1.self_attn.in_proj_bias": {
+      "finite": true,
+      "norm": 0.3577975630760193
+    },
+    "temporal.encoder.layers.1.self_attn.out_proj.weight": {
+      "finite": true,
+      "norm": 8.360868453979492
+    },
+    "temporal.encoder.layers.1.self_attn.out_proj.bias": {
+      "finite": true,
+      "norm": 0.6047218441963196
+    },
+    "temporal.encoder.layers.1.linear1.weight": {
+      "finite": true,
+      "norm": 3.8043525218963623
+    },
+    "temporal.encoder.layers.1.linear1.bias": {
+      "finite": true,
+      "norm": 0.19142261147499084
+    },
+    "temporal.encoder.layers.1.linear2.weight": {
+      "finite": true,
+      "norm": 7.590691089630127
+    },
+    "temporal.encoder.layers.1.linear2.bias": {
+      "finite": true,
+      "norm": 0.563053548336029
+    },
+    "temporal.encoder.layers.1.norm1.weight": {
+      "finite": true,
+      "norm": 0.21669067442417145
+    },
+    "temporal.encoder.layers.1.norm1.bias": {
+      "finite": true,
+      "norm": 0.24655775725841522
+    },
+    "temporal.encoder.layers.1.norm2.weight": {
+      "finite": true,
+      "norm": 0.10092645138502121
+    },
+    "temporal.encoder.layers.1.norm2.bias": {
+      "finite": true,
+      "norm": 0.11544004082679749
+    },
+    "temporal.encoder.layers.2.self_attn.in_proj_weight": {
+      "finite": true,
+      "norm": 5.525154113769531
+    },
+    "temporal.encoder.layers.2.self_attn.in_proj_bias": {
+      "finite": true,
+      "norm": 0.28012681007385254
+    },
+    "temporal.encoder.layers.2.self_attn.out_proj.weight": {
+      "finite": true,
+      "norm": 6.82296085357666
+    },
+    "temporal.encoder.layers.2.self_attn.out_proj.bias": {
+      "finite": true,
+      "norm": 0.468967080116272
+    },
+    "temporal.encoder.layers.2.linear1.weight": {
+      "finite": true,
+      "norm": 3.2077033519744873
+    },
+    "temporal.encoder.layers.2.linear1.bias": {
+      "finite": true,
+      "norm": 0.15684306621551514
+    },
+    "temporal.encoder.layers.2.linear2.weight": {
+      "finite": true,
+      "norm": 6.294345378875732
+    },
+    "temporal.encoder.layers.2.linear2.bias": {
+      "finite": true,
+      "norm": 0.45259150862693787
+    },
+    "temporal.encoder.layers.2.norm1.weight": {
+      "finite": true,
+      "norm": 0.16685116291046143
+    },
+    "temporal.encoder.layers.2.norm1.bias": {
+      "finite": true,
+      "norm": 0.18975627422332764
+    },
+    "temporal.encoder.layers.2.norm2.weight": {
+      "finite": true,
+      "norm": 0.08200317621231079
+    },
+    "temporal.encoder.layers.2.norm2.bias": {
+      "finite": true,
+      "norm": 0.09188911318778992
+    },
+    "temporal.encoder.layers.3.self_attn.in_proj_weight": {
+      "finite": true,
+      "norm": 4.877292633056641
+    },
+    "temporal.encoder.layers.3.self_attn.in_proj_bias": {
+      "finite": true,
+      "norm": 0.24146367609500885
+    },
+    "temporal.encoder.layers.3.self_attn.out_proj.weight": {
+      "finite": true,
+      "norm": 6.054961681365967
+    },
+    "temporal.encoder.layers.3.self_attn.out_proj.bias": {
+      "finite": true,
+      "norm": 0.3964717984199524
+    },
+    "temporal.encoder.layers.3.linear1.weight": {
+      "finite": true,
+      "norm": 2.7587203979492188
+    },
+    "temporal.encoder.layers.3.linear1.bias": {
+      "finite": true,
+      "norm": 0.13185277581214905
+    },
+    "temporal.encoder.layers.3.linear2.weight": {
+      "finite": true,
+      "norm": 5.410501480102539
+    },
+    "temporal.encoder.layers.3.linear2.bias": {
+      "finite": true,
+      "norm": 0.3815082907676697
+    },
+    "temporal.encoder.layers.3.norm1.weight": {
+      "finite": true,
+      "norm": 0.14410412311553955
+    },
+    "temporal.encoder.layers.3.norm1.bias": {
+      "finite": true,
+      "norm": 0.16436289250850677
+    },
+    "temporal.encoder.layers.3.norm2.weight": {
+      "finite": true,
+      "norm": 0.07043596357107162
+    },
+    "temporal.encoder.layers.3.norm2.bias": {
+      "finite": true,
+      "norm": 0.0760478749871254
+    },
+    "temporal.encoder.layers.4.self_attn.in_proj_weight": {
+      "finite": true,
+      "norm": 4.624541759490967
+    },
+    "temporal.encoder.layers.4.self_attn.in_proj_bias": {
+      "finite": true,
+      "norm": 0.22436437010765076
+    },
+    "temporal.encoder.layers.4.self_attn.out_proj.weight": {
+      "finite": true,
+      "norm": 5.661920547485352
+    },
+    "temporal.encoder.layers.4.self_attn.out_proj.bias": {
+      "finite": true,
+      "norm": 0.36478397250175476
+    },
+    "temporal.encoder.layers.4.linear1.weight": {
+      "finite": true,
+      "norm": 2.701728343963623
+    },
+    "temporal.encoder.layers.4.linear1.bias": {
+      "finite": true,
+      "norm": 0.12724480032920837
+    },
+    "temporal.encoder.layers.4.linear2.weight": {
+      "finite": true,
+      "norm": 5.317873001098633
+    },
+    "temporal.encoder.layers.4.linear2.bias": {
+      "finite": true,
+      "norm": 0.3648110032081604
+    },
+    "temporal.encoder.layers.4.norm1.weight": {
+      "finite": true,
+      "norm": 0.13485859334468842
+    },
+    "temporal.encoder.layers.4.norm1.bias": {
+      "finite": true,
+      "norm": 0.15265150368213654
+    },
+    "temporal.encoder.layers.4.norm2.weight": {
+      "finite": true,
+      "norm": 0.06786240637302399
+    },
+    "temporal.encoder.layers.4.norm2.bias": {
+      "finite": true,
+      "norm": 0.0719410628080368
+    },
+    "temporal.encoder.layers.5.self_attn.in_proj_weight": {
+      "finite": true,
+      "norm": 4.549450874328613
+    },
+    "temporal.encoder.layers.5.self_attn.in_proj_bias": {
+      "finite": true,
+      "norm": 0.21789421141147614
+    },
+    "temporal.encoder.layers.5.self_attn.out_proj.weight": {
+      "finite": true,
+      "norm": 5.61453914642334
+    },
+    "temporal.encoder.layers.5.self_attn.out_proj.bias": {
+      "finite": true,
+      "norm": 0.3638422191143036
+    },
+    "temporal.encoder.layers.5.linear1.weight": {
+      "finite": true,
+      "norm": 2.68099045753479
+    },
+    "temporal.encoder.layers.5.linear1.bias": {
+      "finite": true,
+      "norm": 0.1250946819782257
+    },
+    "temporal.encoder.layers.5.linear2.weight": {
+      "finite": true,
+      "norm": 5.29698371887207
+    },
+    "temporal.encoder.layers.5.linear2.bias": {
+      "finite": true,
+      "norm": 0.3619481027126312
+    },
+    "temporal.encoder.layers.5.norm1.weight": {
+      "finite": true,
+      "norm": 0.13520854711532593
+    },
+    "temporal.encoder.layers.5.norm1.bias": {
+      "finite": true,
+      "norm": 0.15073084831237793
+    },
+    "temporal.encoder.layers.5.norm2.weight": {
+      "finite": true,
+      "norm": 0.06677445024251938
+    },
+    "temporal.encoder.layers.5.norm2.bias": {
+      "finite": true,
+      "norm": 0.07072266936302185
+    },
+    "temporal.encoder.norm.weight": {
+      "finite": true,
+      "norm": 0.794254720211029
+    },
+    "temporal.encoder.norm.bias": {
+      "finite": true,
+      "norm": 0.881243109703064
+    },
+    "to_latent.weight": {
+      "finite": true,
+      "norm": 31.852340698242188
+    },
+    "to_latent.bias": {
+      "finite": true,
+      "norm": 1.4908627271652222
+    },
+    "dynamics.net.0.weight": {
+      "finite": true,
+      "norm": 14.938654899597168
+    },
+    "dynamics.net.0.bias": {
+      "finite": true,
+      "norm": 1.253037929534912
+    },
+    "dynamics.net.2.weight": {
+      "finite": true,
+      "norm": 0.678379237651825
+    },
+    "dynamics.net.2.bias": {
+      "finite": true,
+      "norm": 0.46073272824287415
+    },
+    "dynamics.net.3.weight": {
+      "finite": true,
+      "norm": 9.991802215576172
+    },
+    "dynamics.net.3.bias": {
+      "finite": true,
+      "norm": 0.6689635515213013
+    },
+    "dynamics.gate.0.weight": {
+      "finite": true,
+      "norm": 2.9181129932403564
+    },
+    "dynamics.gate.0.bias": {
+      "finite": true,
+      "norm": 0.2454528510570526
+    },
+    "dynamics.logvar_net.0.weight": {
+      "finite": true,
+      "norm": 0.777256190776825
+    },
+    "dynamics.logvar_net.0.bias": {
+      "finite": true,
+      "norm": 0.0657300129532814
+    },
+    "dynamics.logvar_net.2.weight": {
+      "finite": true,
+      "norm": 0.5846779942512512
+    },
+    "dynamics.logvar_net.2.bias": {
+      "finite": true,
+      "norm": 0.220367431640625
+    },
+    "infiltration_head.net.0.weight": {
+      "finite": true,
+      "norm": 0.38939693570137024
+    },
+    "infiltration_head.net.0.bias": {
+      "finite": true,
+      "norm": 0.020386284217238426
+    },
+    "infiltration_head.net.3.weight": {
+      "finite": true,
+      "norm": 0.19411301612854004
+    },
+    "infiltration_head.net.3.bias": {
+      "finite": true,
+      "norm": 0.01513671875
+    },
+    "stage_head.net.0.weight": {
+      "finite": true,
+      "norm": 25.373506546020508
+    },
+    "stage_head.net.0.bias": {
+      "finite": true,
+      "norm": 1.8660967350006104
+    },
+    "stage_head.net.2.weight": {
+      "finite": true,
+      "norm": 13.421433448791504
+    },
+    "stage_head.net.2.bias": {
+      "finite": true,
+      "norm": 5.581047534942627
+    },
+    "stage_decoder.transitions": {
+      "finite": true,
+      "norm": 5.023060321807861
+    }
+  },
+  "peak_allocated_bytes": 291314176,
+  "peak_reserved_bytes": 318767104,
+  "passed": true,
+  "scope": "Architecture forward/backward only; does not verify real corpus, production batch memory or GB10 readiness.",
+  "failures": []
+}

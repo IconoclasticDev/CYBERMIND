@@ -8,12 +8,14 @@ from cybermind.models.world_model import WorldModel
 from cybermind.evaluation.metrics import binary_metrics,early_warning_lead_time,illegal_transition_counts
 from cybermind.utils.config import load_config, edge_model_kwargs, stage_model_kwargs
 from cybermind.utils.inference import verify_inference_states
+from cybermind.evaluation.edge_attention import EdgeAttentionDiagnostic
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('--config',required=True); p.add_argument('--checkpoint',required=True); p.add_argument('--split',default='test'); p.add_argument('--threshold',type=float,default=.5); p.add_argument('--output',help='Report path; defaults to results/eval_SPLIT.json'); args=p.parse_args(); cfg=load_config(args.config)
+    p=argparse.ArgumentParser(); p.add_argument('--config',required=True); p.add_argument('--checkpoint',required=True); p.add_argument('--split',default='test'); p.add_argument('--threshold',type=float,default=.5); p.add_argument('--output',help='Report path; defaults to results/eval_SPLIT.json'); p.add_argument('--attention-bytes-threshold',type=float,default=1048576,help='Raw-byte diagnostic threshold, independent of accuracy and stage gates'); args=p.parse_args(); cfg=load_config(args.config)
     root=Path(__file__).resolve().parents[1]; ds=GraphSequenceDataset(root/cfg['data']['processed_dir']/f'{args.split}.pt'); ck=torch.load(root/args.checkpoint,map_location='cpu',weights_only=False)
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'); node_dim=ck['node_dim']; m=WorldModel(node_dim,graph_hidden=cfg['model']['graph_hidden'],graph_out=cfg['model']['graph_out'],temporal_dim=cfg['model']['temporal_dim'],nhead=cfg['model']['nhead'],temporal_layers=cfg['model']['temporal_layers'],num_stages=cfg['model']['num_stages'],dropout=cfg['model']['dropout'],graph_heads=cfg['model'].get('graph_heads',8),**edge_model_kwargs(cfg['model'],ck['config']['model']),**stage_model_kwargs(cfg,ck['config'])).to(device); m.load_state_dict(ck['model_state']); m.eval()
     all_y=[]; all_p=[]; per=[]; transition_totals={'illegal':0,'evaluated':0}
+    attention=EdgeAttentionDiagnostic(m,ck.get('normalization'),args.attention_bytes_threshold)
     from cybermind.models.stage_decoder import StageDecoder
     decoder_policy=m.stage_decoder if m.use_crf_stage else StageDecoder(cfg['model']['num_stages'])
     policy={'allowed_transitions':decoder_policy.allowed_transitions,
@@ -22,6 +24,7 @@ def main():
         states=sample.states
         verify_inference_states(ck,states)
         for s in states: s.x=s.x.to(device); s.edge_index=s.edge_index.to(device); s.edge_attr=s.edge_attr.to(device)
+        attention.observe(states[:-1])
         with torch.no_grad():
             # Each sample holds one unseen target window, so evaluate one step ahead.
             out=m.forecast(states[:-1],1,
@@ -43,7 +46,9 @@ def main():
     metrics['illegal_transition_rate']=(transition_totals['illegal']/transition_totals['evaluated']
                                         if transition_totals['evaluated'] else 0.0)
     metrics['stage_transition_pairs']=transition_totals['evaluated']
-    result={'split':args.split,'forecast_horizon_windows':1,'metrics':metrics,'per_sample':per}
+    diagnostic=attention.report()
+    metrics['mean_suspicious_edge_attention']=diagnostic['mean_attention']
+    result={'split':args.split,'forecast_horizon_windows':1,'metrics':metrics,'per_sample':per,'edge_attention_diagnostic':diagnostic}
     output=root/args.output if args.output else root/'results'/f'eval_{args.split}.json'
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(result,indent=2),encoding='utf-8')

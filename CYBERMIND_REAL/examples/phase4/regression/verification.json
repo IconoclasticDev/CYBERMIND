@@ -1,0 +1,68 @@
+{
+  "started_utc": "2026-09-14T08:26:18.929559+00:00",
+  "commands": [
+    {
+      "name": "pytest",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-o",
+        "junit_family=legacy",
+        "--junitxml=examples/phase4/regression/pytest.xml"
+      ],
+      "cpu": false,
+      "exit_code": 0
+    },
+    {
+      "name": "both_off",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/phase01_smoke.py",
+        "--no-use-edge-features",
+        "--no-use-crf-stage",
+        "--device",
+        "cpu",
+        "--output",
+        "examples/phase4/regression/both_off"
+      ],
+      "cpu": true,
+      "exit_code": 0
+    },
+    {
+      "name": "legacy_eval",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "scripts/eval.py",
+        "--config",
+        "examples/smoke/baseline_before/config.yaml",
+        "--checkpoint",
+        "examples/smoke/baseline_before/baseline.pt",
+        "--output",
+        "examples/phase4/regression/legacy_eval.json"
+      ],
+      "cpu": true,
+      "exit_code": 0
+    }
+  ],
+  "baseline": {
+    "verified_files": 49,
+    "manifest": {
+      "bytes": 15091,
+      "sha256": "46be0cc83ad87bf462b9c661e6b55935b90427d3e80311287ffff91c7572e90b"
+    }
+  },
+  "tests_passed": 189,
+  "legacy_outputs_match_1e_6": true,
+  "historical_preservation": {
+    "phase3_joint": 139,
+    "phase3_balanced_stage": 19,
+    "phase3_root_cause": 76,
+    "phase3_remediation": 231,
+    "phase3_second_escalation": 141,
+    "phase3_third_round": 158
+  },
+  "passed": true
+}

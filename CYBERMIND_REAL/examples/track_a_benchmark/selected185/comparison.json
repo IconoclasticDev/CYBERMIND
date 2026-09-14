@@ -1,0 +1,976 @@
+{
+  "evidence_scope": "synthetic verification only; not a real-data benchmark",
+  "device": "cpu",
+  "split": "test",
+  "threshold": 0.5,
+  "threshold_provenance": "fixed command input; no test tuning",
+  "forecast_horizon_windows": 1,
+  "sample_alignment_verified": true,
+  "selection_policy": {
+    "selection_metric": "val_f1_stage_band",
+    "selection_f1_tolerance": 0.05,
+    "selection_stage_metric": "stage"
+  },
+  "baselines": [
+    {
+      "baseline": "logistic_regression",
+      "split": "test",
+      "threshold": 0.5,
+      "protocol": {
+        "version": 2,
+        "input": "states[:-1], in chronological order",
+        "target": "int(states[-1].y_infiltration > 0)",
+        "forecast_horizon_windows": 1,
+        "pooling": "per-window arithmetic means; flatten windows in time order",
+        "threshold_provenance": "fixed in advance; never fitted on evaluation labels",
+        "baseline_scaling": "StandardScaler fitted on training split only"
+      },
+      "protocol_sha256": "640df691d4ec328380f5cd5b0e66b5a074fe2bf413c4c2a06bd8dabef33b423b",
+      "feature_registry": {
+        "feature_mode": "node",
+        "node_columns": 34,
+        "edge_columns": 0,
+        "history_windows": 2,
+        "flattened_width": 68,
+        "graph_topology": false,
+        "periodic_clock": null,
+        "periodic_columns": 0,
+        "normalization_sha256": "79fe274e29ab2c93e0551171a0016a988db0a76266bb21e2e91dc2ab7211bb60",
+        "node_features": [
+          "packet_count",
+          "flow_count",
+          "bytes_total",
+          "packets_total",
+          "unique_peer_count",
+          "unique_dst_port_count",
+          "tcp_ratio",
+          "udp_ratio",
+          "mean_duration",
+          "mean_iat",
+          "bytes_per_flow",
+          "packets_per_flow",
+          "activity_rate",
+          "anomaly_proxy",
+          "ttl_mean",
+          "ttl_variance",
+          "tcp_window_mean",
+          "tcp_window_variance",
+          "ip_df_ratio",
+          "ip_mf_ratio",
+          "ip_fragment_ratio",
+          "payload_size_mean",
+          "payload_size_variance",
+          "payload_size_min",
+          "payload_size_max",
+          "payload_size_p25",
+          "payload_size_p50",
+          "payload_size_p75",
+          "scan_unique_ports",
+          "scan_sequential_score",
+          "scan_randomized_score",
+          "retransmission_count",
+          "retransmission_ratio",
+          "packet_features_available"
+        ],
+        "edge_features": []
+      },
+      "feature_registry_sha256": "c0b5fcb49313e315a85131e695d704d1677d98b8926edcb8250e824d8d38606b",
+      "source_sha256": {
+        "train": "910e2cfeedff9f14e323430bd30b1baf60a8a61d107f94601b17381bac769cf5",
+        "test": "b792414a6cb2095426d52b77f629671e682db9f79d048a57c82ca5842251ea11"
+      },
+      "training_count": 122,
+      "evaluation_count": 25,
+      "metrics": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "fpr": 0.0,
+        "ap": 0.32825877825877825,
+        "roc_auc": 0.5526315789473685
+      },
+      "confusion_counts": {
+        "tn": 19,
+        "fp": 0,
+        "fn": 6,
+        "tp": 0
+      },
+      "per_sample": [
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566555.0,
+          "target": 0,
+          "predicted_future_risk": 0.48759591579437256
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566556.0,
+          "target": 1,
+          "predicted_future_risk": 0.4874618947505951
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566557.0,
+          "target": 0,
+          "predicted_future_risk": 0.4873279631137848
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566558.0,
+          "target": 0,
+          "predicted_future_risk": 0.48719391226768494
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566559.0,
+          "target": 0,
+          "predicted_future_risk": 0.48705995082855225
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566560.0,
+          "target": 1,
+          "predicted_future_risk": 0.48692598938941956
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566561.0,
+          "target": 0,
+          "predicted_future_risk": 0.4867919981479645
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566562.0,
+          "target": 0,
+          "predicted_future_risk": 0.4866580069065094
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566563.0,
+          "target": 0,
+          "predicted_future_risk": 0.4865241050720215
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566564.0,
+          "target": 1,
+          "predicted_future_risk": 0.4863901138305664
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566565.0,
+          "target": 0,
+          "predicted_future_risk": 0.4862561523914337
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566566.0,
+          "target": 0,
+          "predicted_future_risk": 0.486122190952301
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566567.0,
+          "target": 0,
+          "predicted_future_risk": 0.48598822951316833
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566568.0,
+          "target": 1,
+          "predicted_future_risk": 0.48585426807403564
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566569.0,
+          "target": 0,
+          "predicted_future_risk": 0.48572033643722534
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566570.0,
+          "target": 0,
+          "predicted_future_risk": 0.48558640480041504
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566571.0,
+          "target": 0,
+          "predicted_future_risk": 0.48545241355895996
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566572.0,
+          "target": 1,
+          "predicted_future_risk": 0.48531845211982727
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566573.0,
+          "target": 0,
+          "predicted_future_risk": 0.4851844906806946
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566574.0,
+          "target": 0,
+          "predicted_future_risk": 0.4850505590438843
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566575.0,
+          "target": 0,
+          "predicted_future_risk": 0.48491665720939636
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566576.0,
+          "target": 1,
+          "predicted_future_risk": 0.48478269577026367
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566577.0,
+          "target": 0,
+          "predicted_future_risk": 0.4846487045288086
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566578.0,
+          "target": 0,
+          "predicted_future_risk": 0.4845147728919983
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566579.0,
+          "target": 0,
+          "predicted_future_risk": 0.484380841255188
+        }
+      ],
+      "feature_coverage_matches_world_model": false
+    },
+    {
+      "baseline": "logistic_regression",
+      "split": "test",
+      "threshold": 0.5,
+      "protocol": {
+        "version": 2,
+        "input": "states[:-1], in chronological order",
+        "target": "int(states[-1].y_infiltration > 0)",
+        "forecast_horizon_windows": 1,
+        "pooling": "per-window arithmetic means; flatten windows in time order",
+        "threshold_provenance": "fixed in advance; never fitted on evaluation labels",
+        "baseline_scaling": "StandardScaler fitted on training split only"
+      },
+      "protocol_sha256": "640df691d4ec328380f5cd5b0e66b5a074fe2bf413c4c2a06bd8dabef33b423b",
+      "feature_registry": {
+        "feature_mode": "node_edge",
+        "node_columns": 34,
+        "edge_columns": 27,
+        "history_windows": 2,
+        "flattened_width": 122,
+        "graph_topology": false,
+        "periodic_clock": null,
+        "periodic_columns": 0,
+        "normalization_sha256": "79fe274e29ab2c93e0551171a0016a988db0a76266bb21e2e91dc2ab7211bb60",
+        "node_features": [
+          "packet_count",
+          "flow_count",
+          "bytes_total",
+          "packets_total",
+          "unique_peer_count",
+          "unique_dst_port_count",
+          "tcp_ratio",
+          "udp_ratio",
+          "mean_duration",
+          "mean_iat",
+          "bytes_per_flow",
+          "packets_per_flow",
+          "activity_rate",
+          "anomaly_proxy",
+          "ttl_mean",
+          "ttl_variance",
+          "tcp_window_mean",
+          "tcp_window_variance",
+          "ip_df_ratio",
+          "ip_mf_ratio",
+          "ip_fragment_ratio",
+          "payload_size_mean",
+          "payload_size_variance",
+          "payload_size_min",
+          "payload_size_max",
+          "payload_size_p25",
+          "payload_size_p50",
+          "payload_size_p75",
+          "scan_unique_ports",
+          "scan_sequential_score",
+          "scan_randomized_score",
+          "retransmission_count",
+          "retransmission_ratio",
+          "packet_features_available"
+        ],
+        "edge_features": [
+          "bytes",
+          "packets",
+          "protocol",
+          "port",
+          "direction",
+          "duration",
+          "inter_arrival",
+          "ttl_mean",
+          "ttl_variance",
+          "tcp_window_mean",
+          "tcp_window_variance",
+          "ip_df_ratio",
+          "ip_mf_ratio",
+          "ip_fragment_ratio",
+          "payload_size_mean",
+          "payload_size_variance",
+          "payload_size_min",
+          "payload_size_max",
+          "payload_size_p25",
+          "payload_size_p50",
+          "payload_size_p75",
+          "scan_unique_ports",
+          "scan_sequential_score",
+          "scan_randomized_score",
+          "retransmission_count",
+          "retransmission_ratio",
+          "packet_features_available"
+        ]
+      },
+      "feature_registry_sha256": "d47ad6f457d55ef29b3ba4905e43a559617b6fe8f90c17ccea7d665bef29074b",
+      "source_sha256": {
+        "train": "910e2cfeedff9f14e323430bd30b1baf60a8a61d107f94601b17381bac769cf5",
+        "test": "b792414a6cb2095426d52b77f629671e682db9f79d048a57c82ca5842251ea11"
+      },
+      "training_count": 122,
+      "evaluation_count": 25,
+      "metrics": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "fpr": 0.0,
+        "ap": 0.32825877825877825,
+        "roc_auc": 0.5526315789473685
+      },
+      "confusion_counts": {
+        "tn": 19,
+        "fp": 0,
+        "fn": 6,
+        "tp": 0
+      },
+      "per_sample": [
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566555.0,
+          "target": 0,
+          "predicted_future_risk": 0.48756372928619385
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566556.0,
+          "target": 1,
+          "predicted_future_risk": 0.48742932081222534
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566557.0,
+          "target": 0,
+          "predicted_future_risk": 0.487295001745224
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566558.0,
+          "target": 0,
+          "predicted_future_risk": 0.4871606230735779
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566559.0,
+          "target": 0,
+          "predicted_future_risk": 0.4870263338088989
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566560.0,
+          "target": 1,
+          "predicted_future_risk": 0.4868920147418976
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566561.0,
+          "target": 0,
+          "predicted_future_risk": 0.48675763607025146
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566562.0,
+          "target": 0,
+          "predicted_future_risk": 0.48662328720092773
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566563.0,
+          "target": 0,
+          "predicted_future_risk": 0.4864889681339264
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566564.0,
+          "target": 1,
+          "predicted_future_risk": 0.48635464906692505
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566565.0,
+          "target": 0,
+          "predicted_future_risk": 0.4862203001976013
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566566.0,
+          "target": 0,
+          "predicted_future_risk": 0.48608601093292236
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566567.0,
+          "target": 0,
+          "predicted_future_risk": 0.48595163226127625
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566568.0,
+          "target": 1,
+          "predicted_future_risk": 0.4858173429965973
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566569.0,
+          "target": 0,
+          "predicted_future_risk": 0.48568299412727356
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566570.0,
+          "target": 0,
+          "predicted_future_risk": 0.4855486750602722
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566571.0,
+          "target": 0,
+          "predicted_future_risk": 0.4854143261909485
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566572.0,
+          "target": 1,
+          "predicted_future_risk": 0.48528003692626953
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566573.0,
+          "target": 0,
+          "predicted_future_risk": 0.4851457178592682
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566574.0,
+          "target": 0,
+          "predicted_future_risk": 0.48501139879226685
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566575.0,
+          "target": 0,
+          "predicted_future_risk": 0.4848770797252655
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566576.0,
+          "target": 1,
+          "predicted_future_risk": 0.48474279046058655
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566577.0,
+          "target": 0,
+          "predicted_future_risk": 0.4846085011959076
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566578.0,
+          "target": 0,
+          "predicted_future_risk": 0.48447415232658386
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566579.0,
+          "target": 0,
+          "predicted_future_risk": 0.4843398928642273
+        }
+      ],
+      "feature_coverage_matches_world_model": false
+    },
+    {
+      "baseline": "logistic_regression",
+      "split": "test",
+      "threshold": 0.5,
+      "protocol": {
+        "version": 2,
+        "input": "states[:-1], in chronological order",
+        "target": "int(states[-1].y_infiltration > 0)",
+        "forecast_horizon_windows": 1,
+        "pooling": "per-window arithmetic means; flatten windows in time order",
+        "threshold_provenance": "fixed in advance; never fitted on evaluation labels",
+        "baseline_scaling": "StandardScaler fitted on training split only"
+      },
+      "protocol_sha256": "640df691d4ec328380f5cd5b0e66b5a074fe2bf413c4c2a06bd8dabef33b423b",
+      "feature_registry": {
+        "feature_mode": "node_edge",
+        "node_columns": 34,
+        "edge_columns": 27,
+        "history_windows": 2,
+        "flattened_width": 126,
+        "graph_topology": false,
+        "periodic_clock": {
+          "column": 2,
+          "intercept": -1.7181385639683615,
+          "period": 4.0,
+          "slope": 0.02793721242224979
+        },
+        "periodic_columns": 2,
+        "normalization_sha256": "79fe274e29ab2c93e0551171a0016a988db0a76266bb21e2e91dc2ab7211bb60",
+        "node_features": [
+          "packet_count",
+          "flow_count",
+          "bytes_total",
+          "packets_total",
+          "unique_peer_count",
+          "unique_dst_port_count",
+          "tcp_ratio",
+          "udp_ratio",
+          "mean_duration",
+          "mean_iat",
+          "bytes_per_flow",
+          "packets_per_flow",
+          "activity_rate",
+          "anomaly_proxy",
+          "ttl_mean",
+          "ttl_variance",
+          "tcp_window_mean",
+          "tcp_window_variance",
+          "ip_df_ratio",
+          "ip_mf_ratio",
+          "ip_fragment_ratio",
+          "payload_size_mean",
+          "payload_size_variance",
+          "payload_size_min",
+          "payload_size_max",
+          "payload_size_p25",
+          "payload_size_p50",
+          "payload_size_p75",
+          "scan_unique_ports",
+          "scan_sequential_score",
+          "scan_randomized_score",
+          "retransmission_count",
+          "retransmission_ratio",
+          "packet_features_available"
+        ],
+        "edge_features": [
+          "bytes",
+          "packets",
+          "protocol",
+          "port",
+          "direction",
+          "duration",
+          "inter_arrival",
+          "ttl_mean",
+          "ttl_variance",
+          "tcp_window_mean",
+          "tcp_window_variance",
+          "ip_df_ratio",
+          "ip_mf_ratio",
+          "ip_fragment_ratio",
+          "payload_size_mean",
+          "payload_size_variance",
+          "payload_size_min",
+          "payload_size_max",
+          "payload_size_p25",
+          "payload_size_p50",
+          "payload_size_p75",
+          "scan_unique_ports",
+          "scan_sequential_score",
+          "scan_randomized_score",
+          "retransmission_count",
+          "retransmission_ratio",
+          "packet_features_available"
+        ]
+      },
+      "feature_registry_sha256": "4f09c42c286faf95bee1ce661c507a5b86c71dffd8df5b1a0fda2f8ed7fe7828",
+      "source_sha256": {
+        "train": "910e2cfeedff9f14e323430bd30b1baf60a8a61d107f94601b17381bac769cf5",
+        "test": "b792414a6cb2095426d52b77f629671e682db9f79d048a57c82ca5842251ea11"
+      },
+      "training_count": 122,
+      "evaluation_count": 25,
+      "metrics": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fpr": 0.0,
+        "ap": 1.0,
+        "roc_auc": 1.0
+      },
+      "confusion_counts": {
+        "tn": 19,
+        "fp": 0,
+        "fn": 0,
+        "tp": 6
+      },
+      "per_sample": [
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566555.0,
+          "target": 0,
+          "predicted_future_risk": 0.03916390240192413
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566556.0,
+          "target": 1,
+          "predicted_future_risk": 0.971424400806427
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566557.0,
+          "target": 0,
+          "predicted_future_risk": 0.040262192487716675
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566558.0,
+          "target": 0,
+          "predicted_future_risk": 5.025684367865324e-05
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566559.0,
+          "target": 0,
+          "predicted_future_risk": 0.03909968584775925
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566560.0,
+          "target": 1,
+          "predicted_future_risk": 0.9713760018348694
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566561.0,
+          "target": 0,
+          "predicted_future_risk": 0.04019726812839508
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566562.0,
+          "target": 0,
+          "predicted_future_risk": 5.016950308345258e-05
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566563.0,
+          "target": 0,
+          "predicted_future_risk": 0.03903557360172272
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566564.0,
+          "target": 1,
+          "predicted_future_risk": 0.9713276624679565
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566565.0,
+          "target": 0,
+          "predicted_future_risk": 0.040128983557224274
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566566.0,
+          "target": 0,
+          "predicted_future_risk": 5.0082311645383015e-05
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566567.0,
+          "target": 0,
+          "predicted_future_risk": 0.03896818682551384
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566568.0,
+          "target": 1,
+          "predicted_future_risk": 0.9712792038917542
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566569.0,
+          "target": 0,
+          "predicted_future_risk": 0.04006080701947212
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566570.0,
+          "target": 0,
+          "predicted_future_risk": 4.999528027838096e-05
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566571.0,
+          "target": 0,
+          "predicted_future_risk": 0.03890427201986313
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566572.0,
+          "target": 1,
+          "predicted_future_risk": 0.9712305665016174
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566573.0,
+          "target": 0,
+          "predicted_future_risk": 0.0399961993098259
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566574.0,
+          "target": 0,
+          "predicted_future_risk": 4.990839079255238e-05
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566575.0,
+          "target": 0,
+          "predicted_future_risk": 0.03884046524763107
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566576.0,
+          "target": 1,
+          "predicted_future_risk": 0.9711819291114807
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566577.0,
+          "target": 0,
+          "predicted_future_risk": 0.03992824628949165
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566578.0,
+          "target": 0,
+          "predicted_future_risk": 4.98216541018337e-05
+        },
+        {
+          "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+          "target_timestamp": 1518566579.0,
+          "target": 0,
+          "predicted_future_risk": 0.03877340257167816
+        }
+      ],
+      "feature_coverage_matches_world_model": true
+    }
+  ],
+  "world_model": {
+    "model": "world_model",
+    "selected_epoch": 185,
+    "checkpoint_sha256": "8a47c8f0f74600e685ba3991a1ae34b3f2618ed47580b760074c089eb1cebf06",
+    "metrics": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "ap": 1.0,
+      "roc_auc": 1.0
+    },
+    "confusion_counts": {
+      "tn": 19,
+      "fp": 0,
+      "fn": 0,
+      "tp": 6
+    },
+    "per_sample": [
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566555.0,
+        "target": 0,
+        "predicted_future_risk": 0.043630000203847885
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566556.0,
+        "target": 1,
+        "predicted_future_risk": 0.9387086629867554
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566557.0,
+        "target": 0,
+        "predicted_future_risk": 0.002158579882234335
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566558.0,
+        "target": 0,
+        "predicted_future_risk": 5.5581309425178915e-05
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566559.0,
+        "target": 0,
+        "predicted_future_risk": 0.045507509261369705
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566560.0,
+        "target": 1,
+        "predicted_future_risk": 0.9312611818313599
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566561.0,
+        "target": 0,
+        "predicted_future_risk": 0.0023632715456187725
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566562.0,
+        "target": 0,
+        "predicted_future_risk": 6.066714195185341e-05
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566563.0,
+        "target": 0,
+        "predicted_future_risk": 0.047272294759750366
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566564.0,
+        "target": 1,
+        "predicted_future_risk": 0.9232205152511597
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566565.0,
+        "target": 0,
+        "predicted_future_risk": 0.002580879954621196
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566566.0,
+        "target": 0,
+        "predicted_future_risk": 6.641172512900084e-05
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566567.0,
+        "target": 0,
+        "predicted_future_risk": 0.04892009496688843
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566568.0,
+        "target": 1,
+        "predicted_future_risk": 0.9145898818969727
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566569.0,
+        "target": 0,
+        "predicted_future_risk": 0.002811744110658765
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566570.0,
+        "target": 0,
+        "predicted_future_risk": 7.286867912625894e-05
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566571.0,
+        "target": 0,
+        "predicted_future_risk": 0.05046088621020317
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566572.0,
+        "target": 1,
+        "predicted_future_risk": 0.9053785800933838
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566573.0,
+        "target": 0,
+        "predicted_future_risk": 0.0030562938190996647
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566574.0,
+        "target": 0,
+        "predicted_future_risk": 8.00954585429281e-05
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566575.0,
+        "target": 0,
+        "predicted_future_risk": 0.051893237978219986
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566576.0,
+        "target": 1,
+        "predicted_future_risk": 0.8955978155136108
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566577.0,
+        "target": 0,
+        "predicted_future_risk": 0.0033141509629786015
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566578.0,
+        "target": 0,
+        "predicted_future_risk": 8.815221372060478e-05
+      },
+      {
+        "scenario": "CIC-IDS2018::SYNTHETIC_FIXTURE_ONLY",
+        "target_timestamp": 1518566579.0,
+        "target": 0,
+        "predicted_future_risk": 0.05321686714887619
+      }
+    ],
+    "features": {
+      "node_columns": 34,
+      "edge_columns": 27,
+      "periodic_clock": {
+        "column": 2,
+        "intercept": -1.7181385639683615,
+        "period": 4.0,
+        "slope": 0.02793721242224979
+      },
+      "graph_topology": true
+    }
+  },
+  "limitations": [
+    "Feature coverage parity does not equal architecture parity: pooled baseline discards graph topology.",
+    "All models receive the same observed windows and predict the same unseen final-window infiltration label.",
+    "One-step infiltration comparison does not establish four-step stage forecasting accuracy.",
+    "Historical whole-sequence baseline numbers are not comparable to this corrected protocol."
+  ]
+}

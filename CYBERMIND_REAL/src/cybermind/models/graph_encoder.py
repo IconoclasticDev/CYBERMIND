@@ -49,12 +49,14 @@ class DenseGraphAttention(nn.Module):
         self.dropout=nn.Dropout(dropout); self.act=nn.ELU()
         if use_edge_features:
             self.edge_proj=nn.Linear(edge_attr_dim,heads,bias=False)
-    def forward(self,x,edge_index,edge_attr=None):
+    def forward(self,x,edge_index,edge_attr=None,return_attention_weights=False):
         if self.use_edge_features:
             _validate_edge_attr(x,edge_index,edge_attr,self.edge_attr_dim)
         n=x.size(0); h=self.lin(x).view(n,self.heads,self.out_dim)
         out=torch.zeros_like(h)
-        if edge_index.numel()==0: return out.mean(1)
+        weights=x.new_zeros((edge_index.size(1),self.heads)) if return_attention_weights else None
+        if edge_index.numel()==0:
+            return (out.mean(1),(edge_index,weights)) if return_attention_weights else out.mean(1)
         src,dst=edge_index
         edge_scores = (
             self.edge_proj(edge_attr)
@@ -68,8 +70,10 @@ class DenseGraphAttention(nn.Module):
             if edge_scores is not None:
                 scores=scores+edge_scores[idx]
             alpha=torch.softmax(scores,dim=0).unsqueeze(-1)
+            if return_attention_weights: weights[idx]=alpha.squeeze(-1)
             out[d]=torch.sum(alpha*h[s],dim=0)
-        return self.act(self.dropout(out)).mean(1)
+        result=self.act(self.dropout(out)).mean(1)
+        return (result,(edge_index,weights)) if return_attention_weights else result
 
 class GATv2GraphEncoder(nn.Module):
     """Two attention layers with opt-in edge conditioning in both backends.
@@ -102,3 +106,20 @@ class GATv2GraphEncoder(nn.Module):
             h=self.act(self.conv2(h,edge_index)); h=self.norm2(h)
         # State pooling: mean + max gives a stable graph-level representation.
         return torch.cat([h.mean(dim=0),h.max(dim=0).values],dim=-1)
+
+    @torch.no_grad()
+    def attention_weights(self,x,edge_index,edge_attr=None):
+        """Actual per-head layer coefficients; caller must use evaluation mode.
+
+        Returned indices include PyG's automatic self-loops. Consumers must
+        exclude those before matching coefficients to observed edge features.
+        """
+        if self.training:
+            raise ValueError('attention diagnostics require evaluation mode')
+        if self.use_edge_features:
+            _validate_edge_attr(x,edge_index,edge_attr,self.edge_attr_dim)
+        attributes=edge_attr if self.use_edge_features else None
+        h,first=self.conv1(x,edge_index,edge_attr=attributes,return_attention_weights=True)
+        h=self.dropout(self.norm1(self.act(h)))
+        _,second=self.conv2(h,edge_index,edge_attr=attributes,return_attention_weights=True)
+        return [first,second]

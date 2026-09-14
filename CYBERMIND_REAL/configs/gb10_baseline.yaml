@@ -1,0 +1,53 @@
+# Phase 1 decision: full CIC-IDS2018 only. CTU-13 and UNSW-NB15 stay held out.
+seed: 42
+data:
+  raw_dir: data/raw/CIC-IDS-2018
+  processed_dir: data/processed_gb10
+  primary_source: CIC-IDS2018
+  window_seconds: 60
+  stride_seconds: 30
+  history: 16
+  require_normalization: true
+  require_packet_features: true
+model:
+  use_edge_features: false
+  edge_attr_dim: 27
+  graph_hidden: 512
+  graph_out: 512
+  temporal_dim: 512
+  graph_heads: 8
+  nhead: 8
+  temporal_layers: 6
+  num_stages: 7
+  dropout: 0.10
+loss:
+  use_crf_stage: false
+  crf_stage: 0.5
+  transition: 1.0
+  infiltration: 1.0
+  stage: 0.5
+  calibration: 0.2
+  graph_consistency: 0.1
+train:
+  precision: bf16
+  require_cuda: true
+  epochs: 50
+  lr: 0.0003
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  checkpoint: best_gb10.pt
+  # Conservative full-size model microbatch; confirm with real graph sizes on GB10.
+  # Unified RAM also holds the corpus, OS, optimizer, and loader; 128 GB is not all activations.
+  batch_size: 8
+  grad_accumulation: 8
+  num_workers: 0
+  selection_metric: val_f1_stage_band
+  selection_f1_tolerance: 0.05
+  selection_stage_metric: stage
+  selection_threshold: 0.5
+  early_stopping_patience: 8
+  min_delta: 0.0
+  history_path: results/gb10_train_history.json
+eval:
+  rollout_steps: 12
+  n_rollouts: 16

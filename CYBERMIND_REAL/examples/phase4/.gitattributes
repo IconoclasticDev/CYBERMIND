@@ -1,0 +1,4 @@
+* -text
+# Preserve verbatim captured tool output, including diagnostic whitespace.
+*.log whitespace=-blank-at-eol
+*.xml whitespace=-blank-at-eol

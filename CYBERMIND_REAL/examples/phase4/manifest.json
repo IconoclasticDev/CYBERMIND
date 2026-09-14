@@ -1,0 +1,315 @@
+{
+  "created_at_utc": "2026-09-14T08:30:23.049347+00:00",
+  "base_commit": "4dbecc4",
+  "verdict": "Phase 4 exit criteria met",
+  "phase5_started": false,
+  "real_corpus_ready": false,
+  "files": {
+    "examples/phase4/.gitattributes": {
+      "bytes": 149,
+      "sha256": "46d5efd8661c547dba25719ddcee4b5101a2a16afee049765273c6a69f21e412"
+    },
+    "examples/phase4/attention/eval_1048576.json": {
+      "bytes": 136183,
+      "sha256": "01a8e487645e1d0d2516f69c5c7086ba4270d61b0f8ffe30583dbe06244544e3"
+    },
+    "examples/phase4/attention/eval_1048576.log": {
+      "bytes": 136769,
+      "sha256": "9727e584efa13e421d5dad3e04e53ab0973b0341d973e91438c762b3fc4ab656"
+    },
+    "examples/phase4/attention/eval_512.json": {
+      "bytes": 136163,
+      "sha256": "6a2f8ca46b1e01f82ef2411ad70d87ba452c51127cf3d67cfad52deab2a084b6"
+    },
+    "examples/phase4/attention/eval_512.log": {
+      "bytes": 136749,
+      "sha256": "7c39237f856ad589aa15abe76e9c3f7c5a9461f091f8d56f647557bb0c9344b4"
+    },
+    "examples/phase4/packet_availability/availability.json": {
+      "bytes": 17965,
+      "sha256": "8f1632e449a752da752e7f4451de51f5d3e4e470e8cbb2e81bc016bfcb5e985f"
+    },
+    "examples/phase4/packet_availability/original_listing.xml": {
+      "bytes": 8452,
+      "sha256": "0454b496fa079ac1c7414d7484bfd40445878b50f8c1fd487e41e86d10255e3f"
+    },
+    "examples/phase4/packet_availability/processed_listing.xml": {
+      "bytes": 3460,
+      "sha256": "161fb6c63623fab32e4438920ebf7af40d431a437ebcdfd8170c799ff4149399"
+    },
+    "examples/phase4/preflight/baseline.json": {
+      "bytes": 14246,
+      "sha256": "f77a16eb0999c8ebdbd0e9a914254aec413481401517bef4bb57729c66c82f52"
+    },
+    "examples/phase4/preflight/baseline.log": {
+      "bytes": 2354,
+      "sha256": "63cafe0a91a7b0481aab3e32a9d7558eb2600737ce2c9ed92a41e9d3672eeefe"
+    },
+    "examples/phase4/preflight/crf_only.json": {
+      "bytes": 14368,
+      "sha256": "6566ba6832c9649ad4014f413f706dc209712847e7a2ffc753a666eebf1a17f8"
+    },
+    "examples/phase4/preflight/crf_only.log": {
+      "bytes": 2411,
+      "sha256": "53c1af25a41770bcb6617996bd5f38fbb8b6a07a347f7601e9dfad5c471ccdc9"
+    },
+    "examples/phase4/preflight/edge_only.json": {
+      "bytes": 14524,
+      "sha256": "8f3db39509ccff1de0e1304610043c58e9f8c63870f9c916c4c42d5e173c848e"
+    },
+    "examples/phase4/preflight/edge_only.log": {
+      "bytes": 2428,
+      "sha256": "7938a3f3360d3571bef5875ad51e959d1fd9e3e9345bed38a462790a6559922c"
+    },
+    "examples/phase4/preflight/full.json": {
+      "bytes": 14652,
+      "sha256": "322724d0fd859658a3e72a2dc13d21e4abc2532c3c2c398dd5721d2dc08cd091"
+    },
+    "examples/phase4/preflight/full.log": {
+      "bytes": 2479,
+      "sha256": "ea0b89119ff6a47b7e0c103b02215bbec3b75216b11eba215905ac14ac304330"
+    },
+    "examples/phase4/preflight/production_readiness.json": {
+      "bytes": 836,
+      "sha256": "2d1f9f2c5205cea330ccec1a40d79e77f6c56f78708e81644c24eb06d75add89"
+    },
+    "examples/phase4/preflight/production_readiness.log": {
+      "bytes": 1014,
+      "sha256": "a7ae217cd28651d1d0cebc99704357ec3f45302ed1dee85c09a8a97713cee3ba"
+    },
+    "examples/phase4/regression/both_off/canonical/a_later.parquet": {
+      "bytes": 26265,
+      "sha256": "d8160f2a55f2f1774c33f21d8378f07a765dfb59605347794f8b6e045ce7c066"
+    },
+    "examples/phase4/regression/both_off/canonical/adapter_report.json": {
+      "bytes": 1410,
+      "sha256": "690ea2ae3b6d09f28a9d2f9a48bf30013190763f550107268193e71e577249c4"
+    },
+    "examples/phase4/regression/both_off/canonical/z_earlier.parquet": {
+      "bytes": 26272,
+      "sha256": "659c54046339c572297e71f7613d5cbdd5e5d664bd4995670d5497ec8903feec"
+    },
+    "examples/phase4/regression/both_off/config.yaml": {
+      "bytes": 1179,
+      "sha256": "bba5acaf9d5233da3e13ab7122e0bc5e48df59c07cfe70453a5e90df08b65ae3"
+    },
+    "examples/phase4/regression/both_off/eval_test.json": {
+      "bytes": 130511,
+      "sha256": "946005c2e2192d3d5ad3de93fc8f3f68eede04947f023cb9cb107fd591588597"
+    },
+    "examples/phase4/regression/both_off/processed/metadata.json": {
+      "bytes": 2677,
+      "sha256": "4b85f5ab5e0a13abb9e34b72e67d21abcf1fd453096be2abfa05282ea049f47e"
+    },
+    "examples/phase4/regression/both_off/processed/normalization.json": {
+      "bytes": 3455,
+      "sha256": "79fe274e29ab2c93e0551171a0016a988db0a76266bb21e2e91dc2ab7211bb60"
+    },
+    "examples/phase4/regression/both_off/raw/a_later.csv": {
+      "bytes": 30908,
+      "sha256": "7acfda732dd7e00d5efc334b7024173cac7ec3ca1a6885b59717aa3144b062fb"
+    },
+    "examples/phase4/regression/both_off/raw/z_earlier.csv": {
+      "bytes": 30910,
+      "sha256": "8a74458aa97c26844f674491fbeb4bfe52a1ef2001e6dfa85fe3c961161102c4"
+    },
+    "examples/phase4/regression/both_off/step_1.log": {
+      "bytes": 332,
+      "sha256": "d0c6518c4dbdb284b4f7a40059dc7068b7195d9a66dc76aa9c16e8aa13918046"
+    },
+    "examples/phase4/regression/both_off/step_2.log": {
+      "bytes": 61,
+      "sha256": "ecb9dfd9a8814349873e280661744cb9fc3bd0e565626a49d4a7b93da2e78ff4"
+    },
+    "examples/phase4/regression/both_off/step_3.log": {
+      "bytes": 2733,
+      "sha256": "5f393f41b157d1d05f13598607efd8081e9af45f32a151e28636e713a9f60d60"
+    },
+    "examples/phase4/regression/both_off/step_4.log": {
+      "bytes": 131122,
+      "sha256": "22c89cfe5a99c6314cb04ef79a4ad1976bdede6e878d9656ef4557c6076210f5"
+    },
+    "examples/phase4/regression/both_off/train_history.json": {
+      "bytes": 1427,
+      "sha256": "c6f68a50eed75146ff6cd5dfa364cb78ef58c9e068a8a7817c2dd752015255de"
+    },
+    "examples/phase4/regression/both_off/train_memory.json": {
+      "bytes": 285,
+      "sha256": "f82e63d51bcedb6bf39de5ebfbc909b7433f876b361841120fcb59fd39b96a7f"
+    },
+    "examples/phase4/regression/both_off/verification.json": {
+      "bytes": 1185,
+      "sha256": "447daeca7bfb1d22feecb8277fff266b13e22ca3c35c1d73d4e63ae74099886e"
+    },
+    "examples/phase4/regression/both_off.log": {
+      "bytes": 211,
+      "sha256": "8c33a1dcd8a3603a69dd92f078db97b4e4c887157d0be1f7f5c0047cb1faa49c"
+    },
+    "examples/phase4/regression/initial_failure.json": {
+      "bytes": 717,
+      "sha256": "197e82ec13954e755d71bf2386b7e838c724ec6ac043b2eb6568ab9957a0839e"
+    },
+    "examples/phase4/regression/legacy_eval.json": {
+      "bytes": 23659,
+      "sha256": "fb1f7fda4f154c6d40fbf011e00cb6b946f9f6c8427b9d7a8d72fcf1dd1b0b13"
+    },
+    "examples/phase4/regression/legacy_eval.log": {
+      "bytes": 24270,
+      "sha256": "b4abad6d848441d55a28a6984259491216e2d3bd975b784ef11719a421758ace"
+    },
+    "examples/phase4/regression/pytest.log": {
+      "bytes": 2867,
+      "sha256": "4446bbc5b1d0e1c2d844fd65964375851b7761613f0773a4fc9b2cfd8b7cf59f"
+    },
+    "examples/phase4/regression/pytest.xml": {
+      "bytes": 48483,
+      "sha256": "97660970745653d096380caa7aeb9e8195c8427d6f27e35cc024b503ca25f39d"
+    },
+    "examples/phase4/regression/pytest_initial_failure.log": {
+      "bytes": 7317,
+      "sha256": "559d92ec61cee86ef0a380fcc7fea4d65df1791c01fa4831fca43d3954a00aa7"
+    },
+    "examples/phase4/regression/pytest_initial_failure.xml": {
+      "bytes": 52663,
+      "sha256": "096c38f9d4df393aadb24231e0479c540ec61db36f6bc437806376e6207c000f"
+    },
+    "examples/phase4/regression/verification.json": {
+      "bytes": 1912,
+      "sha256": "290db3d10eac0fd27288dd9c0375a933c50056c380c8bcb740720919849fce21"
+    },
+    "examples/phase4/run_regression.py": {
+      "bytes": 3962,
+      "sha256": "a7289032b620d604fac8503f605a30febce711179a37dae00ccdc623ab6d0f21"
+    },
+    "examples/track_a_benchmark/.gitattributes": {
+      "bytes": 9,
+      "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+    },
+    "examples/track_a_benchmark/pytest.log": {
+      "bytes": 101,
+      "sha256": "b9d7409fc4f260b805f2363e253561f36ef509c1ea331db1f52dae3d7eecad55"
+    },
+    "examples/track_a_benchmark/pytest.xml": {
+      "bytes": 2610,
+      "sha256": "293606562ce121efd05e40b3e3548d00e905afe83d6a15df0270492df5a7f28e"
+    },
+    "examples/track_a_benchmark/selected185/comparison.json": {
+      "bytes": 32756,
+      "sha256": "f28f175f33b055537ffa37e99754ae90a802ff6c8623a0af9887b1391bd24cd7"
+    },
+    "examples/track_a_benchmark/selected185/comparison.md": {
+      "bytes": 1464,
+      "sha256": "04394e93ce20e96a0a0969800327d92a44ac2ed5f92bc8c20029dc58b5f3fb0a"
+    },
+    "examples/track_b_analyst_ui/.gitattributes": {
+      "bytes": 9,
+      "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+    },
+    "examples/track_b_analyst_ui/final_verification.log": {
+      "bytes": 2540,
+      "sha256": "ffb18fbece28589d653d64148ac64921154d3f17757bc9c3de172eec31ebbebe"
+    },
+    "examples/track_b_analyst_ui/verification.json": {
+      "bytes": 7904,
+      "sha256": "e2742b54b7694fa60a191e2f306e03032b01d95b74f18516aae3aa6ab7556907"
+    },
+    "examples/track_b_analyst_ui/verify_app.py": {
+      "bytes": 2495,
+      "sha256": "eeba96905e908a691e0c2ed85367f437ee5c51aa29cbe16d02ab2d8dc16c24d7"
+    }
+  },
+  "local_tensor_artifacts": {
+    "examples/phase4/regression/both_off/checkpoints/both_off.pt": {
+      "bytes": 951591,
+      "sha256": "bc7df3a84debc88f565e74821859b13693169c3ce22edf4aef4d30e9874dfe63"
+    },
+    "examples/phase4/regression/both_off/checkpoints/both_off_last.pt": {
+      "bytes": 952731,
+      "sha256": "b5608ad234edc2b6e7bc2acc574bde4d8118160ba4d9bac97e56ce7dc5104ba6"
+    },
+    "examples/phase4/regression/both_off/processed/test.pt": {
+      "bytes": 39787,
+      "sha256": "4396666aaace94e714ba29fb2248c4cca0a42f8ec14518be9bf120f8e16e4377"
+    },
+    "examples/phase4/regression/both_off/processed/train.pt": {
+      "bytes": 179107,
+      "sha256": "f73acfc97ba7bf04d71c75374bd734799c7bc2d8c7a9404dec17b6ab53cf1859"
+    },
+    "examples/phase4/regression/both_off/processed/val.pt": {
+      "bytes": 39700,
+      "sha256": "a482fa5f213137628fac76872d1d49b70c7661c1efc8e8847c853b7b4cce62e4"
+    }
+  },
+  "source_and_report_text_hashes": {
+    "docs/FINAL_PLAN_PHASE4_AUDIT.md": {
+      "sha256_utf8_lf": "5f2c4574b6f196ad1fbc8384a4c15e5da8a9b0c488e308a6b0f7d619bbdf3535"
+    },
+    "docs/PHASE4_GB10_HANDOFF.md": {
+      "sha256_utf8_lf": "25b996749a47bef6e02eccc0c2ba9561bbc77826a7d8bc770314bcadca731681"
+    },
+    "docs/PHASE4_CTU13_ACCESS.md": {
+      "sha256_utf8_lf": "e1374c9ffbd0808784793d3a30c240c653cc9e575668f830fd74fed1844057ef"
+    },
+    "docs/TRACK_A_BENCHMARK_AUDIT.md": {
+      "sha256_utf8_lf": "a255a077514816f11dce47e682abd882ffef08a2a391cbb1d62db3fa905c6601"
+    },
+    "docs/TRACK_B_ANALYST_UI_AUDIT.md": {
+      "sha256_utf8_lf": "972f104357f130c7db86267c5ba79f2a06277d33c48424fe5a94b1c0b5b92e04"
+    },
+    "docs/FINAL_PLAN_CHECKLIST.md": {
+      "sha256_utf8_lf": "c8b9e138a8c2312610b6944cee78f58a7b6bdf69d69c317df0e6f0f846ba814e"
+    },
+    "scripts/train.py": {
+      "sha256_utf8_lf": "7c1eea6de2fd27cd9cb36eba2f564ce4a6f57a4b6bbc41bbee314800435df87c"
+    },
+    "scripts/prepare_data.py": {
+      "sha256_utf8_lf": "ed00b3174b5c04375e389087e826fefc991d7906221034437b06df1a7b1c6f24"
+    },
+    "scripts/gpu_preflight.py": {
+      "sha256_utf8_lf": "a725a62e80ee127054cfc9e687586ce743dc5d0e13e5031b8a383ccfc6bcc68f"
+    },
+    "scripts/eval.py": {
+      "sha256_utf8_lf": "ad2f14276cf612a2d9d20f543620cd9f53530832a6d4c0278cc78f247265ac8f"
+    },
+    "scripts/app.py": {
+      "sha256_utf8_lf": "68f20797c6a1e3b0e5be3f3efb23b6a40cb57444f977799d92b5e2b1d64cf969"
+    },
+    "scripts/benchmark_compare.py": {
+      "sha256_utf8_lf": "cea75a0af3a7a0ce5c4c7026ad315521bfe32781fce63b58b43b4481fec165c6"
+    },
+    "scripts/run_baseline.py": {
+      "sha256_utf8_lf": "c81db63d7f1b64bc8199e24ce1906a5e35a399393c22f768780694f4f4274ae2"
+    },
+    "scripts/check_primary_packet_availability.py": {
+      "sha256_utf8_lf": "714ecfddbfd10c4b8731ab3a600f4937a0dfb697e16d0f0824a301fc4dc3af6d"
+    },
+    "src/cybermind/models/graph_encoder.py": {
+      "sha256_utf8_lf": "00da9ed2e9c82e049b32badfd3e95ed9c048d18aaad255fed3f41c4cdea70fc1"
+    },
+    "src/cybermind/evaluation/edge_attention.py": {
+      "sha256_utf8_lf": "b67ca0977c2937d8dfb7be7c8b1700a6b4bc76ac4398eb7f2f3a54e7ec3bc92b"
+    },
+    "src/cybermind/baselines/protocol.py": {
+      "sha256_utf8_lf": "1b7e27d2425efb3ea77e02bb5aa19e7f92ea607c885b0e41a22e846bc86930b5"
+    },
+    "src/cybermind/baselines/logistic.py": {
+      "sha256_utf8_lf": "138eb704b700ced3e9acc874cba6d68331ac22a43926a0348903dabe35106b62"
+    },
+    "src/cybermind/analyst/view.py": {
+      "sha256_utf8_lf": "5cf52660d2c0c66ab73c0ac4e2612ade1acb3a12c3aa02b303acfd513a8ec3d1"
+    },
+    "configs/gb10_full.yaml": {
+      "sha256_utf8_lf": "2a7e10d0e655adcd28aac0dcad62891f5519541b0405738b024628e646f86aa8"
+    },
+    "configs/gb10_baseline.yaml": {
+      "sha256_utf8_lf": "06bf6555ee2ef1abe3efb9378332ca431ea4cba160328c94e18e483f5d5a7c29"
+    },
+    "configs/gb10_edge_only.yaml": {
+      "sha256_utf8_lf": "a41d08889bfd986936b6d33d79a6b946cc0fedc056fe4e46eb90d83cd4e4e0ac"
+    },
+    "configs/gb10_crf_only.yaml": {
+      "sha256_utf8_lf": "634588c9d33bdb42ebd06e1de705537b19f2285c48eccdcebcd1541a70002549"
+    }
+  },
+  "hash_notes": "Evidence hashes are exact bytes; sources/reports use UTF-8 text with CRLF normalized to LF. Paths are project-relative."
+}

@@ -27,6 +27,14 @@ def canonicalize(df, source_file):
     if missing:
         raise ValueError(f'{source_file}: missing {missing}; rebuild with build_corpus.py')
     out = df.copy()
+    # Preserve missing/invalid packet measurements before compatibility filling.
+    # A caller-supplied availability flag cannot certify columns that are absent.
+    packet_valid = pd.Series(True, index=out.index)
+    for name in PACKET_FEATURES:
+        if name not in out:
+            packet_valid[:] = False
+        else:
+            packet_valid &= np.isfinite(pd.to_numeric(out[name], errors='coerce'))
     out['timestamp'] = pd.to_datetime(out['timestamp'], errors='coerce', utc=True).astype('datetime64[ns, UTC]')
     if out.timestamp.isna().any():
         raise ValueError(f'{source_file}: invalid/missing timestamps; chronological chaining requires real time')
@@ -46,6 +54,7 @@ def canonicalize(df, source_file):
                 'flow_packets_s'] + list(PACKET_FEATURES)
     for name in defaults:
         out[name] = pd.to_numeric(out[name], errors='coerce').replace([np.inf, -np.inf], np.nan).fillna(0.) if name in out else 0.
+    out.loc[~packet_valid, 'packet_features_available'] = 0.
     out['source_file'] = str(source_file)
     # Environment identifies one deployment, never a filename or day.
     if 'environment_id' not in out:
@@ -82,7 +91,21 @@ def chronological_partitions(frame, window_seconds, stride_seconds):
             'test': frame[seconds >= second].copy()}
 
 
+def validate_packet_coverage(frames, cfg):
+    """Fail before graph construction when the configured packet contract is unmet."""
+    if not cfg['data'].get('require_packet_features', False):
+        return
+    for index, frame in enumerate(frames):
+        missing = [name for name in PACKET_FEATURES if name not in frame]
+        if missing:
+            raise ValueError(f'Frame {index}: required packet features missing: {missing}')
+        values = frame[list(PACKET_FEATURES)].apply(pd.to_numeric, errors='coerce')
+        if frame.empty or not np.isfinite(values.to_numpy()).all() or not values.packet_features_available.eq(1).all():
+            raise ValueError(f'Frame {index}: require_packet_features=true requires finite packet measurements and 100% availability; flow-only input is insufficient')
+
+
 def prepare_frames(frames, cfg, purpose='primary', normalizer=None):
+    validate_packet_coverage(frames, cfg)
     environments = chain_environments(frames, purpose)
     splits = {k: [] for k in (['train', 'val', 'test'] if purpose == 'primary' else ['test'])}
     reports = []

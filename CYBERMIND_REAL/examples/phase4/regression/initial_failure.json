@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-09-14T08:24:54.562148+00:00",
+  "commands": [
+    {
+      "name": "pytest",
+      "command": [
+        "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "-o",
+        "junit_family=legacy",
+        "--junitxml=examples/phase4/regression/pytest.xml"
+      ],
+      "cpu": false,
+      "exit_code": 1
+    }
+  ],
+  "baseline": {
+    "verified_files": 49,
+    "manifest": {
+      "bytes": 15091,
+      "sha256": "46be0cc83ad87bf462b9c661e6b55935b90427d3e80311287ffff91c7572e90b"
+    }
+  },
+  "passed": false,
+  "error": "See pytest.log"
+}

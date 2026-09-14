@@ -68,7 +68,9 @@ def test_gb10_configuration():
     assert cfg['model']['graph_hidden'] == cfg['model']['temporal_dim'] == 512
     assert cfg['model']['num_stages'] == 7
     assert cfg['train']['precision'] == 'bf16'
-    assert cfg['train']['selection_metric'] == 'val_f1'
+    assert cfg['train']['selection_metric'] == 'val_f1_stage_band'
+    assert cfg['train']['selection_f1_tolerance'] == .05
+    assert cfg['train']['selection_stage_metric'] == 'stage'
     assert cfg['train']['require_cuda'] and cfg['data']['require_normalization']
 
 
@@ -76,12 +78,17 @@ def test_full_gb10_architecture_bf16_cpu_backward():
     torch.set_num_threads(1)
     cfg = train.load_config(ROOT / 'configs/gb10_full.yaml')
     cfg['loss']['pos_weight'] = 2.
-    model = WorldModel(14, **cfg['model'])
+    from cybermind.data.graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
+    model = WorldModel(len(NODE_FEATURE_NAMES), **cfg['model'], **train.stage_model_kwargs(cfg))
+    batch = samples()[:1]
+    for state in batch[0].states:
+        state.x = torch.randn(3, len(NODE_FEATURE_NAMES))
+        state.edge_attr = torch.randn(state.edge_index.size(1), len(EDGE_FEATURE_NAMES))
     # This laptop's oneDNN backend lacks bf16 backward. Exercise portable
     # PyTorch kernels here; this is not a GB10 CUDA kernel certification.
     with torch.backends.mkldnn.flags(enabled=False):
         with train.autocast_context(torch.device('cpu'), 'bf16'):
-            loss, parts = train.batch_loss(model, samples()[:1], cfg, torch.device('cpu'))
+            loss, parts = train.batch_loss(model, batch, cfg, torch.device('cpu'))
         loss.backward()
     assert torch.isfinite(loss)
     assert all(torch.isfinite(p.grad).all() for p in model.parameters() if p.grad is not None)

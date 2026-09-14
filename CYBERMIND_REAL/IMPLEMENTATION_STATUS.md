@@ -1,3 +1,13 @@
+# Current status — 2026-09-14
+
+Phase 3 passes under the reviewed protocol on synthetic verification data (selected epoch 185); neighboring evaluated epochs 98 and 200 fail step 1. Phase 4 and parallel Tracks A/B implementation checks are complete; see `docs/FINAL_PLAN_PHASE4_AUDIT.md`. The authoritative current checklist is `docs/FINAL_PLAN_CHECKLIST.md`; Phase 3 evidence is `PHASE3_FINAL_AUDIT.md`.
+
+The public primary PCAP archives are available, totaling 477,321,665,202 compressed bytes. Real-data acquisition, verified label alignment, packet enrichment and strict preparation remain incomplete. The project is not ready for production training. Full acquisition and GB10 training remain Phase 5 work requiring separate authorization.
+
+The older implementation inventory below is historical and is not a current readiness certification.
+
+---
+
 # CYBERMIND — Implementation Status
 
 > Updated handoff, 2026-09-11: see `docs/PHASE01_FINAL_REPORT.md` for the current
