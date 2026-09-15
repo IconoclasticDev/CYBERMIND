@@ -1,0 +1,15 @@
+{
+  "review_date": "2026-09-16",
+  "decision_record": "docs/REAL_DATA_R0_REVIEWER_DECISION_2026_09_16.md",
+  "authorized_phase": "R0",
+  "later_phases_authorized": false,
+  "selected_dates": ["2018-02-14", "2018-03-01", "2018-03-02"],
+  "lateral_movement_transition_included": false,
+  "required_coverage_disclosure": "Real-chunk validation does not include a Lateral Movement transition. Kill-chain-diversity validation on real data covers the other represented stages only; it does not validate Lateral Movement.",
+  "disclosure_required_in": ["all stage-coverage artifacts", "all illegal-transition-rate artifacts", "R4", "R5", "R6", "final submission architecture section", "final submission novelty section"],
+  "real_data_evaluation_status": "not yet performed",
+  "runtime_schema_estimate_hours": [2, 4],
+  "runtime_feasibility_stop_minutes": 60,
+  "runtime_work_started": false,
+  "timeline_fit": "unknown; awaiting remaining deadline"
+}
