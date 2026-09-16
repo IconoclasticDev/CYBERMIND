@@ -92,3 +92,26 @@ def test_full_gb10_architecture_bf16_cpu_backward():
         loss.backward()
     assert torch.isfinite(loss)
     assert all(torch.isfinite(p.grad).all() for p in model.parameters() if p.grad is not None)
+
+
+def test_durable_epoch_artifacts_and_rollout_monitor(tmp_path):
+    payload = {'epoch': 1, 'value': torch.tensor([2.0])}
+    checkpoint = tmp_path / 'epochs' / 'epoch_0001.pt'
+    history = tmp_path / 'history.json'
+    metrics = tmp_path / 'metrics.jsonl'
+    train.atomic_torch_save(payload, checkpoint)
+    train.atomic_json_write(history, [{'epoch': 1}])
+    train.append_durable_jsonl(metrics, {'epoch': 1, 'loss': 0.5})
+    assert torch.load(checkpoint, weights_only=False)['epoch'] == 1
+    assert train.json.loads(history.read_text()) == [{'epoch': 1}]
+    assert train.json.loads(metrics.read_text()) == {'epoch': 1, 'loss': 0.5}
+    assert not list(tmp_path.rglob('*.tmp'))
+
+    model = WorldModel(14, graph_hidden=8, graph_out=8, temporal_dim=16,
+                       nhead=2, temporal_layers=1, graph_heads=2, num_stages=7,
+                       dropout=0., use_crf_stage=True)
+    cfg = {'eval': {'n_rollouts': 2}, 'train': {'collapse_monitor': {
+        'rollout_steps': 4, 'n_rollouts': 2, 'seed': 0}}}
+    result = train.rollout_stage_monitor(model, samples(), cfg, torch.device('cpu'))
+    assert result['split'] == 'val' and len(result['per_step']) == 4
+    assert all(step['samples'] == 3 and step['illegal_count'] == 0 for step in result['per_step'])

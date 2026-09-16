@@ -2,8 +2,10 @@
 """Joint training with train-only class weights and validation F1 selection."""
 from pathlib import Path
 import argparse
+from collections import Counter
 import json
 import math
+import os
 import re
 import sys
 from contextlib import nullcontext
@@ -21,6 +23,65 @@ from cybermind.losses import (gaussian_transition_loss, infiltration_loss, stage
 from cybermind.utils.config import load_config, edge_model_kwargs, stage_model_kwargs
 from cybermind.utils.repro import seed_everything
 from cybermind.utils.checkpoint_selection import CheckpointSelection
+
+
+def atomic_torch_save(payload, path):
+    path = Path(path); path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(path.name + '.tmp')
+    torch.save(payload, temporary)
+    temporary.replace(path)
+
+
+def atomic_json_write(path, value):
+    path = Path(path); path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(path.name + '.tmp')
+    temporary.write_text(json.dumps(value, indent=2), encoding='utf-8')
+    temporary.replace(path)
+
+
+def append_durable_jsonl(path, value):
+    path = Path(path); path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open('a', encoding='utf-8', newline='\n') as handle:
+        handle.write(json.dumps(value, separators=(',', ':')) + '\n')
+        handle.flush()
+        os.fsync(handle.fileno())
+
+
+@torch.no_grad()
+def rollout_stage_monitor(model, dataset, cfg, device):
+    """Evaluate the fixed four-step diversity signal on the validation split."""
+    options = cfg['train']['collapse_monitor']
+    steps = int(options.get('rollout_steps', 4))
+    n_rollouts = int(options.get('n_rollouts', cfg.get('eval', {}).get('n_rollouts', 4)))
+    histograms = [Counter() for _ in range(steps)]
+    illegal = [0] * steps
+    allowed = model.stage_decoder.allowed_transitions
+    model.eval()
+    for sample in dataset:
+        observed = [replace(state, x=state.x.to(device, non_blocking=True),
+                            edge_index=state.edge_index.to(device, non_blocking=True),
+                            edge_attr=state.edge_attr.to(device, non_blocking=True))
+                    for state in sample.states[:-1]]
+        result = model.forecast(observed, k=steps, n_rollouts=n_rollouts,
+                                seed=int(options.get('seed', 0)), explain=False)
+        decoded = result['decoded_stages']
+        for index in range(steps):
+            source, destination = int(decoded[index]), int(decoded[index + 1])
+            histograms[index][destination] += 1
+            illegal[index] += int(not bool(allowed[source, destination]))
+    records = []
+    sample_count = len(dataset)
+    for index, histogram in enumerate(histograms, start=1):
+        distinct = len(set(histogram) - {6})
+        unknown = histogram.get(6, 0)
+        collapsed = distinct < 2 or unknown == sample_count
+        records.append({'step': index, 'samples': sample_count,
+                        'decoded_histogram': {str(key): value for key, value in sorted(histogram.items())},
+                        'distinct_non_unknown': distinct, 'unknown_count': unknown,
+                        'illegal_count': illegal[index - 1], 'single_stage_collapse': collapsed})
+    return {'split': 'val', 'rollout_steps': steps, 'n_rollouts': n_rollouts,
+            'seed': int(options.get('seed', 0)), 'per_step': records,
+            'collapsed': any(record['single_stage_collapse'] for record in records)}
 
 
 def training_class_weight(dataset):
@@ -295,7 +356,18 @@ def main():
             torch.save(selected_payload, checkpoint)
         del selected_payload
     history_path = root / cfg['train'].get('history_path', 'results/train_history.json'); history_path.parent.mkdir(parents=True, exist_ok=True)
+    metrics_jsonl = root / cfg['train'].get('metrics_jsonl_path', str(history_path.with_suffix('.jsonl')))
+    status_path = root / cfg['train'].get('status_path', str(history_path.with_name(history_path.stem + '_status.json')))
+    epoch_directory = root / cfg['train'].get('epoch_checkpoint_dir', str(checkpoint.with_name(checkpoint.stem + '_epochs')))
+    checkpoint_every = int(cfg['train'].get('checkpoint_every', 0))
+    if checkpoint_every < 0:
+        raise ValueError('train.checkpoint_every must be nonnegative')
+    monitor = cfg['train'].get('collapse_monitor', {})
+    if monitor and (not isinstance(monitor, dict) or monitor.get('split', 'val') != 'val'):
+        raise ValueError('collapse_monitor must be a mapping on the validation split')
     epochs = args.epochs if args.epochs > 0 else int(cfg['train']['epochs'])
+    atomic_json_write(status_path, {'status': 'running', 'start_epoch': start_epoch + 1,
+                                    'target_epochs': epochs, 'last_completed_epoch': start_epoch})
     print({'device': str(device), 'precision': precision, 'class_counts': counts, 'pos_weight': weight, 'selection': selection.metric})
     for ep in range(start_epoch, epochs):
         model.train(); sums = {}; count = 0; optimizer.zero_grad(set_to_none=True)
@@ -318,6 +390,10 @@ def main():
             for key, value in {'loss': float(raw_loss.detach()), **parts}.items(): sums[key] = sums.get(key, 0.) + value * len(batch)
         metrics = validate(model, val_loader, cfg, device, precision)
         rec = {'epoch': ep + 1, 'train': {k: v / count for k, v in sums.items()}, 'val': metrics}
+        monitor_due = (monitor.get('enabled', False) and ep + 1 >= int(monitor.get('start_epoch', 1)) and
+                       (ep + 1 - int(monitor.get('start_epoch', 1))) % int(monitor.get('cadence_epochs', 1)) == 0)
+        if monitor_due:
+            rec['rollout_monitor'] = rollout_stage_monitor(model, val, cfg, device)
         history.append(rec); print(rec)
         improved = selection.update(ep + 1, metrics)
         stale = 0 if improved else stale + 1
@@ -333,11 +409,25 @@ def main():
                    'class_counts': counts, 'pos_weight': weight, 'normalization': normalization,
                    'normalization_path': str(normalization_path) if normalization else None,
                    'epochs_without_improvement': stale, 'history': history}
-        if improved: torch.save(payload, checkpoint)
-        torch.save(payload, checkpoint.with_name(checkpoint.stem + '_last.pt'))
-        history_path.write_text(json.dumps(history, indent=2))
+        if improved: atomic_torch_save(payload, checkpoint)
+        atomic_torch_save(payload, checkpoint.with_name(checkpoint.stem + '_last.pt'))
+        if checkpoint_every and (ep + 1) % checkpoint_every == 0:
+            atomic_torch_save(payload, epoch_directory / f'epoch_{ep + 1:04d}.pt')
+        atomic_json_write(history_path, history)
+        append_durable_jsonl(metrics_jsonl, rec)
+        if rec.get('rollout_monitor', {}).get('collapsed') and monitor.get('stop_on_collapse', False):
+            atomic_json_write(status_path, {'status': 'stopped_on_first_collapse',
+                                            'last_completed_epoch': ep + 1,
+                                            'rollout_monitor': rec['rollout_monitor']})
+            print('Stopping on first observed validation rollout collapse.'); break
+        atomic_json_write(status_path, {'status': 'running', 'last_completed_epoch': ep + 1,
+                                        'target_epochs': epochs, 'epochs_without_improvement': stale})
         if stale >= int(cfg['train'].get('early_stopping_patience', 10)):
+            atomic_json_write(status_path, {'status': 'early_stopped', 'last_completed_epoch': ep + 1,
+                                            'epochs_without_improvement': stale})
             print('Early stopping on validation checkpoint selection.'); break
+    else:
+        atomic_json_write(status_path, {'status': 'completed_epoch_budget', 'last_completed_epoch': epochs})
     print('Best validation checkpoint:', checkpoint)
 
 
