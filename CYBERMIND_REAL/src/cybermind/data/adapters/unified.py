@@ -86,10 +86,29 @@ class UnifiedAdapter:
             if outcol in df.columns:
                 col = outcol
             o[outcol]=pd.to_numeric(df[col],errors='coerce').replace([np.inf, -np.inf], np.nan).fillna(0.0) if col else 0.0
+        packet_valid = pd.Series(True, index=df.index)
+        for column in PACKET_FEATURES:
+            if column not in df:
+                packet_valid[:] = False
+            else:
+                packet_valid &= np.isfinite(pd.to_numeric(df[column], errors='coerce'))
+        if 'packet_features_available' in df:
+            packet_valid &= pd.to_numeric(df['packet_features_available'], errors='coerce').eq(1)
         for column in PACKET_FEATURES:
             o[column] = pd.to_numeric(df[column], errors='coerce').replace([np.inf, -np.inf], np.nan).fillna(0.0) if column in df else 0.0
+        o['packet_features_available'] = packet_valid.astype(float)
         o['label']=df[label].astype(str).str.strip().str.upper() if label else 'BENIGN'
-        o['attack_stage']=o['label'].map(self._stage).astype('int16')
+        stage = 'attack_stage' if 'attack_stage' in df else ('stage' if 'stage' in df else None)
+        o['attack_stage'] = (pd.to_numeric(df[stage], errors='coerce').fillna(o['label'].map(self._stage)).astype('int16')
+                             if stage else o['label'].map(self._stage).astype('int16'))
+        # Keep audited join evidence in the canonical corpus so strict
+        # validation can still reject an unverified upstream label.
+        for column in ('label_verified', 'label_refinement_verified', 'corrected_refinement_status',
+                       'label_method', 'corrected_rule_source', 'original_rule_source',
+                       'flow_feature_source', 'capture_date', 'capture_member',
+                       'source_pcap_sha256'):
+            if column in df:
+                o[column] = df[column]
         o['source']=self.source
         if 'environment_id' in df:
             o['environment_id'] = df['environment_id']

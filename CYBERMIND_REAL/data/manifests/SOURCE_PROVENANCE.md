@@ -116,6 +116,31 @@ traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
 Kill-chain-diversity validation on real data covers the other represented stages
 only; it does not validate Lateral Movement.**
 
+## Completed R2 strict graph preparation — 2026-09-16
+
+All 1,186,046 R1 rows survived canonical conversion. Strict validation ran with
+packet features explicitly required on both R1 and canonical artifacts, with no
+missing or invalid endpoints, timestamps, labels, verification flags, or packet
+rows. `prepare_data.py --strict` then produced 1,699 train, 428 validation, and
+431 test sequences using 60-second windows, 30-second stride, 16-state histories,
+and training-only normalization fingerprint
+`516ca73d339569212c98a5d698f9f54b54f5cbb0d4f995b8216c7eb9614f027d`.
+
+The deterministic graph audit compared every node and directed edge in one
+attack-anchored 60-second window per frozen date with canonical flows. Node and
+edge counts, endpoint pairs, aggregate bytes, and aggregate packets all matched.
+See `docs/REAL_DATA_R2_AUDIT.md` and
+`examples/real_data_validation/r2/output_audit.json`.
+
+`flow_feature_source: CYBERMIND custom directional packet exporter; 40-column
+schema; satisfies the project's 20-field packet-feature contract when verified,
+but is not CICFlowMeter and omits approximately 67 of the pinned CICFlowMeter
+traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
+
+**Real-chunk validation does not include a Lateral Movement transition.
+Kill-chain-diversity validation on real data covers the other represented stages
+only; it does not validate Lateral Movement.**
+
 ## Completed R1 corrected labeling — 2026-09-16
 
 R1 labeled all 15 R0 outputs and preserved all 1,186,046 rows. The output

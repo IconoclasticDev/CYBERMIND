@@ -53,4 +53,6 @@ data/one_day_join/
 data/raw/CIC-IDS-2018/real_chunk/
 data/real_chunk/flows_raw/
 data/real_chunk/labeled/
+data/intermediate_real_chunk_r2/
+data/processed_real_chunk_r2/
 .r0-tools/

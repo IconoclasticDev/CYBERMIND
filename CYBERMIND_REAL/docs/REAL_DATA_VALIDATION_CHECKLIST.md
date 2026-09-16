@@ -46,15 +46,15 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [x] R1.4 Document matching, timezone, zero time tolerance, overlapping rules, and flow-boundary semantics; hash the methodology.
 - [x] Commit the discrepancy log and `REAL_DATA_R1_AUDIT.md`; proceed to pre-authorized R2 after R1 pass.
 
-## R2 — STARTING (pre-authorized after R1 pass)
+## R2 — COMPLETE; audited PASS
 
-- [ ] R2.1 Build the corpus from R1 outputs.
-- [ ] R2.2 Strict validation with packet features explicitly required; retain exact failures.
-- [ ] R2.3 Strict preparation with `require_packet_features: true`.
-- [ ] R2.4 Compare real graph endpoint identities/edges with source flows.
-- [ ] Audit end-to-end results; R2 failure blocks R3. Proceed to pre-authorized R3 only after passing.
+- [x] R2.1 Build the corpus from all 15 R1 outputs; reconcile 1,186,046 canonical rows.
+- [x] R2.2 Strict validation on R1 and canonical data with packet features explicitly required; all counts zero.
+- [x] R2.3 Strict preparation with `require_packet_features: true`; 2,558 sequences produced.
+- [x] R2.4 Compare real graph endpoint identities, directed edges, bytes, and packets with source flows on all three dates.
+- [x] Audit end-to-end results in `REAL_DATA_R2_AUDIT.md`; proceed to pre-authorized R3 after PASS.
 
-## R3 — NOT STARTED
+## R3 — STARTING (pre-authorized after R2 pass)
 
 - [ ] R3.1 Evaluate the preserved epoch-185 checkpoint; verify its preprocessing contract before inference.
 - [ ] R3.2 Save per-window stage, illegal-transition, infiltration, and confidence outputs.

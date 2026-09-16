@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "selection": "first corrected non-Benign-stage flow per frozen date; 60-second half-open window",
+  "records": [
+    {
+      "date": "2018-02-14",
+      "canonical_files": [
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-02-14\\UCAP172.31.69.25.complete_records.reviewed_2026-09-16.parquet",
+          "sha256": "f88fa70ea1f8582eed4deb5d3e09b7624ae17b70e6d11b9749cd08c93071cf8d"
+        }
+      ],
+      "anchor_utc": "2018-02-14T14:33:26.718730927+00:00",
+      "window_rows": 4006,
+      "stage_ids": [
+        0,
+        2
+      ],
+      "source_node_count": 4,
+      "graph_node_count": 4,
+      "source_directed_pair_count": 6,
+      "graph_directed_edge_count": 6,
+      "missing_pairs": [],
+      "extra_pairs": [],
+      "numeric_mismatch_pairs": [],
+      "sample_edges": [
+        [
+          "172.31.69.25",
+          "18.221.219.4"
+        ],
+        [
+          "172.31.69.25",
+          "190.242.38.11"
+        ],
+        [
+          "172.31.69.25",
+          "5.188.86.56"
+        ],
+        [
+          "18.221.219.4",
+          "172.31.69.25"
+        ],
+        [
+          "190.242.38.11",
+          "172.31.69.25"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "date": "2018-03-01",
+      "canonical_files": [
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-01\\capEC2AMAZ-O4EL3NG-172.31.69.13_part1.parquet",
+          "sha256": "f1f113e3a9ac379334691dd14d1ca5476f4f88f17d950768fde4560083802a73"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-01\\capEC2AMAZ-O4EL3NG-172.31.69.13_part2.parquet",
+          "sha256": "152e5dfbbe81e275aa46e4594f1e78a4c7b5205efddc995aee70de3cb2d18857"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-01\\capEC2AMAZ-O4EL3NG-172.31.69.13_part3.parquet",
+          "sha256": "be29e562a8914c6df340d79be1d20b685e7e17bee9ec9ac7dac1ceffe0302e34"
+        }
+      ],
+      "anchor_utc": "2018-03-01T13:53:11.312689066+00:00",
+      "window_rows": 112,
+      "stage_ids": [
+        0,
+        2
+      ],
+      "source_node_count": 20,
+      "graph_node_count": 20,
+      "source_directed_pair_count": 36,
+      "graph_directed_edge_count": 36,
+      "missing_pairs": [],
+      "extra_pairs": [],
+      "numeric_mismatch_pairs": [],
+      "sample_edges": [
+        [
+          "1.234.27.248",
+          "172.31.69.13"
+        ],
+        [
+          "104.16.100.29",
+          "172.31.69.13"
+        ],
+        [
+          "13.32.168.125",
+          "172.31.69.13"
+        ],
+        [
+          "14.116.251.240",
+          "172.31.69.13"
+        ],
+        [
+          "141.212.122.123",
+          "172.31.69.13"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "date": "2018-03-02",
+      "canonical_files": [
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.10.parquet",
+          "sha256": "079ad9ed34b2c5f42b01b3a3fd681d1713db97ad8509530e00cee7f322a85cab"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.12.parquet",
+          "sha256": "ee9919c151ca9b42da7c3b58180fc6442a3141a32a866231c4251088d90f6db8"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.14.parquet",
+          "sha256": "ebd8b95590a9df1ff664b9b2d8b7be9ee0412d190b776efbd75f1567c08ca007"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.17.parquet",
+          "sha256": "e84426624c2757c071aa2841809329d871c420924b97065d9ea39f8f2ac40766"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.23.parquet",
+          "sha256": "8a05b12e0e3abedfae3bb2dca6c8ca268b1e366bfbaca40535e5c60ed50d2a72"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.26.parquet",
+          "sha256": "c73b5f3f812f112ce15840fc619c34f1fedcdcbf08baa98df059e08d8eb46e7c"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.26a.parquet",
+          "sha256": "86130fe29cd8dd4586568d270d11b30487c832927c7f43807da143cb394c8f4c"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.29.parquet",
+          "sha256": "b3cd9bb99ec12e0f0dc7f9143cfd08f934563b1e16f868768e3505748189d2b4"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.30.parquet",
+          "sha256": "413462166a57771d856c59022f2539bcb77238fef22b4f5a9b0d22b3bb83324c"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.6.parquet",
+          "sha256": "eae3a88e37e9033eaca80a10615bbfa6bbdee1df6dd5df016f8f6ff1b3383e83"
+        },
+        {
+          "path": "D:\\Abhinav\\College\\SIH\\CYBERMIND_ONE_CLICK_128GB_PORTABLE\\CYBERMIND_REAL\\data\\intermediate_real_chunk_r2\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.8.parquet",
+          "sha256": "95671d17e83b995df8e045cb22a770cabf0745ef1c05c4c15fffb332e959b436"
+        }
+      ],
+      "anchor_utc": "2018-03-02T14:13:28.407290936+00:00",
+      "window_rows": 159,
+      "stage_ids": [
+        0,
+        4
+      ],
+      "source_node_count": 36,
+      "graph_node_count": 36,
+      "source_directed_pair_count": 59,
+      "graph_directed_edge_count": 59,
+      "missing_pairs": [],
+      "extra_pairs": [],
+      "numeric_mismatch_pairs": [],
+      "sample_edges": [
+        [
+          "104.198.213.88",
+          "172.31.69.8"
+        ],
+        [
+          "113.160.208.184",
+          "172.31.69.26"
+        ],
+        [
+          "138.118.2.81",
+          "172.31.69.8"
+        ],
+        [
+          "172.31.69.10",
+          "172.31.69.31"
+        ],
+        [
+          "172.31.69.10",
+          "212.92.121.57"
+        ]
+      ],
+      "passed": true
+    }
+  ]
+}

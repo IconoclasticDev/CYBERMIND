@@ -109,3 +109,36 @@ def test_adapter_preserves_packet_fields_and_missingness(tmp_path):
     plain = UnifiedAdapter('CIC-IDS2018')._convert_df(pd.DataFrame({'Source IP':['1'], 'Destination IP':['2'], 'Label':['BENIGN']}))
     assert plain.packet_features_available.iloc[0] == 0
     assert plain.attack_stage.iloc[0] == 0
+
+
+def test_adapter_preserves_audited_stage_and_label_verification():
+    row = {
+        'timestamp': '2018-03-01T20:00:00Z',
+        'src': '172.31.69.13',
+        'dst': '162.125.18.133',
+        'label': 'Infiltration - Dropbox Download',
+        'stage': 2,
+        'label_verified': True,
+        'label_refinement_verified': False,
+        'corrected_refinement_status': 'explicit-test-status',
+    }
+    row.update({name: 1.0 for name in PACKET_FEATURES})
+
+    converted = UnifiedAdapter('CIC-IDS2018')._convert_df(pd.DataFrame([row]))
+
+    assert converted.attack_stage.tolist() == [2]
+    assert converted.label_verified.tolist() == [True]
+    assert converted.label_refinement_verified.tolist() == [False]
+    assert converted.corrected_refinement_status.tolist() == ['explicit-test-status']
+
+
+def test_adapter_cannot_certify_synthesized_packet_values():
+    row = {'Source IP': '1', 'Destination IP': '2', 'Label': 'BENIGN'}
+    row.update({name: 1.0 for name in PACKET_FEATURES})
+    row['ttl_mean'] = float('nan')
+    row['packet_features_available'] = 1
+
+    converted = UnifiedAdapter('CIC-IDS2018')._convert_df(pd.DataFrame([row]))
+
+    assert converted.ttl_mean.tolist() == [0.0]
+    assert converted.packet_features_available.tolist() == [0.0]
