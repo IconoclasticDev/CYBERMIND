@@ -11,3 +11,5 @@ MITRE ATT&CK,knowledge,ontology,n/a,versioned knowledge,n/a,STIX 2.1 snapshot
 CAPEC,knowledge,ontology,n/a,versioned knowledge,n/a,XML/ZIP snapshot
 NVD,knowledge,vulnerability records,n/a,versioned API snapshot,n/a,API snapshot
 NCIIPC,context,public reports/contact,n/a,n/a,n/a,manual review only
+CIC-IDS2018-Feb14-victim-precheck,failed_precheck_not_training_ready,pcap,real victim endpoints,original schedule join FAILED,not validated,SHA256 008f18cce0ff420ce013eba6d97ae0b974f36028a0707a977f78d4bfd7f48afc; exact ZIP member acquired; final PCAP record truncated; see SOURCE_PROVENANCE.md
+CIC-IDS2018-Feb14-victim-reviewed-derivative,approved_R0_input_not_training_ready,pcap,real victim endpoints,unlabeled,not validated,SHA256 7fc8442ebf996dc065bbbad3cfb6a9bcde247b58cb8e459fca144a1bbf607394; 4718327 complete records; reviewer-approved final-record exclusion; see SOURCE_PROVENANCE.md

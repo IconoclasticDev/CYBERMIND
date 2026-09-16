@@ -1,5 +1,26 @@
 # CICFlowMeter runtime and schema work — estimate before execution
 
+**Closed incomplete on continuation: the original hard deadline elapsed during
+the interruption. No further setup is running or queued by this task.** See
+`REAL_DATA_R0_RUNTIME_RESULT.md` for evidence and uncompleted checks. Earlier
+future-tense text below is retained as the original estimate/time-box record.
+
+## Superseding user instruction and active timer
+
+The user rejected extension beyond the original cap: **60-minute feasibility
+checkpoint; 90-minute absolute hard stop** for setup/schema work, including
+interactive diagnosis. The earlier 2–4-hour estimate below is historical and
+does not authorize that duration. No unattended retries or clock extensions.
+
+Started: **2026-09-15 19:41:17 UTC** (2026-09-16 01:11:17 IST).
+Feasibility checkpoint: **20:41:17 UTC**.
+Absolute hard stop: **21:11:17 UTC**.
+All setup subprocesses must be bounded by the remaining time. If feasible early,
+finish and report early; do not consume the time box merely because it exists.
+Current work is R0 only. Later phases remain unauthorized.
+
+## Superseded initial estimate
+
 2026-09-16. **Runtime pinning, installation, builds and smoke exports have not
 started.** Estimate based on the existing toolchain review, not measured setup
 time. No callable Java/CICFlowMeter toolchain was found in that review.
