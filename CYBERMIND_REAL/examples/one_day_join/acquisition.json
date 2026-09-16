@@ -1,0 +1,19 @@
+{
+  "source_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Wednesday-14-02-2018/pcap.zip",
+  "member": {
+    "name": "pcap/UCAP172.31.69.25",
+    "bytes": 852795392,
+    "compressed_bytes": 419348396,
+    "offset": 39485808718,
+    "crc32": "c2144ce9",
+    "compression": 8
+  },
+  "http_range_start": 39485808769,
+  "scope": "Complete Feb 14 victim-host capture, not all 450 environment captures",
+  "capture": "data\\raw\\CIC-IDS-2018\\one_day_2018-02-14\\UCAP172.31.69.25.pcap",
+  "capture_bytes": 852795392,
+  "sha256": "008f18cce0ff420ce013eba6d97ae0b974f36028a0707a977f78d4bfd7f48afc",
+  "crc32": "c2144ce9",
+  "complete_member_verified": true,
+  "seconds": 198.07800000000861
+}

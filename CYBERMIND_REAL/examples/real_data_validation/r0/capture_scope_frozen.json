@@ -1,0 +1,242 @@
+{
+  "status": "frozen_before_acquisition",
+  "frozen_at_utc": "2026-09-16T05:19:01Z",
+  "selected_dates": [
+    "2018-02-14",
+    "2018-03-01",
+    "2018-03-02"
+  ],
+  "feb14_input": "data/raw/CIC-IDS-2018/one_day_2018-02-14/UCAP172.31.69.25.complete_records.reviewed_2026-09-16.pcap",
+  "feb14_evidence": "examples/real_data_validation/r0/feb14_derivative.json",
+  "additional_members": [
+    {
+      "date": "2018-03-01",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Thursday-01-03-2018/pcap.zip",
+      "archive_bytes": 52358069106,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-01.json",
+      "scope_reason": "All archive parts for the documented March 1 infiltration victim 172.31.69.13.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.13 part1",
+        "bytes": 150323355,
+        "compressed_bytes": 137301127,
+        "offset": 32856472564,
+        "crc32": "03b2a1f2",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-01/capEC2AMAZ-O4EL3NG-172.31.69.13_part1.pcap"
+    },
+    {
+      "date": "2018-03-01",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Thursday-01-03-2018/pcap.zip",
+      "archive_bytes": 52358069106,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-01.json",
+      "scope_reason": "All archive parts for the documented March 1 infiltration victim 172.31.69.13.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.13 part2",
+        "bytes": 36372624,
+        "compressed_bytes": 29272564,
+        "offset": 32993773763,
+        "crc32": "f8b3ba27",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-01/capEC2AMAZ-O4EL3NG-172.31.69.13_part2.pcap"
+    },
+    {
+      "date": "2018-03-01",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Thursday-01-03-2018/pcap.zip",
+      "archive_bytes": 52358069106,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-01.json",
+      "scope_reason": "All archive parts for the documented March 1 infiltration victim 172.31.69.13.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.13 part3",
+        "bytes": 129061367,
+        "compressed_bytes": 92388163,
+        "offset": 33023046399,
+        "crc32": "25f90261",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-01/capEC2AMAZ-O4EL3NG-172.31.69.13_part3.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.23",
+        "bytes": 104272064,
+        "compressed_bytes": 75353872,
+        "offset": 23707223143,
+        "crc32": "8c48f66c",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.23.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.17",
+        "bytes": 82005553,
+        "compressed_bytes": 57868152,
+        "offset": 23649322311,
+        "crc32": "5d0c55b7",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.17.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.14",
+        "bytes": 87102472,
+        "compressed_bytes": 62160821,
+        "offset": 23523917780,
+        "crc32": "18f9cc03",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.14.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.12",
+        "bytes": 65936253,
+        "compressed_bytes": 49158507,
+        "offset": 23355225825,
+        "crc32": "3e7c0d22",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.12.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.10",
+        "bytes": 94040264,
+        "compressed_bytes": 64608832,
+        "offset": 23290616927,
+        "crc32": "b88ed1d1",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.10.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.8",
+        "bytes": 132524910,
+        "compressed_bytes": 104667123,
+        "offset": 24043073150,
+        "crc32": "eb43142d",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.8.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.6",
+        "bytes": 105498065,
+        "compressed_bytes": 71981077,
+        "offset": 23971092008,
+        "crc32": "793b064b",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.6.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.26",
+        "bytes": 48385666,
+        "compressed_bytes": 28320019,
+        "offset": 23782577605,
+        "crc32": "0ac8316a",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.26.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.26a",
+        "bytes": 13122020,
+        "compressed_bytes": 9806860,
+        "offset": 23810897690,
+        "crc32": "3f88396e",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.26a.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.29",
+        "bytes": 76878855,
+        "compressed_bytes": 48853432,
+        "offset": 23820704617,
+        "crc32": "a4ddcf97",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.29.pcap"
+    },
+    {
+      "date": "2018-03-02",
+      "archive_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+      "archive_bytes": 44789835888,
+      "archive_directory_evidence": "examples/real_data_validation/r0/archive_2018-03-02.json",
+      "scope_reason": "All archive captures matching the ten bot victims in CIC Table 2; both files retained for 172.31.69.26.",
+      "member": {
+        "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.30",
+        "bytes": 78349250,
+        "compressed_bytes": 49310413,
+        "offset": 23869558115,
+        "crc32": "87b09f19",
+        "compression": 8
+      },
+      "target": "data/raw/CIC-IDS-2018/real_chunk/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.30.pcap"
+    }
+  ],
+  "additional_compressed_bytes": 881050962,
+  "additional_uncompressed_bytes": 1203872718,
+  "labels_applied": false,
+  "scope_note": "Attack-relevant complete victim captures, not complete daily host populations.",
+  "lateral_movement_transition_included": false
+}

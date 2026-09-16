@@ -1,0 +1,2 @@
+usage: acquire_r0_fallback_captures.py [-h] [--freeze] [--download]
+acquire_r0_fallback_captures.py: error: choose exactly one of --freeze or --download

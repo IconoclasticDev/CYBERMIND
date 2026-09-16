@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\scripts\acquire_r0_fallback_captures.py", line 205, in <module>
+    main()
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\scripts\acquire_r0_fallback_captures.py", line 200, in main
+    results.append(acquire(record))
+                   ^^^^^^^^^^^^^^^
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\scripts\acquire_r0_fallback_captures.py", line 120, in acquire
+    raise FileExistsError(f'Preserve existing acquisition/evidence: {target}')
+FileExistsError: Preserve existing acquisition/evidence: D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\data\raw\CIC-IDS-2018\real_chunk\2018-03-01\capEC2AMAZ-O4EL3NG-172.31.69.13_part1.pcap

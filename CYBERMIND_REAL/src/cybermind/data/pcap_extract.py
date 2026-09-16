@@ -57,37 +57,44 @@ def _add_sequence(flow, sequence, length):
     flow['sequence_ranges'] = merged
 
 
-def _row(key, f, label):
+def _row(key, f, label=None):
     src, dst, proto, sport, dport = key
     duration = max(0.0, f['last'] - f['first'])
     payload = np.asarray(f['payloads'], dtype=np.float64)
     windows = np.asarray(f['windows'], dtype=np.float64)
     count = f['packets']
-    stage = classify_stage(label)
+    if payload.size == 1:
+        payload_mean = payload_min = payload_max = q25 = q50 = q75 = float(payload[0])
+        payload_variance = 0.0
+    else:
+        payload_mean, payload_variance = float(payload.mean()), float(payload.var())
+        payload_min, payload_max = float(payload.min()), float(payload.max())
+        q25, q50, q75 = (float(value) for value in np.quantile(payload, (.25, .5, .75)))
     # Aggregate values are available only after the last included packet.
     # Dating them at session start leaks later telemetry into earlier windows.
-    return dict(timestamp=pd.to_datetime(f['last'], unit='s'),
+    row = dict(timestamp=pd.to_datetime(f['last'], unit='s'),
                 session_start=pd.to_datetime(f['first'], unit='s'), src=src, dst=dst,
                 protocol=float(proto), src_port=float(sport), dst_port=float(dport),
                 duration=duration, bytes_fwd=float(f['bytes']), bytes_bwd=0.0,
                 packets_fwd=float(count), packets_bwd=0.0,
                 mean_fwd_iat=float(np.mean(f['iats'])) if f['iats'] else 0.0,
                 mean_bwd_iat=0.0, flow_bytes_s=f['bytes']/max(duration, 1e-6),
-                flow_packets_s=count/max(duration, 1e-6), label=label,
-                infiltration=float(stage != 0), stage=stage, attack_stage=stage,
+                flow_packets_s=count/max(duration, 1e-6),
                 ttl_mean=float(np.mean(f['ttls'])), ttl_variance=float(np.var(f['ttls'])),
                 tcp_window_mean=float(windows.mean()) if windows.size else 0.0,
                 tcp_window_variance=float(windows.var()) if windows.size else 0.0,
                 ip_df_ratio=f['df']/count, ip_mf_ratio=f['mf']/count,
                 ip_fragment_ratio=f['fragments']/count,
-                payload_size_mean=float(payload.mean()), payload_size_variance=float(payload.var()),
-                payload_size_min=float(payload.min()), payload_size_max=float(payload.max()),
-                payload_size_p25=float(np.quantile(payload, .25)),
-                payload_size_p50=float(np.quantile(payload, .5)),
-                payload_size_p75=float(np.quantile(payload, .75)),
+                payload_size_mean=payload_mean, payload_size_variance=payload_variance,
+                payload_size_min=payload_min, payload_size_max=payload_max,
+                payload_size_p25=q25, payload_size_p50=q50, payload_size_p75=q75,
                 scan_unique_ports=f['scan'][0], scan_sequential_score=f['scan'][1],
                 scan_randomized_score=f['scan'][2], retransmission_count=float(f['retransmissions']),
                 retransmission_ratio=f['retransmissions']/count, packet_features_available=1.0)
+    if label is not None:
+        stage = classify_stage(label)
+        row.update(label=label, infiltration=float(stage != 0), stage=stage, attack_stage=stage)
+    return row
 
 
 def pcap_to_dataframe(path: str | Path, label='PCAP_EVENT', session_timeout=300.0):

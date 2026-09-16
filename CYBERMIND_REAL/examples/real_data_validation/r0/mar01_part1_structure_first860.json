@@ -1,0 +1,22 @@
+{
+  "source": "data\\raw\\CIC-IDS-2018\\real_chunk\\2018-03-01\\capEC2AMAZ-O4EL3NG-172.31.69.13_part1.pcap",
+  "snaplen": 65535,
+  "linktype": 1,
+  "records_scanned": 860,
+  "findings": [
+    {
+      "record": 850,
+      "record_offset": 353173,
+      "timestamp_epoch": 1519906611.132995,
+      "captured_len": 1528,
+      "wire_len": 1528,
+      "snaplen": 65535,
+      "kind": "invalid_ipv4_total_len",
+      "ip_version": 4,
+      "ip_header_len": 20,
+      "ip_total_len": 0,
+      "ip_bytes_available": 1514,
+      "missing_ip_bytes": 0
+    }
+  ]
+}

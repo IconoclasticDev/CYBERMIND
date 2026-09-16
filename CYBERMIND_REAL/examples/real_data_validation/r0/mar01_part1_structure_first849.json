@@ -1,0 +1,7 @@
+{
+  "source": "data\\raw\\CIC-IDS-2018\\real_chunk\\2018-03-01\\capEC2AMAZ-O4EL3NG-172.31.69.13_part1.pcap",
+  "snaplen": 65535,
+  "linktype": 1,
+  "records_scanned": 849,
+  "findings": []
+}

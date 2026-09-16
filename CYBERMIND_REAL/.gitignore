@@ -48,3 +48,8 @@ examples/phase3_third_round/regression/*/processed/*.pt
 examples/phase3_third_round/regression/*/checkpoints/*.pt
 examples/phase4/regression/*/processed/*.pt
 examples/phase4/regression/*/checkpoints/*.pt
+data/raw/CIC-IDS-2018/one_day_2018-02-14/
+data/one_day_join/
+data/raw/CIC-IDS-2018/real_chunk/
+data/real_chunk/flows_raw/
+.r0-tools/

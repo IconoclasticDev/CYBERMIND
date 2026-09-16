@@ -4,7 +4,7 @@ Plan: `CYBERMIND_Real_Data_Validation_Plan.md`, supplied and authorized on 2026-
 This is a separate R0–R6 sequence before main-plan Phase 5. Existing Phase 3/4
 audits remain historical evidence. No GB10 run is authorized by this plan.
 
-## R0 — CICFlowMeter NO-GO; approved custom fallback active; exit criterion not met
+## R0 — COMPLETE; audited PASS
 
 Reviewer update 2026-09-16: dates fixed to February 14 / March 1 / March 2;
 Lateral Movement coverage amendment and exact malformed-source derivative
@@ -23,28 +23,28 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [x] Prevent failed custom extraction from publishing a final output filename; six focused tests pass.
 - [x] Deliver `REAL_DATA_R0_AUDIT.md`; both proposals were subsequently approved and the derivative created.
 - [x] R0.1 Freeze three dates and reviewer-approved coverage amendment.
-- [ ] Freeze precise capture membership for the remaining dates before acquisition.
+- [x] Freeze precise capture membership for the remaining dates before acquisition (`capture_scope_frozen.json`).
 - [x] Create and hash the approved 4,718,327-record February 14 derivative; verify byte-identical source prefix and unchanged original hash.
 - [x] Replace the earlier 2–4-hour estimate with the user's fixed 60-minute feasibility / 90-minute hard cap.
 - [x] Pin/download upstream source and retrieve runtime candidate metadata; installation/build/export not completed.
 - [x] On continuation, honor the elapsed deadline; publish `REAL_DATA_R0_RUNTIME_RESULT.md` without resetting the timer.
-- [ ] Establish executable runtime and demonstrate schema acceptance; no retry currently authorized under the exhausted setup attempt.
+- [x] Close executable CICFlowMeter runtime/schema attempt as NO-GO; reviewer-approved custom fallback applies and no third CICFlowMeter path is permitted.
 - [x] Final bounded attempt: verified Java 8; pinned build failed on unresolved `org.jnetpcap:jnetpcap:1.4.1`; stopped without debugging or a third path.
 - [x] Publish concrete CICFlowMeter NO-GO and record prior usage-limit interruption as tooling, not a CICFlowMeter result.
 - [x] Assess fallback: existing 40-column exporter satisfies the implemented 20-field packet-feature contract in focused tests, but omits approximately 67 pinned CIC traffic statistics and differs in direction/session semantics.
-- [ ] Implement an unlabeled, atomic fallback R0 export path with explicit feature-gap provenance; do not use the hardcoded schedule during R0.
-- [ ] R0.2 fallback: export selected captures with full five-tuple/timestamps and all 20 project packet fields; disclose the approved approximately-67-statistic CIC gap on every output. CICFlowMeter parity is not claimed.
-- [ ] R0.3 Record hashes for every selected input and completed output in the registry/provenance.
-- [ ] Audit R0: unlabeled flow CSVs for all selected days exist and meet the declared schema.
-- [ ] Obtain approval before entering R1, following the user's standing phase boundary instruction.
+- [x] Implement an unlabeled, atomic fallback R0 export path with explicit feature-gap provenance; the hardcoded schedule is not used during R0.
+- [x] R0.2 fallback: export every frozen capture with full five-tuple/timestamps and all 20 project packet fields; attach the exact approximately-67-statistic CIC gap to every row. CICFlowMeter parity is not claimed.
+- [x] R0.3 Record hashes for every selected input and completed output in `r0_real_chunk_files.csv`, the dataset registry and source provenance.
+- [x] Audit R0: 15 unlabeled flow CSVs, 1,186,046 rows; zero tuple/time, packet-field, provenance or label-column failures.
+- [x] Reviewer pre-authorized R0→R1 once R0's own exit criterion is met and audited; no extra boundary message is required.
 
-## R1 — NOT STARTED
+## R1 — STARTING (pre-authorized after R0 pass)
 
 - [ ] R1.1 Pin the corrected Distrinet rules for the selected dates.
 - [ ] R1.2 Apply their endpoint, direction, time, port, and payload conditions to R0 flows.
 - [ ] R1.3 Apply the original CIC schedule independently and retain all discrepancies by category and count.
 - [ ] R1.4 Document matching, timezone, time tolerance, overlapping rules, and flow-boundary semantics; hash the methodology.
-- [ ] Commit the discrepancy log and audit; request approval for R2.
+- [ ] Commit the discrepancy log and audit; proceed to pre-authorized R2 only if R1 passes.
 
 ## R2 — NOT STARTED
 
@@ -52,14 +52,14 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [ ] R2.2 Strict validation with packet features explicitly required; retain exact failures.
 - [ ] R2.3 Strict preparation with `require_packet_features: true`.
 - [ ] R2.4 Compare real graph endpoint identities/edges with source flows.
-- [ ] Audit end-to-end results; R2 failure blocks R3. Request approval for R3 only after passing.
+- [ ] Audit end-to-end results; R2 failure blocks R3. Proceed to pre-authorized R3 only after passing.
 
 ## R3 — NOT STARTED
 
 - [ ] R3.1 Evaluate the preserved epoch-185 checkpoint; verify its preprocessing contract before inference.
 - [ ] R3.2 Save per-window stage, illegal-transition, infiltration, and confidence outputs.
 - [ ] R3.3 Label all outputs `source: zero-shot, synthetic-trained weights, real-corpus chunk — out-of-distribution test`.
-- [ ] Audit results even if collapsed; request approval for R4.
+- [ ] Audit results even if collapsed; manual reviewer sign-off is required before R4.
 
 ## R4 — NOT STARTED
 

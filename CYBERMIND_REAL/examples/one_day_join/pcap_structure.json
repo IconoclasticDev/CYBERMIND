@@ -1,0 +1,16 @@
+{
+  "capture_bytes": 852795392,
+  "complete_records": 4718327,
+  "first_packet_utc": "2018-02-14T12:30:38.595182+00:00",
+  "last_complete_packet_utc": "2018-02-14T21:26:51.046965+00:00",
+  "truncated_record": {
+    "offset": 852795085,
+    "record_index_0based": 4718327,
+    "timestamp_utc": "2018-02-14T21:26:51.047562+00:00",
+    "declared_captured_bytes": 371,
+    "available_packet_bytes": 291,
+    "wire_bytes": 371
+  },
+  "zip_member_crc_verified": true,
+  "structurally_complete_pcap": false
+}

@@ -1,0 +1,3578 @@
+{
+  "date": "02-03-2018",
+  "url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Friday-02-03-2018/pcap.zip",
+  "archive_bytes": 44789835888,
+  "entries": [
+    {
+      "name": "pcap/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "offset": 0,
+      "crc32": "00000000",
+      "compression": 0
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.111",
+      "bytes": 236126208,
+      "compressed_bytes": 205628378,
+      "offset": 35,
+      "crc32": "2e098494",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.115",
+      "bytes": 177543450,
+      "compressed_bytes": 145109697,
+      "offset": 205628480,
+      "crc32": "a7473b85",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.118",
+      "bytes": 257346553,
+      "compressed_bytes": 220395711,
+      "offset": 350738244,
+      "crc32": "7a64f525",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.122",
+      "bytes": 187542390,
+      "compressed_bytes": 165630548,
+      "offset": 571134022,
+      "crc32": "c8dfb7ad",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.125",
+      "bytes": 186610683,
+      "compressed_bytes": 161916414,
+      "offset": 736764637,
+      "crc32": "2f6357ee",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.126",
+      "bytes": 344437313,
+      "compressed_bytes": 314280763,
+      "offset": 898681118,
+      "crc32": "8a70a52a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.17",
+      "bytes": 457138168,
+      "compressed_bytes": 427522931,
+      "offset": 1212961948,
+      "crc32": "dafa8348",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.26",
+      "bytes": 190488444,
+      "compressed_bytes": 163939544,
+      "offset": 1640484945,
+      "crc32": "75c072ad",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.35",
+      "bytes": 145186316,
+      "compressed_bytes": 127127042,
+      "offset": 1804424555,
+      "crc32": "50e653d5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.38",
+      "bytes": 145058917,
+      "compressed_bytes": 116601363,
+      "offset": 1931551663,
+      "crc32": "fd888dff",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.46",
+      "bytes": 205392015,
+      "compressed_bytes": 180169008,
+      "offset": 2048153092,
+      "crc32": "5ce7562c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.54",
+      "bytes": 356831494,
+      "compressed_bytes": 328296556,
+      "offset": 2228322166,
+      "crc32": "3fa0d599",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.63",
+      "bytes": 209607282,
+      "compressed_bytes": 183327157,
+      "offset": 2556618788,
+      "crc32": "b2df4762",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.65",
+      "bytes": 139400248,
+      "compressed_bytes": 111548635,
+      "offset": 2739946011,
+      "crc32": "6fea02d4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.67",
+      "bytes": 276246527,
+      "compressed_bytes": 250230743,
+      "offset": 2851494712,
+      "crc32": "4d5c4e1a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.71",
+      "bytes": 114701741,
+      "compressed_bytes": 97865063,
+      "offset": 3101725521,
+      "crc32": "55dcbf12",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.75",
+      "bytes": 120598265,
+      "compressed_bytes": 99751706,
+      "offset": 3199590650,
+      "crc32": "11787ecb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.76",
+      "bytes": 315923537,
+      "compressed_bytes": 276736671,
+      "offset": 3299342422,
+      "crc32": "ac2fa475",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.84",
+      "bytes": 136959198,
+      "compressed_bytes": 116033109,
+      "offset": 3576079159,
+      "crc32": "87add2d2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.95",
+      "bytes": 125651116,
+      "compressed_bytes": 105941480,
+      "offset": 3692112334,
+      "crc32": "8f255029",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.64.99",
+      "bytes": 186064589,
+      "compressed_bytes": 158792010,
+      "offset": 3798053880,
+      "crc32": "6c4df194",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.10",
+      "bytes": 382141344,
+      "compressed_bytes": 347161210,
+      "offset": 3956845956,
+      "crc32": "ef7f8a3e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.113",
+      "bytes": 310842982,
+      "compressed_bytes": 273494031,
+      "offset": 4304007232,
+      "crc32": "5c97ca7b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.123",
+      "bytes": 318969580,
+      "compressed_bytes": 286436011,
+      "offset": 4577501330,
+      "crc32": "6575029e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.124",
+      "bytes": 243908567,
+      "compressed_bytes": 218124222,
+      "offset": 4863937408,
+      "crc32": "bdf62b4a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.126",
+      "bytes": 103252070,
+      "compressed_bytes": 85072784,
+      "offset": 5082061697,
+      "crc32": "699f96f5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.14",
+      "bytes": 165014281,
+      "compressed_bytes": 142862399,
+      "offset": 5167134548,
+      "crc32": "7b89ccd6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.28",
+      "bytes": 157671672,
+      "compressed_bytes": 136333417,
+      "offset": 5309997013,
+      "crc32": "4e9883ba",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.29",
+      "bytes": 184825583,
+      "compressed_bytes": 163210114,
+      "offset": 5446330496,
+      "crc32": "54e73d48",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.34",
+      "bytes": 229466660,
+      "compressed_bytes": 198329398,
+      "offset": 5609540676,
+      "crc32": "72826c21",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.40",
+      "bytes": 227061228,
+      "compressed_bytes": 198078032,
+      "offset": 5807870140,
+      "crc32": "024482a5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.50",
+      "bytes": 189845744,
+      "compressed_bytes": 166276021,
+      "offset": 6005948238,
+      "crc32": "ca9702eb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.56",
+      "bytes": 169308091,
+      "compressed_bytes": 124386902,
+      "offset": 6172224325,
+      "crc32": "724bda2e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.66",
+      "bytes": 160728478,
+      "compressed_bytes": 129295770,
+      "offset": 6296611293,
+      "crc32": "588fc7a1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.76",
+      "bytes": 219799694,
+      "compressed_bytes": 189490044,
+      "offset": 6425907129,
+      "crc32": "ff5a2411",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.81",
+      "bytes": 122818558,
+      "compressed_bytes": 111264009,
+      "offset": 6615397239,
+      "crc32": "cc75b246",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.86",
+      "bytes": 131171369,
+      "compressed_bytes": 98052056,
+      "offset": 6726661314,
+      "crc32": "ac8bbe07",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.65.88",
+      "bytes": 133577134,
+      "compressed_bytes": 109393931,
+      "offset": 6824713436,
+      "crc32": "4ca32f81",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.100",
+      "bytes": 313556990,
+      "compressed_bytes": 294162519,
+      "offset": 6934107433,
+      "crc32": "52206432",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.101",
+      "bytes": 218848188,
+      "compressed_bytes": 193157607,
+      "offset": 7228270019,
+      "crc32": "4131d09c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.112",
+      "bytes": 142296340,
+      "compressed_bytes": 115321677,
+      "offset": 7421427693,
+      "crc32": "565fcd7b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.114",
+      "bytes": 198492159,
+      "compressed_bytes": 174735926,
+      "offset": 7536749437,
+      "crc32": "46a65e16",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.115",
+      "bytes": 147456000,
+      "compressed_bytes": 132392707,
+      "offset": 7711485430,
+      "crc32": "a309faca",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.120",
+      "bytes": 163351180,
+      "compressed_bytes": 140275354,
+      "offset": 7843878204,
+      "crc32": "d2f9595f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.123",
+      "bytes": 203175347,
+      "compressed_bytes": 167941628,
+      "offset": 7984153625,
+      "crc32": "73815f49",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.22",
+      "bytes": 209802827,
+      "compressed_bytes": 175248797,
+      "offset": 8152095320,
+      "crc32": "17f8a96e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.41",
+      "bytes": 343633373,
+      "compressed_bytes": 305160173,
+      "offset": 8327344183,
+      "crc32": "ad92ee13",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.42",
+      "bytes": 73865725,
+      "compressed_bytes": 54036650,
+      "offset": 8632504422,
+      "crc32": "1bacf940",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.43",
+      "bytes": 162841446,
+      "compressed_bytes": 139721627,
+      "offset": 8686541138,
+      "crc32": "32c35757",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.49",
+      "bytes": 279438773,
+      "compressed_bytes": 242705120,
+      "offset": 8826262831,
+      "crc32": "e5968a24",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.54",
+      "bytes": 117868589,
+      "compressed_bytes": 96613937,
+      "offset": 9068968017,
+      "crc32": "96d4434d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.62",
+      "bytes": 421132825,
+      "compressed_bytes": 380219678,
+      "offset": 9165582020,
+      "crc32": "882aa362",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.63",
+      "bytes": 111634895,
+      "compressed_bytes": 92034895,
+      "offset": 9545801764,
+      "crc32": "c5016091",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.72",
+      "bytes": 320907281,
+      "compressed_bytes": 288920635,
+      "offset": 9637836725,
+      "crc32": "3ae0ccc8",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.76",
+      "bytes": 122959769,
+      "compressed_bytes": 104104182,
+      "offset": 9926757426,
+      "crc32": "786138b4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.82",
+      "bytes": 95302285,
+      "compressed_bytes": 78022367,
+      "offset": 10030861674,
+      "crc32": "30c5206c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.85",
+      "bytes": 101502964,
+      "compressed_bytes": 93830471,
+      "offset": 10108884107,
+      "crc32": "1af9e588",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.66.89",
+      "bytes": 197579743,
+      "compressed_bytes": 170413171,
+      "offset": 10202714644,
+      "crc32": "852de0df",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.10",
+      "bytes": 132976661,
+      "compressed_bytes": 108190899,
+      "offset": 10373127881,
+      "crc32": "2e506031",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.101",
+      "bytes": 180922057,
+      "compressed_bytes": 154990153,
+      "offset": 10481318846,
+      "crc32": "68ceb2de",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.116",
+      "bytes": 239550623,
+      "compressed_bytes": 209247538,
+      "offset": 10636309066,
+      "crc32": "fd0f8754",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.119",
+      "bytes": 489425057,
+      "compressed_bytes": 441816192,
+      "offset": 10845556671,
+      "crc32": "79b87658",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.125",
+      "bytes": 118983143,
+      "compressed_bytes": 95853681,
+      "offset": 11287372930,
+      "crc32": "7c50d3d1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.13",
+      "bytes": 166100276,
+      "compressed_bytes": 141739714,
+      "offset": 11383226678,
+      "crc32": "a267e516",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.15",
+      "bytes": 122011946,
+      "compressed_bytes": 97890051,
+      "offset": 11524966458,
+      "crc32": "4fcf9064",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.21",
+      "bytes": 138580571,
+      "compressed_bytes": 113745895,
+      "offset": 11622856575,
+      "crc32": "cd2a3aa8",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.28",
+      "bytes": 267455353,
+      "compressed_bytes": 237570738,
+      "offset": 11736602536,
+      "crc32": "fa812eba",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.32",
+      "bytes": 27762341,
+      "compressed_bytes": 17865248,
+      "offset": 11974173340,
+      "crc32": "a7244a28",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.41",
+      "bytes": 213845573,
+      "compressed_bytes": 183309636,
+      "offset": 11992038654,
+      "crc32": "fe4d6ad0",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.50",
+      "bytes": 181914400,
+      "compressed_bytes": 149996958,
+      "offset": 12175348356,
+      "crc32": "53d414df",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.54",
+      "bytes": 128708595,
+      "compressed_bytes": 117097543,
+      "offset": 12325345380,
+      "crc32": "a7ee1ae1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.63",
+      "bytes": 206500394,
+      "compressed_bytes": 175636745,
+      "offset": 12442442989,
+      "crc32": "f49428ee",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.80",
+      "bytes": 173725512,
+      "compressed_bytes": 152197827,
+      "offset": 12618079800,
+      "crc32": "d85c45b7",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.81",
+      "bytes": 195296027,
+      "compressed_bytes": 171362034,
+      "offset": 12770277693,
+      "crc32": "f4892089",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.82",
+      "bytes": 210712106,
+      "compressed_bytes": 178987067,
+      "offset": 12941639793,
+      "crc32": "80f90240",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.86",
+      "bytes": 166737492,
+      "compressed_bytes": 139428717,
+      "offset": 13120626926,
+      "crc32": "b70f1ba0",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capDESKTOP-AN3U28N-172.31.67.94",
+      "bytes": 251912186,
+      "compressed_bytes": 233731047,
+      "offset": 13260055709,
+      "crc32": "4feb436b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.100",
+      "bytes": 51668564,
+      "compressed_bytes": 35357080,
+      "offset": 13493786822,
+      "crc32": "9de25ef1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.101",
+      "bytes": 64225216,
+      "compressed_bytes": 44418774,
+      "offset": 13529143969,
+      "crc32": "72c6ef48",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.103",
+      "bytes": 69525315,
+      "compressed_bytes": 41055738,
+      "offset": 13573562810,
+      "crc32": "29be3025",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.104",
+      "bytes": 54622276,
+      "compressed_bytes": 37062333,
+      "offset": 13614618615,
+      "crc32": "67efdb03",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.107",
+      "bytes": 66566920,
+      "compressed_bytes": 45795371,
+      "offset": 13651681015,
+      "crc32": "c77d03df",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.108",
+      "bytes": 105257295,
+      "compressed_bytes": 79968189,
+      "offset": 13697476453,
+      "crc32": "22205595",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.109",
+      "bytes": 82212811,
+      "compressed_bytes": 64300335,
+      "offset": 13777444709,
+      "crc32": "02780624",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.110",
+      "bytes": 67236951,
+      "compressed_bytes": 47133052,
+      "offset": 13841745111,
+      "crc32": "acd0eb32",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.119",
+      "bytes": 79104978,
+      "compressed_bytes": 58287808,
+      "offset": 13888878230,
+      "crc32": "a4180409",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.123",
+      "bytes": 85080472,
+      "compressed_bytes": 52100714,
+      "offset": 13947166105,
+      "crc32": "b273d74e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.124",
+      "bytes": 78281060,
+      "compressed_bytes": 49795623,
+      "offset": 13999266886,
+      "crc32": "15009cc5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.13",
+      "bytes": 63838323,
+      "compressed_bytes": 36490367,
+      "offset": 14049062576,
+      "crc32": "f1a7db9e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.16",
+      "bytes": 61048797,
+      "compressed_bytes": 42708035,
+      "offset": 14085553009,
+      "crc32": "4c721c0e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.19",
+      "bytes": 60805064,
+      "compressed_bytes": 41987639,
+      "offset": 14128261110,
+      "crc32": "3e75de5b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.27",
+      "bytes": 60020336,
+      "compressed_bytes": 41567834,
+      "offset": 14170248815,
+      "crc32": "412e2cfd",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.28",
+      "bytes": 58173517,
+      "compressed_bytes": 38610908,
+      "offset": 14211816715,
+      "crc32": "d0ce10cb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.29",
+      "bytes": 76032481,
+      "compressed_bytes": 51557573,
+      "offset": 14250427689,
+      "crc32": "dbc838bf",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.4",
+      "bytes": 66233098,
+      "compressed_bytes": 42472649,
+      "offset": 14301985328,
+      "crc32": "d79996a6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.42",
+      "bytes": 49412564,
+      "compressed_bytes": 33242923,
+      "offset": 14344458042,
+      "crc32": "ba36e380",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.44",
+      "bytes": 67631330,
+      "compressed_bytes": 45852637,
+      "offset": 14377701031,
+      "crc32": "3303fd40",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.45",
+      "bytes": 99886877,
+      "compressed_bytes": 77606904,
+      "offset": 14423553734,
+      "crc32": "2562dc75",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.49",
+      "bytes": 73187865,
+      "compressed_bytes": 54756115,
+      "offset": 14501160704,
+      "crc32": "c5800447",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.51",
+      "bytes": 81280277,
+      "compressed_bytes": 50207445,
+      "offset": 14555916885,
+      "crc32": "e42a85a8",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.58",
+      "bytes": 79796446,
+      "compressed_bytes": 62881679,
+      "offset": 14606124396,
+      "crc32": "34eec1c9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.60",
+      "bytes": 50844452,
+      "compressed_bytes": 34394309,
+      "offset": 14669006141,
+      "crc32": "c74fe31d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.68",
+      "bytes": 86808505,
+      "compressed_bytes": 54422516,
+      "offset": 14703400516,
+      "crc32": "c96f2cd5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.69",
+      "bytes": 64902133,
+      "compressed_bytes": 43281542,
+      "offset": 14757823098,
+      "crc32": "11b4fa78",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.7",
+      "bytes": 58034925,
+      "compressed_bytes": 38631227,
+      "offset": 14801104706,
+      "crc32": "cf532c89",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.70",
+      "bytes": 64176757,
+      "compressed_bytes": 42203730,
+      "offset": 14839735998,
+      "crc32": "e5bdd755",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.72",
+      "bytes": 54201476,
+      "compressed_bytes": 37501635,
+      "offset": 14881939794,
+      "crc32": "fc4e2c14",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.73",
+      "bytes": 71970409,
+      "compressed_bytes": 53600183,
+      "offset": 14919441495,
+      "crc32": "ba1c9f92",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.77",
+      "bytes": 55417634,
+      "compressed_bytes": 40301947,
+      "offset": 14973041744,
+      "crc32": "d51cb7b4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.79",
+      "bytes": 87646227,
+      "compressed_bytes": 67683470,
+      "offset": 15013343757,
+      "crc32": "319ed350",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.8",
+      "bytes": 59114404,
+      "compressed_bytes": 41463612,
+      "offset": 15081027293,
+      "crc32": "cc6bfa51",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.81",
+      "bytes": 57389321,
+      "compressed_bytes": 40407616,
+      "offset": 15122490970,
+      "crc32": "248519d1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.83",
+      "bytes": 145110488,
+      "compressed_bytes": 85210172,
+      "offset": 15162898652,
+      "crc32": "79ffe433",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.85",
+      "bytes": 66259702,
+      "compressed_bytes": 46709654,
+      "offset": 15248108890,
+      "crc32": "53a5d81b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.87",
+      "bytes": 48969479,
+      "compressed_bytes": 33049146,
+      "offset": 15294818610,
+      "crc32": "8a965bd1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.92",
+      "bytes": 161204000,
+      "compressed_bytes": 141212472,
+      "offset": 15327867822,
+      "crc32": "1cf82762",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.64.96",
+      "bytes": 79842676,
+      "compressed_bytes": 62602184,
+      "offset": 15469080360,
+      "crc32": "c82758a4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.107",
+      "bytes": 73155882,
+      "compressed_bytes": 48001550,
+      "offset": 15531682610,
+      "crc32": "105feec3",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.109",
+      "bytes": 74598300,
+      "compressed_bytes": 48926471,
+      "offset": 15579684227,
+      "crc32": "8bde2a22",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.112",
+      "bytes": 66550802,
+      "compressed_bytes": 46315546,
+      "offset": 15628610765,
+      "crc32": "a2e82f49",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.118",
+      "bytes": 109905468,
+      "compressed_bytes": 75063239,
+      "offset": 15674926378,
+      "crc32": "8647aebe",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.119",
+      "bytes": 65626570,
+      "compressed_bytes": 47395310,
+      "offset": 15749989684,
+      "crc32": "c541185f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.121",
+      "bytes": 69790132,
+      "compressed_bytes": 44125647,
+      "offset": 15797385061,
+      "crc32": "858395c6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.122",
+      "bytes": 48910725,
+      "compressed_bytes": 35479817,
+      "offset": 15841510775,
+      "crc32": "7ca4d86a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.18",
+      "bytes": 68098226,
+      "compressed_bytes": 47013564,
+      "offset": 15876990659,
+      "crc32": "362aefb5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.27",
+      "bytes": 70185056,
+      "compressed_bytes": 48143453,
+      "offset": 15924004289,
+      "crc32": "98b68382",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.30",
+      "bytes": 62073331,
+      "compressed_bytes": 44105486,
+      "offset": 15972147808,
+      "crc32": "4b0040ef",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.32",
+      "bytes": 68409830,
+      "compressed_bytes": 47883053,
+      "offset": 16016253360,
+      "crc32": "b85860ee",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.33",
+      "bytes": 68867803,
+      "compressed_bytes": 53680788,
+      "offset": 16064136479,
+      "crc32": "06bede04",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.36",
+      "bytes": 69834097,
+      "compressed_bytes": 49816422,
+      "offset": 16117817333,
+      "crc32": "1f42f24b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.37",
+      "bytes": 64060828,
+      "compressed_bytes": 45666185,
+      "offset": 16167633821,
+      "crc32": "0f164f95",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.39",
+      "bytes": 75302918,
+      "compressed_bytes": 57222030,
+      "offset": 16213300072,
+      "crc32": "b4605712",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.41",
+      "bytes": 87710574,
+      "compressed_bytes": 57344896,
+      "offset": 16270522168,
+      "crc32": "031abcf2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.43",
+      "bytes": 66117342,
+      "compressed_bytes": 48550044,
+      "offset": 16327867130,
+      "crc32": "3d2e0018",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.44",
+      "bytes": 80960271,
+      "compressed_bytes": 64476650,
+      "offset": 16376417240,
+      "crc32": "77ab7289",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.45",
+      "bytes": 114118221,
+      "compressed_bytes": 67961219,
+      "offset": 16440893956,
+      "crc32": "5ab1b98f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.5",
+      "bytes": 59732512,
+      "compressed_bytes": 43063196,
+      "offset": 16508855241,
+      "crc32": "05d6b102",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.59",
+      "bytes": 70349192,
+      "compressed_bytes": 46518459,
+      "offset": 16551918502,
+      "crc32": "d7c4d96e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.64",
+      "bytes": 92165832,
+      "compressed_bytes": 61086955,
+      "offset": 16598437027,
+      "crc32": "70e780a6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.65",
+      "bytes": 77031833,
+      "compressed_bytes": 54267331,
+      "offset": 16659524048,
+      "crc32": "9321eb70",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.71",
+      "bytes": 71176601,
+      "compressed_bytes": 50898197,
+      "offset": 16713791445,
+      "crc32": "bec5e844",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.72",
+      "bytes": 58041060,
+      "compressed_bytes": 41736160,
+      "offset": 16764689708,
+      "crc32": "ee3dde08",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.75",
+      "bytes": 63263167,
+      "compressed_bytes": 40548572,
+      "offset": 16806425934,
+      "crc32": "72eae45a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.8",
+      "bytes": 59234387,
+      "compressed_bytes": 41896023,
+      "offset": 16846974572,
+      "crc32": "6c5afe6a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.82",
+      "bytes": 65095768,
+      "compressed_bytes": 47059975,
+      "offset": 16888870660,
+      "crc32": "a1767d9f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.84",
+      "bytes": 58296289,
+      "compressed_bytes": 41419627,
+      "offset": 16935930701,
+      "crc32": "a04a11db",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.85",
+      "bytes": 109667888,
+      "compressed_bytes": 80159654,
+      "offset": 16977350394,
+      "crc32": "2fe48835",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.91",
+      "bytes": 62797077,
+      "compressed_bytes": 46831998,
+      "offset": 17057510114,
+      "crc32": "9c5098f2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.93",
+      "bytes": 55781891,
+      "compressed_bytes": 38715168,
+      "offset": 17104342178,
+      "crc32": "01de6af4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.96",
+      "bytes": 86045579,
+      "compressed_bytes": 62496393,
+      "offset": 17143057412,
+      "crc32": "9e18eeb0",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.65.98",
+      "bytes": 83360640,
+      "compressed_bytes": 53430433,
+      "offset": 17205553871,
+      "crc32": "67ffc367",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.105",
+      "bytes": 50720567,
+      "compressed_bytes": 36771089,
+      "offset": 17258984370,
+      "crc32": "1f7630ed",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.107",
+      "bytes": 108866789,
+      "compressed_bytes": 86707744,
+      "offset": 17295755526,
+      "crc32": "9d4656e9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.108",
+      "bytes": 63207587,
+      "compressed_bytes": 45763957,
+      "offset": 17382463337,
+      "crc32": "800cba2e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.109",
+      "bytes": 80637547,
+      "compressed_bytes": 53694690,
+      "offset": 17428227361,
+      "crc32": "133be87a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.11",
+      "bytes": 57283706,
+      "compressed_bytes": 43333653,
+      "offset": 17481922118,
+      "crc32": "5fe94758",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.113",
+      "bytes": 126893751,
+      "compressed_bytes": 98493041,
+      "offset": 17525255837,
+      "crc32": "9392f0be",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.116",
+      "bytes": 72690544,
+      "compressed_bytes": 49162520,
+      "offset": 17623748945,
+      "crc32": "4e641f66",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.119",
+      "bytes": 91246998,
+      "compressed_bytes": 62103911,
+      "offset": 17672911532,
+      "crc32": "85f4a09c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.12",
+      "bytes": 73682032,
+      "compressed_bytes": 49618614,
+      "offset": 17735015510,
+      "crc32": "4de0a282",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.122",
+      "bytes": 70526712,
+      "compressed_bytes": 48488876,
+      "offset": 17784634190,
+      "crc32": "fada1c47",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.124",
+      "bytes": 54828055,
+      "compressed_bytes": 38900885,
+      "offset": 17833123133,
+      "crc32": "314f3ebe",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.13",
+      "bytes": 86241103,
+      "compressed_bytes": 66881332,
+      "offset": 17872024085,
+      "crc32": "7d6fe4a5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.14",
+      "bytes": 71752031,
+      "compressed_bytes": 48646896,
+      "offset": 17938905483,
+      "crc32": "da846ce8",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.16",
+      "bytes": 62482137,
+      "compressed_bytes": 42985563,
+      "offset": 17987552445,
+      "crc32": "fd7cf9b5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.17",
+      "bytes": 62115908,
+      "compressed_bytes": 40398088,
+      "offset": 18030538074,
+      "crc32": "f0c09db3",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.20",
+      "bytes": 63810912,
+      "compressed_bytes": 42559409,
+      "offset": 18070936228,
+      "crc32": "6213406b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.25",
+      "bytes": 114777537,
+      "compressed_bytes": 80893240,
+      "offset": 18113495703,
+      "crc32": "6750208c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.26",
+      "bytes": 73181645,
+      "compressed_bytes": 54525534,
+      "offset": 18194389009,
+      "crc32": "ddca1437",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.28",
+      "bytes": 65632547,
+      "compressed_bytes": 44179340,
+      "offset": 18248914609,
+      "crc32": "fb2401d2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.29",
+      "bytes": 65161216,
+      "compressed_bytes": 44379505,
+      "offset": 18293094015,
+      "crc32": "02f403fb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.34",
+      "bytes": 60465667,
+      "compressed_bytes": 45165043,
+      "offset": 18337473586,
+      "crc32": "0c4a1783",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.35",
+      "bytes": 83988953,
+      "compressed_bytes": 60786897,
+      "offset": 18382638695,
+      "crc32": "da1ccfa9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.37",
+      "bytes": 60657944,
+      "compressed_bytes": 43031868,
+      "offset": 18443425658,
+      "crc32": "17d67398",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.38",
+      "bytes": 73680605,
+      "compressed_bytes": 49927458,
+      "offset": 18486457592,
+      "crc32": "23e51457",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.40",
+      "bytes": 80869860,
+      "compressed_bytes": 52968898,
+      "offset": 18536385116,
+      "crc32": "cce568a8",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.44",
+      "bytes": 97812681,
+      "compressed_bytes": 80968535,
+      "offset": 18589354080,
+      "crc32": "6330e161",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.48",
+      "bytes": 54859738,
+      "compressed_bytes": 38169199,
+      "offset": 18670322681,
+      "crc32": "136c8dbc",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.5",
+      "bytes": 47525140,
+      "compressed_bytes": 33132582,
+      "offset": 18708491946,
+      "crc32": "fb09ea9b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.51",
+      "bytes": 66026522,
+      "compressed_bytes": 50956106,
+      "offset": 18741624593,
+      "crc32": "3be68d5c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.53",
+      "bytes": 78288997,
+      "compressed_bytes": 54140431,
+      "offset": 18792580765,
+      "crc32": "22ae9858",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.55",
+      "bytes": 54016716,
+      "compressed_bytes": 38582008,
+      "offset": 18846721262,
+      "crc32": "db64e009",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.56",
+      "bytes": 83850683,
+      "compressed_bytes": 55259465,
+      "offset": 18885303336,
+      "crc32": "35d9bad6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.57",
+      "bytes": 54325009,
+      "compressed_bytes": 38448563,
+      "offset": 18940562867,
+      "crc32": "a6e5133c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.60",
+      "bytes": 42152141,
+      "compressed_bytes": 28944354,
+      "offset": 18979011496,
+      "crc32": "3cfa9cd6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.61",
+      "bytes": 71431946,
+      "compressed_bytes": 51528578,
+      "offset": 19007955916,
+      "crc32": "9cc202ed",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.64",
+      "bytes": 50898991,
+      "compressed_bytes": 36546277,
+      "offset": 19059484560,
+      "crc32": "1d264268",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.65",
+      "bytes": 87385050,
+      "compressed_bytes": 58564332,
+      "offset": 19096030903,
+      "crc32": "25c60e50",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.66",
+      "bytes": 64752711,
+      "compressed_bytes": 44314323,
+      "offset": 19154595301,
+      "crc32": "dedcd3c7",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.68",
+      "bytes": 97143362,
+      "compressed_bytes": 74428201,
+      "offset": 19198909690,
+      "crc32": "66e5179e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.7",
+      "bytes": 82134455,
+      "compressed_bytes": 52406523,
+      "offset": 19273337957,
+      "crc32": "cc9d26fa",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.70",
+      "bytes": 84589146,
+      "compressed_bytes": 68076378,
+      "offset": 19325744545,
+      "crc32": "46a8f02e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.73",
+      "bytes": 55966317,
+      "compressed_bytes": 39820704,
+      "offset": 19393820989,
+      "crc32": "60a9fb4e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.74",
+      "bytes": 91771088,
+      "compressed_bytes": 65206147,
+      "offset": 19433641759,
+      "crc32": "898ca4c6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.75",
+      "bytes": 85201942,
+      "compressed_bytes": 59389867,
+      "offset": 19498847972,
+      "crc32": "b045ca6f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.77",
+      "bytes": 91450669,
+      "compressed_bytes": 72366506,
+      "offset": 19558237905,
+      "crc32": "1d780316",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.78",
+      "bytes": 56065670,
+      "compressed_bytes": 41444597,
+      "offset": 19630604477,
+      "crc32": "c2a8b49c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.8",
+      "bytes": 75756624,
+      "compressed_bytes": 49355900,
+      "offset": 19672049140,
+      "crc32": "5ad69486",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.80",
+      "bytes": 78648802,
+      "compressed_bytes": 56967673,
+      "offset": 19721405105,
+      "crc32": "b52a8a16",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.81",
+      "bytes": 71189936,
+      "compressed_bytes": 47782821,
+      "offset": 19778372844,
+      "crc32": "acb6a5ae",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.84",
+      "bytes": 66712977,
+      "compressed_bytes": 46153114,
+      "offset": 19826155731,
+      "crc32": "fecc2bff",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.86",
+      "bytes": 70775257,
+      "compressed_bytes": 50950245,
+      "offset": 19872308911,
+      "crc32": "2d219031",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.87",
+      "bytes": 62092708,
+      "compressed_bytes": 42714181,
+      "offset": 19923259222,
+      "crc32": "21828326",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.91",
+      "bytes": 70758348,
+      "compressed_bytes": 49060463,
+      "offset": 19965973469,
+      "crc32": "032b6065",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.94",
+      "bytes": 82242210,
+      "compressed_bytes": 55090033,
+      "offset": 20015033998,
+      "crc32": "7d87a4d4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.95",
+      "bytes": 106736803,
+      "compressed_bytes": 68822535,
+      "offset": 20070124097,
+      "crc32": "e969c559",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.97",
+      "bytes": 65959296,
+      "compressed_bytes": 44108624,
+      "offset": 20138946698,
+      "crc32": "89fd64d5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.66.98",
+      "bytes": 103087274,
+      "compressed_bytes": 82812927,
+      "offset": 20183055388,
+      "crc32": "c213818f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.100",
+      "bytes": 105936061,
+      "compressed_bytes": 85531704,
+      "offset": 20265868381,
+      "crc32": "782900fb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.112",
+      "bytes": 87953926,
+      "compressed_bytes": 56367144,
+      "offset": 20351400152,
+      "crc32": "5a735a71",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.113",
+      "bytes": 63070761,
+      "compressed_bytes": 46544263,
+      "offset": 20407767363,
+      "crc32": "0920e7aa",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.115",
+      "bytes": 75401227,
+      "compressed_bytes": 47858067,
+      "offset": 20454311693,
+      "crc32": "0db0afab",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.117",
+      "bytes": 48606576,
+      "compressed_bytes": 34299832,
+      "offset": 20502169827,
+      "crc32": "29a98493",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.12",
+      "bytes": 72392542,
+      "compressed_bytes": 46894836,
+      "offset": 20536469726,
+      "crc32": "22eb8c90",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.120",
+      "bytes": 32496681,
+      "compressed_bytes": 21494257,
+      "offset": 20583364628,
+      "crc32": "9bad04f7",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.122",
+      "bytes": 63120520,
+      "compressed_bytes": 44540978,
+      "offset": 20604858952,
+      "crc32": "03e6d281",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.126",
+      "bytes": 78655583,
+      "compressed_bytes": 56658183,
+      "offset": 20649399997,
+      "crc32": "539a94bb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.16",
+      "bytes": 64930125,
+      "compressed_bytes": 45073963,
+      "offset": 20706058247,
+      "crc32": "6f73e857",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.17",
+      "bytes": 116635129,
+      "compressed_bytes": 82454161,
+      "offset": 20751132276,
+      "crc32": "8288aaa9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.18",
+      "bytes": 62356607,
+      "compressed_bytes": 44942374,
+      "offset": 20833586503,
+      "crc32": "04fc4f65",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.20",
+      "bytes": 78509713,
+      "compressed_bytes": 60662299,
+      "offset": 20878528943,
+      "crc32": "4588a621",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.29",
+      "bytes": 65702569,
+      "compressed_bytes": 48226194,
+      "offset": 20939191308,
+      "crc32": "91f822cb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.31",
+      "bytes": 81518676,
+      "compressed_bytes": 58775410,
+      "offset": 20987417568,
+      "crc32": "c5bf036e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.37",
+      "bytes": 91187962,
+      "compressed_bytes": 74414209,
+      "offset": 21046193044,
+      "crc32": "32e97169",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.38",
+      "bytes": 57464352,
+      "compressed_bytes": 40424869,
+      "offset": 21120607319,
+      "crc32": "0339cae8",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.42",
+      "bytes": 69680305,
+      "compressed_bytes": 50895472,
+      "offset": 21161032254,
+      "crc32": "f30c1f31",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.45",
+      "bytes": 49907429,
+      "compressed_bytes": 34217140,
+      "offset": 21211927792,
+      "crc32": "f217ea8f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.47",
+      "bytes": 60554916,
+      "compressed_bytes": 43517788,
+      "offset": 21246144998,
+      "crc32": "751e493c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.48",
+      "bytes": 86936545,
+      "compressed_bytes": 56887235,
+      "offset": 21289662852,
+      "crc32": "3c204121",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.52",
+      "bytes": 78268515,
+      "compressed_bytes": 54248844,
+      "offset": 21346550153,
+      "crc32": "8071d139",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.53",
+      "bytes": 63841744,
+      "compressed_bytes": 46964338,
+      "offset": 21400799063,
+      "crc32": "148560b7",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.57",
+      "bytes": 84788216,
+      "compressed_bytes": 61056671,
+      "offset": 21447763467,
+      "crc32": "a78887c6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.58",
+      "bytes": 67471133,
+      "compressed_bytes": 50219949,
+      "offset": 21508820204,
+      "crc32": "4af21552",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.6",
+      "bytes": 71968233,
+      "compressed_bytes": 48986527,
+      "offset": 21559040219,
+      "crc32": "faf252bb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.60",
+      "bytes": 69065197,
+      "compressed_bytes": 48551542,
+      "offset": 21608026811,
+      "crc32": "0a82f87a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.61",
+      "bytes": 32791145,
+      "compressed_bytes": 21729397,
+      "offset": 21656578419,
+      "crc32": "9ae53361",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.64",
+      "bytes": 69131896,
+      "compressed_bytes": 48389873,
+      "offset": 21678307882,
+      "crc32": "2d2f33ea",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.66",
+      "bytes": 83082849,
+      "compressed_bytes": 54462728,
+      "offset": 21726697821,
+      "crc32": "2b56f19d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.67",
+      "bytes": 79862631,
+      "compressed_bytes": 65070472,
+      "offset": 21781160615,
+      "crc32": "4506e05b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.7",
+      "bytes": 61810133,
+      "compressed_bytes": 44194629,
+      "offset": 21846231153,
+      "crc32": "c1de2e86",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.73",
+      "bytes": 71331854,
+      "compressed_bytes": 50770834,
+      "offset": 21890425847,
+      "crc32": "8e342a82",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.75",
+      "bytes": 73562809,
+      "compressed_bytes": 49323893,
+      "offset": 21941196747,
+      "crc32": "52d24a71",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.77",
+      "bytes": 94166143,
+      "compressed_bytes": 68126919,
+      "offset": 21990520706,
+      "crc32": "42865362",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.91",
+      "bytes": 55563837,
+      "compressed_bytes": 40945944,
+      "offset": 22058647691,
+      "crc32": "cfabb0aa",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.92",
+      "bytes": 52600857,
+      "compressed_bytes": 36962591,
+      "offset": 22099593701,
+      "crc32": "6ebe399e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.96",
+      "bytes": 80066248,
+      "compressed_bytes": 58450761,
+      "offset": 22136556358,
+      "crc32": "2f83b36b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.67.99",
+      "bytes": 64730668,
+      "compressed_bytes": 50782293,
+      "offset": 22195007185,
+      "crc32": "6195a09d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.10",
+      "bytes": 72258714,
+      "compressed_bytes": 54017666,
+      "offset": 22245789544,
+      "crc32": "7d698d78",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.12",
+      "bytes": 69368590,
+      "compressed_bytes": 50785152,
+      "offset": 22299807276,
+      "crc32": "6c8f6e83",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.13",
+      "bytes": 80420727,
+      "compressed_bytes": 53355595,
+      "offset": 22350592494,
+      "crc32": "c8081a12",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.14",
+      "bytes": 70274656,
+      "compressed_bytes": 50797407,
+      "offset": 22403948155,
+      "crc32": "8d5e7030",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.15",
+      "bytes": 65330100,
+      "compressed_bytes": 44376053,
+      "offset": 22454745628,
+      "crc32": "caf2bdb0",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.18",
+      "bytes": 68115892,
+      "compressed_bytes": 47985909,
+      "offset": 22499121747,
+      "crc32": "9ba0642d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.19",
+      "bytes": 112177281,
+      "compressed_bytes": 81068775,
+      "offset": 22547107722,
+      "crc32": "d73a85b4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.20",
+      "bytes": 73810705,
+      "compressed_bytes": 49207405,
+      "offset": 22628176563,
+      "crc32": "5fcd79cf",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.21",
+      "bytes": 71841777,
+      "compressed_bytes": 51897957,
+      "offset": 22677384034,
+      "crc32": "fa1a179d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.23",
+      "bytes": 69362019,
+      "compressed_bytes": 46821840,
+      "offset": 22729282057,
+      "crc32": "acafc814",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.25",
+      "bytes": 63764204,
+      "compressed_bytes": 45184912,
+      "offset": 22776103963,
+      "crc32": "66e744cc",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.26",
+      "bytes": 85841957,
+      "compressed_bytes": 64851678,
+      "offset": 22821288941,
+      "crc32": "17ee4c84",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.28",
+      "bytes": 67046371,
+      "compressed_bytes": 49864223,
+      "offset": 22886140685,
+      "crc32": "c11670e7",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.30",
+      "bytes": 145791589,
+      "compressed_bytes": 127004651,
+      "offset": 22936004974,
+      "crc32": "78a1c56f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.4",
+      "bytes": 79074257,
+      "compressed_bytes": 54604554,
+      "offset": 23063009691,
+      "crc32": "811ac682",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.5",
+      "bytes": 66385084,
+      "compressed_bytes": 47134980,
+      "offset": 23117614310,
+      "crc32": "bbf8111f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.6",
+      "bytes": 50091682,
+      "compressed_bytes": 36249921,
+      "offset": 23164749355,
+      "crc32": "f3a26167",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.8",
+      "bytes": 57897955,
+      "compressed_bytes": 41315358,
+      "offset": 23200999341,
+      "crc32": "18e2961a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.68.9",
+      "bytes": 69176912,
+      "compressed_bytes": 48296106,
+      "offset": 23242314764,
+      "crc32": "42efef55",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69 - Copy.24",
+      "bytes": 61469,
+      "compressed_bytes": 5919,
+      "offset": 23290610935,
+      "crc32": "891c77b2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.10",
+      "bytes": 94040264,
+      "compressed_bytes": 64608832,
+      "offset": 23290616927,
+      "crc32": "b88ed1d1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.12",
+      "bytes": 65936253,
+      "compressed_bytes": 49158507,
+      "offset": 23355225825,
+      "crc32": "3e7c0d22",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.13",
+      "bytes": 139253918,
+      "compressed_bytes": 119533316,
+      "offset": 23404384398,
+      "crc32": "d6446e5a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.14",
+      "bytes": 87102472,
+      "compressed_bytes": 62160821,
+      "offset": 23523917780,
+      "crc32": "18f9cc03",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.16",
+      "bytes": 81643716,
+      "compressed_bytes": 63243578,
+      "offset": 23586078667,
+      "crc32": "17f53f21",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.17",
+      "bytes": 82005553,
+      "compressed_bytes": 57868152,
+      "offset": 23649322311,
+      "crc32": "5d0c55b7",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.20",
+      "bytes": 381661,
+      "compressed_bytes": 32548,
+      "offset": 23707190529,
+      "crc32": "f47d2109",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.23",
+      "bytes": 104272064,
+      "compressed_bytes": 75353872,
+      "offset": 23707223143,
+      "crc32": "8c48f66c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.24 - Shortcut.lnk",
+      "bytes": 697,
+      "compressed_bytes": 443,
+      "offset": 23782577081,
+      "crc32": "9e436f98",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.26",
+      "bytes": 48385666,
+      "compressed_bytes": 28320019,
+      "offset": 23782577605,
+      "crc32": "0ac8316a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.26a",
+      "bytes": 13122020,
+      "compressed_bytes": 9806860,
+      "offset": 23810897690,
+      "crc32": "3f88396e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.29",
+      "bytes": 76878855,
+      "compressed_bytes": 48853432,
+      "offset": 23820704617,
+      "crc32": "a4ddcf97",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.30",
+      "bytes": 78349250,
+      "compressed_bytes": 49310413,
+      "offset": 23869558115,
+      "crc32": "87b09f19",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.5",
+      "bytes": 68174718,
+      "compressed_bytes": 52223349,
+      "offset": 23918868594,
+      "crc32": "06e20d1f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.6",
+      "bytes": 105498065,
+      "compressed_bytes": 71981077,
+      "offset": 23971092008,
+      "crc32": "793b064b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.8",
+      "bytes": 132524910,
+      "compressed_bytes": 104667123,
+      "offset": 24043073150,
+      "crc32": "eb43142d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.9",
+      "bytes": 91456713,
+      "compressed_bytes": 61142412,
+      "offset": 24147740338,
+      "crc32": "f9cef3ec",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.106",
+      "bytes": 346722516,
+      "compressed_bytes": 305400388,
+      "offset": 24208882815,
+      "crc32": "5ce15d3f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.113",
+      "bytes": 129409750,
+      "compressed_bytes": 94851451,
+      "offset": 24514283258,
+      "crc32": "8a57daaf",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.114",
+      "bytes": 203355226,
+      "compressed_bytes": 178048763,
+      "offset": 24609134764,
+      "crc32": "9a480a3e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.116",
+      "bytes": 693453207,
+      "compressed_bytes": 613780829,
+      "offset": 24787183582,
+      "crc32": "9a82cb4b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.121",
+      "bytes": 440630046,
+      "compressed_bytes": 384443154,
+      "offset": 25400964466,
+      "crc32": "1565c5f1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.15",
+      "bytes": 215723668,
+      "compressed_bytes": 182294554,
+      "offset": 25785407675,
+      "crc32": "a2de5e55",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.18",
+      "bytes": 95277255,
+      "compressed_bytes": 76679330,
+      "offset": 25967702283,
+      "crc32": "45953a92",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.21",
+      "bytes": 149696694,
+      "compressed_bytes": 121976973,
+      "offset": 26044381667,
+      "crc32": "8d92afc8",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.23",
+      "bytes": 376868414,
+      "compressed_bytes": 343285842,
+      "offset": 26166358694,
+      "crc32": "955f04c6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.31",
+      "bytes": 163410190,
+      "compressed_bytes": 141349252,
+      "offset": 26509644590,
+      "crc32": "4420fb0b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.32",
+      "bytes": 142272462,
+      "compressed_bytes": 112928240,
+      "offset": 26650993896,
+      "crc32": "cd9dcaab",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.33",
+      "bytes": 202906467,
+      "compressed_bytes": 167834779,
+      "offset": 26763922190,
+      "crc32": "201f105f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.34",
+      "bytes": 214027771,
+      "compressed_bytes": 192669893,
+      "offset": 26931757023,
+      "crc32": "d67c5f3f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.37",
+      "bytes": 252756162,
+      "compressed_bytes": 230099532,
+      "offset": 27124426970,
+      "crc32": "5659f1ab",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.40",
+      "bytes": 83980761,
+      "compressed_bytes": 63513554,
+      "offset": 27354526556,
+      "crc32": "0ed3ede2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.41",
+      "bytes": 168717483,
+      "compressed_bytes": 133800757,
+      "offset": 27418040164,
+      "crc32": "783ffb1e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.48",
+      "bytes": 204539282,
+      "compressed_bytes": 166799102,
+      "offset": 27551840975,
+      "crc32": "382db019",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.52",
+      "bytes": 189740730,
+      "compressed_bytes": 163192307,
+      "offset": 27718640131,
+      "crc32": "5789261f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.64",
+      "bytes": 424844823,
+      "compressed_bytes": 388340249,
+      "offset": 27881832492,
+      "crc32": "a3774208",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.64.97",
+      "bytes": 81559417,
+      "compressed_bytes": 67926083,
+      "offset": 28270172795,
+      "crc32": "505036ee",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.100",
+      "bytes": 303090777,
+      "compressed_bytes": 263817060,
+      "offset": 28338098932,
+      "crc32": "46c48b3a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.117",
+      "bytes": 306162822,
+      "compressed_bytes": 277847450,
+      "offset": 28601916047,
+      "crc32": "9187aed1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.13",
+      "bytes": 80295174,
+      "compressed_bytes": 60503116,
+      "offset": 28879763552,
+      "crc32": "e54ae4a6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.16",
+      "bytes": 135379691,
+      "compressed_bytes": 114796247,
+      "offset": 28940266722,
+      "crc32": "d56c402c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.20",
+      "bytes": 41198376,
+      "compressed_bytes": 28770197,
+      "offset": 29055063023,
+      "crc32": "2b7e5d70",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.25",
+      "bytes": 176934263,
+      "compressed_bytes": 142121225,
+      "offset": 29083833274,
+      "crc32": "42758dee",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.49",
+      "bytes": 256255379,
+      "compressed_bytes": 227161331,
+      "offset": 29225954553,
+      "crc32": "a920d1f9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.6",
+      "bytes": 248096709,
+      "compressed_bytes": 210556332,
+      "offset": 29453115938,
+      "crc32": "3dbb385d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.61",
+      "bytes": 192150415,
+      "compressed_bytes": 163919827,
+      "offset": 29663672323,
+      "crc32": "b9e095cf",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.67",
+      "bytes": 59172105,
+      "compressed_bytes": 41277684,
+      "offset": 29827592204,
+      "crc32": "c6ccdcd6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.68",
+      "bytes": 262294329,
+      "compressed_bytes": 229225296,
+      "offset": 29868869942,
+      "crc32": "5c0f5760",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.77",
+      "bytes": 1929841828,
+      "compressed_bytes": 1810784404,
+      "offset": 30098095292,
+      "crc32": "94ac1bc5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.79",
+      "bytes": 548065841,
+      "compressed_bytes": 515845035,
+      "offset": 31908879750,
+      "crc32": "176f19df",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.80",
+      "bytes": 429109831,
+      "compressed_bytes": 375968780,
+      "offset": 32424724839,
+      "crc32": "acaec993",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.65.83",
+      "bytes": 249358355,
+      "compressed_bytes": 218017734,
+      "offset": 32800693673,
+      "crc32": "99f6bdb5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.10",
+      "bytes": 285284473,
+      "compressed_bytes": 255916090,
+      "offset": 33018711461,
+      "crc32": "820186f6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.102",
+      "bytes": 247660746,
+      "compressed_bytes": 225445235,
+      "offset": 33274627605,
+      "crc32": "b2f160ca",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.103",
+      "bytes": 82871618,
+      "compressed_bytes": 59715045,
+      "offset": 33500072895,
+      "crc32": "c54d68a5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.110",
+      "bytes": 268151147,
+      "compressed_bytes": 236016632,
+      "offset": 33559787995,
+      "crc32": "d9954d17",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.111",
+      "bytes": 248664925,
+      "compressed_bytes": 228181910,
+      "offset": 33795804682,
+      "crc32": "3f4f1917",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.118",
+      "bytes": 305793623,
+      "compressed_bytes": 269889293,
+      "offset": 34023986647,
+      "crc32": "bf20ad59",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.121",
+      "bytes": 444198422,
+      "compressed_bytes": 400193670,
+      "offset": 34293875995,
+      "crc32": "99128b3b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.15",
+      "bytes": 225044237,
+      "compressed_bytes": 198076687,
+      "offset": 34694069720,
+      "crc32": "bab77541",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.19",
+      "bytes": 518373606,
+      "compressed_bytes": 463852596,
+      "offset": 34892146461,
+      "crc32": "a894c546",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.24",
+      "bytes": 324410509,
+      "compressed_bytes": 286806033,
+      "offset": 35355999111,
+      "crc32": "86609911",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.46",
+      "bytes": 115570618,
+      "compressed_bytes": 95366973,
+      "offset": 35642805198,
+      "crc32": "edeadd59",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.58",
+      "bytes": 275872021,
+      "compressed_bytes": 236256756,
+      "offset": 35738172225,
+      "crc32": "735d416e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.69",
+      "bytes": 88450540,
+      "compressed_bytes": 70766646,
+      "offset": 35974429035,
+      "crc32": "cdee9892",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.79",
+      "bytes": 118164023,
+      "compressed_bytes": 101489868,
+      "offset": 36045195735,
+      "crc32": "7ac4d1f1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.83",
+      "bytes": 192766863,
+      "compressed_bytes": 165612984,
+      "offset": 36146685657,
+      "crc32": "c4c3a511",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.9",
+      "bytes": 189407775,
+      "compressed_bytes": 151570973,
+      "offset": 36312298695,
+      "crc32": "d928dab1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.90",
+      "bytes": 363679510,
+      "compressed_bytes": 319123401,
+      "offset": 36463869721,
+      "crc32": "2909ca00",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.92",
+      "bytes": 129806054,
+      "compressed_bytes": 105806675,
+      "offset": 36782993176,
+      "crc32": "4d88fce1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.96",
+      "bytes": 98058560,
+      "compressed_bytes": 81737508,
+      "offset": 36888799905,
+      "crc32": "e31f03d6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.66.99",
+      "bytes": 407944129,
+      "compressed_bytes": 371339977,
+      "offset": 36970537467,
+      "crc32": "d4f246ad",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.102",
+      "bytes": 223963279,
+      "compressed_bytes": 186158677,
+      "offset": 37341877498,
+      "crc32": "37ee73de",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.104",
+      "bytes": 90945486,
+      "compressed_bytes": 73624826,
+      "offset": 37528036230,
+      "crc32": "7d22a693",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.107",
+      "bytes": 400645867,
+      "compressed_bytes": 355095816,
+      "offset": 37601661111,
+      "crc32": "4496b225",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.108",
+      "bytes": 414684119,
+      "compressed_bytes": 361640798,
+      "offset": 37956756982,
+      "crc32": "8961abbb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.111",
+      "bytes": 196315474,
+      "compressed_bytes": 161001673,
+      "offset": 38318397835,
+      "crc32": "a0b399ae",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.118",
+      "bytes": 81594189,
+      "compressed_bytes": 63612056,
+      "offset": 38479399563,
+      "crc32": "1b240b49",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.121",
+      "bytes": 256495334,
+      "compressed_bytes": 227674051,
+      "offset": 38543011674,
+      "crc32": "b450e05b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.123",
+      "bytes": 482492722,
+      "compressed_bytes": 437324336,
+      "offset": 38770685780,
+      "crc32": "f8a45a7c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.124",
+      "bytes": 383448595,
+      "compressed_bytes": 331801165,
+      "offset": 39208010171,
+      "crc32": "04db431b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.14",
+      "bytes": 221144052,
+      "compressed_bytes": 188394465,
+      "offset": 39539811391,
+      "crc32": "fd81d845",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.23",
+      "bytes": 150107363,
+      "compressed_bytes": 120751585,
+      "offset": 39728205910,
+      "crc32": "d13ae7c4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.27",
+      "bytes": 109002611,
+      "compressed_bytes": 82644399,
+      "offset": 39848957549,
+      "crc32": "a0aa995c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.33",
+      "bytes": 145522236,
+      "compressed_bytes": 125419576,
+      "offset": 39931602002,
+      "crc32": "c6c5ed52",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.35",
+      "bytes": 232338702,
+      "compressed_bytes": 187844808,
+      "offset": 40057021632,
+      "crc32": "a1e9d6c2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.56",
+      "bytes": 491554872,
+      "compressed_bytes": 436712395,
+      "offset": 40244866494,
+      "crc32": "32823dfa",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.59",
+      "bytes": 280858150,
+      "compressed_bytes": 242421415,
+      "offset": 40681578943,
+      "crc32": "be4a9c6a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.76",
+      "bytes": 187179275,
+      "compressed_bytes": 152373890,
+      "offset": 40924000412,
+      "crc32": "91de0a22",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.78",
+      "bytes": 525330253,
+      "compressed_bytes": 452567358,
+      "offset": 41076374356,
+      "crc32": "f30dbf52",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.9",
+      "bytes": 464095382,
+      "compressed_bytes": 427066836,
+      "offset": 41528941768,
+      "crc32": "d2e5c838",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capPC1-172.31.67.97",
+      "bytes": 164837466,
+      "compressed_bytes": 143070880,
+      "offset": 41956008657,
+      "crc32": "74695c49",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-",
+      "bytes": 144505119,
+      "compressed_bytes": 118666399,
+      "offset": 42099079591,
+      "crc32": "f01ae6e6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.112",
+      "bytes": 38690057,
+      "compressed_bytes": 23892390,
+      "offset": 42217746044,
+      "crc32": "30d3731f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.117",
+      "bytes": 33277671,
+      "compressed_bytes": 21811886,
+      "offset": 42241638501,
+      "crc32": "d03eb267",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.12",
+      "bytes": 27951938,
+      "compressed_bytes": 18774371,
+      "offset": 42263450454,
+      "crc32": "6a670abe",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.120",
+      "bytes": 39424256,
+      "compressed_bytes": 28114430,
+      "offset": 42282224891,
+      "crc32": "42eb4ceb",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.14",
+      "bytes": 49335419,
+      "compressed_bytes": 28696896,
+      "offset": 42310339388,
+      "crc32": "b910656a",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.20",
+      "bytes": 24921155,
+      "compressed_bytes": 15366222,
+      "offset": 42339036350,
+      "crc32": "a176db1e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.24",
+      "bytes": 28552037,
+      "compressed_bytes": 18923161,
+      "offset": 42354402638,
+      "crc32": "a9382856",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.36",
+      "bytes": 26230085,
+      "compressed_bytes": 17326305,
+      "offset": 42373325865,
+      "crc32": "d754d83c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.39",
+      "bytes": 33887425,
+      "compressed_bytes": 21417436,
+      "offset": 42390652236,
+      "crc32": "e1b7bde4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.47",
+      "bytes": 22499771,
+      "compressed_bytes": 12822634,
+      "offset": 42412069738,
+      "crc32": "40427c29",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.57",
+      "bytes": 58983952,
+      "compressed_bytes": 42229144,
+      "offset": 42424892438,
+      "crc32": "efe01f86",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.61",
+      "bytes": 29111328,
+      "compressed_bytes": 18911065,
+      "offset": 42467121648,
+      "crc32": "a345d3c5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.74",
+      "bytes": 22781892,
+      "compressed_bytes": 15858749,
+      "offset": 42486032779,
+      "crc32": "9f4f3d2e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.78",
+      "bytes": 24699273,
+      "compressed_bytes": 17718739,
+      "offset": 42501891594,
+      "crc32": "542d2622",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.80",
+      "bytes": 54111597,
+      "compressed_bytes": 37833674,
+      "offset": 42519610399,
+      "crc32": "238fdcc5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.86",
+      "bytes": 28950084,
+      "compressed_bytes": 18951768,
+      "offset": 42557444139,
+      "crc32": "e8f79483",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.88",
+      "bytes": 27243117,
+      "compressed_bytes": 15975945,
+      "offset": 42576395973,
+      "crc32": "ef742314",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.89",
+      "bytes": 30219866,
+      "compressed_bytes": 19633175,
+      "offset": 42592371984,
+      "crc32": "c53450d0",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.91",
+      "bytes": 61213479,
+      "compressed_bytes": 52224607,
+      "offset": 42612005225,
+      "crc32": "4f78fed1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.93",
+      "bytes": 37936747,
+      "compressed_bytes": 21555328,
+      "offset": 42664229898,
+      "crc32": "a61b765c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.64.98",
+      "bytes": 47758206,
+      "compressed_bytes": 30088282,
+      "offset": 42685785292,
+      "crc32": "4bcd1276",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.103",
+      "bytes": 20538551,
+      "compressed_bytes": 11125726,
+      "offset": 42715873640,
+      "crc32": "5757cd72",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.104",
+      "bytes": 45421354,
+      "compressed_bytes": 26569945,
+      "offset": 42726999433,
+      "crc32": "078e77b6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.105",
+      "bytes": 33066215,
+      "compressed_bytes": 20790075,
+      "offset": 42753569445,
+      "crc32": "cd0d8fc5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.108",
+      "bytes": 29211492,
+      "compressed_bytes": 17084636,
+      "offset": 42774359587,
+      "crc32": "95cb7294",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.11",
+      "bytes": 29085787,
+      "compressed_bytes": 20210332,
+      "offset": 42791444290,
+      "crc32": "6cbb76b7",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.114",
+      "bytes": 47048058,
+      "compressed_bytes": 26606868,
+      "offset": 42811654688,
+      "crc32": "27496375",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.115",
+      "bytes": 44141679,
+      "compressed_bytes": 33010244,
+      "offset": 42838261623,
+      "crc32": "220f68ac",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.116",
+      "bytes": 25917741,
+      "compressed_bytes": 16067723,
+      "offset": 42871271934,
+      "crc32": "3e3d323d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.125",
+      "bytes": 43696636,
+      "compressed_bytes": 29057043,
+      "offset": 42887339724,
+      "crc32": "69db1a6e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.17",
+      "bytes": 28147500,
+      "compressed_bytes": 18277048,
+      "offset": 42916396834,
+      "crc32": "caa3a4a1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.19",
+      "bytes": 25718323,
+      "compressed_bytes": 14373343,
+      "offset": 42934673948,
+      "crc32": "9b771044",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.21",
+      "bytes": 46607837,
+      "compressed_bytes": 29137785,
+      "offset": 42949047357,
+      "crc32": "61a427da",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.23",
+      "bytes": 28840713,
+      "compressed_bytes": 17343548,
+      "offset": 42978185208,
+      "crc32": "ca74e0a2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.24",
+      "bytes": 53950856,
+      "compressed_bytes": 33995056,
+      "offset": 42995528822,
+      "crc32": "d30f7d9e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.35",
+      "bytes": 30551020,
+      "compressed_bytes": 17415445,
+      "offset": 43029523944,
+      "crc32": "9935fce3",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.38",
+      "bytes": 22241900,
+      "compressed_bytes": 12879260,
+      "offset": 43046939455,
+      "crc32": "bff98487",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.42",
+      "bytes": 23391544,
+      "compressed_bytes": 14078690,
+      "offset": 43059818781,
+      "crc32": "21b42929",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.46",
+      "bytes": 28150227,
+      "compressed_bytes": 17066119,
+      "offset": 43073897537,
+      "crc32": "b082cc55",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.47",
+      "bytes": 29614601,
+      "compressed_bytes": 18007182,
+      "offset": 43090963722,
+      "crc32": "13ba2d2d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.48",
+      "bytes": 27904547,
+      "compressed_bytes": 15590181,
+      "offset": 43108970970,
+      "crc32": "92132c3d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.51",
+      "bytes": 31746872,
+      "compressed_bytes": 19774379,
+      "offset": 43124561217,
+      "crc32": "18cc3f8b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.52",
+      "bytes": 30653365,
+      "compressed_bytes": 20129348,
+      "offset": 43144335662,
+      "crc32": "ec738c70",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.55",
+      "bytes": 48750229,
+      "compressed_bytes": 33241497,
+      "offset": 43164465076,
+      "crc32": "7ab83764",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.57",
+      "bytes": 28520144,
+      "compressed_bytes": 18555206,
+      "offset": 43197706639,
+      "crc32": "243d36b9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.58",
+      "bytes": 28045029,
+      "compressed_bytes": 16381373,
+      "offset": 43216261911,
+      "crc32": "2f4b2c06",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.69",
+      "bytes": 39715235,
+      "compressed_bytes": 25358080,
+      "offset": 43232643350,
+      "crc32": "d205309b",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.70",
+      "bytes": 26927721,
+      "compressed_bytes": 14589969,
+      "offset": 43258001496,
+      "crc32": "ef53e039",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.73",
+      "bytes": 55579855,
+      "compressed_bytes": 32211598,
+      "offset": 43272591531,
+      "crc32": "c04397f2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.78",
+      "bytes": 37004464,
+      "compressed_bytes": 23183066,
+      "offset": 43304803195,
+      "crc32": "51b95200",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.87",
+      "bytes": 52017224,
+      "compressed_bytes": 35332152,
+      "offset": 43327986327,
+      "crc32": "aa22a7cf",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.89",
+      "bytes": 28316464,
+      "compressed_bytes": 17203715,
+      "offset": 43363318545,
+      "crc32": "c4d5f7ad",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.9",
+      "bytes": 20180143,
+      "compressed_bytes": 11962370,
+      "offset": 43380522326,
+      "crc32": "5b55f894",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.90",
+      "bytes": 38928785,
+      "compressed_bytes": 24484816,
+      "offset": 43392484761,
+      "crc32": "a4b47671",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.65.99",
+      "bytes": 23798241,
+      "compressed_bytes": 14067534,
+      "offset": 43416969643,
+      "crc32": "e7589f13",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.105",
+      "bytes": 29161490,
+      "compressed_bytes": 16986542,
+      "offset": 43431037243,
+      "crc32": "1ba89ed6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.109",
+      "bytes": 33091104,
+      "compressed_bytes": 21726179,
+      "offset": 43448023852,
+      "crc32": "cb21d1d3",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.114",
+      "bytes": 79849306,
+      "compressed_bytes": 46902013,
+      "offset": 43469750098,
+      "crc32": "8a40f2e5",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.19",
+      "bytes": 19510903,
+      "compressed_bytes": 11984076,
+      "offset": 43516652178,
+      "crc32": "f415f0d9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.22",
+      "bytes": 35162523,
+      "compressed_bytes": 19954815,
+      "offset": 43528636320,
+      "crc32": "9029de29",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.26",
+      "bytes": 37566916,
+      "compressed_bytes": 23020048,
+      "offset": 43548591201,
+      "crc32": "9cffede1",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.30",
+      "bytes": 42119495,
+      "compressed_bytes": 24116158,
+      "offset": 43571611315,
+      "crc32": "feab4092",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.34",
+      "bytes": 43182760,
+      "compressed_bytes": 26414341,
+      "offset": 43595727539,
+      "crc32": "bf266224",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.4",
+      "bytes": 41429909,
+      "compressed_bytes": 25753384,
+      "offset": 43622141946,
+      "crc32": "38323ae2",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.40",
+      "bytes": 42316330,
+      "compressed_bytes": 24026375,
+      "offset": 43647895395,
+      "crc32": "10eeeaf9",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.62",
+      "bytes": 1017487010,
+      "compressed_bytes": 931004082,
+      "offset": 43671921836,
+      "crc32": "00a8d910",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.70",
+      "bytes": 30641542,
+      "compressed_bytes": 18566281,
+      "offset": 44602925984,
+      "crc32": "eab8f48f",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.71",
+      "bytes": 33553451,
+      "compressed_bytes": 20284101,
+      "offset": 44621492331,
+      "crc32": "b9cdba9d",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.72",
+      "bytes": 30861732,
+      "compressed_bytes": 19885420,
+      "offset": 44641776498,
+      "crc32": "96d6887c",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.8",
+      "bytes": 43621866,
+      "compressed_bytes": 28367550,
+      "offset": 44661661984,
+      "crc32": "f69cba52",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.83",
+      "bytes": 31370714,
+      "compressed_bytes": 20145076,
+      "offset": 44690029599,
+      "crc32": "ebad14d0",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.89",
+      "bytes": 42745983,
+      "compressed_bytes": 30216150,
+      "offset": 44710174741,
+      "crc32": "e3d60a4e",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.93",
+      "bytes": 30906843,
+      "compressed_bytes": 17966909,
+      "offset": 44740390957,
+      "crc32": "0c02d665",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.95",
+      "bytes": 509853,
+      "compressed_bytes": 394677,
+      "offset": 44758357932,
+      "crc32": "a15deb52",
+      "compression": 8
+    },
+    {
+      "name": "pcap/capWIN-J6GMIG1DQE5-172.31.67.98",
+      "bytes": 26841182,
+      "compressed_bytes": 16253939,
+      "offset": 44758752675,
+      "crc32": "b2555906",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.15",
+      "bytes": 4886528,
+      "compressed_bytes": 4276506,
+      "offset": 44775006680,
+      "crc32": "3c2b99af",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.18",
+      "bytes": 1101824,
+      "compressed_bytes": 407293,
+      "offset": 44779283237,
+      "crc32": "5ba53699",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.21",
+      "bytes": 683294,
+      "compressed_bytes": 256372,
+      "offset": 44779690581,
+      "crc32": "d26cc3dd",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.22",
+      "bytes": 1007616,
+      "compressed_bytes": 357124,
+      "offset": 44779947004,
+      "crc32": "49b2f880",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.25",
+      "bytes": 5173248,
+      "compressed_bytes": 4351783,
+      "offset": 44780304179,
+      "crc32": "4acc81a6",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.27",
+      "bytes": 774144,
+      "compressed_bytes": 303119,
+      "offset": 44784656013,
+      "crc32": "3467f578",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.28",
+      "bytes": 5062656,
+      "compressed_bytes": 568666,
+      "offset": 44784959183,
+      "crc32": "611623d4",
+      "compression": 8
+    },
+    {
+      "name": "pcap/UCAP172.31.69.7",
+      "bytes": 4890624,
+      "compressed_bytes": 4251370,
+      "offset": 44785527900,
+      "crc32": "bb0f2b2a",
+      "compression": 8
+    }
+  ],
+  "metadata_requests": [
+    {
+      "start": 44789835866,
+      "bytes": 22
+    },
+    {
+      "start": 44789835846,
+      "bytes": 20
+    },
+    {
+      "start": 44789835790,
+      "bytes": 56
+    },
+    {
+      "start": 44789779320,
+      "bytes": 56470
+    }
+  ],
+  "total_uncompressed_bytes": 54805867342
+}

@@ -1,0 +1,119 @@
+Capture compressed bytes 4194304/419348396
+Capture compressed bytes 8388608/419348396
+Capture compressed bytes 12582912/419348396
+Capture compressed bytes 16777216/419348396
+Capture compressed bytes 20971520/419348396
+Capture compressed bytes 25165824/419348396
+Capture compressed bytes 29360128/419348396
+Capture compressed bytes 33554432/419348396
+Capture compressed bytes 37748736/419348396
+Capture compressed bytes 41943040/419348396
+Capture compressed bytes 46137344/419348396
+Capture compressed bytes 50331648/419348396
+Capture compressed bytes 54525952/419348396
+Capture compressed bytes 58720256/419348396
+Capture compressed bytes 62914560/419348396
+Capture compressed bytes 67108864/419348396
+Capture compressed bytes 71303168/419348396
+Capture compressed bytes 75497472/419348396
+Capture compressed bytes 79691776/419348396
+Capture compressed bytes 83886080/419348396
+Capture compressed bytes 88080384/419348396
+Capture compressed bytes 92274688/419348396
+Capture compressed bytes 96468992/419348396
+Capture compressed bytes 100663296/419348396
+Capture compressed bytes 104857600/419348396
+Capture compressed bytes 109051904/419348396
+Capture compressed bytes 113246208/419348396
+Capture compressed bytes 117440512/419348396
+Capture compressed bytes 121634816/419348396
+Capture compressed bytes 125829120/419348396
+Capture compressed bytes 130023424/419348396
+Capture compressed bytes 134217728/419348396
+Capture compressed bytes 138412032/419348396
+Capture compressed bytes 142606336/419348396
+Capture compressed bytes 146800640/419348396
+Capture compressed bytes 150994944/419348396
+Capture compressed bytes 155189248/419348396
+Capture compressed bytes 159383552/419348396
+Capture compressed bytes 163577856/419348396
+Capture compressed bytes 167772160/419348396
+Capture compressed bytes 171966464/419348396
+Capture compressed bytes 176160768/419348396
+Capture compressed bytes 180355072/419348396
+Capture compressed bytes 184549376/419348396
+Capture compressed bytes 188743680/419348396
+Capture compressed bytes 192937984/419348396
+Capture compressed bytes 197132288/419348396
+Capture compressed bytes 201326592/419348396
+Capture compressed bytes 205520896/419348396
+Capture compressed bytes 209715200/419348396
+Capture compressed bytes 213909504/419348396
+Capture compressed bytes 218103808/419348396
+Capture compressed bytes 222298112/419348396
+Capture compressed bytes 226492416/419348396
+Capture compressed bytes 230686720/419348396
+Capture compressed bytes 234881024/419348396
+Capture compressed bytes 239075328/419348396
+Capture compressed bytes 243269632/419348396
+Capture compressed bytes 247463936/419348396
+Capture compressed bytes 251658240/419348396
+Capture compressed bytes 255852544/419348396
+Capture compressed bytes 260046848/419348396
+Capture compressed bytes 264241152/419348396
+Capture compressed bytes 268435456/419348396
+Capture compressed bytes 272629760/419348396
+Capture compressed bytes 276824064/419348396
+Capture compressed bytes 281018368/419348396
+Capture compressed bytes 285212672/419348396
+Capture compressed bytes 289406976/419348396
+Capture compressed bytes 293601280/419348396
+Capture compressed bytes 297795584/419348396
+Capture compressed bytes 301989888/419348396
+Capture compressed bytes 306184192/419348396
+Capture compressed bytes 310378496/419348396
+Capture compressed bytes 314572800/419348396
+Capture compressed bytes 318767104/419348396
+Capture compressed bytes 322961408/419348396
+Capture compressed bytes 327155712/419348396
+Capture compressed bytes 331350016/419348396
+Capture compressed bytes 335544320/419348396
+Capture compressed bytes 339738624/419348396
+Capture compressed bytes 343932928/419348396
+Capture compressed bytes 348127232/419348396
+Capture compressed bytes 352321536/419348396
+Capture compressed bytes 356515840/419348396
+Capture compressed bytes 360710144/419348396
+Capture compressed bytes 364904448/419348396
+Capture compressed bytes 369098752/419348396
+Capture compressed bytes 373293056/419348396
+Capture compressed bytes 377487360/419348396
+Capture compressed bytes 381681664/419348396
+Capture compressed bytes 385875968/419348396
+Capture compressed bytes 390070272/419348396
+Capture compressed bytes 394264576/419348396
+Capture compressed bytes 398458880/419348396
+Capture compressed bytes 402653184/419348396
+Capture compressed bytes 406847488/419348396
+Capture compressed bytes 411041792/419348396
+Capture compressed bytes 415236096/419348396
+Capture compressed bytes 419348396/419348396
+{
+  "source_url": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original%20Network%20Traffic%20and%20Log%20data/Wednesday-14-02-2018/pcap.zip",
+  "member": {
+    "name": "pcap/UCAP172.31.69.25",
+    "bytes": 852795392,
+    "compressed_bytes": 419348396,
+    "offset": 39485808718,
+    "crc32": "c2144ce9",
+    "compression": 8
+  },
+  "http_range_start": 39485808769,
+  "scope": "Complete Feb 14 victim-host capture, not all 450 environment captures",
+  "capture": "data\\raw\\CIC-IDS-2018\\one_day_2018-02-14\\UCAP172.31.69.25.pcap",
+  "capture_bytes": 852795392,
+  "sha256": "008f18cce0ff420ce013eba6d97ae0b974f36028a0707a977f78d4bfd7f48afc",
+  "crc32": "c2144ce9",
+  "complete_member_verified": true,
+  "seconds": 198.07800000000861
+}

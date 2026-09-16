@@ -72,5 +72,46 @@ Required label on future fallback outputs: `flow_feature_source: CYBERMIND custo
 directional packet exporter; 40-column schema; satisfies the project's 20-field
 packet-feature contract when verified, but is not CICFlowMeter and omits
 approximately 67 of the pinned CICFlowMeter traffic-statistic columns. No
-CICFlowMeter feature parity is claimed.` No fallback selected-day output exists
-yet, so no output hash or R0 pass is claimed.
+CICFlowMeter feature parity is claimed.`
+
+## Completed R0 fallback export — 2026-09-16
+
+R0 exported all frozen capture members without labels to
+`data/real_chunk/flows_raw/`. The immutable per-file source/output record is
+`data/manifests/r0_real_chunk_files.csv`, SHA256
+`4356fb4616ad63cbad87e75e5e57ca5288568fc6b31f13cd70f1445328388b66`.
+It contains 15 source/output pairs: one reviewed February 14 derivative, all
+three frozen March 1 victim parts, and eleven files covering the ten documented
+March 2 bot victims. The outputs contain 1,186,046 directional flow rows.
+
+The final audit is `examples/real_data_validation/r0/fallback_output_audit.json`,
+SHA256 `37f616a8933bc38406861a164e91f2e874e8bc0381faa3ccf7bf82c35e3018fb`.
+It verifies all source and output hashes, full five-tuples and timestamps, all
+20 finite required packet-feature fields with availability set, the exact
+fallback provenance string on every row, and absence of label columns. All
+counts are zero for invalid tuple/time rows, invalid packet-feature rows,
+provenance mismatches, and label columns.
+
+The unlabeled R0 files have 42 physical columns: the fallback flow/packet fields
+with four label fields omitted, plus six R0 provenance fields. The mandated
+40-column fallback provenance string is retained verbatim because it identifies
+the approved exporter contract, not the physical count after R0 metadata is
+attached.
+
+March 1 part 1 initially failed on IPv4 total-length zero. A full structural
+scan found 376 complete TCP records with equal captured/wire lengths and intact
+transport headers, including host-side super-packets larger than an Ethernet
+MTU. The strict parser now accepts only that complete TCP offload signature,
+derives length from captured IP bytes without changing source bytes, and counts
+every use. Across completed exports, 376 March 1 and 20,469 March 2 records used
+this disclosed path. The first failure report is preserved beside the successful
+report. No malformed packet was silently skipped or synthesized.
+
+`flow_feature_source: CYBERMIND custom directional packet exporter; 40-column
+schema; satisfies the project's 20-field packet-feature contract when verified,
+but is not CICFlowMeter and omits approximately 67 of the pinned CICFlowMeter
+traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
+
+**Real-chunk validation does not include a Lateral Movement transition.
+Kill-chain-diversity validation on real data covers the other represented stages
+only; it does not validate Lateral Movement.**
