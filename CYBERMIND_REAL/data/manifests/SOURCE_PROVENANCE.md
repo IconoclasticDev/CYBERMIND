@@ -116,6 +116,28 @@ traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
 Kill-chain-diversity validation on real data covers the other represented stages
 only; it does not validate Lateral Movement.**
 
+## Completed R3 zero-shot evaluation — 2026-09-16
+
+The preserved epoch-185 synthetic-trained checkpoint, SHA256
+`8a47c8f0f74600e685ba3991a1ae34b3f2618ed47580b760074c089eb1cebf06`,
+was evaluated on 41,288 held-out histories rebuilt from the R2 canonical real
+chunk with its exact one-second, three-state, synthetic training-normalization
+contract. See `docs/REAL_DATA_R3_AUDIT.md`.
+
+Every R3 result is labeled
+`source: zero-shot, synthetic-trained weights, real-corpus chunk — out-of-distribution test`.
+The model decoded only Benign and Reconnaissance across four future steps; this
+does not establish real-data accuracy or correct kill-chain forecasting.
+
+`flow_feature_source: CYBERMIND custom directional packet exporter; 40-column
+schema; satisfies the project's 20-field packet-feature contract when verified,
+but is not CICFlowMeter and omits approximately 67 of the pinned CICFlowMeter
+traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
+
+**Real-chunk validation does not include a Lateral Movement transition.
+Kill-chain-diversity validation on real data covers the other represented stages
+only; it does not validate Lateral Movement.**
+
 ## Completed R2 strict graph preparation — 2026-09-16
 
 All 1,186,046 R1 rows survived canonical conversion. Strict validation ran with

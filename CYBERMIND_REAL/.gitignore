@@ -55,4 +55,5 @@ data/real_chunk/flows_raw/
 data/real_chunk/labeled/
 data/intermediate_real_chunk_r2/
 data/processed_real_chunk_r2/
+data/processed_real_chunk_r3_zero_shot/
 .r0-tools/

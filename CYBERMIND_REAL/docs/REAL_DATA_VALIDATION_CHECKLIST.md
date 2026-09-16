@@ -54,14 +54,14 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [x] R2.4 Compare real graph endpoint identities, directed edges, bytes, and packets with source flows on all three dates.
 - [x] Audit end-to-end results in `REAL_DATA_R2_AUDIT.md`; proceed to pre-authorized R3 after PASS.
 
-## R3 — STARTING (pre-authorized after R2 pass)
+## R3 — COMPLETE; audited PASS
 
-- [ ] R3.1 Evaluate the preserved epoch-185 checkpoint; verify its preprocessing contract before inference.
-- [ ] R3.2 Save per-window stage, illegal-transition, infiltration, and confidence outputs.
-- [ ] R3.3 Label all outputs `source: zero-shot, synthetic-trained weights, real-corpus chunk — out-of-distribution test`.
-- [ ] Audit results even if collapsed; manual reviewer sign-off is required before R4.
+- [x] R3.1 Evaluate the preserved epoch-185 checkpoint after exact node, edge, window, history, and normalization contract verification.
+- [x] R3.2 Save 41,288 per-window four-step stage, illegal-transition, infiltration, variance, and confidence outputs.
+- [x] R3.3 Label all outputs `source: zero-shot, synthetic-trained weights, real-corpus chunk — out-of-distribution test`.
+- [x] Audit the restricted Benign/Reconnaissance-only OOD result; manual reviewer sign-off is required before R4.
 
-## R4 — NOT STARTED
+## R4 — AWAITING MANUAL REVIEWER APPROVAL; NOT STARTED
 
 Before starting, flag the proposed overnight run to the user and satisfy
 `REAL_DATA_R4_OVERNIGHT_REQUIREMENTS.md`: every-epoch checkpoints, incremental
