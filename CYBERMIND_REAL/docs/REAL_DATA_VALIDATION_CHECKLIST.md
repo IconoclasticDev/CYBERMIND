@@ -38,15 +38,15 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [x] Audit R0: 15 unlabeled flow CSVs, 1,186,046 rows; zero tuple/time, packet-field, provenance or label-column failures.
 - [x] Reviewer pre-authorized R0→R1 once R0's own exit criterion is met and audited; no extra boundary message is required.
 
-## R1 — STARTING (pre-authorized after R0 pass)
+## R1 — COMPLETE; audited PASS
 
-- [ ] R1.1 Pin the corrected Distrinet rules for the selected dates.
-- [ ] R1.2 Apply their endpoint, direction, time, port, and payload conditions to R0 flows.
-- [ ] R1.3 Apply the original CIC schedule independently and retain all discrepancies by category and count.
-- [ ] R1.4 Document matching, timezone, time tolerance, overlapping rules, and flow-boundary semantics; hash the methodology.
-- [ ] Commit the discrepancy log and audit; proceed to pre-authorized R2 only if R1 passes.
+- [x] R1.1 Pin the corrected Distrinet rules for the selected dates.
+- [x] R1.2 Apply all corrected endpoint, direction, time, port, and expressible payload conditions to R0 flows. Preserve 209 biflow-only attempted-Botnet refinements as explicitly unresolved; broad labels and stages remain verified.
+- [x] R1.3 Apply the original CIC schedule independently and retain all 722,627 discrepancies by category and count.
+- [x] R1.4 Document matching, timezone, zero time tolerance, overlapping rules, and flow-boundary semantics; hash the methodology.
+- [x] Commit the discrepancy log and `REAL_DATA_R1_AUDIT.md`; proceed to pre-authorized R2 after R1 pass.
 
-## R2 — NOT STARTED
+## R2 — STARTING (pre-authorized after R1 pass)
 
 - [ ] R2.1 Build the corpus from R1 outputs.
 - [ ] R2.2 Strict validation with packet features explicitly required; retain exact failures.

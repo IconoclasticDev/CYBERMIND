@@ -115,3 +115,34 @@ traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
 **Real-chunk validation does not include a Lateral Movement transition.
 Kill-chain-diversity validation on real data covers the other represented stages
 only; it does not validate Lateral Movement.**
+
+## Completed R1 corrected labeling — 2026-09-16
+
+R1 labeled all 15 R0 outputs and preserved all 1,186,046 rows. The output
+manifest is `data/manifests/r1_real_chunk_files.csv`, SHA256
+`377333cbfa138835ec6b41603ad34f73d36ee48e3b87459a427034555d59a33e`.
+The frozen join methodology is `data/real_chunk/LABELING_METHODOLOGY.md`, SHA256
+`8e5aa653da6355a76ba0d36039dbdf0ac80f00e3455554cd1fd5aa63b0b64087`.
+
+Corrected rules came from Distrinet commit
+`f0ce502818e59e6cd062720ab2286c5ff6f2bdec`; the pinned notebook SHA256 is
+`e58bea8651f4c891383f3cf1e735de4b48f50c4ec8a9aef078b53972dca1422e`.
+The independent original-schedule source is the pinned UNB Table 2 snapshot,
+SHA256 `c1258503f336f0dd4b1877ce5506b8d870b2ddf67e14f90348c42bfd3258b9fe`.
+The comparison found 722,627 literal-label discrepancies, retained in
+`examples/real_data_validation/r1/discrepancies.csv`, SHA256
+`80463368aa37438595214898294ac9b73cd7765f44f0de0a3b2fb9e78f9ec4db`.
+
+The approved directional fallback cannot express backward-RST or reverse-payload
+conditions used by two fine-grained attempted-Botnet refinements. Broad Botnet
+Ares labels and Command & Control stages remain verified, while 209 rows carry
+explicit unresolved refinement status. No missing biflow field was synthesized.
+
+`flow_feature_source: CYBERMIND custom directional packet exporter; 40-column
+schema; satisfies the project's 20-field packet-feature contract when verified,
+but is not CICFlowMeter and omits approximately 67 of the pinned CICFlowMeter
+traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
+
+**Real-chunk validation does not include a Lateral Movement transition.
+Kill-chain-diversity validation on real data covers the other represented stages
+only; it does not validate Lateral Movement.**

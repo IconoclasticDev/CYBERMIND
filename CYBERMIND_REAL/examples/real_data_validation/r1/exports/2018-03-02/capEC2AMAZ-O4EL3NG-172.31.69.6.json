@@ -1,0 +1,26 @@
+{
+  "status": "complete_r1_labels",
+  "date": "2018-03-02",
+  "r0_input": "data\\real_chunk\\flows_raw\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.6.csv",
+  "r0_input_sha256": "bd9e7bdca484e7ef427fb1da88e75a648e9ad087e2da6eb4b637aa1947036515",
+  "output": "data\\real_chunk\\labeled\\2018-03-02\\capEC2AMAZ-O4EL3NG-172.31.69.6.csv",
+  "output_sha256": "8f28ff0f0d409bd08c00f30aaa6acbce4ccde0828ca36e144fb1f32d9e516d9a",
+  "rows": 48542,
+  "discrepancies": 31366,
+  "corrected_label_counts": {
+    "Botnet Ares": 31366,
+    "BENIGN": 17176
+  },
+  "original_label_counts": {
+    "BENIGN": 37939,
+    "Bot": 10603
+  },
+  "refinement_status_counts": {
+    "complete": 48516,
+    "unresolved_missing_reverse_payload_total": 22,
+    "unresolved_missing_bwd_rst_flags": 4
+  },
+  "label_method": "inclusive UTC session_start; zero tolerance; directional endpoint semantics",
+  "corrected_rule_source": "Distrinet CNS2022 corrected CSE-CIC-IDS2018 rules, commit f0ce502818e59e6cd062720ab2286c5ff6f2bdec",
+  "original_rule_source": "UNB CSE-CIC-IDS2018 Table 2 schedule, retrieved 2026-09-16"
+}

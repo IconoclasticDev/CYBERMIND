@@ -1,0 +1,16 @@
+date,corrected_label,original_cic_label,rows
+2018-02-14,BENIGN,BENIGN,290070
+2018-02-14,FTP-BruteForce - Attempted,BENIGN,1030
+2018-02-14,FTP-BruteForce - Attempted,FTP-BruteForce,192300
+2018-02-14,FTP-BruteForce - Attempted,SSH-Bruteforce,30
+2018-02-14,SSH-BruteForce,BENIGN,521
+2018-02-14,SSH-BruteForce,SSH-Bruteforce,93676
+2018-03-01,BENIGN,BENIGN,57007
+2018-03-01,BENIGN,Infiltration,4
+2018-03-01,Infiltration - Communication Victim Attacker,BENIGN,4
+2018-03-01,Infiltration - Dropbox Download,BENIGN,16
+2018-03-01,Infiltration - Dropbox Download - Attempted,BENIGN,10
+2018-03-01,Infiltration - NMAP Portscan,BENIGN,149014
+2018-03-02,BENIGN,BENIGN,116342
+2018-03-02,Botnet Ares,BENIGN,188808
+2018-03-02,Botnet Ares,Bot,97214

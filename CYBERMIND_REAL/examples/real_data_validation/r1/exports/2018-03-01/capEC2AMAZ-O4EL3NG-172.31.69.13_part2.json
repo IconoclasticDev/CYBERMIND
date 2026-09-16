@@ -1,0 +1,26 @@
+{
+  "status": "complete_r1_labels",
+  "date": "2018-03-01",
+  "r0_input": "data\\real_chunk\\flows_raw\\2018-03-01\\capEC2AMAZ-O4EL3NG-172.31.69.13_part2.csv",
+  "r0_input_sha256": "39fae127b70655303a2a317d65e01721a487cec0f14be587039c66c37c9d0e26",
+  "output": "data\\real_chunk\\labeled\\2018-03-01\\capEC2AMAZ-O4EL3NG-172.31.69.13_part2.csv",
+  "output_sha256": "537675b9ddcd2eb30ef6d3a28816413fa5babf338502d14b3148bf87bae46544",
+  "rows": 57136,
+  "discrepancies": 48818,
+  "corrected_label_counts": {
+    "Infiltration - NMAP Portscan": 48813,
+    "BENIGN": 8319,
+    "Infiltration - Dropbox Download": 3,
+    "Infiltration - Communication Victim Attacker": 1
+  },
+  "original_label_counts": {
+    "BENIGN": 57135,
+    "Infiltration": 1
+  },
+  "refinement_status_counts": {
+    "complete": 57136
+  },
+  "label_method": "inclusive UTC session_start; zero tolerance; directional endpoint semantics",
+  "corrected_rule_source": "Distrinet CNS2022 corrected CSE-CIC-IDS2018 rules, commit f0ce502818e59e6cd062720ab2286c5ff6f2bdec",
+  "original_rule_source": "UNB CSE-CIC-IDS2018 Table 2 schedule, retrieved 2026-09-16"
+}
