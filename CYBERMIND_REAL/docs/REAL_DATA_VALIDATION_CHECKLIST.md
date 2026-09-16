@@ -61,7 +61,12 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [x] R3.3 Label all outputs `source: zero-shot, synthetic-trained weights, real-corpus chunk — out-of-distribution test`.
 - [x] Audit the restricted Benign/Reconnaissance-only OOD result; manual reviewer sign-off is required before R4.
 
-## R4 — AWAITING MANUAL REVIEWER APPROVAL; NOT STARTED
+## R4 — AUTHORIZED 2026-09-16; STARTING
+
+Manual reviewer authorization was received in-thread on 2026-09-16 with the
+instruction `continue`, after delivery of `REAL_DATA_R4_PREFLIGHT.md`. This
+authorizes the reviewed `configs/real_chunk_r4.yaml` run only; it does not
+authorize R5, R6, main-plan Phase 5, or the GB10 window.
 
 Before starting, flag the proposed overnight run to the user and satisfy
 `REAL_DATA_R4_OVERNIGHT_REQUIREMENTS.md`: every-epoch checkpoints, incremental

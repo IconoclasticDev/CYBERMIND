@@ -102,6 +102,9 @@ traffic-statistic columns. No CICFlowMeter feature parity is claimed.`
 Kill-chain-diversity validation on real data covers the other represented stages
 only; it does not validate Lateral Movement.**
 
-## Status
+## Authorization record
 
-**R4 is ready for manual authorization and has not started.**
+The reviewer authorized this exact reviewed configuration in-thread on
+2026-09-16 with the instruction `continue`. R4 may start under the safeguards
+above. This authorization does not extend to R5, R6, main-plan Phase 5, or the
+GB10 window.
