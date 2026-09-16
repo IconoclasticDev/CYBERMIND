@@ -61,7 +61,7 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [x] R3.3 Label all outputs `source: zero-shot, synthetic-trained weights, real-corpus chunk — out-of-distribution test`.
 - [x] Audit the restricted Benign/Reconnaissance-only OOD result; manual reviewer sign-off is required before R4.
 
-## R4 — AUTHORIZED 2026-09-16; STARTING
+## R4 — STOPPED BEFORE EPOCH 1; exit criterion NOT MET
 
 Manual reviewer authorization was received in-thread on 2026-09-16 with the
 instruction `continue`, after delivery of `REAL_DATA_R4_PREFLIGHT.md`. This
@@ -72,12 +72,20 @@ Before starting, flag the proposed overnight run to the user and satisfy
 `REAL_DATA_R4_OVERNIGHT_REQUIREMENTS.md`: every-epoch checkpoints, incremental
 disk logs, deliberate patience, first-collapse stop, and no automated retries.
 
-- [ ] R4.1 Predeclare laptop configuration, split, seed, epoch budget and selection policy; train combined model on the real chunk only.
+- [x] R4.1 Predeclare laptop configuration, split, seed, epoch budget and selection policy.
+- [x] Launch the single authorized run; preserve its immediate strict CRF failure and do not retry automatically.
+- [x] Audit every target transition: 109 illegal train occurrences (9 unique boundaries), zero validation, and 15 illegal test occurrences (1 unique boundary).
+- [x] Establish that seven of ten unique illegal boundaries occur inside active corrected March 1 rule intervals and cannot be justified as externally declared campaign resets.
+- [ ] Train the combined model on the real chunk only. Blocked pending reviewer decision on target/reset semantics; no epoch completed.
 - [ ] R4.2 Evaluate each of four future steps independently: at least two distinct non-Unknown stages, zero illegal transitions, Unknown count below sample count.
 - [ ] R4.3 Preserve every attempted epoch checkpoint, including failures.
 - [ ] R4.4 Choose and justify patience before the run; do not inherit synthetic patience blindly.
 - [ ] Audit selected checkpoint and unchanged gate outcomes; request approval for R5.
 - [ ] Include the full no-Lateral-Movement disclosure beside stage coverage and illegal-transition results, even on failure.
+
+Failure audit: `REAL_DATA_R4_START_FAILURE_AUDIT.md`. The preflight's one real
+batch was legal but did not establish whole-corpus CRF target compatibility.
+No checkpoint, validation result, R4 pass, or R5 authorization exists.
 
 ## R5 — NOT STARTED
 

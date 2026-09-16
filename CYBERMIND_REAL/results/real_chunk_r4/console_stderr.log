@@ -1,0 +1,29 @@
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
+epoch 1:   0%|          | 0/425 [00:00<?, ?it/s]epoch 1:   0%|          | 1/425 [00:01<11:20,  1.60s/it]epoch 1:   0%|          | 2/425 [00:02<06:36,  1.07it/s]epoch 1:   0%|          | 2/425 [00:02<08:19,  1.18s/it]
+Traceback (most recent call last):
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\scripts\train.py", line 435, in <module>
+    main()
+    ~~~~^^
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\scripts\train.py", line 379, in main
+    raw_loss, parts = batch_loss(model, batch, cfg, device)
+                      ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\scripts\train.py", line 213, in batch_loss
+    components['crf_stage'] = crf_stage_loss(model.stage_decoder,
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+        stage_logits.reshape(z.size(0),z.size(1)-1,-1),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        stage_labels.reshape(z.size(0),z.size(1)-1),reset_mask=reset_mask)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\losses.py", line 19, in crf_stage_loss
+    return decoder(logits.float(),target.long(),mask=mask,reset_mask=reset_mask)
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\stage_decoder.py", line 117, in forward
+    raise ValueError(f"illegal target transition at timestep {t}; declare an explicit reset if appropriate")
+ValueError: illegal target transition at timestep 4; declare an explicit reset if appropriate
