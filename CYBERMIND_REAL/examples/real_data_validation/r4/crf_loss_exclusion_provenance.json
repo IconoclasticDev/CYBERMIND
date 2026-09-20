@@ -1,0 +1,222 @@
+{
+  "status": "complete",
+  "reviewer_decision": "R4 reviewer decision \u2014 option (c) authorized \u2014 2026-09-20",
+  "input": "data/processed_real_chunk_r4_reviewed_resets",
+  "output": "data/processed_real_chunk_r4_option_c",
+  "scope": "CRF training loss only",
+  "boundaries": [
+    {
+      "id": "mar1_dropbox_135342",
+      "pair": "Initial Access -> Benign",
+      "source_stage": 2,
+      "destination_stage": 0,
+      "source_window_start": 1519912392.813819,
+      "destination_window_start": 1519912422.813819,
+      "source_window_utc": "2018-03-01T13:53:12.813819Z",
+      "destination_window_utc": "2018-03-01T13:53:42.813819Z",
+      "campaign": "Infiltration - Dropbox Download",
+      "campaign_start_epoch": 1519912390.0,
+      "campaign_end_epoch": 1519912760.0,
+      "boundary_relation": "both window starts are inside the active interval"
+    },
+    {
+      "id": "mar1_dropbox_135742",
+      "pair": "Initial Access -> Benign",
+      "source_stage": 2,
+      "destination_stage": 0,
+      "source_window_start": 1519912632.813819,
+      "destination_window_start": 1519912662.813819,
+      "source_window_utc": "2018-03-01T13:57:12.813819Z",
+      "destination_window_utc": "2018-03-01T13:57:42.813819Z",
+      "campaign": "Infiltration - Dropbox Download",
+      "campaign_start_epoch": 1519912390.0,
+      "campaign_end_epoch": 1519912760.0,
+      "boundary_relation": "both window starts are inside the active interval"
+    },
+    {
+      "id": "mar1_nmap_142012",
+      "pair": "Reconnaissance -> Benign",
+      "source_stage": 1,
+      "destination_stage": 0,
+      "source_window_start": 1519913982.813819,
+      "destination_window_start": 1519914012.813819,
+      "source_window_utc": "2018-03-01T14:19:42.813819Z",
+      "destination_window_utc": "2018-03-01T14:20:12.813819Z",
+      "campaign": "Infiltration - NMAP Portscan",
+      "campaign_start_epoch": 1519913388.354333,
+      "campaign_end_epoch": 1519933092.182726,
+      "boundary_relation": "both window starts are inside the active interval"
+    },
+    {
+      "id": "mar1_nmap_143012",
+      "pair": "Reconnaissance -> Benign",
+      "source_stage": 1,
+      "destination_stage": 0,
+      "source_window_start": 1519914582.813819,
+      "destination_window_start": 1519914612.813819,
+      "source_window_utc": "2018-03-01T14:29:42.813819Z",
+      "destination_window_utc": "2018-03-01T14:30:12.813819Z",
+      "campaign": "Infiltration - NMAP Portscan",
+      "campaign_start_epoch": 1519913388.354333,
+      "campaign_end_epoch": 1519933092.182726,
+      "boundary_relation": "both window starts are inside the active interval"
+    },
+    {
+      "id": "mar1_nmap_145642",
+      "pair": "Reconnaissance -> Benign",
+      "source_stage": 1,
+      "destination_stage": 0,
+      "source_window_start": 1519916172.813819,
+      "destination_window_start": 1519916202.813819,
+      "source_window_utc": "2018-03-01T14:56:12.813819Z",
+      "destination_window_utc": "2018-03-01T14:56:42.813819Z",
+      "campaign": "Infiltration - NMAP Portscan",
+      "campaign_start_epoch": 1519913388.354333,
+      "campaign_end_epoch": 1519933092.182726,
+      "boundary_relation": "both window starts are inside the active interval"
+    },
+    {
+      "id": "mar1_nmap_184712",
+      "pair": "Reconnaissance -> Benign",
+      "source_stage": 1,
+      "destination_stage": 0,
+      "source_window_start": 1519930002.813819,
+      "destination_window_start": 1519930032.813819,
+      "source_window_utc": "2018-03-01T18:46:42.813819Z",
+      "destination_window_utc": "2018-03-01T18:47:12.813819Z",
+      "campaign": "Infiltration - NMAP Portscan",
+      "campaign_start_epoch": 1519913388.354333,
+      "campaign_end_epoch": 1519933092.182726,
+      "boundary_relation": "both window starts are inside the active interval"
+    },
+    {
+      "id": "mar1_nmap_193812",
+      "pair": "Reconnaissance -> Benign",
+      "source_stage": 1,
+      "destination_stage": 0,
+      "source_window_start": 1519933062.813819,
+      "destination_window_start": 1519933092.813819,
+      "source_window_utc": "2018-03-01T19:37:42.813819Z",
+      "destination_window_utc": "2018-03-01T19:38:12.813819Z",
+      "campaign": "Infiltration - NMAP Portscan",
+      "campaign_start_epoch": 1519913388.354333,
+      "campaign_end_epoch": 1519933092.182726,
+      "boundary_relation": "source window overlaps the campaign end; destination starts 0.631093 seconds after it and remains in the explicitly authorized seven-boundary exception set"
+    }
+  ],
+  "rationale": "Observed-flow y_stage regresses to Benign within or at the sampled edge of an independently declared corrected-rule campaign interval. Reviewer option (c) excludes only this boundary from CRF structured training loss; stage cross-entropy, targets, Viterbi decoding, transition policy, and illegal-transition metrics remain unchanged. This is a dataset-specific objective exception, not a general relaxation.",
+  "split_reports": {
+    "train": {
+      "transition_occurrences": {
+        "mar1_dropbox_135342": 12,
+        "mar1_dropbox_135742": 4,
+        "mar1_nmap_142012": 15,
+        "mar1_nmap_143012": 15,
+        "mar1_nmap_145642": 15,
+        "mar1_nmap_184712": 15,
+        "mar1_nmap_193812": 15
+      },
+      "modeled_crf_edge_occurrences": {
+        "mar1_dropbox_135342": 12,
+        "mar1_dropbox_135742": 4,
+        "mar1_nmap_142012": 14,
+        "mar1_nmap_143012": 14,
+        "mar1_nmap_145642": 14,
+        "mar1_nmap_184712": 14,
+        "mar1_nmap_193812": 14
+      },
+      "destination_state_occurrences": {
+        "mar1_dropbox_135342": 12,
+        "mar1_dropbox_135742": 4,
+        "mar1_nmap_142012": 16,
+        "mar1_nmap_143012": 16,
+        "mar1_nmap_145642": 16,
+        "mar1_nmap_184712": 16,
+        "mar1_nmap_193812": 16
+      },
+      "declared_boundary_ids": [
+        "mar1_dropbox_135342",
+        "mar1_dropbox_135742",
+        "mar1_nmap_142012",
+        "mar1_nmap_143012",
+        "mar1_nmap_145642",
+        "mar1_nmap_184712",
+        "mar1_nmap_193812"
+      ]
+    },
+    "val": {
+      "transition_occurrences": {
+        "mar1_dropbox_135342": 0,
+        "mar1_dropbox_135742": 0,
+        "mar1_nmap_142012": 0,
+        "mar1_nmap_143012": 0,
+        "mar1_nmap_145642": 0,
+        "mar1_nmap_184712": 0,
+        "mar1_nmap_193812": 0
+      },
+      "modeled_crf_edge_occurrences": {
+        "mar1_dropbox_135342": 0,
+        "mar1_dropbox_135742": 0,
+        "mar1_nmap_142012": 0,
+        "mar1_nmap_143012": 0,
+        "mar1_nmap_145642": 0,
+        "mar1_nmap_184712": 0,
+        "mar1_nmap_193812": 0
+      },
+      "destination_state_occurrences": {
+        "mar1_dropbox_135342": 0,
+        "mar1_dropbox_135742": 0,
+        "mar1_nmap_142012": 0,
+        "mar1_nmap_143012": 0,
+        "mar1_nmap_145642": 0,
+        "mar1_nmap_184712": 0,
+        "mar1_nmap_193812": 0
+      },
+      "declared_boundary_ids": []
+    },
+    "test": {
+      "transition_occurrences": {
+        "mar1_dropbox_135342": 0,
+        "mar1_dropbox_135742": 0,
+        "mar1_nmap_142012": 0,
+        "mar1_nmap_143012": 0,
+        "mar1_nmap_145642": 0,
+        "mar1_nmap_184712": 0,
+        "mar1_nmap_193812": 0
+      },
+      "modeled_crf_edge_occurrences": {
+        "mar1_dropbox_135342": 0,
+        "mar1_dropbox_135742": 0,
+        "mar1_nmap_142012": 0,
+        "mar1_nmap_143012": 0,
+        "mar1_nmap_145642": 0,
+        "mar1_nmap_184712": 0,
+        "mar1_nmap_193812": 0
+      },
+      "destination_state_occurrences": {
+        "mar1_dropbox_135342": 0,
+        "mar1_dropbox_135742": 0,
+        "mar1_nmap_142012": 0,
+        "mar1_nmap_143012": 0,
+        "mar1_nmap_145642": 0,
+        "mar1_nmap_184712": 0,
+        "mar1_nmap_193812": 0
+      },
+      "declared_boundary_ids": []
+    }
+  },
+  "transition_policy_changed": false,
+  "viterbi_changed": false,
+  "illegal_transition_metric_changed": false,
+  "stage_cross_entropy_changed": false,
+  "rule_source_url": "https://github.com/GintsEngelen/CNS2022_Code/blob/f0ce502818e59e6cd062720ab2286c5ff6f2bdec/Labelling/CICIDS2018_labelling_fixed_CICFlowMeter.ipynb",
+  "rule_source_sha256": "e58bea8651f4c891383f3cf1e735de4b48f50c4ec8a9aef078b53972dca1422e",
+  "output_sha256": {
+    "train.pt": "c7422b7f7ccbd9e7ca26438de8cdf60f510aae223637326f5f4dc9ad195f2f5e",
+    "val.pt": "53052bc3fc098340cfd6113ec588d033461275456d10040619d6dd4b28f3b78c",
+    "test.pt": "bfcd9396ccb61ba1d3f371739c54c0162463ae20dc63a24d1220db23d4d98935",
+    "normalization.json": "8f5a295c097ec8a02ac2dc0b8cafa51d416a59b5669143e15fb66bc47c7c2ec5",
+    "metadata.json": "bbc289f371bf015f8706b88d69cec38f90f63f78bf731faca17bf26d56bc1979"
+  },
+  "training_started": false
+}

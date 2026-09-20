@@ -90,6 +90,30 @@ def test_explicit_reset_only_enables_backward_to_zero_or_one():
         decoder(emissions, torch.tensor([4, 2, 3]), reset_mask=reset)
 
 
+def test_transition_loss_exclusion_splits_nll_without_changing_decode_policy():
+    decoder = StageDecoder()
+    torch.manual_seed(208)
+    emissions = torch.randn(4, 7, requires_grad=True)
+    tags = torch.tensor([1, 2, 0, 1])
+    with pytest.raises(ValueError, match='illegal target'):
+        decoder(emissions, tags)
+    transition_loss_mask = torch.tensor([True, True, False, True])
+    loss = decoder(emissions, tags, transition_loss_mask=transition_loss_mask)
+    expected = decoder(emissions[:2], tags[:2]) + decoder(emissions[2:], tags[2:])
+    torch.testing.assert_close(loss, expected)
+    loss.backward()
+    assert emissions.grad is not None and torch.isfinite(emissions.grad).all()
+    decoded = decoder.decode(emissions.detach())
+    assert illegal_transition_rate(decoded) == 0.0
+    assert not decoder.allowed_transitions[2, 0]
+
+
+def test_transition_loss_mask_rejects_false_first_entry():
+    with pytest.raises(ValueError, match=r'\[:, 0\] must be true'):
+        StageDecoder()(torch.zeros(2, 7), torch.tensor([0, 1]),
+                       transition_loss_mask=torch.tensor([False, True]))
+
+
 def test_unknown_is_exempt_and_illegal_supervision_fails():
     decoder = StageDecoder()
     emissions = torch.zeros(3, 7)

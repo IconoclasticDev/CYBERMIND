@@ -57,4 +57,5 @@ data/intermediate_real_chunk_r2/
 data/processed_real_chunk_r2/
 data/processed_real_chunk_r3_zero_shot/
 data/processed_real_chunk_r4_reviewed_resets/
+data/processed_real_chunk_r4_option_c/
 .r0-tools/

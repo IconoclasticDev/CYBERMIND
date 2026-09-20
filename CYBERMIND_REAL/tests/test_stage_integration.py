@@ -98,6 +98,33 @@ def test_training_reset_metadata_is_explicit_and_cannot_hide_other_jumps():
         train.batch_loss(model,batch,cfg,torch.device('cpu'))
 
 
+def test_training_exclusion_changes_only_crf_component_and_requires_opt_in(monkeypatch):
+    model=tiny_model(True)
+    model.eval()
+    batch=sequences()
+    for state,label in zip(batch[1].states[1:],[1,2,0]):
+        state.y_stage=label
+    batch[1].states[3].metadata['crf_transition_loss_excluded']=True
+    observed={}
+    original_stage_ce=train.stage_cross_entropy
+    def capture_stage_ce(logits,target,cfg):
+        observed['target']=target.detach().clone()
+        observed['rows']=len(logits)
+        return original_stage_ce(logits,target,cfg)
+    monkeypatch.setattr(train,'stage_cross_entropy',capture_stage_ce)
+    base={'model':{'num_stages':7},'loss':{'use_crf_stage':True,'stage':.5}}
+    with pytest.raises(ValueError,match='reviewed config'):
+        train.batch_loss(model,batch,base,torch.device('cpu'))
+    enabled={'model':{'num_stages':7},'loss':{
+        'use_crf_stage':True,'use_crf_transition_exclusions':True,'stage':.5}}
+    loss,parts=train.batch_loss(model,batch,enabled,torch.device('cpu'))
+    assert torch.isfinite(loss) and parts['crf_stage']>0 and parts['stage']>0
+    assert observed['rows']==6 and observed['target'].tolist()[-3:]==[1,2,0]
+    batch[1].states[3].metadata.pop('crf_transition_loss_excluded')
+    with pytest.raises(ValueError,match='illegal target'):
+        train.batch_loss(model,batch,enabled,torch.device('cpu'))
+
+
 def test_crf_checkpoint_config_resolution():
     saved={'loss':{'use_crf_stage':True}}
     assert stage_model_kwargs({},saved)=={'use_crf_stage':True}

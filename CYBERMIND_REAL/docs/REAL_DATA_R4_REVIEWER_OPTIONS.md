@@ -1,8 +1,11 @@
 # R4 reviewed resets and unresolved-transition options
 
 Date: 2026-09-20. Scope: evidence requested after acceptance of the first R4
-failure. No second training attempt has started. None of options (a)–(c) has
-been implemented.
+failure. This document preserves the analysis supplied for the decision.
+
+Reviewer outcome, 2026-09-20: option (c) was authorized; options (a) and (b)
+were rejected. Option (c) is now implemented and audited in
+`REAL_DATA_R4_OPTION_C_AUDIT.md`. No second training attempt has started.
 
 ## 1. Three externally supported campaign resets
 
@@ -124,9 +127,10 @@ monotonicity was not trained across those seven edges, even though the decoder
 still enforces monotonicity at inference. It must not be represented as an
 external campaign reset.
 
-No option is implemented. A fresh whole-corpus transition audit, focused loss
-tests, CUDA preflight, and explicit reviewer authorization are required after a
-choice and before another R4 launch.
+This was the pre-decision status. The subsequent option-(c) implementation,
+whole-corpus transition audit, focused loss tests, and hashed full-suite run are
+recorded in `REAL_DATA_R4_OPTION_C_AUDIT.md`. Explicit reviewer authorization is
+still required before another R4 launch.
 
 ## 3. Independent provenance checks
 

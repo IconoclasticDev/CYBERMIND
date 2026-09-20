@@ -99,28 +99,49 @@ class StageDecoder(nn.Module):
             reset[:, None, None] & self.reset_transitions.unsqueeze(0)
         )
 
-    def forward(self, emissions, tags, mask=None, reset_mask=None):
+    def forward(self, emissions, tags, mask=None, reset_mask=None, transition_loss_mask=None):
         """Return the batch-mean negative log likelihood, calculated in fp32.
 
         Padding tags are ignored (including -1). Illegal observed transitions
         raise ValueError instead of introducing infinite losses into training.
+        A false ``transition_loss_mask`` entry splits the likelihood into two
+        independent contiguous segments at that destination. It affects this
+        training loss only; Viterbi decoding and its transition policy are
+        unchanged.
         """
-        emissions, mask, resets, tags, _ = self._inputs(emissions, mask, reset_mask, tags)
+        emissions, mask, resets, tags, unbatched = self._inputs(emissions, mask, reset_mask, tags)
+        if transition_loss_mask is None:
+            transition_loss_mask = torch.ones_like(mask)
+        else:
+            if unbatched:
+                transition_loss_mask = transition_loss_mask.unsqueeze(0)
+            if (transition_loss_mask.shape != mask.shape or transition_loss_mask.dtype != torch.bool
+                    or transition_loss_mask.device != emissions.device):
+                raise ValueError("transition_loss_mask must be a boolean tensor matching sequence shape and device")
+            if not transition_loss_mask[:, 0].all():
+                raise ValueError("transition_loss_mask[:, 0] must be true because no preceding CRF edge exists")
         batch = torch.arange(emissions.shape[0], device=emissions.device)
         alpha = emissions[:, 0]
         score = emissions[batch, 0, tags[:, 0]]
+        completed_nll = emissions.new_zeros(emissions.shape[0])
         transitions = self.transitions.float()
         for t in range(1, emissions.shape[1]):
             allowed = self._allowed(resets[:, t])
             legal_targets = allowed[batch, tags[:, t - 1], tags[:, t]]
-            if (mask[:, t] & ~legal_targets).any():
+            continuing = mask[:, t] & transition_loss_mask[:, t]
+            boundary = mask[:, t] & ~transition_loss_mask[:, t]
+            if (continuing & ~legal_targets).any():
                 raise ValueError(f"illegal target transition at timestep {t}; declare an explicit reset if appropriate")
             constrained = transitions.unsqueeze(0).masked_fill(~allowed, float("-inf"))
             next_alpha = torch.logsumexp(alpha.unsqueeze(2) + constrained, dim=1) + emissions[:, t]
-            alpha = torch.where(mask[:, t, None], next_alpha, alpha)
             step_score = transitions[tags[:, t - 1], tags[:, t]] + emissions[batch, t, tags[:, t]]
-            score = score + torch.where(mask[:, t], step_score, torch.zeros_like(step_score))
-        return (torch.logsumexp(alpha, dim=1) - score).mean()
+            completed_nll = completed_nll + torch.where(
+                boundary, torch.logsumexp(alpha, dim=1) - score, torch.zeros_like(score))
+            alpha = torch.where(continuing[:, None], next_alpha,
+                                torch.where(boundary[:, None], emissions[:, t], alpha))
+            score = torch.where(continuing, score + step_score,
+                                torch.where(boundary, emissions[batch, t, tags[:, t]], score))
+        return (completed_nll + torch.logsumexp(alpha, dim=1) - score).mean()
 
     @torch.no_grad()
     def decode(self, emissions, mask=None, reset_mask=None):

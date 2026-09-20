@@ -94,7 +94,11 @@ Reviewer follow-up, 2026-09-20:
 - [x] Confirm that the seven March 1 in-campaign boundaries remain untouched and illegal under the unchanged CRF policy.
 - [x] Report concrete pipeline impacts for target redefinition, non-monotonic CRF policy, and documented CRF-loss exclusion; implement none pending reviewer choice.
 - [x] Trace the earlier 203-passed/13-skipped statement to its execution transcript and disclose that no contemporaneously hashed test artifact exists.
-- [ ] Receive the reviewer's semantic choice and explicit authorization before any second R4 training attempt.
+- [x] Receive the reviewer's semantic choice: option (c) authorized; options (a) and (b) rejected.
+- [x] Implement exactly seven March 1 CRF structured-loss exclusions while retaining every stage-CE target and leaving Viterbi, the transition policy, and illegal-transition metrics unchanged.
+- [x] Audit the option-(c) derivative: 86 modeled repeated edges excluded, five first-target repetitions outside the structured edge model, zero unhandled modeled illegal edges, and zero validation/test exclusions.
+- [x] Re-run the complete suite and hash the final result: 206 passed, 13 skipped; the three additional passes are the new option-(c) tests.
+- [ ] Receive a second explicit reviewer approval before any second R4 training attempt.
 
 ## R5 — NOT STARTED
 

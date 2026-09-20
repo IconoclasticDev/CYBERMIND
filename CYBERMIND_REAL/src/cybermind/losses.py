@@ -14,9 +14,10 @@ def infiltration_loss(logits, target, pos_weight=None):
     return F.binary_cross_entropy_with_logits(logits.float(), target.float(), pos_weight=weight)
 def stage_loss(logits,target): return F.cross_entropy(logits,target.long())
 
-def crf_stage_loss(decoder,logits,target,mask=None,reset_mask=None):
+def crf_stage_loss(decoder,logits,target,mask=None,reset_mask=None,transition_loss_mask=None):
     """Structured sequence NLL, evaluated in fp32 even under mixed precision."""
-    return decoder(logits.float(),target.long(),mask=mask,reset_mask=reset_mask)
+    return decoder(logits.float(),target.long(),mask=mask,reset_mask=reset_mask,
+                   transition_loss_mask=transition_loss_mask)
 def binary_brier(logits,target):
     p=torch.sigmoid(logits.float()); return torch.mean((p-target.float())**2)
 def graph_consistency_loss(z):

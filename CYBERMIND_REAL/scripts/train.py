@@ -210,9 +210,25 @@ def batch_loss(model, batch, cfg, device, *, return_predictions=False):
         if any(not isinstance(value, bool) for row in resets for value in row):
             raise ValueError('Graph metadata campaign_reset must be an explicit boolean.')
         reset_mask = torch.tensor(resets,dtype=torch.bool,device=device)
+        use_exclusions = cfg['loss'].get('use_crf_transition_exclusions', False)
+        if not isinstance(use_exclusions, bool):
+            raise ValueError('loss.use_crf_transition_exclusions must be a YAML boolean.')
+        exclusion_flags = [[s.metadata.get('crf_transition_loss_excluded', False)
+                            for s in sequence[1:]] for sequence in states]
+        if any(not isinstance(value, bool) for row in exclusion_flags for value in row):
+            raise ValueError('Graph metadata crf_transition_loss_excluded must be an explicit boolean.')
+        if any(value for row in exclusion_flags for value in row) and not use_exclusions:
+            raise ValueError('Dataset contains CRF transition-loss exclusions but the reviewed config has not enabled them.')
+        transition_loss_mask = None
+        if use_exclusions:
+            # The first CRF tag is state[1], so it has no preceding edge inside
+            # the structured target. Later entries refer to their destination.
+            included = [[True] + [not value for value in row[1:]] for row in exclusion_flags]
+            transition_loss_mask = torch.tensor(included, dtype=torch.bool, device=device)
         components['crf_stage'] = crf_stage_loss(model.stage_decoder,
             stage_logits.reshape(z.size(0),z.size(1)-1,-1),
-            stage_labels.reshape(z.size(0),z.size(1)-1),reset_mask=reset_mask)
+            stage_labels.reshape(z.size(0),z.size(1)-1),reset_mask=reset_mask,
+            transition_loss_mask=transition_loss_mask)
     total = sum(cfg['loss'].get(name, .1 if name == 'graph_consistency' else
                               cfg['loss'].get('stage', .5) if name == 'crf_stage' else 0.) * value
                 for name, value in components.items())
