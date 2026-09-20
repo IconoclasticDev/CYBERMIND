@@ -1,0 +1,8 @@
+......................                                                   [100%]
+============================== warnings summary ===============================
+.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491
+  D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+22 passed, 1 warning in 3.89s
