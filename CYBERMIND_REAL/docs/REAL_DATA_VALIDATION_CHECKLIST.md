@@ -87,6 +87,15 @@ Failure audit: `REAL_DATA_R4_START_FAILURE_AUDIT.md`. The preflight's one real
 batch was legal but did not establish whole-corpus CRF target compatibility.
 No checkpoint, validation result, R4 pass, or R5 authorization exists.
 
+Reviewer follow-up, 2026-09-20:
+
+- [x] Verify the R0 manifest hash exactly matches the supplied Antigravity hash.
+- [x] Declare resets only at the reviewed February 14 FTP/SSH and March 2 Botnet campaign ends in a separate, identity-audited derivative.
+- [x] Confirm that the seven March 1 in-campaign boundaries remain untouched and illegal under the unchanged CRF policy.
+- [x] Report concrete pipeline impacts for target redefinition, non-monotonic CRF policy, and documented CRF-loss exclusion; implement none pending reviewer choice.
+- [x] Trace the earlier 203-passed/13-skipped statement to its execution transcript and disclose that no contemporaneously hashed test artifact exists.
+- [ ] Receive the reviewer's semantic choice and explicit authorization before any second R4 training attempt.
+
 ## R5 — NOT STARTED
 
 - [ ] R5.1 Use observed history only, unseen final-window target, threshold fixed at 0.5.
