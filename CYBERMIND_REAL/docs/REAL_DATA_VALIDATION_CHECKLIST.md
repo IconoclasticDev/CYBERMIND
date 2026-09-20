@@ -102,15 +102,15 @@ Reviewer follow-up, 2026-09-20:
 - [x] Stop at the first single-stage collapse, epoch 21, without retrying.
 - [x] Record the held-out four-step gate and R4 audit in `REAL_DATA_R4_ATTEMPT2_AUDIT.md`.
 
-## R5 — NOT STARTED
+## R5 — COMPLETE; model loses to feature-matched baseline
 
-- [ ] R5.1 Use observed history only, unseen final-window target, threshold fixed at 0.5.
-- [ ] R5.2 Compare node-only, node+edge, and fully feature-matched logistic baselines with the world model.
-- [ ] R5.3 Record FPR, confusion counts and single-class handling.
-- [ ] R5.4 Retain hashes, protocol version, sample probabilities and limitations.
-- [ ] State whether the model beats the matched baseline; preserve ties/failures without weakening the baseline.
-- [ ] Audit and submit to R6 review.
-- [ ] Include the full no-Lateral-Movement disclosure wherever stage coverage or illegal-transition metrics appear.
+- [x] R5.1 Use observed history only, unseen final-window target, threshold fixed at 0.5.
+- [x] R5.2 Compare node-only, node+edge, and feature-matched logistic baselines with the world model; include an Always-Benign reference.
+- [x] R5.3 Record FPR, confusion counts and explicit single-class fallback status.
+- [x] R5.4 Retain hashes, protocol version 3, 431 sample probabilities per model, and limitations.
+- [x] State the result plainly: the model loses to the feature-matched baseline on real data.
+- [x] Audit in `REAL_DATA_R5_AUDIT.md`; R6 remains unstarted pending review.
+- [x] Include the full no-Lateral-Movement disclosure wherever stage coverage or illegal-transition metrics appear.
 
 ## R6 — NOT STARTED; reviewer decision required
 

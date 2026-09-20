@@ -61,4 +61,7 @@ data/processed_real_chunk_r4_option_c/
 checkpoints/real_chunk_r4/attempt_2/*.pt
 checkpoints/real_chunk_r4/attempt_2/epochs/
 results/real_chunk_r4/attempt_2/process_id.txt
+examples/real_data_validation/r5/attempt_1/
+.r5-pytest-tmp/
+.r5-final-pytest-tmp/
 .r0-tools/

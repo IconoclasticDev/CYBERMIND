@@ -11,6 +11,7 @@ from cybermind.baselines.logistic import LogisticBaseline
 def sample(label=0, value=1.0):
     def state(y, x):
         return SimpleNamespace(x=torch.tensor([[x, 2.0], [x, 4.0]]),
+                               edge_index=torch.tensor([[0], [1]]),
                                edge_attr=torch.tensor([[5.0, 6.0]]),
                                y_infiltration=y, timestamp=x)
     return SimpleNamespace(states=[state(1, value), state(label, value + 100)],
@@ -43,6 +44,15 @@ def test_empty_edges_keep_fixed_width():
     value = sample()
     value.states[0].edge_attr = torch.empty(0, 2)
     np.testing.assert_array_equal(features(value), [1, 3, 0, 0])
+
+
+def test_feature_matched_includes_all_columns_and_topology():
+    value = sample()
+    matched = features(value, 'feature_matched')
+    assert matched.shape == (2 * 4 + 2 * 4 + 11,)
+    changed = deepcopy(value)
+    changed.states[0].edge_index = torch.tensor([[0, 1], [1, 0]])
+    assert not np.array_equal(matched, features(changed, 'feature_matched'))
 
 
 def test_periodic_transform_exactly_matches_model_input():

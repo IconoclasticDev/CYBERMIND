@@ -9,7 +9,7 @@ from cybermind.data.dataset import GraphSequenceDataset
 from cybermind.evaluation.metrics import binary_metrics
 
 PROTOCOL = {
-    'version': 2,
+    'version': 3,
     'input': 'states[:-1], in chronological order',
     'target': 'int(states[-1].y_infiltration > 0)',
     'forecast_horizon_windows': 1,
@@ -33,9 +33,38 @@ def sample_target(sample):
     return int(sample.states[-1].y_infiltration > 0)
 
 
+def _topology_features(state):
+    """Fixed-width summaries derived only from the observed edge_index."""
+    nodes = int(state.x.shape[0]); edge_index = state.edge_index.detach().cpu().numpy()
+    edges = int(edge_index.shape[1])
+    if edges:
+        source, destination = edge_index
+        indegree = np.bincount(destination, minlength=nodes).astype(float)
+        outdegree = np.bincount(source, minlength=nodes).astype(float)
+        pairs = set(zip(source.tolist(), destination.tolist()))
+        reciprocal = sum((right, left) in pairs for left, right in pairs) / edges
+        self_loop = float(np.mean(source == destination))
+    else:
+        indegree = outdegree = np.zeros(nodes, dtype=float)
+        reciprocal = self_loop = 0.0
+    density = edges / max(nodes * nodes, 1)
+    return np.asarray([
+        nodes, edges, density, self_loop, reciprocal,
+        indegree.mean(), indegree.std(), indegree.max(initial=0),
+        outdegree.mean(), outdegree.std(), outdegree.max(initial=0),
+    ], dtype=float)
+
+
+def _moments(values, width):
+    if not len(values):
+        return np.zeros(width * 4, dtype=float)
+    return np.concatenate((values.mean(axis=0), values.std(axis=0),
+                           values.min(axis=0), values.max(axis=0)))
+
+
 def features(sample, mode='node_edge', periodic_clock=None):
     sample_target(sample)
-    if mode not in ('node', 'node_edge'):
+    if mode not in ('node', 'node_edge', 'feature_matched'):
         raise ValueError('Unknown baseline feature mode')
     windows = []
     for state in sample.states[:-1]:
@@ -45,13 +74,18 @@ def features(sample, mode='node_edge', periodic_clock=None):
         if periodic_clock is not None:
             from cybermind.models.periodic_input import PeriodicClockInput
             x = PeriodicClockInput(x.shape[1], periodic_clock)(x)
-        node = x.detach().cpu().numpy().mean(axis=0)
+        node_values = x.detach().cpu().numpy()
+        node = (node_values.mean(axis=0) if mode != 'feature_matched'
+                else _moments(node_values, node_values.shape[1]))
         parts = [node]
-        if mode == 'node_edge':
+        if mode in ('node_edge', 'feature_matched'):
             edge = state.edge_attr.detach().cpu().numpy()
             if edge.ndim != 2:
                 raise ValueError('History edge features must be a matrix')
-            parts.append(edge.mean(axis=0) if len(edge) else np.zeros(edge.shape[1], dtype=node.dtype))
+            parts.append((edge.mean(axis=0) if len(edge) else np.zeros(edge.shape[1], dtype=node.dtype))
+                         if mode == 'node_edge' else _moments(edge, edge.shape[1]))
+        if mode == 'feature_matched':
+            parts.append(_topology_features(state))
         windows.append(np.concatenate(parts))
     vector = np.concatenate(windows)
     if not np.isfinite(vector).all():
@@ -105,10 +139,11 @@ def evaluate_baseline(processed, split='test', mode='node_edge', threshold=0.5, 
     state = training[0].states[0]
     registry = {
         'feature_mode': mode, 'node_columns': int(state.x.shape[1]),
-        'edge_columns': int(state.edge_attr.shape[1]) if mode == 'node_edge' else 0,
+        'edge_columns': int(state.edge_attr.shape[1]) if mode in ('node_edge', 'feature_matched') else 0,
         'history_windows': len(training[0].states) - 1,
         'flattened_width': int(xtrain.shape[1]),
-        'graph_topology': False,
+        'graph_topology': 'summary statistics' if mode == 'feature_matched' else False,
+        'aggregations': ['mean', 'std', 'min', 'max'] if mode == 'feature_matched' else ['mean'],
         'periodic_clock': periodic_clock,
         'periodic_columns': 2 if periodic_clock is not None else 0,
         'normalization_sha256': sha256(processed / 'normalization.json') if (processed / 'normalization.json').exists() else None,
@@ -116,13 +151,15 @@ def evaluate_baseline(processed, split='test', mode='node_edge', threshold=0.5, 
     if (processed / 'normalization.json').exists():
         normalizer = json.loads((processed / 'normalization.json').read_text(encoding='utf-8'))
         registry['node_features'] = normalizer['node']['features']
-        registry['edge_features'] = normalizer['edge']['features'] if mode == 'node_edge' else []
+        registry['edge_features'] = normalizer['edge']['features'] if mode in ('node_edge', 'feature_matched') else []
     return {
         'baseline': model_name, 'split': split, 'threshold': threshold,
         'protocol': PROTOCOL, 'protocol_sha256': record_hash(PROTOCOL),
         'feature_registry': registry, 'feature_registry_sha256': record_hash(registry),
         'source_sha256': {name: sha256(processed / f'{name}.pt') for name in ('train', split)},
         'training_count': len(training), 'evaluation_count': len(evaluation),
+        'training_target_counts': {'negative': int((ytrain == 0).sum()),
+                                   'positive': int((ytrain == 1).sum())},
         'metrics': metrics, 'confusion_counts': counts,
         'per_sample': [{'scenario': s.scenario_id, 'target_timestamp': float(s.states[-1].timestamp),
                         'target': y, 'predicted_future_risk': float(p)}
