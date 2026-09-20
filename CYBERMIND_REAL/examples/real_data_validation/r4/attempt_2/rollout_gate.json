@@ -1,0 +1,87 @@
+{
+  "gate": "R4 held-out real-chunk four-step rollout",
+  "passed": true,
+  "requirements": {
+    "minimum_distinct_non_unknown_per_step": 2,
+    "maximum_illegal_transitions_per_step": 0,
+    "unknown_count_must_be_below_sample_count": true
+  },
+  "checkpoint": "checkpoints\\real_chunk_r4\\attempt_2\\best.pt",
+  "checkpoint_sha256": "dd5da8fd76118e4b62b0747acc3631b486a404b1d12c15f9a9d79282477cc4aa",
+  "selected_epoch": 1,
+  "selection_state": {
+    "metric": "val_f1_stage_band",
+    "tolerance": 0.05,
+    "best_f1": 0.7896253602305475,
+    "best_stage_ce": 5.603485157556623,
+    "selected_epoch": 1
+  },
+  "processed": "data\\processed_real_chunk_r4_option_c",
+  "test_sha256": "bfcd9396ccb61ba1d3f371739c54c0162463ae20dc63a24d1220db23d4d98935",
+  "device": "cuda",
+  "rollout_steps": 4,
+  "n_rollouts": 4,
+  "seed": 0,
+  "preprocessing_contract": {
+    "split": "test",
+    "samples": 431,
+    "node_dim_match": true,
+    "edge_dim_match": true,
+    "history_match": true,
+    "window_match": true,
+    "normalization_match": true,
+    "passed": true
+  },
+  "per_step": [
+    {
+      "step": 1,
+      "samples": 431,
+      "decoded_histogram": {
+        "0": 429,
+        "2": 2
+      },
+      "distinct_non_unknown": 2,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "samples": 431,
+      "decoded_histogram": {
+        "0": 429,
+        "2": 2
+      },
+      "distinct_non_unknown": 2,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "samples": 431,
+      "decoded_histogram": {
+        "0": 429,
+        "2": 2
+      },
+      "distinct_non_unknown": 2,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "samples": 431,
+      "decoded_histogram": {
+        "0": 429,
+        "2": 2
+      },
+      "distinct_non_unknown": 2,
+      "unknown_count": 0,
+      "illegal_count": 0,
+      "passed": true
+    }
+  ],
+  "lateral_movement_disclosure": "Real-chunk validation does not include a Lateral Movement transition. Kill-chain-diversity validation on real data covers the other represented stages only; it does not validate Lateral Movement.",
+  "fallback_feature_disclosure": "flow_feature_source: CYBERMIND custom directional packet exporter; 40-column schema; satisfies the project's 20-field packet-feature contract when verified, but is not CICFlowMeter and omits approximately 67 of the pinned CICFlowMeter traffic-statistic columns. No CICFlowMeter feature parity is claimed."
+}

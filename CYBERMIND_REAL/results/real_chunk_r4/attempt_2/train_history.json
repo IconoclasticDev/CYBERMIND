@@ -1,0 +1,1836 @@
+[
+  {
+    "epoch": 1,
+    "train": {
+      "loss": 0.9846152027190749,
+      "transition": -1.0401188122780622,
+      "infiltration": 0.3099914642358928,
+      "stage": 0.683307012221861,
+      "calibration": 0.05762461104164812,
+      "graph_consistency": 0.025367654337623915,
+      "crf_stage": 2.718054720764654
+    },
+    "val": {
+      "loss": 41.399770758976445,
+      "transition": -1.6008556858401433,
+      "infiltration": 1.5972067642016945,
+      "stage": 5.603485157556623,
+      "calibration": 0.24110587083932586,
+      "graph_consistency": 0.011594456759777582,
+      "crf_stage": 77.10459300067937,
+      "precision": 1.0,
+      "recall": 0.6523809523809524,
+      "f1": 0.7896253602305475,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 377,
+            "1": 1,
+            "2": 50
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 377,
+            "1": 1,
+            "2": 50
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 377,
+            "1": 1,
+            "2": 50
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 377,
+            "1": 1,
+            "2": 50
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 2,
+    "train": {
+      "loss": -1.1586092771888832,
+      "transition": -1.7012200049262247,
+      "infiltration": 0.09548940604608538,
+      "stage": 0.29872382282684523,
+      "calibration": 0.012037755271490355,
+      "graph_consistency": 0.016956366730164332,
+      "crf_stage": 0.5873124395980072
+    },
+    "val": {
+      "loss": 60.2650157001531,
+      "transition": -1.8616486528418332,
+      "infiltration": 5.882027416812065,
+      "stage": 7.183159439363212,
+      "calibration": 0.7046629472176145,
+      "graph_consistency": 0.01183843378099465,
+      "crf_stage": 105.02188106786424,
+      "precision": 1.0,
+      "recall": 0.21349206349206348,
+      "f1": 0.35186396337475473,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 372,
+            "2": 56
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 372,
+            "2": 56
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 372,
+            "2": 56
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 372,
+            "2": 56
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 3,
+    "train": {
+      "loss": -1.4599416590635041,
+      "transition": -1.8997637313286861,
+      "infiltration": 0.07784980945420693,
+      "stage": 0.22838901471414588,
+      "calibration": 0.010332566324681977,
+      "graph_consistency": 0.014308615755388462,
+      "crf_stage": 0.4885607682795578
+    },
+    "val": {
+      "loss": 67.24667194847748,
+      "transition": -1.8772036007074553,
+      "infiltration": 9.360754900788193,
+      "stage": 7.57465206017004,
+      "calibration": 0.7521569247089169,
+      "graph_consistency": 0.014438998159760975,
+      "crf_stage": 111.64783857470361,
+      "precision": 1.0,
+      "recall": 0.21634920634920635,
+      "f1": 0.35573535168993864,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "2": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "2": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "2": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "2": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 4,
+    "train": {
+      "loss": -1.574129202212917,
+      "transition": -1.956928652203069,
+      "infiltration": 0.06459677353525439,
+      "stage": 0.19669708853895573,
+      "calibration": 0.00885438331149184,
+      "graph_consistency": 0.013808765539076133,
+      "crf_stage": 0.43340475900233527
+    },
+    "val": {
+      "loss": 66.1521717142836,
+      "transition": -1.8650146299433485,
+      "infiltration": 7.997150113754177,
+      "stage": 7.624387972822813,
+      "calibration": 0.6906078091882989,
+      "graph_consistency": 0.014918305768596584,
+      "crf_stage": 112.13645729171895,
+      "precision": 1.0,
+      "recall": 0.2850793650793651,
+      "f1": 0.44367588932806323,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 322,
+            "1": 41,
+            "2": 65
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 322,
+            "1": 41,
+            "2": 65
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 322,
+            "1": 41,
+            "2": 65
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 322,
+            "1": 41,
+            "2": 65
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 5,
+    "train": {
+      "loss": -1.6893513618040394,
+      "transition": -2.0243547394950645,
+      "infiltration": 0.06092581382430235,
+      "stage": 0.16628397986832227,
+      "calibration": 0.008558626018800466,
+      "graph_consistency": 0.014035319946180062,
+      "crf_stage": 0.37564063872297837
+    },
+    "val": {
+      "loss": 73.59156588082001,
+      "transition": -1.8915461906205828,
+      "infiltration": 8.777029691645511,
+      "stage": 8.441634690650156,
+      "calibration": 0.7116738852901268,
+      "graph_consistency": 0.01609418040335126,
+      "crf_stage": 124.68264252671571,
+      "precision": 1.0,
+      "recall": 0.26206349206349205,
+      "f1": 0.4152936737517293,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 329,
+            "1": 27,
+            "2": 72
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 329,
+            "1": 27,
+            "2": 72
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 329,
+            "1": 27,
+            "2": 72
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 329,
+            "1": 23,
+            "2": 76
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 6,
+    "train": {
+      "loss": -1.6790864452535508,
+      "transition": -2.037375291580309,
+      "infiltration": 0.0619034295608528,
+      "stage": 0.1704179075430901,
+      "calibration": 0.00934409208134161,
+      "graph_consistency": 0.014350828917487676,
+      "crf_stage": 0.4157451175815432
+    },
+    "val": {
+      "loss": 72.06623440145331,
+      "transition": -1.8564327966387026,
+      "infiltration": 6.436479822818596,
+      "stage": 8.538472315975438,
+      "calibration": 0.6624689894339093,
+      "graph_consistency": 0.013209596209915651,
+      "crf_stage": 126.16627276946451,
+      "precision": 1.0,
+      "recall": 0.2926984126984127,
+      "f1": 0.45284872298624756,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 314,
+            "1": 45,
+            "2": 69
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 314,
+            "1": 45,
+            "2": 69
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 314,
+            "1": 45,
+            "2": 69
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 314,
+            "1": 45,
+            "2": 69
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 7,
+    "train": {
+      "loss": -1.8944371881872293,
+      "transition": -2.1430468733799044,
+      "infiltration": 0.03972711254186981,
+      "stage": 0.15018086307290163,
+      "calibration": 0.005886685542139901,
+      "graph_consistency": 0.014687390144521906,
+      "crf_stage": 0.262292101216218
+    },
+    "val": {
+      "loss": 69.75916940029536,
+      "transition": -1.909094077125888,
+      "infiltration": 8.301355019852666,
+      "stage": 8.02225829507703,
+      "calibration": 0.6920947915347659,
+      "graph_consistency": 0.011880297889436864,
+      "crf_stage": 118.43234491793909,
+      "precision": 1.0,
+      "recall": 0.283968253968254,
+      "f1": 0.4423290888861417,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 313,
+            "1": 66,
+            "2": 49
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 313,
+            "1": 66,
+            "2": 49
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 313,
+            "1": 66,
+            "2": 49
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 313,
+            "1": 64,
+            "2": 49,
+            "6": 2
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 2,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 8,
+    "train": {
+      "loss": -1.924315739390147,
+      "transition": -2.174591621488175,
+      "infiltration": 0.042326678225993696,
+      "stage": 0.14051304979928456,
+      "calibration": 0.007027178666755373,
+      "graph_consistency": 0.014636294081699697,
+      "crf_stage": 0.2696472150298288
+    },
+    "val": {
+      "loss": 76.50490115513311,
+      "transition": -1.8818700090747014,
+      "infiltration": 9.810947882809575,
+      "stage": 8.674320976310801,
+      "calibration": 0.7098141539999261,
+      "graph_consistency": 0.01586921041870542,
+      "crf_stage": 128.1902262250954,
+      "precision": 1.0,
+      "recall": 0.27015873015873015,
+      "f1": 0.42539365158710324,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 25,
+            "2": 79
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 23,
+            "2": 81
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 23,
+            "2": 81
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 15,
+            "2": 88,
+            "6": 1
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 1,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 9,
+    "train": {
+      "loss": -2.0187563912317006,
+      "transition": -2.204783080955896,
+      "infiltration": 0.030165284507443497,
+      "stage": 0.12106353606825355,
+      "calibration": 0.00497700078651001,
+      "graph_consistency": 0.015188786719052483,
+      "crf_stage": 0.18563072200113026
+    },
+    "val": {
+      "loss": 78.28373492321121,
+      "transition": -1.748879482236334,
+      "infiltration": 11.565630353780499,
+      "stage": 8.656722951158185,
+      "calibration": 0.7150167465473357,
+      "graph_consistency": 0.01693991325560644,
+      "crf_stage": 127.987850759631,
+      "precision": 1.0,
+      "recall": 0.2653968253968254,
+      "f1": 0.41946813848469644,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 319,
+            "1": 48,
+            "2": 58,
+            "6": 3
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 3,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 319,
+            "1": 45,
+            "2": 60,
+            "6": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 4,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 320,
+            "1": 44,
+            "2": 60,
+            "6": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 4,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 320,
+            "1": 39,
+            "2": 65,
+            "6": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 4,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 10,
+    "train": {
+      "loss": -2.0555234802267424,
+      "transition": -2.2422868677137036,
+      "infiltration": 0.027670368826064884,
+      "stage": 0.1083681192122983,
+      "calibration": 0.004915020926887236,
+      "graph_consistency": 0.014150667497767612,
+      "crf_stage": 0.20502178342037206
+    },
+    "val": {
+      "loss": 83.75598867362905,
+      "transition": -1.7015065822367357,
+      "infiltration": 12.941247881638217,
+      "stage": 9.127642840982597,
+      "calibration": 0.7390200025781014,
+      "graph_consistency": 0.02079400789562752,
+      "crf_stage": 135.60508510553947,
+      "precision": 1.0,
+      "recall": 0.24285714285714285,
+      "f1": 0.39080459770114945,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 328,
+            "1": 5,
+            "2": 95
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 328,
+            "1": 5,
+            "2": 94,
+            "6": 1
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 1,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 329,
+            "1": 5,
+            "2": 92,
+            "6": 2
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 2,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 329,
+            "1": 5,
+            "2": 92,
+            "6": 2
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 2,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 11,
+    "train": {
+      "loss": -2.1585414060569637,
+      "transition": -2.291111107115327,
+      "infiltration": 0.020944724997947566,
+      "stage": 0.0896352132747532,
+      "calibration": 0.003541299697958038,
+      "graph_consistency": 0.013483930662550632,
+      "crf_stage": 0.12950146927982306
+    },
+    "val": {
+      "loss": 90.19651289966619,
+      "transition": -1.7866149444446386,
+      "infiltration": 14.006837605383403,
+      "stage": 9.835623874842563,
+      "calibration": 0.7212878142787414,
+      "graph_consistency": 0.01978755052523496,
+      "crf_stage": 145.82448249888196,
+      "precision": 1.0,
+      "recall": 0.259047619047619,
+      "f1": 0.4114977307110439,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 323,
+            "1": 10,
+            "2": 95
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 323,
+            "1": 10,
+            "2": 94,
+            "6": 1
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 1,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 10,
+            "2": 94
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 8,
+            "2": 96
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 12,
+    "train": {
+      "loss": -2.1420749853890806,
+      "transition": -2.2800775916524465,
+      "infiltration": 0.020732359701224612,
+      "stage": 0.08003181464943526,
+      "calibration": 0.0037099271798731394,
+      "graph_consistency": 0.014688403460757917,
+      "crf_stage": 0.15008701514762407
+    },
+    "val": {
+      "loss": 85.2682720879528,
+      "transition": -1.7762640301033714,
+      "infiltration": 13.702468712613962,
+      "stage": 9.264361343651174,
+      "calibration": 0.7529185840337398,
+      "graph_consistency": 0.028189267271207036,
+      "crf_stage": 137.1129680348334,
+      "precision": 1.0,
+      "recall": 0.2276190476190476,
+      "f1": 0.3708301008533747,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 343,
+            "1": 58,
+            "2": 26,
+            "6": 1
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 1,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 343,
+            "1": 54,
+            "2": 26,
+            "6": 5
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 5,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 345,
+            "1": 45,
+            "2": 26,
+            "6": 12
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 12,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 349,
+            "1": 42,
+            "2": 26,
+            "6": 11
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 11,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 13,
+    "train": {
+      "loss": -2.176448583532741,
+      "transition": -2.2903324292644887,
+      "infiltration": 0.020185690666177702,
+      "stage": 0.06157508917992113,
+      "calibration": 0.004010003122870855,
+      "graph_consistency": 0.013362242484954748,
+      "crf_stage": 0.12154476034998775
+    },
+    "val": {
+      "loss": 88.99710107963776,
+      "transition": -1.4105882907860747,
+      "infiltration": 13.963391376607051,
+      "stage": 9.683303353942444,
+      "calibration": 0.7542046436487271,
+      "graph_consistency": 0.026149607032850804,
+      "crf_stage": 142.89838191950432,
+      "precision": 1.0,
+      "recall": 0.2253968253968254,
+      "f1": 0.36787564766839376,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 344,
+            "1": 81,
+            "2": 3
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 344,
+            "1": 81,
+            "2": 3
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 344,
+            "1": 81,
+            "2": 3
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 344,
+            "1": 81,
+            "2": 3
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 14,
+    "train": {
+      "loss": -2.3009540767898415,
+      "transition": -2.3923482728081638,
+      "infiltration": 0.015297870872065501,
+      "stage": 0.04862671118238056,
+      "calibration": 0.0024219151344267395,
+      "graph_consistency": 0.011757795569027011,
+      "crf_stage": 0.10024560767808614
+    },
+    "val": {
+      "loss": 91.00235516557069,
+      "transition": -1.1224177443535528,
+      "infiltration": 14.273384177144486,
+      "stage": 9.826689889497846,
+      "calibration": 0.7257780732876282,
+      "graph_consistency": 0.025526391620808674,
+      "crf_stage": 145.58067093608534,
+      "precision": 1.0,
+      "recall": 0.2526984126984127,
+      "f1": 0.4034465281297516,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 63,
+            "2": 39,
+            "6": 2
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 2,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 323,
+            "1": 62,
+            "2": 38,
+            "6": 5
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 5,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 62,
+            "2": 38,
+            "6": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 4,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 324,
+            "1": 58,
+            "2": 40,
+            "6": 6
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 6,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 15,
+    "train": {
+      "loss": -2.20251418805389,
+      "transition": -2.2978898656936586,
+      "infiltration": 0.017552168523787787,
+      "stage": 0.05290716949639211,
+      "calibration": 0.003252328178535521,
+      "graph_consistency": 0.01266369573484718,
+      "crf_stage": 0.09890616508480325
+    },
+    "val": {
+      "loss": 96.154417144918,
+      "transition": -0.382600170934451,
+      "infiltration": 14.034501838199708,
+      "stage": 10.372791818369215,
+      "calibration": 0.7429872708483081,
+      "graph_consistency": 0.033648636535889356,
+      "crf_stage": 154.3283145048908,
+      "precision": 1.0,
+      "recall": 0.23555555555555555,
+      "f1": 0.381294964028777,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 335,
+            "1": 93
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 335,
+            "1": 93
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 335,
+            "1": 93
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 335,
+            "1": 93
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 16,
+    "train": {
+      "loss": -2.442273956526722,
+      "transition": -2.5406493058690187,
+      "infiltration": 0.022528715902250678,
+      "stage": 0.05594992770035293,
+      "calibration": 0.004064809080454344,
+      "graph_consistency": 0.00986103505636727,
+      "crf_stage": 0.09214520735064277
+    },
+    "val": {
+      "loss": 106.66385903759537,
+      "transition": 1.6250417167407887,
+      "infiltration": 19.123170175284983,
+      "stage": 10.822785800862535,
+      "calibration": 0.8839975318340497,
+      "graph_consistency": 0.021909741972024752,
+      "crf_stage": 160.65052725889973,
+      "precision": 1.0,
+      "recall": 0.07,
+      "f1": 0.1308411214953271,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 422,
+            "1": 6
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 422,
+            "1": 6
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 422,
+            "1": 6
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 422,
+            "1": 6
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 17,
+    "train": {
+      "loss": -2.6016130290219475,
+      "transition": -2.688706700278423,
+      "infiltration": 0.018470730353358132,
+      "stage": 0.0407202655091219,
+      "calibration": 0.00308948376897974,
+      "graph_consistency": 0.009939021347041268,
+      "crf_stage": 0.09330203338554145
+    },
+    "val": {
+      "loss": 107.66317995017934,
+      "transition": 1.4811452419375217,
+      "infiltration": 18.763294999287506,
+      "stage": 11.088776038071819,
+      "calibration": 0.7918357472414168,
+      "graph_consistency": 0.028742823806356326,
+      "crf_stage": 163.4262215088461,
+      "precision": 1.0,
+      "recall": 0.17333333333333334,
+      "f1": 0.29545454545454547,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 386,
+            "1": 38,
+            "2": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 386,
+            "1": 38,
+            "2": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 386,
+            "1": 38,
+            "2": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 386,
+            "1": 38,
+            "2": 4
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 18,
+    "train": {
+      "loss": -2.7782297413653665,
+      "transition": -2.8609571600395345,
+      "infiltration": 0.017513223628112563,
+      "stage": 0.04725361511055005,
+      "calibration": 0.003044112328446796,
+      "graph_consistency": 0.008928410350956272,
+      "crf_stage": 0.08017145485790987
+    },
+    "val": {
+      "loss": 111.85414234054423,
+      "transition": 0.7786530120011036,
+      "infiltration": 20.376003377348464,
+      "stage": 11.46441563044753,
+      "calibration": 0.8127270929306467,
+      "graph_consistency": 0.022298372137386387,
+      "crf_stage": 169.60500415908956,
+      "precision": 1.0,
+      "recall": 0.15063492063492062,
+      "f1": 0.261829217823148,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "1": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "1": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "1": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 364,
+            "1": 64
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 19,
+    "train": {
+      "loss": -2.925166018706269,
+      "transition": -2.987087439085681,
+      "infiltration": 0.01408090283880261,
+      "stage": 0.02386133034920565,
+      "calibration": 0.0024656882037247503,
+      "graph_consistency": 0.007839433865713777,
+      "crf_stage": 0.06926554409878054
+    },
+    "val": {
+      "loss": 127.07350340513426,
+      "transition": 1.2667730578578242,
+      "infiltration": 24.282907530526135,
+      "stage": 12.731179983816414,
+      "calibration": 0.9175602277027113,
+      "graph_consistency": 0.02674222828942203,
+      "crf_stage": 189.9440925633796,
+      "precision": 1.0,
+      "recall": 0.04634920634920635,
+      "f1": 0.08859223300970874,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 427,
+            "1": 1
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 427,
+            "1": 1
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 427,
+            "1": 1
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 427,
+            "1": 1
+          },
+          "distinct_non_unknown": 2,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 20,
+    "train": {
+      "loss": -2.8712899233573603,
+      "transition": -2.9374434163003476,
+      "infiltration": 0.0166081478406076,
+      "stage": 0.028654893621668853,
+      "calibration": 0.002351911956251641,
+      "graph_consistency": 0.0065796491544717825,
+      "crf_stage": 0.06817911357448665
+    },
+    "val": {
+      "loss": 104.37489245762335,
+      "transition": -1.4093725358214333,
+      "infiltration": 18.07793217716373,
+      "stage": 11.125920988688959,
+      "calibration": 0.759307549242583,
+      "graph_consistency": 0.012199427449431654,
+      "crf_stage": 163.9805811944409,
+      "precision": 1.0,
+      "recall": 0.2195238095238095,
+      "f1": 0.36001561889886763,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 381,
+            "1": 16,
+            "2": 31
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 381,
+            "1": 16,
+            "2": 31
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 381,
+            "1": 16,
+            "2": 31
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 381,
+            "1": 16,
+            "2": 31
+          },
+          "distinct_non_unknown": 3,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": false
+        }
+      ],
+      "collapsed": false
+    }
+  },
+  {
+    "epoch": 21,
+    "train": {
+      "loss": -2.987793826439438,
+      "transition": -3.059115962465768,
+      "infiltration": 0.018478561931384287,
+      "stage": 0.029711876128930538,
+      "calibration": 0.0028037967156758882,
+      "graph_consistency": 0.006176185030280489,
+      "crf_stage": 0.07361851852735819
+    },
+    "val": {
+      "loss": 131.0739925420173,
+      "transition": 4.0451449001921675,
+      "infiltration": 27.274572414772532,
+      "stage": 12.479399685547731,
+      "calibration": 0.9741013995676397,
+      "graph_consistency": 0.016822185106227332,
+      "crf_stage": 186.6361449945753,
+      "precision": 1.0,
+      "recall": 0.0004761904761904762,
+      "f1": 0.0009519276534983341,
+      "threshold": 0.5,
+      "positive": 6300,
+      "negative": 120
+    },
+    "rollout_monitor": {
+      "split": "val",
+      "rollout_steps": 4,
+      "n_rollouts": 4,
+      "seed": 0,
+      "per_step": [
+        {
+          "step": 1,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 428
+          },
+          "distinct_non_unknown": 1,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": true
+        },
+        {
+          "step": 2,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 428
+          },
+          "distinct_non_unknown": 1,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": true
+        },
+        {
+          "step": 3,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 428
+          },
+          "distinct_non_unknown": 1,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": true
+        },
+        {
+          "step": 4,
+          "samples": 428,
+          "decoded_histogram": {
+            "0": 428
+          },
+          "distinct_non_unknown": 1,
+          "unknown_count": 0,
+          "illegal_count": 0,
+          "single_stage_collapse": true
+        }
+      ],
+      "collapsed": true
+    }
+  }
+]

@@ -58,4 +58,7 @@ data/processed_real_chunk_r2/
 data/processed_real_chunk_r3_zero_shot/
 data/processed_real_chunk_r4_reviewed_resets/
 data/processed_real_chunk_r4_option_c/
+checkpoints/real_chunk_r4/attempt_2/*.pt
+checkpoints/real_chunk_r4/attempt_2/epochs/
+results/real_chunk_r4/attempt_2/process_id.txt
 .r0-tools/

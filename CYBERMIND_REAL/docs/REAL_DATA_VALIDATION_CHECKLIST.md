@@ -61,7 +61,7 @@ including R3–R6 and final architecture/novelty sections; never summarize it aw
 - [x] R3.3 Label all outputs `source: zero-shot, synthetic-trained weights, real-corpus chunk — out-of-distribution test`.
 - [x] Audit the restricted Benign/Reconnaissance-only OOD result; manual reviewer sign-off is required before R4.
 
-## R4 — STOPPED BEFORE EPOCH 1; exit criterion NOT MET
+## R4 — COMPLETE; reviewed real-chunk gate PASS
 
 Manual reviewer authorization was received in-thread on 2026-09-16 with the
 instruction `continue`, after delivery of `REAL_DATA_R4_PREFLIGHT.md`. This
@@ -76,12 +76,12 @@ disk logs, deliberate patience, first-collapse stop, and no automated retries.
 - [x] Launch the single authorized run; preserve its immediate strict CRF failure and do not retry automatically.
 - [x] Audit every target transition: 109 illegal train occurrences (9 unique boundaries), zero validation, and 15 illegal test occurrences (1 unique boundary).
 - [x] Establish that seven of ten unique illegal boundaries occur inside active corrected March 1 rule intervals and cannot be justified as externally declared campaign resets.
-- [ ] Train the combined model on the real chunk only. Blocked pending reviewer decision on target/reset semantics; no epoch completed.
-- [ ] R4.2 Evaluate each of four future steps independently: at least two distinct non-Unknown stages, zero illegal transitions, Unknown count below sample count.
-- [ ] R4.3 Preserve every attempted epoch checkpoint, including failures.
-- [ ] R4.4 Choose and justify patience before the run; do not inherit synthetic patience blindly.
-- [ ] Audit selected checkpoint and unchanged gate outcomes; request approval for R5.
-- [ ] Include the full no-Lateral-Movement disclosure beside stage coverage and illegal-transition results, even on failure.
+- [x] Train the combined model on the real chunk only. The authorized second attempt stopped on first validation collapse at epoch 21; no retry occurred.
+- [x] R4.2 Evaluate each of four future steps independently: selected epoch 1 passes narrowly with Benign 429 / Initial Access 2, zero illegal transitions, and zero Unknown at every step.
+- [x] R4.3 Preserve every attempted epoch checkpoint: all 21 are retained and hashed in the artifact manifest.
+- [x] R4.4 Use and justify patience 20 for the 50-epoch, 1,699-sequence run.
+- [x] Audit the selected checkpoint, epoch-21 collapse, and unchanged gate outcomes. R5 remains unstarted.
+- [x] Include the full no-Lateral-Movement disclosure beside stage coverage and illegal-transition results.
 
 Failure audit: `REAL_DATA_R4_START_FAILURE_AUDIT.md`. The preflight's one real
 batch was legal but did not establish whole-corpus CRF target compatibility.
@@ -98,7 +98,9 @@ Reviewer follow-up, 2026-09-20:
 - [x] Implement exactly seven March 1 CRF structured-loss exclusions while retaining every stage-CE target and leaving Viterbi, the transition policy, and illegal-transition metrics unchanged.
 - [x] Audit the option-(c) derivative: 86 modeled repeated edges excluded, five first-target repetitions outside the structured edge model, zero unhandled modeled illegal edges, and zero validation/test exclusions.
 - [x] Re-run the complete suite and hash the final result: 206 passed, 13 skipped; the three additional passes are the new option-(c) tests.
-- [ ] Receive a second explicit reviewer approval before any second R4 training attempt.
+- [x] Receive a second explicit reviewer approval before the second R4 training attempt.
+- [x] Stop at the first single-stage collapse, epoch 21, without retrying.
+- [x] Record the held-out four-step gate and R4 audit in `REAL_DATA_R4_ATTEMPT2_AUDIT.md`.
 
 ## R5 — NOT STARTED
 
