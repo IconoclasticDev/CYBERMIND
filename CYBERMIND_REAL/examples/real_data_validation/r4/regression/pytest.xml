@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="112.503" timestamp="2026-09-20T19:09:59.173752+05:30" hostname="Phishy"><testcase classname="" name="tests.test_baseline_protocol" time="0.000"><error message="collection failure">ImportError while importing test module 'D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\tests\test_baseline_protocol.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\as030\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_baseline_protocol.py:7: in &lt;module&gt;
+    from cybermind.baselines.protocol import features, sample_target, metric_report, evaluate_baseline
+src\cybermind\baselines\protocol.py:7: in &lt;module&gt;
+    from cybermind.baselines.logistic import LogisticBaseline
+src\cybermind\baselines\logistic.py:3: in &lt;module&gt;
+    from sklearn.linear_model import LogisticRegression
+.phase01-venv\Lib\site-packages\sklearn\linear_model\__init__.py:12: in &lt;module&gt;
+    from sklearn.linear_model._coordinate_descent import (
+.phase01-venv\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py:16: in &lt;module&gt;
+    from sklearn.linear_model import _cd_fast as cd_fast
+E   ImportError: DLL load failed while importing _cd_fast: An Application Control policy has blocked this file.</error></testcase></testsuite></testsuites>

@@ -65,3 +65,13 @@ examples/real_data_validation/r5/attempt_1/
 .r5-pytest-tmp/
 .r5-final-pytest-tmp/
 .r0-tools/
+node_modules/
+artifacts/track_e/slides/build/candidate.pptx
+artifacts/track_e/slides/build/candidate.pptx.inspect.ndjson
+artifacts/track_e/video/walkthrough_build/
+artifacts/track_e/video/server.log
+artifacts/track_e/video/server_error.log
+results/**/process_id.txt
+runtime/**/*.log
+.r4-full-suite-tmp/
+.r4-full-suite-final-tmp/

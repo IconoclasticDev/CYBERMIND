@@ -63,7 +63,7 @@ with right:
             st.write(f"Lowest simulated risk: {best['host']} ({best['future_risk']:.1%}). Analyst review required.")
         else:
             st.write('No simulated isolation reduces model risk.')
-    st.caption('Simulation only: host features are scaled and incident edges removed in the last observed graph. History and random draws match the displayed forecast. This is model sensitivity, not a causal estimate or a network action. Port blocking is unavailable until raw-port mutation semantics are verified for normalized inputs.')
+    st.caption('Edge-cut sensitivity only: incident edges are removed from the last observed graph; measured node features and history are retained. Random draws match the displayed forecast. This does not model future containment effects or execute a network action. Port blocking is unavailable until raw-port mutation semantics are verified for normalized inputs.')
 effects = {r['host_index']: r['risk_reduction'] for r in st.session_state['interventions'] if r['host_index'] is not None}
 graph_slot.graphviz_chart(network_dot(observed[-1], effects))
 with st.expander('Why this forecast?'):

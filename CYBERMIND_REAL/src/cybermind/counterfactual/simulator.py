@@ -16,7 +16,11 @@ def mutate_state(state, intervention: Intervention):
     s=copy.deepcopy(state)
     if intervention.action in ('Block Host','Isolate Host') and intervention.host is not None:
         h=intervention.host
-        s.x[h] = s.x[h] * (0.05 if intervention.action=='Isolate Host' else 0.15)
+        if isinstance(h, bool) or not isinstance(h, int) or not 0 <= h < s.x.size(0):
+            raise ValueError('Host must be a valid node index')
+        # An edge-cut probe retains measured node features. Scaling normalized
+        # features pulls raw values toward the training mean and fabricates a
+        # post-containment measurement (including unrelated clock features).
         mask=(s.edge_index[0]!=h)&(s.edge_index[1]!=h)
         s.edge_index=s.edge_index[:,mask]
         s.edge_attr=s.edge_attr[mask]

@@ -37,10 +37,13 @@ def test_intervention_keeps_history_draws_and_input_immutable():
     states = [state(), state()]
     before = copy.deepcopy(states)
     rows = compare_isolations(Model(), states, [0], 4, 8, 29)
-    assert rows[0]['risk_reduction'] > 0
+    # A model using only node features should not respond to an edge-cut probe.
+    assert all(row['risk_reduction'] == 0 for row in rows)
     assert len(calls) == 2
     assert all(len(c[0]) == 2 and c[2] == {'n_rollouts':8,'seed':29,'explain':False} for c in calls)
     assert torch.equal(calls[1][0][0].x, before[0].x)
+    assert torch.equal(calls[1][0][-1].x, before[-1].x)
+    assert calls[1][0][-1].edge_index.numel() == 0
     for actual, original in zip(states,before):
         assert torch.equal(actual.x, original.x)
         assert torch.equal(actual.edge_index, original.edge_index)
