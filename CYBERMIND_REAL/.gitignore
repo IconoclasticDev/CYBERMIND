@@ -75,3 +75,4 @@ results/**/process_id.txt
 runtime/**/*.log
 .r4-full-suite-tmp/
 .r4-full-suite-final-tmp/
+data/manifests/real_best_pipeline/

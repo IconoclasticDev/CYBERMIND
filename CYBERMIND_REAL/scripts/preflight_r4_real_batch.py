@@ -52,8 +52,11 @@ def main():
               'stage': 'stage_head.', 'crf': 'stage_decoder.'}
     active = {group: any(row['finite'] and row['norm'] > 0 for name, row in gradients.items()
                          if name.startswith(prefix)) for group, prefix in groups.items()}
+    required_groups = ['graph', 'temporal', 'dynamics', 'latent', 'infiltration', 'stage']
+    if cfg['loss'].get('use_crf_stage', False):
+        required_groups.append('crf')
     report = {
-        'passed': bool(torch.isfinite(loss) and all(active.values())),
+        'passed': bool(torch.isfinite(loss) and all(active[group] for group in required_groups)),
         'scope': 'R4 readiness only: first real training batch forward/backward; no optimizer step and no model update.',
         'config': args.config,
         'gpu': torch.cuda.get_device_name(device),
@@ -70,6 +73,7 @@ def main():
         'peak_reserved_bytes': torch.cuda.max_memory_reserved(device),
         'device_total_memory_bytes': torch.cuda.get_device_properties(device).total_memory,
         'active_required_gradient_groups': active,
+        'required_gradient_groups': required_groups,
         'parameters_without_training_loss_gradient': sorted(name for name, row in gradients.items() if not row['finite']),
     }
     output = ROOT / args.output

@@ -1,0 +1,5 @@
+{
+  "status": "early_stopped",
+  "last_completed_epoch": 18,
+  "epochs_without_improvement": 15
+}
