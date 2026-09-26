@@ -23,3 +23,7 @@ def binary_brier(logits,target):
 def graph_consistency_loss(z):
     if z.size(1)<2: return z.new_tensor(0.)
     return torch.mean((z[:,1:].float()-z[:,:-1].float())**2)
+
+def future_state_loss(predicted_state, target_state):
+    """Train the explicit future-state decoder in latent state space."""
+    return F.smooth_l1_loss(predicted_state.float(), target_state.float())

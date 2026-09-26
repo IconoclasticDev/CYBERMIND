@@ -27,6 +27,8 @@ def test_probe_actual_loss_gradients_and_scope(edge, crf):
     assert ('crf' in result['active_gradient_groups']) is crf
     assert ('conv1_edge_projection' in result['active_gradient_groups']) is edge
     assert ('conv2_edge_projection' in result['active_gradient_groups']) is edge
+    assert result['active_gradient_groups']['future_state'] is True
+    assert result['components']['future_state'] > 0
     assert result['peak_reserved_bytes'] is None
     assert 'does not verify real corpus' in result['scope']
 

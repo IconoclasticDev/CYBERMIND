@@ -19,7 +19,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from cybermind.data.dataset import GraphSequenceDataset, collate_identity
 from cybermind.models.world_model import WorldModel
 from cybermind.losses import (gaussian_transition_loss, infiltration_loss, stage_loss,
-                              binary_brier, graph_consistency_loss, crf_stage_loss)
+                              binary_brier, graph_consistency_loss, crf_stage_loss,
+                              future_state_loss)
 from cybermind.utils.config import load_config, edge_model_kwargs, stage_model_kwargs
 from cybermind.utils.repro import seed_everything
 from cybermind.utils.checkpoint_selection import CheckpointSelection
@@ -191,6 +192,7 @@ def batch_loss(model, batch, cfg, device, *, return_predictions=False):
     target = z[:, 1:].detach()
     l_trans = gaussian_transition_loss(mean, target, logvar)
     pred = model.dynamics.sample(mean, logvar) if model.training else mean
+    l_future_state = future_state_loss(model.state_head(pred), target)
     logits = model.infiltration_head(pred).reshape(-1)
     labels = torch.tensor([s.y_infiltration for ss in states for s in ss[1:]], dtype=torch.float32, device=device)
     l_infil = infiltration_loss(logits, labels, cfg['loss'].get('pos_weight'))
@@ -201,7 +203,8 @@ def batch_loss(model, batch, cfg, device, *, return_predictions=False):
         raise ValueError('Invalid stage ID; rebuild data with the current taxonomy.')
     l_stage = stage_cross_entropy(stage_logits, stage_labels, cfg['loss'])
     l_consistency = graph_consistency_loss(z)
-    components = {'transition': l_trans, 'infiltration': l_infil, 'stage': l_stage,
+    components = {'transition': l_trans, 'future_state': l_future_state,
+                  'infiltration': l_infil, 'stage': l_stage,
                   'calibration': l_brier, 'graph_consistency': l_consistency}
     if cfg['loss'].get('use_crf_stage', False):
         if not model.use_crf_stage:

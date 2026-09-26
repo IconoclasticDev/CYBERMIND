@@ -4,7 +4,9 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 import torch
-from cybermind.baselines.protocol import features, sample_target, metric_report, evaluate_baseline
+from cybermind.baselines.protocol import (features, sample_target, sample_targets,
+                                          metric_report, evaluate_baseline,
+                                          evaluate_baseline_multistep)
 from cybermind.baselines.logistic import LogisticBaseline
 
 
@@ -84,7 +86,7 @@ def test_single_class_dummy_still_reports_full_metrics(tmp_path, label):
     assert result['baseline'] == 'dummy_prior_single_class'
     assert result['metrics']['fpr'] == float(label)
     assert set(result['metrics']) == {'f1', 'precision', 'recall', 'fpr', 'ap', 'roc_auc'}
-    assert result['protocol']['input'].startswith('states[:-1]')
+    assert result['protocol']['input'].startswith('states[:-H]')
 
 
 def test_logistic_metrics_include_fpr():
@@ -113,3 +115,38 @@ def test_dummy_path_does_not_hide_feature_schema_mismatch(tmp_path):
     torch.save([value], tmp_path / 'test.pt')
     with pytest.raises(ValueError, match='widths differ'):
         evaluate_baseline(tmp_path)
+
+
+def multistep_sample(labels, value):
+    item = sample(labels[-1], value)
+    template = item.states[0]
+    item.states = []
+    for step, label in enumerate(labels):
+        state = deepcopy(template)
+        state.x = state.x + step
+        state.timestamp = value + step
+        state.y_infiltration = label
+        item.states.append(state)
+    return item
+
+
+def test_multistep_baseline_holds_out_every_scored_window(tmp_path):
+    train = [multistep_sample([0, 0, 0, 0], 1),
+             multistep_sample([0, 0, 1, 1], 10),
+             multistep_sample([0, 1, 0, 1], 20),
+             multistep_sample([1, 1, 1, 0], 30)]
+    test = [multistep_sample([0, 0, 0, 1], 40),
+            multistep_sample([1, 1, 1, 0], 50)]
+    torch.save(train, tmp_path / 'train.pt')
+    torch.save(test, tmp_path / 'test.pt')
+    result = evaluate_baseline_multistep(tmp_path, horizon=2)
+    assert result['forecast_horizon_windows'] == 2
+    assert result['feature_registry']['observed_windows'] == 2
+    assert len(result['per_horizon']) == 2
+    assert result['per_sample'][0]['targets'] == [0, 1]
+    assert sample_targets(test[0], 2) == [0, 1]
+    original = features(test[0], 'feature_matched', holdout=2)
+    changed = deepcopy(test[0])
+    changed.states[-2].x.fill_(999)
+    changed.states[-1].x.fill_(-999)
+    np.testing.assert_array_equal(original, features(changed, 'feature_matched', holdout=2))

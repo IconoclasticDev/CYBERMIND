@@ -56,7 +56,8 @@ def synthetic_model_probe(config, device='cuda'):
             gradients[name] = {'finite': bool(torch.isfinite(parameter.grad).all()),
                                'norm': float(parameter.grad.float().norm())}
     groups = {'graph': 'graph.', 'temporal':'temporal.', 'dynamics':'dynamics.',
-              'latent':'to_latent.', 'infiltration':'infiltration_head.', 'stage':'stage_head.'}
+              'latent':'to_latent.', 'future_state':'state_head.',
+              'infiltration':'infiltration_head.', 'stage':'stage_head.'}
     if model.use_crf_stage:
         groups['crf'] = 'stage_decoder.'
     active = {group: any(row['finite'] and row['norm'] > 0 for name,row in gradients.items()

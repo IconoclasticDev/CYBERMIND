@@ -25,6 +25,7 @@ model:
 loss:
   use_crf_stage: false
   transition: 1.0
+  future_state: 0.25
   infiltration: 1.0
   stage: 0.5
   stage_class_balance: true

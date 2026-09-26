@@ -24,6 +24,7 @@ loss:
   use_crf_stage: true
   crf_stage: 0.5
   transition: 1.0
+  future_state: 0.25
   infiltration: 1.0
   stage: 0.5
   calibration: 0.2

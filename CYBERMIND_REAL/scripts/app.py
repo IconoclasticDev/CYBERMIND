@@ -1,34 +1,52 @@
 #!/usr/bin/env python3
 """Offline analyst console; inference always uses an explicitly selected local checkpoint."""
 from pathlib import Path
-import os, sys, json
+import os, sys, json, tempfile
 import torch
 import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
-from cybermind.analyst.view import load_case, forecast_rows, network_dot, compare_isolations, CLAIM
+from cybermind.analyst.view import (load_case, load_uploaded_case, forecast_rows,
+                                    network_dot, compare_isolations)
 
 st.set_page_config(page_title='CYBERMIND Analyst Console', layout='wide')
 st.title('CYBERMIND Analyst Console')
-st.caption('Phase 3 ' + CLAIM + '. This does not establish real-data forecasting accuracy or a stable training plateau.')
+st.caption('Offline research interface. Forecasts are model outputs for analyst review; they do not execute network actions or establish causal effects.')
 path = st.sidebar.text_input('Local trusted checkpoint', os.environ.get('CYBERMIND_CHECKPOINT', str(ROOT / 'checkpoints/best_gb10.pt')))
-index = int(st.sidebar.number_input('Test sequence index', min_value=0, value=0, step=1))
+source_mode = st.sidebar.radio('Input source', ('Upload PCAP/CSV', 'Prepared test sequence'))
+uploaded = st.sidebar.file_uploader('Offline network capture', type=['pcap', 'pcapng', 'csv']) if source_mode == 'Upload PCAP/CSV' else None
+index = int(st.sidebar.number_input('Test sequence index', min_value=0, value=0, step=1)) if source_mode == 'Prepared test sequence' else 0
 st.sidebar.caption('Only load trusted local checkpoints. PyTorch checkpoint loading executes serialized Python objects.')
 if not Path(path).is_file():
     st.info('Choose a local checkpoint to inspect. Synthetic verification can run on CPU; GPU training is not required for this console.')
     st.stop()
 try:
-    model, cfg, sample, lineage, count = load_case(path, ROOT, index)
+    if source_mode == 'Upload PCAP/CSV':
+        if uploaded is None:
+            st.info('Upload a local PCAP, PCAPNG, or CSV. Processing and inference remain offline.')
+            st.stop()
+        suffix = Path(uploaded.name).suffix.lower()
+        with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as handle:
+            handle.write(uploaded.getvalue())
+            temporary_path = Path(handle.name)
+        try:
+            model, cfg, sample, lineage, count = load_uploaded_case(path, temporary_path)
+            lineage['uploaded_filename'] = uploaded.name
+            lineage['dataset'] = uploaded.name
+        finally:
+            temporary_path.unlink(missing_ok=True)
+    else:
+        model, cfg, sample, lineage, count = load_case(path, ROOT, index)
 except Exception as error:
     st.error(f'Cannot load this case: {error}')
     st.stop()
-st.sidebar.write(f'{count} test sequences available')
+st.sidebar.write(f'{count} usable sequences available')
 k = int(cfg['eval']['rollout_steps']); draws = int(cfg['eval'].get('n_rollouts', 16)); seed = int(cfg['eval'].get('rollout_seed', 0))
-observed = sample.states[:-1]
+observed = sample.states if source_mode == 'Upload PCAP/CSV' else sample.states[:-1]
 with torch.no_grad():
     out = model.forecast(observed, k, n_rollouts=draws, seed=seed, explain=False)
 rows = forecast_rows(out, model, observed[-1].timestamp, sample.window_seconds)
-case_key = (lineage['checkpoint_sha256'], lineage['dataset_sha256'], index, k, draws, seed)
+case_key = (lineage['checkpoint_sha256'], lineage['dataset_sha256'], source_mode, index, k, draws, seed)
 if st.session_state.get('case_key') != case_key:
     st.session_state['case_key'] = case_key
     st.session_state['interventions'] = []
@@ -76,9 +94,9 @@ with st.expander('Why this forecast?'):
     st.caption('Attention and feature perturbations explain model sensitivity, not causality. No attack-path attribution is inferred from topology alone.')
 with st.expander('Case lineage and export'):
     st.json(lineage)
-    st.caption('The held-out target is excluded from inference and recommendation. No future labels are used to declare resets.')
+    st.caption('Prepared cases exclude their held-out target. Uploaded captures are treated as entirely observed and unlabeled. No future labels are used to declare resets.')
     report = {'lineage': lineage, 'forecast': rows, 'interventions': st.session_state['interventions'],
               'explanation': st.session_state['explanation'], 'seed': seed, 'n_rollouts': draws,
-              'interpretation': 'Model-based synthetic verification; no real-data accuracy or causal claim.'}
+              'interpretation': 'Model-based forecast for analyst review; no causal or autonomous-response claim.'}
     st.download_button('Download case JSON', json.dumps(report, indent=2, allow_nan=False),
                        file_name=f'cybermind_case_{index}.json', mime='application/json')

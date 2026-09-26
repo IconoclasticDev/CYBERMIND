@@ -117,6 +117,22 @@ See `configs/sources.yaml` and `docs/PUBLIC_DATA_SOURCES.md`. Use the GB10 prepa
 
 After training: `streamlit run scripts/app.py`.
 
+The console accepts a local PCAP, PCAPNG, or CSV and applies the selected
+checkpoint's embedded training normalization. A packet-required checkpoint
+rejects flow-only input instead of silently filling the missing telemetry.
+
+See `docs/SIH26153_TWO_PAGE_ARCHITECTURE.md` for the current submission-oriented
+architecture and ordered improvement plan.
+
+Run the matched four-step evidence protocol with:
+
+```bash
+python scripts/eval.py --config configs/cic2018_stage_expansion.yaml \
+  --checkpoint checkpoints/stage_expansion/best.pt --split test --horizon 4
+python scripts/run_baseline.py --processed data/processed_stage_expansion \
+  --split test --features feature_matched --horizon 4
+```
+
 The legacy `scripts/pcap_to_corpus.py` helper infers labels from filenames. Real training requires genuine packet-to-label alignment.
 
 ## One-command training

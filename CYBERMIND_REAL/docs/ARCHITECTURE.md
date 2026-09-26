@@ -1,5 +1,9 @@
 # CYBERMIND Architecture
 
+The current submission-oriented two-page architecture and ordered improvement plan is
+[`SIH26153_TWO_PAGE_ARCHITECTURE.md`](SIH26153_TWO_PAGE_ARCHITECTURE.md). This
+legacy note is retained for historical context.
+
 ## Mathematical core
 
 The system learns a latent transition model approximating:

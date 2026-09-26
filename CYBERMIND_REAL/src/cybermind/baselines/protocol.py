@@ -9,10 +9,10 @@ from cybermind.data.dataset import GraphSequenceDataset
 from cybermind.evaluation.metrics import binary_metrics
 
 PROTOCOL = {
-    'version': 3,
-    'input': 'states[:-1], in chronological order',
-    'target': 'int(states[-1].y_infiltration > 0)',
-    'forecast_horizon_windows': 1,
+    'version': 4,
+    'input': 'states[:-H], in chronological order',
+    'target': 'each of the final H unseen windows',
+    'forecast_horizon_windows': 'H, supplied before evaluation',
     'pooling': 'per-window arithmetic means; flatten windows in time order',
     'threshold_provenance': 'fixed in advance; never fitted on evaluation labels',
     'baseline_scaling': 'StandardScaler fitted on training split only',
@@ -27,10 +27,16 @@ def record_hash(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True).encode()).hexdigest()
 
 
+def sample_targets(sample, horizon=1):
+    if isinstance(horizon, bool) or not isinstance(horizon, int) or horizon < 1:
+        raise ValueError('Forecast horizon must be a positive integer')
+    if len(sample.states) <= horizon:
+        raise ValueError('Forecasting requires observed history before all unseen target windows')
+    return [int(state.y_infiltration > 0) for state in sample.states[-horizon:]]
+
+
 def sample_target(sample):
-    if len(sample.states) < 2:
-        raise ValueError('One-step forecasting requires history and an unseen target window')
-    return int(sample.states[-1].y_infiltration > 0)
+    return sample_targets(sample, 1)[0]
 
 
 def _topology_features(state):
@@ -62,12 +68,12 @@ def _moments(values, width):
                            values.min(axis=0), values.max(axis=0)))
 
 
-def features(sample, mode='node_edge', periodic_clock=None):
-    sample_target(sample)
+def features(sample, mode='node_edge', periodic_clock=None, holdout=1):
+    sample_targets(sample, holdout)
     if mode not in ('node', 'node_edge', 'feature_matched'):
         raise ValueError('Unknown baseline feature mode')
     windows = []
-    for state in sample.states[:-1]:
+    for state in sample.states[:-holdout]:
         if state.x.ndim != 2 or state.x.shape[0] == 0:
             raise ValueError('History node features must be a nonempty matrix')
         x = state.x
@@ -164,4 +170,67 @@ def evaluate_baseline(processed, split='test', mode='node_edge', threshold=0.5, 
         'per_sample': [{'scenario': s.scenario_id, 'target_timestamp': float(s.states[-1].timestamp),
                         'target': y, 'predicted_future_risk': float(p)}
                        for s, y, p in zip(evaluation, targets, probabilities)],
+    }
+
+
+def evaluate_baseline_multistep(processed, split='test', mode='feature_matched',
+                                threshold=0.5, horizon=4, periodic_clock=None):
+    """Fit one leakage-safe logistic head per future step from one observed prefix."""
+    if split not in ('val', 'test'):
+        raise ValueError('Evaluate on a held-out val or test split')
+    processed = Path(processed)
+    training = GraphSequenceDataset(processed / 'train.pt')
+    evaluation = GraphSequenceDataset(processed / f'{split}.pt')
+    if not len(training) or not len(evaluation):
+        raise ValueError('Training and evaluation sequences must be nonempty')
+    xtrain = np.stack([features(s, mode, periodic_clock, holdout=horizon) for s in training])
+    xevaluation = np.stack([features(s, mode, periodic_clock, holdout=horizon) for s in evaluation])
+    if xevaluation.shape[1] != xtrain.shape[1]:
+        raise ValueError('Training and evaluation feature widths differ')
+    train_targets = np.asarray([sample_targets(s, horizon) for s in training], dtype=int)
+    eval_targets = np.asarray([sample_targets(s, horizon) for s in evaluation], dtype=int)
+    per_horizon = []
+    probability_columns = []
+    for step in range(horizon):
+        ytrain = train_targets[:, step]
+        if len(np.unique(ytrain)) == 1:
+            name = 'dummy_prior_single_class'
+            probabilities = np.full(len(evaluation), float(ytrain.mean()))
+        else:
+            name = 'logistic_regression'
+            probabilities = LogisticBaseline().fit(xtrain, ytrain).predict_proba(xevaluation)
+        metrics, counts = metric_report(eval_targets[:, step], probabilities, threshold)
+        probability_columns.append(probabilities)
+        per_horizon.append({'step': step + 1, 'baseline': name, 'metrics': metrics,
+                            'confusion_counts': counts,
+                            'training_target_counts': {
+                                'negative': int((ytrain == 0).sum()),
+                                'positive': int((ytrain == 1).sum())}})
+    probability_matrix = np.stack(probability_columns, axis=1)
+    pooled_metrics, pooled_counts = metric_report(eval_targets.ravel(), probability_matrix.ravel(), threshold)
+    state = training[0].states[0]
+    registry = {
+        'feature_mode': mode, 'node_columns': int(state.x.shape[1]),
+        'edge_columns': int(state.edge_attr.shape[1]) if mode in ('node_edge', 'feature_matched') else 0,
+        'observed_windows': len(training[0].states) - horizon,
+        'forecast_horizon_windows': horizon, 'flattened_width': int(xtrain.shape[1]),
+        'graph_topology': 'summary statistics' if mode == 'feature_matched' else False,
+        'aggregations': ['mean', 'std', 'min', 'max'] if mode == 'feature_matched' else ['mean'],
+        'periodic_clock': periodic_clock,
+    }
+    return {
+        'baseline': 'per_horizon_logistic_regression', 'split': split,
+        'threshold': threshold, 'forecast_horizon_windows': horizon,
+        'protocol': PROTOCOL, 'protocol_sha256': record_hash(PROTOCOL),
+        'feature_registry': registry, 'feature_registry_sha256': record_hash(registry),
+        'source_sha256': {name: sha256(processed / f'{name}.pt') for name in ('train', split)},
+        'training_count': len(training), 'evaluation_count': len(evaluation),
+        'metrics': pooled_metrics, 'confusion_counts': pooled_counts,
+        'per_horizon': per_horizon,
+        'per_sample': [
+            {'scenario': sample.scenario_id,
+             'target_timestamps': [float(state.timestamp) for state in sample.states[-horizon:]],
+             'targets': targets.tolist(), 'predicted_future_risk': probabilities.tolist()}
+            for sample, targets, probabilities in zip(evaluation, eval_targets, probability_matrix)
+        ],
     }
