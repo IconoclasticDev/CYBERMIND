@@ -92,6 +92,16 @@ class FeatureNormalizer:
             raise ValueError('Non-finite normalized features')
         return result
 
+    def inverse_transform(self, values, kind):
+        x = values.to(dtype=torch.float32)
+        c = self.constants[kind]
+        mean = torch.tensor(c['mean'], dtype=torch.float32, device=x.device)
+        std = torch.tensor(c['std'], dtype=torch.float32, device=x.device)
+        result = x * std + mean
+        if not torch.isfinite(result).all():
+            raise ValueError('Non-finite inverse-normalized features')
+        return result
+
     def save(self, path):
         Path(path).write_text(json.dumps(self.constants, indent=2), encoding='utf-8')
 

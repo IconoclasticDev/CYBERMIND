@@ -3,7 +3,6 @@ import torch
 from torch import nn
 
 class FutureStateHead(nn.Module):
-    def __init__(self,latent_dim): self.net=nn.Sequential(nn.Linear(latent_dim,latent_dim),nn.GELU(),nn.Linear(latent_dim,latent_dim))
     def __init__(self,latent_dim):
         super().__init__(); self.net=nn.Sequential(nn.Linear(latent_dim,latent_dim),nn.GELU(),nn.Linear(latent_dim,latent_dim))
     def forward(self,z): return self.net(z)

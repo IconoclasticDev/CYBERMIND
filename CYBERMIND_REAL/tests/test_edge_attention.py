@@ -14,6 +14,7 @@ import torch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from cybermind.data.types import GraphState
 from cybermind.models import graph_encoder
+from cybermind.models.graph_encoder import DenseGraphAttention
 from cybermind.models.world_model import WorldModel
 
 
@@ -71,6 +72,21 @@ def assert_finite_backward(model, tensors, enabled, record_property=None, prefix
             if record_property is not None:
                 record_property(f"{prefix}_conv{index}_edge_gradient_l1",
                                 projection.weight.grad.abs().sum().item())
+
+
+def test_fallback_attention_is_destination_conditioned_and_adds_self_loops():
+    layer = DenseGraphAttention(2, 2, heads=1, dropout=0.).eval()
+    with torch.no_grad():
+        layer.lin.weight.copy_(torch.eye(2))
+        layer.att.copy_(torch.tensor([[1., -1.]]))
+    x = torch.tensor([[2., 0.], [0., 2.], [-3., 0.], [0., -3.]])
+    edges = torch.tensor([[0, 1, 0, 1], [2, 2, 3, 3]])
+    _, (indices, weights) = layer(x, edges, return_attention_weights=True)
+    first = weights[:2, 0]
+    second = weights[2:4, 0]
+    assert not torch.allclose(first, second)
+    assert indices.shape[1] == edges.shape[1] + x.shape[0]
+    assert torch.equal(indices[:, -x.shape[0]:], torch.arange(4).repeat(2, 1))
 
 
 @pytest.mark.parametrize("device", ["cpu", "cuda"])
@@ -170,4 +186,3 @@ def test_enabled_missing_attributes_uses_node_only_attention(monkeypatch, backen
 def test_enabled_requires_positive_edge_dimension(monkeypatch, backend, edge_attr_dim):
     with pytest.raises((ValueError, TypeError)):
         build_model(monkeypatch, backend, True, edge_attr_dim=edge_attr_dim)
-

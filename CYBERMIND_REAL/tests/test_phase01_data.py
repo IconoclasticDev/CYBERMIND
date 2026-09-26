@@ -127,3 +127,27 @@ def test_adapter_preserves_host_ids_and_cic_calendar_dates():
     assert converted.timestamp.iloc[0] == pd.Timestamp('2018-03-02 08:00:00', tz='UTC')
     assert converted.timestamp.iloc[1] == pd.Timestamp('2018-03-02 08:00:01', tz='UTC')
     assert converted.timestamp.iloc[2] == pd.Timestamp('2018-02-14 08:00:00', tz='UTC')
+
+
+def test_explicit_capture_groups_are_disjoint_chronological_and_mixed():
+    frame = events(12)
+    frame['capture_date'] = ['day-1'] * 4 + ['day-2'] * 4 + ['day-3'] * 4
+    frame.loc[[1, 5, 9], 'label'] = 'PORTSCAN'
+    cfg = {'data': {'window_seconds': 1, 'stride_seconds': 1, 'history': 2,
+                    'split_group_column': 'capture_date',
+                    'validation_groups': ['day-2'], 'test_groups': ['day-3']}}
+    splits, _, reports = prepare.prepare_frames([prepare.canonicalize(frame, 'groups.csv')], cfg)
+    for name in ('val', 'test'):
+        targets = [int(state.y_infiltration) for sample in splits[name] for state in sample.states]
+        assert set(targets) == {0, 1}
+    assert all(report['split_strategy'] == 'explicit_capture_groups' for report in reports)
+
+
+def test_explicit_capture_groups_reject_nonchronological_assignment():
+    frame = events(12)
+    frame['capture_date'] = ['day-1'] * 4 + ['day-2'] * 4 + ['day-3'] * 4
+    cfg = {'data': {'window_seconds': 1, 'stride_seconds': 1, 'history': 2,
+                    'split_group_column': 'capture_date',
+                    'validation_groups': ['day-3'], 'test_groups': ['day-2']}}
+    with pytest.raises(ValueError, match='strictly chronological'):
+        prepare.prepare_frames([prepare.canonicalize(frame, 'groups.csv')], cfg)

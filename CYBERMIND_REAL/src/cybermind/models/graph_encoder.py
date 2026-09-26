@@ -34,7 +34,7 @@ def _validate_edge_attr(x, edge_index, edge_attr, edge_attr_dim):
 
 
 class DenseGraphAttention(nn.Module):
-    """Pure-Torch attention, optionally conditioned on per-edge features.
+    """Pure-Torch GATv2-style attention with optional edge conditioning.
 
     With edge features enabled, ``None`` uses node-only attention for that call.
     With the flag disabled, attributes are ignored and legacy math is unchanged.
@@ -45,7 +45,9 @@ class DenseGraphAttention(nn.Module):
         _validate_edge_configuration(edge_attr_dim, use_edge_features)
         self.edge_attr_dim=edge_attr_dim; self.use_edge_features=use_edge_features
         self.lin=nn.Linear(in_dim,heads*out_dim,bias=False)
-        self.q=nn.Linear(out_dim,1,bias=False); self.k=nn.Linear(out_dim,1,bias=False)
+        self.att=nn.Parameter(torch.empty(heads,out_dim))
+        nn.init.xavier_uniform_(self.att)
+        self.leaky_relu=nn.LeakyReLU(.2)
         self.dropout=nn.Dropout(dropout); self.act=nn.ELU()
         if use_edge_features:
             self.edge_proj=nn.Linear(edge_attr_dim,heads,bias=False)
@@ -54,10 +56,13 @@ class DenseGraphAttention(nn.Module):
             _validate_edge_attr(x,edge_index,edge_attr,self.edge_attr_dim)
         n=x.size(0); h=self.lin(x).view(n,self.heads,self.out_dim)
         out=torch.zeros_like(h)
-        weights=x.new_zeros((edge_index.size(1),self.heads)) if return_attention_weights else None
-        if edge_index.numel()==0:
-            return (out.mean(1),(edge_index,weights)) if return_attention_weights else out.mean(1)
-        src,dst=edge_index
+        # Match PyG's default self-loop behavior so isolated nodes retain their
+        # transformed state. Zero is the training-mean edge vector after the
+        # required normalization and is neutral for fallback self-loops.
+        loops=torch.arange(n,device=edge_index.device,dtype=edge_index.dtype)
+        indices=torch.cat((edge_index,torch.stack((loops,loops))),dim=1)
+        src,dst=indices
+        weights=x.new_zeros((indices.size(1),self.heads)) if return_attention_weights else None
         edge_scores = (
             self.edge_proj(edge_attr)
             if self.use_edge_features and edge_attr is not None else None
@@ -66,14 +71,18 @@ class DenseGraphAttention(nn.Module):
             idx=(dst==d).nonzero(as_tuple=False).flatten()
             if idx.numel()==0: continue
             s=src[idx]
-            scores=(self.q(h[s])+self.k(h[d])).squeeze(-1)
+            # GATv2 applies its non-linearity before the learned attention
+            # vector. Summing separate scalar projections makes the ranking
+            # static with respect to the destination node.
+            scores=(self.leaky_relu(h[s]+h[d])*self.att).sum(dim=-1)
             if edge_scores is not None:
-                scores=scores+edge_scores[idx]
+                original=idx < edge_index.size(1)
+                scores[original]=scores[original]+edge_scores[idx[original]]
             alpha=torch.softmax(scores,dim=0).unsqueeze(-1)
             if return_attention_weights: weights[idx]=alpha.squeeze(-1)
             out[d]=torch.sum(alpha*h[s],dim=0)
         result=self.act(self.dropout(out)).mean(1)
-        return (result,(edge_index,weights)) if return_attention_weights else result
+        return (result,(indices,weights)) if return_attention_weights else result
 
 class GATv2GraphEncoder(nn.Module):
     """Two attention layers with opt-in edge conditioning in both backends.

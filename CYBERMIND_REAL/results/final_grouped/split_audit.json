@@ -1,0 +1,95 @@
+{
+  "processed_dir": "/workspace/cybermind/CYBERMIND_REAL/data/processed_final_grouped",
+  "splits": {
+    "train": {
+      "sequences": 1764,
+      "terminal_targets": {
+        "benign": 1149,
+        "attack": 615
+      },
+      "terminal_stages": {
+        "0": 1149,
+        "1": 219,
+        "2": 390,
+        "6": 6
+      },
+      "all_window_stages": {
+        "0": 9213,
+        "1": 1752,
+        "2": 3099,
+        "6": 48
+      },
+      "start_timestamp": 1518611712.892261,
+      "end_timestamp": 1519854164.613458
+    },
+    "val": {
+      "sequences": 1086,
+      "terminal_targets": {
+        "benign": 896,
+        "attack": 190
+      },
+      "terminal_stages": {
+        "0": 896,
+        "1": 173,
+        "2": 12,
+        "6": 5
+      },
+      "all_window_stages": {
+        "0": 7192,
+        "1": 1384,
+        "2": 77,
+        "6": 35
+      },
+      "start_timestamp": 1519906600.227117,
+      "end_timestamp": 1519939781.631253
+    },
+    "test": {
+      "sequences": 1039,
+      "terminal_targets": {
+        "benign": 354,
+        "attack": 685
+      },
+      "terminal_stages": {
+        "0": 354,
+        "4": 685
+      },
+      "all_window_stages": {
+        "0": 2832,
+        "4": 5480
+      },
+      "start_timestamp": 1519994837.998467,
+      "end_timestamp": 1520026188.905869
+    }
+  },
+  "mixed_terminal_classes": {
+    "train": true,
+    "val": true,
+    "test": true
+  },
+  "strictly_chronological": true,
+  "missing_attack_stages": {
+    "train": [
+      3,
+      4,
+      5
+    ],
+    "val": [
+      3,
+      4,
+      5
+    ],
+    "test": [
+      1,
+      2,
+      3,
+      5
+    ]
+  },
+  "gates": {
+    "binary_forecasting_ready": true,
+    "validation_fpr_ready": true,
+    "unseen_stage_4_test": true,
+    "comprehensive_stage_training_ready": false
+  },
+  "decision": "BLOCK comprehensive stage training; acquire authoritative missing-stage data."
+}

@@ -94,6 +94,34 @@ def chronological_partitions(frame, window_seconds, stride_seconds,
             'test': frame[seconds >= second].copy()}
 
 
+def grouped_partitions(frame, group_column, validation_groups, test_groups,
+                       require_chronological=True):
+    """Assign complete capture groups before sequence construction."""
+    if group_column not in frame:
+        raise ValueError(f'Missing configured split group column: {group_column}')
+    validation_groups = {str(value) for value in validation_groups}
+    test_groups = {str(value) for value in test_groups}
+    if not validation_groups or not test_groups or validation_groups & test_groups:
+        raise ValueError('Validation/test split groups must be nonempty and disjoint')
+    groups = frame[group_column].astype(str)
+    available = set(groups)
+    missing = (validation_groups | test_groups) - available
+    if missing:
+        raise ValueError(f'Configured split groups are absent: {sorted(missing)}')
+    partitions = {
+        'train': frame[~groups.isin(validation_groups | test_groups)].copy(),
+        'val': frame[groups.isin(validation_groups)].copy(),
+        'test': frame[groups.isin(test_groups)].copy(),
+    }
+    if any(part.empty for part in partitions.values()):
+        raise ValueError('Grouped split requires nonempty train, validation and test partitions')
+    if require_chronological:
+        if not (partitions['train'].timestamp.max() < partitions['val'].timestamp.min()
+                and partitions['val'].timestamp.max() < partitions['test'].timestamp.min()):
+            raise ValueError('Configured groups are not strictly chronological train < val < test')
+    return partitions
+
+
 def validate_packet_coverage(frames, cfg):
     """Fail before graph construction when the configured packet contract is unmet."""
     if not cfg['data'].get('require_packet_features', False):
@@ -115,16 +143,25 @@ def prepare_frames(frames, cfg, purpose='primary', normalizer=None):
     if purpose == 'heldout' and normalizer is None:
         raise ValueError('Held-out evaluation requires primary training normalization constants')
     for scenario, frame in environments.items():
-        partitions = chronological_partitions(
-            frame, cfg['data']['window_seconds'], cfg['data']['stride_seconds'],
-            cfg['data'].get('train_fraction', .70),
-            cfg['data'].get('val_end_fraction', .85),
-        ) if purpose == 'primary' else {'test': frame}
+        if purpose == 'primary' and cfg['data'].get('split_group_column'):
+            partitions = grouped_partitions(
+                frame, cfg['data']['split_group_column'],
+                cfg['data'].get('validation_groups', []),
+                cfg['data'].get('test_groups', []),
+                cfg['data'].get('require_chronological_groups', True))
+        else:
+            partitions = chronological_partitions(
+                frame, cfg['data']['window_seconds'], cfg['data']['stride_seconds'],
+                cfg['data'].get('train_fraction', .70),
+                cfg['data'].get('val_end_fraction', .85),
+            ) if purpose == 'primary' else {'test': frame}
         for split, part in partitions.items():
             if part.empty:
                 raise ValueError(f'{scenario}/{split}: no events after boundary purge; use more data')
             meta = {'source': str(frame.source.iloc[0]), 'environment_id': str(frame.environment_id.iloc[0]),
                     'source_files': list(dict.fromkeys(part.source_file)), 'split': split,
+                    'split_strategy': ('explicit_capture_groups' if cfg['data'].get('split_group_column') else
+                                       'chronological_fraction'),
                     'endpoint_method': 'columns', 'stage_method': 'five_phase_with_unknown',
                     'packet_feature_coverage': float(part.packet_features_available.mean())}
             seqs = make_sequences(part, scenario, window_seconds=cfg['data']['window_seconds'],
@@ -179,9 +216,14 @@ def main():
         save_dataset(samples, out / f'{name}.pt')
         print(f'{name}: {len(samples)} sequences')
     metadata = {'purpose': args.purpose, 'primary_source': PRIMARY_SOURCE, 'reports': reports,
-                'normalization_fingerprint': normalizer.fingerprint, 'split_method': 'chronological_events_with_window_purge',
+                'normalization_fingerprint': normalizer.fingerprint,
+                'split_method': ('explicit_chronological_capture_groups' if cfg['data'].get('split_group_column') else
+                                 'chronological_events_with_window_purge'),
                 'split_fractions': {'train': cfg['data'].get('train_fraction', .70),
                                     'val_end': cfg['data'].get('val_end_fraction', .85)},
+                'split_groups': {'column': cfg['data'].get('split_group_column'),
+                                 'validation': cfg['data'].get('validation_groups'),
+                                 'test': cfg['data'].get('test_groups')},
                 'source_files': [str(f) for f in files], 'num_sequences': sum(map(len, splits.values()))}
     (out / 'metadata.json').write_text(json.dumps(metadata, indent=2), encoding='utf-8')
 
