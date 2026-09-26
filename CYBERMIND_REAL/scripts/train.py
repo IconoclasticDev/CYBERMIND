@@ -265,10 +265,13 @@ def validate(model, loader, cfg, device, precision):
                 sums[key] = sums.get(key, 0.) + value * n
             probabilities.append(p.cpu()); labels.append(y.cpu())
     ys = torch.cat(labels)
-    if not ys.any() or ys.bool().all():
+    single_class = not ys.any() or ys.bool().all()
+    if single_class and not cfg['data'].get('allow_single_class_validation', False):
         raise ValueError('Validation split needs both classes for meaningful infiltration F1.')
-    return {**{k: v / count for k, v in sums.items()},
-            **validation_metrics(torch.cat(probabilities), ys, cfg['train'].get('selection_threshold', .5))}
+    metrics = validation_metrics(torch.cat(probabilities), ys,
+                                 cfg['train'].get('selection_threshold', .5))
+    metrics['single_class_validation'] = single_class
+    return {**{k: v / count for k, v in sums.items()}, **metrics}
 
 
 def apply_run_name(cfg, run_name):
