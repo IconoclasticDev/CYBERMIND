@@ -1,0 +1,353 @@
+[
+  {
+    "epoch": 1,
+    "train": {
+      "loss": 2.5158676241108315,
+      "transition": -1.0777927140793007,
+      "infiltration": 1.3688866944016818,
+      "stage": 0.836899551247547,
+      "calibration": 0.17533820398704322,
+      "graph_consistency": 0.014428410901200915,
+      "crf_stage": 3.5396267571047932
+    },
+    "val": {
+      "loss": 19.367509837333973,
+      "transition": -1.8496653850261981,
+      "infiltration": 13.655916555569721,
+      "stage": 2.0437816954576054,
+      "calibration": 0.2573506115720822,
+      "graph_consistency": 0.0010168818788280566,
+      "crf_stage": 12.975592273932238,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 2,
+    "train": {
+      "loss": 0.0835478444376546,
+      "transition": -1.8574678811854972,
+      "infiltration": 1.2228308782309951,
+      "stage": 0.25834403463260447,
+      "calibration": 0.19333675052813873,
+      "graph_consistency": 0.006705012480412911,
+      "crf_stage": 1.099349948829544
+    },
+    "val": {
+      "loss": 18.65988763479086,
+      "transition": -2.404053752238934,
+      "infiltration": 12.00922125348678,
+      "stage": 2.2827316399377127,
+      "calibration": 0.24776964233471796,
+      "graph_consistency": 0.0016710139372242759,
+      "crf_stage": 15.727267366189222,
+      "precision": 0.7272727272727273,
+      "recall": 0.202275600505689,
+      "f1": 0.3165182987141444,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 3,
+    "train": {
+      "loss": -0.5397373198985098,
+      "transition": -2.232230444470484,
+      "infiltration": 1.089211595142055,
+      "stage": 0.16445016999447154,
+      "calibration": 0.18331896840689893,
+      "graph_consistency": 0.0046489334754825,
+      "crf_stage": 0.9678555156191987
+    },
+    "val": {
+      "loss": 19.69948370181597,
+      "transition": -2.725500592818627,
+      "infiltration": 13.796603558155207,
+      "stage": 2.15923616118156,
+      "calibration": 0.2497616559267044,
+      "graph_consistency": 0.0015744708003834463,
+      "crf_stage": 14.997305879226097,
+      "precision": 0.375,
+      "recall": 0.0037926675094816687,
+      "f1": 0.007509386733416771,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 4,
+    "train": {
+      "loss": -1.0204188780698604,
+      "transition": -2.467023951257159,
+      "infiltration": 0.9407853381428307,
+      "stage": 0.13260657131253836,
+      "calibration": 0.13325582089309462,
+      "graph_consistency": 0.0031935702906716206,
+      "crf_stage": 0.8250918569927942
+    },
+    "val": {
+      "loss": 17.8966342485868,
+      "transition": -2.668018496953524,
+      "infiltration": 13.625228537962986,
+      "stage": 1.7407402406231716,
+      "calibration": 0.24113251354831916,
+      "graph_consistency": 0.0023202110046090987,
+      "crf_stage": 12.041190780126131,
+      "precision": 0.7361702127659574,
+      "recall": 0.21871049304677623,
+      "f1": 0.33723196881091616,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 5,
+    "train": {
+      "loss": -1.2779846180655914,
+      "transition": -2.3946689001782864,
+      "infiltration": 0.7439319861227859,
+      "stage": 0.09831200813303491,
+      "calibration": 0.062312664261614095,
+      "graph_consistency": 0.0035572403562227207,
+      "crf_stage": 0.6215560338301267
+    },
+    "val": {
+      "loss": 37.16353159225904,
+      "transition": -2.4128863994891825,
+      "infiltration": 30.727585969636074,
+      "stage": 2.2049568141810596,
+      "calibration": 0.3809294287258616,
+      "graph_consistency": 0.0042569206561893225,
+      "crf_stage": 15.33948448071113,
+      "precision": 1.0,
+      "recall": 0.01390644753476612,
+      "f1": 0.02743142144638404,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 6,
+    "train": {
+      "loss": -2.0364679157853365,
+      "transition": -2.328839161114129,
+      "infiltration": 0.18402089941910726,
+      "stage": 0.03150026767397064,
+      "calibration": 0.010147404372275673,
+      "graph_consistency": 0.004222844078771038,
+      "crf_stage": 0.18029689980308733
+    },
+    "val": {
+      "loss": 53.61892028955313,
+      "transition": -2.5973968780957737,
+      "infiltration": 46.01616287689943,
+      "stage": 2.537029342367672,
+      "calibration": 0.46837500129745774,
+      "graph_consistency": 0.0025971070191679667,
+      "crf_stage": 17.67541107764611,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 7,
+    "train": {
+      "loss": -2.1938758218933443,
+      "transition": -2.396270729974659,
+      "infiltration": 0.13250427000702383,
+      "stage": 0.021327301286877636,
+      "calibration": 0.004864921021885994,
+      "graph_consistency": 0.004012442278845576,
+      "crf_stage": 0.11570551519642373
+    },
+    "val": {
+      "loss": 38.286855780161346,
+      "transition": -2.88527551981119,
+      "infiltration": 31.298249130352186,
+      "stage": 2.460242494081075,
+      "calibration": 0.3910054095411816,
+      "graph_consistency": 0.0013385316437611787,
+      "crf_stage": 17.13084992995629,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 8,
+    "train": {
+      "loss": -2.3734923767780733,
+      "transition": -2.5501805878354458,
+      "infiltration": 0.1259212529656285,
+      "stage": 0.014717134874769467,
+      "calibration": 0.004396654227775343,
+      "graph_consistency": 0.003520542312458247,
+      "crf_stage": 0.08435401290595412
+    },
+    "val": {
+      "loss": 32.39850872296553,
+      "transition": -2.781983494758606,
+      "infiltration": 27.378078191899338,
+      "stage": 1.947674772164856,
+      "calibration": 0.3461988077212412,
+      "graph_consistency": 0.001975505711295857,
+      "crf_stage": 13.518277452542232,
+      "precision": 0.9125,
+      "recall": 0.0922882427307206,
+      "f1": 0.16762342135476463,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 9,
+    "train": {
+      "loss": -2.515342343188001,
+      "transition": -2.6542429192391093,
+      "infiltration": 0.09570034039449432,
+      "stage": 0.01216126479211269,
+      "calibration": 0.005901694686427273,
+      "graph_consistency": 0.003061678582981587,
+      "crf_stage": 0.07126621445099672
+    },
+    "val": {
+      "loss": 84.24793155376727,
+      "transition": -3.1113564051114597,
+      "infiltration": 73.12914546072268,
+      "stage": 3.538867477314153,
+      "calibration": 0.528792792832414,
+      "graph_consistency": 0.0011253641434730245,
+      "crf_stage": 24.709677329430214,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 10,
+    "train": {
+      "loss": -2.6085967413170303,
+      "transition": -2.7393232466940414,
+      "infiltration": 0.09117921212415597,
+      "stage": 0.011038168866321713,
+      "calibration": 0.0017516957915561621,
+      "graph_consistency": 0.002858758343193299,
+      "crf_stage": 0.06678404072616884
+    },
+    "val": {
+      "loss": 41.624161064624786,
+      "transition": -2.536631717131688,
+      "infiltration": 35.54771520648725,
+      "stage": 2.1478570732646265,
+      "calibration": 0.3728240215591191,
+      "graph_consistency": 0.0036590032172031128,
+      "crf_stage": 14.928436453525837,
+      "precision": 0.8367346938775511,
+      "recall": 0.1554993678887484,
+      "f1": 0.2622601279317697,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 11,
+    "train": {
+      "loss": -2.6070116865849924,
+      "transition": -2.6926386977484325,
+      "infiltration": 0.05989693879301031,
+      "stage": 0.0077360146706979835,
+      "calibration": 0.0016940546551840506,
+      "graph_consistency": 0.0032058348272645284,
+      "crf_stage": 0.04240530621790456
+    },
+    "val": {
+      "loss": 92.36196454671713,
+      "transition": -3.127200438426091,
+      "infiltration": 80.34955372874482,
+      "stage": 3.7660749268386726,
+      "calibration": 0.5331222093629828,
+      "graph_consistency": 0.0011271695066870262,
+      "crf_stage": 26.299674859413734,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 12,
+    "train": {
+      "loss": -2.6529175573456025,
+      "transition": -2.753103028318447,
+      "infiltration": 0.06978162225123069,
+      "stage": 0.009787965675102983,
+      "calibration": 0.0012743917980702838,
+      "graph_consistency": 0.003681751033655164,
+      "crf_stage": 0.04977360421619966
+    },
+    "val": {
+      "loss": 88.19876107802757,
+      "transition": -3.162288326483506,
+      "infiltration": 76.37772314707175,
+      "stage": 3.727181857308516,
+      "calibration": 0.5306957139992636,
+      "graph_consistency": 0.0010613959535616091,
+      "crf_stage": 26.026979336371788,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  },
+  {
+    "epoch": 13,
+    "train": {
+      "loss": -2.718149332340829,
+      "transition": -2.7694416758053766,
+      "infiltration": 0.030900826812992412,
+      "stage": 0.007577888721591776,
+      "calibration": 0.001434107823048045,
+      "graph_consistency": 0.0038819312278269035,
+      "crf_stage": 0.031855133110153415
+    },
+    "val": {
+      "loss": 112.05126491876749,
+      "transition": -3.1834047665962806,
+      "infiltration": 98.05179281062178,
+      "stage": 4.276409083201613,
+      "calibration": 0.5395793536476347,
+      "graph_consistency": 0.0010690860407731424,
+      "crf_stage": 29.873299231896034,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": 0.5,
+      "positive": 791,
+      "negative": 665
+    }
+  }
+]
