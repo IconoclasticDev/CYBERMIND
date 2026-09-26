@@ -51,9 +51,17 @@ def load_json(path: Path):
 def snapshot() -> dict:
     markers = sorted(path.stem for path in PIPELINE_STATE.glob("*.complete"))
     real_markers = sorted(path.stem for path in REAL_PIPELINE_STATE.glob("*.complete"))
+    improved_service = command("supervisorctl", "status", "cybermind_improved")
+    improved_status = load_json(RESULTS / "stage_expansion_improved/status.json")
+    improved_active = ("RUNNING" in improved_service or "STARTING" in improved_service or
+                       improved_status is not None)
     real_service = command("supervisorctl", "status", "cybermind_real_best")
     real_active = bool(real_markers) or "RUNNING" in real_service or "STARTING" in real_service
-    if real_active:
+    if improved_active:
+        training_status = improved_status
+        history = load_json(RESULTS / "stage_expansion_improved/train_history.json") or []
+        checkpoint = ROOT / "checkpoints/stage_expansion_improved/best.pt"
+    elif real_active:
         training_status = load_json(RESULTS / "real_best/status.json")
         history = load_json(RESULTS / "real_best/train_history.json") or []
         checkpoint = ROOT / "checkpoints/real_best/best.pt"
@@ -63,7 +71,11 @@ def snapshot() -> dict:
         checkpoint = ROOT / "checkpoints/best_gb10_economy.pt"
     raw_bytes = directory_bytes(ROOT / "data/raw/CIC-IDS-2018")
     extended_service = command("supervisorctl", "status", "cybermind_extended")
-    if real_active and training_status and training_status.get("status") == "running":
+    if improved_active and training_status and training_status.get("status") == "running":
+        stage = "improved_future_state_training"
+    elif improved_active:
+        stage = "improved_future_state_training_complete"
+    elif real_active and training_status and training_status.get("status") == "running":
         stage = "real_data_training"
     elif real_active and "evaluation" in real_markers:
         stage = "real_data_complete"
@@ -95,6 +107,7 @@ def snapshot() -> dict:
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "stage": stage,
         "pipeline_service": command("supervisorctl", "status", "cybermind_economy"),
+        "improved_training_service": improved_service,
         "extended_training_service": extended_service,
         "real_data_service": real_service,
         "downloaded_bytes": raw_bytes,
