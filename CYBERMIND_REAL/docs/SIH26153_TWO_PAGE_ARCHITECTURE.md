@@ -67,8 +67,9 @@ On the leakage-safe final grouped test split of 1,039 sequences, using four unse
 | Model | Precision | Recall | F1 | FPR | AP |
 |---|---:|---:|---:|---:|---:|
 | World model, pooled K=4 | 0.9970 | 0.9730 | 0.9849 | 0.0056 | 0.9985 |
+| Feature-matched logistic, pooled K=4 | 0.9314 | 0.9219 | 0.9266 | 0.1314 | 0.9807 |
 
-The world model’s pooled stage accuracy is `0.3354`, stage macro-F1 is `0.2443`, and decoded illegal-transition rate is `0.0`. The low stage score is expected because stage 4 is deliberately unseen during training. Full machine-readable results are stored in `results/final_grouped/eval_test_k4.json`; the exact non-regression check after adding the analyst evidence layer is stored in `results/final_grouped/stage_contingency_verification.json`.
+Across 4,156 future-window decisions, the world model produces 8 false positives and 74 misses versus the baseline's 186 false positives and 214 misses. This is a 5.82 percentage-point F1 gain and a 95.7% reduction in false alerts. The world model’s pooled stage accuracy is `0.3354`, stage macro-F1 is `0.2443`, and decoded illegal-transition rate is `0.0`. The low stage score is expected because stage 4 is deliberately unseen during training. Full machine-readable results are stored in `results/final_grouped/eval_test_k4.json`, `results/final_grouped/baseline_test_k4.json`, and `results/final_grouped/model_comparison.json`.
 
 These are useful internal results, not proof of unseen-environment generalization. Capture-day groups are chronological and disjoint, validation contains benign and malicious targets, and stage 4 is an unseen-campaign test. Stages 3 and 5 remain absent from authoritative training data. The rule-supported analyst evidence closes a demonstration gap but does not close that training-data gap. No claim should extend beyond that evidence.
 
