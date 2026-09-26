@@ -1,0 +1,6 @@
+{
+  "mode": "production",
+  "config": "/workspace/cybermind/CYBERMIND_REAL/configs/cic2018_stage_expansion_improved.yaml",
+  "passed": true,
+  "failures": []
+}
