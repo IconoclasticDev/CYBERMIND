@@ -85,6 +85,9 @@ If the available chronology cannot produce mixed validation and test populations
 
 ### Phase C — Close stage and telemetry coverage
 
+The executable non-regression procedure for stages 3–5 is defined in
+[`STAGE_3_TO_5_COVERAGE_IMPLEMENTATION_PLAN.md`](STAGE_3_TO_5_COVERAGE_IMPLEMENTATION_PLAN.md).
+
 **Actions**
 
 1. Inventory CIC-IDS2018 captures against Benign, Reconnaissance, Initial Access, Lateral Movement, Command & Control, Exfiltration, and Unknown/Ambiguous.
