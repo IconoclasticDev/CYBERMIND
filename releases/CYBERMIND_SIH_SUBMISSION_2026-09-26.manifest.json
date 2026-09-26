@@ -1,0 +1,18 @@
+{
+  "archive": "CYBERMIND_SIH_SUBMISSION_2026-09-26.zip",
+  "archive_bytes": 12545118,
+  "archive_sha256": "e1f73ea47cbb0925b36287076a73cde9cbad97e61ffd0c074771af3279931312",
+  "excluded": [
+    "raw/intermediate/processed datasets",
+    "historical and last-state checkpoints",
+    "periodic epoch checkpoints",
+    "Git metadata, caches, credentials and runtime status logs",
+    "large historical example artifacts"
+  ],
+  "included_files": 355,
+  "internal_manifest": "CYBERMIND_SIH_SUBMISSION/PACKAGE_MANIFEST.json",
+  "package": "CYBERMIND_SIH_SUBMISSION",
+  "selected_checkpoint": "CYBERMIND_REAL/checkpoints/final_grouped/best.pt",
+  "source_commit": "822fcae38d20a6a0eef2222333bedd9381cbadef",
+  "uncompressed_bytes": 18276368
+}
