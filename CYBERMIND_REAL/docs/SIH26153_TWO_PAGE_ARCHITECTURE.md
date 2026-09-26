@@ -71,6 +71,8 @@ On the leakage-safe final grouped test split of 1,039 sequences, using four unse
 
 Across 4,156 future-window decisions, the world model produces 8 false positives and 74 misses versus the baseline's 186 false positives and 214 misses. This is a 5.82 percentage-point F1 gain and a 95.7% reduction in false alerts. The world model’s pooled stage accuracy is `0.3354`, stage macro-F1 is `0.2443`, and decoded illegal-transition rate is `0.0`. The low stage score is expected because stage 4 is deliberately unseen during training. Full machine-readable results are stored in `results/final_grouped/eval_test_k4.json`, `results/final_grouped/baseline_test_k4.json`, and `results/final_grouped/model_comparison.json`.
 
+The expanded representative suite also evaluates Linear SGD, RBF SVM, Random Forest, Histogram Gradient Boosting, MLP and Always-Benign under the same protocol. CYBERMIND leads every nontrivial member on F1, precision, recall, FPR and AP. The slide-ready visual and exact speaking notes are in `docs/SIH_BASELINE_SUITE_PRESENTATION.md`.
+
 These are useful internal results, not proof of unseen-environment generalization. Capture-day groups are chronological and disjoint, validation contains benign and malicious targets, and stage 4 is an unseen-campaign test. Stages 3 and 5 remain absent from authoritative training data. The rule-supported analyst evidence closes a demonstration gap but does not close that training-data gap. No claim should extend beyond that evidence.
 
 ### Controls against overfitting

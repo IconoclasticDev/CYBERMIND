@@ -135,6 +135,11 @@ architecture and ordered improvement plan.
 The authoritative remaining-work plan is
 [`docs/CYBERMIND_FULL_FINAL_IMPLEMENTATION_PLAN.md`](docs/CYBERMIND_FULL_FINAL_IMPLEMENTATION_PLAN.md).
 
+The final same-protocol comparison against logistic regression, Linear SGD,
+RBF SVM, Random Forest, Histogram Gradient Boosting, MLP and Always-Benign is
+documented in [`docs/SIH_BASELINE_SUITE_PRESENTATION.md`](docs/SIH_BASELINE_SUITE_PRESENTATION.md),
+with a PowerPoint-ready chart under `docs/assets/`.
+
 Run the matched four-step evidence protocol with:
 
 ```bash
