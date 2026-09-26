@@ -342,6 +342,10 @@ def main():
                 if ck['config']['train'].get(key) != cfg['train'].get(key):
                     raise ValueError('Resume cannot change the reviewed selection parameters.')
         model.load_state_dict(ck['model_state']); optimizer.load_state_dict(ck['optimizer_state'])
+        if cfg['train'].get('reset_optimizer_hyperparameters_on_resume', False):
+            for group in optimizer.param_groups:
+                group['lr'] = float(cfg['train']['lr'])
+                group['weight_decay'] = float(cfg['train']['weight_decay'])
         if scaler is not None and ck.get('scaler_state'): scaler.load_state_dict(ck['scaler_state'])
         start_epoch = ck['epoch']; best = ck['best_metric']; stale = ck.get('epochs_without_improvement', 0)
         history = ck.get('history', [])

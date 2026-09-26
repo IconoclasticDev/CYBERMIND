@@ -35,6 +35,38 @@ def test_nmap_filters_source_port_68():
     assert result.label.tolist() == ['BENIGN', 'Infiltration - NMAP Portscan']
 
 
+def test_feb28_corrected_rules_cover_download_communication_and_scan():
+    frame = rows([
+        dict(capture_date='2018-02-28', session_start='2018-02-28T14:35:00Z',
+             src='172.31.69.24', dst='162.125.3.5'),
+        dict(capture_date='2018-02-28', session_start='2018-02-28T15:00:00Z',
+             src='172.31.69.24', dst='13.58.225.34'),
+        dict(capture_date='2018-02-28', session_start='2018-02-28T15:00:00Z',
+             src='172.31.69.24', dst='172.31.69.13', src_port=1234),
+        dict(capture_date='2018-02-28', session_start='2018-02-28T15:00:00Z',
+             src='172.31.69.24', dst='172.31.69.13', src_port=68),
+    ])
+    result = corrected_labels(frame)
+    assert result.label.tolist() == [
+        'Infiltration - Dropbox Download',
+        'Infiltration - Communication Victim Attacker',
+        'Infiltration - NMAP Portscan',
+        'BENIGN',
+    ]
+    assert stage_for_label(result.label).tolist() == [2, 6, 1, 0]
+
+
+def test_feb28_original_schedule_uses_attacker_to_victim():
+    frame = rows([
+        dict(capture_date='2018-02-28', session_start='2018-02-28T15:00:00Z',
+             src='13.58.225.34', dst='172.31.69.24'),
+        dict(capture_date='2018-02-28', session_start='2018-02-28T15:00:00Z',
+             src='172.31.69.24', dst='13.58.225.34'),
+    ])
+    result = original_labels(frame)
+    assert result.original_cic_label.tolist() == ['Infiltration', 'BENIGN']
+
+
 def test_bot_biflow_refinements_are_flagged_not_invented():
     frame = rows([
         dict(capture_date='2018-03-02', session_start='2018-03-02T19:53:45Z',

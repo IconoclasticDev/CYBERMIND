@@ -8,8 +8,20 @@ CORRECTED_SOURCE = 'Distrinet CNS2022 corrected CSE-CIC-IDS2018 rules, commit f0
 ORIGINAL_SOURCE = 'UNB CSE-CIC-IDS2018 Table 2 schedule, retrieved 2026-09-16'
 LABEL_METHOD = 'inclusive UTC session_start; zero tolerance; directional endpoint semantics'
 
-DROPBOX = {'162.125.3.1', '162.125.3.6', '162.125.248.1', '162.125.18.133'}
+DROPBOX = {'162.125.3.1', '162.125.3.5', '162.125.3.6', '162.125.248.1', '162.125.18.133'}
 DROPBOX_AUX = {'104.16.100.29', '13.32.168.125', '52.85.112.72'}
+FEB28_DROPBOX_AUX = {
+    '104.16.100.29', '104.16.99.29', '52.84.128.3',
+    '52.85.101.236', '52.85.131.81', '52.85.95.206',
+}
+FEB28_NMAP_TARGETS = {
+    '172.31.69.1', '172.31.69.4', '172.31.69.5', '172.31.69.6',
+    '172.31.69.7', '172.31.69.8', '172.31.69.9', '172.31.69.10',
+    '172.31.69.11', '172.31.69.12', '172.31.69.13', '172.31.69.14',
+    '172.31.69.15', '172.31.69.16', '172.31.69.17', '172.31.69.18',
+    '172.31.69.19', '172.31.69.20', '172.31.69.21', '172.31.69.22',
+    '172.31.69.23',
+}
 NMAP_TARGETS = {
     '172.31.69.1', '172.31.69.11', '172.31.69.12', '172.31.69.16',
     '172.31.69.8', '172.31.69.9', '172.31.69.10', '172.31.69.14',
@@ -82,6 +94,29 @@ def corrected_labels(frame: pd.DataFrame) -> pd.DataFrame:
     _assign(result, ssh, 'SSH-BruteForce', -1, 'D_SSH')
     _assign(result, ssh & payload_zero, 'SSH-BruteForce - Attempted', 0, 'D_SSH_ATTEMPTED_C0')
 
+    feb28 = frame.capture_date.astype(str).eq('2018-02-28')
+    feb28_drop_windows = ((1519828404, 1519829172), (1519839771, 1519839824))
+    feb28_drop_base = feb28 & src.eq('172.31.69.24') & _windows(seconds, feb28_drop_windows)
+    feb28_drop = feb28_drop_base & dst.isin(DROPBOX)
+    _assign(result, feb28_drop, 'Infiltration - Dropbox Download', -1, 'D_0228_INF_DROPBOX')
+    _assign(result, feb28_drop & payload_zero,
+            'Infiltration - Dropbox Download - Attempted', 0,
+            'D_0228_INF_DROPBOX_ATTEMPTED_C0')
+    _assign(result, feb28_drop_base & dst.isin(FEB28_DROPBOX_AUX),
+            'Infiltration - Dropbox Download - Attempted', 4,
+            'D_0228_INF_DROPBOX_ATTEMPTED_C4')
+    feb28_comm_windows = ((1519829140, 1519834135), (1519839839, 1519843200))
+    feb28_comm = (feb28 & src.eq('172.31.69.24') & dst.eq('13.58.225.34')
+                  & _windows(seconds, feb28_comm_windows))
+    _assign(result, feb28_comm, 'Infiltration - Communication Victim Attacker', -1,
+            'D_0228_INF_COMM')
+    _assign(result, feb28_comm & payload_zero,
+            'Infiltration - Communication Victim Attacker - Attempted', 0,
+            'D_0228_INF_COMM_ATTEMPTED_C0')
+    feb28_nmap = (feb28 & src.eq('172.31.69.24') & dst.isin(FEB28_NMAP_TARGETS) & ~sport.eq(68)
+                  & _window(seconds, 1519829182, 1519843140.746247))
+    _assign(result, feb28_nmap, 'Infiltration - NMAP Portscan', -1, 'D_0228_INF_NMAP')
+
     mar1 = frame.capture_date.astype(str).eq('2018-03-01')
     drop_windows = ((1519912390, 1519912760), (1519913032, 1519918454))
     drop_base = mar1 & src.eq('172.31.69.13') & _windows(seconds, drop_windows)
@@ -140,6 +175,13 @@ def original_labels(frame: pd.DataFrame) -> pd.DataFrame:
     assign(feb & src.isin({'172.31.70.6', '13.58.98.64'})
            & dst.isin({'172.31.69.25', '18.217.21.148'})
            & _window(seconds, 1518631260, 1518636719.999999), 'SSH-Bruteforce', 'O_SSH_TABLE2')
+
+    feb28 = date.eq('2018-02-28')
+    original_feb28_windows = ((1519829400, 1519833899.999999),
+                              (1519839720, 1519843199.999999))
+    assign(feb28 & src.eq('13.58.225.34')
+           & dst.isin({'172.31.69.24', '18.221.148.137'})
+           & _windows(seconds, original_feb28_windows), 'Infiltration', 'O_0228_INF_TABLE2')
 
     mar1 = date.eq('2018-03-01')
     original_inf_windows = ((1519912620, 1519916159.999999),

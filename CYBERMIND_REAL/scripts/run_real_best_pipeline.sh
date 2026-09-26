@@ -35,11 +35,15 @@ if [[ ! -f "$STATE/preparation.complete" ]]; then
   touch "$STATE/preparation.complete"
 fi
 
-python scripts/train.py --config "$CONFIG" --device cuda
-touch "$STATE/training.complete"
+if [[ ! -f "$STATE/training.complete" ]]; then
+  python scripts/train.py --config "$CONFIG" --device cuda
+  touch "$STATE/training.complete"
+fi
 
-python scripts/eval.py --config "$CONFIG" --checkpoint checkpoints/real_best/best.pt \
-  --split val --output results/real_best/eval_val_fixed.json
-python scripts/eval.py --config "$CONFIG" --checkpoint checkpoints/real_best/best.pt \
-  --split test --output results/real_best/eval_test_fixed.json
-touch "$STATE/evaluation.complete"
+if [[ ! -f "$STATE/evaluation.complete" ]]; then
+  python scripts/eval.py --config "$CONFIG" --checkpoint checkpoints/real_best/best.pt \
+    --split val --output results/real_best/eval_val_fixed.json
+  python scripts/eval.py --config "$CONFIG" --checkpoint checkpoints/real_best/best.pt \
+    --split test --output results/real_best/eval_test_fixed.json
+  touch "$STATE/evaluation.complete"
+fi

@@ -76,15 +76,18 @@ def chain_environments(frames, purpose='primary'):
     return result
 
 
-def chronological_partitions(frame, window_seconds, stride_seconds):
+def chronological_partitions(frame, window_seconds, stride_seconds,
+                             train_fraction=.70, val_end_fraction=.85):
     """Split events before histories; purge a full window at split boundaries."""
     seconds = frame.timestamp.astype('int64').to_numpy() / 1e9
     bins = np.floor((seconds - seconds.min()) / stride_seconds).astype('int64')
     occupied = np.unique(bins)
     if len(occupied) < 3:
         raise ValueError('Need at least three temporal bins for train/val/test')
-    a = min(max(1, int(len(occupied) * .70)), len(occupied) - 2)
-    b = min(max(a + 1, int(len(occupied) * .85)), len(occupied) - 1)
+    if not (0 < train_fraction < val_end_fraction < 1):
+        raise ValueError('Require 0 < train_fraction < val_end_fraction < 1')
+    a = min(max(1, int(len(occupied) * train_fraction)), len(occupied) - 2)
+    b = min(max(a + 1, int(len(occupied) * val_end_fraction)), len(occupied) - 1)
     first, second = seconds.min() + occupied[a] * stride_seconds, seconds.min() + occupied[b] * stride_seconds
     return {'train': frame[seconds < first - window_seconds].copy(),
             'val': frame[(seconds >= first) & (seconds < second - window_seconds)].copy(),
@@ -112,7 +115,11 @@ def prepare_frames(frames, cfg, purpose='primary', normalizer=None):
     if purpose == 'heldout' and normalizer is None:
         raise ValueError('Held-out evaluation requires primary training normalization constants')
     for scenario, frame in environments.items():
-        partitions = chronological_partitions(frame, cfg['data']['window_seconds'], cfg['data']['stride_seconds']) if purpose == 'primary' else {'test': frame}
+        partitions = chronological_partitions(
+            frame, cfg['data']['window_seconds'], cfg['data']['stride_seconds'],
+            cfg['data'].get('train_fraction', .70),
+            cfg['data'].get('val_end_fraction', .85),
+        ) if purpose == 'primary' else {'test': frame}
         for split, part in partitions.items():
             if part.empty:
                 raise ValueError(f'{scenario}/{split}: no events after boundary purge; use more data')
@@ -173,6 +180,8 @@ def main():
         print(f'{name}: {len(samples)} sequences')
     metadata = {'purpose': args.purpose, 'primary_source': PRIMARY_SOURCE, 'reports': reports,
                 'normalization_fingerprint': normalizer.fingerprint, 'split_method': 'chronological_events_with_window_purge',
+                'split_fractions': {'train': cfg['data'].get('train_fraction', .70),
+                                    'val_end': cfg['data'].get('val_end_fraction', .85)},
                 'source_files': [str(f) for f in files], 'num_sequences': sum(map(len, splits.values()))}
     (out / 'metadata.json').write_text(json.dumps(metadata, indent=2), encoding='utf-8')
 
