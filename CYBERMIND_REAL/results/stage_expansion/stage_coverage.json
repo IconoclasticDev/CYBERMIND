@@ -1,0 +1,44 @@
+{
+  "target_occurrences": {
+    "train": [
+      30348,
+      5844,
+      5820,
+      0,
+      735,
+      0,
+      153
+    ],
+    "val": [
+      0,
+      0,
+      0,
+      0,
+      5865,
+      0,
+      0
+    ],
+    "test": [
+      2745,
+      0,
+      0,
+      0,
+      3165,
+      0,
+      0
+    ]
+  },
+  "taxonomy": {
+    "0": "benign",
+    "1": "recon",
+    "2": "initial access",
+    "3": "lateral movement",
+    "4": "C2",
+    "5": "exfiltration",
+    "6": "unknown"
+  },
+  "unsupported_by_source_evidence": [
+    3,
+    5
+  ]
+}

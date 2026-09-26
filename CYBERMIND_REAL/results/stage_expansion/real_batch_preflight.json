@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "scope": "R4 readiness only: first real training batch forward/backward; no optimizer step and no model update.",
+  "config": "configs/cic2018_stage_expansion.yaml",
+  "gpu": "NVIDIA GB10",
+  "precision": "bf16",
+  "batch_size": 8,
+  "gradient_accumulation": 4,
+  "history": 16,
+  "max_nodes_per_state": 8,
+  "max_edges_per_state": 14,
+  "loss": 6.087837219238281,
+  "components": {
+    "transition": 4.409440040588379,
+    "infiltration": 0.6248277425765991,
+    "stage": 1.9903031587600708,
+    "calibration": 0.21593385934829712,
+    "graph_consistency": 0.15231214463710785
+  },
+  "class_counts": {
+    "positive": 12552,
+    "negative": 30348
+  },
+  "peak_allocated_bytes": 34575360,
+  "peak_reserved_bytes": 39845888,
+  "device_total_memory_bytes": 130661142528,
+  "active_required_gradient_groups": {
+    "graph": true,
+    "temporal": true,
+    "dynamics": true,
+    "latent": true,
+    "infiltration": true,
+    "stage": true,
+    "crf": false
+  },
+  "required_gradient_groups": [
+    "graph",
+    "temporal",
+    "dynamics",
+    "latent",
+    "infiltration",
+    "stage"
+  ],
+  "parameters_without_training_loss_gradient": [
+    "state_head.net.0.bias",
+    "state_head.net.0.weight",
+    "state_head.net.2.bias",
+    "state_head.net.2.weight"
+  ]
+}

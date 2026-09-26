@@ -1,0 +1,67 @@
+{
+  "status": "complete",
+  "scope": "two corrected CIC-IDS2018 February 28 victim captures",
+  "base_artifacts": [
+    "data/stage_expansion/labeled/2018-02-14/UCAP172.31.69.25.complete_records.reviewed_2026-09-16.csv",
+    "data/stage_expansion/labeled/2018-03-01/capEC2AMAZ-O4EL3NG-172.31.69.13_part1.csv",
+    "data/stage_expansion/labeled/2018-03-01/capEC2AMAZ-O4EL3NG-172.31.69.13_part2.csv",
+    "data/stage_expansion/labeled/2018-03-01/capEC2AMAZ-O4EL3NG-172.31.69.13_part3.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.10.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.12.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.14.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.17.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.23.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.26.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.26a.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.29.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.30.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.6.csv",
+    "data/stage_expansion/labeled/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.8.csv"
+  ],
+  "added_artifacts": [
+    {
+      "archive": "data/raw/CIC-IDS-2018/Original Network Traffic and Log data/Wednesday-28-02-2018/pcap.zip",
+      "member": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.24- part1",
+      "member_bytes": 98445934,
+      "member_crc32": "3223406f",
+      "capture": "data/stage_expansion/captures/capEC2AMAZ-O4EL3NG-172.31.69.24- part1",
+      "capture_sha256": "19b8769d3e97acfce4983184ff81c39094f2082682a25ceb84fd531c370d0834",
+      "flow": "data/stage_expansion/flows/2018-02-28/capEC2AMAZ-O4EL3NG-172.31.69.24-_part1.csv",
+      "flow_sha256": "2965e327f196ba75c30b06b72809c84efd31a6a75fb50dc0ac2867b4b221c943",
+      "labeled": "data/stage_expansion/labeled/2018-02-28/capEC2AMAZ-O4EL3NG-172.31.69.24-_part1.csv",
+      "labeled_sha256": "248bf1de8aa8844c56f921b7938527d865c86084ef42b341df6ae47fb33550b1",
+      "rows": 9183,
+      "labels": {
+        "BENIGN": 9169,
+        "Infiltration - Dropbox Download": 9,
+        "Infiltration - Dropbox Download - Attempted": 5
+      }
+    },
+    {
+      "archive": "data/raw/CIC-IDS-2018/Original Network Traffic and Log data/Wednesday-28-02-2018/pcap.zip",
+      "member": "pcap/capEC2AMAZ-O4EL3NG-172.31.69.24-part2",
+      "member_bytes": 347870553,
+      "member_crc32": "d37480b8",
+      "capture": "data/stage_expansion/captures/capEC2AMAZ-O4EL3NG-172.31.69.24-part2",
+      "capture_sha256": "f3412318a76a9de67dd1b4fdb143613080adecec3fdcc477fc06463d227e58d3",
+      "flow": "data/stage_expansion/flows/2018-02-28/capEC2AMAZ-O4EL3NG-172.31.69.24-part2.csv",
+      "flow_sha256": "552e7f999ca98498c206fa549d2c342b2124b221a8ffd99ba1da8a8b54d66237",
+      "labeled": "data/stage_expansion/labeled/2018-02-28/capEC2AMAZ-O4EL3NG-172.31.69.24-part2.csv",
+      "labeled_sha256": "55388ec37a31d9f9976260335ec08d44ba6cd2057337cbbc106a206dbd7bb01d",
+      "rows": 230166,
+      "labels": {
+        "BENIGN": 47193,
+        "Infiltration - Communication Victim Attacker": 5,
+        "Infiltration - Dropbox Download": 31,
+        "Infiltration - Dropbox Download - Attempted": 8,
+        "Infiltration - NMAP Portscan": 182929
+      }
+    }
+  ],
+  "label_source": "Distrinet CNS2022 corrected CSE-CIC-IDS2018 rules, commit f0ce502818e59e6cd062720ab2286c5ff6f2bdec",
+  "original_schedule_source": "UNB CSE-CIC-IDS2018 Table 2 schedule, retrieved 2026-09-16",
+  "limitations": [
+    "These captures add verified infiltration, reconnaissance, and victim-attacker communication examples.",
+    "They do not establish verified lateral-movement or exfiltration labels."
+  ]
+}
