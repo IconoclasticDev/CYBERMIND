@@ -1,0 +1,26 @@
+{
+  "epoch": 4,
+  "train": {
+    "loss": -1.3406179096263189,
+    "transition": -1.8321127568091546,
+    "infiltration": 0.15140583244237033,
+    "stage": 0.6701929165349974,
+    "calibration": 0.017623097368457415,
+    "graph_consistency": 0.01467934481122277
+  },
+  "val": {
+    "loss": -0.2840956688841895,
+    "transition": -1.6762905962326948,
+    "infiltration": 0.013141136549775253,
+    "stage": 2.756812232839482,
+    "calibration": 3.191937499566782e-05,
+    "graph_consistency": 0.00641291465817491,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "threshold": 0.5,
+    "positive": 5865,
+    "negative": 0,
+    "single_class_validation": true
+  }
+}
