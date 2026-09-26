@@ -45,7 +45,7 @@ def main():
         "",
         "| Split | Precision | Recall | F1 | FPR |",
         "|---|---:|---:|---:|---:|",
-        f"| Validation | {metric(val, 'precision')} | {metric(val, 'recall')} | {metric(val, 'f1')} | {metric(val, 'fpr')} |",
+        f"| Validation | {metric(val, 'precision')} | {metric(val, 'recall')} | {metric(val, 'f1')} | n/a (no benign targets) |",
         f"| Test | {metric(test, 'precision')} | {metric(test, 'recall')} | {metric(test, 'f1')} | {metric(test, 'fpr')} |",
         "",
         "## Artifact",
@@ -56,6 +56,8 @@ def main():
         "",
         "## Interpretation",
         "",
+        "Validation is an attack-only chronological segment because the Botnet Ares activity is continuous across that period. It supports early stopping on recall/F1 and stage loss but cannot estimate false positives. "
+        "The final test contains both benign and C2 targets and supplies the fixed-threshold precision and false-positive measurement. "
         "The C2 holdout is later traffic from the same Botnet Ares campaign. It tests chronological generalization within that campaign; it does not establish generalization to unrelated C2 families. "
         "A defensible lateral-movement or exfiltration claim requires a separately labeled source with those stages and a source-isolated external test.",
         "",

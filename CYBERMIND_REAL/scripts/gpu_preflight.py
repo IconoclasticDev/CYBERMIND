@@ -145,8 +145,9 @@ def main():
                 raise ValueError('Every split must be nonempty.')
             for left, right in ((0, 1), (0, 2), (1, 2)):
                 assert_split_disjoint(datasets[left], datasets[right])
-            for dataset in datasets[:2]:
-                training_class_weight(dataset)
+            training_class_weight(datasets[0])
+            if not cfg['data'].get('allow_single_class_validation', False):
+                training_class_weight(datasets[1])
             constants = json.loads((processed / 'normalization.json').read_text()) if cfg['data'].get('require_normalization') else None
             validate_training_provenance(processed, cfg, datasets, constants)
             print('Dataset split, class and normalization checks: PASS')

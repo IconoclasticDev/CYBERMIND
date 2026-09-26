@@ -6,8 +6,9 @@ data:
   window_seconds: 60
   stride_seconds: 30
   history: 16
-  train_fraction: 0.72
-  val_end_fraction: 0.92
+  train_fraction: 0.80
+  val_end_fraction: 0.90
+  allow_single_class_validation: true
   require_normalization: true
   require_packet_features: true
 model:
