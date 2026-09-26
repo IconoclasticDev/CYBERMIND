@@ -124,6 +124,9 @@ rejects flow-only input instead of silently filling the missing telemetry.
 See `docs/SIH26153_TWO_PAGE_ARCHITECTURE.md` for the current submission-oriented
 architecture and ordered improvement plan.
 
+The authoritative remaining-work plan is
+[`docs/CYBERMIND_FULL_FINAL_IMPLEMENTATION_PLAN.md`](docs/CYBERMIND_FULL_FINAL_IMPLEMENTATION_PLAN.md).
+
 Run the matched four-step evidence protocol with:
 
 ```bash
