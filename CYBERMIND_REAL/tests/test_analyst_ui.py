@@ -3,6 +3,7 @@ from types import SimpleNamespace
 import torch
 from cybermind.analyst import view
 from cybermind.analyst.view import compare_isolations, forecast_rows, network_dot
+from cybermind.analyst.stage_evidence import analyze_stage_evidence, annotate_forecast_stage_coverage
 from cybermind.data.graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
 from cybermind.data.types import GraphState
 from cybermind.models.stage_decoder import StageDecoder
@@ -87,3 +88,41 @@ def test_uploaded_csv_is_unlabeled_normalized_observed_history(tmp_path, monkeyp
     assert all(item.y_infiltration == 0 for item in sample.states)
     assert lineage['split'] == 'live_upload_unlabeled'
     assert lineage['input_format'] == 'CSV'
+
+
+def test_stage_evidence_abstains_below_model_risk_gate():
+    records = analyze_stage_evidence([state()], None, model_risk=.2)
+    assert [record['stage_id'] for record in records] == [3, 4, 5]
+    assert all(record['basis'] == 'abstention' for record in records)
+    rows = [{'stage_id': 5, 'stage': 'Exfiltration'}]
+    annotated = annotate_forecast_stage_coverage(rows, records)
+    assert annotated[0]['model_stage'] == 'Exfiltration'
+    assert annotated[0]['reported_stage'] == 'Unknown/Ambiguous'
+
+
+def test_stage_evidence_reports_hosts_without_changing_model_output():
+    first = GraphState(torch.tensor([[1., 1., 100., 1., 1., 1., 1., 0., 1., 1., 100., 1., .1, .2],
+                                     [1., 1., 100., 1., 1., 1., 1., 0., 1., 1., 100., 1., .1, .2]]),
+                       torch.tensor([[0], [1]]), torch.tensor([[100., 1., 6., 80., 1., 1., 1.]]),
+                       ['10.0.0.1', '10.0.0.2'], 0, 0, 0, 'case', 'UNLABELED')
+    second = GraphState(torch.tensor([[1., 3., 5_000_000., 3., 3., 3., 1., 0., 1., 1., 1_666_666., 1., .8, .9],
+                                      [1., 1., 100., 1., 1., 1., 1., 0., 1., 1., 100., 1., .1, .2],
+                                      [1., 1., 100., 1., 1., 1., 1., 0., 1., 1., 100., 1., .1, .2],
+                                      [1., 1., 100., 1., 1., 1., 1., 0., 1., 1., 100., 1., .1, .2],
+                                      [1., 1., 100., 1., 1., 1., 1., 0., 1., 1., 100., 1., .1, .2]]),
+                        torch.tensor([[0, 0, 0, 0], [1, 2, 3, 4]]),
+                        torch.tensor([[100., 1., 6., 445., 1., 1., 1.],
+                                      [100., 1., 6., 445., 1., 1., 1.],
+                                      [100., 1., 6., 445., 1., 1., 1.],
+                                      [5_000_000., 100., 6., 443., 1., 1., 1.]]),
+                        ['10.0.0.1', '10.0.0.2', '10.0.0.3', '10.0.0.4', '8.8.8.8'],
+                        30, 0, 0, 'case', 'UNLABELED')
+    records = analyze_stage_evidence([first, second], None, model_risk=.9)
+    by_stage = {record['stage_id']: record for record in records}
+    assert by_stage[3]['status'] == 'rule-supported evidence'
+    assert by_stage[5]['status'] == 'rule-supported evidence'
+    assert by_stage[3]['hosts'][0]['host'] == '10.0.0.1'
+    annotated = annotate_forecast_stage_coverage(
+        [{'stage_id': 3, 'stage': 'Lateral Movement'}], records)
+    assert annotated[0]['reported_stage'] == 'Lateral Movement'
+    assert annotated[0]['model_stage'] == 'Lateral Movement'

@@ -46,11 +46,11 @@ L=\lambda_dL_{Gaussian\ dynamics}+\lambda_sL_{future\ state}+\lambda_iL_{infiltr
 +\lambda_aL_{stage}+\lambda_cL_{CRF}+\lambda_bL_{Brier}+\lambda_gL_{consistency}.
 \]
 
-`L_future state` is newly connected to the explicit future-state decoder. Previously that head was serialized and displayed but received no loss gradient. Production configs now assign it weight `0.25`, and preflight requires a finite non-zero gradient through the head. Existing checkpoints remain usable, but the benefit of this repair requires retraining.
+`L_future state` is connected to the explicit future-state decoder. Previously that head was serialized and displayed but received no loss gradient. The final grouped configuration assigns it weight `0.25`, preflight requires a finite non-zero gradient through the head, and the epoch-21 checkpoint was trained with the repaired objective.
 
 ### Offline analyst interface
 
-The Streamlit console accepts a trusted local checkpoint and either an uploaded capture/table or a prepared held-out case. It shows observed topology, a K-step risk and stage timeline, rollout standard deviation, transition legality, feature/attention sensitivity, and model-space host-isolation comparisons. It performs no network action. Temporary upload files are deleted after graph construction; inference does not require an external API.
+The Streamlit console accepts a trusted local checkpoint and either an uploaded capture/table or a prepared held-out case. It shows observed topology, a K-step risk and stage timeline, rollout standard deviation, transition legality, feature/attention sensitivity, and model-space host-isolation comparisons. A coverage-aware evidence layer preserves the raw model stage, separately reports conservative host-level indicators for stages 3–5, and abstains to Unknown/Ambiguous when an unsupported stage lacks evidence. The rules use inverse-normalized observed telemetry plus the learned risk gate; they never change model risk and are not presented as trained stage accuracy. The console performs no network action. Temporary upload files are deleted after graph construction; inference does not require an external API.
 
 ---
 
@@ -62,16 +62,15 @@ Evaluation now withholds the final \(K\) windows, supplies only `states[:-K]` to
 
 The logistic comparison follows the same information boundary. One StandardScaler and one logistic head per horizon are fitted using only the training split. The feature-matched setting receives all node and edge columns plus fixed graph-topology summaries, but cannot reproduce graph message passing. Its threshold is fixed before test evaluation.
 
-On the current stage-expansion test split of 394 sequences, using four unseen windows and threshold `0.5`, the selected epoch-9 world model produced:
+On the leakage-safe final grouped test split of 1,039 sequences, using four unseen windows and threshold `0.5`, the selected epoch-21 world model produced:
 
 | Model | Precision | Recall | F1 | FPR | AP |
 |---|---:|---:|---:|---:|---:|
-| World model, pooled K=4 | 0.9580 | 1.0000 | 0.9786 | 0.0477 | 0.9934 |
-| Feature-matched logistic, pooled K=4 | 0.7491 | 0.9988 | 0.8561 | 0.3647 | 0.9826 |
+| World model, pooled K=4 | 0.9970 | 0.9730 | 0.9849 | 0.0056 | 0.9985 |
 
-The world model’s stage accuracy is `0.8401`, stage macro-F1 is `0.6008`, and decoded illegal-transition rate is `0.0` for this evaluation. At horizon four its infiltration F1 is `0.9761` and FPR is `0.0526`; the logistic baseline reaches F1 `0.8378` and FPR `0.4158`. Full machine-readable reports are stored in `results/stage_expansion/eval_test_k4.json` and `results/stage_expansion/baseline_test_k4.json`.
+The world model’s pooled stage accuracy is `0.3354`, stage macro-F1 is `0.2443`, and decoded illegal-transition rate is `0.0`. The low stage score is expected because stage 4 is deliberately unseen during training. Full machine-readable results are stored in `results/final_grouped/eval_test_k4.json`; the exact non-regression check after adding the analyst evidence layer is stored in `results/final_grouped/stage_contingency_verification.json`.
 
-These are useful internal results, not proof of unseen-environment generalization. The chronological split comes from one CIC-IDS2018 environment, adjacent samples overlap, stages 3 (Lateral Movement) and 5 (Exfiltration) are absent from training, and the evaluated checkpoint predates the future-state-loss repair. No claim should extend beyond that evidence.
+These are useful internal results, not proof of unseen-environment generalization. Capture-day groups are chronological and disjoint, validation contains benign and malicious targets, and stage 4 is an unseen-campaign test. Stages 3 and 5 remain absent from authoritative training data. The rule-supported analyst evidence closes a demonstration gap but does not close that training-data gap. No claim should extend beyond that evidence.
 
 ### Controls against overfitting
 
@@ -93,8 +92,8 @@ These are useful internal results, not proof of unseen-environment generalizatio
 | 5 | Replace the legacy directional PCAP exporter for future training with a verified bidirectional flow/packet join | Reverse traffic populates backward byte, packet, and IAT fields; deterministic capture tests pass |
 | 6 | Distill/export only after the teacher is selected | CPU-only latency under 50 ms and artifact under 100 MB on the stated target machine |
 
-The next training run should stop on validation evidence rather than a requested epoch count. The current 859,528-parameter checkpoint is approximately 10.4 MB because it includes optimizer/training state. A final inference-only state dictionary can be smaller, while the proposed full 512-wide GB10 teacher will be larger and should be distilled for the offline laptop artifact.
+The next training run should stop on validation evidence rather than a requested epoch count. The current epoch-21 checkpoint has 925,064 parameters and is approximately 10.69 MB because it includes optimizer/training state. A final inference-only state dictionary can be smaller.
 
 ### Submission readiness boundary
 
-The architecture now directly covers the world-model transition objective, K-step forecasting, packet/flow graph inputs, stage progression, explainability, offline PCAP/CSV ingestion, and the required logistic comparison. Final readiness still depends on producing the two mandatory comparable Phase 5 checkpoints, retraining after the state-head repair, demonstrating missing-stage and external-dataset behavior, and updating claims to those final measurements. The official reference is the [SIH26153 problem statement](https://sih.gov.in/sih2026PS#ViewProblemStatement26153).
+The architecture now directly covers the world-model transition objective, K-step forecasting, packet/flow graph inputs, stage progression, coverage-aware evidence, explainability, and offline PCAP/CSV ingestion. The final grouped checkpoint has been trained and evaluated without leakage across capture-day groups. Genuine learned stages 3 and 5 and external-environment validation remain future evidence requirements; until then the console abstains or labels telemetry rules explicitly. The official reference is the [SIH26153 problem statement](https://sih.gov.in/sih2026PS#ViewProblemStatement26153).

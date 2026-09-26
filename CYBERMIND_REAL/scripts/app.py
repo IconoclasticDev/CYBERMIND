@@ -8,11 +8,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from cybermind.analyst.view import (load_case, load_uploaded_case, forecast_rows,
                                     network_dot, compare_isolations)
+from cybermind.analyst.stage_evidence import (analyze_stage_evidence,
+                                              annotate_forecast_stage_coverage)
 
 st.set_page_config(page_title='CYBERMIND Analyst Console', layout='wide')
 st.title('CYBERMIND Analyst Console')
 st.caption('Offline research interface. Forecasts are model outputs for analyst review; they do not execute network actions or establish causal effects.')
-path = st.sidebar.text_input('Local trusted checkpoint', os.environ.get('CYBERMIND_CHECKPOINT', str(ROOT / 'checkpoints/best_gb10.pt')))
+path = st.sidebar.text_input(
+    'Local trusted checkpoint',
+    os.environ.get('CYBERMIND_CHECKPOINT', str(ROOT / 'checkpoints/final_grouped/best.pt')),
+)
 source_mode = st.sidebar.radio('Input source', ('Upload PCAP/CSV', 'Prepared test sequence'))
 uploaded = st.sidebar.file_uploader('Offline network capture', type=['pcap', 'pcapng', 'csv']) if source_mode == 'Upload PCAP/CSV' else None
 index = int(st.sidebar.number_input('Test sequence index', min_value=0, value=0, step=1)) if source_mode == 'Prepared test sequence' else 0
@@ -46,6 +51,10 @@ observed = sample.states if source_mode == 'Upload PCAP/CSV' else sample.states[
 with torch.no_grad():
     out = model.forecast(observed, k, n_rollouts=draws, seed=seed, explain=False)
 rows = forecast_rows(out, model, observed[-1].timestamp, sample.window_seconds)
+checkpoint_payload = torch.load(path, map_location='cpu', weights_only=False)
+stage_evidence = analyze_stage_evidence(
+    observed, checkpoint_payload.get('normalization'), rows[-1]['risk'])
+rows = annotate_forecast_stage_coverage(rows, stage_evidence)
 case_key = (lineage['checkpoint_sha256'], lineage['dataset_sha256'], source_mode, index, k, draws, seed)
 if st.session_state.get('case_key') != case_key:
     st.session_state['case_key'] = case_key
@@ -61,12 +70,18 @@ with center:
     st.subheader('Future forecast')
     st.metric('Final model risk', f"{rows[-1]['risk']:.1%}")
     st.line_chart({'risk': [r['risk'] for r in rows]}, height=180)
-    st.dataframe(rows, hide_index=True, column_order=['horizon', 'stage', 'risk', 'rollout_std', 'transition_legal'],
+    st.dataframe(rows, hide_index=True,
+                 column_order=['horizon', 'reported_stage', 'model_stage', 'evidence_basis',
+                               'risk', 'rollout_std', 'transition_legal'],
                  column_config={'risk': st.column_config.NumberColumn('Risk', format='%.3f'),
                                 'rollout_std': st.column_config.NumberColumn('Rollout SD', format='%.3f')})
     st.caption('Step 0 is the encoded observed state; steps 1–4 are future windows when the configured horizon is four. Rollout SD measures stochastic dispersion, not calibrated confidence. Stage names are coarse research mappings, not attack ground truth.')
     illegal = sum(r['transition_legal'] is False for r in rows)
     st.write(f"Decoder: {out['stage_decoding']} · Illegal transitions: {illegal} · Draws: {draws} · Seed: {seed}")
+    st.subheader('Stage 3–5 evidence')
+    st.dataframe(stage_evidence, hide_index=True,
+                 column_order=['stage', 'status', 'basis', 'hosts', 'indicators', 'limitation'])
+    st.caption('Rules use observed telemetry plus the learned risk gate. They do not alter model risk or count as trained stage accuracy; insufficient evidence produces an explicit abstention.')
 with right:
     st.subheader('Intervention comparison')
     hosts = st.multiselect('Hosts to simulate', range(len(observed[-1].node_ids)), format_func=lambda i: observed[-1].node_ids[i])
@@ -95,7 +110,8 @@ with st.expander('Why this forecast?'):
 with st.expander('Case lineage and export'):
     st.json(lineage)
     st.caption('Prepared cases exclude their held-out target. Uploaded captures are treated as entirely observed and unlabeled. No future labels are used to declare resets.')
-    report = {'lineage': lineage, 'forecast': rows, 'interventions': st.session_state['interventions'],
+    report = {'lineage': lineage, 'forecast': rows, 'stage_evidence': stage_evidence,
+              'interventions': st.session_state['interventions'],
               'explanation': st.session_state['explanation'], 'seed': seed, 'n_rollouts': draws,
               'interpretation': 'Model-based forecast for analyst review; no causal or autonomous-response claim.'}
     st.download_button('Download case JSON', json.dumps(report, indent=2, allow_nan=False),

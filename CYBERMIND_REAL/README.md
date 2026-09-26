@@ -120,6 +120,14 @@ After training: `streamlit run scripts/app.py`.
 The console accepts a local PCAP, PCAPNG, or CSV and applies the selected
 checkpoint's embedded training normalization. A packet-required checkpoint
 rejects flow-only input instead of silently filling the missing telemetry.
+It preserves the raw learned stage and separately displays rule-supported
+stage 3–5 evidence with contributing hosts. Unsupported stage outputs abstain
+to Unknown/Ambiguous; the evidence rules never change the model risk score.
+
+The default console checkpoint is `checkpoints/final_grouped/best.pt`. See
+`docs/TWO_HOUR_STAGE_COVERAGE_CONTINGENCY.md` for its evidence boundary and
+`results/final_grouped/stage_contingency_verification.json` for the exact
+non-regression result.
 
 See `docs/SIH26153_TWO_PAGE_ARCHITECTURE.md` for the current submission-oriented
 architecture and ordered improvement plan.
