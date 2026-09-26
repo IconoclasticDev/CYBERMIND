@@ -265,7 +265,7 @@ def validate(model, loader, cfg, device, precision):
                 sums[key] = sums.get(key, 0.) + value * n
             probabilities.append(p.cpu()); labels.append(y.cpu())
     ys = torch.cat(labels)
-    single_class = not ys.any() or ys.bool().all()
+    single_class = not bool(ys.any()) or bool(ys.bool().all())
     if single_class and not cfg['data'].get('allow_single_class_validation', False):
         raise ValueError('Validation split needs both classes for meaningful infiltration F1.')
     metrics = validation_metrics(torch.cat(probabilities), ys,
@@ -353,6 +353,8 @@ def main():
         start_epoch = ck['epoch']; best = ck['best_metric']; stale = ck.get('epochs_without_improvement', 0)
         history = ck.get('history', [])
         for record in history:
+            if 'single_class_validation' in record.get('val', {}):
+                record['val']['single_class_validation'] = bool(record['val']['single_class_validation'])
             selection.update(record['epoch'], record['val'])
         if not history:
             raise ValueError('Resume requires validation history to reconstruct selection.')

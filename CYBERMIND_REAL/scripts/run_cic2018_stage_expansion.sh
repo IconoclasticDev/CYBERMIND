@@ -37,7 +37,11 @@ if [[ ! -f "$STATE/preparation.complete" ]]; then
 fi
 
 if [[ ! -f "$STATE/training.complete" ]]; then
-  python scripts/train.py --config "$CONFIG" --device cuda
+  RESUME_ARGS=()
+  if [[ -f checkpoints/stage_expansion/best_last.pt ]]; then
+    RESUME_ARGS=(--resume checkpoints/stage_expansion/best_last.pt)
+  fi
+  python scripts/train.py --config "$CONFIG" --device cuda "${RESUME_ARGS[@]}"
   touch "$STATE/training.complete"
 fi
 
