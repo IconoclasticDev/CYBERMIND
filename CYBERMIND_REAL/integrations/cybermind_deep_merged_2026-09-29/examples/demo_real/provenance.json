@@ -1,0 +1,13 @@
+{
+  "dataset": "CTU IoT-23",
+  "scenario": "CTU-IoT-Malware-Capture-9-1",
+  "purpose": "Real raw-PCAP ingestion demonstration only; no claim of model accuracy, stage-label correctness, or generalization on this sample.",
+  "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-9-1/2018-07-25-10-53-16-192.168.100.111-only5000.pcap",
+  "source_etag": "\"86bf9-5ed9308a48857\"",
+  "file": "ctu_iot23_capture_9_1_only5000.pcap",
+  "bytes": 551929,
+  "sha256": "a761dcd52ede71a0f9a60272964e7392c25d9b6805f29735de7852b85bcb6ab6",
+  "capture_scope": "Published only5000 PCAP sample from the CTU capture; not a full-day archive.",
+  "download_method": "HTTPS GET to a temporary file, then atomic rename after byte-count and SHA-256 check.",
+  "download_date_utc": "2026-09-29"
+}

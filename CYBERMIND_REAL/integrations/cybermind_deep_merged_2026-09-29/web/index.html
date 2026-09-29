@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" data-screen="warroom">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CYBERMIND — War Room</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">CYBERMIND</div>
+      <div class="sub">PREDICT · SIMULATE · INTERVENE · REPLAN</div>
+    </div>
+    <nav class="nav" id="nav">
+      <button data-screen="warroom" class="active">WAR ROOM</button>
+      <button data-screen="lab">SCENARIO LAB</button>
+      <button data-screen="replay">REPLAY</button>
+      <button data-screen="explain">EXPLAIN</button>
+      <button data-screen="experiments">EXPERIMENTS</button>
+      <button data-screen="system">SYSTEM</button>
+    </nav>
+    <div class="topbar-right">
+      <div id="loop-pill" class="loop-pill" title="Observe → Understand → Forecast → Simulate → Recommend → Re-observe">
+        <span class="lp-step" data-step="observe">OBSERVE</span>
+        <span class="lp-step" data-step="forecast">FORECAST</span>
+        <span class="lp-step" data-step="simulate">SIMULATE</span>
+        <span class="lp-step" data-step="recommend">RECOMMEND</span>
+        <span class="lp-step" data-step="replan">REPLAN</span>
+      </div>
+      <div id="conn" class="conn">● CONNECTING</div>
+      <div id="model-badge" class="model-badge" title="model status">MODEL —</div>
+    </div>
+  </header>
+
+  <!-- ============================== WAR ROOM ============================== -->
+  <main class="layout" id="screen-warroom">
+    <section class="panel network">
+      <div class="panel-head">
+        <div class="panel-title">NETWORK WORLD</div>
+        <div class="panel-tools">
+          <span id="net-stats" class="mini">0 nodes · 0 edges</span>
+          <button id="btn-gravity" class="btn tiny" title="Compute Attack Gravity per host">GRAVITY</button>
+        </div>
+      </div>
+      <div id="network" class="network-canvas"></div>
+      <div id="net-legend" class="legend">
+        <span><i class="dot benign"></i>benign</span>
+        <span><i class="dot suspicious"></i>suspicious</span>
+        <span><i class="dot gravity"></i>high gravity</span>
+        <span><i class="line attack"></i>attack-path edge</span>
+        <span><i class="line normal"></i>normal flow</span>
+      </div>
+    </section>
+
+    <section class="panel forecast">
+      <div class="panel-head">
+        <div class="panel-title">FUTURE FORECAST</div>
+        <div class="panel-tools"><span id="forecast-meta" class="mini"></span></div>
+      </div>
+      <div class="hero-risk">
+        <span id="risk">—</span>
+        <small>CURRENT RISK <em id="risk-band" class="band"></em></small>
+      </div>
+      <div class="confidence-row">
+        <div class="conf"><label>MODEL CONFIDENCE</label><div class="meter"><div id="conf-bar" class="meter-fill"></div></div><span id="conf-val">—</span></div>
+        <div class="conf"><label>OOD FLAG</label><span id="ood" class="ood">—</span></div>
+      </div>
+      <div id="forecast-ribbon" class="forecast-ribbon"></div>
+      <div id="stage-path" class="stage-path"></div>
+    </section>
+
+    <section class="panel defence">
+      <div class="panel-head">
+        <div class="panel-title">DEFENCE PANEL</div>
+        <div class="panel-tools">
+          <button id="btn-cf" class="btn primary tiny">RUN COUNTERFACTUAL</button>
+        </div>
+      </div>
+      <div class="kv"><span>ATTACK GRAVITY</span><span id="d-gravity">—</span></div>
+      <div class="kv"><span>CRITICAL ASSET</span><span id="d-asset">—</span></div>
+      <div class="kv"><span>RECOMMENDED ACTION</span><span id="d-action" class="hl">—</span></div>
+      <div class="kv"><span>RISK AFTER ACTION</span><span id="d-after">—</span></div>
+      <div class="kv"><span>RISK REDUCTION</span><span id="d-reduction">—</span></div>
+      <div id="cf-results" class="cf-results"></div>
+      <div class="disclaimer" id="d-disclaimer"></div>
+    </section>
+
+    <section class="panel timeline">
+      <div class="panel-head">
+        <div class="panel-title">LIVE EVIDENCE</div>
+        <div class="panel-tools">
+          <label class="chk"><input type="checkbox" id="pause-feed" /> pause</label>
+          <span id="event-count" class="mini">0 events</span>
+        </div>
+      </div>
+      <div id="timeline" class="timeline-list"></div>
+    </section>
+  </main>
+
+  <!-- ============================= SCENARIO LAB ============================ -->
+  <main class="layout screen hidden" id="screen-lab">
+    <section class="panel lab-list">
+      <div class="panel-title">SCENARIOS — SAFE SYNTHETIC TELEMETRY</div>
+      <div id="scenario-list" class="scenario-list">Loading…</div>
+      <div class="lab-controls">
+        <label>TICK INTERVAL <input id="lab-interval" type="range" min="0.4" max="4" step="0.2" value="1.5" /> <span id="lab-interval-val">1.5s</span></label>
+        <div class="lab-btns">
+          <button id="lab-reset" class="btn">RESET STATE</button>
+          <button id="lab-stop" class="btn danger">STOP</button>
+        </div>
+      </div>
+      <div class="note">Scenarios are synthetic flow records on RFC-5737 test addresses. No exploit content, no external network. The model reacts through the same pipeline as real telemetry.</div>
+    </section>
+    <section class="panel lab-monitor">
+      <div class="panel-title">SCENARIO MONITOR</div>
+      <div class="kv"><span>SCENARIO</span><span id="lab-current">—</span></div>
+      <div class="kv"><span>RUN ID</span><span id="lab-run">—</span></div>
+      <div class="kv"><span>TICK</span><span id="lab-tick">—</span></div>
+      <div class="kv"><span>STATUS</span><span id="lab-status">idle</span></div>
+      <div class="panel-title" style="margin-top:18px">LIVE FORECAST</div>
+      <div class="hero-risk small"><span id="lab-risk">—</span><small>HORIZON RISK</small></div>
+      <div id="lab-steps" class="forecast-ribbon"></div>
+    </section>
+    <section class="panel lab-log">
+      <div class="panel-title">SCENARIO LOG</div>
+      <div id="lab-log" class="timeline-list"></div>
+    </section>
+  </main>
+
+  <!-- ================================ REPLAY =============================== -->
+  <main class="layout screen hidden" id="screen-replay">
+    <section class="panel replay-files">
+      <div class="panel-title">REPLAY SOURCES</div>
+      <div id="replay-files" class="file-list">Loading…</div>
+      <div class="note">Drop .jsonl / .csv files into <code>data/replay/</code>, or upload:</div>
+      <input type="file" id="replay-upload" accept=".jsonl,.json,.csv" />
+    </section>
+    <section class="panel replay-scrub">
+      <div class="panel-title">TIMELINE SCRUBBER</div>
+      <div class="scrub-row">
+        <input type="range" id="scrub" min="0" max="0" value="0" />
+        <span id="scrub-pos">0 / 0</span>
+      </div>
+      <div class="hero-risk small"><span id="replay-risk">—</span><small>RISK AT SCRUB POSITION</small></div>
+      <div id="replay-compare" class="forecast-ribbon"></div>
+      <div class="note" id="replay-note">Load a replay source, then scrub through the recorded timeline. Each position rebuilds the state window exactly as observed at that moment.</div>
+    </section>
+    <section class="panel replay-graph">
+      <div class="panel-title">STATE AT SCRUB POSITION</div>
+      <div id="replay-network" class="network-canvas"></div>
+    </section>
+  </main>
+
+  <!-- ================================ EXPLAIN ============================== -->
+  <main class="layout screen hidden" id="screen-explain">
+    <section class="panel">
+      <div class="panel-title">EVIDENCE &amp; ATTRIBUTION</div>
+      <div class="lab-controls">
+        <label>HOST <select id="explain-host"></select></label>
+        <button id="btn-explain" class="btn primary">EXPLAIN FORECAST</button>
+      </div>
+      <div id="explain-out" class="explain-out"><div class="note">Run a scenario or feed telemetry first, then pick a host and run the explainer.</div></div>
+    </section>
+    <section class="panel">
+      <div class="panel-title">WHY DID RISK CHANGE?</div>
+      <div id="explain-narrative" class="note">Evidence chain: observed evidence → predicted transition → future consequence → suggested intervention.</div>
+      <div id="top-evidence" class="cf-results"></div>
+    </section>
+  </main>
+
+  <!-- ============================== EXPERIMENTS ============================ -->
+  <main class="layout screen hidden" id="screen-experiments">
+    <section class="panel" style="grid-column:1/4">
+      <div class="panel-title">RUN RECORDS — MODEL/SCENARIO PROVENANCE</div>
+      <div id="runs-list" class="runs-list">Loading…</div>
+    </section>
+    <section class="panel" style="grid-column:1/4">
+      <div class="panel-title">RUN DETAIL</div>
+      <div id="run-detail" class="note">Select a run to inspect predictions, interventions and metrics.</div>
+    </section>
+  </main>
+
+  <!-- ================================ SYSTEM =============================== -->
+  <main class="layout screen hidden" id="screen-system">
+    <section class="panel">
+      <div class="panel-title">MODEL RUNTIME</div>
+      <div id="sys-model" class="kv-list">Loading…</div>
+    </section>
+    <section class="panel">
+      <div class="panel-title">PIPELINE HEALTH</div>
+      <div id="sys-pipeline" class="kv-list">Loading…</div>
+      <div class="panel-title" style="margin-top:18px">REPLAY DIRECTORY</div>
+      <div id="sys-replay" class="file-list mini"></div>
+    </section>
+    <section class="panel">
+      <div class="panel-title">SAFETY &amp; SEMANTICS</div>
+      <div class="note">
+        Offline-first: no outbound calls at runtime.<br />
+        Risk values are model scores, not causal probabilities.<br />
+        Counterfactual numbers are simulated model-based risk changes.<br />
+        Stage mapping is a research proxy for ATT&amp;CK, not ground truth.<br />
+        Without a trained checkpoint, no predictions are fabricated.
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

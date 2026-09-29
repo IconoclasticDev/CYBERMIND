@@ -1,6 +1,0 @@
-OK synthetic_scenario_0.csv: 256 rows -> synthetic_scenario_0.parquet
-OK synthetic_scenario_1.csv: 256 rows -> synthetic_scenario_1.parquet
-OK synthetic_scenario_2.csv: 256 rows -> synthetic_scenario_2.parquet
-OK synthetic_scenario_3.csv: 256 rows -> synthetic_scenario_3.parquet
-OK synthetic_scenario_4.csv: 256 rows -> synthetic_scenario_4.parquet
-OK synthetic_scenario_5.csv: 256 rows -> synthetic_scenario_5.parquet

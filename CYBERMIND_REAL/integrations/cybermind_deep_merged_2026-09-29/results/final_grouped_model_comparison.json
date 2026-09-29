@@ -1,0 +1,93 @@
+{
+  "val": {
+    "world_model": {
+      "metrics": {
+        "f1": 0.8945147679324894,
+        "precision": 0.9520958083832335,
+        "recall": 0.843501326259947,
+        "fpr": 0.008913649025069638,
+        "ap": 0.8922587759064821
+      },
+      "confusion_counts": {
+        "tn": 3558,
+        "fp": 32,
+        "fn": 118,
+        "tp": 636
+      }
+    },
+    "feature_matched_logistic": {
+      "metrics": {
+        "f1": 0.7675528289025222,
+        "precision": 0.7896213183730715,
+        "recall": 0.746684350132626,
+        "fpr": 0.04178272980501393,
+        "ap": 0.8156538872344538
+      },
+      "confusion_counts": {
+        "tn": 3440,
+        "fp": 150,
+        "fn": 191,
+        "tp": 563
+      }
+    },
+    "absolute_metric_difference": {
+      "f1": 0.12696193902996722,
+      "precision": 0.162474490010162,
+      "recall": 0.09681697612732099,
+      "fpr": -0.03286908077994429,
+      "ap": 0.0766048886720283
+    }
+  },
+  "test": {
+    "world_model": {
+      "metrics": {
+        "f1": 0.9848540820096048,
+        "precision": 0.9970082273747195,
+        "recall": 0.972992700729927,
+        "fpr": 0.005649717514124294,
+        "ap": 0.998504382739881
+      },
+      "confusion_counts": {
+        "tn": 1408,
+        "fp": 8,
+        "fn": 74,
+        "tp": 2666
+      }
+    },
+    "feature_matched_logistic": {
+      "metrics": {
+        "f1": 0.9266324284666178,
+        "precision": 0.9314159292035398,
+        "recall": 0.9218978102189781,
+        "fpr": 0.13135593220338984,
+        "ap": 0.9807208957420864
+      },
+      "confusion_counts": {
+        "tn": 1230,
+        "fp": 186,
+        "fn": 214,
+        "tp": 2526
+      }
+    },
+    "absolute_metric_difference": {
+      "f1": 0.05822165354298703,
+      "precision": 0.06559229817117973,
+      "recall": 0.051094890510948954,
+      "fpr": -0.12570621468926554,
+      "ap": 0.01778348699779453
+    }
+  },
+  "summary": {
+    "same_protocol": true,
+    "future_window_decisions": 4156,
+    "f1_gain_percentage_points": 5.822165354298702,
+    "false_positives_avoided": 178,
+    "missed_attacks_avoided": 140,
+    "relative_false_alarm_reduction": 0.956989247311828,
+    "fpr_reduction_factor": 23.250000000000004,
+    "world_model_parameters": 925064,
+    "world_model_checkpoint_mb": 10.689337,
+    "logistic_coefficients": 4084,
+    "efficiency_interpretation": "Operational alert efficiency, not compute-speed superiority."
+  }
+}

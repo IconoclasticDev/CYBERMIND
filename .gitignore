@@ -34,3 +34,51 @@ multisource_audit/CYBERMIND_REAL/checkpoints/recheck_synthetic.pt
 Thumbs.db
 .vscode/
 .idea/
+
+# Codex/task state and temporary authoring outputs
+.agents/
+skills-lock.json
+tmp/
+demo_video_work/
+output/
+script.md
+CYBERMIND_REAL/CYBERMIND_FULL_CHAT_CONTEXT_*.md
+
+# Local installers and extracted copies of versioned tools
+tools/DockerDesktopInstaller.exe
+tools/**/__pycache__/
+tools/strix/windows/
+
+# Release workspace: retain only the tracked SIH package and canonical demo ZIP.
+releases/*
+!releases/CYBERMIND_SIH_PACKAGE_README.md
+!releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.manifest.json
+!releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.zip
+!releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip
+!releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.manifest.json
+
+# Generated integration environments and package builds
+CYBERMIND_REAL/integrations/cybermind_deep-main/
+CYBERMIND_REAL/integrations/**/.desktop-venv/
+CYBERMIND_REAL/integrations/**/.freebuff/
+CYBERMIND_REAL/integrations/**/.pytest_*/
+CYBERMIND_REAL/integrations/**/.pytest-*/
+CYBERMIND_REAL/integrations/**/build/
+CYBERMIND_REAL/integrations/**/dist/
+CYBERMIND_REAL/integrations/**/frontend/node_modules/
+CYBERMIND_REAL/integrations/**/frontend/dist/
+CYBERMIND_REAL/integrations/**/packaging/*build*/
+CYBERMIND_REAL/integrations/**/packaging/*dist*/
+CYBERMIND_REAL/integrations/**/runtime/*.log
+CYBERMIND_REAL/integrations/**/runtime/*.jsonl
+CYBERMIND_REAL/integrations/**/runtime/**/*.png
+CYBERMIND_REAL/integrations/**/runtime/**/results.json
+CYBERMIND_REAL/integrations/**/runtime/**/workflow_results.json
+CYBERMIND_REAL/integrations/**/runtime/**/encrypted_incident_brief.json
+CYBERMIND_REAL/integrations/**/runtime/**/readable_incident_brief.json
+
+# Local agent handoff/status notes are not application documentation.
+CYBERMIND_REAL/integrations/**/AGENT.md
+CYBERMIND_REAL/integrations/**/APP_AGENT.md
+CYBERMIND_REAL/integrations/**/IMPLEMENTATION_STATUS.md
+CYBERMIND_REAL/integrations/**/src/cybermind_backup_sep13/

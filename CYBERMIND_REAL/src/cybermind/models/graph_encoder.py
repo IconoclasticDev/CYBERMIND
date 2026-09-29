@@ -5,9 +5,11 @@ from torch import nn
 try:
     from torch_geometric.nn import GATv2Conv
     HAS_PYG = True
-except Exception:
+    PYG_IMPORT_ERROR = None
+except Exception as error:
     GATv2Conv = None
     HAS_PYG = False
+    PYG_IMPORT_ERROR = repr(error)
 
 
 def _validate_edge_configuration(edge_attr_dim, use_edge_features):

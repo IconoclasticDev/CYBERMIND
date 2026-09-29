@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBERMIND — Hyper-Sandbox Array: Active Threat Analysis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #060911;
+      color: #94A3B8;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-hud {
+      font-family: 'Share Tech Mono', monospace;
+    }
+    .hud-border {
+      border: 1px solid #14223A;
+      box-shadow: inset 0 0 15px rgba(10, 25, 47, 0.6);
+    }
+    .hud-panel {
+      background: linear-gradient(180deg, #091120 0%, #060A14 100%);
+      border: 1px solid #14223A;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+    }
+    .glow-red {
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    }
+    .tile-alert {
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.3) 0%, rgba(15, 23, 42, 0.9) 100%) !important;
+      border: 1.5px solid #EF4444 !important;
+      animation: alertPulse 1.8s infinite alternate;
+    }
+    @keyframes alertPulse {
+      0% { box-shadow: 0 0 4px rgba(239, 68, 68, 0.4); }
+      100% { box-shadow: 0 0 14px rgba(239, 68, 68, 0.85); }
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #060A14;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #14223A;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#060911] text-slate-300 p-2 lg:p-3 select-none flex flex-col justify-between overflow-x-hidden font-hud">
+
+  <!-- TOP HUD BAR -->
+  <header class="hud-panel rounded-lg px-4 py-2 flex flex-wrap items-center justify-between border border-[#14223A] mb-2.5">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse glow-cyan"></span>
+        <h1 class="text-sm font-bold tracking-widest text-white uppercase flex items-center gap-2">
+          HYPER-SANDBOX ARRAY: <span class="text-cyan-400 font-black">ACTIVE THREAT ANALYSIS</span>
+        </h1>
+      </div>
+      <span class="bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 text-[10px] px-2 py-0.5 rounded font-mono">
+        CLUSTER: EU-WEST-1A
+      </span>
+    </div>
+
+    <!-- HUD Telemetry Counters -->
+    <div class="flex items-center gap-6 text-[11px] font-mono tracking-wider">
+      <div>NODES: <span class="text-white font-bold">2,048</span></div>
+      <div>CPU: <span class="text-emerald-400 font-bold">74%</span></div>
+      <div>MEMORY: <span class="text-cyan-400 font-bold">56%</span></div>
+      <div>THROUGHPUT: <span class="text-white font-bold">1.2M EPS</span></div>
+      <div class="bg-red-950/60 border border-red-800/80 px-2.5 py-0.5 rounded text-red-400">
+        THREATS DETECTED: <span class="text-red-300 font-black">142</span> (HIGH: <span class="text-red-400 font-black animate-pulse">19</span>)
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-1.5 ml-2">
+        <a href="attack_labs.html" class="px-2.5 py-1 rounded bg-red-600 hover:bg-red-500 text-white text-[10px] font-bold transition-all shadow-md shadow-red-600/30 flex items-center gap-1">
+          ⚡ Attack Labs
+        </a>
+        <button id="btnLoadBotnet" class="px-2.5 py-1 rounded bg-red-600/20 hover:bg-red-600/40 border border-red-500/40 text-red-300 text-[10px] font-bold transition-all">
+          ⚡ Botnet Ares
+        </button>
+        <button id="btnLoadBrute" class="px-2.5 py-1 rounded bg-orange-600/20 hover:bg-orange-600/40 border border-orange-500/40 text-orange-300 text-[10px] font-bold transition-all">
+          ⚡ SSH Brute
+        </button>
+        <button id="btnReset" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 text-[10px]" title="Reset">
+          &circlearrowleft;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- UPPER GRID: Parallel Execution Matrix + Global Threat Map -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-2.5 mb-2.5 flex-1">
+
+    <!-- UPPER LEFT: Parallel Execution Matrix (Grid View) -->
+    <div class="lg:col-span-7 hud-panel rounded-lg p-3 flex flex-col justify-between">
+      <div class="flex items-center justify-between pb-2 border-b border-[#14223A] mb-2 text-xs">
+        <div class="flex items-center gap-2 text-cyan-400 font-bold">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+          <span>Parallel Execution Matrix (Grid View)</span>
+        </div>
+        <div class="flex items-center gap-3 text-[10px] text-slate-500">
+          <span>ACTIVE INSTANCES: 36</span>
+          <span class="text-red-400">ISOLATED: 4</span>
+          <span class="text-emerald-400">BENIGN: 32</span>
+        </div>
+      </div>
+
+      <!-- Dense Matrix Grid (6x6 Sandbox Tiles) -->
+      <div id="matrixGrid" class="grid grid-cols-6 sm:grid-cols-9 gap-1.5 flex-1 max-h-[290px] overflow-y-auto custom-scroll p-1">
+        <!-- Dynamically injected terminal tiles -->
+      </div>
+    </div>
+
+    <!-- UPPER RIGHT: Global Threat Map -->
+    <div class="lg:col-span-5 hud-panel rounded-lg p-3 flex flex-col justify-between relative overflow-hidden">
+      <div class="flex items-center justify-between pb-2 border-b border-[#14223A] text-xs">
+        <div class="flex items-center gap-2 text-cyan-400 font-bold">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Global Threat Map</span>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] text-slate-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+          <span>ATTACK VECTORS: REAL-TIME</span>
+        </div>
+      </div>
+
+      <!-- Map Canvas -->
+      <div class="relative w-full h-[250px] flex items-center justify-center my-1 bg-[#040810] rounded border border-[#101D33] overflow-hidden">
+        <canvas id="threatMapCanvas" class="w-full h-full"></canvas>
+        <div class="absolute bottom-2 left-2 text-[9px] font-mono text-cyan-400/80 bg-black/60 px-2 py-0.5 rounded border border-cyan-900/40">
+          ORIGIN: 18.218.115.60 &rarr; TARGET: 172.31.69.25 [PORT 22]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOWER SECTION: Inspected Unit Detail Bar & 4 Sub-Panels -->
+  <div class="hud-panel rounded-lg p-3 flex flex-col">
+    <!-- Target Unit Banner -->
+    <div class="flex items-center justify-between pb-2 border-b border-[#14223A] mb-2">
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+        <h2 class="text-xs font-bold text-white tracking-wider font-mono">
+          INSPECTED UNIT: <span class="text-red-400 font-black" id="activeUnitId">SB-SK99</span> — <span class="text-slate-300 font-normal" id="activeUnitName">'Trojan.Zbot.Variant'</span>
+        </h2>
+        <span class="bg-red-500/10 border border-red-500/30 text-red-400 text-[10px] px-2 py-0.5 rounded font-mono">
+          STAGE 2: LATERAL C2 BEACONING
+        </span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-500 text-xs">
+        <span class="hover:text-white cursor-pointer">&ndash;</span>
+        <span class="hover:text-white cursor-pointer">&square;</span>
+        <span class="hover:text-white cursor-pointer">&times;</span>
+      </div>
+    </div>
+
+    <!-- 4 Bottom Sub-panels Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 text-xs">
+
+      <!-- Panel 1: Behavioral Graph (4 cols) -->
+      <div class="md:col-span-4 bg-[#050913] border border-[#121E36] rounded p-2.5 flex flex-col">
+        <div class="text-[11px] font-bold text-cyan-400 mb-1 flex items-center justify-between">
+          <span>Behavioral Graph</span>
+          <span class="text-[9px] font-mono text-slate-500">18 NODES · 24 EDGES</span>
+        </div>
+        <div class="relative flex-1 min-h-[190px] bg-[#03060C] rounded border border-[#0F1A2E] overflow-hidden">
+          <canvas id="behaviorGraphCanvas" class="w-full h-full"></canvas>
+          <div class="absolute bottom-1.5 left-1.5 flex items-center gap-2 text-[9px] font-mono">
+            <span class="flex items-center gap-1 text-emerald-400"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Benign</span>
+            <span class="flex items-center gap-1 text-orange-400"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Suspicious</span>
+            <span class="flex items-center gap-1 text-red-400"><span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Malicious</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Live Process Tree (3 cols) -->
+      <div class="md:col-span-3 bg-[#050913] border border-[#121E36] rounded p-2.5 flex flex-col justify-between">
+        <div class="text-[11px] font-bold text-cyan-400 mb-1">Live Process Tree</div>
+        <div class="flex-1 bg-[#03060C] rounded border border-[#0F1A2E] p-2 text-[10px] font-mono space-y-1.5 overflow-y-auto max-h-[190px] custom-scroll">
+          <div class="text-slate-400">&blacktriangledown; SB-2017 [Host Root]</div>
+          <div class="pl-2 text-slate-300">&boxur; &blacktriangledown; explorer.exe <span class="text-slate-500">[PID: 1044]</span></div>
+          <div class="pl-4 text-slate-300">&boxur; &blacktriangledown; svchost.exe <span class="text-slate-500">[PID: 3012]</span></div>
+          <div class="pl-6 text-red-400 font-bold bg-red-950/30 p-0.5 rounded">&boxur; &star; Trojan.Zbot.Variant <span class="text-red-300">[PID: 4820]</span></div>
+          <div class="pl-8 text-amber-300/90">&boxv; &boxur; RegSet: HKLM\Run\WinUpdate</div>
+          <div class="pl-8 text-orange-400">&boxv; &boxur; DropFile: C:\Temp\payload.bin</div>
+          <div class="pl-8 text-cyan-400">&boxv; &boxur; TCP Connect: 18.219.211.138:8080</div>
+          <div class="pl-8 text-emerald-400">&boxv; &boxur; Mutex: Global\Zbot_Active</div>
+          <div class="pl-6 text-slate-400">&boxur; conhost.exe <span class="text-slate-500">[PID: 5120]</span></div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Network Activity Log (3 cols) -->
+      <div class="md:col-span-3 bg-[#050913] border border-[#121E36] rounded p-2.5 flex flex-col justify-between">
+        <div class="text-[11px] font-bold text-cyan-400 mb-1 flex items-center justify-between">
+          <span>Network Activity Log</span>
+          <span class="text-[9px] text-emerald-400 font-mono">STREAMING</span>
+        </div>
+        <div id="netLog" class="flex-1 bg-[#03060C] rounded border border-[#0F1A2E] p-2 text-[9px] font-mono space-y-1 overflow-y-auto max-h-[190px] custom-scroll">
+          <div class="text-slate-400">[10:17:07] 172.31.69.14:56936 &rarr; 172.31.0.2:53 [DNS] Query</div>
+          <div class="text-red-400">[10:17:08] 172.31.69.14 &rarr; 18.219.211.138:8080 [TCP] Ares Beacon</div>
+          <div class="text-slate-400">[10:17:10] 172.31.69.28:49431 &rarr; 172.31.69.25:80 [HTTP] GET /index</div>
+          <div class="text-orange-400">[10:17:12] 18.218.115.60 &rarr; 172.31.69.25:22 [SSH] Auth Failed: root</div>
+          <div class="text-orange-400">[10:17:13] 18.218.115.60 &rarr; 172.31.69.25:22 [SSH] Auth Failed: admin</div>
+          <div class="text-red-400">[10:17:15] 18.218.115.60 &rarr; 172.31.69.25:21 [FTP] BruteForce Attempt</div>
+          <div class="text-slate-400">[10:17:18] 172.31.69.10:59818 &rarr; 172.31.69.25:445 [SMB] Negotiate</div>
+          <div class="text-red-400">[10:17:20] 172.31.69.15 &rarr; 18.219.211.138:8080 [TCP] C2 Exfil Packet</div>
+        </div>
+      </div>
+
+      <!-- Panel 4: IOCs (2 cols) -->
+      <div class="md:col-span-2 bg-[#050913] border border-[#121E36] rounded p-2.5 flex flex-col justify-between">
+        <div class="text-[11px] font-bold text-cyan-400 mb-1">IOCs</div>
+        <div class="flex-1 bg-[#03060C] rounded border border-[#0F1A2E] p-2 text-[9px] font-mono space-y-2 overflow-y-auto max-h-[190px] custom-scroll">
+          <div>
+            <span class="text-slate-500 uppercase">MD5:</span>
+            <div class="text-cyan-300 break-all select-all">44D5C08483B2AA1A01B851B01850E565</div>
+          </div>
+          <div>
+            <span class="text-slate-500 uppercase">SHA-256:</span>
+            <div class="text-cyan-300 break-all select-all">0b4e294e0964b02b66dd084256808e07b4865-f6385e</div>
+          </div>
+          <div class="pt-1 border-t border-[#121E36]">
+            <span class="text-slate-500 uppercase">Dropped Files:</span>
+            <div class="text-red-400 font-bold">2 files detected</div>
+            <div class="text-slate-400 text-[8px]">payload.bin (326 KB)</div>
+          </div>
+          <div class="pt-1 border-t border-[#121E36]">
+            <span class="text-slate-500 uppercase">Mutex:</span>
+            <div class="text-amber-300">Global\Zbot_Active</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 1. Populate Parallel Execution Matrix Grid (36 Tiles)
+    const matrix = document.getElementById("matrixGrid");
+    const TILE_CODES = [
+      { id: "SB-4K1C", status: "normal" }, { id: "SB-4808", status: "normal" }, { id: "SB-4A7C", status: "normal" },
+      { id: "SB-4A7G", status: "normal" }, { id: "SB-487B", status: "normal" }, { id: "SB-4ATC", status: "critical", alert: "CRITICAL ALERT" },
+      { id: "SB-4A7B", status: "normal" }, { id: "SB-4A7G", status: "normal" }, { id: "SB-4A7G", status: "normal" },
+      { id: "SB-4520", status: "normal" }, { id: "SB-4920", status: "normal" }, { id: "SB-4820", status: "normal" },
+      { id: "SB-4A20", status: "normal" }, { id: "SB-4B20", status: "normal" }, { id: "SB-4A2B", status: "normal" },
+      { id: "SB-4920", status: "normal" }, { id: "SB-4A20", status: "normal" }, { id: "SB-4510", status: "normal" },
+      { id: "SB-4A3B", status: "normal" }, { id: "SB-4A20", status: "normal" }, { id: "SB-4A3C", status: "critical", alert: "EXPLOIT" },
+      { id: "SB-4A2G", status: "critical", alert: "C2 BEACON" }, { id: "SB-4A7B", status: "normal" }, { id: "SB-4A7E", status: "normal" },
+      { id: "SB-4A7B", status: "normal" }, { id: "SB-4A7G", status: "normal" }, { id: "SB-4A7C", status: "normal" },
+      { id: "SB-4A7C", status: "normal" }, { id: "SB-4A7E", status: "normal" }, { id: "SB-4A7H5", status: "critical", alert: "MALWARE" },
+      { id: "SB-4A7G", status: "normal" }, { id: "SB-482C", status: "normal" }, { id: "SB-4A7G", status: "normal" },
+      { id: "SB-4A7B", status: "normal" }, { id: "SB-4A7B", status: "normal" }, { id: "SB-4A7C", status: "normal" }
+    ];
+
+    function renderMatrix() {
+      matrix.innerHTML = TILE_CODES.map((t, idx) => {
+        const isAlert = t.status === "critical";
+        return `
+          <div onclick="selectTile('${t.id}')" class="p-1 rounded border text-[8px] font-mono cursor-pointer transition-all hover:scale-105 flex flex-col justify-between h-[65px] ${isAlert ? 'tile-alert' : 'bg-[#060D1A] border-[#102038] text-emerald-400 hover:border-cyan-500/50'}">
+            <div class="flex items-center justify-between font-bold">
+              <span>${t.id}</span>
+              ${isAlert ? '<span class="text-red-400 animate-ping">&bull;</span>' : '<span class="text-emerald-500/70 text-[7px]">OK</span>'}
+            </div>
+            <div class="text-[7px] text-slate-500 overflow-hidden leading-tight font-mono select-none">
+              ${isAlert ? `<div class="text-red-300 font-bold bg-red-950/60 p-0.5 rounded text-center">${t.alert}</div>` : '&gt; sys_read(fd=3)<br>&gt; net_recv(128b)'}
+            </div>
+            <div class="text-[7px] text-slate-500 text-right font-mono">PID ${1000 + idx * 47}</div>
+          </div>
+        `;
+      }).join('');
+    }
+    renderMatrix();
+
+    function selectTile(id) {
+      document.getElementById("activeUnitId").innerText = id;
+      document.getElementById("activeUnitName").innerText = id.includes("4A") ? "'Trojan.Ares.Botnet'" : "'Credential.Brute.Active'";
+    }
+
+    // 2. Global Threat Map (Animated World Canvas with Arc Vectors)
+    const mapCanvas = document.getElementById("threatMapCanvas");
+    const ctxMap = mapCanvas.getContext("2d");
+
+    function resizeCanvas() {
+      mapCanvas.width = mapCanvas.parentElement.clientWidth;
+      mapCanvas.height = mapCanvas.parentElement.clientHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    // Map Nodes
+    const TARGETS = [
+      { x: 0.22, y: 0.35, name: "US-East (AWS)" },
+      { x: 0.52, y: 0.28, name: "Frankfurt" },
+      { x: 0.58, y: 0.25, name: "Moscow" },
+      { x: 0.78, y: 0.38, name: "Beijing" },
+      { x: 0.32, y: 0.72, name: "Sao Paulo" },
+      { x: 0.85, y: 0.78, name: "Sydney" }
+    ];
+
+    let attackStep = 0;
+    function drawMap() {
+      ctxMap.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
+      const w = mapCanvas.width;
+      const h = mapCanvas.height;
+
+      // Draw faint grid
+      ctxMap.strokeStyle = "#0E182A";
+      ctxMap.lineWidth = 1;
+      for (let x = 0; x < w; x += 30) {
+        ctxMap.beginPath(); ctxMap.moveTo(x, 0); ctxMap.lineTo(x, h); ctxMap.stroke();
+      }
+      for (let y = 0; y < h; y += 30) {
+        ctxMap.beginPath(); ctxMap.moveTo(0, y); ctxMap.lineTo(w, y); ctxMap.stroke();
+      }
+
+      // Draw Continents rough silhouettes
+      ctxMap.fillStyle = "#0A1424";
+      // Americas
+      ctxMap.fillRect(w * 0.15, h * 0.2, w * 0.2, h * 0.6);
+      // Eurasia & Africa
+      ctxMap.fillRect(w * 0.45, h * 0.18, w * 0.42, h * 0.65);
+
+      // Draw target points
+      TARGETS.forEach((t, i) => {
+        const px = t.x * w;
+        const py = t.y * h;
+
+        ctxMap.beginPath();
+        ctxMap.arc(px, py, 3, 0, Math.PI * 2);
+        ctxMap.fillStyle = i === 0 ? "#EF4444" : "#06B6D4";
+        ctxMap.fill();
+
+        // Pulsing radar ring
+        const ring = (attackStep * 0.05 + i) % 3;
+        ctxMap.beginPath();
+        ctxMap.arc(px, py, 4 + ring * 4, 0, Math.PI * 2);
+        ctxMap.strokeStyle = i === 0 ? `rgba(239,68,68,${1 - ring / 3})` : `rgba(6,182,212,${1 - ring / 3})`;
+        ctxMap.stroke();
+      });
+
+      // Draw Attack Arcs from targets to US-East (target 0)
+      const dst = TARGETS[0];
+      for (let i = 1; i < TARGETS.length; i++) {
+        const src = TARGETS[i];
+        const sx = src.x * w;
+        const sy = src.y * h;
+        const dx = dst.x * w;
+        const dy = dst.y * h;
+
+        ctxMap.beginPath();
+        ctxMap.moveTo(sx, sy);
+        const mx = (sx + dx) / 2;
+        const my = (sy + dy) / 2 - 40;
+        ctxMap.quadraticCurveTo(mx, my, dx, dy);
+        ctxMap.strokeStyle = "rgba(239, 68, 68, 0.35)";
+        ctxMap.lineWidth = 1.5;
+        ctxMap.stroke();
+
+        // Particle along curve
+        const t = (attackStep * 0.015 + i * 0.25) % 1;
+        const px = (1 - t) * (1 - t) * sx + 2 * (1 - t) * t * mx + t * t * dx;
+        const py = (1 - t) * (1 - t) * sy + 2 * (1 - t) * t * my + t * t * dy;
+
+        ctxMap.beginPath();
+        ctxMap.arc(px, py, 2.5, 0, Math.PI * 2);
+        ctxMap.fillStyle = "#FF7A7A";
+        ctxMap.shadowColor = "#EF4444";
+        ctxMap.shadowBlur = 8;
+        ctxMap.fill();
+        ctxMap.shadowBlur = 0;
+      }
+
+      attackStep++;
+      requestAnimationFrame(drawMap);
+    }
+    drawMap();
+
+    // 3. Behavioral Graph (Canvas Node Simulation)
+    const graphCanvas = document.getElementById("behaviorGraphCanvas");
+    const ctxG = graphCanvas.getContext("2d");
+
+    function resizeGraph() {
+      graphCanvas.width = graphCanvas.parentElement.clientWidth;
+      graphCanvas.height = graphCanvas.parentElement.clientHeight;
+    }
+    resizeGraph();
+    window.addEventListener("resize", resizeGraph);
+
+    const NODES = [
+      { id: "Root", x: 0.5, y: 0.8, color: "#10B981", r: 6 },
+      { id: "Proc1", x: 0.3, y: 0.6, color: "#10B981", r: 5 },
+      { id: "Proc2", x: 0.7, y: 0.6, color: "#F59E0B", r: 5 },
+      { id: "Reg", x: 0.2, y: 0.4, color: "#F59E0B", r: 5 },
+      { id: "Infil", x: 0.5, y: 0.4, color: "#EF4444", r: 7 },
+      { id: "C2", x: 0.8, y: 0.3, color: "#EF4444", r: 7 },
+      { id: "Exfil", x: 0.35, y: 0.2, color: "#EF4444", r: 6 },
+      { id: "Drop", x: 0.65, y: 0.2, color: "#F97316", r: 5 }
+    ];
+
+    const EDGES = [
+      [0, 1], [0, 2], [1, 3], [1, 4], [2, 4], [2, 5], [4, 6], [4, 7], [5, 7]
+    ];
+
+    let graphTick = 0;
+    function drawGraph() {
+      ctxG.clearRect(0, 0, graphCanvas.width, graphCanvas.height);
+      const gw = graphCanvas.width;
+      const gh = graphCanvas.height;
+
+      // Draw edges
+      ctxG.strokeStyle = "rgba(71, 85, 105, 0.4)";
+      ctxG.lineWidth = 1;
+      EDGES.forEach(([i, j]) => {
+        const n1 = NODES[i];
+        const n2 = NODES[j];
+        ctxG.beginPath();
+        ctxG.moveTo(n1.x * gw, n1.y * gh);
+        ctxG.lineTo(n2.x * gw, n2.y * gh);
+        ctxG.stroke();
+      });
+
+      // Draw nodes
+      NODES.forEach((n, idx) => {
+        const nx = (n.x + Math.sin(graphTick * 0.05 + idx) * 0.01) * gw;
+        const ny = (n.y + Math.cos(graphTick * 0.05 + idx) * 0.01) * gh;
+
+        ctxG.beginPath();
+        ctxG.arc(nx, ny, n.r, 0, Math.PI * 2);
+        ctxG.fillStyle = n.color;
+        ctxG.shadowColor = n.color;
+        ctxG.shadowBlur = 10;
+        ctxG.fill();
+        ctxG.shadowBlur = 0;
+
+        ctxG.fillStyle = "#CBD5E1";
+        ctxG.font = "8px 'Share Tech Mono'";
+        ctxG.fillText(n.id, nx + 8, ny + 3);
+      });
+
+      graphTick++;
+      requestAnimationFrame(drawGraph);
+    }
+    drawGraph();
+
+    // 4. Live API Triggering
+    async function loadTest(id) {
+      try {
+        const res = await fetch('/api/testcases/load', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ testcase_id: id, limit: 1200, clear_previous: true })
+        });
+        const data = await res.json();
+        
+        // Log stream
+        const log = document.getElementById("netLog");
+        log.innerHTML = `
+          <div class="text-cyan-400 font-bold">&gt;&gt; [INJECTION] Test Case ${data.name} loaded (${data.accepted} flows)</div>
+          <div class="text-red-400 font-bold">&gt;&gt; [PREDICTION] ATT&CK Stage: ${data.forecast?.horizon?.stage || 'EXECUTION'} · Risk: ${(data.forecast?.horizon?.risk * 100 || 20.6).toFixed(1)}%</div>
+        ` + log.innerHTML;
+        
+        selectTile('SB-4ATC');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    document.getElementById("btnLoadBotnet").addEventListener("click", () => loadTest('botnet_ares'));
+    document.getElementById("btnLoadBrute").addEventListener("click", () => loadTest('ssh_bruteforce'));
+    document.getElementById("btnReset").addEventListener("click", async () => {
+      await fetch('/api/scenarios/reset', { method: 'POST' });
+      document.getElementById("netLog").innerHTML = '<div class="text-emerald-400">&gt;&gt; System reset to baseline normal</div>';
+    });
+  </script>
+</body>
+</html>

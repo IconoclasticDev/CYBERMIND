@@ -41,11 +41,12 @@ def fetch(url: str, start: int, end: int, destination: Path, seconds_left: float
     destination.unlink(missing_ok=True)
     temporary = destination.with_suffix(".tmp")
     temporary.unlink(missing_ok=True)
-    max_time = max(10, min(120, int(seconds_left - 10)))
+    max_time = max(10, min(90, int(seconds_left - 10)))
     result = subprocess.run([
         "curl.exe", "--fail", "--location", "--silent", "--show-error",
-        "--retry", "2", "--retry-delay", "1", "--retry-all-errors",
+        "--retry", "1", "--retry-delay", "1", "--retry-all-errors",
         "--connect-timeout", "10", "--max-time", str(max_time),
+        "--speed-limit", "16384", "--speed-time", "20",
         "--range", f"{start}-{end}", "--output", str(temporary), url,
     ], capture_output=True, text=True)
     actual = temporary.stat().st_size if temporary.exists() else 0

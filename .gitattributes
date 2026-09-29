@@ -1,0 +1,14 @@
+# Canonical binary deliverables are stored with Git LFS.
+releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip filter=lfs diff=lfs merge=lfs -text
+deliverables/demo/CYBERMIND_demo.mp4 filter=lfs diff=lfs merge=lfs -text
+tools/strix/strix-1.6.2-windows-x86_64.zip filter=lfs diff=lfs merge=lfs -text
+
+*.docx binary
+*.exe binary
+*.jpeg binary
+*.jpg binary
+*.mp4 binary
+*.pcap binary
+*.pdf binary
+*.png binary
+*.pt binary

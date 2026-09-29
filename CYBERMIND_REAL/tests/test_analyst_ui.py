@@ -88,6 +88,8 @@ def test_uploaded_csv_is_unlabeled_normalized_observed_history(tmp_path, monkeyp
     assert all(item.y_infiltration == 0 for item in sample.states)
     assert lineage['split'] == 'live_upload_unlabeled'
     assert lineage['input_format'] == 'CSV'
+    assert sample.metadata['observed_flow_rows']
+    assert all(not row['review_flag'] for row in sample.metadata['observed_flow_rows'])
 
 
 def test_stage_evidence_abstains_below_model_risk_gate():
@@ -126,3 +128,56 @@ def test_stage_evidence_reports_hosts_without_changing_model_output():
         [{'stage_id': 3, 'stage': 'Lateral Movement'}], records)
     assert annotated[0]['reported_stage'] == 'Lateral Movement'
     assert annotated[0]['model_stage'] == 'Lateral Movement'
+
+
+def test_observed_flow_triage_uses_only_last_window_and_marks_telemetry_cues():
+    import pandas as pd
+    frame = pd.DataFrame([
+        {'timestamp': pd.Timestamp('2026-01-01T00:00:00Z'), 'src': 'old', 'dst': 'x',
+         'src_port': 1, 'dst_port': 2, 'protocol': 6, 'scan_unique_ports': 9,
+         'scan_sequential_score': 1.0, 'retransmission_count': 0},
+        {'timestamp': pd.Timestamp('2026-01-01T00:01:00Z'), 'src': 'new', 'dst': 'y',
+         'src_port': 3, 'dst_port': 4, 'protocol': 6, 'scan_unique_ports': 5,
+         'scan_sequential_score': .8, 'retransmission_count': 2},
+    ])
+    latest = state()
+    latest.metadata = {'window_start': pd.Timestamp('2026-01-01T00:01:00Z').timestamp(),
+                       'window_end': pd.Timestamp('2026-01-01T00:02:00Z').timestamp()}
+    rows = view.observed_flow_rows(frame, latest)
+    assert len(rows) == 1 and rows[0]['src'] == 'new'
+    assert rows[0]['review_flag']
+    assert rows[0]['review_signal'] == 'sequential port access, TCP retransmissions'
+
+
+def test_replay_selects_only_histories_available_by_that_window(tmp_path, monkeypatch):
+    from cybermind.data.graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
+    constants = {
+        'version': 1, 'fit_split': 'train', 'dtype': 'float32',
+        'method': 'population_mean_std', 'training_windows': 1,
+        'node': {'features': NODE_FEATURE_NAMES, 'count': 1,
+                 'mean': [0.] * len(NODE_FEATURE_NAMES),
+                 'std': [1.] * len(NODE_FEATURE_NAMES)},
+        'edge': {'features': EDGE_FEATURE_NAMES, 'count': 1,
+                 'mean': [0.] * len(EDGE_FEATURE_NAMES),
+                 'std': [1.] * len(EDGE_FEATURE_NAMES)},
+    }
+    cfg = {'data': {'window_seconds': 60, 'stride_seconds': 30, 'history': 2,
+                    'require_packet_features': False, 'require_normalization': True}}
+    checkpoint = {'normalization': constants, 'epoch': 1, 'config': cfg}
+    monkeypatch.setattr(view, 'load_checkpoint', lambda path: (object(), checkpoint, cfg))
+    checkpoint_path = tmp_path / 'checkpoint.pt'
+    checkpoint_path.write_bytes(b'test-checkpoint')
+    csv = tmp_path / 'capture.csv'
+    lines = ['Timestamp,Source IP,Destination IP,Source Port,Destination Port,Protocol']
+    lines += [f'2026-01-01T00:{minute:02d}:00Z,10.0.0.1,10.0.0.2,1000,{80+minute},6'
+              for minute in range(5)]
+    csv.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    session = view.load_uploaded_session(checkpoint_path, csv)
+    assert len(session[2]) >= 2
+    _, _, early, early_lineage, count = view.select_uploaded_sequence(session, 0)
+    _, _, late, late_lineage, _ = view.select_uploaded_sequence(session, count - 1)
+    assert early.states[-1].timestamp < late.states[-1].timestamp
+    assert early_lineage['sequence_index'] == 0
+    assert late_lineage['sequence_index'] == count - 1
+    assert all(row['timestamp'].timestamp() < early.states[-1].metadata['window_end']
+               for row in early.metadata['observed_flow_rows'])

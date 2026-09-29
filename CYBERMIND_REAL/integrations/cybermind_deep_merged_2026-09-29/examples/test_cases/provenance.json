@@ -1,0 +1,20 @@
+[
+  {
+    "file": "ssh_bruteforce_sample.csv",
+    "source_parquet": "data/intermediate_real_best/2018-02-14/UCAP172.31.69.25.complete_records.reviewed_2026-09-16.parquet",
+    "source_pcap_sha256": "7fc8442ebf996dc065bbbad3cfb6a9bcde247b58cb8e459fca144a1bbf607394",
+    "selection": "1200 evenly spaced actual exported flows from first 8 minutes after first SSH-BRUTEFORCE label; timestamp order preserved",
+    "rows": 1200,
+    "attack_rows": 601,
+    "sha256": "e8d589ece9663d1fd8a82277a2c9fe8f5bda20ece855e9a94af9642a0f60dd02"
+  },
+  {
+    "file": "botnet_ares_sample.csv",
+    "source_parquet": "data/intermediate_real_best/2018-03-02/capEC2AMAZ-O4EL3NG-172.31.69.14.parquet",
+    "source_pcap_sha256": "d701711685967c7564ea4442d272f877f31005ce3803ffcd6e8e7593db0b36a4",
+    "selection": "1200 evenly spaced actual exported flows from first 20 minutes after first BOTNET ARES label; timestamp order preserved",
+    "rows": 1200,
+    "attack_rows": 1139,
+    "sha256": "894373193896f80b848333a778762dcae63d4134b733b559fa605cbe8947df7b"
+  }
+]

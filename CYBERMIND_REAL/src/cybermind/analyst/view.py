@@ -8,6 +8,7 @@ import pandas as pd
 import torch
 from cybermind.counterfactual.simulator import Intervention, mutate_state
 from cybermind.data.dataset import GraphSequenceDataset
+from cybermind.data.graph_builder import NODE_FEATURE_NAMES, EDGE_FEATURE_NAMES
 from cybermind.data.adapters.unified import UnifiedAdapter
 from cybermind.data.normalization import FeatureNormalizer
 from cybermind.data.pcap_extract import PACKET_FEATURES, pcap_to_dataframe
@@ -30,6 +31,9 @@ def load_checkpoint(checkpoint_path):
     path = Path(checkpoint_path)
     ck = torch.load(path, map_location='cpu', weights_only=False)
     cfg = ck['config']; mc = cfg['model']
+    from cybermind.models.graph_encoder import HAS_PYG, PYG_IMPORT_ERROR
+    if not HAS_PYG and 'graph.conv1.lin_l.weight' in ck['model_state']:
+        raise RuntimeError(f'This checkpoint requires PyTorch Geometric GATv2Conv; import failed: {PYG_IMPORT_ERROR}')
     model = WorldModel(ck['node_dim'], **{key: mc[key] for key in
         ('graph_hidden', 'graph_out', 'temporal_dim', 'nhead', 'temporal_layers',
          'num_stages', 'dropout')}, graph_heads=mc.get('graph_heads', 8),
@@ -61,8 +65,8 @@ def load_case(checkpoint_path, root, index=0):
     return model, cfg, sample, lineage, len(ds)
 
 
-def load_uploaded_case(checkpoint_path, input_path):
-    """Build a normalized, label-free inference sequence from a local PCAP/CSV."""
+def load_uploaded_session(checkpoint_path, input_path):
+    """Parse one unlabeled capture into every replayable observed history."""
     path = Path(input_path)
     model, checkpoint, cfg = load_checkpoint(checkpoint_path)
     suffix = path.suffix.lower()
@@ -82,7 +86,6 @@ def load_uploaded_case(checkpoint_path, input_path):
         raise ValueError('Every uploaded row needs a valid timestamp')
     if frame.src.fillna('').astype(str).str.strip().eq('').any() or frame.dst.fillna('').astype(str).str.strip().eq('').any():
         raise ValueError('Every uploaded row needs source and destination endpoint identities')
-    # Labels in an analyst upload are never trusted as forecast ground truth.
     frame['label'] = 'UNLABELED'
     frame['infiltration'] = 0.0
     frame['stage'] = len(STAGES) - 1
@@ -109,20 +112,92 @@ def load_uploaded_case(checkpoint_path, input_path):
         duration = (frame.timestamp.max() - frame.timestamp.min()).total_seconds()
         raise ValueError(f'Input spans {duration:.1f}s and does not provide the configured '
                          f'{cfg["data"]["history"]}-window history')
-    sample = sequences[-1]
-    verify_inference_states(checkpoint, sample.states)
     lineage = {
         'checkpoint': str(Path(checkpoint_path).resolve()),
         'checkpoint_sha256': hashlib.sha256(Path(checkpoint_path).read_bytes()).hexdigest(),
         'checkpoint_epoch': checkpoint.get('epoch'), 'dataset': str(path.resolve()),
         'dataset_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
-        'split': 'live_upload_unlabeled', 'sequence_index': len(sequences) - 1,
-        'scenario': sample.scenario_id, 'source': 'USER_UPLOAD',
+        'split': 'live_upload_unlabeled',
+        'scenario': sequences[-1].scenario_id, 'source': 'USER_UPLOAD',
         'input_format': input_format, 'packet_feature_coverage': coverage,
-        'normalization': sample.states[-1].metadata.get('normalization_fingerprint', 'unavailable'),
+        'normalization': sequences[-1].states[-1].metadata.get('normalization_fingerprint', 'unavailable'),
     }
+    return model, cfg, sequences, lineage, frame
+
+
+def select_uploaded_sequence(session, index=-1):
+    """Select an observed history without reparsing the capture or using future labels."""
+    model, cfg, sequences, base_lineage, frame = session
+    if not -len(sequences) <= index < len(sequences):
+        raise IndexError('Replay window is out of range')
+    position = index % len(sequences)
+    sample = sequences[position]
+    sample.metadata = dict(sample.metadata)
+    sample.metadata['observed_flow_rows'] = observed_flow_rows(frame, sample.states[-1])
+    lineage = {**base_lineage, 'sequence_index': position}
     return model, cfg, sample, lineage, len(sequences)
 
+
+def load_uploaded_case(checkpoint_path, input_path):
+    """Compatibility helper: load the latest replayable history from a capture."""
+    return select_uploaded_sequence(load_uploaded_session(checkpoint_path, input_path))
+
+def observed_flow_rows(frame, state, limit=200):
+    """Bounded source telemetry from the final observed window, not model scores."""
+    start = state.metadata['window_start']
+    end = state.metadata['window_end']
+    epoch = pd.to_datetime(frame['timestamp'], utc=True).astype('datetime64[ns, UTC]').astype('int64') / 1e9
+    observed = frame.loc[(epoch >= start) & (epoch < end)].copy()
+    if observed.empty:
+        return []
+    signals = []
+    for row in observed.itertuples(index=False):
+        reasons = []
+        if float(getattr(row, 'scan_unique_ports', 0) or 0) >= 4:
+            if float(getattr(row, 'scan_sequential_score', 0) or 0) >= 0.5:
+                reasons.append('sequential port access')
+            if float(getattr(row, 'scan_randomized_score', 0) or 0) >= 0.5:
+                reasons.append('irregular port access')
+        if float(getattr(row, 'retransmission_count', 0) or 0) > 0:
+            reasons.append('TCP retransmissions')
+        signals.append(', '.join(reasons))
+    observed['review_signal'] = signals
+    observed['review_flag'] = observed['review_signal'].ne('')
+    observed = observed.sort_values(['review_flag', 'timestamp'], ascending=[False, False], kind='stable')
+    columns = ('timestamp', 'src', 'src_port', 'dst', 'dst_port', 'protocol',
+               'bytes_fwd', 'packets_fwd', 'review_flag', 'review_signal')
+    return observed.loc[:, [column for column in columns if column in observed]].head(limit).to_dict('records')
+
+
+def input_shift_summary(states, threshold=6.0):
+    """Heuristic tail check on training-normalized features, not a calibrated OOD score."""
+    if not states:
+        return {'available': False, 'reason': 'No observed states'}
+    if any(state.metadata.get('normalization_fingerprint') in (None, 'unavailable')
+           for state in states):
+        return {'available': False, 'reason': 'Training normalization is unavailable'}
+    counters = {}
+    total, exceeded = 0, 0
+    for state in states:
+        for kind, values, names in (
+            ('node', state.x, NODE_FEATURE_NAMES),
+            ('edge', state.edge_attr, EDGE_FEATURE_NAMES),
+        ):
+            if values.numel() == 0:
+                continue
+            over = (values.detach().abs().cpu() > threshold)
+            total += over.numel()
+            exceeded += int(over.sum())
+            for column, count in enumerate(over.sum(dim=0).tolist()):
+                if count:
+                    key = f'{kind}.{names[column]}'
+                    counters[key] = counters.get(key, 0) + count
+    return {'available': True, 'threshold_std': threshold,
+            'exceeded_values': exceeded, 'total_values': total,
+            'fraction': exceeded / total if total else 0.0,
+            'top_features': [{'feature': name, 'exceedances': count}
+                             for name, count in sorted(counters.items(), key=lambda item: (-item[1], item[0]))[:5]],
+            'limitation': 'Heuristic feature-range cue only; not a calibrated OOD detector or reliability guarantee.'}
 
 def forecast_rows(out, model, timestamp, window_seconds):
     probabilities = out['infiltration_probability'].detach().cpu()

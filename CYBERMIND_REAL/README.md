@@ -115,7 +115,9 @@ See `configs/sources.yaml` and `docs/PUBLIC_DATA_SOURCES.md`. Use the GB10 prepa
 
 ## Offline demo
 
-After training: `streamlit run scripts/app.py`.
+After building the React assets, run `.\.venv\Scripts\python.exe scripts\launch_desktop.py`. See
+[`docs/FASTAPI_REACT_APP.md`](docs/FASTAPI_REACT_APP.md) for the primary FastAPI/React app, local login, capture
+replay, evidence-linked case questions, encrypted reports, and packaging limits.
 
 The console accepts a local PCAP, PCAPNG, or CSV and applies the selected
 checkpoint's embedded training normalization. A packet-required checkpoint
@@ -250,4 +252,11 @@ Review the staged file list before the submission commit. Synthetic checkpoints
 under `checkpoints/phase01_*` and fixture results under `examples/` are not the
 final submission evidence.
 
-The workspace has not been initialized as a Git repository, committed, or pushed.
+## Packaged application
+
+Repository-level Docker and desktop entry points are `Dockerfile.app`,
+`compose.app.yaml`, and `scripts/launch_desktop.py`. The merged application,
+including the Strix Attack Lab integration, is under
+`integrations/cybermind_deep_merged_2026-09-29/`. Generated environments and
+package build directories are intentionally excluded; the canonical runnable
+Docker Desktop ZIP is documented in the repository root README.

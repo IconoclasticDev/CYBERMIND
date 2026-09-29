@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">CYBERMIND architecture</title>
+  <desc id="desc">Offline PCAP and CSV ingestion through FastAPI, temporal graph construction, the best.pt graph-temporal forecasting model, local records, analyst interface, sandbox validation, and encrypted reports.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#303c46"/></marker>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="8" height="8" fill="#fbf6e9"/><path d="M0 0 V8" stroke="#d9cbb3" stroke-width="2"/></pattern>
+    <style>
+      .bg{fill:#fffefa}.frame{fill:none;stroke:#273039;stroke-width:2}
+      .box{fill:#fffefa;stroke:#303c46;stroke-width:1.7}.tile{fill:#fcfaf5;stroke:#54616c;stroke-width:1.3}
+      .yellow{fill:#fae9b8;stroke:#303c46;stroke-width:1.3}.blue{fill:#cce8f5;stroke:#303c46;stroke-width:1.3}
+      .orange{fill:#f9debb;stroke:#303c46;stroke-width:1.3}.green{fill:#ddefdf;stroke:#303c46;stroke-width:1.3}
+      .title{font:600 37px Georgia,serif;fill:#17212b}.subtitle{font:17px Georgia,serif;fill:#42505a}
+      .section{font:600 20px Georgia,serif;fill:#17212b}.label{font:600 17px Arial,sans-serif;fill:#20303b}
+      .text{font:16px Arial,sans-serif;fill:#273744}.small{font:14px Arial,sans-serif;fill:#43535f}
+      .mono{font:13px Consolas,monospace;fill:#475866}.number{font:700 15px Arial,sans-serif;fill:#1d303c}
+      .flow{fill:none;stroke:#303c46;stroke-width:2.1;marker-end:url(#arrow)}.dash{fill:none;stroke:#b26148;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#arrow)}
+      .icon{fill:none;stroke:#374956;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="980"/>
+  <rect class="frame" x="14" y="14" width="1572" height="952"/>
+  <circle cx="76" cy="59" r="17" fill="#f4e9d1" stroke="#b79a6f" stroke-width="1.6"/>
+  <path d="M69 59 l6 7 10-16" class="icon" stroke="#c86449"/>
+  <text class="title" x="800" y="67" text-anchor="middle">CYBERMIND — Predictive Cyber Defence Platform</text>
+  <text class="subtitle" x="800" y="101" text-anchor="middle">Observe network traffic • forecast evolving risk • investigate evidence • share protected reports</text>
+  <text class="mono" x="800" y="125" text-anchor="middle">OFFLINE CORE  ·  REACT + FASTAPI  ·  PINNED best.pt  ·  WINDOWS / LINUX x86-64</text>
+
+  <!-- Analyst input -->
+  <rect class="box" x="52" y="165" width="310" height="232" rx="4"/>
+  <text class="section" x="207" y="193" text-anchor="middle">Analyst input</text>
+  <rect class="tile" x="77" y="217" width="81" height="58" rx="5"/>
+  <path class="icon" d="M87 228 h60 v38 h-60 z M80 282 h76 M96 276 l-5 6 M138 276 l5 6"/>
+  <text class="small" x="118" y="308" text-anchor="middle">Local device</text>
+  <rect class="yellow" x="178" y="217" width="158" height="42" rx="4"/>
+  <text class="label" x="257" y="244" text-anchor="middle">PCAP / PCAPNG</text>
+  <rect class="yellow" x="178" y="267" width="158" height="42" rx="4"/>
+  <text class="label" x="257" y="294" text-anchor="middle">Flow CSV</text>
+  <text class="small" x="207" y="344" text-anchor="middle">Manual upload and case selection</text>
+  <text class="mono" x="207" y="370" text-anchor="middle">No sample auto-loaded</text>
+
+  <!-- API -->
+  <rect class="box" x="407" y="165" width="305" height="232" rx="4"/>
+  <text class="section" x="559" y="193" text-anchor="middle">Local API gateway</text>
+  <rect class="yellow" x="434" y="219" width="251" height="45" rx="3"/>
+  <text class="label" x="559" y="247" text-anchor="middle">FastAPI REST endpoints</text>
+  <rect class="yellow" x="434" y="274" width="251" height="45" rx="3"/>
+  <text class="label" x="559" y="302" text-anchor="middle">WebSocket live updates</text>
+  <text class="small" x="559" y="348" text-anchor="middle">Upload • state • forecast • cases</text>
+  <text class="mono" x="559" y="374" text-anchor="middle">Private/local loopback service</text>
+
+  <!-- Model -->
+  <rect class="box" x="891" y="165" width="649" height="423" rx="4"/>
+  <text class="section" x="1215" y="193" text-anchor="middle">Graph-temporal forecasting engine</text>
+  <text class="small" x="1215" y="217" text-anchor="middle">Pinned PyTorch checkpoint: best.pt</text>
+  <rect class="blue" x="930" y="240" width="571" height="53" rx="3"/>
+  <circle cx="958" cy="267" r="16" fill="#fffefa" stroke="#5e879c"/>
+  <text class="number" x="958" y="273" text-anchor="middle">1</text>
+  <text class="label" x="984" y="273">Host-communication graph encoding (GATv2)</text>
+  <path class="flow" d="M1215 293 V310"/>
+  <rect class="blue" x="930" y="315" width="571" height="53" rx="3"/>
+  <circle cx="958" cy="342" r="16" fill="#fffefa" stroke="#5e879c"/>
+  <text class="number" x="958" y="348" text-anchor="middle">2</text>
+  <text class="label" x="984" y="348">Temporal Transformer → latent network state</text>
+  <path class="flow" d="M1215 368 V385"/>
+  <rect class="blue" x="930" y="390" width="571" height="53" rx="3"/>
+  <circle cx="958" cy="417" r="16" fill="#fffefa" stroke="#5e879c"/>
+  <text class="number" x="958" y="423" text-anchor="middle">3</text>
+  <text class="label" x="984" y="423">Stochastic multi-step latent rollout</text>
+  <path class="flow" d="M1215 443 V460"/>
+  <rect class="blue" x="930" y="465" width="571" height="53" rx="3"/>
+  <circle cx="958" cy="492" r="16" fill="#fffefa" stroke="#5e879c"/>
+  <text class="number" x="958" y="498" text-anchor="middle">4</text>
+  <text class="label" x="984" y="498">Risk + coarse attack-stage heads</text>
+  <text class="small" x="1215" y="553" text-anchor="middle">Output: future risk trajectory • stage • uncertainty proxy</text>
+
+  <!-- Processing bridge -->
+  <rect class="box" x="735" y="213" width="132" height="193" rx="4"/>
+  <text class="label" x="801" y="242" text-anchor="middle">Traffic</text>
+  <text class="label" x="801" y="263" text-anchor="middle">processing</text>
+  <rect class="green" x="746" y="280" width="110" height="28" rx="3"/>
+  <text class="small" x="801" y="299" text-anchor="middle">Parse flows</text>
+  <rect class="green" x="746" y="318" width="110" height="28" rx="3"/>
+  <text class="small" x="801" y="337" text-anchor="middle">Normalize</text>
+  <rect class="green" x="746" y="356" width="110" height="28" rx="3"/>
+  <text class="small" x="801" y="375" text-anchor="middle">Build graphs</text>
+
+  <!-- Analyst workspace -->
+  <rect class="box" x="52" y="431" width="608" height="421" rx="4"/>
+  <text class="section" x="356" y="461" text-anchor="middle">Analyst workspace — React interface</text>
+  <rect class="tile" x="75" y="487" width="270" height="93" rx="4"/>
+  <circle cx="110" cy="527" r="7" fill="#df7058"/><circle cx="144" cy="546" r="7" fill="#a8cbd7"/><circle cx="149" cy="510" r="7" fill="#a8cbd7"/>
+  <path class="icon" d="M116 528 L141 514 M116 532 L138 543"/>
+  <text class="label" x="190" y="526">Network view</text><text class="small" x="190" y="550">Host graph + timeline</text>
+  <rect class="tile" x="365" y="487" width="270" height="93" rx="4"/>
+  <path class="icon" d="M388 548 l13-18 13 8 16-28"/><path class="icon" d="M386 552 h50"/>
+  <text class="label" x="453" y="526">Threat forecast</text><text class="small" x="453" y="550">Multi-step risk + stage</text>
+  <rect class="tile" x="75" y="597" width="270" height="93" rx="4"/>
+  <rect x="91" y="618" width="42" height="10" rx="2" fill="#df7058"/><rect x="91" y="633" width="30" height="10" rx="2" fill="#efb56a"/><rect x="91" y="648" width="20" height="10" rx="2" fill="#9bcaa9"/>
+  <text class="label" x="152" y="636">Flow risk triage</text><text class="small" x="152" y="660">Rule-based; separate from AI</text>
+  <rect class="tile" x="365" y="597" width="270" height="93" rx="4"/>
+  <path class="icon" d="M387 628 h22 m0 0 l-7-7 m7 7 l-7 7 m7-7 l23-18 m-23 18 l23 18"/>
+  <text class="label" x="453" y="636">Parallel Futures</text><text class="small" x="453" y="660">Simulated defences</text>
+  <rect class="tile" x="75" y="707" width="270" height="93" rx="4"/>
+  <path class="icon" d="M92 725 h45 v31 h-29 l-10 10 v-10 h-6 z"/>
+  <text class="label" x="151" y="746">NLP assistant</text><text class="small" x="151" y="770">Offline, read-only answers</text>
+  <rect class="tile" x="365" y="707" width="270" height="93" rx="4"/>
+  <path class="icon" d="M389 733 h34 v43 h-34 z m8 10 h18 m-18 9 h18 m-18 9 h13"/>
+  <text class="label" x="452" y="746">Incident reports</text><text class="small" x="452" y="770">Encrypt + decrypt in app</text>
+  <text class="mono" x="356" y="829" text-anchor="middle">Command Centre · forecast · investigation · reports</text>
+
+  <!-- Local data -->
+  <text class="section" x="789" y="637" text-anchor="middle">Local data layer</text>
+  <path d="M688 664 Q688 646 789 646 Q890 646 890 664 V817 Q890 837 789 837 Q688 837 688 817 Z" fill="url(#hatch)" stroke="#303c46" stroke-width="1.8"/>
+  <ellipse cx="789" cy="664" rx="101" ry="18" fill="#fbf6e9" stroke="#303c46" stroke-width="1.8"/>
+  <text class="label" x="789" y="696" text-anchor="middle">Telemetry events</text>
+  <text class="label" x="789" y="731" text-anchor="middle">Graph windows</text>
+  <text class="label" x="789" y="766" text-anchor="middle">Pinned best.pt</text>
+  <rect class="green" x="713" y="784" width="152" height="32" rx="3"/>
+  <text class="small" x="789" y="805" text-anchor="middle">Case / run records</text>
+
+  <!-- Companion services -->
+  <rect class="box" x="971" y="633" width="569" height="219" rx="4"/>
+  <text class="section" x="1255" y="662" text-anchor="middle">Verification and protected sharing</text>
+  <rect class="green" x="997" y="686" width="517" height="61" rx="3"/>
+  <text class="label" x="1018" y="713">Local sandbox check</text>
+  <text class="small" x="1018" y="735">Frozen forecast + bounded HTTP response evidence</text>
+  <rect class="orange" x="997" y="762" width="517" height="61" rx="3"/>
+  <text class="label" x="1018" y="789">AES-256-GCM incident brief</text>
+  <text class="small" x="1018" y="811">Encrypted JSON + separate key → in-app decryption</text>
+
+  <!-- Main data arrows -->
+  <path class="flow" d="M362 281 H407"/>
+  <text class="mono" x="384" y="267" text-anchor="middle">upload</text>
+  <path class="flow" d="M712 305 H735"/>
+  <path class="flow" d="M867 305 H891"/>
+  <text class="mono" x="785" y="427" text-anchor="end">graph windows</text>
+  <path class="flow" d="M801 406 V591 H675 V680 H688"/>
+  <text class="mono" x="735" y="581" text-anchor="middle">events + graphs</text>
+  <path class="flow" d="M1060 588 V609 H890 V664"/>
+  <text class="mono" x="972" y="604" text-anchor="middle">forecast</text>
+  <path class="flow" d="M688 740 H660"/>
+  <text class="mono" x="674" y="727" text-anchor="middle">UI</text>
+  <path class="flow" d="M890 706 H971"/>
+  <text class="mono" x="929" y="693" text-anchor="middle">evidence</text>
+  <path class="dash" d="M660 820 V869 H1255 V852"/>
+  <text class="mono" x="959" y="865" text-anchor="middle">incident brief for encrypted export</text>
+
+  <!-- Footer -->
+  <rect class="yellow" x="52" y="891" width="1488" height="49" rx="3"/>
+  <text class="label" x="796" y="921" text-anchor="middle">Offline deployment: Windows CYBERMIND.exe  |  Linux x86-64 Docker app  |  in-app report decryption</text>
+</svg>

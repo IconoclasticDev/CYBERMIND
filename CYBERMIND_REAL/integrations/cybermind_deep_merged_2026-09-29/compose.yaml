@@ -1,0 +1,22 @@
+services:
+  cybermind:
+    image: cybermind/offline-app:2026-09-29
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - cybermind_data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
+    restart: unless-stopped
+
+  incident-decrypter:
+    image: cybermind/offline-decrypter:2026-09-29
+    build: ./tools/incident_decrypter
+    ports:
+      - "127.0.0.1:8001:80"
+    restart: unless-stopped
+
+volumes:
+  cybermind_data:

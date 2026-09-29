@@ -1,0 +1,16 @@
+from __future__ import annotations
+from abc import ABC, abstractmethod
+from typing import Any
+
+class ScenarioAdapter(ABC):
+    """Safe interface; implementations must remain inside authorized environments."""
+    @abstractmethod
+    def start(self, scenario_id: str) -> dict[str, Any]: ...
+    @abstractmethod
+    def stop(self, scenario_id: str) -> dict[str, Any]: ...
+    @abstractmethod
+    def reset(self, scenario_id: str) -> dict[str, Any]: ...
+    @abstractmethod
+    def status(self, scenario_id: str) -> dict[str, Any]: ...
+    @abstractmethod
+    def collect(self, scenario_id: str) -> list[dict[str, Any]]: ...

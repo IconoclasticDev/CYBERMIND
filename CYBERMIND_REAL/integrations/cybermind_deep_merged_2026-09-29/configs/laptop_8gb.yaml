@@ -1,0 +1,35 @@
+# CYBERMIND compact single-model profile for RTX 5050/5060-class 8 GB laptops.
+seed: 42
+data:
+  raw_dir: data/raw/CIC-IDS-2018
+  processed_dir: data/processed
+  window_seconds: 60
+  stride_seconds: 30
+  history: 12
+model:
+  graph_hidden: 192
+  graph_out: 192
+  temporal_dim: 192
+  graph_heads: 4
+  nhead: 4
+  temporal_layers: 2
+  num_stages: 4
+  dropout: 0.10
+loss:
+  transition: 1.0
+  infiltration: 1.0
+  stage: 0.5
+  calibration: 0.2
+train:
+  epochs: 30
+  lr: 0.0003
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  checkpoint: cybermind_compact.pt
+  batch_size: 4
+  grad_accumulation: 8
+  num_workers: 2
+  warmup_epochs: 2
+  amp: true
+eval:
+  rollout_steps: 12

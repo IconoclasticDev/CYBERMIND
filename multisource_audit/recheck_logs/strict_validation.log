@@ -1,6 +1,0 @@
-{'file': 'data\\recheck_intermediate\\synthetic_scenario_0.parquet', 'rows_checked': 256, 'missing_required': [], 'usable_endpoint_rows': 256, 'timestamp_nonnull': 256}
-{'file': 'data\\recheck_intermediate\\synthetic_scenario_1.parquet', 'rows_checked': 256, 'missing_required': [], 'usable_endpoint_rows': 256, 'timestamp_nonnull': 256}
-{'file': 'data\\recheck_intermediate\\synthetic_scenario_2.parquet', 'rows_checked': 256, 'missing_required': [], 'usable_endpoint_rows': 256, 'timestamp_nonnull': 256}
-{'file': 'data\\recheck_intermediate\\synthetic_scenario_3.parquet', 'rows_checked': 256, 'missing_required': [], 'usable_endpoint_rows': 256, 'timestamp_nonnull': 256}
-{'file': 'data\\recheck_intermediate\\synthetic_scenario_4.parquet', 'rows_checked': 256, 'missing_required': [], 'usable_endpoint_rows': 256, 'timestamp_nonnull': 256}
-{'file': 'data\\recheck_intermediate\\synthetic_scenario_5.parquet', 'rows_checked': 256, 'missing_required': [], 'usable_endpoint_rows': 256, 'timestamp_nonnull': 256}

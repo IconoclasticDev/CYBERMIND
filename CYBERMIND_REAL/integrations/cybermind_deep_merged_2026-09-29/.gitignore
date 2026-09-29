@@ -1,0 +1,41 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Model checkpoints & exports (swap-in artifact, never committed) ---
+models/*.pt
+models/*.pth
+models/*.onnx
+export/
+
+# --- Local runtime data (telemetry buffers, run records, strix artifacts) ---
+data/
+strix_runs/
+runtime/*.jsonl
+results/train_history.json
+
+# --- Node / frontend ---
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# --- Env & secrets ---
+.env
+.env.*
+!.env.example
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+.freebuff/
+.uvicorn.log
+*.log
+
+# --- Reference material (design source, not part of the app) ---
+reference_ui/

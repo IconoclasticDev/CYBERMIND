@@ -26,20 +26,25 @@ CYBERMIND is a research-grade implementation of a counterfactual world model for
 
 ```text
 SIH26/
-├── CYBERMIND_REAL/           # Core implementation
-│   ├── src/cybermind/        # Source modules (models, data, evaluation)
-│   ├── scripts/              # Training, evaluation, and data preparation
-│   ├── configs/              # Configuration files (gb10_full.yaml)
-│   ├── data/                 # Raw, intermediate, and processed data
-│   ├── checkpoints/          # Model checkpoints
-│   ├── docs/                 # Documentation and reports
-│   ├── tests/                # Unit tests
-│   └── examples/             # Synthetic correctness checks
-├── multisource_audit/        # Audit pipeline and verification scripts
-├── session_backup_tools/     # Automation scripts for context generation
-└── SESSION_CONTEXT.md        # Complete session history and handoff document
+├── CYBERMIND_REAL/                 # Authored product and research implementation
+│   ├── src/cybermind/              # Model, data, evaluation, analyst and API modules
+│   ├── web/                        # React application source
+│   ├── integrations/               # Strix Attack Lab and merged desktop application
+│   ├── scripts/                    # Training, inference, packaging and launch scripts
+│   ├── configs/                    # Reproducible model/runtime configuration
+│   ├── checkpoints/                # Required trained checkpoints
+│   ├── docs/                       # Architecture, plans and technical guides
+│   ├── tests/                      # Unit and integration tests
+│   └── examples/                   # Reproducible demonstrations and fixtures
+├── deliverables/                   # SIH documents, PDFs and final demo video
+├── releases/                       # Tracked SIH package plus canonical Docker desktop ZIP
+├── tools/strix/                    # Optional pinned Strix CLI archive
+├── CYBERMIND_Final_Implementation_Plan.pdf
+└── README.md
 ```
 
+
+Generated environments, build trees, extracted release folders, installers, caches and raw authoring captures are intentionally excluded from Git.
 ---
 
 ### Tech Stack
@@ -165,10 +170,24 @@ python scripts/phase01_smoke.py
 
 ### Documentation
 
-- `CYBERMIND_REAL/README.md` - Detailed implementation guide
-- `CYBERMIND_REAL/docs/PHASE01_FINAL_REPORT.md` - Phase 1 verification checklist
-- `CYBERMIND_REAL/docs/PUBLIC_DATA_SOURCES.md` - Public dataset registry
-- `SESSION_CONTEXT.md` - Complete session history and architecture rationale
+- `CYBERMIND_REAL/README.md` - detailed implementation and offline-app guide
+- `CYBERMIND_REAL/docs/ARCHITECTURE.md` - model architecture
+- `CYBERMIND_REAL/docs/CYBERMIND_FULL_FINAL_IMPLEMENTATION_PLAN.md` - preserved implementation plan
+- `CYBERMIND_REAL/docs/SIH26153_TWO_PAGE_ARCHITECTURE.md` - submission architecture
+- `CYBERMIND_REAL/docs/PUBLIC_DATA_SOURCES.md` - public dataset registry
+- `deliverables/` - technical approach, editable document, PDFs and final demo video
+
+### Canonical runnable release
+
+The latest offline Docker Desktop package is:
+
+```text
+releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip
+```
+
+It includes `CYBERMIND.exe`, the offline Docker image, Compose configuration, Windows/Linux launch and stop scripts, demo inputs, integrity manifests and the pinned model. The ZIP is tracked with Git LFS; verify it against the adjacent manifest before distribution.
+
+The source Docker application remains under `CYBERMIND_REAL/`, including `Dockerfile.app`, `compose.app.yaml`, and the merged integration Dockerfiles/launchers. The optional pinned Strix CLI archive is under `tools/strix/`; Strix still requires its own provider configuration and is not required for the core local validation path.
 
 ---
 
