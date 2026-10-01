@@ -1,4 +1,4 @@
-﻿# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -41,44 +41,50 @@ skills-lock.json
 tmp/
 demo_video_work/
 output/
-CYBERMIND_REAL/CYBERMIND_FULL_CHAT_CONTEXT_*.md
+CYBERMIND/CYBERMIND_REAL/CYBERMIND_FULL_CHAT_CONTEXT_*.md
+
+# Ignored local build remnants from the previous root layout.
+/CYBERMIND_REAL/
+/deliverables/
+/releases/
+/tools/
 
 # Local installers and extracted copies of versioned tools
-tools/DockerDesktopInstaller.exe
-tools/**/__pycache__/
-tools/strix/windows/
+CYBERMIND/tools/DockerDesktopInstaller.exe
+CYBERMIND/tools/**/__pycache__/
+CYBERMIND/tools/strix/windows/
 
 # Release workspace: retain only the tracked SIH package and canonical demo ZIP.
-releases/*
-!releases/README.md
-!releases/CYBERMIND_SIH_PACKAGE_README.md
-!releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.manifest.json
-!releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.zip
-!releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip
-!releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.manifest.json
+CYBERMIND/releases/*
+!CYBERMIND/releases/README.md
+!CYBERMIND/releases/CYBERMIND_SIH_PACKAGE_README.md
+!CYBERMIND/releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.manifest.json
+!CYBERMIND/releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.zip
+!CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip
+!CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.manifest.json
 
 # Generated integration environments and package builds
-CYBERMIND_REAL/integrations/cybermind_deep-main/
-CYBERMIND_REAL/integrations/**/.desktop-venv/
-CYBERMIND_REAL/integrations/**/.freebuff/
-CYBERMIND_REAL/integrations/**/.pytest_*/
-CYBERMIND_REAL/integrations/**/.pytest-*/
-CYBERMIND_REAL/integrations/**/build/
-CYBERMIND_REAL/integrations/**/dist/
-CYBERMIND_REAL/integrations/**/frontend/node_modules/
-CYBERMIND_REAL/integrations/**/frontend/dist/
-CYBERMIND_REAL/integrations/**/packaging/*build*/
-CYBERMIND_REAL/integrations/**/packaging/*dist*/
-CYBERMIND_REAL/integrations/**/runtime/*.log
-CYBERMIND_REAL/integrations/**/runtime/*.jsonl
-CYBERMIND_REAL/integrations/**/runtime/**/*.png
-CYBERMIND_REAL/integrations/**/runtime/**/results.json
-CYBERMIND_REAL/integrations/**/runtime/**/workflow_results.json
-CYBERMIND_REAL/integrations/**/runtime/**/encrypted_incident_brief.json
-CYBERMIND_REAL/integrations/**/runtime/**/readable_incident_brief.json
+CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep-main/
+CYBERMIND/CYBERMIND_REAL/integrations/**/.desktop-venv/
+CYBERMIND/CYBERMIND_REAL/integrations/**/.freebuff/
+CYBERMIND/CYBERMIND_REAL/integrations/**/.pytest_*/
+CYBERMIND/CYBERMIND_REAL/integrations/**/.pytest-*/
+CYBERMIND/CYBERMIND_REAL/integrations/**/build/
+CYBERMIND/CYBERMIND_REAL/integrations/**/dist/
+CYBERMIND/CYBERMIND_REAL/integrations/**/frontend/node_modules/
+CYBERMIND/CYBERMIND_REAL/integrations/**/frontend/dist/
+CYBERMIND/CYBERMIND_REAL/integrations/**/packaging/*build*/
+CYBERMIND/CYBERMIND_REAL/integrations/**/packaging/*dist*/
+CYBERMIND/CYBERMIND_REAL/integrations/**/runtime/*.log
+CYBERMIND/CYBERMIND_REAL/integrations/**/runtime/*.jsonl
+CYBERMIND/CYBERMIND_REAL/integrations/**/runtime/**/*.png
+CYBERMIND/CYBERMIND_REAL/integrations/**/runtime/**/results.json
+CYBERMIND/CYBERMIND_REAL/integrations/**/runtime/**/workflow_results.json
+CYBERMIND/CYBERMIND_REAL/integrations/**/runtime/**/encrypted_incident_brief.json
+CYBERMIND/CYBERMIND_REAL/integrations/**/runtime/**/readable_incident_brief.json
 
 # Local agent handoff/status notes are not application documentation.
-CYBERMIND_REAL/integrations/**/AGENT.md
-CYBERMIND_REAL/integrations/**/APP_AGENT.md
-CYBERMIND_REAL/integrations/**/IMPLEMENTATION_STATUS.md
-CYBERMIND_REAL/integrations/**/src/cybermind_backup_sep13/
+CYBERMIND/CYBERMIND_REAL/integrations/**/AGENT.md
+CYBERMIND/CYBERMIND_REAL/integrations/**/APP_AGENT.md
+CYBERMIND/CYBERMIND_REAL/integrations/**/IMPLEMENTATION_STATUS.md
+CYBERMIND/CYBERMIND_REAL/integrations/**/src/cybermind_backup_sep13/

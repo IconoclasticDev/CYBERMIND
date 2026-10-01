@@ -9,9 +9,9 @@ import zipfile
 from pathlib import Path
 
 
-REPO = Path(__file__).resolve().parents[2]
-PROJECT = REPO / "CYBERMIND_REAL"
-RELEASES = REPO / "releases"
+REPO = Path(__file__).resolve().parents[3]
+PROJECT = REPO / "CYBERMIND" / "CYBERMIND_REAL"
+RELEASES = REPO / "CYBERMIND" / "releases"
 ARCHIVE = RELEASES / "CYBERMIND_SIH_SUBMISSION_2026-09-26.zip"
 EXTERNAL_MANIFEST = RELEASES / "CYBERMIND_SIH_SUBMISSION_2026-09-26.manifest.json"
 PREFIX = "CYBERMIND_SIH_SUBMISSION"
@@ -31,11 +31,11 @@ def sha256_file(path: Path) -> str:
 
 
 def included(relative: str) -> bool:
-    if relative in {"README.md", "deliverables/pdf/CYBERMIND_Final_Implementation_Plan.pdf"}:
+    if relative in {"README.md", "CYBERMIND/deliverables/pdf/CYBERMIND_Final_Implementation_Plan.pdf"}:
         return True
-    if not relative.startswith("CYBERMIND_REAL/"):
+    if not relative.startswith("CYBERMIND/CYBERMIND_REAL/"):
         return False
-    inside = relative.removeprefix("CYBERMIND_REAL/")
+    inside = relative.removeprefix("CYBERMIND/CYBERMIND_REAL/")
     if inside.startswith("data/"):
         return inside.startswith("data/manifests/")
     if inside.startswith("checkpoints/"):
@@ -52,8 +52,8 @@ def main():
     tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=REPO).split(b"\0")
     paths = sorted({raw.decode() for raw in tracked if raw and included(raw.decode())})
     # Include this builder and the package guide when invoked before their first commit.
-    for relative in ("CYBERMIND_REAL/scripts/build_sih_submission_zip.py",
-                     "releases/CYBERMIND_SIH_PACKAGE_README.md"):
+    for relative in ("CYBERMIND/CYBERMIND_REAL/scripts/build_sih_submission_zip.py",
+                     "CYBERMIND/releases/CYBERMIND_SIH_PACKAGE_README.md"):
         if (REPO / relative).is_file() and relative not in paths:
             paths.append(relative)
     paths.sort()
@@ -68,7 +68,7 @@ def main():
     internal = {
         "package": PREFIX,
         "source_commit": source_commit,
-        "selected_checkpoint": "CYBERMIND_REAL/checkpoints/final_grouped/best.pt",
+        "selected_checkpoint": "CYBERMIND/CYBERMIND_REAL/checkpoints/final_grouped/best.pt",
         "included_files": len(records),
         "uncompressed_bytes": sum(record["bytes"] for record in records),
         "files": records,

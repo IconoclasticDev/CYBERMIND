@@ -29,6 +29,6 @@ The architecture connects this entire journey. In Tier One, ingestion preserves 
 
 ## Architecture graphic used in the final shot
 
-![CYBERMIND four-tier architecture](architecture_diagram.jpeg)
+![CYBERMIND four-tier architecture](../architecture/architecture_diagram.jpeg)
 
 **Production and accuracy notes (not spoken):** Use the manually selected SSH brute-force flow CSV for the filmed model forecast; it produced a high-risk forecast in the September 30 preflight. The Botnet Ares sample did not produce a corresponding high-risk model forecast. Capture actual application results; do not replace failed or unavailable controls with mock outcomes or promise a particular risk reduction. A raw PCAP has no attack ground-truth labels, so its individual flows can correctly show *Unassessed* even while graph-window forecasting runs. The model's stage mapping is a research proxy, not independently verified stage truth. The built-in local sandbox check records target behaviour; it does not establish attack-stage truth or retrain `best.pt`. The optional Strix-controlled scan is not part of this demonstrated path. The graphic’s “Authenticated Decrypt Desk” means possession of the separate report key in the current app; there is no recipient-identity verification. Do not show the key on camera. Treat the runtime as offline-capable rather than asserting an independently certified air gap.
