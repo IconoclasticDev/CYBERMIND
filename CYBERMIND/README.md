@@ -2,6 +2,8 @@
 
 This folder contains the implementation and distribution assets. The repository's [judge-facing README](../README.md) and [architecture document](../CYBERMIND%20Architecture%20Document.html) remain at the root for immediate access.
 
+The [detailed project guide](PROJECT_GUIDE.md) preserves the expanded setup and technical notes added on GitHub.
+
 | Folder | Contents |
 |---|---|
 | [CYBERMIND_REAL](CYBERMIND_REAL/) | React/FastAPI source, graph-temporal model, checkpoints, Docker build, tests, research artifacts |

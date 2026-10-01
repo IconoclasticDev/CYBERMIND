@@ -14,6 +14,7 @@ CYBERMIND turns PCAP/PCAPNG captures or flow CSVs into time-ordered host graphs.
 | Architecture document | [Architecture document](CYBERMIND%20Architecture%20Document.html) |
 | Current offline application | [Windows and Linux Docker bundle](CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip) · [run instructions](CYBERMIND/releases/README.md) |
 | Technical approach | [Full technical approach](CYBERMIND/deliverables/SIH26153_CYBERMIND_FULL_TECHNICAL_APPROACH.md) |
+| Detailed setup and technology guide | [Project guide](CYBERMIND/PROJECT_GUIDE.md) |
 | Demonstration | [Video](CYBERMIND/deliverables/demo/CYBERMIND_demo.mp4) · [script](CYBERMIND/deliverables/demo/script.md) |
 
 The release ZIP contains the offline Docker image, pinned model, Windows `CYBERMIND.exe` launcher, Linux x86-64 launcher, and manual demo inputs. Keep the extracted bundle together. Windows needs Docker Desktop's Linux engine; Linux needs Docker Engine and the Compose plugin. See the [run instructions](CYBERMIND/releases/README.md) for the exact setup and platform limits.
