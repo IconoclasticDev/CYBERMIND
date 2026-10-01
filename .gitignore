@@ -41,7 +41,6 @@ skills-lock.json
 tmp/
 demo_video_work/
 output/
-script.md
 CYBERMIND_REAL/CYBERMIND_FULL_CHAT_CONTEXT_*.md
 
 # Local installers and extracted copies of versioned tools
@@ -51,6 +50,7 @@ tools/strix/windows/
 
 # Release workspace: retain only the tracked SIH package and canonical demo ZIP.
 releases/*
+!releases/README.md
 !releases/CYBERMIND_SIH_PACKAGE_README.md
 !releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.manifest.json
 !releases/CYBERMIND_SIH_SUBMISSION_2026-09-26.zip

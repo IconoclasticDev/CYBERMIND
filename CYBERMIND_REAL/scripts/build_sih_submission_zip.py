@@ -31,7 +31,7 @@ def sha256_file(path: Path) -> str:
 
 
 def included(relative: str) -> bool:
-    if relative in {"README.md", "CYBERMIND_Final_Implementation_Plan.pdf"}:
+    if relative in {"README.md", "deliverables/pdf/CYBERMIND_Final_Implementation_Plan.pdf"}:
         return True
     if not relative.startswith("CYBERMIND_REAL/"):
         return False

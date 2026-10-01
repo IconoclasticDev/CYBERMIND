@@ -26,7 +26,7 @@ The core model answers **what may happen next**. The counterfactual and Strix la
 
 ## 2. System Architecture
 
-![CYBERMIND four-tier architecture](../architecture_diagram.jpeg)
+![CYBERMIND four-tier architecture](architecture/architecture_diagram.jpeg)
 
 CYBERMIND is organized into four technical tiers:
 
