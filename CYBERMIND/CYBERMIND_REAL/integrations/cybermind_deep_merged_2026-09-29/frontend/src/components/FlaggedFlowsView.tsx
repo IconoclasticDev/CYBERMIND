@@ -48,7 +48,10 @@ export const FlaggedFlowsView: React.FC<FlaggedFlowsViewProps> = ({
   const filteredFlows = useMemo(() => {
     return flows
       .filter((f) => {
-        if (selectedBand !== "ALL" && f.risk_band !== selectedBand) return false;
+        const matchesBand = selectedBand === "ALL"
+          || f.risk_band === selectedBand
+          || (selectedBand === "BENIGN" && f.risk_band === "LOW");
+        if (!matchesBand) return false;
         if (search.trim()) {
           const q = search.toLowerCase();
           return (
@@ -267,7 +270,7 @@ export const FlaggedFlowsView: React.FC<FlaggedFlowsViewProps> = ({
                           {flow.risk_band !== "UNASSESSED" && <div className="w-16 bg-[#EAE5DC] h-1.5 rounded-full overflow-hidden hidden sm:block">
                             <div
                               className={`h-full rounded-full ${
-                                isCritical ? "bg-[#DE5B49]" : "bg-emerald-500"
+                                isCritical ? "bg-[#DE5B49]" : flow.risk_band === "MEDIUM" ? "bg-[#E58B44]" : "bg-emerald-500"
                               }`}
                               style={{ width: `${Math.min(100, Math.max(5, flow.risk_pct))}%` }}
                             />

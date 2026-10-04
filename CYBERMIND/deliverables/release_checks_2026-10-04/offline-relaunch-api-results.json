@@ -1,0 +1,5397 @@
+{
+  "base": "http://127.0.0.1:57917",
+  "checks": {
+    "health": {
+      "status": "ok",
+      "model": {
+        "available": true,
+        "status": "loaded",
+        "device": "cpu",
+        "version": "cybermind-5324902ca017",
+        "parameters": 859528,
+        "checkpoint": "/app/models/best.pt",
+        "checkpoint_present": true,
+        "load_error": null,
+        "expected_path": "/app/models/best.pt"
+      },
+      "telemetry_events": 0,
+      "state_windows": 0,
+      "scenario": {
+        "running": false,
+        "mode": "cic-ids2018-real"
+      },
+      "time": 1791065046.1035771
+    },
+    "pcap_import": {
+      "status": "success",
+      "filename": "cic2018_feb28_victim_scan_15min.pcap",
+      "flows_ingested": 32001,
+      "total_events": 20000,
+      "forecast": {
+        "run_id": null,
+        "model_version": "cybermind-5324902ca017",
+        "model_available": true,
+        "k": 12,
+        "timestamp": 1519829876.707568,
+        "observation_windows": 8,
+        "current": {
+          "step": 0,
+          "risk": 0.999667763710022,
+          "risk_pct": 100.0,
+          "variance": 0.0,
+          "std": 0.0,
+          "lower_bound": 0.9997,
+          "upper_bound": 0.9997,
+          "lower_pct": 100.0,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            3.2196028769249097e-05,
+            0.2656415104866028,
+            0.7307778596878052,
+            0.0003915301931556314,
+            0.00031610330916009843,
+            0.0002139444404747337,
+            0.002626810222864151
+          ],
+          "confidence": 0.6892403364181519
+        },
+        "horizon": {
+          "risk": 0.9905315041542053,
+          "stage": "Reconnaissance",
+          "stage_id": 1
+        },
+        "steps": [
+          {
+            "step": 0,
+            "risk": 0.999667763710022,
+            "risk_pct": 100.0,
+            "variance": 0.0,
+            "std": 0.0,
+            "lower_bound": 0.9997,
+            "upper_bound": 0.9997,
+            "lower_pct": 100.0,
+            "upper_pct": 100.0,
+            "stage_id": 2,
+            "stage": "Initial Access",
+            "stage_short": "Initial Access",
+            "technique": "Remote Services: SMB / lateral tool transfer",
+            "technique_id": "T1210",
+            "stage_probs": [
+              3.2196028769249097e-05,
+              0.2656415104866028,
+              0.7307778596878052,
+              0.0003915301931556314,
+              0.00031610330916009843,
+              0.0002139444404747337,
+              0.002626810222864151
+            ],
+            "confidence": 0.6892403364181519
+          },
+          {
+            "step": 1,
+            "risk": 0.9996417760848999,
+            "risk_pct": 100.0,
+            "variance": 0.0,
+            "std": 0.0,
+            "lower_bound": 0.9996,
+            "upper_bound": 0.9997,
+            "lower_pct": 100.0,
+            "upper_pct": 100.0,
+            "stage_id": 2,
+            "stage": "Initial Access",
+            "stage_short": "Initial Access",
+            "technique": "Remote Services: SMB / lateral tool transfer",
+            "technique_id": "T1210",
+            "stage_probs": [
+              3.934744017897174e-05,
+              0.32743191719055176,
+              0.6683639287948608,
+              0.0004266803152859211,
+              0.0003398866974748671,
+              0.00023897463688626885,
+              0.0031593937892466784
+            ],
+            "confidence": 0.6600687801837921
+          },
+          {
+            "step": 2,
+            "risk": 0.9995891451835632,
+            "risk_pct": 100.0,
+            "variance": 0.0,
+            "std": 0.0001,
+            "lower_bound": 0.9995,
+            "upper_bound": 0.9997,
+            "lower_pct": 99.9,
+            "upper_pct": 100.0,
+            "stage_id": 2,
+            "stage": "Initial Access",
+            "stage_short": "Initial Access",
+            "technique": "Remote Services: SMB / lateral tool transfer",
+            "technique_id": "T1210",
+            "stage_probs": [
+              4.6528701204806566e-05,
+              0.351908802986145,
+              0.6435385942459106,
+              0.00045652169501408935,
+              0.00037468652590177953,
+              0.00026361673371866345,
+              0.0034112606663256884
+            ],
+            "confidence": 0.6507214605808258
+          },
+          {
+            "step": 3,
+            "risk": 0.9995046854019165,
+            "risk_pct": 100.0,
+            "variance": 0.0,
+            "std": 0.0001,
+            "lower_bound": 0.9993,
+            "upper_bound": 0.9997,
+            "lower_pct": 99.9,
+            "upper_pct": 100.0,
+            "stage_id": 2,
+            "stage": "Initial Access",
+            "stage_short": "Initial Access",
+            "technique": "Remote Services: SMB / lateral tool transfer",
+            "technique_id": "T1210",
+            "stage_probs": [
+              5.742840949096717e-05,
+              0.36272692680358887,
+              0.6321513652801514,
+              0.0005210411618463695,
+              0.0004461797943804413,
+              0.0003166215610690415,
+              0.003780404105782509
+            ],
+            "confidence": 0.645747035741806
+          },
+          {
+            "step": 4,
+            "risk": 0.99940025806427,
+            "risk_pct": 99.9,
+            "variance": 0.0,
+            "std": 0.0001,
+            "lower_bound": 0.9991,
+            "upper_bound": 0.9997,
+            "lower_pct": 99.9,
+            "upper_pct": 100.0,
+            "stage_id": 2,
+            "stage": "Initial Access",
+            "stage_short": "Initial Access",
+            "technique": "Remote Services: SMB / lateral tool transfer",
+            "technique_id": "T1210",
+            "stage_probs": [
+              7.458621985279024e-05,
+              0.41153329610824585,
+              0.582385778427124,
+              0.0005952393403276801,
+              0.0005376316257752478,
+              0.00038478500209748745,
+              0.004488637670874596
+            ],
+            "confidence": 0.6316861212253571
+          },
+          {
+            "step": 5,
+            "risk": 0.9992192983627319,
+            "risk_pct": 99.9,
+            "variance": 0.0,
+            "std": 0.0002,
+            "lower_bound": 0.9988,
+            "upper_bound": 0.9997,
+            "lower_pct": 99.9,
+            "upper_pct": 100.0,
+            "stage_id": 2,
+            "stage": "Initial Access",
+            "stage_short": "Initial Access",
+            "technique": "Remote Services: SMB / lateral tool transfer",
+            "technique_id": "T1210",
+            "stage_probs": [
+              9.995042637456208e-05,
+              0.42741984128952026,
+              0.5653488636016846,
+              0.0007163037662394345,
+              0.0006859414279460907,
+              0.000491621030960232,
+              0.005237465258687735
+            ],
+            "confidence": 0.6258389949798584
+          },
+          {
+            "step": 6,
+            "risk": 0.9990049004554749,
+            "risk_pct": 99.9,
+            "variance": 0.0,
+            "std": 0.0003,
+            "lower_bound": 0.9983,
+            "upper_bound": 0.9997,
+            "lower_pct": 99.8,
+            "upper_pct": 100.0,
+            "stage_id": 2,
+            "stage": "Initial Access",
+            "stage_short": "Initial Access",
+            "technique": "Remote Services: SMB / lateral tool transfer",
+            "technique_id": "T1210",
+            "stage_probs": [
+              0.00013197872613091022,
+              0.4587068259716034,
+              0.5325115323066711,
+              0.0008667068323120475,
+              0.0008550027851015329,
+              0.0006334009231068194,
+              0.006294540129601955
+            ],
+            "confidence": 0.61819988489151
+          },
+          {
+            "step": 7,
+            "risk": 0.9986066222190857,
+            "risk_pct": 99.9,
+            "variance": 0.0,
+            "std": 0.0005,
+            "lower_bound": 0.9976,
+            "upper_bound": 0.9997,
+            "lower_pct": 99.8,
+            "upper_pct": 100.0,
+            "stage_id": 1,
+            "stage": "Reconnaissance",
+            "stage_short": "Reconnaissance",
+            "technique": "Active Scanning / Exploit Public-Facing Application",
+            "technique_id": "T1190",
+            "stage_probs": [
+              0.00019854948914144188,
+              0.5024495720863342,
+              0.4863814115524292,
+              0.001091358601115644,
+              0.0011299843899905682,
+              0.0008803651435300708,
+              0.007868730463087559
+            ],
+            "confidence": 0.6107213795185089
+          },
+          {
+            "step": 8,
+            "risk": 0.998128354549408,
+            "risk_pct": 99.8,
+            "variance": 1e-06,
+            "std": 0.0009,
+            "lower_bound": 0.9964,
+            "upper_bound": 0.9998,
+            "lower_pct": 99.6,
+            "upper_pct": 100.0,
+            "stage_id": 1,
+            "stage": "Reconnaissance",
+            "stage_short": "Reconnaissance",
+            "technique": "Active Scanning / Exploit Public-Facing Application",
+            "technique_id": "T1190",
+            "stage_probs": [
+              0.00028045737417414784,
+              0.5390112400054932,
+              0.44711801409721375,
+              0.0013487718533724546,
+              0.0014455280033871531,
+              0.0011702224146574736,
+              0.009625665843486786
+            ],
+            "confidence": 0.6062131822109222
+          },
+          {
+            "step": 9,
+            "risk": 0.9973727464675903,
+            "risk_pct": 99.7,
+            "variance": 2e-06,
+            "std": 0.0015,
+            "lower_bound": 0.9944,
+            "upper_bound": 1.0,
+            "lower_pct": 99.4,
+            "upper_pct": 100.0,
+            "stage_id": 1,
+            "stage": "Reconnaissance",
+            "stage_short": "Reconnaissance",
+            "technique": "Active Scanning / Exploit Public-Facing Application",
+            "technique_id": "T1190",
+            "stage_probs": [
+              0.00041908034472726285,
+              0.5886633992195129,
+              0.3934679925441742,
+              0.0016681005945429206,
+              0.0018432775977998972,
+              0.0015752913895994425,
+              0.012362850829958916
+            ],
+            "confidence": 0.6048360764980316
+          },
+          {
+            "step": 10,
+            "risk": 0.9962108135223389,
+            "risk_pct": 99.6,
+            "variance": 6e-06,
+            "std": 0.0025,
+            "lower_bound": 0.9913,
+            "upper_bound": 1.0,
+            "lower_pct": 99.1,
+            "upper_pct": 100.0,
+            "stage_id": 1,
+            "stage": "Reconnaissance",
+            "stage_short": "Reconnaissance",
+            "technique": "Active Scanning / Exploit Public-Facing Application",
+            "technique_id": "T1190",
+            "stage_probs": [
+              0.0005496652447618544,
+              0.657204806804657,
+              0.3206191956996918,
+              0.0018727030837908387,
+              0.0021569894161075354,
+              0.0019413675181567669,
+              0.015655284747481346
+            ],
+            "confidence": 0.6161680519580841
+          },
+          {
+            "step": 11,
+            "risk": 0.9939338564872742,
+            "risk_pct": 99.4,
+            "variance": 1.9e-05,
+            "std": 0.0044,
+            "lower_bound": 0.9854,
+            "upper_bound": 1.0,
+            "lower_pct": 98.5,
+            "upper_pct": 100.0,
+            "stage_id": 1,
+            "stage": "Reconnaissance",
+            "stage_short": "Reconnaissance",
+            "technique": "Active Scanning / Exploit Public-Facing Application",
+            "technique_id": "T1190",
+            "stage_probs": [
+              0.0008686461951583624,
+              0.7020431160926819,
+              0.2682479918003082,
+              0.0023412026930600405,
+              0.002794139552861452,
+              0.0026619411073625088,
+              0.02104296162724495
+            ],
+            "confidence": 0.6222364604473114
+          },
+          {
+            "step": 12,
+            "risk": 0.9905315041542053,
+            "risk_pct": 99.1,
+            "variance": 5.8e-05,
+            "std": 0.0076,
+            "lower_bound": 0.9757,
+            "upper_bound": 1.0,
+            "lower_pct": 97.6,
+            "upper_pct": 100.0,
+            "stage_id": 1,
+            "stage": "Reconnaissance",
+            "stage_short": "Reconnaissance",
+            "technique": "Active Scanning / Exploit Public-Facing Application",
+            "technique_id": "T1190",
+            "stage_probs": [
+              0.0012572393752634525,
+              0.7324854135513306,
+              0.2307574450969696,
+              0.0027008403558284044,
+              0.0033389718737453222,
+              0.003279692493379116,
+              0.026180438697338104
+            ],
+            "confidence": 0.6279637515544891
+          }
+        ],
+        "confidence": 0.6315108858622037,
+        "ood_flag": false,
+        "latent_summary": [
+          -0.5333,
+          1.1605,
+          -0.5852,
+          -0.9945,
+          -1.3464,
+          -1.2607,
+          1.3796,
+          -0.5469
+        ],
+        "latency_ms": 184.2,
+        "disclaimer": "Risk is a model score; counterfactual numbers are simulated model-based risk changes, not causal effects.",
+        "forecast_id": "6be52822b6e3",
+        "forecast_ts": 1791065063.7092593
+      },
+      "state_ready": true,
+      "time_basis": "source_timestamps"
+    },
+    "forecast": {
+      "run_id": null,
+      "model_version": "cybermind-5324902ca017",
+      "model_available": true,
+      "k": 12,
+      "timestamp": 1519829876.707568,
+      "observation_windows": 8,
+      "current": {
+        "step": 0,
+        "risk": 0.999667763710022,
+        "risk_pct": 100.0,
+        "variance": 0.0,
+        "std": 0.0,
+        "lower_bound": 0.9997,
+        "upper_bound": 0.9997,
+        "lower_pct": 100.0,
+        "upper_pct": 100.0,
+        "stage_id": 2,
+        "stage": "Initial Access",
+        "stage_short": "Initial Access",
+        "technique": "Remote Services: SMB / lateral tool transfer",
+        "technique_id": "T1210",
+        "stage_probs": [
+          3.2196028769249097e-05,
+          0.2656415104866028,
+          0.7307778596878052,
+          0.0003915301931556314,
+          0.00031610330916009843,
+          0.0002139444404747337,
+          0.002626810222864151
+        ],
+        "confidence": 0.6892403364181519
+      },
+      "horizon": {
+        "risk": 0.9905315041542053,
+        "stage": "Reconnaissance",
+        "stage_id": 1
+      },
+      "steps": [
+        {
+          "step": 0,
+          "risk": 0.999667763710022,
+          "risk_pct": 100.0,
+          "variance": 0.0,
+          "std": 0.0,
+          "lower_bound": 0.9997,
+          "upper_bound": 0.9997,
+          "lower_pct": 100.0,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            3.2196028769249097e-05,
+            0.2656415104866028,
+            0.7307778596878052,
+            0.0003915301931556314,
+            0.00031610330916009843,
+            0.0002139444404747337,
+            0.002626810222864151
+          ],
+          "confidence": 0.6892403364181519
+        },
+        {
+          "step": 1,
+          "risk": 0.9996417760848999,
+          "risk_pct": 100.0,
+          "variance": 0.0,
+          "std": 0.0,
+          "lower_bound": 0.9996,
+          "upper_bound": 0.9997,
+          "lower_pct": 100.0,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            3.934744017897174e-05,
+            0.32743191719055176,
+            0.6683639287948608,
+            0.0004266803152859211,
+            0.0003398866974748671,
+            0.00023897463688626885,
+            0.0031593937892466784
+          ],
+          "confidence": 0.6600687801837921
+        },
+        {
+          "step": 2,
+          "risk": 0.9995891451835632,
+          "risk_pct": 100.0,
+          "variance": 0.0,
+          "std": 0.0001,
+          "lower_bound": 0.9995,
+          "upper_bound": 0.9997,
+          "lower_pct": 99.9,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            4.6528701204806566e-05,
+            0.351908802986145,
+            0.6435385942459106,
+            0.00045652169501408935,
+            0.00037468652590177953,
+            0.00026361673371866345,
+            0.0034112606663256884
+          ],
+          "confidence": 0.6507214605808258
+        },
+        {
+          "step": 3,
+          "risk": 0.9995046854019165,
+          "risk_pct": 100.0,
+          "variance": 0.0,
+          "std": 0.0001,
+          "lower_bound": 0.9993,
+          "upper_bound": 0.9997,
+          "lower_pct": 99.9,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            5.742840949096717e-05,
+            0.36272692680358887,
+            0.6321513652801514,
+            0.0005210411618463695,
+            0.0004461797943804413,
+            0.0003166215610690415,
+            0.003780404105782509
+          ],
+          "confidence": 0.645747035741806
+        },
+        {
+          "step": 4,
+          "risk": 0.99940025806427,
+          "risk_pct": 99.9,
+          "variance": 0.0,
+          "std": 0.0001,
+          "lower_bound": 0.9991,
+          "upper_bound": 0.9997,
+          "lower_pct": 99.9,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            7.458621985279024e-05,
+            0.41153329610824585,
+            0.582385778427124,
+            0.0005952393403276801,
+            0.0005376316257752478,
+            0.00038478500209748745,
+            0.004488637670874596
+          ],
+          "confidence": 0.6316861212253571
+        },
+        {
+          "step": 5,
+          "risk": 0.9992192983627319,
+          "risk_pct": 99.9,
+          "variance": 0.0,
+          "std": 0.0002,
+          "lower_bound": 0.9988,
+          "upper_bound": 0.9997,
+          "lower_pct": 99.9,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            9.995042637456208e-05,
+            0.42741984128952026,
+            0.5653488636016846,
+            0.0007163037662394345,
+            0.0006859414279460907,
+            0.000491621030960232,
+            0.005237465258687735
+          ],
+          "confidence": 0.6258389949798584
+        },
+        {
+          "step": 6,
+          "risk": 0.9990049004554749,
+          "risk_pct": 99.9,
+          "variance": 0.0,
+          "std": 0.0003,
+          "lower_bound": 0.9983,
+          "upper_bound": 0.9997,
+          "lower_pct": 99.8,
+          "upper_pct": 100.0,
+          "stage_id": 2,
+          "stage": "Initial Access",
+          "stage_short": "Initial Access",
+          "technique": "Remote Services: SMB / lateral tool transfer",
+          "technique_id": "T1210",
+          "stage_probs": [
+            0.00013197872613091022,
+            0.4587068259716034,
+            0.5325115323066711,
+            0.0008667068323120475,
+            0.0008550027851015329,
+            0.0006334009231068194,
+            0.006294540129601955
+          ],
+          "confidence": 0.61819988489151
+        },
+        {
+          "step": 7,
+          "risk": 0.9986066222190857,
+          "risk_pct": 99.9,
+          "variance": 0.0,
+          "std": 0.0005,
+          "lower_bound": 0.9976,
+          "upper_bound": 0.9997,
+          "lower_pct": 99.8,
+          "upper_pct": 100.0,
+          "stage_id": 1,
+          "stage": "Reconnaissance",
+          "stage_short": "Reconnaissance",
+          "technique": "Active Scanning / Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "stage_probs": [
+            0.00019854948914144188,
+            0.5024495720863342,
+            0.4863814115524292,
+            0.001091358601115644,
+            0.0011299843899905682,
+            0.0008803651435300708,
+            0.007868730463087559
+          ],
+          "confidence": 0.6107213795185089
+        },
+        {
+          "step": 8,
+          "risk": 0.998128354549408,
+          "risk_pct": 99.8,
+          "variance": 1e-06,
+          "std": 0.0009,
+          "lower_bound": 0.9964,
+          "upper_bound": 0.9998,
+          "lower_pct": 99.6,
+          "upper_pct": 100.0,
+          "stage_id": 1,
+          "stage": "Reconnaissance",
+          "stage_short": "Reconnaissance",
+          "technique": "Active Scanning / Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "stage_probs": [
+            0.00028045737417414784,
+            0.5390112400054932,
+            0.44711801409721375,
+            0.0013487718533724546,
+            0.0014455280033871531,
+            0.0011702224146574736,
+            0.009625665843486786
+          ],
+          "confidence": 0.6062131822109222
+        },
+        {
+          "step": 9,
+          "risk": 0.9973727464675903,
+          "risk_pct": 99.7,
+          "variance": 2e-06,
+          "std": 0.0015,
+          "lower_bound": 0.9944,
+          "upper_bound": 1.0,
+          "lower_pct": 99.4,
+          "upper_pct": 100.0,
+          "stage_id": 1,
+          "stage": "Reconnaissance",
+          "stage_short": "Reconnaissance",
+          "technique": "Active Scanning / Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "stage_probs": [
+            0.00041908034472726285,
+            0.5886633992195129,
+            0.3934679925441742,
+            0.0016681005945429206,
+            0.0018432775977998972,
+            0.0015752913895994425,
+            0.012362850829958916
+          ],
+          "confidence": 0.6048360764980316
+        },
+        {
+          "step": 10,
+          "risk": 0.9962108135223389,
+          "risk_pct": 99.6,
+          "variance": 6e-06,
+          "std": 0.0025,
+          "lower_bound": 0.9913,
+          "upper_bound": 1.0,
+          "lower_pct": 99.1,
+          "upper_pct": 100.0,
+          "stage_id": 1,
+          "stage": "Reconnaissance",
+          "stage_short": "Reconnaissance",
+          "technique": "Active Scanning / Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "stage_probs": [
+            0.0005496652447618544,
+            0.657204806804657,
+            0.3206191956996918,
+            0.0018727030837908387,
+            0.0021569894161075354,
+            0.0019413675181567669,
+            0.015655284747481346
+          ],
+          "confidence": 0.6161680519580841
+        },
+        {
+          "step": 11,
+          "risk": 0.9939338564872742,
+          "risk_pct": 99.4,
+          "variance": 1.9e-05,
+          "std": 0.0044,
+          "lower_bound": 0.9854,
+          "upper_bound": 1.0,
+          "lower_pct": 98.5,
+          "upper_pct": 100.0,
+          "stage_id": 1,
+          "stage": "Reconnaissance",
+          "stage_short": "Reconnaissance",
+          "technique": "Active Scanning / Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "stage_probs": [
+            0.0008686461951583624,
+            0.7020431160926819,
+            0.2682479918003082,
+            0.0023412026930600405,
+            0.002794139552861452,
+            0.0026619411073625088,
+            0.02104296162724495
+          ],
+          "confidence": 0.6222364604473114
+        },
+        {
+          "step": 12,
+          "risk": 0.9905315041542053,
+          "risk_pct": 99.1,
+          "variance": 5.8e-05,
+          "std": 0.0076,
+          "lower_bound": 0.9757,
+          "upper_bound": 1.0,
+          "lower_pct": 97.6,
+          "upper_pct": 100.0,
+          "stage_id": 1,
+          "stage": "Reconnaissance",
+          "stage_short": "Reconnaissance",
+          "technique": "Active Scanning / Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "stage_probs": [
+            0.0012572393752634525,
+            0.7324854135513306,
+            0.2307574450969696,
+            0.0027008403558284044,
+            0.0033389718737453222,
+            0.003279692493379116,
+            0.026180438697338104
+          ],
+          "confidence": 0.6279637515544891
+        }
+      ],
+      "confidence": 0.6315108858622037,
+      "ood_flag": false,
+      "latent_summary": [
+        -0.5333,
+        1.1605,
+        -0.5852,
+        -0.9945,
+        -1.3464,
+        -1.2607,
+        1.3796,
+        -0.5469
+      ],
+      "latency_ms": 141.0,
+      "disclaimer": "Risk is a model score; counterfactual numbers are simulated model-based risk changes, not causal effects.",
+      "forecast_id": "c3f52689181d",
+      "forecast_ts": 1791065063.8694184
+    },
+    "parallel_futures": {
+      "model_available": true,
+      "k": 4,
+      "timestamp": 1519829876.707568,
+      "baseline": {
+        "risk": 0.9994,
+        "band": "CRITICAL",
+        "trajectory": [
+          0.9996,
+          0.9996,
+          0.9995,
+          0.9995,
+          0.9994
+        ],
+        "stage": "Initial Access",
+        "stage_short": "Initial Access",
+        "stage_ids": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "interventions": [
+        {
+          "action": "Rate Limit",
+          "action_label": "Rate limit",
+          "host": null,
+          "port": null,
+          "edge": null,
+          "future_risk": 0.9788,
+          "risk_delta": -0.0207,
+          "risk_reduction": 0.0207,
+          "band": "CRITICAL",
+          "trajectory": [
+            0.9945,
+            0.9906,
+            0.9868,
+            0.9838,
+            0.9788
+          ],
+          "stage": "Reconnaissance",
+          "stage_short": "Reconnaissance",
+          "stage_ids": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "recommended": {
+        "action": "Rate Limit",
+        "action_label": "Rate limit",
+        "host": null,
+        "port": null,
+        "edge": null,
+        "future_risk": 0.9788,
+        "risk_delta": -0.0207,
+        "risk_reduction": 0.0207,
+        "band": "CRITICAL",
+        "trajectory": [
+          0.9945,
+          0.9906,
+          0.9868,
+          0.9838,
+          0.9788
+        ],
+        "stage": "Reconnaissance",
+        "stage_short": "Reconnaissance",
+        "stage_ids": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "baseline_entry": null,
+      "latency_ms": 59.3,
+      "disclaimer": "Counterfactual Risk Simulation: model-based risk comparison between simulated futures. Not a causal effect estimate."
+    },
+    "local_validation": {
+      "run_id": "local-599bc905b974",
+      "created_at": 1791065064.0347667,
+      "mode": "BUNDLED_IN_PROCESS_SANDBOX",
+      "verdict": "SANDBOX_RESPONSES_OBSERVED",
+      "forecast": {
+        "forecast_id": "7a034315d6ff",
+        "forecast_ts": 1791065064.0240881,
+        "model_version": "cybermind-5324902ca017",
+        "predicted_stage": "Reconnaissance",
+        "predicted_risk": 0.9905315041542053
+      },
+      "checks": [
+        {
+          "name": "sandbox health",
+          "http_status": 200,
+          "response_sha256": "66f4070f5d49129f7b7c60e84fc76736b97e01264ef79fdf6767ac959f02ae21",
+          "outcome": "observed"
+        },
+        {
+          "name": "invalid login",
+          "http_status": 401,
+          "response_sha256": "40e51afb8790883c33983b08f2bc2849763a27de77090a301a6046257b7d0d19",
+          "outcome": "observed"
+        },
+        {
+          "name": "share access",
+          "http_status": 200,
+          "response_sha256": "6290a084cfba66c7282d67fdf1687846f0315e00a5555688e8c4906de9c0e20c",
+          "outcome": "observed"
+        },
+        {
+          "name": "query handling",
+          "http_status": 200,
+          "response_sha256": "360e7bb1999dd21b3115be580bc0ff3d14dd6ce1969f04b509443563d42c0635",
+          "outcome": "observed"
+        }
+      ],
+      "limitation": "This checks the bundled demonstration target's HTTP behavior. It does not run Strix, establish an independently verified attack stage, or measure model forecast accuracy."
+    },
+    "attack_lab": {
+      "ssh_bruteforce": {
+        "before": {
+          "session_id": "strix-probe-248fe75d",
+          "vector_id": "ssh_bruteforce",
+          "vector": {
+            "id": "ssh_bruteforce",
+            "name": "SSH Credential Brute Force & Rate Limit Deficit",
+            "target": "192.0.2.10:22",
+            "protocol": "TCP/22 (SSH)",
+            "mitre_technique": "T1110.001 - Password Guessing",
+            "cwe": "CWE-307: Improper Restriction of Excessive Authentication Attempts",
+            "cve": "CVE-2024-3094-MITIGATED",
+            "severity": "HIGH",
+            "cvss": 7.8,
+            "stage": 1,
+            "priority": 2,
+            "description": "High-frequency authentication probe against isolated host SSH service. Tests for absence of rate-limiting or lockout mechanisms."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:22)",
+          "target_ip": "192.0.2.10",
+          "target_port": 22,
+          "started_at": 1791065064.1290698,
+          "status": "VECTOR_SUCCEEDED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": false,
+          "steps_completed": 12,
+          "flows_generated": 12,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065064.1375055,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065065.586699,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065067.840238,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065071.0941324,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065072.3655465,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065074.649868,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065077.2016578,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065078.6245904,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 9,
+              "timestamp": 1791065080.124137,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 10,
+              "timestamp": 1791065082.0884721,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 11,
+              "timestamp": 1791065083.7812219,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            },
+            {
+              "step": 12,
+              "timestamp": 1791065085.5055034,
+              "http_status": 401,
+              "blocked": false,
+              "response": {
+                "detail": "Invalid credentials provided"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": "Invalid credentials provided"
+            }
+          ],
+          "findings": [
+            {
+              "finding_id": "strix-e74a81",
+              "vector_id": "ssh_bruteforce",
+              "title": "Verified Vulnerability: SSH Credential Brute Force & Rate Limit Deficit",
+              "cwe": "CWE-307: Improper Restriction of Excessive Authentication Attempts",
+              "cve": "CVE-2024-3094-MITIGATED",
+              "severity": "HIGH",
+              "cvss": 7.8,
+              "target": "192.0.2.10:22",
+              "target_ip": "192.0.2.10",
+              "target_port": 22,
+              "technique": "T1110.001 - Password Guessing",
+              "evidence": "12/12 non-destructive probes were accepted by the sandbox target (HTTP 2xx with vulnerability-confirmed payloads); 0 blocked. CYBERMIND model risk observed at 47.9%.",
+              "attack_succeeded": true,
+              "timestamp": 1791065086.876737
+            }
+          ],
+          "generated_patch": {
+            "patch_id": "patch-f79d90b5",
+            "finding_id": "strix-e74a81",
+            "vector_id": "ssh_bruteforce",
+            "target": "192.0.2.10:22",
+            "target_ip": "192.0.2.10",
+            "target_port": 22,
+            "target_file": "app/core/security/auth_limiter.py",
+            "title": "Enforce Authentication Rate Limiting & Lockout",
+            "cwe": "CWE-307: Improper Restriction of Excessive Authentication Attempts",
+            "cve": "CVE-2024-3094-MITIGATED",
+            "patch_diff": "--- a/app/core/security/auth_limiter.py\n+++ b/app/core/security/auth_limiter.py\n@@ -12,6 +12,28 @@\n import time\n+from collections import defaultdict\n+\n+# Sliding-window rate limiter (per client IP)\n+_FAILED_ATTEMPTS: dict[str, list[float]] = defaultdict(list)\n+MAX_FAILED_ATTEMPTS = 4\n+LOCKOUT_WINDOW_SECONDS = 300  # 5-minute lockout\n\n def verify_credentials(username: str, password: str, client_ip: str) -> bool:\n+    now = time.time()\n+    attempts = [t for t in _FAILED_ATTEMPTS[client_ip] if now - t < LOCKOUT_WINDOW_SECONDS]\n+    _FAILED_ATTEMPTS[client_ip] = attempts\n+    if len(attempts) >= MAX_FAILED_ATTEMPTS:\n+        raise PermissionError(\"Account temporarily locked: excessive failed attempts\")\n     valid = safe_hash_compare(username, password)\n+    if not valid:\n+        _FAILED_ATTEMPTS[client_ip].append(now)\n+    else:\n+        _FAILED_ATTEMPTS.pop(client_ip, None)\n     return valid\n",
+            "explanation": "Sliding-window rate limiter per client IP: after 4 failed logins within 5 minutes, further attempts are rejected with HTTP 429 before credential evaluation.",
+            "what_happened": "Strix probe logged in repeatedly with wrong credentials without ever being throttled \u2014 no rate limit or lockout exists on the auth surface.",
+            "what_to_do": [
+              "Deploy the per-IP sliding-window limiter (this patch) \u2014 blocks the 5th+ attempt inside the window",
+              "Run fail2ban-style banning at the edge for repeat offenders across restarts",
+              "Disable password auth for privileged accounts; require key-based login"
+            ],
+            "mitigation_actions": [
+              "Enable in-memory sliding-window token bucket on the auth endpoint",
+              "Configure Fail2Ban filter rule 'jail.d/ssh-cybermind.local' with 3-strike ban",
+              "Enforce public key authentication and disable password logins for root"
+            ],
+            "engine": "codebuff",
+            "model": "buffy-inproc-remediation-v1",
+            "ollama_available": false,
+            "generated_at": 1791065086.8975208,
+            "status": "READY_TO_APPLY",
+            "applied": false
+          },
+          "baseline_risk": 0.10494223237037659,
+          "peak_risk": 0.4786984324455261,
+          "final_risk": 0.4786984324455261,
+          "finished_at": 1791065086.8453822,
+          "summary": {
+            "succeeded": 12,
+            "blocked": 0,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "Attack vector verified by real probe responses: SSH Credential Brute Force & Rate Limit Deficit. 12/12 probes succeeded on 192.0.2.10:22."
+        },
+        "approval": {
+          "status": "APPLIED_AND_VERIFIED",
+          "patch_id": "patch-f79d90b5",
+          "vector_id": "ssh_bruteforce",
+          "target": "192.0.2.10:22",
+          "target_ip": "192.0.2.10",
+          "target_port": 22,
+          "defended_ip": "192.0.2.10",
+          "target_file": "app/core/security/auth_limiter.py",
+          "verification_hash": "849060236bd55a1b",
+          "sandbox_active": true,
+          "activation_error": null,
+          "verification": {
+            "verified": true,
+            "probes_sent": 6,
+            "blocked": 6,
+            "succeeded": 0,
+            "records": [
+              {
+                "step": 1,
+                "http_status": 429,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 2,
+                "http_status": 429,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 3,
+                "http_status": 429,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 4,
+                "http_status": 429,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 5,
+                "http_status": 429,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 6,
+                "http_status": 429,
+                "verdict": "BLOCKED"
+              }
+            ],
+            "verification_hash": "849060236bd55a1b",
+            "method": "post-patch re-probe against isolated sandbox; verdict from live HTTP responses",
+            "summary": "Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED."
+          },
+          "patch_report": null,
+          "post_patch_risk": 47.1,
+          "forecast": {
+            "run_id": null,
+            "model_version": "cybermind-5324902ca017",
+            "model_available": true,
+            "k": 12,
+            "timestamp": 1791065064.136952,
+            "observation_windows": 8,
+            "current": {
+              "step": 0,
+              "risk": 0.9874215126037598,
+              "risk_pct": 98.7,
+              "variance": 0.0,
+              "std": 0.0,
+              "lower_bound": 0.9874,
+              "upper_bound": 0.9874,
+              "lower_pct": 98.7,
+              "upper_pct": 98.7,
+              "stage_id": 1,
+              "stage": "Reconnaissance",
+              "stage_short": "Reconnaissance",
+              "technique": "Active Scanning / Exploit Public-Facing Application",
+              "technique_id": "T1190",
+              "stage_probs": [
+                0.004141431301832199,
+                0.8769719004631042,
+                0.024421559646725655,
+                0.0009528463124297559,
+                0.0004867799871135503,
+                0.0005041213007643819,
+                0.09252139180898666
+              ],
+              "confidence": 0.7621109634637833
+            },
+            "horizon": {
+              "risk": 0.470562219619751,
+              "stage": "Reconnaissance",
+              "stage_id": 1
+            },
+            "steps": [
+              {
+                "step": 0,
+                "risk": 0.9874215126037598,
+                "risk_pct": 98.7,
+                "variance": 0.0,
+                "std": 0.0,
+                "lower_bound": 0.9874,
+                "upper_bound": 0.9874,
+                "lower_pct": 98.7,
+                "upper_pct": 98.7,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.004141431301832199,
+                  0.8769719004631042,
+                  0.024421559646725655,
+                  0.0009528463124297559,
+                  0.0004867799871135503,
+                  0.0005041213007643819,
+                  0.09252139180898666
+                ],
+                "confidence": 0.7621109634637833
+              },
+              {
+                "step": 1,
+                "risk": 0.976881206035614,
+                "risk_pct": 97.7,
+                "variance": 0.000171,
+                "std": 0.0131,
+                "lower_bound": 0.9513,
+                "upper_bound": 1.0,
+                "lower_pct": 95.1,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.00830734521150589,
+                  0.8313261866569519,
+                  0.0277007594704628,
+                  0.0013824391644448042,
+                  0.0007193224155344069,
+                  0.0007599728996865451,
+                  0.1298040747642517
+                ],
+                "confidence": 0.703221321105957
+              },
+              {
+                "step": 2,
+                "risk": 0.9643368124961853,
+                "risk_pct": 96.4,
+                "variance": 0.000481,
+                "std": 0.0219,
+                "lower_bound": 0.9214,
+                "upper_bound": 1.0,
+                "lower_pct": 92.1,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.012233985587954521,
+                  0.8106606006622314,
+                  0.03330949321389198,
+                  0.0019593939650803804,
+                  0.001138826017268002,
+                  0.0011211391538381577,
+                  0.13957662880420685
+                ],
+                "confidence": 0.6712338626384735
+              },
+              {
+                "step": 3,
+                "risk": 0.9520491361618042,
+                "risk_pct": 95.2,
+                "variance": 0.000557,
+                "std": 0.0236,
+                "lower_bound": 0.9058,
+                "upper_bound": 0.9983,
+                "lower_pct": 90.6,
+                "upper_pct": 99.8,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.014826957136392593,
+                  0.7955425381660461,
+                  0.037681348621845245,
+                  0.0025483639910817146,
+                  0.0015820058761164546,
+                  0.0015669127460569143,
+                  0.14625202119350433
+                ],
+                "confidence": 0.648160308599472
+              },
+              {
+                "step": 4,
+                "risk": 0.9284337759017944,
+                "risk_pct": 92.8,
+                "variance": 0.001384,
+                "std": 0.0372,
+                "lower_bound": 0.8555,
+                "upper_bound": 1.0,
+                "lower_pct": 85.6,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.024296175688505173,
+                  0.753179669380188,
+                  0.04151023179292679,
+                  0.003315925132483244,
+                  0.002198626287281513,
+                  0.002124162157997489,
+                  0.17337529361248016
+                ],
+                "confidence": 0.596512109041214
+              },
+              {
+                "step": 5,
+                "risk": 0.885570764541626,
+                "risk_pct": 88.6,
+                "variance": 0.006289,
+                "std": 0.0793,
+                "lower_bound": 0.7301,
+                "upper_bound": 1.0,
+                "lower_pct": 73.0,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.0429665744304657,
+                  0.6847938299179077,
+                  0.05440518260002136,
+                  0.005013745743781328,
+                  0.0035966583527624607,
+                  0.003269497537985444,
+                  0.20595453679561615
+                ],
+                "confidence": 0.5149619579315186
+              },
+              {
+                "step": 6,
+                "risk": 0.8475435376167297,
+                "risk_pct": 84.8,
+                "variance": 0.010982,
+                "std": 0.1048,
+                "lower_bound": 0.6421,
+                "upper_bound": 1.0,
+                "lower_pct": 64.2,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.05957961454987526,
+                  0.6362916827201843,
+                  0.06239921227097511,
+                  0.0060431561432778835,
+                  0.004544878378510475,
+                  0.004126418847590685,
+                  0.22701504826545715
+                ],
+                "confidence": 0.46376657485961914
+              },
+              {
+                "step": 7,
+                "risk": 0.7707902789115906,
+                "risk_pct": 77.1,
+                "variance": 0.02746,
+                "std": 0.1657,
+                "lower_bound": 0.446,
+                "upper_bound": 1.0,
+                "lower_pct": 44.6,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.11723852157592773,
+                  0.5614599585533142,
+                  0.06473832577466965,
+                  0.007303728722035885,
+                  0.0056867776438593864,
+                  0.005298773758113384,
+                  0.23827405273914337
+                ],
+                "confidence": 0.3897644281387329
+              },
+              {
+                "step": 8,
+                "risk": 0.7230625152587891,
+                "risk_pct": 72.3,
+                "variance": 0.039433,
+                "std": 0.1986,
+                "lower_bound": 0.3338,
+                "upper_bound": 1.0,
+                "lower_pct": 33.4,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.152789905667305,
+                  0.5239776968955994,
+                  0.06949517875909805,
+                  0.008584685623645782,
+                  0.00686148926615715,
+                  0.006489912513643503,
+                  0.23180125653743744
+                ],
+                "confidence": 0.35372769832611084
+              },
+              {
+                "step": 9,
+                "risk": 0.6672714352607727,
+                "risk_pct": 66.7,
+                "variance": 0.054391,
+                "std": 0.2332,
+                "lower_bound": 0.2102,
+                "upper_bound": 1.0,
+                "lower_pct": 21.0,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.2017844170331955,
+                  0.4816770851612091,
+                  0.06979957222938538,
+                  0.009074481204152107,
+                  0.0073846192099153996,
+                  0.006908574141561985,
+                  0.2233712077140808
+                ],
+                "confidence": 0.32743996381759644
+              },
+              {
+                "step": 10,
+                "risk": 0.6111001372337341,
+                "risk_pct": 61.1,
+                "variance": 0.062555,
+                "std": 0.2501,
+                "lower_bound": 0.1209,
+                "upper_bound": 1.0,
+                "lower_pct": 12.1,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.22878232598304749,
+                  0.45222941040992737,
+                  0.06933567672967911,
+                  0.009794567711651325,
+                  0.008345930837094784,
+                  0.007734320126473904,
+                  0.22377774119377136
+                ],
+                "confidence": 0.3117656707763672
+              },
+              {
+                "step": 11,
+                "risk": 0.5251041054725647,
+                "risk_pct": 52.5,
+                "variance": 0.06335,
+                "std": 0.2517,
+                "lower_bound": 0.0318,
+                "upper_bound": 1.0,
+                "lower_pct": 3.2,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.26876845955848694,
+                  0.3974006772041321,
+                  0.06947574764490128,
+                  0.01072683371603489,
+                  0.009655646048486233,
+                  0.00882659386843443,
+                  0.23514606058597565
+                ],
+                "confidence": 0.29044854640960693
+              },
+              {
+                "step": 12,
+                "risk": 0.470562219619751,
+                "risk_pct": 47.1,
+                "variance": 0.064412,
+                "std": 0.2538,
+                "lower_bound": 0.0,
+                "upper_bound": 0.968,
+                "lower_pct": 0.0,
+                "upper_pct": 96.8,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.28575941920280457,
+                  0.3736385107040405,
+                  0.07291679829359055,
+                  0.011817225255072117,
+                  0.01111906673759222,
+                  0.009403012692928314,
+                  0.2353459596633911
+                ],
+                "confidence": 0.27872562408447266
+              }
+            ],
+            "confidence": 0.4855260791686865,
+            "ood_flag": false,
+            "latent_summary": [
+              -0.8302,
+              1.3197,
+              -0.2097,
+              0.5969,
+              -0.5727,
+              -0.3857,
+              0.0881,
+              -0.0686
+            ],
+            "latency_ms": 276.9,
+            "disclaimer": "Risk is a model score; counterfactual numbers are simulated model-based risk changes, not causal effects.",
+            "forecast_id": "919319e2d509",
+            "forecast_ts": 1791065094.0108962
+          },
+          "mitigation_summary": "Patch patch-f79d90b5 deployed and verified. Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED. CYBERMIND model risk: 47.1%."
+        },
+        "after": {
+          "session_id": "strix-probe-9a3bb850",
+          "vector_id": "ssh_bruteforce",
+          "vector": {
+            "id": "ssh_bruteforce",
+            "name": "SSH Credential Brute Force & Rate Limit Deficit",
+            "target": "192.0.2.10:22",
+            "protocol": "TCP/22 (SSH)",
+            "mitre_technique": "T1110.001 - Password Guessing",
+            "cwe": "CWE-307: Improper Restriction of Excessive Authentication Attempts",
+            "cve": "CVE-2024-3094-MITIGATED",
+            "severity": "HIGH",
+            "cvss": 7.8,
+            "stage": 1,
+            "priority": 2,
+            "description": "High-frequency authentication probe against isolated host SSH service. Tests for absence of rate-limiting or lockout mechanisms."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:22)",
+          "target_ip": "192.0.2.10",
+          "target_port": 22,
+          "started_at": 1791065094.0280595,
+          "status": "PROBE_DEFLECTED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": true,
+          "steps_completed": 12,
+          "flows_generated": 12,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065094.0348003,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065095.1792405,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065097.1572962,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065099.729928,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065101.8298001,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065103.1314454,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065104.896456,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065107.7159247,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 9,
+              "timestamp": 1791065109.043737,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 10,
+              "timestamp": 1791065110.7191694,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 11,
+              "timestamp": 1791065113.5315216,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            },
+            {
+              "step": 12,
+              "timestamp": 1791065114.809182,
+              "http_status": 429,
+              "blocked": true,
+              "response": {
+                "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Rate limit exceeded. Too many failed attempts from IP. Locked for 300s."
+            }
+          ],
+          "findings": [],
+          "generated_patch": null,
+          "baseline_risk": 0.4749472737312317,
+          "peak_risk": 0.4749472737312317,
+          "final_risk": 0.2786169946193695,
+          "finished_at": 1791065116.1209633,
+          "summary": {
+            "succeeded": 0,
+            "blocked": 12,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "All 12 probe packets were blocked/rate-limited by active defences (verified from HTTP 4xx responses). Target 192.0.2.10:22 is SECURED."
+        }
+      },
+      "sqli_probe": {
+        "before": {
+          "session_id": "strix-probe-e94d47c6",
+          "vector_id": "sqli_probe",
+          "vector": {
+            "id": "sqli_probe",
+            "name": "SQL Injection & Parameter Tampering Probe",
+            "target": "192.0.2.10:8081/api/telemetry",
+            "protocol": "HTTP/8081",
+            "mitre_technique": "T1190 - Exploit Public-Facing Application",
+            "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command",
+            "cve": "CVE-2023-38606-MITIGATED",
+            "severity": "CRITICAL",
+            "cvss": 9.1,
+            "stage": 1,
+            "priority": 1,
+            "description": "Non-destructive parameter probing using SQL boolean syntax on telemetry filters to verify lack of prepared statement parameterization."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:8081)",
+          "target_ip": "192.0.2.10",
+          "target_port": 8081,
+          "started_at": 1791065116.7075996,
+          "status": "VECTOR_SUCCEEDED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": false,
+          "steps_completed": 8,
+          "flows_generated": 8,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065117.0372455,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 1=1 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065118.2684488,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 2=2 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065120.1580513,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 3=3 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065121.5078251,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 4=4 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065122.7979326,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 5=5 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065124.0876544,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 6=6 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065126.0445516,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 7=7 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065128.7274044,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-89",
+                "raw_query_executed": "SELECT * FROM telemetry WHERE filter = 'probe' OR 8=8 --'",
+                "leaked_records": [
+                  {
+                    "id": 1,
+                    "asset": "internal-gateway",
+                    "secret": "sandbox_token_mock"
+                  },
+                  {
+                    "id": 2,
+                    "asset": "database-master",
+                    "secret": "db_hash_mock"
+                  }
+                ]
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            }
+          ],
+          "findings": [
+            {
+              "finding_id": "strix-0509fe",
+              "vector_id": "sqli_probe",
+              "title": "Verified Vulnerability: SQL Injection & Parameter Tampering Probe",
+              "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command",
+              "cve": "CVE-2023-38606-MITIGATED",
+              "severity": "CRITICAL",
+              "cvss": 9.1,
+              "target": "192.0.2.10:8081",
+              "target_ip": "192.0.2.10",
+              "target_port": 8081,
+              "technique": "T1190 - Exploit Public-Facing Application",
+              "evidence": "8/8 non-destructive probes were accepted by the sandbox target (HTTP 2xx with vulnerability-confirmed payloads); 0 blocked. CYBERMIND model risk observed at 38.7%.",
+              "attack_succeeded": true,
+              "timestamp": 1791065129.9382682
+            }
+          ],
+          "generated_patch": {
+            "patch_id": "patch-5f68407c",
+            "finding_id": "strix-0509fe",
+            "vector_id": "sqli_probe",
+            "target": "192.0.2.10:8081",
+            "target_ip": "192.0.2.10",
+            "target_port": 8081,
+            "target_file": "app/db/repositories/telemetry_repo.py",
+            "title": "Replace Dynamic SQL Construction with Parameterized Statements",
+            "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+            "cve": "CVE-2023-38606-MITIGATED",
+            "patch_diff": "--- a/app/db/repositories/telemetry_repo.py\n+++ b/app/db/repositories/telemetry_repo.py\n@@ -45,12 +45,15 @@\n def query_events_by_filter(dst_ip: str, min_duration: float):\n-    # INSECURE: dynamic string concatenation vulnerable to SQL injection\n-    query = f\"SELECT * FROM telemetry WHERE dst = '{dst_ip}' AND duration >= {min_duration}\"\n-    return db.execute(query).fetchall()\n+    # SECURED: parameterized query binding with strict type coercion\n+    query = text(\"SELECT * FROM telemetry WHERE dst = :dst_ip AND duration >= :min_dur\")\n+    return db.execute(query, {\"dst_ip\": str(dst_ip), \"min_dur\": float(min_duration)}).fetchall()\n",
+            "explanation": "Replaces f-string SQL interpolation with SQLAlchemy bound parameters; injected metacharacters can no longer alter query structure.",
+            "what_happened": "A boolean-OR injection payload (' OR n=n --) was accepted and the sandbox returned internal 'leaked records' \u2014 the filter parameter reaches the query unparameterized.",
+            "what_to_do": [
+              "Apply the parameterized-statement patch \u2014 all user input becomes bound values",
+              "Add a WAF rule (OWASP 942100) as defense in depth",
+              "Review every repository for f-string/concatenated SQL"
+            ],
+            "mitigation_actions": [
+              "Enforce parameterized SQL statement execution",
+              "Add regex input sanitizer for search and filter parameters",
+              "Enable Web Application Firewall (WAF) query inspection rule #942100"
+            ],
+            "engine": "codebuff",
+            "model": "buffy-inproc-remediation-v1",
+            "ollama_available": false,
+            "generated_at": 1791065129.9740944,
+            "status": "READY_TO_APPLY",
+            "applied": false
+          },
+          "baseline_risk": 0.3254023492336273,
+          "peak_risk": 0.386577844619751,
+          "final_risk": 0.016996802762150764,
+          "finished_at": 1791065129.9078944,
+          "summary": {
+            "succeeded": 8,
+            "blocked": 0,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "Attack vector verified by real probe responses: SQL Injection & Parameter Tampering Probe. 8/8 probes succeeded on 192.0.2.10:8081."
+        },
+        "approval": {
+          "status": "APPLIED_AND_VERIFIED",
+          "patch_id": "patch-5f68407c",
+          "vector_id": "sqli_probe",
+          "target": "192.0.2.10:8081",
+          "target_ip": "192.0.2.10",
+          "target_port": 8081,
+          "defended_ip": "192.0.2.10",
+          "target_file": "app/db/repositories/telemetry_repo.py",
+          "verification_hash": "031c793605695ac8",
+          "sandbox_active": true,
+          "activation_error": null,
+          "verification": {
+            "verified": true,
+            "probes_sent": 6,
+            "blocked": 6,
+            "succeeded": 0,
+            "records": [
+              {
+                "step": 1,
+                "http_status": 400,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 2,
+                "http_status": 400,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 3,
+                "http_status": 400,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 4,
+                "http_status": 400,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 5,
+                "http_status": 400,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 6,
+                "http_status": 400,
+                "verdict": "BLOCKED"
+              }
+            ],
+            "verification_hash": "031c793605695ac8",
+            "method": "post-patch re-probe against isolated sandbox; verdict from live HTTP responses",
+            "summary": "Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED."
+          },
+          "patch_report": null,
+          "post_patch_risk": 6.7,
+          "forecast": {
+            "run_id": null,
+            "model_version": "cybermind-5324902ca017",
+            "model_available": true,
+            "k": 12,
+            "timestamp": 1791065125.862505,
+            "observation_windows": 8,
+            "current": {
+              "step": 0,
+              "risk": 0.8438443541526794,
+              "risk_pct": 84.4,
+              "variance": 0.0,
+              "std": 0.0,
+              "lower_bound": 0.8438,
+              "upper_bound": 0.8438,
+              "lower_pct": 84.4,
+              "upper_pct": 84.4,
+              "stage_id": 1,
+              "stage": "Reconnaissance",
+              "stage_short": "Reconnaissance",
+              "technique": "Active Scanning / Exploit Public-Facing Application",
+              "technique_id": "T1190",
+              "stage_probs": [
+                0.10898245126008987,
+                0.488044410943985,
+                0.052323877811431885,
+                0.003542308695614338,
+                0.0019283909350633621,
+                0.0018101221648976207,
+                0.3433683514595032
+              ],
+              "confidence": 0.4056488275527954
+            },
+            "horizon": {
+              "risk": 0.06676138937473297,
+              "stage": "Benign",
+              "stage_id": 0
+            },
+            "steps": [
+              {
+                "step": 0,
+                "risk": 0.8438443541526794,
+                "risk_pct": 84.4,
+                "variance": 0.0,
+                "std": 0.0,
+                "lower_bound": 0.8438,
+                "upper_bound": 0.8438,
+                "lower_pct": 84.4,
+                "upper_pct": 84.4,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.10898245126008987,
+                  0.488044410943985,
+                  0.052323877811431885,
+                  0.003542308695614338,
+                  0.0019283909350633621,
+                  0.0018101221648976207,
+                  0.3433683514595032
+                ],
+                "confidence": 0.4056488275527954
+              },
+              {
+                "step": 1,
+                "risk": 0.7396267652511597,
+                "risk_pct": 74.0,
+                "variance": 0.009863,
+                "std": 0.0993,
+                "lower_bound": 0.545,
+                "upper_bound": 0.9343,
+                "lower_pct": 54.5,
+                "upper_pct": 93.4,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.17236609756946564,
+                  0.3960965871810913,
+                  0.052854180335998535,
+                  0.004348245449364185,
+                  0.0024205739609897137,
+                  0.0023039968218654394,
+                  0.3696103096008301
+                ],
+                "confidence": 0.3600095510482788
+              },
+              {
+                "step": 2,
+                "risk": 0.6410037279129028,
+                "risk_pct": 64.1,
+                "variance": 0.015146,
+                "std": 0.1231,
+                "lower_bound": 0.3998,
+                "upper_bound": 0.8822,
+                "lower_pct": 40.0,
+                "upper_pct": 88.2,
+                "stage_id": 6,
+                "stage": "Unknown/Ambiguous",
+                "stage_short": "Unknown/Ambiguous",
+                "technique": "",
+                "technique_id": "",
+                "stage_probs": [
+                  0.23202598094940186,
+                  0.34122002124786377,
+                  0.05664994567632675,
+                  0.005541077349334955,
+                  0.003427116433158517,
+                  0.0030633159913122654,
+                  0.35807254910469055
+                ],
+                "confidence": 0.3307954668998718
+              },
+              {
+                "step": 3,
+                "risk": 0.5543174743652344,
+                "risk_pct": 55.4,
+                "variance": 0.016608,
+                "std": 0.1289,
+                "lower_bound": 0.3017,
+                "upper_bound": 0.8069,
+                "lower_pct": 30.2,
+                "upper_pct": 80.7,
+                "stage_id": 6,
+                "stage": "Unknown/Ambiguous",
+                "stage_short": "Unknown/Ambiguous",
+                "technique": "",
+                "technique_id": "",
+                "stage_probs": [
+                  0.2897723615169525,
+                  0.29196009039878845,
+                  0.05795425921678543,
+                  0.00654127262532711,
+                  0.0042998469434678555,
+                  0.003817958291620016,
+                  0.3456541895866394
+                ],
+                "confidence": 0.3174322843551636
+              },
+              {
+                "step": 4,
+                "risk": 0.4475737512111664,
+                "risk_pct": 44.8,
+                "variance": 0.020102,
+                "std": 0.1418,
+                "lower_bound": 0.1697,
+                "upper_bound": 0.7255,
+                "lower_pct": 17.0,
+                "upper_pct": 72.5,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.38191601634025574,
+                  0.22665703296661377,
+                  0.05361694097518921,
+                  0.0069311014376580715,
+                  0.0048807542771101,
+                  0.004170156084001064,
+                  0.32182809710502625
+                ],
+                "confidence": 0.3272656202316284
+              },
+              {
+                "step": 5,
+                "risk": 0.3482110798358917,
+                "risk_pct": 34.8,
+                "variance": 0.021255,
+                "std": 0.1458,
+                "lower_bound": 0.0625,
+                "upper_bound": 0.634,
+                "lower_pct": 6.2,
+                "upper_pct": 63.4,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.4737603962421417,
+                  0.16675427556037903,
+                  0.051648471504449844,
+                  0.007664940785616636,
+                  0.005661629140377045,
+                  0.004723368212580681,
+                  0.2897869646549225
+                ],
+                "confidence": 0.3542724847793579
+              },
+              {
+                "step": 6,
+                "risk": 0.26902225613594055,
+                "risk_pct": 26.9,
+                "variance": 0.013134,
+                "std": 0.1146,
+                "lower_bound": 0.0444,
+                "upper_bound": 0.4936,
+                "lower_pct": 4.4,
+                "upper_pct": 49.4,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.5483852028846741,
+                  0.12989848852157593,
+                  0.04748711362481117,
+                  0.00788084976375103,
+                  0.006258572451770306,
+                  0.005143425893038511,
+                  0.2549462914466858
+                ],
+                "confidence": 0.39115697145462036
+              },
+              {
+                "step": 7,
+                "risk": 0.19280566275119781,
+                "risk_pct": 19.3,
+                "variance": 0.008309,
+                "std": 0.0912,
+                "lower_bound": 0.0141,
+                "upper_bound": 0.3715,
+                "lower_pct": 1.4,
+                "upper_pct": 37.1,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.6219661235809326,
+                  0.09898105263710022,
+                  0.039660993963479996,
+                  0.007610715925693512,
+                  0.0063757384195923805,
+                  0.005421584937721491,
+                  0.21998369693756104
+                ],
+                "confidence": 0.4434358477592468
+              },
+              {
+                "step": 8,
+                "risk": 0.15698152780532837,
+                "risk_pct": 15.7,
+                "variance": 0.007267,
+                "std": 0.0852,
+                "lower_bound": 0.0,
+                "upper_bound": 0.3241,
+                "lower_pct": 0.0,
+                "upper_pct": 32.4,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.6702700853347778,
+                  0.08154541254043579,
+                  0.03725089877843857,
+                  0.00811914075165987,
+                  0.007222794461995363,
+                  0.005957972723990679,
+                  0.18963366746902466
+                ],
+                "confidence": 0.478069007396698
+              },
+              {
+                "step": 9,
+                "risk": 0.13483624160289764,
+                "risk_pct": 13.5,
+                "variance": 0.009461,
+                "std": 0.0973,
+                "lower_bound": 0.0,
+                "upper_bound": 0.3255,
+                "lower_pct": 0.0,
+                "upper_pct": 32.5,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.7010229825973511,
+                  0.07476387172937393,
+                  0.03440151363611221,
+                  0.008174995891749859,
+                  0.007768161594867706,
+                  0.006154414266347885,
+                  0.16771404445171356
+                ],
+                "confidence": 0.5032446980476379
+              },
+              {
+                "step": 10,
+                "risk": 0.10853702574968338,
+                "risk_pct": 10.9,
+                "variance": 0.007076,
+                "std": 0.0841,
+                "lower_bound": 0.0,
+                "upper_bound": 0.2734,
+                "lower_pct": 0.0,
+                "upper_pct": 27.3,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.7307794094085693,
+                  0.06221473589539528,
+                  0.031067734584212303,
+                  0.008352335542440414,
+                  0.00866725668311119,
+                  0.006402711383998394,
+                  0.15251585841178894
+                ],
+                "confidence": 0.5322985053062439
+              },
+              {
+                "step": 11,
+                "risk": 0.07925469428300858,
+                "risk_pct": 7.9,
+                "variance": 0.004078,
+                "std": 0.0639,
+                "lower_bound": 0.0,
+                "upper_bound": 0.2044,
+                "lower_pct": 0.0,
+                "upper_pct": 20.4,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.7735402584075928,
+                  0.0447763092815876,
+                  0.027358943596482277,
+                  0.008122275583446026,
+                  0.009304267354309559,
+                  0.00628175213932991,
+                  0.13061606884002686
+                ],
+                "confidence": 0.5804056227207184
+              },
+              {
+                "step": 12,
+                "risk": 0.06676138937473297,
+                "risk_pct": 6.7,
+                "variance": 0.003474,
+                "std": 0.0589,
+                "lower_bound": 0.0,
+                "upper_bound": 0.1823,
+                "lower_pct": 0.0,
+                "upper_pct": 18.2,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.7903041839599609,
+                  0.03877590596675873,
+                  0.025809939950704575,
+                  0.008366781286895275,
+                  0.010521226562559605,
+                  0.006129034329205751,
+                  0.12009289115667343
+                ],
+                "confidence": 0.5991099178791046
+              }
+            ],
+            "confidence": 0.43254960041779733,
+            "ood_flag": true,
+            "latent_summary": [
+              -0.7435,
+              1.2333,
+              -0.164,
+              0.9959,
+              -0.2295,
+              -0.101,
+              -0.448,
+              -0.1863
+            ],
+            "latency_ms": 274.9,
+            "disclaimer": "Risk is a model score; counterfactual numbers are simulated model-based risk changes, not causal effects.",
+            "forecast_id": "7a407441b78e",
+            "forecast_ts": 1791065136.7190297
+          },
+          "mitigation_summary": "Patch patch-5f68407c deployed and verified. Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED. CYBERMIND model risk: 6.7%."
+        },
+        "after": {
+          "session_id": "strix-probe-7f394c5d",
+          "vector_id": "sqli_probe",
+          "vector": {
+            "id": "sqli_probe",
+            "name": "SQL Injection & Parameter Tampering Probe",
+            "target": "192.0.2.10:8081/api/telemetry",
+            "protocol": "HTTP/8081",
+            "mitre_technique": "T1190 - Exploit Public-Facing Application",
+            "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command",
+            "cve": "CVE-2023-38606-MITIGATED",
+            "severity": "CRITICAL",
+            "cvss": 9.1,
+            "stage": 1,
+            "priority": 1,
+            "description": "Non-destructive parameter probing using SQL boolean syntax on telemetry filters to verify lack of prepared statement parameterization."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:8081)",
+          "target_ip": "192.0.2.10",
+          "target_port": 8081,
+          "started_at": 1791065136.744874,
+          "status": "PROBE_DEFLECTED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": true,
+          "steps_completed": 8,
+          "flows_generated": 8,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065136.75146,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065137.738968,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065139.0703192,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065140.8513196,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065143.5314052,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065144.843792,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065146.2538488,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065148.0830688,
+              "http_status": 400,
+              "blocked": true,
+              "response": {
+                "detail": "Invalid character rejected by WAF parameterized filter."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Invalid character rejected by WAF parameterized filter."
+            }
+          ],
+          "findings": [],
+          "generated_patch": null,
+          "baseline_risk": 0.07278496772050858,
+          "peak_risk": 0.1363523155450821,
+          "final_risk": 0.1363523155450821,
+          "finished_at": 1791065149.334719,
+          "summary": {
+            "succeeded": 0,
+            "blocked": 8,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "All 8 probe packets were blocked/rate-limited by active defences (verified from HTTP 4xx responses). Target 192.0.2.10:8081/api/telemetry is SECURED."
+        }
+      },
+      "smb_lateral": {
+        "before": {
+          "session_id": "strix-probe-a84f7c63",
+          "vector_id": "smb_lateral",
+          "vector": {
+            "id": "smb_lateral",
+            "name": "SMB Lateral Share Enumeration & RPC Probe",
+            "target": "192.0.2.30:445",
+            "protocol": "TCP/445 (SMB)",
+            "mitre_technique": "T1021.002 - SMB/Windows Admin Shares",
+            "cwe": "CWE-285: Improper Authorization for Lateral Share Access",
+            "cve": "CVE-2020-0796-MITIGATED",
+            "severity": "HIGH",
+            "cvss": 8.1,
+            "stage": 2,
+            "priority": 3,
+            "description": "Probe internal file share listener for unsigned SMB packets and unauthorized lateral traversal access between internal nodes."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:445)",
+          "target_ip": "192.0.2.10",
+          "target_port": 445,
+          "started_at": 1791065149.7328374,
+          "status": "VECTOR_SUCCEEDED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": false,
+          "steps_completed": 10,
+          "flows_generated": 10,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065149.742627,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065150.7720683,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065152.6445484,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065155.2477467,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065156.6040866,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065158.8132353,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065161.2577064,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065162.5741014,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 9,
+              "timestamp": 1791065164.3087006,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 10,
+              "timestamp": 1791065167.130246,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABLE_SHARE_ACCESS",
+                "shares": [
+                  "C$",
+                  "ADMIN$",
+                  "IPC$",
+                  "DATA_CONFIDENTIAL"
+                ],
+                "smb_signing_required": false
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            }
+          ],
+          "findings": [
+            {
+              "finding_id": "strix-681add",
+              "vector_id": "smb_lateral",
+              "title": "Verified Vulnerability: SMB Lateral Share Enumeration & RPC Probe",
+              "cwe": "CWE-285: Improper Authorization for Lateral Share Access",
+              "cve": "CVE-2020-0796-MITIGATED",
+              "severity": "HIGH",
+              "cvss": 8.1,
+              "target": "192.0.2.10:445",
+              "target_ip": "192.0.2.10",
+              "target_port": 445,
+              "technique": "T1021.002 - SMB/Windows Admin Shares",
+              "evidence": "10/10 non-destructive probes were accepted by the sandbox target (HTTP 2xx with vulnerability-confirmed payloads); 0 blocked. CYBERMIND model risk observed at 21.7%.",
+              "attack_succeeded": true,
+              "timestamp": 1791065168.4033625
+            }
+          ],
+          "generated_patch": {
+            "patch_id": "patch-f5af627a",
+            "finding_id": "strix-681add",
+            "vector_id": "smb_lateral",
+            "target": "192.0.2.10:445",
+            "target_ip": "192.0.2.10",
+            "target_port": 445,
+            "target_file": "configs/smb_hardening.conf",
+            "title": "Harden SMB: Mandate Signing & Restrict Anonymous Access",
+            "cwe": "CWE-285: Improper Authorization / Insecure Lateral Movement Access",
+            "cve": "CVE-2020-0796-MITIGATED",
+            "patch_diff": "--- a/configs/smb_hardening.conf\n+++ b/configs/smb_hardening.conf\n@@ -8,7 +8,12 @@\n [global]\n-   server signing = auto\n-   restrict anonymous = 0\n+   server signing = mandatory\n+   server min protocol = SMB3_11\n+   restrict anonymous = 2\n+   hosts allow = 192.0.2.0/24 127.0.0.1\n+   hosts deny = ALL\n",
+            "explanation": "Mandates SMB 3.1.1 signing, disables anonymous IPC$/null sessions, and restricts the listener to management subnets \u2014 unsigned enumeration is refused (HTTP 403 in the sandbox).",
+            "what_happened": "The share-enumeration probe listed C$/ADMIN$/IPC$ shares and received smb_signing_required=false \u2014 anonymous, unsigned lateral access was possible.",
+            "what_to_do": [
+              "Deploy the SMB hardening config (signing=mandatory, anonymous=2)",
+              "Firewall port 445 from untrusted zones",
+              "Audit existing shares for unnecessary administrative exposure"
+            ],
+            "mitigation_actions": [
+              "Mandate SMB 3.1.1 protocol with packet signing",
+              "Disable anonymous SMB enumeration and null sessions",
+              "Apply host-based firewall rule dropping port 445 traffic from untrusted zones"
+            ],
+            "engine": "codebuff",
+            "model": "buffy-inproc-remediation-v1",
+            "ollama_available": false,
+            "generated_at": 1791065168.4337797,
+            "status": "READY_TO_APPLY",
+            "applied": false
+          },
+          "baseline_risk": 0.14477594196796417,
+          "peak_risk": 0.21668459475040436,
+          "final_risk": 0.1073441207408905,
+          "finished_at": 1791065168.3729746,
+          "summary": {
+            "succeeded": 10,
+            "blocked": 0,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "Attack vector verified by real probe responses: SMB Lateral Share Enumeration & RPC Probe. 10/10 probes succeeded on 192.0.2.10:445."
+        },
+        "approval": {
+          "status": "APPLIED_AND_VERIFIED",
+          "patch_id": "patch-f5af627a",
+          "vector_id": "smb_lateral",
+          "target": "192.0.2.10:445",
+          "target_ip": "192.0.2.10",
+          "target_port": 445,
+          "defended_ip": "192.0.2.10",
+          "target_file": "configs/smb_hardening.conf",
+          "verification_hash": "dde837d4ee8a562b",
+          "sandbox_active": true,
+          "activation_error": null,
+          "verification": {
+            "verified": true,
+            "probes_sent": 6,
+            "blocked": 6,
+            "succeeded": 0,
+            "records": [
+              {
+                "step": 1,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 2,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 3,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 4,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 5,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 6,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              }
+            ],
+            "verification_hash": "dde837d4ee8a562b",
+            "method": "post-patch re-probe against isolated sandbox; verdict from live HTTP responses",
+            "summary": "Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED."
+          },
+          "patch_report": null,
+          "post_patch_risk": 16.9,
+          "forecast": {
+            "run_id": null,
+            "model_version": "cybermind-5324902ca017",
+            "model_available": true,
+            "k": 12,
+            "timestamp": 1791065156.545792,
+            "observation_windows": 8,
+            "current": {
+              "step": 0,
+              "risk": 0.9528116583824158,
+              "risk_pct": 95.3,
+              "variance": 0.0,
+              "std": 0.0,
+              "lower_bound": 0.9528,
+              "upper_bound": 0.9528,
+              "lower_pct": 95.3,
+              "upper_pct": 95.3,
+              "stage_id": 1,
+              "stage": "Reconnaissance",
+              "stage_short": "Reconnaissance",
+              "technique": "Active Scanning / Exploit Public-Facing Application",
+              "technique_id": "T1190",
+              "stage_probs": [
+                0.0266087856143713,
+                0.7331377863883972,
+                0.04484216868877411,
+                0.0022190080489963293,
+                0.0011697750305756927,
+                0.0011423781979829073,
+                0.19088010489940643
+              ],
+              "confidence": 0.5844563245773315
+            },
+            "horizon": {
+              "risk": 0.16917487978935242,
+              "stage": "Benign",
+              "stage_id": 0
+            },
+            "steps": [
+              {
+                "step": 0,
+                "risk": 0.9528116583824158,
+                "risk_pct": 95.3,
+                "variance": 0.0,
+                "std": 0.0,
+                "lower_bound": 0.9528,
+                "upper_bound": 0.9528,
+                "lower_pct": 95.3,
+                "upper_pct": 95.3,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.0266087856143713,
+                  0.7331377863883972,
+                  0.04484216868877411,
+                  0.0022190080489963293,
+                  0.0011697750305756927,
+                  0.0011423781979829073,
+                  0.19088010489940643
+                ],
+                "confidence": 0.5844563245773315
+              },
+              {
+                "step": 1,
+                "risk": 0.907569408416748,
+                "risk_pct": 90.8,
+                "variance": 0.002359,
+                "std": 0.0486,
+                "lower_bound": 0.8124,
+                "upper_bound": 1.0,
+                "lower_pct": 81.2,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.052488427609205246,
+                  0.6460053324699402,
+                  0.04964553192257881,
+                  0.003195126075297594,
+                  0.001727552036754787,
+                  0.001716524246148765,
+                  0.24522142112255096
+                ],
+                "confidence": 0.5010044574737549
+              },
+              {
+                "step": 2,
+                "risk": 0.855527400970459,
+                "risk_pct": 85.6,
+                "variance": 0.005438,
+                "std": 0.0737,
+                "lower_bound": 0.711,
+                "upper_bound": 1.0,
+                "lower_pct": 71.1,
+                "upper_pct": 100.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.07869502902030945,
+                  0.5960342884063721,
+                  0.057909220457077026,
+                  0.004568809177726507,
+                  0.002762611722573638,
+                  0.0025637999642640352,
+                  0.25746622681617737
+                ],
+                "confidence": 0.44550687074661255
+              },
+              {
+                "step": 3,
+                "risk": 0.8027352094650269,
+                "risk_pct": 80.3,
+                "variance": 0.006649,
+                "std": 0.0815,
+                "lower_bound": 0.6429,
+                "upper_bound": 0.9626,
+                "lower_pct": 64.3,
+                "upper_pct": 96.3,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.10413932055234909,
+                  0.5497497320175171,
+                  0.06392064690589905,
+                  0.005991775542497635,
+                  0.003861039876937866,
+                  0.0035819425247609615,
+                  0.26875555515289307
+                ],
+                "confidence": 0.40095484256744385
+              },
+              {
+                "step": 4,
+                "risk": 0.7184799313545227,
+                "risk_pct": 71.8,
+                "variance": 0.012716,
+                "std": 0.1128,
+                "lower_bound": 0.4975,
+                "upper_bound": 0.9395,
+                "lower_pct": 49.7,
+                "upper_pct": 94.0,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.16179057955741882,
+                  0.46902385354042053,
+                  0.06543805450201035,
+                  0.007271571084856987,
+                  0.005022530443966389,
+                  0.004486843477934599,
+                  0.2869665026664734
+                ],
+                "confidence": 0.34574782848358154
+              },
+              {
+                "step": 5,
+                "risk": 0.615134060382843,
+                "risk_pct": 61.5,
+                "variance": 0.02672,
+                "std": 0.1635,
+                "lower_bound": 0.2947,
+                "upper_bound": 0.9355,
+                "lower_pct": 29.5,
+                "upper_pct": 93.6,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.23794357478618622,
+                  0.37617945671081543,
+                  0.0718771293759346,
+                  0.009296022355556488,
+                  0.006862130481749773,
+                  0.005847238004207611,
+                  0.29199445247650146
+                ],
+                "confidence": 0.2980995178222656
+              },
+              {
+                "step": 6,
+                "risk": 0.5287670493125916,
+                "risk_pct": 52.9,
+                "variance": 0.028283,
+                "std": 0.1682,
+                "lower_bound": 0.1991,
+                "upper_bound": 0.8584,
+                "lower_pct": 19.9,
+                "upper_pct": 85.8,
+                "stage_id": 1,
+                "stage": "Reconnaissance",
+                "stage_short": "Reconnaissance",
+                "technique": "Active Scanning / Exploit Public-Facing Application",
+                "technique_id": "T1190",
+                "stage_probs": [
+                  0.3037312626838684,
+                  0.31269797682762146,
+                  0.0723685696721077,
+                  0.010346491821110249,
+                  0.008112818002700806,
+                  0.006870526820421219,
+                  0.2858723998069763
+                ],
+                "confidence": 0.28361088037490845
+              },
+              {
+                "step": 7,
+                "risk": 0.41918593645095825,
+                "risk_pct": 41.9,
+                "variance": 0.029606,
+                "std": 0.1721,
+                "lower_bound": 0.0819,
+                "upper_bound": 0.7564,
+                "lower_pct": 8.2,
+                "upper_pct": 75.6,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.394094854593277,
+                  0.25292736291885376,
+                  0.06339868903160095,
+                  0.010569599457085133,
+                  0.008746634237468243,
+                  0.007655012421309948,
+                  0.26260775327682495
+                ],
+                "confidence": 0.29724544286727905
+              },
+              {
+                "step": 8,
+                "risk": 0.35908421874046326,
+                "risk_pct": 35.9,
+                "variance": 0.029598,
+                "std": 0.172,
+                "lower_bound": 0.0219,
+                "upper_bound": 0.6963,
+                "lower_pct": 2.2,
+                "upper_pct": 69.6,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.4505976140499115,
+                  0.21829773485660553,
+                  0.06239642575383186,
+                  0.011821768246591091,
+                  0.010242070071399212,
+                  0.008844541385769844,
+                  0.23779988288879395
+                ],
+                "confidence": 0.3076268434524536
+              },
+              {
+                "step": 9,
+                "risk": 0.31039726734161377,
+                "risk_pct": 31.0,
+                "variance": 0.035061,
+                "std": 0.1872,
+                "lower_bound": 0.0,
+                "upper_bound": 0.6774,
+                "lower_pct": 0.0,
+                "upper_pct": 67.7,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.4997483491897583,
+                  0.19678406417369843,
+                  0.05801280215382576,
+                  0.011915458366274834,
+                  0.010835355147719383,
+                  0.009031327441334724,
+                  0.21367265284061432
+                ],
+                "confidence": 0.3289473056793213
+              },
+              {
+                "step": 10,
+                "risk": 0.2606480121612549,
+                "risk_pct": 26.1,
+                "variance": 0.03111,
+                "std": 0.1764,
+                "lower_bound": 0.0,
+                "upper_bound": 0.6064,
+                "lower_pct": 0.0,
+                "upper_pct": 60.6,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.5343620181083679,
+                  0.17370188236236572,
+                  0.053721603006124496,
+                  0.012447314336895943,
+                  0.012183708138763905,
+                  0.009580819867551327,
+                  0.20400279760360718
+                ],
+                "confidence": 0.3457450270652771
+              },
+              {
+                "step": 11,
+                "risk": 0.19839569926261902,
+                "risk_pct": 19.8,
+                "variance": 0.022705,
+                "std": 0.1507,
+                "lower_bound": 0.0,
+                "upper_bound": 0.4937,
+                "lower_pct": 0.0,
+                "upper_pct": 49.4,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.5900492072105408,
+                  0.1321934014558792,
+                  0.04960155859589577,
+                  0.012557982467114925,
+                  0.013364390470087528,
+                  0.009784967638552189,
+                  0.19244855642318726
+                ],
+                "confidence": 0.3818739056587219
+              },
+              {
+                "step": 12,
+                "risk": 0.16917487978935242,
+                "risk_pct": 16.9,
+                "variance": 0.020949,
+                "std": 0.1447,
+                "lower_bound": 0.0,
+                "upper_bound": 0.4529,
+                "lower_pct": 0.0,
+                "upper_pct": 45.3,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.6167939901351929,
+                  0.11592619121074677,
+                  0.048430997878313065,
+                  0.012847044505178928,
+                  0.014812749810516834,
+                  0.00951178278774023,
+                  0.18167725205421448
+                ],
+                "confidence": 0.4003065228462219
+              }
+            ],
+            "confidence": 0.3785481361242441,
+            "ood_flag": true,
+            "latent_summary": [
+              -0.6979,
+              1.2895,
+              -0.2165,
+              0.8432,
+              -0.3338,
+              -0.1652,
+              -0.2715,
+              -0.2553
+            ],
+            "latency_ms": 261.0,
+            "disclaimer": "Risk is a model score; counterfactual numbers are simulated model-based risk changes, not causal effects.",
+            "forecast_id": "b59f2a667b6b",
+            "forecast_ts": 1791065175.9079266
+          },
+          "mitigation_summary": "Patch patch-f5af627a deployed and verified. Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED. CYBERMIND model risk: 16.9%."
+        },
+        "after": {
+          "session_id": "strix-probe-f40da98e",
+          "vector_id": "smb_lateral",
+          "vector": {
+            "id": "smb_lateral",
+            "name": "SMB Lateral Share Enumeration & RPC Probe",
+            "target": "192.0.2.30:445",
+            "protocol": "TCP/445 (SMB)",
+            "mitre_technique": "T1021.002 - SMB/Windows Admin Shares",
+            "cwe": "CWE-285: Improper Authorization for Lateral Share Access",
+            "cve": "CVE-2020-0796-MITIGATED",
+            "severity": "HIGH",
+            "cvss": 8.1,
+            "stage": 2,
+            "priority": 3,
+            "description": "Probe internal file share listener for unsigned SMB packets and unauthorized lateral traversal access between internal nodes."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:445)",
+          "target_ip": "192.0.2.10",
+          "target_port": 445,
+          "started_at": 1791065175.924376,
+          "status": "PROBE_DEFLECTED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": true,
+          "steps_completed": 10,
+          "flows_generated": 10,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065175.9315574,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065176.9527428,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065178.5898232,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065181.7214365,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065184.554342,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065185.8490446,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065187.1519682,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065188.6712825,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 9,
+              "timestamp": 1791065191.7306075,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            },
+            {
+              "step": 10,
+              "timestamp": 1791065193.019366,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "SMB packet rejected: signing required & unsigned access denied."
+              },
+              "verdict": "BLOCKED",
+              "detail": "SMB packet rejected: signing required & unsigned access denied."
+            }
+          ],
+          "findings": [],
+          "generated_patch": null,
+          "baseline_risk": 0.17520953714847565,
+          "peak_risk": 0.21799667179584503,
+          "final_risk": 0.06865211576223373,
+          "finished_at": 1791065194.292534,
+          "summary": {
+            "succeeded": 0,
+            "blocked": 10,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "All 10 probe packets were blocked/rate-limited by active defences (verified from HTTP 4xx responses). Target 192.0.2.30:445 is SECURED."
+        }
+      },
+      "c2_beacon": {
+        "before": {
+          "session_id": "strix-probe-6e0b6c84",
+          "vector_id": "c2_beacon",
+          "vector": {
+            "id": "c2_beacon",
+            "name": "Egress C2 Beaconing Channel Probe",
+            "target": "18.219.211.138:8080",
+            "protocol": "TCP/8080 (HTTP/C2)",
+            "mitre_technique": "T1071.001 - Application Layer Protocol: Web Protocols",
+            "cwe": "CWE-200: Exposure of Sensitive Information via C2 Channel",
+            "cve": "CVE-2024-C2-MITIGATED",
+            "severity": "CRITICAL",
+            "cvss": 8.8,
+            "stage": 2,
+            "priority": 4,
+            "description": "Simulated heartbeat probe testing egress firewall policy against known malicious C2 controller destination address."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:8080)",
+          "target_ip": "192.0.2.10",
+          "target_port": 8080,
+          "started_at": 1791065194.6602085,
+          "status": "VECTOR_SUCCEEDED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": false,
+          "steps_completed": 15,
+          "flows_generated": 15,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065194.6872199,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-1"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065195.7567399,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-2"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065197.0518675,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-3"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065198.3749058,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-4"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065200.5565133,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-5"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065202.815478,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-6"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065205.511107,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-7"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065206.8634446,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-8"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 9,
+              "timestamp": 1791065208.1626859,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-9"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 10,
+              "timestamp": 1791065210.134204,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-10"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 11,
+              "timestamp": 1791065212.7665567,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-11"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 12,
+              "timestamp": 1791065214.0321848,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-12"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 13,
+              "timestamp": 1791065215.6907852,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-13"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 14,
+              "timestamp": 1791065217.9307985,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-14"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            },
+            {
+              "step": 15,
+              "timestamp": 1791065219.3166254,
+              "http_status": 200,
+              "blocked": false,
+              "response": {
+                "status": "VULNERABILITY_CONFIRMED",
+                "cwe": "CWE-200",
+                "egress_verdict": "ALLOWED",
+                "beacon_channel": "ESTABLISHED",
+                "controller": "18.219.211.138:8080",
+                "handshake": "SYN -> SYN-ACK -> ACK (beacon accepted, 200 OK)",
+                "staged_payload": "heartbeat-15"
+              },
+              "verdict": "SUCCEEDED",
+              "detail": ""
+            }
+          ],
+          "findings": [
+            {
+              "finding_id": "strix-e90951",
+              "vector_id": "c2_beacon",
+              "title": "Verified Vulnerability: Egress C2 Beaconing Channel Probe",
+              "cwe": "CWE-200: Exposure of Sensitive Information via C2 Channel",
+              "cve": "CVE-2024-C2-MITIGATED",
+              "severity": "CRITICAL",
+              "cvss": 8.8,
+              "target": "192.0.2.10:8080",
+              "target_ip": "192.0.2.10",
+              "target_port": 8080,
+              "technique": "T1071.001 - Application Layer Protocol: Web Protocols",
+              "evidence": "15/15 non-destructive probes were accepted by the sandbox target (HTTP 2xx with vulnerability-confirmed payloads); 0 blocked. CYBERMIND model risk observed at 19.0%.",
+              "attack_succeeded": true,
+              "timestamp": 1791065220.7864122
+            }
+          ],
+          "generated_patch": {
+            "patch_id": "patch-19c8aa2d",
+            "finding_id": "strix-e90951",
+            "vector_id": "c2_beacon",
+            "target": "192.0.2.10:8080",
+            "target_ip": "192.0.2.10",
+            "target_port": 8080,
+            "target_file": "configs/firewall/egress_filter.rules",
+            "title": "Block Rogue Outbound C2 Traffic with Egress Filtering",
+            "cwe": "CWE-200: Exposure of Sensitive Information via C2 Channel",
+            "cve": "CVE-2024-C2-MITIGATED",
+            "patch_diff": "--- a/configs/firewall/egress_filter.rules\n+++ b/configs/firewall/egress_filter.rules\n@@ -20,4 +20,9 @@\n+# BLOCK malicious C2 controller beaconing\n+-A OUTPUT -d 18.219.211.138 -j REJECT --reject-with icmp-port-unreachable\n+-A OUTPUT -d 203.0.113.9 -j REJECT --reject-with icmp-port-unreachable\n+-A OUTPUT -p tcp -m multiport --dports 8080,8443 -m string --string \"c2_beacon\" --algo bm -j DROP\n",
+            "explanation": "Adds explicit egress REJECT rules for the observed controller IPs and drops generic beacon payloads on 8080/8443 \u2014 heartbeats die before leaving the host.",
+            "what_happened": "Heartbeat probes to the (simulated) controller were accepted and a beacon channel was ESTABLISHED \u2014 no egress filtering exists for outbound 8080/8443.",
+            "what_to_do": [
+              "Deploy the egress filter rules blocking the controller IPs",
+              "Sinkhole the controller hostnames in DNS",
+              "Alert on any future outbound connection attempts to deny-listed IPs"
+            ],
+            "mitigation_actions": [
+              "Block outbound TCP connections to unauthorized external C2 addresses",
+              "Configure DNS sinkhole for malicious C2 controller hostnames",
+              "Terminate active rogue beaconing processes"
+            ],
+            "engine": "codebuff",
+            "model": "buffy-inproc-remediation-v1",
+            "ollama_available": false,
+            "generated_at": 1791065220.8739147,
+            "status": "READY_TO_APPLY",
+            "applied": false
+          },
+          "baseline_risk": 0.08778180927038193,
+          "peak_risk": 0.18959370255470276,
+          "final_risk": 0.015654997900128365,
+          "finished_at": 1791065220.6070879,
+          "summary": {
+            "succeeded": 15,
+            "blocked": 0,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "Attack vector verified by real probe responses: Egress C2 Beaconing Channel Probe. 15/15 probes succeeded on 192.0.2.10:8080."
+        },
+        "approval": {
+          "status": "APPLIED_AND_VERIFIED",
+          "patch_id": "patch-19c8aa2d",
+          "vector_id": "c2_beacon",
+          "target": "192.0.2.10:8080",
+          "target_ip": "192.0.2.10",
+          "target_port": 8080,
+          "defended_ip": "192.0.2.10",
+          "target_file": "configs/firewall/egress_filter.rules",
+          "verification_hash": "3dcc2763bec95e8f",
+          "sandbox_active": true,
+          "activation_error": null,
+          "verification": {
+            "verified": true,
+            "probes_sent": 6,
+            "blocked": 6,
+            "succeeded": 0,
+            "records": [
+              {
+                "step": 1,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 2,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 3,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 4,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 5,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              },
+              {
+                "step": 6,
+                "http_status": 403,
+                "verdict": "BLOCKED"
+              }
+            ],
+            "verification_hash": "3dcc2763bec95e8f",
+            "method": "post-patch re-probe against isolated sandbox; verdict from live HTTP responses",
+            "summary": "Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED."
+          },
+          "patch_report": null,
+          "post_patch_risk": 3.4,
+          "forecast": {
+            "run_id": null,
+            "model_version": "cybermind-5324902ca017",
+            "model_available": true,
+            "k": 12,
+            "timestamp": 1791065217.919525,
+            "observation_windows": 8,
+            "current": {
+              "step": 0,
+              "risk": 0.6720744371414185,
+              "risk_pct": 67.2,
+              "variance": 0.0,
+              "std": 0.0,
+              "lower_bound": 0.6721,
+              "upper_bound": 0.6721,
+              "lower_pct": 67.2,
+              "upper_pct": 67.2,
+              "stage_id": 6,
+              "stage": "Unknown/Ambiguous",
+              "stage_short": "Unknown/Ambiguous",
+              "technique": "",
+              "technique_id": "",
+              "stage_probs": [
+                0.2297966331243515,
+                0.29576095938682556,
+                0.0452013798058033,
+                0.0037429449148476124,
+                0.0021071210503578186,
+                0.0019231903133913875,
+                0.4214678704738617
+              ],
+              "confidence": 0.3585113286972046
+            },
+            "horizon": {
+              "risk": 0.03435984253883362,
+              "stage": "Benign",
+              "stage_id": 0
+            },
+            "steps": [
+              {
+                "step": 0,
+                "risk": 0.6720744371414185,
+                "risk_pct": 67.2,
+                "variance": 0.0,
+                "std": 0.0,
+                "lower_bound": 0.6721,
+                "upper_bound": 0.6721,
+                "lower_pct": 67.2,
+                "upper_pct": 67.2,
+                "stage_id": 6,
+                "stage": "Unknown/Ambiguous",
+                "stage_short": "Unknown/Ambiguous",
+                "technique": "",
+                "technique_id": "",
+                "stage_probs": [
+                  0.2297966331243515,
+                  0.29576095938682556,
+                  0.0452013798058033,
+                  0.0037429449148476124,
+                  0.0021071210503578186,
+                  0.0019231903133913875,
+                  0.4214678704738617
+                ],
+                "confidence": 0.3585113286972046
+              },
+              {
+                "step": 1,
+                "risk": 0.5427640676498413,
+                "risk_pct": 54.3,
+                "variance": 0.012159,
+                "std": 0.1103,
+                "lower_bound": 0.3266,
+                "upper_bound": 0.7589,
+                "lower_pct": 32.7,
+                "upper_pct": 75.9,
+                "stage_id": 6,
+                "stage": "Unknown/Ambiguous",
+                "stage_short": "Unknown/Ambiguous",
+                "technique": "",
+                "technique_id": "",
+                "stage_probs": [
+                  0.31202611327171326,
+                  0.22902841866016388,
+                  0.04298969730734825,
+                  0.004095857031643391,
+                  0.0023430269211530685,
+                  0.002159744268283248,
+                  0.4073570966720581
+                ],
+                "confidence": 0.3565729856491089
+              },
+              {
+                "step": 2,
+                "risk": 0.4376193583011627,
+                "risk_pct": 43.8,
+                "variance": 0.01483,
+                "std": 0.1218,
+                "lower_bound": 0.1989,
+                "upper_bound": 0.6763,
+                "lower_pct": 19.9,
+                "upper_pct": 67.6,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.38636910915374756,
+                  0.1880245953798294,
+                  0.04319547489285469,
+                  0.004730593878775835,
+                  0.002976067364215851,
+                  0.002584047382697463,
+                  0.37212011218070984
+                ],
+                "confidence": 0.36109215021133423
+              },
+              {
+                "step": 3,
+                "risk": 0.35672882199287415,
+                "risk_pct": 35.7,
+                "variance": 0.014244,
+                "std": 0.1193,
+                "lower_bound": 0.1228,
+                "upper_bound": 0.5907,
+                "lower_pct": 12.3,
+                "upper_pct": 59.1,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.45466768741607666,
+                  0.15291725099086761,
+                  0.042017798870801926,
+                  0.005157371051609516,
+                  0.0034328135661780834,
+                  0.0029433860909193754,
+                  0.33886370062828064
+                ],
+                "confidence": 0.37859106063842773
+              },
+              {
+                "step": 4,
+                "risk": 0.27057385444641113,
+                "risk_pct": 27.1,
+                "variance": 0.012047,
+                "std": 0.1098,
+                "lower_bound": 0.0554,
+                "upper_bound": 0.4857,
+                "lower_pct": 5.5,
+                "upper_pct": 48.6,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.5443630814552307,
+                  0.11321938782930374,
+                  0.0370347797870636,
+                  0.005091027356684208,
+                  0.003604358294978738,
+                  0.0029847072437405586,
+                  0.2937026619911194
+                ],
+                "confidence": 0.42232441902160645
+              },
+              {
+                "step": 5,
+                "risk": 0.19954058527946472,
+                "risk_pct": 20.0,
+                "variance": 0.008931,
+                "std": 0.0945,
+                "lower_bound": 0.0143,
+                "upper_bound": 0.3848,
+                "lower_pct": 1.4,
+                "upper_pct": 38.5,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.6245720386505127,
+                  0.08032216131687164,
+                  0.03366715833544731,
+                  0.005241000559180975,
+                  0.0038409195840358734,
+                  0.0031408595386892557,
+                  0.24921587109565735
+                ],
+                "confidence": 0.4737899899482727
+              },
+              {
+                "step": 6,
+                "risk": 0.14643894135951996,
+                "risk_pct": 14.6,
+                "variance": 0.004269,
+                "std": 0.0653,
+                "lower_bound": 0.0184,
+                "upper_bound": 0.2745,
+                "lower_pct": 1.8,
+                "upper_pct": 27.4,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.6874366998672485,
+                  0.061232827603816986,
+                  0.029811888933181763,
+                  0.00516842445358634,
+                  0.004064325243234634,
+                  0.0032648148480802774,
+                  0.2090209424495697
+                ],
+                "confidence": 0.522661954164505
+              },
+              {
+                "step": 7,
+                "risk": 0.10162071883678436,
+                "risk_pct": 10.2,
+                "variance": 0.002251,
+                "std": 0.0474,
+                "lower_bound": 0.0086,
+                "upper_bound": 0.1946,
+                "lower_pct": 0.9,
+                "upper_pct": 19.5,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.7442094087600708,
+                  0.04524300619959831,
+                  0.024545038118958473,
+                  0.0048392415046691895,
+                  0.00396714499220252,
+                  0.0033043811563402414,
+                  0.17389176785945892
+                ],
+                "confidence": 0.5777186751365662
+              },
+              {
+                "step": 8,
+                "risk": 0.08169792592525482,
+                "risk_pct": 8.2,
+                "variance": 0.001858,
+                "std": 0.0431,
+                "lower_bound": 0.0,
+                "upper_bound": 0.1662,
+                "lower_pct": 0.0,
+                "upper_pct": 16.6,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.7812774777412415,
+                  0.03666803240776062,
+                  0.02262054942548275,
+                  0.005013769492506981,
+                  0.004363668151199818,
+                  0.0035249488428235054,
+                  0.14653152227401733
+                ],
+                "confidence": 0.613880455493927
+              },
+              {
+                "step": 9,
+                "risk": 0.07034032046794891,
+                "risk_pct": 7.0,
+                "variance": 0.002551,
+                "std": 0.0505,
+                "lower_bound": 0.0,
+                "upper_bound": 0.1693,
+                "lower_pct": 0.0,
+                "upper_pct": 16.9,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.8021193146705627,
+                  0.03387345001101494,
+                  0.02103240229189396,
+                  0.0050824047066271305,
+                  0.00473982747644186,
+                  0.003696383675560355,
+                  0.1294562816619873
+                ],
+                "confidence": 0.634964257478714
+              },
+              {
+                "step": 10,
+                "risk": 0.05596625432372093,
+                "risk_pct": 5.6,
+                "variance": 0.001775,
+                "std": 0.0421,
+                "lower_bound": 0.0,
+                "upper_bound": 0.1385,
+                "lower_pct": 0.0,
+                "upper_pct": 13.9,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.8246684074401855,
+                  0.02746932953596115,
+                  0.018925722688436508,
+                  0.005160952918231487,
+                  0.00525505980476737,
+                  0.0038494225591421127,
+                  0.11467105895280838
+                ],
+                "confidence": 0.662211000919342
+              },
+              {
+                "step": 11,
+                "risk": 0.04082677885890007,
+                "risk_pct": 4.1,
+                "variance": 0.000995,
+                "std": 0.0315,
+                "lower_bound": 0.0,
+                "upper_bound": 0.1027,
+                "lower_pct": 0.0,
+                "upper_pct": 10.3,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.8543601036071777,
+                  0.01973835378885269,
+                  0.01648062653839588,
+                  0.005006214138120413,
+                  0.0056394729763269424,
+                  0.003791745752096176,
+                  0.09498343616724014
+                ],
+                "confidence": 0.7019021511077881
+              },
+              {
+                "step": 12,
+                "risk": 0.03435984253883362,
+                "risk_pct": 3.4,
+                "variance": 0.000846,
+                "std": 0.0291,
+                "lower_bound": 0.0,
+                "upper_bound": 0.0914,
+                "lower_pct": 0.0,
+                "upper_pct": 9.1,
+                "stage_id": 0,
+                "stage": "Benign",
+                "stage_short": "Benign",
+                "technique": "No adversarial technique observed",
+                "technique_id": "T1595",
+                "stage_probs": [
+                  0.8649888038635254,
+                  0.01715089939534664,
+                  0.015444323420524597,
+                  0.005258792545646429,
+                  0.006527026649564505,
+                  0.003810742637142539,
+                  0.08681943267583847
+                ],
+                "confidence": 0.7155860960483551
+              }
+            ],
+            "confidence": 0.5215235788088579,
+            "ood_flag": true,
+            "latent_summary": [
+              -0.845,
+              1.208,
+              -0.1208,
+              1.1156,
+              -0.1388,
+              -0.1011,
+              -0.5576,
+              -0.047
+            ],
+            "latency_ms": 281.9,
+            "disclaimer": "Risk is a model score; counterfactual numbers are simulated model-based risk changes, not causal effects.",
+            "forecast_id": "c50f91638595",
+            "forecast_ts": 1791065227.4602509
+          },
+          "mitigation_summary": "Patch patch-19c8aa2d deployed and verified. Verification re-probe: 6/6 blocked, 0 succeeded \u2014 vector confirmed CLOSED. CYBERMIND model risk: 3.4%."
+        },
+        "after": {
+          "session_id": "strix-probe-eac45d2b",
+          "vector_id": "c2_beacon",
+          "vector": {
+            "id": "c2_beacon",
+            "name": "Egress C2 Beaconing Channel Probe",
+            "target": "18.219.211.138:8080",
+            "protocol": "TCP/8080 (HTTP/C2)",
+            "mitre_technique": "T1071.001 - Application Layer Protocol: Web Protocols",
+            "cwe": "CWE-200: Exposure of Sensitive Information via C2 Channel",
+            "cve": "CVE-2024-C2-MITIGATED",
+            "severity": "CRITICAL",
+            "cvss": 8.8,
+            "stage": 2,
+            "priority": 4,
+            "description": "Simulated heartbeat probe testing egress firewall policy against known malicious C2 controller destination address."
+          },
+          "target": "http://127.0.0.1:8081 (192.0.2.10:8080)",
+          "target_ip": "192.0.2.10",
+          "target_port": 8080,
+          "started_at": 1791065227.4758391,
+          "status": "PROBE_DEFLECTED",
+          "scan_mode": "quick",
+          "intensity": 5,
+          "is_patched": true,
+          "steps_completed": 15,
+          "flows_generated": 15,
+          "probe_records": [
+            {
+              "step": 1,
+              "timestamp": 1791065227.4833941,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 2,
+              "timestamp": 1791065228.5172272,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 3,
+              "timestamp": 1791065230.4174433,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 4,
+              "timestamp": 1791065232.9981272,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 5,
+              "timestamp": 1791065234.389964,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 6,
+              "timestamp": 1791065236.4822772,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 7,
+              "timestamp": 1791065239.1865115,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 8,
+              "timestamp": 1791065241.6994162,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 9,
+              "timestamp": 1791065243.1628551,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 10,
+              "timestamp": 1791065245.2825053,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 11,
+              "timestamp": 1791065247.781637,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 12,
+              "timestamp": 1791065249.1166453,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 13,
+              "timestamp": 1791065251.033421,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 14,
+              "timestamp": 1791065253.6585128,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            },
+            {
+              "step": 15,
+              "timestamp": 1791065254.973504,
+              "http_status": 403,
+              "blocked": true,
+              "response": {
+                "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+              },
+              "verdict": "BLOCKED",
+              "detail": "Egress blocked: outbound connection to known C2 controller rejected by firewall policy."
+            }
+          ],
+          "findings": [],
+          "generated_patch": null,
+          "baseline_risk": 0.04100238159298897,
+          "peak_risk": 0.12032206356525421,
+          "final_risk": 0.026682434603571892,
+          "finished_at": 1791065256.3022091,
+          "summary": {
+            "succeeded": 0,
+            "blocked": 15,
+            "unreachable": 0
+          },
+          "llm_analysis": null,
+          "outcome_message": "All 15 probe packets were blocked/rate-limited by active defences (verified from HTTP 4xx responses). Target 18.219.211.138:8080 is SECURED."
+        }
+      }
+    }
+  },
+  "http_calls": [
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "seconds": 0.015
+    },
+    {
+      "method": "POST",
+      "path": "/api/upload/flows?clear_previous=true",
+      "status": 200,
+      "seconds": 17.582
+    },
+    {
+      "method": "GET",
+      "path": "/api/forecast",
+      "status": 200,
+      "seconds": 0.148
+    },
+    {
+      "method": "POST",
+      "path": "/api/counterfactual/simulate",
+      "status": 200,
+      "seconds": 0.063
+    },
+    {
+      "method": "POST",
+      "path": "/api/validation/local",
+      "status": 200,
+      "seconds": 0.103
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/sandbox/reset",
+      "status": 200,
+      "seconds": 0.075
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.017
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.762
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.184
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.029
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 3.014
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.909
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.946
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.34
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.059
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.92
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.933
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.552
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.863
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.557
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.905
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.031
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.11
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/patch/apply",
+      "status": 200,
+      "seconds": 6.759
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.016
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.653
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.643
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.806
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.847
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.54
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.825
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.952
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.548
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.836
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.927
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.597
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.828
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.876
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.057
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.217
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.016
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.255
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.438
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.421
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.855
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.836
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.798
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.87
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.354
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.775
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.847
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.054
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.342
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/patch/apply",
+      "status": 200,
+      "seconds": 6.161
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.025
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.683
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.83
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.836
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.657
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.773
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.803
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.448
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.817
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.059
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.056
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.02
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.006
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.234
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.836
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.109
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.017
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.823
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.92
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.242
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.0
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.794
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.893
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.659
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.856
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.024
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.07
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/patch/apply",
+      "status": 200,
+      "seconds": 7.183
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.015
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.691
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.835
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.628
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.671
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.793
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.818
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.95
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.581
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.818
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.831
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.011
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.086
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.016
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.756
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.804
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.88
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.883
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.208
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.353
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.675
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.852
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.819
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.879
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.141
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.003
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.834
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.842
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.045
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.853
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.852
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.116
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.452
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/patch/apply",
+      "status": 200,
+      "seconds": 6.045
+    },
+    {
+      "method": "POST",
+      "path": "/api/attack-lab/probe/start",
+      "status": 200,
+      "seconds": 0.014
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.682
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.875
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.116
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.078
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.827
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.819
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.229
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.371
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.282
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.992
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.074
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.883
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.241
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 2.053
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.802
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.871
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.349
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 1.823
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.828
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.844
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/probe/records",
+      "status": 200,
+      "seconds": 0.053
+    },
+    {
+      "method": "GET",
+      "path": "/api/attack-lab/status",
+      "status": 200,
+      "seconds": 0.388
+    }
+  ],
+  "result": "PASS"
+}

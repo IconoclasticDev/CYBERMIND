@@ -1,6 +1,7 @@
 services:
   cybermind-demo-web:
     image: alpine:3.20
+    pull_policy: never
     command: ["sh", "-lc", "python3 -c 'print(\"CYBERMIND isolated demo sandbox ready\")'"]
     read_only: true
     networks: [cybermind_isolated_net]

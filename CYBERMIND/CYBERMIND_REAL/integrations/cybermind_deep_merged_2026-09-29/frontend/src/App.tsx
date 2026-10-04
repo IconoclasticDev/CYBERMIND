@@ -1,17 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { X, Database, Zap, RotateCcw, Loader2, AlertTriangle, Upload } from "lucide-react";
+import { X, Zap, AlertTriangle, Upload } from "lucide-react";
 import { Header } from "./components/Header";
 import { Sidebar, type SidebarTab } from "./components/Sidebar";
 import { RiskCard, AttackStageCard, PredictedStageCard, ProgressionCard } from "./components/MetricCards";
 import { NetworkGraph } from "./components/NetworkGraph";
-import { LiveEventFeed, RecentEventsTable } from "./components/EventPanels";
+import { LiveEventFeed } from "./components/EventPanels";
 import { AttackTimeline } from "./components/AttackTimeline";
-import { ModelInsightsCard, DefenceCard, SystemHealthCard } from "./components/InsightsAndHealth";
-import { ScenarioLabCard, ScenarioLabModal } from "./components/ScenarioPanels";
+import { ModelInsightsCard, DefenceCard } from "./components/InsightsAndHealth";
 import { NodeDetailDrawer } from "./components/NodeDetailDrawer";
 import {
   LiveMonitorView, ThreatForecastView, AttackGraphView, ReplayView,
-  ScenarioLabView, ReportsView, KnowledgeBaseView, SettingsView,
+  ReportsView, KnowledgeBaseView, SettingsView,
 } from "./components/OtherViews";
 import { ParallelForecastView } from "./components/ParallelForecast";
 import { AttackLabView } from "./components/AttackLabView";
@@ -99,7 +98,6 @@ export function App() {
   const store = useLiveStore();
   const [tab, setTab] = useState<SidebarTab>("command-center");
   const [paletteOpen, setPaletteOpen] = useState(false);
-  const [scenarioModalOpen, setScenarioModalOpen] = useState(false);
   const [selectedNode, setSelectedNode] = useState<UINode | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<UIEvent | null>(null);
   const [defendedNodeIds, setDefendedNodeIds] = useState<Set<string>>(new Set());
@@ -223,77 +221,6 @@ export function App() {
               {/* Closed-Loop HUD (Slide 12: Ingest → Forecast → Simulate → Validate) */}
               <ClosedLoopHUD />
 
-              {/* Real Test Case Action Bar */}
-              <div className="bg-white border border-[#EAE6DF] rounded-2xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.02)] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#FAF6F2] border border-[#EDE4D8] flex items-center justify-center text-[#DE5B49] shrink-0">
-                    <Database className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-xs font-bold text-[#1C232B] uppercase tracking-wide">Test Case Evaluation</span>
-                      <span className="bg-[#EBF7EE] border border-[#C3E8CA] text-[#1E7B3E] text-[10px] font-bold px-2 py-0.5 rounded-full">
-                        REAL FLOW SAMPLES · OFFLINE
-                      </span>
-                      {store.activeTestCase && (
-                        <span className="bg-[#EEF2FB] border border-[#C9D4EE] text-[#4B68B8] text-[10px] font-mono font-bold px-2 py-0.5 rounded-full">
-                          Loaded: {store.testCases.find((t) => t.id === store.activeTestCase)?.name ?? store.activeTestCase}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-[11px] text-[#707C8C] mt-0.5">
-                      Ingest provenance-recorded CSE-CIC-IDS2018 flow samples into the same temporal model path as uploaded captures.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex min-w-0 items-center gap-2 flex-wrap">
-                  <button
-                    onClick={() => void store.loadTestCase("botnet_ares")}
-                    disabled={store.busy.testCase}
-                    className={`py-2 px-3.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all shadow-xs ${
-                      store.activeTestCase === "botnet_ares"
-                        ? "bg-[#DE5B49] text-white shadow-sm ring-2 ring-[#DE5B49]/30"
-                        : "bg-[#FAF8F5] hover:bg-[#EFEAE2] border border-[#DDD6CC] text-[#333E4D]"
-                    }`}
-                  >
-                    {store.busy.testCase && store.activeTestCase === "botnet_ares" ? (
-                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                    ) : (
-                      <Zap className="w-3.5 h-3.5 text-[#DE5B49]" />
-                    )}
-                    <span>Load Botnet Ares Sample</span>
-                  </button>
-
-                  <button
-                    onClick={() => void store.loadTestCase("ssh_bruteforce")}
-                    disabled={store.busy.testCase}
-                    className={`py-2 px-3.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all shadow-xs ${
-                      store.activeTestCase === "ssh_bruteforce"
-                        ? "bg-[#DE5B49] text-white shadow-sm ring-2 ring-[#DE5B49]/30"
-                        : "bg-[#FAF8F5] hover:bg-[#EFEAE2] border border-[#DDD6CC] text-[#333E4D]"
-                    }`}
-                  >
-                    {store.busy.testCase && store.activeTestCase === "ssh_bruteforce" ? (
-                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                    ) : (
-                      <Zap className="w-3.5 h-3.5 text-[#E58B44]" />
-                    )}
-                    <span>Load SSH Brute Force Sample</span>
-                  </button>
-
-                  {store.activeTestCase && (
-                    <button
-                      onClick={() => void store.resetScenario()}
-                      title="Reset test case and clear state"
-                      className="p-2 bg-[#FAF8F5] hover:bg-[#FBEDEA] border border-[#DDD6CC] hover:border-[#DE5B49]/40 text-[#556171] hover:text-[#DE5B49] rounded-xl text-xs font-semibold transition-colors"
-                    >
-                      <RotateCcw className="w-3.5 h-3.5" />
-                    </button>
-                  )}
-                </div>
-              </div>
-
               {/* Attack Labs & Strix Banner */}
               <div className="bg-white border border-[#EAE6DF] rounded-2xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.02)] flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                 <div className="flex items-center gap-3">
@@ -358,23 +285,6 @@ export function App() {
                     defendedNodeIds={defendedNodeIds}
                   />
                   {milestones.length > 1 && <AttackTimeline milestones={milestones} onOpenFullTimeline={() => setTab("threat-forecast")} />}
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div className="md:col-span-5 min-h-[270px]">
-                      <RecentEventsTable events={store.events} onSelectEvent={setSelectedEvent} onViewAll={() => setTab("live-monitor")} />
-                    </div>
-                    <div className="md:col-span-4 min-h-[270px]">
-                      <ScenarioLabCard
-                        health={store.health} scenarios={store.scenarioList}
-                        isRunning={scenarioRunning} currentId={currentScenarioId}
-                        onToggleRunning={() => (scenarioRunning ? store.stopScenario() : currentScenarioId && store.startScenario(currentScenarioId))}
-                        onReset={() => { void store.resetScenario(); }}
-                        onPick={(id) => { void store.startScenario(id); }}
-                      />
-                    </div>
-                    <div className="md:col-span-3 min-h-[270px]">
-                      <SystemHealthCard health={store.health} wsUp={store.ws === "online"} />
-                    </div>
-                  </div>
                 </div>
 
                 <div className="xl:col-span-4 min-w-0 space-y-5">
@@ -422,7 +332,6 @@ export function App() {
               onSuggestPatch={handleSuggestPatch}
             />
           )}
-          {tab === "scenario-lab" && <ScenarioLabView store={store} onBack={() => setTab("command-center")} />}
           {tab === "replay-analysis" && <ReplayView onBack={() => setTab("command-center")} />}
           {tab === "reports" && <ReportsView store={store} onBack={() => setTab("command-center")} />}
           {tab === "knowledge-base" && <KnowledgeBaseView onBack={() => setTab("command-center")} />}
@@ -449,13 +358,6 @@ export function App() {
         onAttackWithStrix={handleAttackWithStrix}
         onDefendNode={handleDefendNode}
         isDefended={selectedNode ? defendedNodeIds.has(selectedNode.id) : false}
-      />
-      <ScenarioLabModal
-        isOpen={scenarioModalOpen} onClose={() => setScenarioModalOpen(false)}
-        scenarios={store.scenarioList} isRunning={scenarioRunning} currentId={currentScenarioId}
-        onStart={(id, interval) => { void store.startScenario(id, interval); }}
-        onStop={() => { void store.stopScenario(); }}
-        onReset={() => { void store.resetScenario(); }}
       />
       <UploadModal isOpen={uploadModalOpen} onClose={() => { store.pausePolling(false); setUploadModalOpen(false); void store.refresh(true); }} onSuccess={() => {}} onViewFlaggedFlows={() => setTab("flagged-flows")} />
       <BenchmarkModal isOpen={benchmarkModalOpen} onClose={() => setBenchmarkModalOpen(false)} />

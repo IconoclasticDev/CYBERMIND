@@ -88,3 +88,9 @@ CYBERMIND/CYBERMIND_REAL/integrations/**/AGENT.md
 CYBERMIND/CYBERMIND_REAL/integrations/**/APP_AGENT.md
 CYBERMIND/CYBERMIND_REAL/integrations/**/IMPLEMENTATION_STATUS.md
 CYBERMIND/CYBERMIND_REAL/integrations/**/src/cybermind_backup_sep13/
+
+!CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip
+!CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.manifest.json
+
+# Local recording takes and earlier renders; canonical video/project is under CYBERMIND.
+/videos/

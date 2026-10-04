@@ -1,0 +1,16 @@
+{
+  "file_name": "cybermind_incident_brief_encrypted_1791066900616.json",
+  "bytes": 10374,
+  "sha256": "ddd81b968b61c540ff0fb526263476d80274bc6bcf01746ba7bebfb928533e38",
+  "envelope_fields": [
+    "format",
+    "version",
+    "encryption",
+    "key_encoding",
+    "iv",
+    "ciphertext"
+  ],
+  "source": "Actual user-saved encrypted report in Downloads",
+  "correct_key_decryption": "User confirmed with screenshot",
+  "wrong_key_rejection": "User-supplied screenshot confirms Decryption failed for the altered key on the same saved file"
+}

@@ -12,3 +12,6 @@ CYBERMIND/tools/strix/strix-1.6.2-windows-x86_64.zip filter=lfs diff=lfs merge=l
 *.pdf binary
 *.png binary
 *.pt binary
+CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip filter=lfs diff=lfs merge=lfs -text
+CYBERMIND/deliverables/demo/project/assets/cuts/*.mp4 filter=lfs diff=lfs merge=lfs -text
+CYBERMIND/deliverables/demo/project/assets/*.wav filter=lfs diff=lfs merge=lfs -text

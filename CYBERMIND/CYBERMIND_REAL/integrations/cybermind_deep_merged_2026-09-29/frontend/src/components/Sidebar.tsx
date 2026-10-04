@@ -1,7 +1,7 @@
 import React from "react";
 import {
-  Home, Activity, TrendingUp, GitBranch, Share2, FlaskConical, PlayCircle, FileText,
-  BookOpen, Settings, RotateCcw, Square, Zap, Database, BarChart2,
+  Home, Activity, TrendingUp, GitBranch, Share2, PlayCircle, FileText,
+  BookOpen, Settings, Zap, Database, BarChart2,
 } from "lucide-react";
 import type { HealthResponse, ScenarioInfo } from "../lib/api";
 
@@ -52,7 +52,6 @@ const NAV_GROUPS: NavGroup[] = [
     label: "Labs",
     items: [
       { id: "attack-lab", label: "Attack Labs (Strix)", icon: Zap, badge: "AI PATCH" },
-      { id: "scenario-lab", label: "Scenario Lab", icon: FlaskConical },
       { id: "replay-analysis", label: "Replay & Analysis", icon: PlayCircle },
     ],
   },
@@ -67,10 +66,8 @@ const NAV_GROUPS: NavGroup[] = [
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({
-  currentTab, onTabChange, health, scenarios, activeScenarioId, scenarioRunning,
-  onStopScenario, onResetScenario, onLoadTestCase, activeTestCaseId, testCaseBusy,
+  currentTab, onTabChange,
 }) => {
-  const active = scenarios.find((s) => s.id === activeScenarioId);
   return (
     <aside className="w-64 bg-[#F7F5F0] border-r border-[#EAE6DF] h-[calc(100vh-61px)] sticky top-[61px] overflow-y-auto flex flex-col justify-between p-3 select-none shrink-0">
       <div className="space-y-3">
@@ -112,84 +109,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
         ))}
 
-        {/* Real Test Cases */}
-        {onLoadTestCase && (
-          <div>
-            <div className="text-[9px] font-bold text-[#A0AAB8] px-2.5 mb-1 uppercase tracking-widest">
-              Test Cases
-            </div>
-            <div className="space-y-0.5">
-              <button
-                onClick={() => onLoadTestCase("botnet_ares")}
-                disabled={testCaseBusy}
-                className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-left ${
-                  activeTestCaseId === "botnet_ares"
-                    ? "bg-[#FAF4EE] border border-[#DE5B49]/40 text-[#DE5B49] font-semibold"
-                    : "text-[#586474] hover:bg-[#EFECE5] hover:text-[#1A222B]"
-                }`}
-              >
-                <div className="flex items-center gap-2 truncate">
-                  <Zap className="w-3.5 h-3.5 text-[#DE5B49] shrink-0" />
-                  <span className="truncate">Botnet Ares</span>
-                </div>
-                <span className="text-[10px] font-mono text-[#8C95A3]">4.5MB</span>
-              </button>
-              <button
-                onClick={() => onLoadTestCase("ssh_bruteforce")}
-                disabled={testCaseBusy}
-                className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors text-left ${
-                  activeTestCaseId === "ssh_bruteforce"
-                    ? "bg-[#FAF4EE] border border-[#DE5B49]/40 text-[#DE5B49] font-semibold"
-                    : "text-[#586474] hover:bg-[#EFECE5] hover:text-[#1A222B]"
-                }`}
-              >
-                <div className="flex items-center gap-2 truncate">
-                  <Zap className="w-3.5 h-3.5 text-[#E58B44] shrink-0" />
-                  <span className="truncate">SSH Brute Force</span>
-                </div>
-                <span className="text-[10px] font-mono text-[#8C95A3]">4.5MB</span>
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Active Scenario Status */}
-        <div className="bg-white/90 border border-[#E4DFD6] rounded-xl p-3 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
-          <div className="text-[9px] font-bold tracking-widest text-[#A0AAB8] uppercase mb-1.5">Active Scenario</div>
-          {activeScenarioId ? (
-            <>
-              <div className="text-xs font-bold text-[#1A222B] leading-snug">{active?.name ?? activeScenarioId}</div>
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className={`w-2 h-2 rounded-full ${scenarioRunning ? "bg-[#2EAA58] animate-pulse" : "bg-stone-400"}`} />
-                <span className={`text-[11px] font-medium ${scenarioRunning ? "text-[#2EAA58]" : "text-stone-500"}`}>
-                  {scenarioRunning ? "Running" : "Idle"}
-                </span>
-              </div>
-              <div className="text-[10px] text-[#7C8898] mt-1 font-mono">
-                tick {health?.scenario?.tick ?? 0} · run {health?.scenario?.run_id?.slice(0, 8) ?? "—"}
-              </div>
-              <div className="grid grid-cols-2 gap-1.5 mt-2">
-                <button
-                  onClick={onStopScenario}
-                  className="py-1.5 px-2 bg-[#FAF8F5] hover:bg-[#FBEDEA] border border-[#DDD6CC] hover:border-[#DE5B49]/40 rounded-lg text-[11px] font-semibold text-[#3C4755] transition-colors flex items-center justify-center gap-1"
-                >
-                  <Square className="w-3 h-3" /> Stop
-                </button>
-                <button
-                  onClick={onResetScenario}
-                  className="py-1.5 px-2 bg-[#FAF8F5] hover:bg-[#EFEAE2] border border-[#DDD6CC] rounded-lg text-[11px] font-semibold text-[#3C4755] transition-colors flex items-center justify-center gap-1"
-                >
-                  <RotateCcw className="w-3 h-3" /> Reset
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="text-xs font-semibold text-stone-500">No scenario running</div>
-              <div className="text-[11px] text-[#7C8898] mt-0.5">Start one from Scenario Lab to see the full observe → forecast loop.</div>
-            </>
-          )}
-        </div>
 
       </div>
 

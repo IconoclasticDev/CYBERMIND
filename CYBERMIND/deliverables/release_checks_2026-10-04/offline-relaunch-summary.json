@@ -1,0 +1,14 @@
+﻿{
+    "started_utc":  "2026-10-03T22:03:18.2806659Z",
+    "result":  "FAIL",
+    "zip_sha256":  "4eed0e3fe858afc6cc77a95dc62a010102f9ee09af7ee3fdce242a004e621eae",
+    "checks":  {
+                   "pcap_forecast_comparison_validation_four_lab_loops":  "PASS",
+                   "launch_health":  "PASS",
+                   "start_from_stopped_container":  "PASS",
+                   "extracted_integrity":  "PASS"
+               },
+    "base":  "http://127.0.0.1:57917",
+    "error":  "Release did not become healthy after stop/relaunch",
+    "finished_utc":  "2026-10-03T22:10:41.4400204Z"
+}

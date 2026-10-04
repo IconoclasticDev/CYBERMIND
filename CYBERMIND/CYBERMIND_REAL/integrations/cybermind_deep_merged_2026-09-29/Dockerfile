@@ -27,4 +27,5 @@ COPY tools/incident_decrypter/index.html ./tools/incident_decrypter/index.html
 COPY --from=frontend /build/frontend/dist ./frontend/dist
 RUN mkdir -p data/replay data/test_cases data/runs data/strix_runs
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY packaging/container_entrypoint.py /app/packaging/container_entrypoint.py
+CMD ["python", "/app/packaging/container_entrypoint.py"]

@@ -1,0 +1,9 @@
+# OPT-IN ONLY: the Docker socket permits substantial control over the host
+# daemon. Enable only for the external Strix CLI with an LLM provider and
+# registered, authorized targets. Local Attack Lab and validation need no socket.
+services:
+  cybermind:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock

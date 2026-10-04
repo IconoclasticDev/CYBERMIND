@@ -1,0 +1,6 @@
+# Build on the locally verified release image, with no dependency downloads.
+# The release builder verifies this base image ID before the single build.
+FROM cybermind/offline-app:2026-09-29
+COPY packaging/container_entrypoint.py /app/packaging/container_entrypoint.py
+COPY sandbox/target_app.py /app/sandbox/target_app.py
+CMD ["python", "/app/packaging/container_entrypoint.py"]

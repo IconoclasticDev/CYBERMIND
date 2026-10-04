@@ -9,6 +9,7 @@ import type { LiveStore } from "../lib/live";
 import { api, type ExperimentRun, type RunDetail, type Forecast } from "../lib/api";
 import { STAGE_SHORT_NAMES, STAGE_COLORS } from "../lib/adapters";
 import { encryptIncidentBriefWithKey, decryptIncidentBrief } from "../lib/reportCrypto";
+import { SystemHealthCard } from "./InsightsAndHealth";
 
 const Back: React.FC<{ onClick: () => void }> = ({ onClick }) => (
   <button onClick={onClick} className="inline-flex items-center gap-1.5 text-xs text-[#DE5B49] font-semibold mb-2 hover:underline">
@@ -90,7 +91,7 @@ export const ThreatForecastView: React.FC<{ store: LiveStore; onBack: () => void
         <div className="bg-white p-8 rounded-2xl border border-[#EAE6DF] text-center text-sm text-stone-500">
           {f?.model_available === false
             ? "Model not loaded — check models/best.pt to enable forecasting."
-            : "Insufficient observation windows. Start a scenario (Scenario Lab) or POST telemetry, then return here."}
+            : "Upload a PCAP or CSV with enough observation windows, then return here."}
         </div>
       ) : (
         <>
@@ -667,7 +668,7 @@ export const ReportsView: React.FC<{ store: LiveStore; onBack: () => void }> = (
               <FileText className="w-5 h-5 text-[#A0AAB8]" />
             </div>
             <div className="text-sm font-bold text-[#171F27]">No experiment runs yet</div>
-            <div className="text-xs text-[#707C8C] mt-1">Start a scenario in the Scenario Lab to generate persistent records.</div>
+            <div className="text-xs text-[#707C8C] mt-1">Upload a PCAP or CSV and run an analysis to generate case records.</div>
           </div>
         )}
       </div>
@@ -789,6 +790,7 @@ export const SettingsView: React.FC<{ store: LiveStore; onBack: () => void }> = 
           </div>
         )}
       </div>
+      <SystemHealthCard health={store.health} wsUp={store.ws === "online"} />
     </div>
   );
 };

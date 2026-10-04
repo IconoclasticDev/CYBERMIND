@@ -1,0 +1,12 @@
+{
+  "release": "CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04",
+  "desktop_exe_present": true,
+  "docker_image_archive_present": true,
+  "linux_launcher_present": true,
+  "shared_ui_present": true,
+  "manifest_files_verified": 25,
+  "mismatches": [],
+  "runtime_health": "Docker API healthy; best.pt loaded on CPU",
+  "duplicate_cleanup": "Superseded runnable releases moved to tmp/retired_release_copies_2026-10-05; unused compiled JS and scene files removed from current project",
+  "linux_host_launch_test": "not performed"
+}

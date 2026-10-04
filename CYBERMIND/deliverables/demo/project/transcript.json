@@ -1,0 +1,1008 @@
+[
+  {
+    "start": 0.0,
+    "end": 7.18,
+    "text": " Most detectors alert after an attack, Cybermind forecasted, test the defense and verify it.",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.9,
+        "text": " Most"
+      },
+      {
+        "start": 0.9,
+        "end": 1.26,
+        "text": " detectors"
+      },
+      {
+        "start": 1.26,
+        "end": 1.9,
+        "text": " alert"
+      },
+      {
+        "start": 1.9,
+        "end": 2.44,
+        "text": " after"
+      },
+      {
+        "start": 2.44,
+        "end": 2.66,
+        "text": " an"
+      },
+      {
+        "start": 2.66,
+        "end": 2.92,
+        "text": " attack,"
+      },
+      {
+        "start": 3.4,
+        "end": 4.02,
+        "text": " Cybermind"
+      },
+      {
+        "start": 4.02,
+        "end": 4.74,
+        "text": " forecasted,"
+      },
+      {
+        "start": 5.12,
+        "end": 5.34,
+        "text": " test"
+      },
+      {
+        "start": 5.34,
+        "end": 5.56,
+        "text": " the"
+      },
+      {
+        "start": 5.56,
+        "end": 5.84,
+        "text": " defense"
+      },
+      {
+        "start": 5.84,
+        "end": 6.34,
+        "text": " and"
+      },
+      {
+        "start": 6.34,
+        "end": 6.56,
+        "text": " verify"
+      },
+      {
+        "start": 6.56,
+        "end": 7.18,
+        "text": " it."
+      }
+    ]
+  },
+  {
+    "start": 7.6,
+    "end": 9.8,
+    "text": " Fully offline, Wi-Fi is off.",
+    "words": [
+      {
+        "start": 7.6,
+        "end": 7.88,
+        "text": " Fully"
+      },
+      {
+        "start": 7.88,
+        "end": 8.3,
+        "text": " offline,"
+      },
+      {
+        "start": 8.92,
+        "end": 9.1,
+        "text": " Wi"
+      },
+      {
+        "start": 9.1,
+        "end": 9.34,
+        "text": "-Fi"
+      },
+      {
+        "start": 9.34,
+        "end": 9.6,
+        "text": " is"
+      },
+      {
+        "start": 9.6,
+        "end": 9.8,
+        "text": " off."
+      }
+    ]
+  },
+  {
+    "start": 10.48,
+    "end": 14.96,
+    "text": " In command center, I upload a capture and every event keeps its provenance.",
+    "words": [
+      {
+        "start": 10.48,
+        "end": 10.5,
+        "text": " In"
+      },
+      {
+        "start": 10.5,
+        "end": 10.68,
+        "text": " command"
+      },
+      {
+        "start": 10.68,
+        "end": 11.22,
+        "text": " center,"
+      },
+      {
+        "start": 11.48,
+        "end": 11.52,
+        "text": " I"
+      },
+      {
+        "start": 11.52,
+        "end": 11.84,
+        "text": " upload"
+      },
+      {
+        "start": 11.84,
+        "end": 12.02,
+        "text": " a"
+      },
+      {
+        "start": 12.02,
+        "end": 12.3,
+        "text": " capture"
+      },
+      {
+        "start": 12.3,
+        "end": 12.84,
+        "text": " and"
+      },
+      {
+        "start": 12.84,
+        "end": 13.14,
+        "text": " every"
+      },
+      {
+        "start": 13.14,
+        "end": 13.72,
+        "text": " event"
+      },
+      {
+        "start": 13.72,
+        "end": 14.02,
+        "text": " keeps"
+      },
+      {
+        "start": 14.02,
+        "end": 14.32,
+        "text": " its"
+      },
+      {
+        "start": 14.32,
+        "end": 14.96,
+        "text": " provenance."
+      }
+    ]
+  },
+  {
+    "start": 15.7,
+    "end": 17.48,
+    "text": " Select a host to inspect its connections.",
+    "words": [
+      {
+        "start": 15.7,
+        "end": 15.72,
+        "text": " Select"
+      },
+      {
+        "start": 15.72,
+        "end": 15.94,
+        "text": " a"
+      },
+      {
+        "start": 15.94,
+        "end": 16.18,
+        "text": " host"
+      },
+      {
+        "start": 16.18,
+        "end": 16.42,
+        "text": " to"
+      },
+      {
+        "start": 16.42,
+        "end": 16.72,
+        "text": " inspect"
+      },
+      {
+        "start": 16.72,
+        "end": 16.98,
+        "text": " its"
+      },
+      {
+        "start": 16.98,
+        "end": 17.48,
+        "text": " connections."
+      }
+    ]
+  },
+  {
+    "start": 18.22,
+    "end": 23.44,
+    "text": " Flag flows are rule-based hints, septied from the models focused, threat-focused projects",
+    "words": [
+      {
+        "start": 18.22,
+        "end": 18.28,
+        "text": " Flag"
+      },
+      {
+        "start": 18.28,
+        "end": 18.58,
+        "text": " flows"
+      },
+      {
+        "start": 18.58,
+        "end": 18.94,
+        "text": " are"
+      },
+      {
+        "start": 18.94,
+        "end": 19.16,
+        "text": " rule"
+      },
+      {
+        "start": 19.16,
+        "end": 19.46,
+        "text": "-based"
+      },
+      {
+        "start": 19.46,
+        "end": 19.8,
+        "text": " hints,"
+      },
+      {
+        "start": 20.42,
+        "end": 20.66,
+        "text": " septied"
+      },
+      {
+        "start": 20.66,
+        "end": 20.9,
+        "text": " from"
+      },
+      {
+        "start": 20.9,
+        "end": 21.02,
+        "text": " the"
+      },
+      {
+        "start": 21.02,
+        "end": 21.28,
+        "text": " models"
+      },
+      {
+        "start": 21.28,
+        "end": 21.62,
+        "text": " focused,"
+      },
+      {
+        "start": 22.54,
+        "end": 22.54,
+        "text": " threat"
+      },
+      {
+        "start": 22.54,
+        "end": 22.9,
+        "text": "-focused"
+      },
+      {
+        "start": 22.9,
+        "end": 23.44,
+        "text": " projects"
+      }
+    ]
+  },
+  {
+    "start": 23.44,
+    "end": 27.58,
+    "text": " future graph window risk, course attack stages and uncertainty.",
+    "words": [
+      {
+        "start": 23.44,
+        "end": 23.86,
+        "text": " future"
+      },
+      {
+        "start": 23.86,
+        "end": 24.28,
+        "text": " graph"
+      },
+      {
+        "start": 24.28,
+        "end": 24.58,
+        "text": " window"
+      },
+      {
+        "start": 24.58,
+        "end": 24.98,
+        "text": " risk,"
+      },
+      {
+        "start": 25.58,
+        "end": 25.72,
+        "text": " course"
+      },
+      {
+        "start": 25.72,
+        "end": 26.22,
+        "text": " attack"
+      },
+      {
+        "start": 26.22,
+        "end": 26.64,
+        "text": " stages"
+      },
+      {
+        "start": 26.64,
+        "end": 27.12,
+        "text": " and"
+      },
+      {
+        "start": 27.12,
+        "end": 27.58,
+        "text": " uncertainty."
+      }
+    ]
+  },
+  {
+    "start": 27.58,
+    "end": 30.12,
+    "text": " The stages are research estimates.",
+    "words": [
+      {
+        "start": 27.58,
+        "end": 28.48,
+        "text": " The"
+      },
+      {
+        "start": 28.48,
+        "end": 28.84,
+        "text": " stages"
+      },
+      {
+        "start": 28.84,
+        "end": 29.1,
+        "text": " are"
+      },
+      {
+        "start": 29.1,
+        "end": 29.42,
+        "text": " research"
+      },
+      {
+        "start": 29.42,
+        "end": 30.12,
+        "text": " estimates."
+      }
+    ]
+  },
+  {
+    "start": 30.74,
+    "end": 34.26,
+    "text": " Parallel futures compares a defense with the no-action baseline.",
+    "words": [
+      {
+        "start": 30.74,
+        "end": 31.18,
+        "text": " Parallel"
+      },
+      {
+        "start": 31.18,
+        "end": 31.54,
+        "text": " futures"
+      },
+      {
+        "start": 31.54,
+        "end": 31.96,
+        "text": " compares"
+      },
+      {
+        "start": 31.96,
+        "end": 32.44,
+        "text": " a"
+      },
+      {
+        "start": 32.44,
+        "end": 32.66,
+        "text": " defense"
+      },
+      {
+        "start": 32.66,
+        "end": 33.12,
+        "text": " with"
+      },
+      {
+        "start": 33.12,
+        "end": 33.28,
+        "text": " the"
+      },
+      {
+        "start": 33.28,
+        "end": 33.58,
+        "text": " no"
+      },
+      {
+        "start": 33.58,
+        "end": 33.92,
+        "text": "-action"
+      },
+      {
+        "start": 33.92,
+        "end": 34.26,
+        "text": " baseline."
+      }
+    ]
+  },
+  {
+    "start": 35.18,
+    "end": 38.3,
+    "text": " It is a simulation for analysts to review not a proof.",
+    "words": [
+      {
+        "start": 35.18,
+        "end": 35.26,
+        "text": " It"
+      },
+      {
+        "start": 35.26,
+        "end": 35.54,
+        "text": " is"
+      },
+      {
+        "start": 35.54,
+        "end": 35.66,
+        "text": " a"
+      },
+      {
+        "start": 35.66,
+        "end": 36.02,
+        "text": " simulation"
+      },
+      {
+        "start": 36.02,
+        "end": 36.56,
+        "text": " for"
+      },
+      {
+        "start": 36.56,
+        "end": 36.9,
+        "text": " analysts"
+      },
+      {
+        "start": 36.9,
+        "end": 37.3,
+        "text": " to"
+      },
+      {
+        "start": 37.3,
+        "end": 37.52,
+        "text": " review"
+      },
+      {
+        "start": 37.52,
+        "end": 37.94,
+        "text": " not"
+      },
+      {
+        "start": 37.94,
+        "end": 38.1,
+        "text": " a"
+      },
+      {
+        "start": 38.1,
+        "end": 38.3,
+        "text": " proof."
+      }
+    ]
+  },
+  {
+    "start": 38.86,
+    "end": 43.38,
+    "text": " In the Strix Lab, we run a bounded probe against an isolated loopback sandbox.",
+    "words": [
+      {
+        "start": 38.86,
+        "end": 39.02,
+        "text": " In"
+      },
+      {
+        "start": 39.02,
+        "end": 39.14,
+        "text": " the"
+      },
+      {
+        "start": 39.14,
+        "end": 39.42,
+        "text": " Strix"
+      },
+      {
+        "start": 39.42,
+        "end": 39.7,
+        "text": " Lab,"
+      },
+      {
+        "start": 40.24,
+        "end": 40.3,
+        "text": " we"
+      },
+      {
+        "start": 40.3,
+        "end": 40.5,
+        "text": " run"
+      },
+      {
+        "start": 40.5,
+        "end": 40.64,
+        "text": " a"
+      },
+      {
+        "start": 40.64,
+        "end": 41.04,
+        "text": " bounded"
+      },
+      {
+        "start": 41.04,
+        "end": 41.38,
+        "text": " probe"
+      },
+      {
+        "start": 41.38,
+        "end": 41.72,
+        "text": " against"
+      },
+      {
+        "start": 41.72,
+        "end": 42.02,
+        "text": " an"
+      },
+      {
+        "start": 42.02,
+        "end": 42.42,
+        "text": " isolated"
+      },
+      {
+        "start": 42.42,
+        "end": 43.12,
+        "text": " loopback"
+      },
+      {
+        "start": 43.12,
+        "end": 43.38,
+        "text": " sandbox."
+      }
+    ]
+  },
+  {
+    "start": 44.32,
+    "end": 47.04,
+    "text": " It succeeds and the telemetry updates the forecast.",
+    "words": [
+      {
+        "start": 44.32,
+        "end": 44.46,
+        "text": " It"
+      },
+      {
+        "start": 44.46,
+        "end": 44.78,
+        "text": " succeeds"
+      },
+      {
+        "start": 44.78,
+        "end": 45.48,
+        "text": " and"
+      },
+      {
+        "start": 45.48,
+        "end": 45.6,
+        "text": " the"
+      },
+      {
+        "start": 45.6,
+        "end": 46.1,
+        "text": " telemetry"
+      },
+      {
+        "start": 46.1,
+        "end": 46.5,
+        "text": " updates"
+      },
+      {
+        "start": 46.5,
+        "end": 46.8,
+        "text": " the"
+      },
+      {
+        "start": 46.8,
+        "end": 47.04,
+        "text": " forecast."
+      }
+    ]
+  },
+  {
+    "start": 47.86,
+    "end": 51.14,
+    "text": " We approved the proposed fix and rerun the same probe.",
+    "words": [
+      {
+        "start": 47.86,
+        "end": 47.96,
+        "text": " We"
+      },
+      {
+        "start": 47.96,
+        "end": 48.34,
+        "text": " approved"
+      },
+      {
+        "start": 48.34,
+        "end": 48.68,
+        "text": " the"
+      },
+      {
+        "start": 48.68,
+        "end": 49.0,
+        "text": " proposed"
+      },
+      {
+        "start": 49.0,
+        "end": 49.34,
+        "text": " fix"
+      },
+      {
+        "start": 49.34,
+        "end": 49.96,
+        "text": " and"
+      },
+      {
+        "start": 49.96,
+        "end": 50.42,
+        "text": " rerun"
+      },
+      {
+        "start": 50.42,
+        "end": 50.62,
+        "text": " the"
+      },
+      {
+        "start": 50.62,
+        "end": 50.86,
+        "text": " same"
+      },
+      {
+        "start": 50.86,
+        "end": 51.14,
+        "text": " probe."
+      }
+    ]
+  },
+  {
+    "start": 51.84,
+    "end": 52.6,
+    "text": " Now it is blocked.",
+    "words": [
+      {
+        "start": 51.84,
+        "end": 51.92,
+        "text": " Now"
+      },
+      {
+        "start": 51.92,
+        "end": 52.26,
+        "text": " it"
+      },
+      {
+        "start": 52.26,
+        "end": 52.38,
+        "text": " is"
+      },
+      {
+        "start": 52.38,
+        "end": 52.6,
+        "text": " blocked."
+      }
+    ]
+  },
+  {
+    "start": 52.6,
+    "end": 58.14,
+    "text": " The validator records real sandbox responses and SHA-256 hashes.",
+    "words": [
+      {
+        "start": 52.6,
+        "end": 53.06,
+        "text": " The"
+      },
+      {
+        "start": 53.06,
+        "end": 53.7,
+        "text": " validator"
+      },
+      {
+        "start": 53.7,
+        "end": 54.14,
+        "text": " records"
+      },
+      {
+        "start": 54.14,
+        "end": 54.84,
+        "text": " real"
+      },
+      {
+        "start": 54.84,
+        "end": 55.22,
+        "text": " sandbox"
+      },
+      {
+        "start": 55.22,
+        "end": 56.22,
+        "text": " responses"
+      },
+      {
+        "start": 56.22,
+        "end": 56.68,
+        "text": " and"
+      },
+      {
+        "start": 56.68,
+        "end": 57.0,
+        "text": " SHA"
+      },
+      {
+        "start": 57.0,
+        "end": 57.54,
+        "text": "-256"
+      },
+      {
+        "start": 57.54,
+        "end": 58.14,
+        "text": " hashes."
+      }
+    ]
+  },
+  {
+    "start": 58.86,
+    "end": 66.08,
+    "text": " Reports are AES-256GCM encrypted, decrypting needs the separate key and the wrong key fails.",
+    "words": [
+      {
+        "start": 58.86,
+        "end": 59.32,
+        "text": " Reports"
+      },
+      {
+        "start": 59.32,
+        "end": 59.68,
+        "text": " are"
+      },
+      {
+        "start": 59.68,
+        "end": 60.18,
+        "text": " AES"
+      },
+      {
+        "start": 60.18,
+        "end": 61.56,
+        "text": "-256GCM"
+      },
+      {
+        "start": 61.56,
+        "end": 62.0,
+        "text": " encrypted,"
+      },
+      {
+        "start": 62.72,
+        "end": 63.4,
+        "text": " decrypting"
+      },
+      {
+        "start": 63.4,
+        "end": 63.62,
+        "text": " needs"
+      },
+      {
+        "start": 63.62,
+        "end": 63.88,
+        "text": " the"
+      },
+      {
+        "start": 63.88,
+        "end": 64.16,
+        "text": " separate"
+      },
+      {
+        "start": 64.16,
+        "end": 64.52,
+        "text": " key"
+      },
+      {
+        "start": 64.52,
+        "end": 65.06,
+        "text": " and"
+      },
+      {
+        "start": 65.06,
+        "end": 65.22,
+        "text": " the"
+      },
+      {
+        "start": 65.22,
+        "end": 65.38,
+        "text": " wrong"
+      },
+      {
+        "start": 65.38,
+        "end": 65.7,
+        "text": " key"
+      },
+      {
+        "start": 65.7,
+        "end": 66.08,
+        "text": " fails."
+      }
+    ]
+  },
+  {
+    "start": 67.02,
+    "end": 80.22,
+    "text": " On held out, CICID S-2018 0.9851F1 and 0.057 falls positive versus 0.927 and 0.1314",
+    "words": [
+      {
+        "start": 67.02,
+        "end": 67.24,
+        "text": " On"
+      },
+      {
+        "start": 67.24,
+        "end": 67.5,
+        "text": " held"
+      },
+      {
+        "start": 67.5,
+        "end": 67.78,
+        "text": " out,"
+      },
+      {
+        "start": 68.14,
+        "end": 69.24,
+        "text": " CICID"
+      },
+      {
+        "start": 69.24,
+        "end": 69.62,
+        "text": " S"
+      },
+      {
+        "start": 69.62,
+        "end": 70.12,
+        "text": "-2018"
+      },
+      {
+        "start": 70.12,
+        "end": 71.08,
+        "text": " 0"
+      },
+      {
+        "start": 71.08,
+        "end": 72.94,
+        "text": ".9851F1"
+      },
+      {
+        "start": 72.94,
+        "end": 73.08,
+        "text": " and"
+      },
+      {
+        "start": 73.08,
+        "end": 73.76,
+        "text": " 0"
+      },
+      {
+        "start": 73.76,
+        "end": 74.94,
+        "text": ".057"
+      },
+      {
+        "start": 74.94,
+        "end": 75.44,
+        "text": " falls"
+      },
+      {
+        "start": 75.44,
+        "end": 76.06,
+        "text": " positive"
+      },
+      {
+        "start": 76.06,
+        "end": 76.7,
+        "text": " versus"
+      },
+      {
+        "start": 76.7,
+        "end": 77.42,
+        "text": " 0"
+      },
+      {
+        "start": 77.42,
+        "end": 78.24,
+        "text": ".927"
+      },
+      {
+        "start": 78.24,
+        "end": 78.24,
+        "text": " and"
+      },
+      {
+        "start": 78.24,
+        "end": 79.18,
+        "text": " 0"
+      },
+      {
+        "start": 79.18,
+        "end": 80.22,
+        "text": ".1314"
+      }
+    ]
+  },
+  {
+    "start": 80.22,
+    "end": 80.84,
+    "text": " baseline.",
+    "words": [
+      {
+        "start": 80.22,
+        "end": 80.84,
+        "text": " baseline."
+      }
+    ]
+  },
+  {
+    "start": 80.84,
+    "end": 83.22,
+    "text": " Code and release on the term.",
+    "words": [
+      {
+        "start": 80.84,
+        "end": 81.82,
+        "text": " Code"
+      },
+      {
+        "start": 81.82,
+        "end": 82.1,
+        "text": " and"
+      },
+      {
+        "start": 82.1,
+        "end": 82.42,
+        "text": " release"
+      },
+      {
+        "start": 82.42,
+        "end": 82.78,
+        "text": " on"
+      },
+      {
+        "start": 82.78,
+        "end": 83.0,
+        "text": " the"
+      },
+      {
+        "start": 83.0,
+        "end": 83.22,
+        "text": " term."
+      }
+    ]
+  }
+]

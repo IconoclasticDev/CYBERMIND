@@ -1,0 +1,124 @@
+{
+  "runs": [
+    {
+      "run_id": "local-599bc905b974",
+      "created_at": 1791065064.0347667,
+      "mode": "BUNDLED_IN_PROCESS_SANDBOX",
+      "verdict": "SANDBOX_RESPONSES_OBSERVED",
+      "forecast": {
+        "forecast_id": "7a034315d6ff",
+        "forecast_ts": 1791065064.0240881,
+        "model_version": "cybermind-5324902ca017",
+        "predicted_stage": "Reconnaissance",
+        "predicted_risk": 0.9905315041542053
+      },
+      "checks": [
+        {
+          "name": "sandbox health",
+          "http_status": 200,
+          "response_sha256": "66f4070f5d49129f7b7c60e84fc76736b97e01264ef79fdf6767ac959f02ae21",
+          "outcome": "observed"
+        },
+        {
+          "name": "invalid login",
+          "http_status": 401,
+          "response_sha256": "40e51afb8790883c33983b08f2bc2849763a27de77090a301a6046257b7d0d19",
+          "outcome": "observed"
+        },
+        {
+          "name": "share access",
+          "http_status": 200,
+          "response_sha256": "6290a084cfba66c7282d67fdf1687846f0315e00a5555688e8c4906de9c0e20c",
+          "outcome": "observed"
+        },
+        {
+          "name": "query handling",
+          "http_status": 200,
+          "response_sha256": "360e7bb1999dd21b3115be580bc0ff3d14dd6ce1969f04b509443563d42c0635",
+          "outcome": "observed"
+        }
+      ],
+      "limitation": "This checks the bundled demonstration target's HTTP behavior. It does not run Strix, establish an independently verified attack stage, or measure model forecast accuracy."
+    },
+    {
+      "run_id": "local-743eca2605ef",
+      "created_at": 1791063180.4330633,
+      "mode": "BUNDLED_IN_PROCESS_SANDBOX",
+      "verdict": "SANDBOX_RESPONSES_OBSERVED",
+      "forecast": {
+        "forecast_id": "c8b7774a7e5e",
+        "forecast_ts": 1791063180.415831,
+        "model_version": "cybermind-5324902ca017",
+        "predicted_stage": "Reconnaissance",
+        "predicted_risk": 0.9905315041542053
+      },
+      "checks": [
+        {
+          "name": "sandbox health",
+          "http_status": 200,
+          "response_sha256": "66f4070f5d49129f7b7c60e84fc76736b97e01264ef79fdf6767ac959f02ae21",
+          "outcome": "observed"
+        },
+        {
+          "name": "invalid login",
+          "http_status": 401,
+          "response_sha256": "40e51afb8790883c33983b08f2bc2849763a27de77090a301a6046257b7d0d19",
+          "outcome": "observed"
+        },
+        {
+          "name": "share access",
+          "http_status": 200,
+          "response_sha256": "6290a084cfba66c7282d67fdf1687846f0315e00a5555688e8c4906de9c0e20c",
+          "outcome": "observed"
+        },
+        {
+          "name": "query handling",
+          "http_status": 200,
+          "response_sha256": "360e7bb1999dd21b3115be580bc0ff3d14dd6ce1969f04b509443563d42c0635",
+          "outcome": "observed"
+        }
+      ],
+      "limitation": "This checks the bundled demonstration target's HTTP behavior. It does not run Strix, establish an independently verified attack stage, or measure model forecast accuracy."
+    },
+    {
+      "run_id": "local-f15c888cbb14",
+      "created_at": 1791061628.0459344,
+      "mode": "BUNDLED_IN_PROCESS_SANDBOX",
+      "verdict": "SANDBOX_RESPONSES_OBSERVED",
+      "forecast": {
+        "forecast_id": "1bc60fa1e35d",
+        "forecast_ts": 1791061628.0288773,
+        "model_version": "cybermind-5324902ca017",
+        "predicted_stage": "Reconnaissance",
+        "predicted_risk": 0.9905315041542053
+      },
+      "checks": [
+        {
+          "name": "sandbox health",
+          "http_status": 200,
+          "response_sha256": "66f4070f5d49129f7b7c60e84fc76736b97e01264ef79fdf6767ac959f02ae21",
+          "outcome": "observed"
+        },
+        {
+          "name": "invalid login",
+          "http_status": 401,
+          "response_sha256": "40e51afb8790883c33983b08f2bc2849763a27de77090a301a6046257b7d0d19",
+          "outcome": "observed"
+        },
+        {
+          "name": "share access",
+          "http_status": 200,
+          "response_sha256": "6290a084cfba66c7282d67fdf1687846f0315e00a5555688e8c4906de9c0e20c",
+          "outcome": "observed"
+        },
+        {
+          "name": "query handling",
+          "http_status": 200,
+          "response_sha256": "360e7bb1999dd21b3115be580bc0ff3d14dd6ce1969f04b509443563d42c0635",
+          "outcome": "observed"
+        }
+      ],
+      "limitation": "This checks the bundled demonstration target's HTTP behavior. It does not run Strix, establish an independently verified attack stage, or measure model forecast accuracy."
+    }
+  ]
+}

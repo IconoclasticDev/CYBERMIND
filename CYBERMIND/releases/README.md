@@ -1,27 +1,22 @@
-# CYBERMIND Docker desktop bundle
+# CYBERMIND releases
 
-Keep this extracted folder intact. The image archive contains the React UI, FastAPI backend, pinned `best.pt` model, in-app report decrypter, and runtime dependencies. The image is loaded from the bundle; the launchers do not pull it from the internet.
+## Current runnable application
 
-## Windows
+Download `CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip`, verify its SHA-256 against the adjacent manifest, and extract it. Keep the extracted folder intact.
 
-Install Docker Desktop with its Linux/WSL 2 engine once, then double-click **CYBERMIND.exe**. The EXE verifies and loads the image on first launch, starts the Docker service, and displays the app inside its own desktop window. It does not open a browser tab. The loopback address is an internal connection between the desktop window and Docker, not a remote service. The first launch may take several minutes while Docker loads the image. A later launch reuses the image and data volume.
+- Windows: start Docker Desktop, then double-click `CYBERMIND.exe`.
+- Linux x86-64: install Docker Engine and Compose, then run `sh launch_linux.sh`.
+- Includes the desktop launcher, complete offline Docker image, pinned `best.pt`, backend, current shared UI, in-app encryption/decryption, built-in sandbox checks and launch/stop scripts.
+- PCAP/CSV inputs are selected manually. The compiled `ui/` directory is shared by desktop and Linux Docker through Compose.
 
-The EXE is the Windows desktop launcher; the application backend and model run in Docker. The image archive and Compose file must remain beside the EXE. To stop the container without deleting saved cases, run `stop_windows.cmd`.
+SHA-256: `1501067ff49208cbe1ca15e72bbef8a67f43c661a1cee9609d3e4eb7eb541e22`
 
-## Linux x86-64
+The current UI fixes the Benign flow filter, uses orange for Medium hints and separates graph-window risk from HTTP defence evidence. External autonomous Strix requires a separately configured CLI and LLM provider. No local LLM is bundled.
 
-Install Docker Engine and the Compose plugin, then run `sh launch_linux.sh` from this extracted folder. The script checks the image SHA-256, loads it without network access, starts the service, and opens an application-style window if Chromium or Chrome is installed. Otherwise it opens the default browser. Linux ARM64 and macOS images are not included. Run `sh stop_linux.sh` to stop the service without deleting saved cases.
+See `../README.md` for the detailed application guide and `../deliverables/release_checks_2026-10-04/` for verification records. The refreshed ZIP was integrity-checked and the running Docker application was healthy with its model on CPU. The Linux launcher was not tested on a Linux host; the earlier full-machine offline test applies to the base image, not a repeated network-off test of this UI refresh.
 
-## Included files
+## Source/training submission
 
-- `CYBERMIND.exe`: Windows Docker-backed desktop window.
-- `launch_linux.sh`: Linux x86-64 Docker launcher.
-- `compose.offline.yaml`: local Docker service and persistent volume.
-- `images/cybermind-offline-app.tar`: complete offline app image, including `best.pt`.
-- `images/manifest.json` and `images/SHA256SUMS`: pinned image integrity data.
-- `demo/`: manually selectable PCAP/CSV files and provenance. Nothing is preloaded.
-- `script.md`: 3-minute-20-second video narration.
+`CYBERMIND_SIH_SUBMISSION_2026-09-26.zip` is a distinct source/training evidence package. It is retained with its manifest and package guide; it is not the current runnable application.
 
-Reports are encrypted and decrypted **inside the app**. The one-time report key must be shared separately from the encrypted JSON. The built-in Validation Engine's local sandbox check works after a case produces a forecast. The optional Strix-controlled scan is not active in this bundle because the Strix CLI and LLM provider are not configured; the local check does not verify model accuracy or retrain the checkpoint.
-
-The service binds only to `127.0.0.1`. Its Compose configuration passes the host Docker socket into the app container for the optional controlled-validator integration. Access to that socket gives the container substantial control over the host Docker daemon; run this bundle only on a trusted machine. Windows app logs are at `%LOCALAPPDATA%\CYBERMIND\launcher.log`.
+Superseded September desktop and October Attack Lab copies were removed from this folder. Local recoverable copies remain outside the tracked project in `tmp/retired_release_copies_2026-10-05/`.

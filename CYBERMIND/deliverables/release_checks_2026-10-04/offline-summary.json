@@ -1,0 +1,14 @@
+﻿{
+    "started_utc":  "2026-10-03T21:32:04.8905612Z",
+    "result":  "PASS: offline launch and API flow; UI encryption/decryption remains a separate check",
+    "zip_sha256":  "4eed0e3fe858afc6cc77a95dc62a010102f9ee09af7ee3fdce242a004e621eae",
+    "checks":  {
+                   "pcap_forecast_comparison_validation_four_lab_loops":  "PASS",
+                   "launch_health":  "PASS",
+                   "physical_network_disconnected_during_test":  "PASS",
+                   "extracted_integrity":  "PASS"
+               },
+    "base":  "http://127.0.0.1:56574",
+    "network_samples":  238,
+    "finished_utc":  "2026-10-03T21:36:13.4196745Z"
+}

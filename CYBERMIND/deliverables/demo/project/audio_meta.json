@@ -1,0 +1,9 @@
+{
+  "provider": "user-supplied",
+  "voice": "cybermind new 2.wav",
+  "source": "assets/narration.wav",
+  "original_duration": 83.72,
+  "playback_rate": 0.9,
+  "duration": 93.02222222222223,
+  "music": null
+}

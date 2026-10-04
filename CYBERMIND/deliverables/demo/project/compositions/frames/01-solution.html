@@ -1,0 +1,14 @@
+<!doctype html><html><body><template>
+<style>
+@font-face{font-family:DemoArial;src:url('assets/fonts/arial.ttf')}
+#frame-01-solution{position:absolute;inset:0;overflow:hidden;color:#fff}
+#frame-01-solution .ground{position:absolute;inset:0;background:#f8f6f1}
+#frame-01-solution-visual{position:absolute;inset:0;width:100%;height:100%;transform-origin:center}
+#frame-01-solution video,#frame-01-solution img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0}
+#frame-01-solution .caption{position:absolute;left:120px;right:120px;bottom:38px;min-height:62px;padding:15px 28px;border-radius:12px;background:#19212a;color:#fff;font-family:DemoArial,sans-serif;font-size:30px;line-height:1.25;text-align:center;box-shadow:0 3px 15px #0002}
+</style>
+<div id="frame-01-solution" data-composition-id="frame-01-solution" data-width="1920" data-height="1080" data-duration="3.550">
+ <div id="frame-01-solution-visual" data-layout-allow-overflow="true"><div id="frame-01-solution-ground" class="ground clip" data-start="0" data-duration="3.550"></div><img id="frame-01-solution-image" src="assets/frame2.jpg" alt="Provided solution slide"></div>
+</div>
+<script>const tl=gsap.timeline({paused:true});tl.fromTo("#frame-01-solution-visual",{opacity:0},{opacity:1,duration:0.3,ease:"none"},0);window.__timelines["frame-01-solution"]=tl;</script>
+</template></body></html>

@@ -1,0 +1,13 @@
+{
+  "machine_network_off": "Base image passed full machine offline checks. Updated shared UI build and Docker runtime verified separately; physical-network-off test not repeated for this UI update.",
+  "files_manifest": "release.manifest.json",
+  "image_id": "sha256:f9533395cf873173d95cfea93c97b7a6326ad50604c2b5325e485ba4eadf7809",
+  "image_sha256": "5e54f47055a09242ffc948996ba6562ffb396106f9f11c53131a9962c8aa2eee",
+  "bytes": 678977464,
+  "sha256": "1501067ff49208cbe1ca15e72bbef8a67f43c661a1cee9609d3e4eb7eb541e22",
+  "zip": "CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip",
+  "release": "CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04",
+  "verification": "CYBERMIND/deliverables/release_checks_2026-10-04/UPLOAD_UI_VERIFICATION.md",
+  "linux_launcher": "unverified: no supported Linux Docker/Compose environment",
+  "ui_update": "2026-10-05: corrected Benign filter, Medium colors and graph forecast/defence labels"
+}

@@ -135,11 +135,13 @@ async def stream_flow_to_cybermind(  # noqa: ANN201 - kept for symmetry with cal
         "attack_stage": stage,
         "technique_id": technique_id,
         "provenance": "sandbox:isolated_probe",
+        "source": "sandbox:isolated_probe",
     }
     PROBE_STATS["flows_streamed"] += 1
     try:
         async with httpx.AsyncClient(timeout=0.6) as client:
-            await client.post(f"{CYBERMIND_BACKEND_URL}/api/telemetry", json={"events": [flow]})
+            response = await client.post(f"{CYBERMIND_BACKEND_URL}/api/telemetry/events", json={"events": [flow]})
+            response.raise_for_status()
     except Exception:
         # Failsafe: if main server is busy, sandbox keeps running without crashing
         pass

@@ -1,0 +1,272 @@
+[
+  [
+    "title",
+    0,
+    8.3,
+    "frame1.jpg",
+    0,
+    null,
+    "Live recording of the CYBERMIND offline release, running locally."
+  ],
+  [
+    "solution",
+    8.3,
+    11.55,
+    "frame2.jpg",
+    0,
+    null,
+    ""
+  ],
+  [
+    "upload",
+    11.55,
+    12.8,
+    "live-core-06.mp4",
+    17.8,
+    null,
+    "Upload captured traffic"
+  ],
+  [
+    "picker",
+    12.8,
+    14.1,
+    "live-core-06.mp4",
+    30,
+    null,
+    "Choose a PCAP file"
+  ],
+  [
+    "ingest",
+    14.1,
+    16.1,
+    "live-core-07.mp4",
+    18.1,
+    null,
+    "Ingest the selected PCAP"
+  ],
+  [
+    "ingested",
+    16.1,
+    17.55,
+    "live-core-07.mp4",
+    52,
+    null,
+    "32,001 events \u00b7 provenance retained"
+  ],
+  [
+    "host",
+    17.55,
+    20.3,
+    "live-core-07.mp4",
+    100,
+    null,
+    "Inspect a host and its observed connections"
+  ],
+  [
+    "triage-critical",
+    20.3,
+    22.2,
+    "live-flow-fixed-11.mp4",
+    23,
+    null,
+    "Labeled CIC-IDS2018 CSV \u00b7 Critical hints"
+  ],
+  [
+    "triage-medium",
+    22.2,
+    24.1,
+    "live-flow-fixed-11.mp4",
+    30,
+    null,
+    "Medium hints \u00b7 separate from model forecasts"
+  ],
+  [
+    "triage-benign",
+    24.1,
+    26.0,
+    "live-flow-fixed-11.mp4",
+    42,
+    null,
+    "Same CSV \u00b7 Benign / secured hints"
+  ],
+  [
+    "forecast",
+    26.0,
+    33.5,
+    "live-core-07.mp4",
+    130,
+    null,
+    "Future graph-window risk \u00b7 coarse stages \u00b7 uncertainty"
+  ],
+  [
+    "gravity",
+    33.5,
+    34.5,
+    "live-core-07.mp4",
+    202,
+    null,
+    "Attack Graph"
+  ],
+  [
+    "parallel",
+    34.5,
+    40.0,
+    "live-core-07.mp4",
+    163,
+    null,
+    "Run the baseline and modified graph through the same model"
+  ],
+  [
+    "parallel-result",
+    40.0,
+    43.2,
+    "live-core-07.mp4",
+    183,
+    null,
+    "Simulated isolation: 100 \u2192 78 risk \u00b7 analyst review"
+  ],
+  [
+    "probe",
+    43.2,
+    49.3,
+    "live-core-07.mp4",
+    271,
+    null,
+    "Strix Lab \u00b7 built-in, bounded loopback sandbox probe"
+  ],
+  [
+    "accepted",
+    49.3,
+    53.1,
+    "live-core-07.mp4",
+    298,
+    null,
+    "8 requests accepted \u00b7 telemetry updates the forecast"
+  ],
+  [
+    "approve",
+    53.1,
+    57.6,
+    "live-core-07.mp4",
+    337,
+    null,
+    "Analyst approves the structured sandbox defence"
+  ],
+  [
+    "blocked",
+    57.6,
+    59.4,
+    "live-core-07.mp4",
+    368,
+    null,
+    "8 blocked \u00b7 forecast can still rise"
+  ],
+  [
+    "validate",
+    59.4,
+    62.5,
+    "live-core-07.mp4",
+    476,
+    null,
+    "Freeze forecast \u00b7 run local check \u00b7 record HTTP responses"
+  ],
+  [
+    "hashes",
+    62.5,
+    65.4,
+    "live-core-07.mp4",
+    533,
+    null,
+    "SHA-256 \u00b7 sandbox evidence, not model accuracy"
+  ],
+  [
+    "export",
+    65.4,
+    67.0,
+    "live-reports-04.mp4",
+    35,
+    null,
+    "AES-256-GCM \u00b7 fresh report key"
+  ],
+  [
+    "save",
+    67.0,
+    68.3,
+    "live-reports-04.mp4",
+    45,
+    null,
+    "Choose the report\u2019s save location"
+  ],
+  [
+    "ciphertext",
+    68.3,
+    69.9,
+    "live-ciphertext-08.mp4",
+    1,
+    null,
+    "Encrypted JSON \u00b7 key kept separate"
+  ],
+  [
+    "decrypt",
+    69.9,
+    72.0,
+    "live-reports-saved-05.mp4",
+    100,
+    null,
+    "Separate key \u00b7 in-app decryption"
+  ],
+  [
+    "readable",
+    72.0,
+    73.3,
+    "live-reports-saved-05.mp4",
+    105,
+    null,
+    "Readable JSON preview"
+  ],
+  [
+    "wrong-key",
+    73.3,
+    74.5,
+    "live-reports-saved-05.mp4",
+    154,
+    null,
+    "A wrong key is rejected"
+  ],
+  [
+    "benchmark",
+    74.5,
+    90.0,
+    "live-core-07.mp4",
+    218,
+    null,
+    "Narrated benchmark: F1 98.51% \u00b7 FPR 0.57%"
+  ],
+  [
+    "monitor",
+    90.0,
+    94.0,
+    "live-core-07.mp4",
+    208,
+    null,
+    "Live Monitor \u00b7 ingested traffic and local CPU inference"
+  ],
+  [
+    "assistant",
+    94.0,
+    99.0,
+    "live-core-07.mp4",
+    754,
+    null,
+    "Offline NLP assistant \u00b7 read-only answers grounded in the case"
+  ],
+  [
+    "architecture",
+    99.0,
+    108.0,
+    "architecture.jpg",
+    0,
+    null,
+    ""
+  ]
+]

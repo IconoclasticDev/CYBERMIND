@@ -1,0 +1,9 @@
+# OPT-IN ONLY: mounting the host Docker socket gives the container substantial
+# control over the host daemon. Use only for a configured external Strix CLI
+# against registered, authorized targets. The built-in Attack Lab needs no socket.
+services:
+  cybermind:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock

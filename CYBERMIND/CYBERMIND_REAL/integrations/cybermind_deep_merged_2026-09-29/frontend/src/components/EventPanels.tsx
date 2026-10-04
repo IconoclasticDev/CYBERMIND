@@ -57,7 +57,7 @@ export const LiveEventFeed: React.FC<{ events: UIEvent[]; onSelectEvent: (e: UIE
           </table>
         </div>
       ) : (
-        <Empty title="No telemetry yet" hint="Start a scenario in the Scenario Lab, or POST events to /api/telemetry. Events appear here the moment they are ingested." />
+        <Empty title="No telemetry yet" hint="Upload a PCAP or CSV to inspect its observed traffic." />
       )}
       <div className="px-4 py-2 border-t border-[#F0ECE4] bg-[#FAF8F5]/40 flex items-center justify-between text-[11px] text-[#8591A0]">
         <span>latest {Math.min(events.length, 14)} of stream</span>

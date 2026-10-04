@@ -246,8 +246,21 @@ export const ValidationPanel: React.FC<{ store: LiveStore }> = ({ store }) => {
   const [localBusy, setLocalBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
   React.useEffect(() => {
-    api.localValidationRuns().then((r) => setLocalRun(r.runs[0] ?? null)).catch(() => undefined);
-  }, []);
+    let disposed = false;
+    let timer: ReturnType<typeof setTimeout>;
+    const refresh = async () => {
+      try {
+        const result = await api.localValidationRuns();
+        if (!disposed) setLocalRun((previous) => {
+          const latest = result.runs[0] ?? null;
+          return previous && (!latest || previous.created_at > latest.created_at) ? previous : latest;
+        });
+      } catch { /* A failed refresh must not erase a completed result. */ }
+      finally { if (!disposed) timer = setTimeout(refresh, 5000); }
+    };
+    if (!localBusy) void refresh();
+    return () => { disposed = true; clearTimeout(timer); };
+  }, [localBusy]);
   const runLocal = async () => {
     setLocalBusy(true);
     setLocalError(null);
@@ -261,15 +274,15 @@ export const ValidationPanel: React.FC<{ store: LiveStore }> = ({ store }) => {
 
   return (
     <div className="bg-white border border-[#EAE6DF] rounded-2xl p-5 space-y-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center gap-2 min-w-0">
           <FlaskConical className="w-4 h-4 text-[#DE5B49]" />
           <h3 className="font-bold text-sm text-[#1C232B]">Validation Engine</h3>
           <span className="text-[9px] font-mono text-[#98A2AF] uppercase">local checks and controlled adversarial evidence</span>
         </div>
         <span className={`px-2 py-0.5 rounded-md border text-[9px] font-bold uppercase ${
-          strixOk ? "bg-[#E9F6EC] text-[#1E7A43] border-[#C8E6CF]" : "bg-[#F4F1EB] text-[#8C96A3] border-[#EAE2D8]"}`}>
-          {strixOk ? "Strix ready" : "Strix unavailable"}
+          localError ? "bg-[#FBEAE7] text-[#B33A2B] border-[#F2C9C3]" : "bg-[#E9F6EC] text-[#1E7A43] border-[#C8E6CF]"}`}>
+          {localBusy ? "Local check running" : localError ? "Local check needs attention" : localRun ? "Local evidence recorded" : "Local checks available"}
         </span>
       </div>
 
@@ -285,30 +298,42 @@ export const ValidationPanel: React.FC<{ store: LiveStore }> = ({ store }) => {
           </button>
         </div>
         {!store.state?.ready && <p className="text-[10px] text-[#8C5424]">Load a PCAP, CSV, or real-flow sample first. The check will explain if the case has too few observation windows.</p>}
+        {!localRun && !localError && <p className="text-[10px] text-[#586474]">No local check recorded yet. Run the check to display actual HTTP responses and evidence hashes here.</p>}
         {localError && <p role="alert" className="text-[10px] text-[#B33A2B] break-words">{localError}</p>}
         {localRun && <div className="rounded-lg border border-[#D9E7DD] bg-white p-3 space-y-2">
           <div className="flex flex-wrap items-center justify-between gap-2 text-[10px]">
             <span className="font-bold text-[#1C232B]">{localRun.verdict.replaceAll("_", " ")}</span>
             <span className="font-mono text-[#7A8696] break-all">{localRun.run_id} · forecast {localRun.forecast.forecast_id ?? "—"}</span>
           </div>
+          <p className="text-[10px] text-[#7A8696]">Recorded {new Date(localRun.created_at * 1000).toLocaleString()} · Frozen forecast: {localRun.forecast.predicted_stage ?? "Unknown"}</p>
           <div className="grid gap-1.5 sm:grid-cols-2 xl:grid-cols-4">
             {localRun.checks.map((check) => <div key={check.name} className="min-w-0 rounded-md bg-[#F7F5F0] px-2 py-1.5 text-[10px] text-[#54606E]">
               <span className="font-semibold">{check.name}</span><span className="ml-1 font-mono">HTTP {check.http_status ?? "error"}</span>
               <div className="font-mono text-[9px] truncate" title={check.response_sha256 ?? check.error ?? ""}>SHA-256 {check.response_sha256?.slice(0, 16) ?? "—"}…</div>
             </div>)}
           </div>
+          <details className="text-[10px] text-[#54606E]">
+            <summary className="cursor-pointer font-semibold">Full response hashes</summary>
+            <div className="mt-2 space-y-2">{localRun.checks.map((check) => <div key={check.name}>
+              <span className="font-semibold">{check.name} · HTTP {check.http_status ?? "error"}</span>
+              <div className="font-mono break-all select-text">{check.response_sha256 ?? check.error ?? "No response hash"}</div>
+            </div>)}</div>
+          </details>
           <p className="text-[9px] leading-relaxed text-[#7A8696]">{localRun.limitation}</p>
         </div>}
       </div>
 
+      <details className="rounded-xl border border-[#EAE6DF] bg-[#FCFBF9] p-3">
+        <summary className="cursor-pointer text-[11px] font-bold text-[#54606E]">External Strix scanner · {strixOk ? "Ready" : "Not configured"}</summary>
+        <div className="mt-3 space-y-3">
       {!strixOk && (
         <div className="bg-[#FCFBF7] border border-[#EEDFC0] rounded-xl p-3 text-[11px] text-[#8C5424] leading-relaxed">
-          <strong>Controlled validation unavailable.</strong>{" "}
+          <strong>External Strix scanning is not configured.</strong>{" "}
           {store.strixStatus?.reason ?? "Checking the validator setup…"}.
           {store.strixStatus?.targets?.length
             ? " A sandbox target is registered; the validator CLI, its Docker runtime, and an LLM provider must be available before a scan can run."
             : " Register an authorized sandbox target after configuring the validator CLI, Docker, and an LLM provider."}
-          {" "}Forecasting remains available. No Strix scan evidence is generated while this control is disabled.
+          {" "}Local sandbox checks and the built-in Attack Lab work independently. No external Strix scan evidence is generated while this control is disabled.
         </div>
       )}
 
@@ -318,7 +343,7 @@ export const ValidationPanel: React.FC<{ store: LiveStore }> = ({ store }) => {
           disabled={!strixOk || store.busy.validate || !activeScenario}
           className="px-3.5 py-2 bg-[#2B3542] hover:bg-[#1C232B] disabled:opacity-40 text-white text-xs font-bold rounded-xl flex items-center gap-2">
           {store.busy.validate ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Activity className="w-3.5 h-3.5" />}
-          {store.busy.validate ? "Validating…" : "Run controlled validation"}
+          {store.busy.validate ? "Scanning…" : "Run external Strix scan"}
         </button>
         {store.lastValidation && (
           <span className="text-[10px] text-[#7A8696] font-mono">last: {store.lastValidation.match} · run {store.lastValidation.strix_run_id}</span>
@@ -339,6 +364,8 @@ export const ValidationPanel: React.FC<{ store: LiveStore }> = ({ store }) => {
       </div>
 
       <StageEvidencePanel validations={recent} />
+        </div>
+      </details>
 
       {showFindings && <FindingsModal runId={showFindings} onClose={() => setShowFindings(null)} />}
     </div>

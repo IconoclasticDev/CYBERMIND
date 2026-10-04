@@ -66,7 +66,13 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
       const res = await api.attackLabStatus();
       if (res.vectors) setVectors(res.vectors);
       if (res.ollama_status) setOllamaStatus(res.ollama_status);
-      if (res.active_session) setActiveSession(res.active_session);
+      setActiveSession(res.active_session ?? null);
+      if (res.active_session?.generated_patch) {
+        const session = res.active_session;
+        setVectorPatches((previous) => ({ ...previous, [session.vector_id]: {
+          ...session.generated_patch, ...previous[session.vector_id],
+        } }));
+      }
       setSandboxInfo(res.sandbox_info ?? null);
       try {
         const ra = await api.attackLabRiskAssessment();
@@ -107,7 +113,7 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
     }
     setIsProbing(true);
     setPatchSuccessMsg(null);
-    addLog(`>>> Strix probe launched: ${vectorId.toUpperCase()}`, "text-cyan-400 font-bold");
+    addLog(`>>> Built-in sandbox probe launched: ${vectorId.toUpperCase()}`, "text-cyan-400 font-bold");
 
     try {
       const sess = await api.startAttackLabProbe(vectorId, "quick", 10);
@@ -205,7 +211,7 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
 
   const sessionVector = activeSession?.vector_id || selectedVector;
   const generatedPatch = vectorPatches[sessionVector] || activeSession?.generated_patch;
-  const currentRisk = ((activeSession?.final_risk || activeSession?.peak_risk || 0.018) * 100);
+  const currentRisk = ((activeSession?.final_risk ?? activeSession?.peak_risk ?? 0.018) * 100);
   const isHighRisk = currentRisk > 40;
   const selectedVec = vectors.find((v) => v.id === selectedVector);
   const sandboxVulns = sandboxInfo?.vulnerabilities || {};
@@ -229,11 +235,11 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
           <div className="min-w-0">
             <h1 className="font-editorial text-2xl font-bold text-[#171F27] tracking-tight">Attack Labs</h1>
             <p className="text-xs text-[#707C8C] mt-0.5">
-              Non-destructive adversarial probes against the isolated sandbox. Evidence-driven analysis, AI remediation, verified one-click patching.
+              Live HTTP sandbox checks: run a probe, approve a defence, then repeat the same probe to verify blocking.
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2.5 text-[11px] font-mono shrink-0">
+        <div className="flex flex-wrap items-center gap-2.5 text-[11px] font-mono">
           <span className="px-3 py-1.5 rounded-lg bg-[#F8F6F0] border border-[#E2DBD0] text-[#333E4D]">
             TARGET <b className="text-[#171F27]">127.0.0.1:8081</b>
           </span>
@@ -241,9 +247,12 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
             SAFETY <b>NON-EXPLOITING</b>
           </span>
           <span className="px-3 py-1.5 rounded-lg bg-[#F4F7FD] border border-[#D3DBF0] text-[#4B68B8]">
-            ENGINE <b>{ollamaStatus?.available ? `Ollama ${ollamaStatus.active_model}` : "Codebuff"}</b>
+            REMEDIATION <b>{ollamaStatus?.available ? `Ollama ${ollamaStatus.active_model}` : "Structured rules"}</b>
           </span>
         </div>
+      </div>
+      <div className="rounded-xl border border-[#EAE6DF] bg-[#FCFBF9] px-5 py-3 text-xs text-[#707C8C]">
+        <span className="font-bold text-[#1C232B]">Built-in lab · offline.</span> Results come from actual loopback HTTP responses. These are bounded attack analogues, not external Strix CLI scans or model accuracy benchmarks. External Strix / local LLM integration is separate.
       </div>
 
       {/* Sandbox status strip */}
@@ -417,19 +426,19 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
         <section className="xl:col-span-4 space-y-4">
           <div className="bg-white border border-[#EAE6DF] rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
             <div className="px-5 py-3.5 border-b border-[#F0EBE1] flex items-center justify-between bg-[#FCFBF9]">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-[#171F27]">Model Risk Assessment</h2>
+              <h2 className="text-xs font-bold uppercase tracking-wider text-[#171F27]">Graph Risk Forecast</h2>
               <span className="text-[10px] font-mono text-[#8C95A3]">best.pt</span>
             </div>
             <div className="px-5 py-5">
               <div className="flex items-end justify-between">
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#8C95A3]">Assessed risk</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#8C95A3]">Future graph-window risk</div>
                   <div className={`text-5xl font-extrabold font-mono tracking-tight mt-1 ${isHighRisk ? "text-[#B33A2B]" : "text-[#1E7B3E]"}`}>
                     {currentRisk.toFixed(1)}
                     <span className="text-xl text-[#98A2AF]">%</span>
                   </div>
                   <div className={`text-[11px] font-bold uppercase tracking-wide mt-1 ${isHighRisk ? "text-[#B33A2B]" : "text-[#1E7B3E]"}`}>
-                    {isHighRisk ? "Elevated vulnerability detected" : "Benign — secured"}
+                    {isHighRisk ? "Elevated forecast risk" : "Lower forecast risk"}
                   </div>
                 </div>
                 <div className="text-right font-mono text-[11px] text-[#707C8C] space-y-1">
@@ -438,6 +447,10 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
                   <div>STATE <b className="text-[#171F27]">{activeSession?.status || "IDLE"}</b></div>
                 </div>
               </div>
+              <p className="text-[11px] leading-relaxed text-[#707C8C] mt-3">
+                The forecast includes recent attack traffic and can rise after a defence.
+                Verify defence effectiveness using accepted and blocked HTTP responses in Analysis Outcome.
+              </p>
               <div className="w-full bg-[#EFEAE1] h-2 rounded-full overflow-hidden mt-4">
                 <div
                   className={`h-full rounded-full transition-all duration-300 ${isHighRisk ? "bg-[#C54737]" : "bg-[#2EAA58]"}`}
@@ -482,6 +495,14 @@ export const AttackLabView: React.FC<{ store: LiveStore; onBack?: () => void }> 
               </span>
             </div>
             <div className="px-5 py-4">
+              {activeSession?.summary && <div className="mb-3 space-y-2">
+                <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
+                  {[['Accepted', activeSession.summary.succeeded], ['Blocked', activeSession.summary.blocked], ['Unreachable', activeSession.summary.unreachable]].map(([label, count]) => <div key={label} className="rounded-lg border border-[#EAE6DF] bg-[#F7F5F0] p-2">
+                    <div className="font-bold text-lg text-[#1C232B]">{count ?? 0}</div><div className="text-[#707C8C]">{label}</div>
+                  </div>)}
+                </div>
+                <p className="text-[10px] font-mono text-[#707C8C] break-all">Session {activeSession.session_id} · {activeSession.vector_id}</p>
+              </div>}
               {activeSession?.status === "PROBE_DEFLECTED" ? (
                 <div className="text-xs text-[#1E7B3E] flex items-start gap-2">
                   <ShieldCheck className="w-4 h-4 shrink-0 mt-0.5" />

@@ -1,0 +1,82 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261004035250
+Username: PHISHY\as030
+RunAs User: PHISHY\as030
+Configuration Name:
+Machine: PHISHY (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell.exe
+Process ID: 39596
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SHA256 9298ae17828bf2c8b0ea00ccabc887933a4b98804ceb4deb962111b8b4266e0e  architecture_diagram.jpeg
+SHA256 5336db0c0161e529f008bff0a397995aa4b9b103354c69cece35dbb28628e690  compose.offline.yaml
+SHA256 5274e09ac82915fd32b9aeab3c474712a2d4f4bc3a4956272447e953ff2bf167  compose.strix.yaml
+SHA256 a62308fe564ed26d05d51bfd18f44ce5b4f558ef5769b642aeadb9aae292c823  CYBERMIND.exe
+SHA256 be01d9c700ed078953277f784bf76bbaff48ce910ef47f23620f6345efba12eb  DEMO_PREFLIGHT_2026-09-30.md
+SHA256 894373193896f80b848333a778762dcae63d4134b733b559fa605cbe8947df7b  demo/botnet_ares_sample.csv
+SHA256 2f2bc192085a9234fb418470b615c02bb57c771cd79bbfacf1aef2693daef28c  demo/cic2018_feb28_victim_scan_15min.pcap
+SHA256 1d347ecfec5032c891e24556fe8eb177fab8e5039f383deb0a8e3a558a94f160  demo/cic2018_feb28_victim_scan_15min.pcap.provenance.json
+SHA256 889a1498cba155d50dfcd3ea7d9e5e645b2a14d9c28fbcca706048b34d08b93a  demo/cicids2018_csv_provenance.json
+SHA256 a761dcd52ede71a0f9a60272964e7392c25d9b6805f29735de7852b85bcb6ab6  demo/ctu_iot23_capture_9_1_only5000.pcap
+SHA256 61dfe098caf13299feae0a6d065de01f49527b5f9f77313eb19be6a2ba64f3ec  demo/ctu_iot23_provenance.json
+SHA256 e8d589ece9663d1fd8a82277a2c9fe8f5bda20ece855e9a94af9642a0f60dd02  demo/ssh_bruteforce_sample.csv
+SHA256 5e54f47055a09242ffc948996ba6562ffb396106f9f11c53131a9962c8aa2eee  images/cybermind-offline-app.tar
+SHA256 64d4db97afb7de205a12f3fddd5cb0c22268110684d89fe41878f54f555037a3  images/manifest.json
+SHA256 f29a15fe3f1f01a16f6a420ed3b1e8878f09898ca98d14d94e6c3092d0ce75d8  images/SHA256SUMS
+SHA256 b096e0c8faa9da3c5eddc3bcd7df64332223f225d0e1658a61b1d8cc48248696  launch_linux.sh
+SHA256 6c2a7625f919bbd179e8c22493999e7f68c130d4d1e3b63ebc48ae2528be4906  README.md
+SHA256 1ec322b7823a3dcbb14f06caeaebeaddeae4c16c54d150ac8a939d09c693d5a5  script.md
+SHA256 c2a4c83366f5320c1d15f8be14b41bc2ec12f65d6277d060fb7de6e56b5d3808  stop_linux.sh
+SHA256 6799edf63b11e57e3b9e795554b953980f74ba17980455c3b6993b3e23f4eb9e  stop_windows.cmd
+COMMAND: docker load -i D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\tmp\release_2026-10-04\offline_20261004_035250\extracted\CYBERMIND_DOCKER_DESKTOP_ATTACK_LAB_2026-10-04\images\cybermind-offline-app.tar
+Loaded image: cybermind/offline-app:2026-09-29
+COMMAND: docker stop cybermind-offline-cybermind-1
+cybermind-offline-cybermind-1
+COMMAND: Start-Process D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\tmp\release_2026-10-04\offline_20261004_035250\extracted\CYBERMIND_DOCKER_DESKTOP_ATTACK_LAB_2026-10-04\CYBERMIND.exe
+PS>TerminatingError(docker.exe): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: service "cybermind" is not running"
+PS>TerminatingError(docker.exe): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: service "cybermind" is not running"
+PS>TerminatingError(docker.exe): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: service "cybermind" is not running"
+PS>TerminatingError(docker.exe): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: service "cybermind" is not running"
+PS>TerminatingError(docker.exe): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: service "cybermind" is not running"
+PS>TerminatingError(docker.exe): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: service "cybermind" is not running"
+PS>TerminatingError(docker.exe): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: service "cybermind" is not running"
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+COMMAND: python verify_offline_release_api.py --base http://127.0.0.1:55938 --pcap bundled-demo --output api-results.json
+{"vector": "ssh_bruteforce", "before": {"succeeded": 12, "blocked": 0, "unreachable": 0}, "approval": "APPLIED_AND_VERIFIED", "verification_hash": "849060236bd55a1b", "after": {"suc
+ceeded": 0, "blocked": 12, "unreachable": 0}}
+{"vector": "sqli_probe", "before": {"succeeded": 8, "blocked": 0, "unreachable": 0}, "approval": "APPLIED_AND_VERIFIED", "verification_hash": "031c793605695ac8", "after": {"succeede
+d": 0, "blocked": 8, "unreachable": 0}}
+{"vector": "smb_lateral", "before": {"succeeded": 10, "blocked": 0, "unreachable": 0}, "approval": "APPLIED_AND_VERIFIED", "verification_hash": "dde837d4ee8a562b", "after": {"succee
+ded": 0, "blocked": 10, "unreachable": 0}}
+{"vector": "c2_beacon", "before": {"succeeded": 15, "blocked": 0, "unreachable": 0}, "approval": "APPLIED_AND_VERIFIED", "verification_hash": "3dcc2763bec95e8f", "after": {"succeede
+d": 0, "blocked": 15, "unreachable": 0}}
+PASS: PCAP import, forecast, Parallel Futures, local validation, and all requested lab loops
+COMMAND: docker stop cybermind-offline-cybermind-1
+cybermind-offline-cybermind-1
+COMMAND: docker compose -p cybermind-offline -f D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\tmp\release_2026-10-04\offline_20261004_035250\extracted\CYBERMIND_DOCKER_DESKTOP_ATTACK_LAB_2026-10-04\compose.offline.yaml up -d --pull never
+WARN[0000] volume "cybermind-offline_cybermind_data" carries the compose label "cybermind_data" but does not match the compose file (using "cybermind_release_20261004_data"); it is
+left untouched — remove it manually if it is no longer needed
+[+] up 1/1
+ ✔ Container cybermind-offline-cybermind-1 Started                                                                                                                               0.3s
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+PS>TerminatingError(Invoke-RestMethod): "The underlying connection was closed: The connection was closed unexpectedly."
+RESULT: PASS: offline launch and API flow; UI encryption/decryption remains a separate check
+Logs saved to: D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\tmp\release_2026-10-04\offline_20261004_035250
+You may reconnect Wi-Fi now. The test does not change your network settings.
+**********************
+Windows PowerShell transcript end
+End time: 20261004035731
+**********************
