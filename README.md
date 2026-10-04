@@ -16,11 +16,11 @@
 
 ## Overview
 
-CYBERMIND is an offline predictive cyber-defence platform for **SIH26153: AI-based Network Attack Forecasting from Network Traffic Data**.
+CYBERMIND helps analysts understand network activity and anticipate how an attack might develop. Built for **SIH26153: AI-based Network Attack Forecasting from Network Traffic Data**, it analyses uploaded traffic locally and works offline.
 
-Analysts upload PCAP, PCAPNG or supported CICFlowMeter CSV files. A pinned PyTorch model combines GATv2, a temporal Transformer and latent dynamics to forecast graph-window risk and coarse attack stages. The React/FastAPI application provides network visualisation, counterfactual defence comparisons, case-grounded questions, local sandbox checks, and AES-256-GCM report encryption with in-app decryption.
+Upload a PCAP, PCAPNG or supported CICFlowMeter CSV file to explore host connections, view forecasts and compare possible defensive actions. The bundled PyTorch model uses GATv2, a temporal Transformer and latent dynamics to predict future risk and broad attack stages across network graph windows. Analysts can also ask questions about the loaded case, check sandbox responses, and encrypt or decrypt incident reports inside the app using AES-256-GCM.
 
-Flow-triage flags are separate from model forecasts; unlabeled PCAP flows remain unassessed. Core processing runs locally on CPU—CUDA is not required. Autonomous Strix scans require a separately configured CLI and LLM provider.
+Flow risk flags provide rule-based triage hints and are separate from the model's forecasts. Raw PCAP flows without labels remain unassessed in that table. The core application runs on a CPU without CUDA. Autonomous Strix scans need a separately configured CLI and LLM provider.
 
 ## Setup
 
