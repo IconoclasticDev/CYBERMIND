@@ -16,7 +16,7 @@
 
 ## Overview
 
-CYBERMIND helps analysts understand network activity and anticipate how an attack might develop. Built for **SIH26153: AI-based Network Attack Forecasting from Network Traffic Data**, it analyses uploaded traffic locally and works offline.
+CYBERMIND helps analysts understand network activity and anticipate how an attack might develop. Built for **AI-based Network Attack Forecasting from Network Traffic Data**, it analyses uploaded traffic locally and works offline.
 
 Upload a PCAP, PCAPNG or supported CICFlowMeter CSV file to explore host connections, view forecasts and compare possible defensive actions. The bundled PyTorch model uses GATv2, a temporal Transformer and latent dynamics to predict future risk and broad attack stages across network graph windows. Analysts can also ask questions about the loaded case, check sandbox responses, and encrypt or decrypt incident reports inside the app using AES-256-GCM.
 
