@@ -36,7 +36,7 @@ Upload a PCAP, PCAPNG or supported CICFlowMeter CSV file to explore host connect
    - **Linux x86-64:** run `sh CYBERMIND/START_LINUX.sh`. Install `unzip` and `sha256sum`; the launcher opens Chromium as an app window when available, otherwise your default browser.
 4. Upload your traffic file in the application to begin analysis.
 
-The core application runs on CPU without CUDA. Built-in sandbox checks work locally; optional autonomous Strix scans require a separately configured CLI and LLM provider. See the [application scope notes](CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/README.md#application-scope) for how forecasts and flow triage differ.
+The core application runs on a CPU without CUDA. Autonomous Strix scans need a separately configured CLI and LLM provider.
 
 The launchers verify and extract the [current offline release](CYBERMIND/releases/README.md), then load its bundled Docker image. No Python, Node.js or model training is needed. If the download contains a Git LFS pointer, first preparation needs internet to fetch the real release archive; Linux also needs `curl` or `wget`. For fully offline setup, transfer the complete release ZIP. Subsequent core operation needs no internet. Linux launch has not yet been verified on a Linux host.
 
