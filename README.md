@@ -41,12 +41,21 @@ Core capabilities include:
 
 ---
 
+## Start here
+
+After cloning or extracting the repository, install Docker and use one launcher:
+
+- **Windows:** double-click `CYBERMIND/START_WINDOWS.cmd`.
+- **Linux x86-64:** run `sh CYBERMIND/START_LINUX.sh`.
+
+The launchers verify and extract the single current release automatically. They never require training, CUDA or a separate Python/Node setup. If a GitHub repository ZIP contains only a Git LFS pointer for the release, the first preparation downloads the real archive and checks its pinned hash. That initial download requires internet; later application launches use local files. For a fully offline transfer, bring the complete release ZIP rather than an LFS pointer.
+
 ## Recommended setup
 
 The easiest way to run CYBERMIND is the canonical offline Docker Desktop release:
 
 ```text
-releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip
+CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip
 ```
 
 This package includes:
@@ -97,29 +106,29 @@ Verify the downloaded release:
 
 ```powershell
 Get-FileHash `
-  ".\releases\CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip" `
+  ".\CYBERMIND\releases\CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip" `
   -Algorithm SHA256
 ```
 
 Expected SHA-256:
 
 ```text
-a3e8fb21d930830d519a3b683133ac896c40d63a37395fb079bb5719c0e0682c
+1501067ff49208cbe1ca15e72bbef8a67f43c661a1cee9609d3e4eb7eb541e22
 ```
 
 Extract the package:
 
 ```powershell
 Expand-Archive `
-  ".\releases\CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip" `
-  -DestinationPath ".\releases\CYBERMIND_DOCKER_DESKTOP_DEMO_READY"
+  ".\CYBERMIND\releases\CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip" `
+  -DestinationPath ".\CYBERMIND\releases\CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04"
 ```
 
 Then:
 
 1. Start Docker Desktop.
 2. Wait until Docker reports that the engine is running.
-3. Open the extracted `CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30` folder.
+3. Open the extracted `CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04` folder.
 4. Double-click `CYBERMIND.exe`.
 
 Alternatively, start it from PowerShell:
@@ -164,8 +173,8 @@ Requirements:
 Extract the release and enter its directory:
 
 ```bash
-unzip releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip
-cd CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30
+unzip CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip
+cd CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04
 ```
 
 Start CYBERMIND:
@@ -235,7 +244,7 @@ The `-v` command permanently removes data stored in the Compose volume. Use it o
 
 ### Docker security note
 
-The current Compose configuration mounts the host Docker socket into the CYBERMIND container for controlled local-validator integration.
+The default Compose configuration does not mount the host Docker socket. The optional compose.strix.yaml override is only for separately configured external Strix integration.
 
 Access to the Docker socket gives the container substantial control over the host Docker daemon. Run CYBERMIND only from a trusted checkout and on a trusted machine.
 
@@ -351,7 +360,7 @@ Set-Location ..
 The output is created at:
 
 ```text
-CYBERMIND_REAL\dist\CYBERMIND\CYBERMIND.exe
+CYBERMIND\CYBERMIND_REAL\dist\CYBERMIND\CYBERMIND.exe
 ```
 
 Distribute the entire `dist\CYBERMIND` directory. The executable depends on the model, frontend, and runtime files bundled beside it.
@@ -397,7 +406,7 @@ A decrypted HTML report is plaintext and should be handled as sensitive evidence
 The merged application and Strix integration source are located at:
 
 ```text
-CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/
+CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/
 ```
 
 The pinned optional Strix CLI archive is located at:
@@ -526,7 +535,7 @@ python scripts/phase01_smoke.py
 ### Root React application
 
 ```bash
-cd CYBERMIND_REAL/web
+cd CYBERMIND/CYBERMIND_REAL/web
 npm ci
 npm run build
 ```
@@ -534,14 +543,14 @@ npm run build
 ### Merged application tests
 
 ```bash
-cd CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29
+cd CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29
 python -m pytest tests -q -p no:cacheprovider
 ```
 
 ### Merged React frontend
 
 ```bash
-cd CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/frontend
+cd CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/frontend
 npm ci
 npm run build
 ```
@@ -561,26 +570,18 @@ Docker itself is still required for an end-to-end container launch.
 ## Project structure
 
 ```text
-CYBERMIND/
-├── CYBERMIND_REAL/
-│   ├── src/cybermind/          # Model, data, analyst, evaluation and API code
-│   ├── web/                    # Primary React application
-│   ├── integrations/           # Merged app, Strix Attack Lab and Parallel Futures
-│   ├── scripts/                # Setup, training, inference and packaging scripts
-│   ├── configs/                # Model and runtime configurations
-│   ├── checkpoints/            # Required trusted model checkpoints
-│   ├── docs/                   # Technical documentation and plans
-│   ├── tests/                  # Core automated tests
-│   └── examples/               # Reproducible demonstrations and fixtures
-├── deliverables/               # SIH documents, PDFs, diagrams and demo video
-├── releases/                   # SIH submission and canonical runnable release
-├── tools/strix/                # Optional pinned Strix CLI archive
+repository/
+├── CYBERMIND/
+│   ├── START_WINDOWS.cmd       # Prepare and open the current application
+│   ├── START_LINUX.sh          # Prepare and launch on Linux x86-64
+│   ├── CYBERMIND_REAL/         # Research/training source and application integration
+│   ├── deliverables/           # Final demo, architecture and verification records
+│   ├── releases/               # One current runnable ZIP and source/training submission
+│   └── tools/                  # Release launchers, verification and optional Strix tools
 ├── CYBERMIND Architecture Document.html
-├── CYBERMIND_Final_Implementation_Plan.pdf
-├── architecture_diagram.jpeg
 ├── .gitattributes
 ├── .gitignore
-└── README.md
+└── README.md                   # Main guide
 ```
 
 Generated environments, caches, extracted releases, local installers, build trees, raw massive datasets, and duplicate archives are intentionally excluded from Git.
@@ -630,12 +631,12 @@ Important documents include:
 
 - `CYBERMIND Architecture Document.html`
 - `CYBERMIND_Final_Implementation_Plan.pdf`
-- `CYBERMIND_REAL/README.md`
-- `CYBERMIND_REAL/docs/FASTAPI_REACT_APP.md`
-- `CYBERMIND_REAL/docs/OFFLINE_ANALYST_APP.md`
-- `CYBERMIND_REAL/docs/CYBERMIND_FULL_FINAL_IMPLEMENTATION_PLAN.md`
-- `CYBERMIND_REAL/docs/SIH26153_TWO_PAGE_ARCHITECTURE.md`
-- `CYBERMIND_REAL/docs/PUBLIC_DATA_SOURCES.md`
+- `CYBERMIND/CYBERMIND_REAL/README.md`
+- `CYBERMIND/CYBERMIND_REAL/docs/FASTAPI_REACT_APP.md`
+- `CYBERMIND/CYBERMIND_REAL/docs/OFFLINE_ANALYST_APP.md`
+- `CYBERMIND/CYBERMIND_REAL/docs/CYBERMIND_FULL_FINAL_IMPLEMENTATION_PLAN.md`
+- `CYBERMIND/CYBERMIND_REAL/docs/SIH26153_TWO_PAGE_ARCHITECTURE.md`
+- `CYBERMIND/CYBERMIND_REAL/docs/PUBLIC_DATA_SOURCES.md`
 - `deliverables/architecture/`
 - `deliverables/pdf/`
 
@@ -646,19 +647,19 @@ Important documents include:
 Canonical release:
 
 ```text
-releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.zip
+CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.zip
 ```
 
 SHA-256:
 
 ```text
-a3e8fb21d930830d519a3b683133ac896c40d63a37395fb079bb5719c0e0682c
+1501067ff49208cbe1ca15e72bbef8a67f43c661a1cee9609d3e4eb7eb541e22
 ```
 
 Manifest:
 
 ```text
-releases/CYBERMIND_DOCKER_DESKTOP_DEMO_READY_2026-09-30.manifest.json
+CYBERMIND/releases/CYBERMIND_DOCKER_DESKTOP_UPLOAD_UI_2026-10-04.manifest.json
 ```
 
 Always verify the ZIP before redistribution or demonstration.
@@ -686,7 +687,7 @@ The first launch imports the bundled Docker image. Do not move or remove the adj
 
 ### Port 8000 is already in use
 
-For the source Compose deployment, stop the conflicting application or change the host-side port in `CYBERMIND_REAL/compose.app.yaml`.
+For the source Compose deployment, stop the conflicting application or change the host-side port in `CYBERMIND/CYBERMIND_REAL/compose.app.yaml`.
 
 The canonical packaged launcher selects an available loopback port automatically.
 
@@ -695,7 +696,7 @@ The canonical packaged launcher selects an available loopback port automatically
 Build the frontend:
 
 ```bash
-cd CYBERMIND_REAL/web
+cd CYBERMIND/CYBERMIND_REAL/web
 npm ci
 npm run build
 ```
@@ -712,7 +713,7 @@ python scripts/launch_desktop.py
 Verify this file exists:
 
 ```text
-CYBERMIND_REAL/checkpoints/final_grouped/best.pt
+CYBERMIND/CYBERMIND_REAL/checkpoints/final_grouped/best.pt
 ```
 
 If the repository was cloned without LFS, run:

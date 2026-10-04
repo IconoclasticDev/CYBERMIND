@@ -1,0 +1,1223 @@
+{
+  "removed_count": 242,
+  "removed": [
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/examples/smoke/smoke.pt",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/smoke/smoke.pt"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/examples/smoke/smoke_test.pt",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/smoke/smoke_test.pt"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/step_4.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/step_4.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/extended200/reproduced100/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/periodic100/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/examples/smoke/rollout.png",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/smoke/rollout.png"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/raw/z_earlier.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/z_earlier.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/raw/a_later.csv",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/raw/a_later.csv"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/docs/SIH26153_CYBERMIND_Master_Plan.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/docs/SIH26153_CYBERMIND_Master_Plan.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/canonical/z_earlier.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/z_earlier.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/canonical/a_later.parquet",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/canonical/a_later.parquet"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/real_data_validation/r1/output_audit.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/real_data_validation/r1/output_audit.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/docs/PUBLIC_DATA_SOURCES.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/docs/PUBLIC_DATA_SOURCES.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/real_data_validation/r1/labeling_audit.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/real_data_validation/r1/labeling_run.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/processed/normalization.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/processed/normalization.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/resume_validation/split/history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/resume_validation/full/history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/pytest_edge_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/pytest_baseline.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/docs/AUTOMATED_TRAINING.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/docs/AUTOMATED_TRAINING.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/pytest.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/pytest.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/docs/128GB_GPU_RUNBOOK.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/docs/128GB_GPU_RUNBOOK.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_cuda/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/docs/TRAINING_READY.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/docs/TRAINING_READY.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/notebooks/01_data_audit.ipynb",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/notebooks/01_data_audit.ipynb"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/docs/FINAL_PRE_TRAIN_CHECKLIST.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/docs/FINAL_PRE_TRAIN_CHECKLIST.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/docs/EXPERIMENTS.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/docs/EXPERIMENTS.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/config.yaml",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/config.yaml"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/examples/smoke/eval_test.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/smoke/eval_test.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/preflight_local.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/preflight_local.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/notebooks/03_prepare_graphs.ipynb",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/notebooks/03_prepare_graphs.ipynb"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/notebooks/05_gpu_train.ipynb",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/notebooks/05_gpu_train.ipynb"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/notebooks/04_smoke.ipynb",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/notebooks/04_smoke.ipynb"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/notebooks/02_normalize.ipynb",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/notebooks/02_normalize.ipynb"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/notebooks/06_eval.ipynb",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/notebooks/06_eval.ipynb"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/examples/smoke/train_history.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/smoke/train_history.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined_cuda/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined_cuda/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined_cuda/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined_cuda/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/combined/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/crf_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/edge_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/baseline/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/combined/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/crf_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/edge_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/periodic100/memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/baseline/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/combined/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/crf_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/edge_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/baseline/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/combined/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/crf_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/edge_only/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off/train_memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/baseline/train_memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/class_weighted100/memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_01_cpu/memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/frozen_exposure100/memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_01_cpu/memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_0001_cpu/memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_01_cpu/memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_001_cpu/memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_01_cpu/memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_003_cpu/memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_01_cpu/memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/normalization_off100/memory.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/lr_01_cpu/memory.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/smoke/baseline_before/integration/verification.json",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase01_integration/verification.json"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/examples/smoke/README.md",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/smoke/README.md"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/integration_baseline.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/integration_combined.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/integration_combined_cuda.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/integration_crf_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_joint/integration_edge_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/integration_baseline.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/integration_combined.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/integration_combined_cuda.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/integration_crf_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_remediation/regression/integration_edge_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_root_cause/original_pipeline.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/integration_baseline.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/integration_combined.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/integration_combined_cuda.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/integration_crf_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_second_escalation/regression/integration_edge_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/integration_baseline.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/integration_combined.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/integration_combined_cuda.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/integration_crf_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    },
+    {
+      "removed": "CYBERMIND/CYBERMIND_REAL/examples/phase3_third_round/regression/integration_edge_only.log",
+      "canonical": "CYBERMIND/CYBERMIND_REAL/examples/phase4/regression/both_off.log"
+    }
+  ],
+  "required_identical_groups": [
+    {
+      "bytes": 12349,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/app/services/scenario_runner.py",
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/packaging/preflight_overlay/scenario_runner.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 10543,
+      "files": [
+        "CYBERMIND/deliverables/release_checks_2026-10-04/offline-final-records-after-relaunch.json",
+        "CYBERMIND/deliverables/release_checks_2026-10-04/offline-final-records-before-stop.json"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 9574,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/models/stage_decoder.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/models/stage_decoder.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 6272,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/collect_public_corpus.py",
+        "CYBERMIND/CYBERMIND_REAL/scripts/collect_public_corpus.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 5039,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/evaluation/metrics.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/evaluation/metrics.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 4758,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/evaluation/edge_attention.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/evaluation/edge_attention.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 3699,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/explainability/attribution.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/explainability/attribution.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 2512,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/results/final_grouped_model_comparison.json",
+        "CYBERMIND/CYBERMIND_REAL/results/final_grouped/model_comparison.json"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 2212,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/laptop_infer.py",
+        "CYBERMIND/CYBERMIND_REAL/scripts/laptop_infer.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 2050,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/models/temporal_encoder.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/models/temporal_encoder.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 1577,
+      "files": [
+        "CYBERMIND/deliverables/release_checks_2026-10-04/validation-after-relaunch.json",
+        "CYBERMIND/deliverables/release_checks_2026-10-04/validation-before-stop.json"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 1499,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/models/dynamics.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/models/dynamics.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 986,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/baselines/logistic.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/baselines/logistic.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 980,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/readiness_check.py",
+        "CYBERMIND/CYBERMIND_REAL/scripts/readiness_check.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 964,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/run_all_pretraining.sh",
+        "CYBERMIND/CYBERMIND_REAL/scripts/run_all_pretraining.sh"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 921,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/utils/inference.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/utils/inference.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 891,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/models/student.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/models/student.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 552,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/prepare_for_training.sh",
+        "CYBERMIND/CYBERMIND_REAL/scripts/prepare_for_training.sh"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 545,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/prepare_cic2018_public.sh",
+        "CYBERMIND/CYBERMIND_REAL/scripts/prepare_cic2018_public.sh"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 491,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/inspect_env.py",
+        "CYBERMIND/CYBERMIND_REAL/scripts/inspect_env.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 485,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/train_gpu_auto.sh",
+        "CYBERMIND/CYBERMIND_REAL/scripts/train_gpu_auto.sh"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 480,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/smoke_all.sh",
+        "CYBERMIND/CYBERMIND_REAL/scripts/smoke_all.sh"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 370,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/sandbox/README.md",
+        "CYBERMIND/CYBERMIND_REAL/sandbox/README.md"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 368,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/sandbox/docker-compose.yml",
+        "CYBERMIND/CYBERMIND_REAL/sandbox/docker-compose.yml"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 342,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/evaluation/runner.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/evaluation/runner.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 335,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/tests/test_imports.py",
+        "CYBERMIND/CYBERMIND_REAL/tests/test_imports.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 305,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/pyproject.toml",
+        "CYBERMIND/CYBERMIND_REAL/pyproject.toml"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 215,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/src/cybermind/utils/repro.py",
+        "CYBERMIND/CYBERMIND_REAL/src/cybermind/utils/repro.py"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 203,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/train_smoke_auto.sh",
+        "CYBERMIND/CYBERMIND_REAL/scripts/train_smoke_auto.sh"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 164,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/integrations/cybermind_deep_merged_2026-09-29/scripts/collect_knowledge.sh",
+        "CYBERMIND/CYBERMIND_REAL/scripts/collect_knowledge.sh"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    },
+    {
+      "bytes": 144,
+      "files": [
+        "CYBERMIND/CYBERMIND_REAL/data/manifests/gb10_economy_extended_preflight.json",
+        "CYBERMIND/CYBERMIND_REAL/data/manifests/gb10_economy_preflight.json"
+      ],
+      "reason": "Independent build/import contexts or separate dated verification evidence; not unused setup copies."
+    }
+  ]
+}

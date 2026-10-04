@@ -94,3 +94,5 @@ CYBERMIND/CYBERMIND_REAL/integrations/**/src/cybermind_backup_sep13/
 
 # Local recording takes and earlier renders; canonical video/project is under CYBERMIND.
 /videos/
+CYBERMIND/.runtime/
+CYBERMIND/releases/*.download
