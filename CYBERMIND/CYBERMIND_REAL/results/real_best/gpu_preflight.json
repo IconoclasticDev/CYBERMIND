@@ -1,6 +1,0 @@
-{
-  "mode": "production",
-  "config": "/workspace/cybermind/CYBERMIND_REAL/configs/real_best.yaml",
-  "passed": true,
-  "failures": []
-}

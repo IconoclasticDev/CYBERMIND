@@ -1,9 +1,0 @@
-D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\.phase01-venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
-  warnings.warn(
-D:\Abhinav\College\SIH\CYBERMIND_ONE_CLICK_128GB_PORTABLE\CYBERMIND_REAL\src\cybermind\models\temporal_encoder.py:16: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder=nn.TransformerEncoder(layer,num_layers=layers,norm=nn.LayerNorm(model_dim))
-baseline 4 draws seed0 0.749605655670166 512 draws mean 0.789666372537613
-legacy_scaling_only 4 draws seed0 0.9993403553962708 512 draws mean 0.9074364602565765
-edge_cut_only 4 draws seed0 0.749605655670166 512 draws mean 0.789666372537613
-legacy_combined 4 draws seed0 0.8970415592193604 512 draws mean 0.9030070126056671
-current_implementation 4 draws seed0 0.749605655670166 512 draws mean 0.789666372537613

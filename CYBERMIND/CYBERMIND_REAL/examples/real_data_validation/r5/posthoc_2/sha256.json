@@ -1,8 +1,0 @@
-{
-  "posthoc_analysis.json": "3de5f0666ed0f2f551ed7758d26a9b5f4149530a356223678a61d004180e4b80",
-  "posthoc_analysis.md": "c1fdbd93a1d97217573df16a3dc1df8a2bbe4d63e5ff9ccf53ea830e16e62592",
-  "audit.json": "377b90e08cc341585f0ae2766fd1da7a8eaca96361a392de7d14c19b42f97410",
-  "pytest.log": "f823e4567bfea6e219df29f3ee54351ef98d0ad6a7dd9c6e86847fe697b70d8b",
-  "pytest.xml": "aadfce82be4f8eaed2692d746a4b8cae88a199955b3398457e719bf46cb336ed",
-  "pytest.exitcode": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
-}

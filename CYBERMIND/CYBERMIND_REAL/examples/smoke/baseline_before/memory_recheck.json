@@ -1,6 +1,0 @@
-{
-  "total_bytes": 16513445888,
-  "available_bytes": 5168435200,
-  "worker_count_restored": 8,
-  "note": "Recheck after user freed RAM; initial pre-resume reading was 5.57 GiB."
-}

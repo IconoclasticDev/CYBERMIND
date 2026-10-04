@@ -11,13 +11,5 @@ services:
       - no-new-privileges:true
     restart: unless-stopped
 
-  incident-decrypter:
-    image: cybermind/offline-decrypter:2026-09-29
-    pull_policy: never
-    build: ./tools/incident_decrypter
-    ports:
-      - "127.0.0.1:8001:80"
-    restart: unless-stopped
-
 volumes:
   cybermind_data:

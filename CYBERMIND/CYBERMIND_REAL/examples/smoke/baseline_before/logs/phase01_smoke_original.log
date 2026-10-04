@@ -1,5 +1,0 @@
-PASS scripts/build_corpus.py
-PASS scripts/prepare_data.py
-PASS scripts/train.py
-PASS scripts/eval.py
-Synthetic integration passed; Phase 2 was not started.

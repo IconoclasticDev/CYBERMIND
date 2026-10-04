@@ -39,3 +39,11 @@ Thumbs.db
 
 # --- Reference material (design source, not part of the app) ---
 reference_ui/
+
+# Required, pinned application build inputs.
+!models/best.pt
+!data/
+data/*
+!data/test_cases/
+data/test_cases/*
+!data/test_cases/*.csv

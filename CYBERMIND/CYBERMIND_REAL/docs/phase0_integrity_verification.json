@@ -1,8 +1,0 @@
-{
-  "checked_at_utc": "2026-09-12T08:05:01.878846+00:00",
-  "baseline_files_verified": 49,
-  "knowledge_files_verified": 3,
-  "completed_capture_did_not_modify_evidence": true,
-  "original_model_inputs_checkpoints_and_metrics_unchanged": true,
-  "manifest_sha256": "46be0cc83ad87bf462b9c661e6b55935b90427d3e80311287ffff91c7572e90b"
-}

@@ -1,1 +1,0 @@
-{'device': 'cuda', 'precision': 'bf16', 'class_counts': {'positive': 8342, 'negative': 17143}, 'pos_weight': 2.0550227763126347, 'selection': 'val_f1_stage_band'}
