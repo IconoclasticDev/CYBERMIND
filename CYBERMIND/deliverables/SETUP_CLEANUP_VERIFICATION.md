@@ -9,6 +9,8 @@
 - Linux launcher scripts passed shell syntax checks. Launching on a Linux host was not tested.
 - Preparation handles Git LFS pointer-only downloads by fetching the pinned release archive from the repository and verifying its hash. The network-download branch was not exercised: this checkout already contains the complete archive. It requires the new commit/LFS objects to be published before a new remote clone/ZIP can retrieve this release.
 - Subsequent launches use the verified `.runtime/` directory, which is ignored by Git. Generated caches, earlier recordings and recovery copies are also ignored.
+- A clean ZIP generated from the committed repository contained no `.runtime/`, `tmp/` or original recording-workspace entries. Its complete release and launcher files were extracted into a separate directory; Windows preparation verified and extracted the bundled app successfully there.
+- Linux shell launchers are explicitly stored with LF line endings for portable checkout and ZIP extraction.
 - Docker is a host prerequisite. The core application and model are bundled, and GPU/CUDA is not required.
 
 No runtime Python package or model source was removed merely because its bytes matched the separate training context.
