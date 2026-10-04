@@ -28,3 +28,12 @@ External autonomous Strix requires a separately configured CLI and LLM provider.
 
 Historical training runs, copied web consoles, design references, caches and
 notebooks are not part of this tracked application build context.
+
+## Application scope
+
+The model forecasts risk and broad attack stages across network graph windows.
+Individual flow flags are rule-based triage hints, separate from those forecasts.
+Raw PCAP flows without source labels remain unassessed in the flow-triage table;
+this does not prevent graph-window inference on the uploaded traffic.
+Local sandbox checks record actual responses and hashes. They do not retrain the
+model or establish forecasting accuracy.
